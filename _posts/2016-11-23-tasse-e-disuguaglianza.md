@@ -17,6 +17,6 @@ tags:
   - reddito
   - tasse
 ---
-> Nel periodo in cui la tassazione diretta è aumentata rispetto a quella indiretta, la disuguaglianza é diminuita; nel periodo in cui la tassazione indiretta é diminuita rispetto a quella in diretta, ovvero negli ultimi 25 anni, la disuguaglianza è aumentata.&nbsp;
+> Nel periodo in cui la tassazione diretta è aumentata rispetto a quella indiretta, la disuguaglianza é diminuita; nel periodo in cui la tassazione diretta é diminuita rispetto a quella indiretta, ovvero negli ultimi 25 anni, la disuguaglianza è aumentata. 
 
-_(Studi di Thomas Piketty, da &#8220;chi ha e chi non ha&#8221;, Branko Milanovic)&nbsp;_
+_(Studi di Thomas Piketty, da "chi ha e chi non ha", Branko Milanovic)_

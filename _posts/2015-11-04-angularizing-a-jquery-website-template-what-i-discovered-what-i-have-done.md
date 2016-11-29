@@ -17,7 +17,7 @@ tags:
 ---
 In my [last post](http://michelenasti.com/2015/10/start-custom-js-with-ngroute/) I talked about angularizing a jQuery template for a new website I am developing.
 
-&nbsp;
+ 
 
 Let's remember my problem. The template I have chosen has a jQuery function that starts it's events with <span class="lang:default decode:true crayon-inline">$(document).ready(...)</span> . When the homepage (that consists only of the header buttons of the page!) starts, angular is loaded. at this point, before ngRoute decides what to do, the &#8220;ready&#8221; jQuery event is fired; when the partial.html is finally loaded (for example, the about.html page) no jQuery is fired.
 

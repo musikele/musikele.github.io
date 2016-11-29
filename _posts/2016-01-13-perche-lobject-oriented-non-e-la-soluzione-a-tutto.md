@@ -117,4 +117,4 @@ var result = flock_a.conjoin(flock_c)
     .breed(flock_b).conjoin(flock_a.breed(flock_b)).seagulls;
 //=&gt; 32</pre>
 
-&nbsp;
+ 

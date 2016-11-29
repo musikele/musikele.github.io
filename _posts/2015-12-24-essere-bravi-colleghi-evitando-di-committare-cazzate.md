@@ -11,7 +11,7 @@ dsq_thread_id:
 categories:
   - Italiano
 ---
-&nbsp;
+ 
 
 Ogni volta che qualcuno committa qualcosa di rotto, gli altri dev del team perdono tempo per capire cosa è successo e come risolvere. **Se io fossi il boss mi assicurerei che i miei sviluppatori seguano i passi che descrivo nell'articolo, altrimenti gli pagherei lo stipendio per perdere tempo riparando danni altrui. **
 
@@ -35,4 +35,4 @@ Questi tre semplici passi non ci mettono al riparo da problemi di runtime, ossia
 
 Sventolate questo post in faccia ai vostri colleghi scapestrati e buffoniatevi un po'.
 
-&nbsp;
+ 

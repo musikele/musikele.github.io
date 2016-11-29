@@ -15,9 +15,9 @@ tags:
   - pezzotto
   - sviluppo
 ---
-Negli ultimi due giorni ho lavorato a un&nbsp; refactoring della webapp che stiamo sviluppando e, mentre sistemavamo tutti i problemi che incontravamo lungo la strada, abbiamo trovato tante scelte &#8220;provvisorie&#8221; fatte dagli sviluppatori di sei mesi fa (alcune anche di un anno fa). Ci faceva sorridere il fatto che alcuni div fossero addirittura etichettati come &#8220;provvisorio&#8221; e invece sono resistiti tutto questo tempo. 
+Negli ultimi due giorni ho lavorato a un  refactoring della webapp che stiamo sviluppando e, mentre sistemavamo tutti i problemi che incontravamo lungo la strada, abbiamo trovato tante scelte &#8220;provvisorie&#8221; fatte dagli sviluppatori di sei mesi fa (alcune anche di un anno fa). Ci faceva sorridere il fatto che alcuni div fossero addirittura etichettati come &#8220;provvisorio&#8221; e invece sono resistiti tutto questo tempo. 
 
-Voi lo sapete che meno refactoring si fa sul codice meglio é, tuttavia ogni tanto un refactoring é indispensabile altrimenti&nbsp; i poveri sviluppatori impazziscono 🙂&nbsp; 
+Voi lo sapete che meno refactoring si fa sul codice meglio é, tuttavia ogni tanto un refactoring é indispensabile altrimenti  i poveri sviluppatori impazziscono 🙂  
 
 Questo problema delle scelte provvisorie che poi diventano definitive travalica i confini dell'informatica: mi vengono in mente i [Trulli di Alberobello](https://it.m.wikipedia.org/wiki/Trullo), costruiti senza malta (quindi con la sola pietra) affinché potessero essere facilmente smontabili in caso di ispezione da parte del Regno delle Due Sicilie. Ai tempi si pagava una tassa per ogni nuovo insediamento!
 

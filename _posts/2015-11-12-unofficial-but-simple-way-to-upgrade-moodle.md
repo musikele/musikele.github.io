@@ -46,4 +46,4 @@ Et voilà! Moodle is updated. 9 steps is still a lot tough. There are many steps
 
 You get the point. Happy upgrading.
 
-&nbsp;
+ 

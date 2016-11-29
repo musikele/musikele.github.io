@@ -87,7 +87,7 @@ Let's open the <span class="lang:default decode:true  crayon-inline ">/config/ro
    resources :comments
 end</pre>
 
-&nbsp;
+ 
 
 Launch again <span class="lang:default decode:true  crayon-inline">rake routes</span> in the console and now you'll see new routes, exactly as we wanted.
 
@@ -95,4 +95,4 @@ If we start the Webserver (Rails server) we can try these new urls, however they
 
 In the next lesson we will talk about validation. This is a good moment to save our work!
 
-&nbsp;
+ 

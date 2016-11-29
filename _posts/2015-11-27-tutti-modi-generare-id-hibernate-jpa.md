@@ -55,7 +55,7 @@ public class Employee {
     ...
 }</pre>
     
-    &nbsp;</li> </ul> 
+     </li> </ul> 
     
     ## HIBERNATE
     
@@ -73,4 +73,4 @@ private String id;</pre>
   
 ](http://learningviacode.blogspot.it/2011/11/creating-custom-id-generator.html?showComment=1436277811662#c1961377562249766537) Su stack overflow c'è una versione che utilizza le annotations: <http://stackoverflow.com/questions/11631800/hibernate-how-specify-custom-sequence-generator-class-name-using-annotations>
     
-    &nbsp;
+     

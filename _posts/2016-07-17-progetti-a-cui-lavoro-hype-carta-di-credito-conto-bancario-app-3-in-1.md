@@ -70,10 +70,10 @@ Spero di avervi convinto. **La carta è perfetta per quei giovani che hanno biso
 
 Attivare la carta è questione di minuti e, considerato che è gratuita, conviene farlo!
 
-&nbsp;
+ 
 
-&nbsp;
+ 
 
-&nbsp;
+ 
 
-&nbsp;
+ 

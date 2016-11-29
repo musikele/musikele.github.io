@@ -33,4 +33,4 @@ Successivamente bisogna impostare PHPUnit, che [secondo questa guida](https://ww
 
 [<img class=" wp-image-328 size-medium aligncenter" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/06/Schermata-2015-06-22-alle-23.29.02-300x191.png?fit=300%2C191" alt="Schermata 2015-06-22 alle 23.29.02" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/06/Schermata-2015-06-22-alle-23.29.02.png?resize=300%2C191 300w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/06/Schermata-2015-06-22-alle-23.29.02.png?resize=1024%2C653 1024w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/06/Schermata-2015-06-22-alle-23.29.02.png?w=1078 1078w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/06/Schermata-2015-06-22-alle-23.29.02.png)Se provate a lanciare questo task, vedrete i test eseguiti all'interno delll'IDE !
 
-&nbsp;
+ 

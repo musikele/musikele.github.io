@@ -28,7 +28,7 @@ Suddenly we have a brainwave: **on that page we have an animated progress bar fo
 
 [<img class="alignnone wp-image-142" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png?resize=700%2C289" alt="progress bar bootstrap" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png?w=864 864w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png?resize=300%2C124 300w" sizes="(max-width: 700px) 100vw, 700px" data-recalc-dims="1" />](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png)
 
-&nbsp;
+ 
 
 Our error has been to leave the class <span class="lang:default decode:true  crayon-inline ">active</span> on our progress bars, and if you go on the [official bootstrap page](http://getbootstrap.com/components/#progress-animated) about it, there is no evidence of this behavior. (click on the &#8220;toggle animation&#8221; button to see it in action).
 
