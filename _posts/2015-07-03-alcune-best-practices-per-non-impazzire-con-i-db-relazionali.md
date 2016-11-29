@@ -26,7 +26,7 @@ tags:
       <strong>chiamare tutte le tabelle al singolare</strong> (es. PRODOTTO e non PRODOTTI)
     </li>
     <li>
-      <strong>tutte le tabelle devono avere un solo ID</strong> (<span style="text-decoration: underline;">niente chiavi composite!</span>) &#8211; di tipo String o Long. <ul>
+      <strong>tutte le tabelle devono avere un solo ID</strong> (<span style="text-decoration: underline;">niente chiavi composite!</span>) - di tipo String o Long. <ul>
         <li>
           <span class="lang:default decode:true  crayon-inline ">String</span>  quando nel db ci saranno parecchi inserimenti e potremmo usare una funzione per generare stringhe casuali (UUID) da usare come ID.
         </li>
@@ -37,10 +37,10 @@ tags:
     </li>
     
     <li>
-      quando ci sono relazioni con altre tabelle, <strong>la colonna che gestisce la relazione si chiamerà &#8220;NOMEALTRATABELLA_ID</strong>&#8220;
+      quando ci sono relazioni con altre tabelle, <strong>la colonna che gestisce la relazione si chiamerà "NOMEALTRATABELLA_ID</strong>"
     </li>
     <li>
-      Quando ci sono tabelle che mappano <strong>relazioni molti-a-molti</strong>, chiamare la tabella semplicemente ENTITY1_ENTITY2 , magari provando a inserire come nome della prima entità quella che &#8220;gestisce&#8221; la relazione. Però non è davvero importante l'ordine in cui compaiono, l'importante è che si segua una convenzione.
+      Quando ci sono tabelle che mappano <strong>relazioni molti-a-molti</strong>, chiamare la tabella semplicemente ENTITY1_ENTITY2 , magari provando a inserire come nome della prima entità quella che "gestisce" la relazione. Però non è davvero importante l'ordine in cui compaiono, l'importante è che si segua una convenzione.
     </li>
     <li>
       <strong>evitare di chiamare colonne con il prefisso NOT_ e similari</strong>, visto che il nostro cervello fa uno sforzo algebrico per capirne il significato (es. NOT_PRESENT a false, vuol dire che è presente... Ma perchè non chiamare la colonna PRESENT e settare il valore a true?!)

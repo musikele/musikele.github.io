@@ -17,11 +17,11 @@ tags:
 ---
 Ieri ho letto questo bellissimo articolo, &#8220;[consigli per l'ambizioso diciannovenne](http://blog.samaltman.com/advice-for-ambitious-19-year-olds)&#8221; (in inglese). In questo articolo si esaminano le tre strade che un 19enne può scegliere:
   
-&#8211; andare all'università
+- andare all'università
   
-&#8211; iniziare una sua startup
+- iniziare una sua startup
   
-&#8211; andare a lavorare per un'azienda. 
+- andare a lavorare per un'azienda. 
 
 Bene, ogni strada ha i suoi pro e i suoi contro, ma siccome siamo sul mio blog vorrei parlarvi della scelta che a suo tempo feci io: andare all'università. 
 

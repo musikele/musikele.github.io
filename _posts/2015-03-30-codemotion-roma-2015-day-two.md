@@ -1,6 +1,6 @@
 ---
 id: 238
-title: 'Codemotion Roma 2015 &#8211; day two'
+title: 'Codemotion Roma 2015 - day two'
 date: 2015-03-30T08:14:53+00:00
 author: musikele
 layout: post
@@ -40,7 +40,7 @@ Red Hat distribuiva Fedora a tutti, o meglio a chi aveva la prontezza di rifless
 
 
 
-A seguire sono andato a sentire un talk su &#8220;AbsurdJS&#8221;, un framework che permette di scrivere HTML e CSS in Javascript:
+A seguire sono andato a sentire un talk su "AbsurdJS", un framework che permette di scrivere HTML e CSS in Javascript:
 
 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
   <div style="padding:8px;">
@@ -187,7 +187,7 @@ Una foto con Enrico del team di Mangatar sfuggito alla foto del giorno prima:
 
 
 
-Siamo in dirittura di arrivo. Raffaele di Mangatar aspetta di ricevere il premio &#8220;best gaming startup&#8221; del Codemotion, e noi pensiamo che sia uno scherzo...
+Siamo in dirittura di arrivo. Raffaele di Mangatar aspetta di ricevere il premio "best gaming startup" del Codemotion, e noi pensiamo che sia uno scherzo...
 
 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
   <div style="padding:8px;">

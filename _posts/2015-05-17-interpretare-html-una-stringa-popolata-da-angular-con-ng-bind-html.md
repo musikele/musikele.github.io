@@ -25,11 +25,11 @@ e nell'HTML, a un certo punto, vogliamo mostrare questo messaggio in un div:
 
 <pre class="lang:default decode:true ">&lt;div ng-controller="..."&gt;{{errorMessage}}&lt;/div&gt;</pre>
 
-il <br> sarà interpretato come &#8220;a capo&#8221;? o vedremo scritto proprio <span class="lang:default decode:true  crayon-inline "><br></span> ?
+il <br> sarà interpretato come "a capo"? o vedremo scritto proprio <span class="lang:default decode:true  crayon-inline "><br></span> ?
 
 ....Vedremo scritto proprio <span class="lang:default decode:true  crayon-inline "><br></span> . Motivo per cui ci sono io a spiegarvi perchè e come aggirare il problema 🙂
 
-Pochi sanno che quando scriviamo <span class="lang:default decode:true  crayon-inline "><p>{{variabile}}</p></span>  in realtà per Angular stiamo scrivendo <span class="lang:default decode:true  crayon-inline"><p ng-bind=&#8221;variabile&#8221;></p></span>; insomma il famosissimo _two way binding_ di Angular è una direttiva bella e buona! I creatori di Angular hanno pensato che è decisamente più chiaro scrivere con le parentesi graffe, in modo che anche un non-programmatore possa capire il contenuto dell'html. Angular stesso poi tradurrà le <span class="lang:default decode:true  crayon-inline ">{% raw %}{{...}} {% endraw %} </span>  in <span class="lang:default decode:true  crayon-inline ">ng-bind=&#8221;...&#8221;</span>  , e infine la variabile in testo.
+Pochi sanno che quando scriviamo <span class="lang:default decode:true  crayon-inline "><p>{{variabile}}</p></span>  in realtà per Angular stiamo scrivendo <span class="lang:default decode:true  crayon-inline"><p ng-bind="variabile"></p></span>; insomma il famosissimo _two way binding_ di Angular è una direttiva bella e buona! I creatori di Angular hanno pensato che è decisamente più chiaro scrivere con le parentesi graffe, in modo che anche un non-programmatore possa capire il contenuto dell'html. Angular stesso poi tradurrà le <span class="lang:default decode:true  crayon-inline ">{% raw %}{{...}} {% endraw %} </span>  in <span class="lang:default decode:true  crayon-inline ">ng-bind="..."</span>  , e infine la variabile in testo.
 
 ### Un buon motivo per usare ng-bind
 

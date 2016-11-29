@@ -16,11 +16,11 @@ tags:
   - parametri
   - sintassi
 ---
-Oggi vi parlo di qualcosa che sin dall'inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli &#8220;_arguments_&#8221; mi si è aperto un mondo!
+Oggi vi parlo di qualcosa che sin dall'inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli "_arguments_" mi si è aperto un mondo!
 
 Anni fa infatti mi chiedevo com'è possibile che in JS si possa passare un numero arbitrario di parametri alle funzioni, per di più senza specificare il tipo degli argomenti. All'epoca (circa 10 anni fa) Java era il mio linguaggio preferito, e avrei voltuo che tutto somigliasse a Java. Per fortuna così non è!
 
-A una funzione JS non importa quanti parametri vengono passati, nè si interessa del tipo. Ad esempio, potreste definire una funzione con due parametri ma poi potreste passarne tre, o uno, zero, mille &#8211; davvero, non è _sintatticamente_ importante.
+A una funzione JS non importa quanti parametri vengono passati, nè si interessa del tipo. Ad esempio, potreste definire una funzione con due parametri ma poi potreste passarne tre, o uno, zero, mille - davvero, non è _sintatticamente_ importante.
 
 Questo accade perchè **gli argomenti di una funzione JS vengono rappresentati internamente come un array**. L'array si chiama <span class="lang:js decode:true  crayon-inline ">arguments</span>  lo si può utilizzare all'interno di una funzione per ricavare il valore degli elementi passati.
 
@@ -40,7 +40,7 @@ oppure usando <span class="lang:default decode:true  crayon-inline ">arguments</
 
 Come si può vedere, la funzione sayHi è stata definita senza nessun argomento in input, eppure si comporterà allo stesso modo. Questo mostra anche una delle caratteristiche di Javascript: **i parametri col nome sono una convenienza, non una necessità**.
 
-Ne approfitto anche per dire che, se usate lo _&#8220;strict mode&#8221;_ di JS, non potrete assegnare valori a <span class="lang:default decode:true  crayon-inline ">arguments</span> . Ossia <span class="lang:default decode:true  crayon-inline ">arguments[0] = &#8220;ciao&#8221;</span>  restituirà un errore!
+Ne approfitto anche per dire che, se usate lo _"strict mode"_ di JS, non potrete assegnare valori a <span class="lang:default decode:true  crayon-inline ">arguments</span> . Ossia <span class="lang:default decode:true  crayon-inline ">arguments[0] = "ciao"</span>  restituirà un errore!
 
 Gli argomenti col nome possono anche essere utilizzati con arguments, javascript non si lamenterà.
 

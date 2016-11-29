@@ -1,6 +1,6 @@
 ---
 id: 140
-title: 'Pay attention to the &#8220;.active&#8221; progress bar class in Bootstrap'
+title: 'Pay attention to the ".active" progress bar class in Bootstrap'
 date: 2015-02-11T13:15:36+00:00
 author: musikele
 layout: post
@@ -20,7 +20,7 @@ tags:
 
 Astonished, we started to find out all the possible causes to this.
 
-Is this the famous &#8220;_Angular Performance Problem_&#8221; that we have all read on the web (but never found in practice)? Well, the profiler said that nothing was happening on the page.
+Is this the famous "_Angular Performance Problem_" that we have all read on the web (but never found in practice)? Well, the profiler said that nothing was happening on the page.
 
 Maybe we are loading too much data from the search? 87 kb is not that much, we have loaded far more data without problems.
 
@@ -30,8 +30,8 @@ Suddenly we have a brainwave: **on that page we have an animated progress bar fo
 
  
 
-Our error has been to leave the class <span class="lang:default decode:true  crayon-inline ">active</span> on our progress bars, and if you go on the [official bootstrap page](http://getbootstrap.com/components/#progress-animated) about it, there is no evidence of this behavior. (click on the &#8220;toggle animation&#8221; button to see it in action).
+Our error has been to leave the class <span class="lang:default decode:true  crayon-inline ">active</span> on our progress bars, and if you go on the [official bootstrap page](http://getbootstrap.com/components/#progress-animated) about it, there is no evidence of this behavior. (click on the "toggle animation" button to see it in action).
 
 Well, apart from the fact that we had this 25 progress bars moving on the page, we really didn't have any clue of what was going on. Our browser is doing a lot of work to animate things smoothly, and as I said _bootstrap documentation does never mention this high CPU usage_. But did we really need it? of course not, so we took away the <span class="lang:default decode:true  crayon-inline ">active </span> class and leaved a striped, but static progress bar.
 
-**Beware of all transitions that you have on your page, they consume more CPU than you might think;** and if a computer is slightly outdated (who said &#8220;cheap phones&#8221;?) your customers might experience bad performance.
+**Beware of all transitions that you have on your page, they consume more CPU than you might think;** and if a computer is slightly outdated (who said "cheap phones"?) your customers might experience bad performance.

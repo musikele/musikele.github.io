@@ -1,6 +1,6 @@
 ---
 id: 242
-title: 'The Blog App in Ruby on Rails &#8211; iteration 2'
+title: 'The Blog App in Ruby on Rails - iteration 2'
 date: 2015-04-13T20:30:12+00:00
 author: musikele
 layout: post

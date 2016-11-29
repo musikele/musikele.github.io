@@ -26,7 +26,7 @@ Mi è capitato che vado a sincronizzarmi col mio **VCS** preferito (VCS = **Vers
 La colpa è quasi sempre di chi ha committato senza seguire <del>elevatissimi</del> standard di sicurezza (una persona meno calma di me potrebbe infatti picchiare i committer). Infatti io raccomando ai miei colleghi la seguente checklist, che a quanto pare nessuno rispetta:
 
   1. scaricare tutti gli update possibili da SVN
-  2. fare maven install &#8211; compilare dunque il codice nuovo con le modifiche appena apportate
+  2. fare maven install - compilare dunque il codice nuovo con le modifiche appena apportate
   3. se almeno la compilazione va, commit.
 
 Che ci vuole?

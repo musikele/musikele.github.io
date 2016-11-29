@@ -24,7 +24,7 @@ Breve riassunto della mia vita programmativa: all'università ho studiato C (mal
 
 Nel 2005 Javascript non era uno standard, ogni browser lo interpretava a modo suo e veniva usato principalmente per assicurarsi che l'input dei form fosse corretto. Qualcuno provava a sviluppare animazioni e poco più, ma si scontrava contro il mondo frammentato dei browser. Il 2005 era ancora l'anno di Internet Explorer 5.5, Netscape Navigator, Mozilla aveva appena lanciato Firefox, Chrome non esisteva: la browser war aveva superato il punto più critico ma restavano ancora nodi aperti. Per fortuna JQuery ci mise una pezza, e il W3C decise di standardizzare tutto lo stack del frontend per evitare che ogni browser implementasse le cose a modo suo.
 
-10 anni dopo Javascript non è più il linguaggio dei Browser. Javascript è ovunque. Addirittura esistono DB che prendono in input codice JS e lo eseguono sui dati! Tranquilli, non vi parlerò di questo mondo incasinato (cit. il mio amico TilT &#8220;se qualcosa si può fare con Javascript, eventualmente verrà fatto in javascript&#8221;), non ancora almeno. Questo articolo vorrebbe semplicemente parlarvi di cosa c'è di diverso tra un linguaggio ad oggetti, come Java, e un linguaggio funzionale, come Javascript. E poi parliamo di Node.
+10 anni dopo Javascript non è più il linguaggio dei Browser. Javascript è ovunque. Addirittura esistono DB che prendono in input codice JS e lo eseguono sui dati! Tranquilli, non vi parlerò di questo mondo incasinato (cit. il mio amico TilT "se qualcosa si può fare con Javascript, eventualmente verrà fatto in javascript"), non ancora almeno. Questo articolo vorrebbe semplicemente parlarvi di cosa c'è di diverso tra un linguaggio ad oggetti, come Java, e un linguaggio funzionale, come Javascript. E poi parliamo di Node.
 
 ### 1. Tutto è una funzione
 
@@ -56,7 +56,7 @@ salutaConNome(salutaColCiao , "Michele");
 
 ### 2. Callback
 
-Una Callback è una funzione che viene &#8220;chiamata dopo&#8221;. Ad esempio, fate una query al DB, quando questa finisce processate i dati. In un linguaggio come Java scrivereste qualcosa così:
+Una Callback è una funzione che viene "chiamata dopo". Ad esempio, fate una query al DB, quando questa finisce processate i dati. In un linguaggio come Java scrivereste qualcosa così:
 
 <pre class="lang:java decode:true">//codice JAVA
 ...
@@ -117,7 +117,7 @@ Questa è difficile da spiegare, perchè non è davvero così. Il thread che an
 
 E la scalabilità? L'approccio asincrono permette di gestire migliaia di richieste contemporanee con un singolo thread (Provate a farlo fare ad Apache!).
 
-E l'octacore che ho comprato a Natale? Programmando con un paradigma &#8220;funzionale&#8221; si impara anche a programmare in maniera stateless, dunque si possono lanciare più istanze di Node e mettere un load-balancer che inoltra le richieste ai vari processi.
+E l'octacore che ho comprato a Natale? Programmando con un paradigma "funzionale" si impara anche a programmare in maniera stateless, dunque si possono lanciare più istanze di Node e mettere un load-balancer che inoltra le richieste ai vari processi.
 
 Per ricapitolare: _tutto ciò che fa parte di una libreria base viene eseguito in parallelo, **tranne il tuo codice**_.
 
@@ -154,6 +154,6 @@ Ciò significa che se istanzio 100 human avrò 100 funzioni istanziate? SI. Ed �
 
 Javascript gode della fama storica di essere un linguaggio per giochetti. Mentre la gente era impegnata a snobbarlo, alcuni programmatori hanno tirato fuori le webapp più incredibili mai pensate. NodeJS è ciò che restituisce la dignità a JS come un linguaggio vero e proprio: finalmente si possono creare file, aprire socket, etc. etc. etc.
 
-Io stesso sono ancora in fase di studio, e non ho realizzato ancora nulla che sia degno di nota con questo linguaggio. Come prova del 9, per vedere se ho capito i concetti che io stesso ho spiegato, vorrei realizzare una piccola webapp che fa &#8220;qualcosa&#8221; (idee? suggerimenti?)
+Io stesso sono ancora in fase di studio, e non ho realizzato ancora nulla che sia degno di nota con questo linguaggio. Come prova del 9, per vedere se ho capito i concetti che io stesso ho spiegato, vorrei realizzare una piccola webapp che fa "qualcosa" (idee? suggerimenti?)
 
-Vale la pena studiarlo? SI. Solo il cambio di paradigma (da oggetti a funzionale) ne vale la pena. Sarà un'ottima palestra per tutti quei linguaggi che si dichiarano &#8220;funzionali&#8221; e che fanno della scalabilità il loro punto di forza.
+Vale la pena studiarlo? SI. Solo il cambio di paradigma (da oggetti a funzionale) ne vale la pena. Sarà un'ottima palestra per tutti quei linguaggi che si dichiarano "funzionali" e che fanno della scalabilità il loro punto di forza.

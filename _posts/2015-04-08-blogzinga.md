@@ -16,6 +16,6 @@ tags:
 ---
 [Sono su BlogZinga](http://www.blogzinga.it/#!/home)!
 
-Se avete un blog sull'IT, e siete italiani, fate application! BlogZinga è &#8220;una raccolta di blog sulla programmazione scritti da sviluppatori italiani.&#8221; Il modo per farsi aggiungere è il più nerd possibile: con una git pull request 🙂
+Se avete un blog sull'IT, e siete italiani, fate application! BlogZinga è "una raccolta di blog sulla programmazione scritti da sviluppatori italiani." Il modo per farsi aggiungere è il più nerd possibile: con una git pull request 🙂
 
 E' il momento delle feature request: cari amici di BlogZinga, perchè non scorrersi anche i feed e riproporre degli excerpt degli articoli ...

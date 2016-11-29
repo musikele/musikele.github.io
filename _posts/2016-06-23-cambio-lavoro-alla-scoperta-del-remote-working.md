@@ -31,17 +31,17 @@ La vecchia azienda non era proprio in un luogo felice. Dentro si, ma fuori no. 
 
 Metteteci poi che quelle poche volte che andavo in auto mi hanno rubato lo stereo (danno di circa 180€) e i copricerchi (danno di 80€)...
 
-_&#8220;Solo un'ora? Firmerei per poter lavorare a un'ora d'autobus!&#8221;_ &#8211; a me non stava più bene, non vuol dire che valga lo stesso per voi. Ho conosciuto gente che veniva a lavorare da ben più lontano e andava bene così ...
+_&#8220;Solo un'ora? Firmerei per poter lavorare a un'ora d'autobus!&#8221;_ - a me non stava più bene, non vuol dire che valga lo stesso per voi. Ho conosciuto gente che veniva a lavorare da ben più lontano e andava bene così ...
 
 ### Stimoli
 
-Gli ultimi due anni li ho passati a conoscere profondamente il mercato dei software sanitari italiani, e ho visto da vicino le difficoltà di chi sviluppa e di chi usa questo tipo di SW che sono estremamente specialistici &#8211; si interfacciano con macchinari, stampano etichette, etc.. Non è esattamente roba per startup che vogliono _disruptare _il mercato, visto che servirebbe una conoscenza specialistica notevole.
+Gli ultimi due anni li ho passati a conoscere profondamente il mercato dei software sanitari italiani, e ho visto da vicino le difficoltà di chi sviluppa e di chi usa questo tipo di SW che sono estremamente specialistici - si interfacciano con macchinari, stampano etichette, etc.. Non è esattamente roba per startup che vogliono _disruptare _il mercato, visto che servirebbe una conoscenza specialistica notevole.
 
 Tuttavia c'è una costante che mi ha accompagnato nei primi quattro anni della mia carriera: sono sempre stato un &#8220;operaio&#8221; più che un progettista. In genere c'era sempre qualcuno che mi diceva cosa fare, e i margini di miglioramento / ottimizzazione di una funzionalità erano piuttosto limitati. Roba come interazione, design, ottimizzazione del backend, misurazione degli eventi dell'utente, sono tutte tematiche di cui ci si interessava poco. Perciò uno dei requisiti che avrebbe dovuto avere il mio prossimo lavoro è di darmi un grande margine di intervento su ciò che avrei fatto.
 
 ### Uscire dal mondo &#8220;ONLY JAVA&#8221;
 
-Da mesi sto approfondendo Javascript e tutte le tecnologie correlate &#8211; react, angular, nodeJS... . Ho addirittura fondato un [meetup che sta avendo un discreto successo](http://michelenasti.com/2016/02/javascript-meetup-a-salerno/) (pur rimanendo nei limiti Salernitani).
+Da mesi sto approfondendo Javascript e tutte le tecnologie correlate - react, angular, nodeJS... . Ho addirittura fondato un [meetup che sta avendo un discreto successo](http://michelenasti.com/2016/02/javascript-meetup-a-salerno/) (pur rimanendo nei limiti Salernitani).
 
 Ben conscio che nessun linguaggio è quello definitivo, ho notato che a Napoli una volta entrati in una fetta di mercato (inizi come sviluppatore Java? sarai sviluppatore Java a vita) è difficile uscirne. Inoltre Java è uno dei linguaggi più diffusi al mondo, quindi perchè provare a cambiare?
 

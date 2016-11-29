@@ -19,7 +19,7 @@ tags:
 
 iMovie is smart and it is very easy to prepare a video without being an expert of video editing. Of course it was what I was searching for, and in about 2 hours I managed to make the video.
 
-The problem arose when I tried to create a **mpg file** of the video. There's a button **&#8220;share&#8221; &#8211;> &#8220;file&#8221;** with some settings about the video, and I simply left all with default values.
+The problem arose when I tried to create a **mpg file** of the video. There's a button **"share" -> "file"** with some settings about the video, and I simply left all with default values.
 
 My first 5-6 attempts where blocked by a very strange **-50 error**.  There was **no description of what was going on**, so I tried to be friend with Google. Unfortunately they all described error -49 and I was a bit disappointed, however it seems that nobody really knows where's the problem and here are the suggestions that worked for me:
 
@@ -29,7 +29,7 @@ My first 5-6 attempts where blocked by a very strange **-50 error**.  There was
 
 At first, none of these suggestions solved the problem.
 
-Another strange thing was that **the video was stopping always at the same point** &#8211; I could see the output video, and instead of 4 minutes it was about 3:15 minutes. I reviewed the video and I found something corrupted, like a flickering in the video; it worked fine during preview but the Renderer Job failed for this. I deleted this video and tried again. (In reality, I only dropped the corrupted frames, removing the bad part from the clip).
+Another strange thing was that **the video was stopping always at the same point** - I could see the output video, and instead of 4 minutes it was about 3:15 minutes. I reviewed the video and I found something corrupted, like a flickering in the video; it worked fine during preview but the Renderer Job failed for this. I deleted this video and tried again. (In reality, I only dropped the corrupted frames, removing the bad part from the clip).
 
 **The video still gave -50 errors , but to my surprise, the rendering process was continuing.** At the end the video was completed and it played well in Vlc and QuickTime. So My suggestions are to
 

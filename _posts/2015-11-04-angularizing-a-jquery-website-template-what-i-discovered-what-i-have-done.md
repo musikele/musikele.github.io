@@ -30,7 +30,7 @@ This way jQuery could understand to re-execute the code inside the &#8216;ajaxCo
 
 ### Is this the right way to do this?
 
-Well, no. Usually if you start with angular, you should stick with Angular. If you start with jQuery, stick with it. But in this case I had to develop a website starting from a well-done _jQuery_ed template. And I wanted to use some cool features that I can easily implement in Angular &#8211; translation, routing of pages, import of html fragments. So, _in this particular case_ I feel proud of my solution: little study of the situation gave me the best effect with little code.
+Well, no. Usually if you start with angular, you should stick with Angular. If you start with jQuery, stick with it. But in this case I had to develop a website starting from a well-done _jQuery_ed template. And I wanted to use some cool features that I can easily implement in Angular - translation, routing of pages, import of html fragments. So, _in this particular case_ I feel proud of my solution: little study of the situation gave me the best effect with little code.
 
 ### What options were you exploring?
 

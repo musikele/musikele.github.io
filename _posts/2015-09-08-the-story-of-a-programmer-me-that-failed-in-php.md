@@ -16,13 +16,13 @@ tags:
   - startup
   - time management
 ---
-Some time ago a friend of mine called and said: &#8220;_Hey! I just coded the app I was thinking about three years ago_, **would you want to join me**?&#8221;
+Some time ago a friend of mine called and said: "_Hey! I just coded the app I was thinking about three years ago_, **would you want to join me**?"
 
 The incredible thing about this is that **my friend is a law student**. He had **no idea about programming**, so he learned everything by himself.
 
-**Three years before, he asked me to code his dream** &#8211; an e-commerce idea to help websites to get more clients & revenue. I had just graduated, and **I had the feeling that I could not program the amazing things that I saw around me.** Everybody was doing great things, and **all I knew about Computer Science was a bunch of (very important) theorems** about what you can and what you can't do with a computer.
+**Three years before, he asked me to code his dream** - an e-commerce idea to help websites to get more clients & revenue. I had just graduated, and **I had the feeling that I could not program the amazing things that I saw around me.** Everybody was doing great things, and **all I knew about Computer Science was a bunch of (very important) theorems** about what you can and what you can't do with a computer.
 
-So, **I had to refuse the offer** &#8211; starting a startup and having the feeling of not knowing how to work was my biggest fear..
+So, **I had to refuse the offer** - starting a startup and having the feeling of not knowing how to work was my biggest fear..
 
 Then I got a regular job as a computer programmer, starting to code in _Java_ and its related technologies (Hibernate, Maven, GWT, than AngularJS).
 

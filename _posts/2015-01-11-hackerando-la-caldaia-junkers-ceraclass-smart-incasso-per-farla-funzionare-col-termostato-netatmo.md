@@ -44,7 +44,7 @@ La caldaia in questione, in effetti, non è una caldaia come tutte le altre, vis
 
 Il TF-25 è un vero e proprio minicomputer per questa caldaia, infatti permette di impostare la temperatura di mandata, la temperatura dell'acqua sanitaria, la pressione, e molto altro: praticamente tutta la gestione si fa da qui. Si può anche accendere, spegnere o programmare la caldaia in maniera temporizzata, ma non ha la comodità dello smartphone (quindi il netAtmo aveva ancora un senso).
 
-Già l'installatore (colui che installa centinaia di caldaie di questo tipo ogni anno) mi aveva detto che &#8220;_questa caldaia è molto avanzata, dubito che uno possa usare un termostato diverso da quello che esce con la caldaia&#8221;._ Dubito? Lo sai o non lo sai?
+Già l'installatore (colui che installa centinaia di caldaie di questo tipo ogni anno) mi aveva detto che "_questa caldaia è molto avanzata, dubito che uno possa usare un termostato diverso da quello che esce con la caldaia"._ Dubito? Lo sai o non lo sai?
 
 A questo punto ho scritto a NetAtmo, chiedendo lumi sulla mia caldaia e su come collegare il termostato. Loro mi hanno risposto che si, si poteva collegare, ma la spiegazione che mi hanno dato non riesco ad applicarla (che manuale avranno visto?).
 
@@ -56,7 +56,7 @@ La prima cosa che abbiamo provato a fare è stata scollegare il TF25 e collegare
 
 il netatmo funziona come tutti i termostati normali: quando la temperatura di casa è minore della temperatura impostata, il circuito si chiude. Per verificarlo abbiamo usato un tester.
 
-Se il netAtmo funziona come tutti i termostati del mondo, mentre il TF25 no, dove lo collego? Stavo per rivenderlo, quando un amico su Facebook (che io definisco &#8220;hacker delle caldaie&#8221;) mi spiega passo passo cosa dovrei fare, manuale alla mano. E quindi ...
+Se il netAtmo funziona come tutti i termostati del mondo, mentre il TF25 no, dove lo collego? Stavo per rivenderlo, quando un amico su Facebook (che io definisco "hacker delle caldaie") mi spiega passo passo cosa dovrei fare, manuale alla mano. E quindi ...
 
 # Dove collegare i termostati classici?
 
@@ -64,4 +64,4 @@ Il relay del netAtmo è composto da quattro fili, due per chiudere il circuito d
 
 .... no! Non per me che non avevo mai messo mano a queste cose.
 
-Tutte queste informazioni sono scritte sul manuale della caldaia, ma sfortunatamente non tutti gli elettricisti hanno voglia di leggerselo. Figuratevi io che manco ci capisco niente.Tutti pigri tranne il mio &#8220;hacker&#8221; della caldaia, uno che la domotica è il suo pane quotidiano, quindi se avete bisogno di assistenza, vi metto in contatto con lui 😉
+Tutte queste informazioni sono scritte sul manuale della caldaia, ma sfortunatamente non tutti gli elettricisti hanno voglia di leggerselo. Figuratevi io che manco ci capisco niente.Tutti pigri tranne il mio "hacker" della caldaia, uno che la domotica è il suo pane quotidiano, quindi se avete bisogno di assistenza, vi metto in contatto con lui 😉

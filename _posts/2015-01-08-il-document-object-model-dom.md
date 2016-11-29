@@ -19,7 +19,7 @@ tags:
   - javascript
   - netscape
 ---
-Come abbiamo detto (nell'articolo &#8220;[un breve riassunto della storia di Javascript](http://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/)&#8220;), Javascript è composto da tre parti:
+Come abbiamo detto (nell'articolo "[un breve riassunto della storia di Javascript](http://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/)"), Javascript è composto da tre parti:
 
 <div class="entry-content">
   <ul>

@@ -55,7 +55,7 @@ And finally, **in development mode** (launching it with &#8220;gradle -t run&#8
 
 ## How to learn?
 
-Don't read the official documentation &#8211; it's just a waste of time. Instead, **buy a copy of [Learning Ratpack](http://shop.oreilly.com/product/0636920037545.do)** &#8211; this book is clear and covers every aspect of a Ratpack application. I'm still at chapter five but it's very easy to go through!
+Don't read the official documentation - it's just a waste of time. Instead, **buy a copy of [Learning Ratpack](http://shop.oreilly.com/product/0636920037545.do)** - this book is clear and covers every aspect of a Ratpack application. I'm still at chapter five but it's very easy to go through!
 
 ## 
 

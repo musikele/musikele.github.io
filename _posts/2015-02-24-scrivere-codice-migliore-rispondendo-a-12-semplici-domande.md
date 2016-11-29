@@ -16,7 +16,7 @@ tags:
   - qualità
   - questionario
 ---
-[<img class=" size-medium wp-image-164 alignleft" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230-300x119.png?fit=300%2C119" alt="code-hero-580x230" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png?resize=300%2C119 300w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png?resize=580%2C230 580w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png)Qualcuno (per la precisione, uno dei creatori del celeberrimo Stack Overflow) nel 2000 ha ideato un [questionario di 12 domande](http://www.joelonsoftware.com/articles/fog0000000043.html) per sapere se la vostra azienda (o il vostro progetto) sta seguendo le &#8220;buone pratiche di qualità del software&#8221;, che tradotto in programmatorese, significa **codice migliore**. Questa roba non è fuffa, visto che esistono anche standard internazionali che codificano più o meno le stesse cose, solo che sono libri di 1500 pagine che non sono stati letti nemmeno da chi li ha scritti.
+[<img class=" size-medium wp-image-164 alignleft" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230-300x119.png?fit=300%2C119" alt="code-hero-580x230" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png?resize=300%2C119 300w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png?resize=580%2C230 580w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png)Qualcuno (per la precisione, uno dei creatori del celeberrimo Stack Overflow) nel 2000 ha ideato un [questionario di 12 domande](http://www.joelonsoftware.com/articles/fog0000000043.html) per sapere se la vostra azienda (o il vostro progetto) sta seguendo le "buone pratiche di qualità del software", che tradotto in programmatorese, significa **codice migliore**. Questa roba non è fuffa, visto che esistono anche standard internazionali che codificano più o meno le stesse cose, solo che sono libri di 1500 pagine che non sono stati letti nemmeno da chi li ha scritti.
 
 Ecco il famigerato questionario:
 
@@ -59,7 +59,7 @@ Risolvere i bug subito permette quindi di avere le persone giuste al momento giu
 
 Se lavorate con una metodologia Agile, come SCRUM, questo problema viene fuori subito: cosa dobbiamo fare per completare la storia assegnata?
 
-Se invece si lavora senza una metodologia Agile, e mi è capitato, non si sa mai a che livello di specificità ci si deve fermare. Domande tipo &#8220;come implemento la recovery della password?&#8221; possono generare discussioni infinite o risposte stizzite. Attenti!
+Se invece si lavora senza una metodologia Agile, e mi è capitato, non si sa mai a che livello di specificità ci si deve fermare. Domande tipo "come implemento la recovery della password?" possono generare discussioni infinite o risposte stizzite. Attenti!
 
 ### Condizioni lavorative tranquille / tools migliori disponibili
 
@@ -83,7 +83,7 @@ Io ho fatto più di una decina di colloqui di lavoro. Quasi mai ho scritto codic
 
 ### Test di usabilità minimi
 
-Cosa si intende per test di usabilità minimi? Sono quei test fatti prendendo 4-5 persone a caso (quelle che passeggiano dietro alla tua scrivania) chiedendogli cose tipo &#8220;prova a fare questo&#8221;. Vedrete che poche persone troveranno il 90% dei problemi di usabilità a cui non avevate nemmeno pensato. Cose tipo &#8220;ma cosa dovrei cliccare?&#8221; oppure &#8220;non capisco cosa sta accadendo sul sistema in questo momento&#8221;. Meglio averle subito queste risposte che in produzione.
+Cosa si intende per test di usabilità minimi? Sono quei test fatti prendendo 4-5 persone a caso (quelle che passeggiano dietro alla tua scrivania) chiedendogli cose tipo "prova a fare questo". Vedrete che poche persone troveranno il 90% dei problemi di usabilità a cui non avevate nemmeno pensato. Cose tipo "ma cosa dovrei cliccare?" oppure "non capisco cosa sta accadendo sul sistema in questo momento". Meglio averle subito queste risposte che in produzione.
 
 ## Quanti punti avete totalizzato?
 

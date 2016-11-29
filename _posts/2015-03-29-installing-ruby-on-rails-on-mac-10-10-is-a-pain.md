@@ -17,9 +17,9 @@ tags:
   - ruby
   - ruby on rails
 ---
-I've tried many &#8220;howto install Ruby&#8221; and &#8220;how to install Rails&#8221;, at the end the only installation method that works on Mac 10.10 (Yosemite) is this: [Setup Ruby On Rails on Mac OS X 10.10 Yosemite](https://gorails.com/setup/osx/10.10-yosemite)
+I've tried many "howto install Ruby" and "how to install Rails", at the end the only installation method that works on Mac 10.10 (Yosemite) is this: [Setup Ruby On Rails on Mac OS X 10.10 Yosemite](https://gorails.com/setup/osx/10.10-yosemite)
 
-What to say? Installation went &#8220;ok&#8221; on Windows (this is not very true since I actually have Windows at work, and at work I have a proxy, so ... I had to play a little bit), but on my Mac I have found something like 3000 tutorials on how to install this and that, and no tutorial was similar to others. Thanks to the author!
+What to say? Installation went "ok" on Windows (this is not very true since I actually have Windows at work, and at work I have a proxy, so ... I had to play a little bit), but on my Mac I have found something like 3000 tutorials on how to install this and that, and no tutorial was similar to others. Thanks to the author!
 
 Then I had a lot of warnings that I'm trying to fix, and mostly I go on Stack Overflow to understand what's happening. One of this errors is:
 

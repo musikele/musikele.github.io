@@ -1,6 +1,6 @@
 ---
 id: 592
-title: '&#8220;quanto ci metti?&#8221; &#8211; perchè i programmatori sono delle pippe col time management'
+title: '&#8220;quanto ci metti?&#8221; - perchè i programmatori sono delle pippe col time management'
 date: 2016-02-19T12:47:00+00:00
 author: musikele
 layout: post
@@ -41,7 +41,7 @@ Quasi tutti ora direte &#8220;ma c'è la Pomodoro Technique!&#8221;, ossia divid
 
 Questa tecnica è ampiamente utilizzata e pubblicizzata nel mondo, esistono tantissimi siti web, libri e app (eccone [uno](http://tomato-timer.com/)) per provare a usarla.
 
-Purtroppo, almeno nel mio caso, la tecnica Pomodoro non funziona affatto perchè le interferenze esterne sono la normalità ovunque abbia lavorato, per non parlare di quando provo a fare qualcosa a casa. (Butta l'immondizia... prendi le cose in macchina... si lavora sempre per qualcuno!). Inoltre le poche volte che ho provato a usare strumenti software per monitorare il tempo ho finito col litigarci &#8211; tipo quando compare quel popup &#8220;fai una pausa!&#8221; e io sto nel bel mezzo di un algoritmo complicatissimo.
+Purtroppo, almeno nel mio caso, la tecnica Pomodoro non funziona affatto perchè le interferenze esterne sono la normalità ovunque abbia lavorato, per non parlare di quando provo a fare qualcosa a casa. (Butta l'immondizia... prendi le cose in macchina... si lavora sempre per qualcuno!). Inoltre le poche volte che ho provato a usare strumenti software per monitorare il tempo ho finito col litigarci - tipo quando compare quel popup &#8220;fai una pausa!&#8221; e io sto nel bel mezzo di un algoritmo complicatissimo.
 
 ### Scrum
 

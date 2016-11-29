@@ -46,7 +46,7 @@ Primo talk seguito al mattino con Svetlana Isakova che ci racconta il nuovo ling
     </div>
     
     <p>
-      <a style="color: #000; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none; word-wrap: break-word;" href="https://instagram.com/p/0ub4G9tSie/" target="_top">Let's start with Svetlana from Jetbrains! She explains Kotlin, &#8220;the swift for Android&#8221;</a>
+      <a style="color: #000; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none; word-wrap: break-word;" href="https://instagram.com/p/0ub4G9tSie/" target="_top">Let's start with Svetlana from Jetbrains! She explains Kotlin, "the swift for Android"</a>
     </p>
     
     <p>
@@ -56,7 +56,7 @@ Primo talk seguito al mattino con Svetlana Isakova che ci racconta il nuovo ling
       </p>
       
       <p>
-        Appena uscito vado a vedere se sono arrivati quei pazzerelli di Mangatar, trovo solo lo stand montato, loro chissà dove sono (ho saputo poi che stavano facendo &#8220;colazione&#8221;):
+        Appena uscito vado a vedere se sono arrivati quei pazzerelli di Mangatar, trovo solo lo stand montato, loro chissà dove sono (ho saputo poi che stavano facendo "colazione"):
       </p>
       
       <blockquote class="instagram-media" style="background: #FFF; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width: 658px; padding: 0; width: calc(100% - 2px);" data-instgrm-captioned="" data-instgrm-version="4">
@@ -78,7 +78,7 @@ Primo talk seguito al mattino con Svetlana Isakova che ci racconta il nuovo ling
       </p>
       
       <p>
-        Altro talk, stavolta sulla gestione del tempo ad opera di Matteo Collina (nearForm). La cosa più curiosa è che questo tipo &#8220;telelavora&#8221;, prospettiva che mi interesserebbe un bel po'! Nella slide, invidia per i koala.
+        Altro talk, stavolta sulla gestione del tempo ad opera di Matteo Collina (nearForm). La cosa più curiosa è che questo tipo "telelavora", prospettiva che mi interesserebbe un bel po'! Nella slide, invidia per i koala.
       </p>
       
       <blockquote class="instagram-media" style="background: #FFF; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width: 658px; padding: 0; width: calc(100% - 2px);" data-instgrm-captioned="" data-instgrm-version="4">
@@ -87,7 +87,7 @@ Primo talk seguito al mattino con Svetlana Isakova che ci racconta il nuovo ling
           </div>
           
           <p style="margin: 8px 0 0 0; padding: 0 4px;">
-            <a style="color: #000; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none; word-wrap: break-word;" href="https://instagram.com/p/0ul7zZtSsZ/" target="_top">&#8220;Invidio i koala</a>&#8220;
+            <a style="color: #000; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none; word-wrap: break-word;" href="https://instagram.com/p/0ul7zZtSsZ/" target="_top">"Invidio i koala</a>"
           </p>
         </div>
       </blockquote>
@@ -189,7 +189,7 @@ Primo talk seguito al mattino con Svetlana Isakova che ci racconta il nuovo ling
       </p>
       
       <p>
-        Io e Mauro proviamo una sorta di &#8220;Oculus&#8221;, e facciamo un po' di evoluzioni volanti nella realtà virtuale:
+        Io e Mauro proviamo una sorta di "Oculus", e facciamo un po' di evoluzioni volanti nella realtà virtuale:
       </p>
       
       <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">

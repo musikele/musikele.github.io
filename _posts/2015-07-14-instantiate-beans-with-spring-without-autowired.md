@@ -19,7 +19,7 @@ tags:
 ---
 Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.
 
-However, there is a chance to get what you want. In my example we will try to autowire &#8220;myBean&#8221; object. Please ensure that your bean is declared somewhere in your applicationContext.xml 😉
+However, there is a chance to get what you want. In my example we will try to autowire "myBean" object. Please ensure that your bean is declared somewhere in your applicationContext.xml 😉
 
 1. First of all, the class that can't be Spring-ified must implement ApplicationContextAware interface :
 

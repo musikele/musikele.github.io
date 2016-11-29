@@ -21,27 +21,27 @@ tags:
 
 I'm following a course on Coursera about Ruby on Rails, well the course is about [Web Architectures](https://www.coursera.org/course/webapplications "Web Application Architectures") but it uses Ruby on Rails to explain it's uses. So this is a good excuse to experiment with this new language and framework.
 
-It is not the first time that I try to learn RoR; when I completed my university it was in its &#8220;momentum&#8221; &#8212; it was one of the coolest frameworks to play with. Since 2012 things have changed a bit, now NodeJS is the new &#8220;new&#8221;, but who cares: when you learn something new you should target at the idea, not the execution.
+It is not the first time that I try to learn RoR; when I completed my university it was in its "momentum" &#8212; it was one of the coolest frameworks to play with. Since 2012 things have changed a bit, now NodeJS is the new "new", but who cares: when you learn something new you should target at the idea, not the execution.
 
 RoR is one of the first frameworks that have speed up web development; with some simple (very simple) commands you can build <del>ugly</del> websites that just work. Then you only have to customize it.
 
 Some _advantages_ of RoR: **convention over configuration**, so that you don't have to hassle with stupid details. Usually the defaults are already what you want. RoR is a good tool for **Agile development**, testing is built-in and the server doesn't need to restart if you modify something; a good set of **generators** that generate almost everything for you. Another principle worth of noting is **DRY** (**don't repeat yourself**), so for example you don't have to write the sql table, if you have the structure of the table written in the entity. You'll see this below.
 
-And what about _disadvantages_? You have to learn a **new language** (Ruby), that outside RoR, is used less than never; there is some kind of **&#8220;magic&#8221; **in its generators, so you never know what's going on; and also Twitter, that has used Ruby in its early stage, has rewritten everything in Java: many have seen this as a problem of scalability. (It seems, however, that the scalability problems did not depend on Ruby itself but on a horizontal scalability issue).
+And what about _disadvantages_? You have to learn a **new language** (Ruby), that outside RoR, is used less than never; there is some kind of **"magic" **in its generators, so you never know what's going on; and also Twitter, that has used Ruby in its early stage, has rewritten everything in Java: many have seen this as a problem of scalability. (It seems, however, that the scalability problems did not depend on Ruby itself but on a horizontal scalability issue).
 
 ### Let's get our hands dirty
 
-Assuming you have [installed Ruby on Rails](http://railsinstaller.org/en "Rails Installer"), here are the steps to produce an &#8220;iteration 1&#8221; of a blog application:
+Assuming you have [installed Ruby on Rails](http://railsinstaller.org/en "Rails Installer"), here are the steps to produce an "iteration 1" of a blog application:
 
 <pre class="lang:default decode:true">rails new blog && cd blog</pre>
 
-this command creates a new directory named &#8220;blog&#8221; and then we &#8220;cd&#8221; into it.
+this command creates a new directory named "blog" and then we "cd" into it.
 
 <pre class="lang:default decode:true">rails generate scaffold post title:string body:text
 
 rails generate scaffold comment post_id:integer body:text</pre>
 
-these two lines create the &#8220;**post**&#8221; and &#8220;**comment**&#8221; entities, as well as all the **model**, **view**, **controllers**, and **tests**. We specify the actual attributes of the entities on the command line; so for example post has a <span class="lang:default decode:true  crayon-inline ">title </span> of type string, and a <span class="lang:default decode:true  crayon-inline ">body </span> of type text. One note about <span class="lang:default decode:true  crayon-inline ">post_id</span>  from the entity comment: it will be linked to the post, but in iteration 2.
+these two lines create the "**post**" and "**comment**" entities, as well as all the **model**, **view**, **controllers**, and **tests**. We specify the actual attributes of the entities on the command line; so for example post has a <span class="lang:default decode:true  crayon-inline ">title </span> of type string, and a <span class="lang:default decode:true  crayon-inline ">body </span> of type text. One note about <span class="lang:default decode:true  crayon-inline ">post_id</span>  from the entity comment: it will be linked to the post, but in iteration 2.
 
 <pre class="lang:default decode:true">rake db:migrate</pre>
 

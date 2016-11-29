@@ -42,7 +42,7 @@ then, my checklist:
   8. move config.php and custom plugins from /moodle_old to the http root.
   9. reach out your website with a browser and do the DB upgrade, upgrade plugins, etc etc (from this point you can follow instructions in browser).
 
-Et voilà! Moodle is updated. 9 steps is still a lot tough. There are many steps that you can do wrong and loose all your files. I wonder Moodle was easier to upgrade, but the truth is that it's one of the most cusotmized software in the planet &#8211; what if an automatic upgrade deletes a university customization?
+Et voilà! Moodle is updated. 9 steps is still a lot tough. There are many steps that you can do wrong and loose all your files. I wonder Moodle was easier to upgrade, but the truth is that it's one of the most cusotmized software in the planet - what if an automatic upgrade deletes a university customization?
 
 You get the point. Happy upgrading.
 

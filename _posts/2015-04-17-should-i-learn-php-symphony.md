@@ -26,7 +26,7 @@ Per chi non lo sapesse, tra cui anche io, Symphony è un po' la _summa_ di tutte
 
 Inoltre quelli di Symphony hanno realizzato alcune soluzioni interessanti, come la developer toolbar, per cui quando si sta sviluppando l'app in modalità debug si hanno tutta una serie di info sempre a portata di mano.
 
-So che PHP ha ancora un grandissimo market share. Però mi sembra un po' retrò. Però non posso ignorare che la stragrande maggioranza di web tools attualmente sul mercato, come WordPress, Magento, WooCommerce, Joomla, Drupal sono realizzati in PHP. Insomma... E' forse il momento di &#8220;aggiornare le proprie conoscenze&#8221; al 2015 ?
+So che PHP ha ancora un grandissimo market share. Però mi sembra un po' retrò. Però non posso ignorare che la stragrande maggioranza di web tools attualmente sul mercato, come WordPress, Magento, WooCommerce, Joomla, Drupal sono realizzati in PHP. Insomma... E' forse il momento di "aggiornare le proprie conoscenze" al 2015 ?
 
 Fatemi sapere se volete le vostre esperienze.
 

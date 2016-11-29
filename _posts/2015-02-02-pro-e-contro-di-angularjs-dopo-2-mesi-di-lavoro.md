@@ -20,11 +20,11 @@ tags:
   - SPA
   - webstorm
 ---
-_[<img class=" size-medium wp-image-123 alignleft" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured-300x169.png?fit=300%2C169" alt="angular-featured" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png?resize=300%2C169 300w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png?resize=825%2C468 825w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png?w=831 831w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png)Questa è una chat tra me e il mio ex-collega/amico [Davide](https://www.linkedin.com/profile/view?id=9483864 "Davide Antelmo"), sull'esperienza fatta con [AngularJs](https://angularjs.org/). Forse anche loro svilupperanno un POC (proof of concept) e voleva un po' di info. Credo che queste &#8220;opinioni&#8221; possano servire anche ad altri. Enjoy 🙂_
+_[<img class=" size-medium wp-image-123 alignleft" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured-300x169.png?fit=300%2C169" alt="angular-featured" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png?resize=300%2C169 300w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png?resize=825%2C468 825w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png?w=831 831w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/angular-featured.png)Questa è una chat tra me e il mio ex-collega/amico [Davide](https://www.linkedin.com/profile/view?id=9483864 "Davide Antelmo"), sull'esperienza fatta con [AngularJs](https://angularjs.org/). Forse anche loro svilupperanno un POC (proof of concept) e voleva un po' di info. Credo che queste "opinioni" possano servire anche ad altri. Enjoy 🙂_
 
 > **D.:** Come vi state trovando con angularjs?
 
-**Io:** la cosa di AngularJs è lunghetta; ci sono pro e contro. Di sicuro Angular è un framework all-or-nothing ... Non si può usare solo una parte di Angular, come il data binding, senza usare ad es. le direttive, o la dependency injection. Ci sono parti di Angular che si possono saltare, ma il &#8220;core&#8221; è abbastanza ampio. Quindi lo si deve imparare per forza tutto prima di capirne tutte le potenzialità.
+**Io:** la cosa di AngularJs è lunghetta; ci sono pro e contro. Di sicuro Angular è un framework all-or-nothing ... Non si può usare solo una parte di Angular, come il data binding, senza usare ad es. le direttive, o la dependency injection. Ci sono parti di Angular che si possono saltare, ma il "core" è abbastanza ampio. Quindi lo si deve imparare per forza tutto prima di capirne tutte le potenzialità.
 
 Un altro svantaggio di Angular è che **è JavaScript**,  e JavaScript è un linguaggio da studiare completamente, ossia il modello a oggetti, i prototype, gli scope, gli === al posto di == ... Pensa, ho scoperto dopo mesi di lavoro che alcuni ignorano la possibilità di provare codice nella console del browser!
 
@@ -34,7 +34,7 @@ Durante lo sviluppo ho sentito due mancanze principali: **un esperto di Angular 
 
 Quel che mi manca invece è la possibilità di fare refactoring efficienti ... L'unico IDE decente per Angular (o meglio per JavaScript) è [WebStorm](https://www.jetbrains.com/webstorm/), che si paga (45$), ma nel mio team nessuno l'ha voluto adottare ... Troppa resistenza. E gli errori di sintassi si scoprivano solo a runtime, quindi trial&error.
 
-Alla fine della fiera cmq il software lo stiamo realizzando, i problemi li abbiamo tutti aggirati pure con una buona infrastruttura, e l'esperienza fatta è molto preziosa ... Non saprei che altro dirti; i problemi di &#8220;efficienza&#8221; che tanti dicono su Angular noi non li abbiamo visti!
+Alla fine della fiera cmq il software lo stiamo realizzando, i problemi li abbiamo tutti aggirati pure con una buona infrastruttura, e l'esperienza fatta è molto preziosa ... Non saprei che altro dirti; i problemi di "efficienza" che tanti dicono su Angular noi non li abbiamo visti!
 
 > **D.:** scusa e che ide avete usato? Cmq anche noi stiamo per far partire un POC su Angular. Durante il POC sceglieremo se usare [Brackets](http://brackets.io/), [Atom](https://atom.io/), o addirittura [Visual Studio community edition 2013](http://www.visualstudio.com/en-us/products/free-developer-offers-vs.aspx)
 
@@ -54,7 +54,7 @@ Alla fine della fiera cmq il software lo stiamo realizzando, i problemi li abbia
 
 > **D.:** avete usato qualche template per la struttura del progetto ? Tipo [angular seed](https://github.com/angular/angular-seed)? o avete usato qualcosa di più &#8216;enteprise' ?
 
-**M:** una sorta di &#8220;template&#8221; ce lo siamo inventati noi. Su questa parte non siamo stati troppo smart ... Eravamo all'inizio e non sapevamo che fare. Dovevamo &#8220;buttare le mani&#8221;
+**M:** una sorta di "template" ce lo siamo inventati noi. Su questa parte non siamo stati troppo smart ... Eravamo all'inizio e non sapevamo che fare. Dovevamo "buttare le mani"
 
 > **D:** io penso che useremo qualcosa di questo tipo:  <a href="https://github.com/johnpapa/gulp-patterns" target="_blank" rel="nofollow">https://github.com/johnpapa/gulp-patterns</a>
 

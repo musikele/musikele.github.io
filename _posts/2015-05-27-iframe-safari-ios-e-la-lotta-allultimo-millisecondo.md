@@ -26,13 +26,13 @@ E invece ciò che stiamo affrontato è divenuto un bagno di sangue.
 
 ### Bootstrap, questo sconosciuto
 
-Quando si lavora in un team di 15 persone e tutti fanno tutto ci si scontra con un'amara verità: non siamo tutti egualmente predisposti per il &#8220;bello&#8221;, e soprattutto non siamo tutti disposti a capire come funziona bootstrap. Praticamente: **nessuno si legge la documentazione e spesso vedo usare cose complicate quando ci sono alternative più facili e più portabili**. Un esempio: alcuni amici hanno eliminato il padding a tutti gli elementi aggiungendo classi come ResetPadding, e poi si lamentavano che i componenti erano disposti male sullo schermo. :-O
+Quando si lavora in un team di 15 persone e tutti fanno tutto ci si scontra con un'amara verità: non siamo tutti egualmente predisposti per il "bello", e soprattutto non siamo tutti disposti a capire come funziona bootstrap. Praticamente: **nessuno si legge la documentazione e spesso vedo usare cose complicate quando ci sono alternative più facili e più portabili**. Un esempio: alcuni amici hanno eliminato il padding a tutti gli elementi aggiungendo classi come ResetPadding, e poi si lamentavano che i componenti erano disposti male sullo schermo. :-O
 
 ### iFrame e iOs, nemici giurati
 
 Tutto il mondo usa gli iFrame per una sola cosa, ossia per mostrare la pubblicità. Gli iframe sono elementi che caricano al loro interno altre pagine, le quali pagine riscaricano da capo html, css, javascript, immagini, etc. Ossia, se usate lo stesso script sia fuori che dentro l'iFrame, questo verrà scaricato due volte.
 
-Il mondo del web quindi cerca di non usare gli iFrame per qualcosa che non sia pubblicità. Noi invece cosa abbiamo fatto? **Approfittando di un framework &#8220;fatto in casa&#8221;, basato su Angular, caricavamo le pagine all'interno di un iFrame**. Ossia: la toolbar in alto e il menu laterale fanno parte della pagina, il contenuto vero e proprio invece viene caricato ogni volta all'interno di un iframe.
+Il mondo del web quindi cerca di non usare gli iFrame per qualcosa che non sia pubblicità. Noi invece cosa abbiamo fatto? **Approfittando di un framework "fatto in casa", basato su Angular, caricavamo le pagine all'interno di un iFrame**. Ossia: la toolbar in alto e il menu laterale fanno parte della pagina, il contenuto vero e proprio invece viene caricato ogni volta all'interno di un iframe.
 
 <div style="width: 318px" class="wp-caption alignright">
   <img class="" src="https://i1.wp.com/stevesouders.com/efws/images/1301-iframes-cost-of-elements.gif?resize=308%2C384" alt="" data-recalc-dims="1" />

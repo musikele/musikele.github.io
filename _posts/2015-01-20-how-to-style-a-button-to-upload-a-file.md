@@ -24,9 +24,9 @@ So, if you simply type the code like this:
 
 this is what you get:
 
-[<img class="aligncenter wp-image-84 size-full" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-no-style.png?fit=215%2C44" alt="upload-no-style" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-no-style.png)The problem is: how do you style the button ( written here in Italian, &#8220;scegli file&#8221; &#8211; &#8220;choose file&#8221;) to match the style of your website?
+[<img class="aligncenter wp-image-84 size-full" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-no-style.png?fit=215%2C44" alt="upload-no-style" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-no-style.png)The problem is: how do you style the button ( written here in Italian, "scegli file" - "choose file") to match the style of your website?
 
-For example, in my works I use [bootstrap](http://getbootstrap.com/) like half dozen million of people of the world does. I want the style of _this_ button to match the style of the others. Also, I don't want to see the &#8220;_nessun file selezionato_&#8221; (&#8220;no file selected&#8221;) written aside (it can't be styled too!).
+For example, in my works I use [bootstrap](http://getbootstrap.com/) like half dozen million of people of the world does. I want the style of _this_ button to match the style of the others. Also, I don't want to see the "_nessun file selezionato_" ("no file selected") written aside (it can't be styled too!).
 
 ### The solution
 
@@ -41,13 +41,13 @@ This is something I have discovered on [StackOverflow](http://stackoverflow.com/
 
 This is how it is rendered by the majority of browsers:
 
-[<img class=" size-full wp-image-85 aligncenter" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-button-styled.png?fit=162%2C121" alt="upload-button-styled" data-recalc-dims="1" />](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-button-styled.png)The first &#8220;this is a button&#8221; is a normal html <span class="lang:default decode:true  crayon-inline "><button></span> element. the second is the file uploader button.
+[<img class=" size-full wp-image-85 aligncenter" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-button-styled.png?fit=162%2C121" alt="upload-button-styled" data-recalc-dims="1" />](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/upload-button-styled.png)The first "this is a button" is a normal html <span class="lang:default decode:true  crayon-inline "><button></span> element. the second is the file uploader button.
 
 ### How the hack works?
 
-When you wrap a <span class="lang:default decode:true  crayon-inline "><label></span> around an <span class="lang:default decode:true  crayon-inline"><input></span>  element, if you click on the label, the click is propagated to the input element pointed by the <span class="lang:default decode:true  crayon-inline ">for=&#8221;...&#8221;</span> attribute (matching the input id).
+When you wrap a <span class="lang:default decode:true  crayon-inline "><label></span> around an <span class="lang:default decode:true  crayon-inline"><input></span>  element, if you click on the label, the click is propagated to the input element pointed by the <span class="lang:default decode:true  crayon-inline ">for="..."</span> attribute (matching the input id).
 
-Another help is coming from the <span class="lang:default decode:true  crayon-inline ">style=&#8221;display:none;&#8221;</span> attribute. It will hide the input element from the screen, so that we only see the label for the input.
+Another help is coming from the <span class="lang:default decode:true  crayon-inline ">style="display:none;"</span> attribute. It will hide the input element from the screen, so that we only see the label for the input.
 
 ### Compatibility
 

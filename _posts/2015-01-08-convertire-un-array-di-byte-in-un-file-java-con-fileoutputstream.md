@@ -1,6 +1,6 @@
 ---
 id: 32
-title: 'JAVA &#8211; Convertire un array di byte in un file con FileOutputStream'
+title: 'JAVA - Convertire un array di byte in un file con FileOutputStream'
 date: 2015-01-08T10:49:51+00:00
 author: musikele
 layout: post
@@ -28,4 +28,4 @@ Vantaggi: non servono librerie aggiuntive per questa operazione.
 
 Svantaggi: qualcuno dice che [Apache Commons](http://commons.apache.org/proper/commons-io/apidocs/org/apache/commons/io/FileUtils.html#writeByteArrayToFile%28java.io.File,%20byte%5B%5D%29) si fa tutto con una istruzione.
 
-fonte: [Stack Overflow &#8211; byte[] to file in Java](http://stackoverflow.com/questions/4350084/byte-to-file-in-java)
+fonte: [Stack Overflow - byte[] to file in Java](http://stackoverflow.com/questions/4350084/byte-to-file-in-java)

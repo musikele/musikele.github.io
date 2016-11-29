@@ -26,7 +26,7 @@ Sulla carta era la scelta migliore per gli utenti-tester: permette di memorizzar
 I problemi riscontrati sono stati i seguenti:
 
   * **alta instabilità** del sistema con il nostro applicativo, dovuto all'elevato numero di componenti caricati e agli iframe ; ciò causava crash e stalli del browser;
-  * il sistema &#8220;punta e clicca&#8221; spesso **non riconosce le azioni dell'utente**
+  * il sistema "punta e clicca" spesso **non riconosce le azioni dell'utente**
   * per riuscire a far funzionare casi di test anche molto semplici era necessario **intervenire manualmente sul codice prodotto**;
   * **scarso supporto alle webapp moderne** che usano tecnologie come AJAX, per caricare pezzi di pagine dinamicamente.
 

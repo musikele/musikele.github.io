@@ -116,4 +116,4 @@ Buona bowerizzazione dei vostri frontend!
 
 Altre risorse:
   
-Bower Getting Started &#8211; http://bower.io/#getting-started
+Bower Getting Started - http://bower.io/#getting-started

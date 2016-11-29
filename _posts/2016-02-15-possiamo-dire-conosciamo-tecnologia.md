@@ -37,7 +37,7 @@ Inizio con un finto annuncio di lavoro. In questi giorni è rimbalzato ovunque s
 
 ## No, ma dai, Davvero?
 
-Si cari amici, più o meno per noi informatici è così 🙂 l'università per fortuna ci forma ad apprendere, e ci dà una serie di strumenti base &#8211; mattocini lego &#8211; su cui tutte le altre tecnologie sono state costruite. Questo non vuol dire che possiamo imparare tutto e soprattutto in poco tempo: i framework, i linguaggi di programmazione e gli esperimenti hanno bisogno che gli si dedichi tempo per poter poter essere digeriti.
+Si cari amici, più o meno per noi informatici è così 🙂 l'università per fortuna ci forma ad apprendere, e ci dà una serie di strumenti base - mattocini lego - su cui tutte le altre tecnologie sono state costruite. Questo non vuol dire che possiamo imparare tutto e soprattutto in poco tempo: i framework, i linguaggi di programmazione e gli esperimenti hanno bisogno che gli si dedichi tempo per poter poter essere digeriti.
 
 #### E allora quanto ci vuole ad imparare un linguaggio?
 
