@@ -14,24 +14,13 @@ categories:
 tags:
   - javascript
 ---
-<div class="entry-content">
-  <p>
-    Javascript esiste praticamente da sempre, per me che ho conosciuto i computer quando Netscape Navigator era alla versione 3. E da sempre ce l’hanno raccontato male: ci hanno parlato delle sue limitazioni, del linguaggio che non si capisce, del codice interpretato, la sicurezza, i cookies etc…
-  </p>
-  
-  <p>
-    Poi è arrivato Gmail, e qualuno ha iniziato a capire che forse con Javascript si poteva fare tantissimo anche lato client.
-  </p>
-  
-  <p>
-    Io, quando ho iniziato la mia avventura informatica, ho apprezzato da subito Java e gli oggetti e ho pure un po’ detestato la programazione web (nessun browser interpretava lo standard correttamente, ossia ognuno diceva di interpretarlo a modo suo). Era il 2004-2005.  A distanza di anni ho provato un centinaio di altri linguaggi (specialmente quelli funzionali) e, ad ogni modo, voglio uscire dal mondo Java perchè _secondo me_ non è il linguaggio del futuro. (Non lo è neanche javascript, ma il paradigma funzionale secondo me si!)
-  </p>
-  
-  <p>
-    Così arrivo a javascript con <em>soli dieci</em> anni di ritardo. Una cosa mi consola: in questo mondo java-based sono davvero in pochi a sapere cosa javascript può fare, e come. Gli snippet di codice più interessanti li condividerò e commenterò con voi.
-  </p>
-  
-  <p>
-    Per concludere: what’s new in Javascript? Se venite da Java, e il 99% di voi è come me, everything is brand new. La filosofia è diversa, lo scopo è diverso, le best practices e gli strumenti di lavoro sono diversi. E questo è il posto giusto per noi !
-  </p>
-</div>
+
+Javascript esiste praticamente da sempre, per me che ho conosciuto i computer quando Netscape Navigator era alla versione 3. E da sempre ce l’hanno raccontato male: ci hanno parlato delle sue limitazioni, del linguaggio che non si capisce, del codice interpretato, la sicurezza, i cookies etc…
+
+Poi è arrivato Gmail, e qualuno ha iniziato a capire che forse con Javascript si poteva fare tantissimo anche lato client.
+
+Io, quando ho iniziato la mia avventura informatica, ho apprezzato da subito Java e gli oggetti e ho pure un po’ detestato la programazione web (nessun browser interpretava lo standard correttamente, ossia ognuno diceva di interpretarlo a modo suo). Era il 2004-2005.  A distanza di anni ho provato un centinaio di altri linguaggi (specialmente quelli funzionali) e, ad ogni modo, voglio uscire dal mondo Java perchè _secondo me_ non è il linguaggio del futuro. (Non lo è neanche javascript, ma il paradigma funzionale secondo me si!)
+
+Così arrivo a javascript con *soli dieci* anni di ritardo. Una cosa mi consola: in questo mondo java-based sono davvero in pochi a sapere cosa javascript può fare, e come. Gli snippet di codice più interessanti li condividerò e commenterò con voi.
+
+Per concludere: what’s new in Javascript? Se venite da Java, e il 99% di voi è come me, everything is brand new. La filosofia è diversa, lo scopo è diverso, le best practices e gli strumenti di lavoro sono diversi. E questo è il posto giusto per noi!
