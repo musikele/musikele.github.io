@@ -26,6 +26,7 @@
 			transition: none !important;
 		}
 
+
 	body, input, select, textarea {
 		color: #a2a2a2;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -33,6 +34,7 @@
 		font-weight: 400;
 		line-height: 1.75em;
 	}
+	
 
 	a {
 		-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
