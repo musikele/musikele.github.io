@@ -1272,3 +1272,7 @@
 		max-width: 250px;
 		display: block;
 	}
+
+	.pull-right {
+		right: 0;
+	}
