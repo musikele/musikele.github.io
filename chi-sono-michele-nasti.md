@@ -30,11 +30,7 @@ Il mio sogno è di lavorare in un contesto innovativo dove i problemi tecnici e 
 
 
 
-[
-  
-<img title="profile for musikele at Stack Overflow, Q&A for professional and enthusiast programmers" src="https://i0.wp.com/stackoverflow.com/users/flair/1020090.png?resize=208%2C58" alt="profile for musikele at Stack Overflow, Q&A for professional and enthusiast programmers" data-recalc-dims="1" />
-  
-](http://stackoverflow.com/users/1020090/musikele) 
+[<img title="profile for musikele at Stack Overflow, Q&A for professional and enthusiast programmers" src="https://i0.wp.com/stackoverflow.com/users/flair/1020090.png?resize=208%2C58" alt="profile for musikele at Stack Overflow, Q&A for professional and enthusiast programmers" data-recalc-dims="1" />](http://stackoverflow.com/users/1020090/musikele) 
 
 <div class="buzz" style="position: relative; padding-bottom: 90%; padding-top: 70px; height: 0; overflow: hidden;">
 </div>
