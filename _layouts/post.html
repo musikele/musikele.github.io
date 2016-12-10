@@ -11,8 +11,9 @@ layout: default
         <section>
             {{ content }}
         </section>
-        
-        <footer>
+
+        <footer> 
+
             <div class="row">
             {% if page.previous %}
             
@@ -25,7 +26,7 @@ layout: default
                     </section>
                     <footer>
                         <ul class="actions">
-                            <li><a href="{{ site.baseurl }}/{{ page.previous.url }}" class="button">Read More</a></li>
+                            <li><a href="{{ site.baseurl }}{{ page.previous.url }}" class="button">Read More</a></li>
                         </ul>
                     </footer>
                 </article>
@@ -35,7 +36,7 @@ layout: default
             
                 <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
                     <header>
-                        <h2><a href="{{ site.baseurl }}/{{ page.next.url }}">{{ page.next.title }}</a></h2>
+                        <h2><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a></h2>
                     </header>
                     <section>
                         {{ page.next.excerpt | markdownify }}
