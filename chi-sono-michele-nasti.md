@@ -16,7 +16,7 @@ Sono uno sviluppatore che ha un occhio di riguardo verso le tecniche di **organi
 
 Da qualche tempo mi sto appassionando al **front-end** e al **web**; lo so, sono in ritardo di 10 anni, ma per tanto tempo ci hanno venduto Javascript come un giocattolino mentre in realtà è uno strumento potentissimo (e complesso!). Ed è grazie a lui se le pagine web sono diventate webapp che rivaleggiano, per potenza e complessità, con le <del>vecchie</del> applicazioni desktop.
 
-Ho lavorato sia in una grande azienda e su un grande progetto, come team leader e Scrum master, sia in piccoli team in cui sono stato **full stack developer**. Da alcune esperienze ho capito l'importanza dell'organizzazione di un team; da altre invece ho approfondito lo studio di tematiche più tecniche.
+Ho lavorato sia in grandi aziende e su grandi progetti, come team leader e Scrum master, sia in piccoli team in cui sono stato **full stack developer**. Da alcune esperienze ho capito l'importanza dell'organizzazione di un team; da altre invece ho approfondito lo studio di tematiche più tecniche.
 
 Anche se il mio linguaggio di riferimento è Java, usato principalmente a lavoro, sono continuamente allo studio di nuovissimi linguaggi o paradigmi di programmazione. Questo cozza col fatto che, dopo il lavoro, torno a casa molto tardi, dunque non posso approfittare del tempo libero per lavorare a qualche progettino parallelo. Ho una famiglia e una casa a cui provvedere!
 
