@@ -1,9 +1,0 @@
-language: ruby
-rvm:
-- 2.1
-
-script: "bash ./deploy.sh"
-env:
-  global:
-  - ENCRYPTION_LABEL: "9879dac377a9"
-  - COMMIT_AUTHOR_EMAIL: "michele.nasti@gmail.com"
