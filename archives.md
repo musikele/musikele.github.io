@@ -6,9 +6,7 @@ paginate: true
 ---
 
 Here's the long list of articles I wrote in these years, in Italian and English. 
-
 <br />&nbsp;
-
 <section>
         <div class="row">
             {% for post in paginator.posts reversed %}
