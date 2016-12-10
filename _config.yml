@@ -1,10 +1,21 @@
 url: http://michelenasti.com
 
+gems:
+- octopress-paginate
+
+permalink: pretty
+
+paginate: true
+
+pagination:
+  limit: false
+  per_page: 20 
+  title_suffix: " (page :num)"
+  reversed: true
+
 name: Michele Nasti
 
 description: Full stack Developer with an eye for the web
-
-baseurl: /blog
 
 github_username: musikele
 
@@ -17,3 +28,4 @@ google_plus_username: MicheleNasti
 facebook_username: musikele
 
 avatar: michele_nasti.jpg
+ 
