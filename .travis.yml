@@ -1,4 +1,6 @@
-language: generic
+language: ruby
+rvm:
+- 2.1
 
 script: "bash ./deploy.sh"
 env:
