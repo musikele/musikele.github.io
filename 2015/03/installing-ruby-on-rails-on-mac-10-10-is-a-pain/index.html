@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>Michele Nasti - Full stack Developer with an eye for the web</title>
+  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  		<meta name="description" content="Michele Nasti's personal blog'" />
+  		<meta name="keywords" content="michele nasti" />
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		---
+<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title">Installing Ruby On Rails on Mac 10.10 is a pain</h2>
+                <p class="post-meta">Mar 29, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <p>I’ve tried many “howto install Ruby” and “how to install Rails”, at the end the only installation method that works on Mac 10.10 (Yosemite) is this: <a href="https://gorails.com/setup/osx/10.10-yosemite">Setup Ruby On Rails on Mac OS X 10.10 Yosemite</a></p>
+
+<p>What to say? Installation went “ok” on Windows (this is not very true since I actually have Windows at work, and at work I have a proxy, so … I had to play a little bit), but on my Mac I have found something like 3000 tutorials on how to install this and that, and no tutorial was similar to others. Thanks to the author!</p>
+
+<p>Then I had a lot of warnings that I’m trying to fix, and mostly I go on Stack Overflow to understand what’s happening. One of this errors is:</p>
+
+<pre class="lang:sh decode:true">/usr/local/rvm/gems/ruby-1.9.3-p194@global/gems/bundler-1.9.1/lib/bundler/shared_helpers.rb:83: 
+warning: Insecure world writable dir /usr/local in PATH, mode 040777</pre>
+
+<p>For what I understood, you have this problem because anyone can write in /usr/local . So the fix was to digit the following command:</p>
+
+<pre class="lang:sh decode:true">chmod go-w /usr/local</pre>
+
+<p><strong>You can also have the same error referred to other directories, just launch this command with the appropriate path.</strong></p>
+
+<p>And now I’m having this other problem, unfortunately Stack Overflow does not have any ideas on how to solve it:</p>
+
+<pre class="lang:default decode:true">/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.8/lib/active_support/values/time_zone.rb:270: 
+warning: circular argument reference - now</pre>
+
+<p>Can anybody help me?</p>
+
+        </section>
+        
+        <footer>
+            <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="//2015/03/codemotion-roma-2015-raccontiamo-questa-prima-giornata/">Codemotion Roma 2015: raccontiamo questa prima giornata</a></h2>
+                    </header>
+                    <section>
+                        <p>Anche quest’anno sono al Codemotion, anzi stavolta ho avuto anche la pazienza di fotografare un sacco di momenti e dunque ve li ripropongo così vi fate un’idea se è il caso di venire oppure no l’anno prossimo. Se volete la mia opinione, trattandosi della conferenza più famosa in Italia sulle professioni informatiche, non bisogna mancare!</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/03/codemotion-roma-2015-raccontiamo-questa-prima-giornata/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="//2015/03/codemotion-roma-2015-day-two/">Codemotion Roma 2015 - day two</a></h2>
+                    </header>
+                    <section>
+                        <p>Riprendiamo a parlare del Codemotion Roma, con qualche giorno di ritardo.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/03/codemotion-roma-2015-day-two/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+	</body>
+</html>

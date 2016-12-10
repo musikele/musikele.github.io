@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>Michele Nasti - Full stack Developer with an eye for the web</title>
+  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  		<meta name="description" content="Michele Nasti's personal blog'" />
+  		<meta name="keywords" content="michele nasti" />
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		---
+<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title">Develop a microservice with Ratpack</h2>
+                <p class="post-meta">Oct 28, 2016 • musikele</p>
+        </header>
+
+        <section>
+            <p><a href="https://ratpack.io">Ratpack</a> is a lightly opinionated framework that’s perfect for backends written with a RESTful specification. I am using it in a project that we are developing, and of course it’s a microservice.</p>
+
+<p><img class="wp-image-1122 aligncenter" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2016/10/Schermata-2016-10-28-alle-15.16.51.png?resize=551%2C205" alt="schermata-2016-10-28-alle-15-16-51" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2016/10/Schermata-2016-10-28-alle-15.16.51.png?w=551 551w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2016/10/Schermata-2016-10-28-alle-15.16.51.png?resize=300%2C112 300w" sizes="(max-width: 551px) 100vw, 551px" data-recalc-dims="1" /></p>
+
+<p>Ratpack is completely <strong>written in Java 8</strong>, and you can use it with Java if you like. However, it’s in <strong>Groovy</strong> that it really shines. Groovy is a functional scripting language for the JVM, and enhances Java under many aspects.</p>
+
+<p>I was scared of using Groovy, a language that I have never studied systematically. But <strong>Groovy is not that difficult</strong>. In fact, I found it easier to read (and write) Groovy examples than the Java counterpart.</p>
+
+<p>So, right now I’m stuck with the Java version of the framework, that is functionally equivalent to the groovy one. But I have already in mind to rewrite everything in groovy, once I have stabilized the requirements. <strong>Microservices are</strong> also this: <strong>the possibility to rewrite everything when you find a better option</strong>.</p>
+
+<p>So, what’s great about ratpack? what are it’s main features? Let’s dig in it.</p>
+
+<h3 id="ratpack-features">Ratpack Features</h3>
+
+<p><strong>Ratpack</strong> <strong>does not force you</strong> to stuck with their idea <strong>on how structure your code</strong>.</p>
+
+<p><strong>Ratapack has built in support for startup configuration</strong> coming from json, yaml, environment variables, system arguments, and java classes. This is great since many of us are going to use Ratpack in a container.</p>
+
+<p>With ratpack you can specify the API of your backend in a fluent way, so that <strong>it’s very easy to declare and to understand who will answer a call</strong>. Here’s an example:</p>
+
+<div class="gist-oembed" data-gist="musikele/0a32762eddc82d1de801e66029dcdb07.json">
+</div>
+
+<p>It has native <strong>support for headers, status codes, Exceptions, query parameters, forms, json</strong>, and all the like.</p>
+
+<p>Guice is the default <strong>dependency injection</strong>, but you can go on with Spring if you want.</p>
+
+<p>The class that responds to a http call is a <strong>Handler</strong>, that you have to imagine <strong>like a java servlet that intercepts a request</strong>.  You can, for example, log all requests in a handler, then pass the control to the next that will extract data from headers, and according to that data it will call the right handler for you. You can also pass data between handlers so that it’s very easy to work with it.</p>
+
+<p>Want more? <strong>Ratpack is implemented using <a href="http://netty.io">Netty</a></strong>, <span class="s1"><i>an asynchronous event-driven network application framework. </i>Does this definition say anything to you? <strong>It’s the same philosophy taken by NodeJS</strong>. So you can expect to handle a lot of connections. (This power comes at a cost. Develop responsibly)</span></p>
+
+<p><strong>Testing is a breeze</strong>. I have done only functional tests, but I’m confident that the application works exactly like I am expecting. Ratpack encourages to use Spock, but I’m using JUnit and I’m not regretting it.</p>
+
+<p>And finally, <strong>in development mode</strong> (launching it with “gradle -t run”) <strong>it will auto-reload the server everytime there’s a change on filesystem</strong>. If you have ever worked with tomcat, you know how much time this can save you.</p>
+
+<h2 id="how-to-learn">How to learn?</h2>
+
+<p>Don’t read the official documentation - it’s just a waste of time. Instead, <strong>buy a copy of <a href="http://shop.oreilly.com/product/0636920037545.do">Learning Ratpack</a></strong> - this book is clear and covers every aspect of a Ratpack application. I’m still at chapter five but it’s very easy to go through!</p>
+
+<p>##</p>
+
+<h2 id="plans-for-the-future">Plans for the future</h2>
+
+<p>I want to rewrite everything in Groovy, as I said. I also have to finish the book to uncover all Ratpack powers. I have made many mistakes in the past, expecially from not having undestood how handlers work and how to pass data between handlers. That’s why I say the book is useful.</p>
+
+<p>If you have ever tried ratpack, feel free to give me your impressions! Expecially if they are negative.</p>
+
+        </section>
+        
+        <footer>
+            <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="//2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/">Slides del talk &#8220;Perchè il tuo prossimo lavoro è una 💩 @ DevFest</a></h2>
+                    </header>
+                    <section>
+                        <p>Ecco le mie slides del talk.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="//2016/11/orientdb/">OrientDB </a></h2>
+                    </header>
+                    <section>
+                        <p>Convenite con me che fare un DB é la cosa più difficile che ci sia? Seconda solo a fare un sistema operativo, diciamo 😇</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2016/11/orientdb/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+	</body>
+</html>

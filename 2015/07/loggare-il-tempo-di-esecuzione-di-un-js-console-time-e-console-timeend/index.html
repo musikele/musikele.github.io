@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>Michele Nasti - Full stack Developer with an eye for the web</title>
+  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  		<meta name="description" content="Michele Nasti's personal blog'" />
+  		<meta name="keywords" content="michele nasti" />
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		---
+<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title">loggare il tempo di esecuzione di un JS : console.time e console.timeEnd</h2>
+                <p class="post-meta">Jul 28, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <p>Ogni browser moderno dispone di avanzatissimi strumenti di sviluppo, Firefox è stato il primo con Firebug (ora integra un suo strumento interno) mentre Chrome ha dettato lo standard con Chrome Developer Tools. A seguire tutti i browser che volevano definirsi moderni hanno dovuto creare delle conosole di sviluppo “serie”, e supportare tutta una serie di costrutti Javascript per facilitare lo sviluppo e il debugging di queste applicazioni.</p>
+
+<p>Se leggete questo blog significa che sapete aprire una di queste console e probabilmente lo fate ogni giorno per lavoro. Ma come misurare che il codice JS che stiamo scrivendo sia effettivamente veloce? O meglio, come valutarlo in relazione ad altre soluzioni alternative?</p>
+
+<p>un tool estremamente utile è <span class="lang:default decode:true  crayon-inline ">console.time()</span> . Tutto il codice racchiuso tra <span class="lang:default decode:true  crayon-inline ">console.time()</span>  e <span class="lang:default decode:true  crayon-inline ">console.timeEnd()</span>  viene misurato in console. Per identificare il blocco di codice valutato possiamo (e secondo me dobbiamo) dare una stringa come label. Vediamo un esempio:</p>
+
+<pre class="lang:js decode:true">console.time("test del for"); 
+
+var i, arr = []; 
+for(i=0; i&lt;100000; i++) { 
+   arr.unshift(i); 
+} 
+arr.sort(); 
+
+console.timeEnd("test del for");</pre>
+
+<p>Nel caso precedente creiamo un array di 100.000 posizioni, e inseriamo ogni nuovo elemento all’inizio. Dunque gli elementi sono disposti in odine decrescente. Poi lo ordiniamo con sort(). In console leggiamo: <span class="lang:default decode:true  crayon-inline ">test del for: 1041.271ms</span> .</p>
+
+<p>Vediamo una variante che ci aspettiamo più semplice:</p>
+
+<pre class="lang:js decode:true">console.time("test del for"); 
+
+var i, arr = []; 
+for(i=0; i&lt;100000; i++) { 
+    arr[i]=i 
+} 
+arr.sort(); 
+
+console.timeEnd("test del for");</pre>
+
+<p>In questo altro caso invece creiamo l’array inserendo gli elementi nell’ordine naturale. Dopo l’operazione di ordinamento viene loggato <span class="lang:default decode:true  crayon-inline ">test del for: 187.685ms</span> .</p>
+
+<p>Cosa abbiamo dunque scoperto? che conviene ordinare array già ordinati 🙂 e che console.time(LABEL) e console.timeEnd(LABEL) sono una comoda funzione per verificare quanto tempo viene impiegato dal nostro codice javascript.</p>
+
+<p>Esercizio per casa: conviene usare document.getElementById(<span class="highVAL">“body”</span>)</p>
+
+<p>.<strong>createElement()</strong> o document.getElementById(<span class="highVAL">“body”</span>)</p>
+
+<p>.<strong>innerHtml()  </strong>? A voi la scoperta !</p>
+
+        </section>
+        
+        <footer>
+            <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="//2015/07/css-position/">Css Position</a></h2>
+                    </header>
+                    <section>
+                        <p>Facciamo una breve deviazione sul CSS.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/07/css-position/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="//2015/09/the-story-of-a-programmer-me-that-failed-in-php/">the story of a programmer (me) that failed in PHP</a></h2>
+                    </header>
+                    <section>
+                        <p>Some time ago a friend of mine called and said: “<em>Hey! I just coded the app I was thinking about three years ago</em>, <strong>would you want to join me</strong>?”</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/09/the-story-of-a-programmer-me-that-failed-in-php/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+	</body>
+</html>

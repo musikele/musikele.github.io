@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>Michele Nasti - Full stack Developer with an eye for the web</title>
+  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  		<meta name="description" content="Michele Nasti's personal blog'" />
+  		<meta name="keywords" content="michele nasti" />
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		---
+<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title">Tutti i modi per generare ID in Hibernate &#038; JPA</h2>
+                <p class="post-meta">Nov 27, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/11/hibernate.jpg"><img class="size-full wp-image-456 alignleft" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/11/hibernate.jpg?fit=200%2C195" alt="Veramente brutto il logo di Hibernate, vero? " data-recalc-dims="1" /></a>Siccome dovevo creare ID con alcune proprietà particolari per alcuni oggetti, ho iniziato a cercare tutti i vari modi in cui si potevano assegnare ID a oggetti JPA e Hibernate.</p>
+
+<p>Avevo questo articolo nelle bozze da un bel po’; f<span style="line-height: 1.5;">ondamentalmente sono un programmatore Full-Stack ma, quando una cosa non ti piace, tendi a </span><span style="line-height: 1.5;">non memorizzarla 🙂 quindi mi segno molte cose che faccio qui, sul blog, che magari poi diventano articoli. </span></p>
+
+<h2 id="jpa">JPA</h2>
+
+<p>(vedi <a href="https://en.wikibooks.org/wiki/Java_Persistence/Identity_and_Sequencing#Sequencing">https://en.wikibooks.org/wiki/Java_Persistence/Identity_and_Sequencing#Sequencing</a>)</p>
+
+<ul>
+  <li>
+    <p><strong>table sequencing</strong>, ossia prende il prossimo ID da una tabella appositamente configurata sul proprio DB. Portabile, ma lento. Esempio: &lt;pre class="lang:java decode:true"&gt;@Entity
+public class Employee {
+@Id
+@TableGenerator(name=”TABLE_GEN”, table=”SEQUENCE_TABLE”, pkColumnName=”SEQ_NAME”,
+    valueColumnName=”SEQ_COUNT”, pkColumnValue=”EMP_SEQ”)
+@GeneratedValue(strategy=GenerationType.TABLE, generator=”TABLE_GEN”)
+private long id;
+…
+}&lt;/pre&gt;</p>
+  </li>
+  <li>
+    <p><span class="mw-headline"><strong>Sequence objects</strong>, usati solo sui DB che li supportano, tipo Oracle. Sono degli oggetti che contengono il prossimo ID da utilizzare. Funziona bene ma non è portabile (MySql non ce l’ha). </span> &lt;pre class="lang:java decode:true"&gt;…
+@Entity
+public class Employee {
+@Id
+@GeneratedValue(strategy=GenerationType.SEQUENCE, generator=”EMP_SEQ”)
+@SequenceGenerator(name=”EMP_SEQ”, sequenceName=”EMP_SEQ”, allocationSize=100)
+private long id;
+…
+}&lt;/pre&gt;</p>
+  </li>
+  <li>
+    <p><span class="mw-headline"><strong>Identity sequencing</strong>, incrementa di 1 l’ID ad ogni passo. Dipende dal DB purtroppo, ad esempio Oracle non lo supporta. </span> &lt;pre class="lang:java decode:true "&gt;…
+@Entity
+public class Employee {
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private long id;
+…
+}&lt;/pre&gt;</p>
+
+    <p>&lt;/li&gt; &lt;/ul&gt;</p>
+
+    <h2 id="hibernate">HIBERNATE</h2>
+
+    <p>Con Hibernate vi sono altre alternative possibili, alcune sono piccole variazioni di quelle viste in precedenza (e vi consiglio di utilizzare JPA piuttosto che legarvi a Hibernate). Quasi sempre, al posto di SequenceGenerator useremo GenericGenerator che è proprio di Hibernate.</p>
+
+    <ul>
+      <li><strong>HiLo</strong> : un algoritmo per generare ID numerici (Long, Int) che fa poche chiamate al DB per conoscere la sequenza corrente; se due transazioni concorrenti provano ad avere lo stesso ID, allora otterranno due numeri profondamente diversi. Esempio di uso: <a href="http://vladmihalcea.com/2014/06/23/the-hilo-algorithm/">http://vladmihalcea.com/2014/06/23/the-hilo-algorithm/</a></li>
+      <li>
+        <p>Se la chiave è di tipo Stringa, si può usare un <strong>generatore di UUID</strong> : &lt;pre class="lang:java decode:true"&gt;@Id
+@GeneratedValue(generator = “system-uuid”)
+@GenericGenerator(name = “system-uuid”, strategy = “uuid”)
+private String id;&lt;/pre&gt;</p>
+      </li>
+      <li>“<strong>assigned</strong>” : il programmatore si deve preoccupare di generare un ID (univoco) prima di memorizzare l’entità</li>
+      <li>“<strong>increment</strong>” : in Hibernate equivale sempre a max(id) +1 (diverso da JPA!)</li>
+      <li><strong>custom id generator</strong> : questo sembra essere ciò che mi serve ma l’articolo risale al 2011 e la configurazione è descritta in xml. Devo trovare la versione con le annotazioni. [http://learningviacode.blogspot.it/2011/11/creating-custom-id-generator.html?showComment=1436277811662#c1961377562249766537</li>
+    </ul>
+  </li>
+</ul>
+
+<p>](http://learningviacode.blogspot.it/2011/11/creating-custom-id-generator.html?showComment=1436277811662#c1961377562249766537) Su stack overflow c’è una versione che utilizza le annotations: <a href="http://stackoverflow.com/questions/11631800/hibernate-how-specify-custom-sequence-generator-class-name-using-annotations">http://stackoverflow.com/questions/11631800/hibernate-how-specify-custom-sequence-generator-class-name-using-annotations</a></p>
+
+
+        </section>
+        
+        <footer>
+            <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="//2015/11/ritorno-dal-codemotion-milan-2015/">di ritorno dal Codemotion Milan 2015</a></h2>
+                    </header>
+                    <section>
+                        <p>Ed eccomi di ritorno dal <a href="http://milan2015.codemotionworld.com/">secondo Codemotion</a> dell’anno! Questa volta sono stato a Milano, dove ho seguito talk interessanti purtroppo solo per il giorno di sabato. Qui potete trovare altri articoli sul <a href="http://michelenasti.com/2015/01/codemotion-2015/">Codemotion di Roma</a>.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/11/ritorno-dal-codemotion-milan-2015/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="//2015/11/459/">Leggere la query Hibernate in debug</a></h2>
+                    </header>
+                    <section>
+                        <p>vi capita mai di aver disabilitato le query Hibernate/Jpa in Tomcat ? Ossia, le query non vengono stampate nella console. In genere si disabilitano altrimenti le prestazioni dell’app diventano scarsissime.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/11/459/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+	</body>
+</html>
