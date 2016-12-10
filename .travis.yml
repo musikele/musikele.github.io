@@ -5,5 +5,5 @@ rvm:
 script: "bash ./deploy.sh"
 env:
   global:
-  - ENCRYPTION_LABEL: "9879dac377a9"
+  - ENCRYPTION_LABEL: "dad6572cb325"
   - COMMIT_AUTHOR_EMAIL: "michele.nasti@gmail.com"
