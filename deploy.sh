@@ -37,6 +37,8 @@ doCompile
 echo "current dir, inside deploy.sh, is: " 
 pwd
 cd out
+pwd 
+ls 
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
