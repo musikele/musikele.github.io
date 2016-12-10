@@ -28,4 +28,12 @@ google_plus_username: MicheleNasti
 facebook_username: musikele
 
 avatar: michele_nasti.jpg
- 
+
+exclude: 
+- .travis.yml
+- deploy_key*
+- Gemfile
+- Gemfile.lock
+- deploy.sh
+- compile.sh
+- start.sh
