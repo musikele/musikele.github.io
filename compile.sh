@@ -11,7 +11,7 @@ git checkout $SOURCE_BRANCH || git checkout --orphan $SOURCE_BRANCH
 
 bundle install
 bundle exec jekyll build
-
-cp -rv ./_site/ ../out/
+cd _site/
+cp -rv * ../out/
 cd ..
 echo "finished compiling!"

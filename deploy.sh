@@ -29,13 +29,12 @@ cd ..
 
 # Clean out existing contents
 rm -rf out/**/* || exit 0
+rm -rf out/* || exit 0
 
 # Run our compile script
 doCompile
 
 # Now let's go have some fun with the cloned repo
-echo "current dir, inside deploy.sh, is: " 
-pwd
 cd out
 pwd 
 ls 
