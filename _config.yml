@@ -30,7 +30,7 @@ facebook_username: musikele
 avatar: michele_nasti.jpg
 
 exclude: 
-- .travis.yml
+- .travis.yml 
 - deploy_key*
 - Gemfile
 - Gemfile.lock

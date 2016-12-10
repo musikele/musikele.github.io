@@ -18,4 +18,12 @@ layout: default
 		</section>
 		{% endfor %}
 	</section>
+
+	{% if page.previous != nil %}
+<a href="{{page.previous}}" class="button"><< Previous Post</a> 
+{% endif %}
+
+{% if page.next != nil %}
+<a href="{{page.next}}" class="button pull-right">Newest Post >></a> 
+{% endif %}
 </div>

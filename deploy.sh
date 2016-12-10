@@ -39,6 +39,7 @@ doCompile
 cd out
 pwd 
 ls 
+
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
