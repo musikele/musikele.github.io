@@ -1,4 +1,7 @@
-language: ruby
-rvm:
-- 2.1
-script: "bundle exec jekyll build"
+language: generic
+
+script: "bash ./deploy.sh"
+env:
+  global:
+  - ENCRYPTION_LABEL: "9879dac377a9"
+  - COMMIT_AUTHOR_EMAIL: "michele.nasti@gmail.com"
