@@ -3,6 +3,7 @@
 echo "start compiling..."
 
 SOURCE_BRANCH="develop"
+REPO=https://github.com/musikele/musikele.github.io.git
 
 git clone $REPO compile
 cd compile 
