@@ -12,6 +12,12 @@ layout: default
             {{ content }}
         </section>
 
+				<section>
+					{% if page.comments %}
+						{% include disqus.html %}
+					{% endif %}
+				</section>
+
         <footer> 
 
             <div class="row">

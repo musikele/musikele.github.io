@@ -2,7 +2,6 @@
 id: 10
 title: Archives
 layout: page
-paginate: true
 ---
 
 Here's the long list of articles I wrote in these years, in Italian and English. 
