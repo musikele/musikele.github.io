@@ -14,6 +14,8 @@ tags:
 
 E' molto probabile che se leggi questo blog sei uno sviluppatore e ti starai chiedendo se è il caso di iniziare a bloggare di informatica e programmazione. La mia risposta è senza dubbio **si**. 
 
+<img src="/images/who_are_you.jpg">
+
 ## Perchè avere un blog su informatica e programmazione 
 
 Non per i soldi, o meglio non direttamente. Sarà molto difficile riuscire a fare soldi con un blog, devi avere tante visite - e in un blog precedente ho guadagnato qualcosina di tangibile (10€?) quando ho scritto un post che è stato toccato 12000 volte in un giorno. Esperienza purtroppo mai più ripetuta :-( 
