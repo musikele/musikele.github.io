@@ -1,4 +1,4 @@
-url: http://michelenasti.com
+siteurl: http://michelenasti.com
 
 gems:
 - octopress-paginate
@@ -17,6 +17,7 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       paginate: true
+      comments: true
 
 name: Michele Nasti
 

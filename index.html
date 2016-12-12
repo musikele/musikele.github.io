@@ -8,7 +8,7 @@ layout: default
 		{% for post in site.posts limit:1 %}
 		<header class="major">
 			<a href="{{ post.url }}">
-				<h2>{{ post.title }}</h2>
+				<h1>{{ post.title }}</h1>
 			</a>
 			<p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}
 				{% if post.author %} 
@@ -23,7 +23,7 @@ layout: default
 
 		<section>
 			{% if page.comments %}
-				{% include disqus.html %}
+				{% include disqus.html siteurl=site.url posturl=post.url %}
 			{% endif %}
 		</section>
 

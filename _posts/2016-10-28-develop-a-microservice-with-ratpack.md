@@ -57,8 +57,6 @@ And finally, **in development mode** (launching it with &#8220;gradle -t run&#8
 
 Don't read the official documentation - it's just a waste of time. Instead, **buy a copy of [Learning Ratpack](http://shop.oreilly.com/product/0636920037545.do)** - this book is clear and covers every aspect of a Ratpack application. I'm still at chapter five but it's very easy to go through!
 
-## 
-
 ## Plans for the future
 
 I want to rewrite everything in Groovy, as I said. I also have to finish the book to uncover all Ratpack powers. I have made many mistakes in the past, expecially from not having undestood how handlers work and how to pass data between handlers. That's why I say the book is useful.
