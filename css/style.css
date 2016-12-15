@@ -1268,10 +1268,12 @@
 		opacity: 1.0 !important;
 	}
 
-	article section img {
+	section img {
 		max-width: 100%;
 		max-height: 100%;
 		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.pull-right {
