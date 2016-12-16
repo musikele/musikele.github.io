@@ -1,161 +1,2075 @@
-<!DOCTYPE html>
-<html>
-  	<head>
-  		<title>Michele Nasti - Full stack Developer with an eye for the web</title>
-  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  		<meta name="description" content="Michele Nasti's personal blog'" />
-  		<meta name="keywords" content="michele nasti" />
-  		<!--<noscript>-->
-  			<link rel="stylesheet" href="/css/skel.css" />
-  			<link rel="stylesheet" href="/css/style.css" />
-  			<link rel="stylesheet" href="/css/style-xlarge.css" />
-  		<!--</noscript>-->
-  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-  	</head>
-
-	<body id="top">
-
-		<header id="header">
-	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
-	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
-	</h1>
-<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
-<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
-<a href="/archives/page10/">Archives</a>
-</header>
-
-<!-- Main -->
-<div id="main">
-	<section>
-		
-		<header class="major">
-			<a href="/italiano/2016/12/15/le-piattaforme-di-blogging-a-confronto/">
-				<h1>Le migliori piattaforme di blogging (per un developer) a confronto</h1>
-			</a>
-			<p class="post-meta">Dec 15, 2016
-				 
-				• musikele
-				</p>
-		</header>
-
-		<section>
-			<p>Per avere una visione più chiara dell’argomento <em>blogging for developers</em>, leggete anche il mio articolo precedente: <a href="/italiano/2016/12/12/perche-un-programmatore-dovrebbe-avere-un-blog/">Perché un programmatore dovrebbe avere un blog</a></p>
-
-<h2 id="le-piattaforme-di-blogging-procontro">Le piattaforme di blogging, pro/contro</h2>
-
-<p><img src="images/blogging_platforms.png" /></p>
-
-<p>Ho iniziato la mia avventura circa 10 anni fa usando <strong>Wordpress</strong>, un’eccellente piattaforma di blogging così versatile da poter diventare qualsiasi cosa: portale, sito vetrina, piattaforma di ecommerce… e anche blog, ovviamente!</p>
-
-<p>Tuttavia Wordpress ha alcuni requisiti che durano da 10 anni, ossia PHP e MySql. Ciò significa che per avere un blog bisogna necessariamente comprare uno spazio di hosting da qualche parte (a dire la verità i prezzi sono anche molto bassi per piattaforme non proprio performanti). Il modello di richiesta/risposta utilizzato da worpdress (principalmente <em>Apache</em>) e il fatto che per ogni richiesta si va sul db, l’hanno resa una delle piattaforme più lente in assoluto.</p>
-
-<p>Nota bene: esistono hosting ultra-ottimizzati per wordpress che costano anche 100$/mese, e sono potentissimi. Ma voi non avete questi soldi.</p>
-
-<p>Esistono altre piattaforme di blogging, cercherò di spiegare velocemente perchè secondo me non sono buone per un informatico:</p>
-
-<ul>
-  <li><strong>medium</strong> è la piattaforma cool del momento, ed è perfetta per chi <em>non</em> scrive codice. Il bello di Medium è che ti trova i lettori (consigliando il tuo articolo a chi legge cose simili) ed è perfettamente integrato con i social. A parte il titolo e il contenuto del testo, non si può personalizzare nulla. Only content. No ads.</li>
-  <li><strong>Linkedin Pulse</strong> è la piattaforma di blogging di linkedin, e gli articoli condivisi su questa piattaforma vengono condivisi con gli utenti del social network. La cosa positiva è che non si parla a una platea generalista visto che gli utenti di linkedin sono quasi tutti “professionals” quindi si ricevono anche ottimi feedback. La cosa negativa è che non si può personalizzare alcunché.</li>
-  <li><strong>Tumblr</strong> è un’altro social che in Italia non è famosissimo. Ho (purtroppo) visto dei blog tecnici su Tumblr che si mischiano con i blog dei quattordicenni in cerca di ansie e con, beh, il porno che su tumblr la fa da padrona.</li>
-</ul>
-
-<p>Queste tre piattaforme non si pagano, e in generale non dovete fare nulla (hosting, installazione, etc) se non scrivere. Sarete però limitati a ciò che la piattaforma permette di fare: non potrete mettere ads, non potrete modificare il layout se non per alcune cose, etc.</p>
-
-<p>Quasi tutte le piattaforme di cui vi ho parlato permettono di integrare codice esternamente tramite <a href="https://gist.github.com/">Gist</a>, che uno strumento fantastico per condividere snippet di codice al volo.</p>
-
-<h2 id="e-quindi">E quindi?</h2>
-
-<p>La mia scelta è ricaduta su <a href="http://jekyllrb.com"><strong>Jekyll</strong></a>, anzi per essere precisi sull’accoppiata <a href="https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/"><strong>Jekyll + Github</strong></a>. Queste tecnologie sono alla base del blog che vedete ora, e in un prossimo articolo vi spiegherò le infinite potenzialità di questa scelta.</p>
-
-		</section>
-
-		<section>
-			
-				<div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+ 
+ 
+  <url>
+    <loc>/italiano/2016/12/15/le-piattaforme-di-blogging-a-confronto/</loc> 
+    <lastmod>2016-12-15T00:00:00+00:00</lastmod>
     
-    var disqus_config = function () {
-        this.page.url = "http://michelenasti.com/italiano/2016/12/15/le-piattaforme-di-blogging-a-confronto/";
-        this.page.identifier =  '/italiano/2016/12/15/le-piattaforme-di-blogging-a-confronto/'  ;
-    };
+    <changefreq>monthly</changefreq>
     
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//michele-nastis-blog.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-			
-		</section>
-
-		 
-			<a href="/italiano/2016/12/12/perche-un-programmatore-dovrebbe-avere-un-blog/" class="button"><< Older Posts</a> 
-		 
-		
-	</section>
-
-        <!-- Footer -->
-        ---
-<footer id="footer">
-	<ul class="icons">
-
-		
-		<li>
-			<a href="https://github.com/musikele" class="icon fa-github">
-				<span class="label">GitHub</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
-				<span class="label">Twitter</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
-				<span class="label">LinkedIn</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
-				<span class="label">Google+</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
-				<span class="label">Facebook</span>
-			</a>
-		</li>
-		  
-	</ul>
-	<ul class="copyright">
-		<li>&copy; Michele Nasti</li>
-		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
-	</ul>
-</footer>
-<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-  		<script src="/js/jquery.min.js"></script>
-  		<script src="/js/jquery.poptrox.min.js"></script>
-  		<script src="/js/skel.min.js"></script>
-  		<script src="/js/init.js"></script>
-			<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-88764277-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-	</body>
-</html>
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/italiano/2016/12/12/perche-un-programmatore-dovrebbe-avere-un-blog/</loc> 
+    <lastmod>2016-12-12T00:00:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/11/tasse-e-disuguaglianza/</loc> 
+    <lastmod>2016-11-23T09:30:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/11/ognuno-vota-le-tasse-che-vuole-pagare/</loc> 
+    <lastmod>2016-11-23T09:30:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/11/esportazioni-e-reddito/</loc> 
+    <lastmod>2016-11-22T00:31:39+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/11/come-riconoscere-una-persona-che-fa-gioco-di-squadra/</loc> 
+    <lastmod>2016-11-21T09:30:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/11/build-your-own-cross-platform-time-machine/</loc> 
+    <lastmod>2016-11-05T10:15:45+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/11/orientdb/</loc> 
+    <lastmod>2016-11-04T10:06:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/10/develop-a-microservice-with-ratpack/</loc> 
+    <lastmod>2016-10-28T18:30:55+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/</loc> 
+    <lastmod>2016-10-14T12:36:20+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/09/come-ho-cambiato-lavoro-prequel-di-come-lavorare-da-remoto/</loc> 
+    <lastmod>2016-09-19T09:14:50+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/09/come-lavorare-da-remoto/</loc> 
+    <lastmod>2016-09-18T18:23:43+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/09/to-log-php-soap-call-with-nusoap/</loc> 
+    <lastmod>2016-09-13T19:30:47+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/08/my-very-personal-javascript-fatigue/</loc> 
+    <lastmod>2016-08-30T23:34:08+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/07/progetti-a-cui-lavoro-hype-carta-di-credito-conto-bancario-app-3-in-1/</loc> 
+    <lastmod>2016-07-17T15:13:25+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/06/come-scrivere-un-annuncio-di-lavoro-efficace/</loc> 
+    <lastmod>2016-06-25T11:22:11+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/</loc> 
+    <lastmod>2016-06-23T18:41:54+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/06/flow-typscript-type-checking-javascript/</loc> 
+    <lastmod>2016-06-06T18:00:46+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/05/visual-studio-code-leditor-mancava/</loc> 
+    <lastmod>2016-05-27T08:28:39+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/04/gestire-le-dipendenze-frontend-con-bower/</loc> 
+    <lastmod>2016-04-28T07:15:32+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/04/limportanza-di-un-pet-project-spiegata-da-chi-non-ne-ha-mai-realizzato-uno/</loc> 
+    <lastmod>2016-04-04T18:14:18+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/03/programmare-nodejs-the-right-way/</loc> 
+    <lastmod>2016-03-23T09:46:28+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/03/gioco-flexbox/</loc> 
+    <lastmod>2016-03-13T16:27:01+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/03/5-motivi-cui-rework-ti-cambiera-la-vita/</loc> 
+    <lastmod>2016-03-09T19:33:14+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/03/battere-coglioni-usando-un-po-scienza/</loc> 
+    <lastmod>2016-03-04T20:37:24+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/02/javascript-meetup-a-salerno/</loc> 
+    <lastmod>2016-02-29T08:15:19+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/02/considerazioni-sul-public-speaking/</loc> 
+    <lastmod>2016-02-27T10:10:23+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/02/il-battesimo-del-sangue-il-talk-su-nodejs-al-napoli-devday/</loc> 
+    <lastmod>2016-02-25T19:00:36+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/02/quanto-ci-metti-problemi-time-management/</loc> 
+    <lastmod>2016-02-19T12:47:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/02/ho-partecipato-a-google-hashcode2016-ecco-come-andata/</loc> 
+    <lastmod>2016-02-15T20:23:33+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/02/possiamo-dire-conosciamo-tecnologia/</loc> 
+    <lastmod>2016-02-15T11:06:14+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/02/alla-scoperta-del-machine-learning/</loc> 
+    <lastmod>2016-02-08T09:40:09+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/i-colloqui-di-lavoro-iniziano-e-finiscono-su-facebook/</loc> 
+    <lastmod>2016-01-31T23:02:35+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/saro-al-codemotion-2016-roma/</loc> 
+    <lastmod>2016-01-29T18:00:39+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/why-groovy-is-not-that-famous/</loc> 
+    <lastmod>2016-01-28T13:30:16+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/guida-agli-annunci-di-lavoro-per-sviluppatori/</loc> 
+    <lastmod>2016-01-26T18:22:27+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/creare-dinamicamente-groovy-beans-in-spring/</loc> 
+    <lastmod>2016-01-26T10:10:01+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/realizzare-un-piccolo-motore-di-scripting-in-una-webapp-java-con-groovy/</loc> 
+    <lastmod>2016-01-22T10:10:35+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/</loc> 
+    <lastmod>2016-01-13T10:10:58+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2016/01/la-programmazione-funzionale-con-le-funzioni-pure/</loc> 
+    <lastmod>2016-01-12T10:10:50+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/12/essere-bravi-colleghi-evitando-di-committare-cazzate/</loc> 
+    <lastmod>2015-12-24T10:30:46+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/</loc> 
+    <lastmod>2015-12-11T08:34:51+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/</loc> 
+    <lastmod>2015-12-01T13:30:15+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/459/</loc> 
+    <lastmod>2015-11-28T10:02:43+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/tutti-modi-generare-id-hibernate-jpa/</loc> 
+    <lastmod>2015-11-27T10:00:50+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/ritorno-dal-codemotion-milan-2015/</loc> 
+    <lastmod>2015-11-24T19:30:36+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/serve-un-piano/</loc> 
+    <lastmod>2015-11-20T10:30:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/i-tre-pilastri-per-migliorare-la-propria-carriera/</loc> 
+    <lastmod>2015-11-18T18:09:10+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/react-js-day-a-napoli-impressioni/</loc> 
+    <lastmod>2015-11-17T13:30:16+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/unofficial-but-simple-way-to-upgrade-moodle/</loc> 
+    <lastmod>2015-11-12T09:09:18+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/</loc> 
+    <lastmod>2015-11-04T13:30:55+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/10/start-custom-js-with-ngroute/</loc> 
+    <lastmod>2015-10-30T08:26:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/10/slide-del-mio-mini-talk-su-nodejs-al-linux-day-salerno-2015/</loc> 
+    <lastmod>2015-10-23T18:34:12+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/10/libreria-del-giorno-imbroglia-i-server-di-continuous-automation-con-wolkswagen/</loc> 
+    <lastmod>2015-10-13T18:25:17+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/10/follow-me-on-twitter-and-linkedin/</loc> 
+    <lastmod>2015-10-09T18:45:20+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/10/perche-node-js-e-cosi-difficile-da-imparare-per-chi-viene-da-java/</loc> 
+    <lastmod>2015-10-06T19:00:12+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/09/the-story-of-a-programmer-me-that-failed-in-php/</loc> 
+    <lastmod>2015-09-08T19:22:35+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/</loc> 
+    <lastmod>2015-07-28T20:30:09+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/07/css-position/</loc> 
+    <lastmod>2015-07-27T19:00:55+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/07/informatica-antincendio/</loc> 
+    <lastmod>2015-07-26T19:25:19+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/</loc> 
+    <lastmod>2015-07-21T18:30:10+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/07/instantiate-beans-with-spring-without-autowired/</loc> 
+    <lastmod>2015-07-14T18:30:45+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/</loc> 
+    <lastmod>2015-07-03T18:30:16+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/06/impostare-phpunit-in-intellij/</loc> 
+    <lastmod>2015-06-24T13:30:12+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/06/imovie-50-error/</loc> 
+    <lastmod>2015-06-22T19:00:16+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/</loc> 
+    <lastmod>2015-05-27T08:00:27+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/05/selenium-webdriver-for-dummies/</loc> 
+    <lastmod>2015-05-26T08:58:58+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/</loc> 
+    <lastmod>2015-05-17T00:19:27+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/05/basta-ai-powerpoint-fatti-male/</loc> 
+    <lastmod>2015-05-06T18:32:43+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/</loc> 
+    <lastmod>2015-05-05T18:45:08+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/05/coderdojo-a-salerno-la-mia-esperienza/</loc> 
+    <lastmod>2015-05-04T18:30:41+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/04/la-libreria-js-del-giorno-elevator-js/</loc> 
+    <lastmod>2015-04-24T09:41:54+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/04/should-i-learn-php-symphony/</loc> 
+    <lastmod>2015-04-17T13:45:46+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/04/how-would-you-call-your-bleeding-edge-stuff-framework-in-all-programming-languages-and-platforms/</loc> 
+    <lastmod>2015-04-14T17:22:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/04/the-blog-app-in-ruby-on-rails-iteration-2/</loc> 
+    <lastmod>2015-04-13T20:30:12+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/04/intellij-idea-alla-fine-e-arrivato-lamore/</loc> 
+    <lastmod>2015-04-09T13:30:21+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/04/blogzinga/</loc> 
+    <lastmod>2015-04-08T21:49:22+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/03/codemotion-roma-2015-day-two/</loc> 
+    <lastmod>2015-03-30T08:14:53+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/03/installing-ruby-on-rails-on-mac-10-10-is-a-pain/</loc> 
+    <lastmod>2015-03-29T22:13:30+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/03/codemotion-roma-2015-raccontiamo-questa-prima-giornata/</loc> 
+    <lastmod>2015-03-27T21:25:17+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/03/howto-create-a-blog-with-ruby-on-rails/</loc> 
+    <lastmod>2015-03-24T13:30:53+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/03/playing-with-my-friends-3d-printer/</loc> 
+    <lastmod>2015-03-19T09:05:39+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/</loc> 
+    <lastmod>2015-03-15T17:24:44+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/02/scrivere-codice-migliore-rispondendo-a-12-semplici-domande/</loc> 
+    <lastmod>2015-02-24T13:15:36+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/02/quando-assumere-generalisti-vs-specialisti/</loc> 
+    <lastmod>2015-02-19T13:00:32+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/02/attenti-alla-classe-active-delle-progress-bar-bootstrap-3/</loc> 
+    <lastmod>2015-02-11T13:15:36+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/02/webapp-nel-tempo-libero-con-approccio-mean/</loc> 
+    <lastmod>2015-02-06T10:17:38+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/02/pro-e-contro-di-angularjs-dopo-2-mesi-di-lavoro/</loc> 
+    <lastmod>2015-02-02T09:55:11+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/imparare-a-programmare-come-chef-cannavacciuolo/</loc> 
+    <lastmod>2015-01-29T20:13:20+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/a-video-that-makes-italians-proud-of-their-country/</loc> 
+    <lastmod>2015-01-24T18:51:46+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/how-to-style-a-button-to-upload-a-file/</loc> 
+    <lastmod>2015-01-20T20:44:52+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/codemotion-2015/</loc> 
+    <lastmod>2015-01-17T16:08:36+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/pdfmake-libreria-js-per-creare-pdf/</loc> 
+    <lastmod>2015-01-13T13:30:46+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/hackerando-la-caldaia-junkers-ceraclass-smart-incasso-per-farla-funzionare-col-termostato-netatmo/</loc> 
+    <lastmod>2015-01-11T16:20:32+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/uscire-dalla-comfort-zone-per-ottenere-piu-successo/</loc> 
+    <lastmod>2015-01-09T09:11:25+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/convertire-un-array-di-byte-in-un-file-java-con-fileoutputstream/</loc> 
+    <lastmod>2015-01-08T10:49:51+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/chiamare-una-funzione-javascript-subito-dopo-averla-definita/</loc> 
+    <lastmod>2015-01-08T09:14:21+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/il-document-object-model-dom/</loc> 
+    <lastmod>2015-01-08T08:53:26+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/un-breve-riassunto-sulla-storia-di-javascript/</loc> 
+    <lastmod>2015-01-07T23:01:17+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
+    <loc>/2015/01/whats-new-in-javascript/</loc> 
+    <lastmod>2015-01-07T21:54:52+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  
+  
+  
+  <url>
+    <loc>/archives/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/init.js</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page2/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page3/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page4/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page5/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page6/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page7/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page8/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page9/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/archives/page10/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page2/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page3/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page4/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page5/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page6/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page7/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page8/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page9/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/chi-sono-michele-nasti/page10/</loc>
+    
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page2/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page3/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page4/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page5/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page6/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page7/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page8/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page9/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/page10/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page2/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page3/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page4/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page5/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page6/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page7/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page8/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page9/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/js/page10/</loc>
+    
+    <lastmod>2016-12-16T14:27:42+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page2/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page3/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page4/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page5/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page6/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page7/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page8/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page9/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+  
+  <url>
+    <loc>/talks-conferences/page10/</loc>
+    
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.3</priority>
+    
+  </url>
+  
+  
+</urlset>

@@ -40,7 +40,7 @@
 
 <p>10 anni dopo Javascript non è più il linguaggio dei Browser. Javascript è ovunque. Addirittura esistono DB che prendono in input codice JS e lo eseguono sui dati! Tranquilli, non vi parlerò di questo mondo incasinato (cit. il mio amico TilT “se qualcosa si può fare con Javascript, eventualmente verrà fatto in javascript”), non ancora almeno. Questo articolo vorrebbe semplicemente parlarvi di cosa c’è di diverso tra un linguaggio ad oggetti, come Java, e un linguaggio funzionale, come Javascript. E poi parliamo di Node.</p>
 
-<h3 id="tutto--una-funzione">1. Tutto è una funzione</h3>
+<h3 id="1-tutto-è-una-funzione">1. Tutto è una funzione</h3>
 
 <p>Ci ho messo un po’ a capire questa proprietà dei linguaggi funzionali. In pratica tra i vari tipi di default di un linguaggio funzionale come javascript ci sono int, long, double, Object, … e <strong>function</strong>. Altri linguaggi, come Scala, usano un approccio simile. Essendo una funzione un tipo assegnabile a una variabile, si possono passare funzioni in input a un’altra funzione, si possono assegnare funzioni alle variabili, e si possono anche scrivere funzioni che ritornano funzioni! è un mondo incasinato ma proverò a spiegarvelo in pochi semplici snippet.</p>
 
@@ -68,7 +68,7 @@ salutaConNome(salutaColCiao , "Michele");
 
 </pre>
 
-<h3 id="callback">2. Callback</h3>
+<h3 id="2-callback">2. Callback</h3>
 
 <p>Una Callback è una funzione che viene “chiamata dopo”. Ad esempio, fate una query al DB, quando questa finisce processate i dati. In un linguaggio come Java scrivereste qualcosa così:</p>
 
@@ -123,7 +123,7 @@ pazienteDAO.getAll(new Callback() {
 
 <pre class="lang:default decode:true">patientDAO.getAll(process(patientList));</pre>
 
-<h3 id="tutto--in-un-solo-thread-e-basta">3. tutto è in un solo thread (e basta!)</h3>
+<h3 id="3-tutto-è-in-un-solo-thread-e-basta">3. tutto è in un solo thread (e basta!)</h3>
 
 <p>Questa è difficile da spiegare, perchè non è davvero così. Il thread che analizza il codice javascript e lo traduce in codice macchina è uno solo. Ma tutte le operazione di sistema, come quelle di I/O (su disco, su rete…) vengono eseguite su un thread a parte. L’idea è che, quando chiamiamo un’operazione di IO come una lettura su disco, il sistema operativo si occupa di leggere il file e lo fa in maniera <em>asincrona</em>, così che Node può passare subito all’istruzione successiva. Quando il sistema operativo ha terminato la lettura del file chiama la callback, che viene schedulata da Node per essere eseguita nel famoso unico thread.</p>
 
@@ -135,7 +135,7 @@ pazienteDAO.getAll(new Callback() {
 
 <p>Per ricapitolare: <em>tutto ciò che fa parte di una libreria base viene eseguito in parallelo, <strong>tranne il tuo codice</strong></em>.</p>
 
-<h3 id="il-fantastico-mondo-degli-oggetti-in-js">4. Il fantastico mondo degli oggetti in JS</h3>
+<h3 id="4-il-fantastico-mondo-degli-oggetti-in-js">4. Il fantastico mondo degli oggetti in JS</h3>
 
 <p>Questa non è troppo difficile da capire ma l’ho messa qui perchè, rispetto ai vari linguaggioni business etc, penso che sia una cosa fantastica.  Per creare un oggetto in JS è sufficiente questo :</p>
 
