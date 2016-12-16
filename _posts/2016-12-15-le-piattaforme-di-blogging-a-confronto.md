@@ -19,7 +19,7 @@ Per avere una visione più chiara dell'argomento *blogging for developers*, legg
 
 ## Le piattaforme di blogging, pro/contro  
 
-<img src="images/blogging_platforms.png">
+<img src="{{site.baseurl}}/images/blogging_platforms.png">
 
 Ho iniziato la mia avventura circa 10 anni fa usando **Wordpress**, un'eccellente piattaforma di blogging così versatile da poter diventare qualsiasi cosa: portale, sito vetrina, piattaforma di ecommerce... e anche blog, ovviamente! 
 
