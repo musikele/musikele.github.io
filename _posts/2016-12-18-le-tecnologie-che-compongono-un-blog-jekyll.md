@@ -3,7 +3,7 @@ title: Le tecnologie che compongono un blog Jekyll
 author: musikele
 layout: post
 categories:
-  - Italiano
+- Italiano
 tags:
 - git
 - github
@@ -14,9 +14,9 @@ tags:
 - curriculum
 ---
 
-> Per sapere come mai mi sono orientato proprio su Jekyll come piattaforma di blogging, leggete il mio precedente articolo [Le migliori piattaforme di blogging (per un developer) a confronto]({% post_url 2016-12-15-le-piattaforme-di-blogging-a-confronto %}).
-
 Gli ingredienti segreti di questo magico calderone che é il mio blog sono: **Git**, **github**, **jekyll** (con tanto **html**, **css** & **javascript**), **markdown**. Vediamoli in dettaglio. 
+
+> Per sapere come mai mi sono orientato proprio su Jekyll come piattaforma di blogging, leggete il mio precedente articolo [Le migliori piattaforme di blogging (per un developer) a confronto]({% post_url 2016-12-15-le-piattaforme-di-blogging-a-confronto %}).
 
 ## Git
 

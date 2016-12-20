@@ -15,13 +15,11 @@ tags:
   - jekyll
 ---
 
-Per avere una visione più chiara dell'argomento *blogging for developers*, leggete anche il mio articolo precedente: [Perché un programmatore dovrebbe avere un blog]({% post_url 2016-12-12-perche-un-programmatore-dovrebbe-avere-un-blog %})
-
-## Le piattaforme di blogging, pro/contro  
+Ho iniziato la mia avventura circa 10 anni fa usando **Wordpress**, un'eccellente piattaforma di blogging così versatile da poter diventare qualsiasi cosa: portale, sito vetrina, piattaforma di ecommerce... e anche blog, ovviamente! 
 
 <img src="{{site.baseurl}}/images/blogging_platforms.png">
 
-Ho iniziato la mia avventura circa 10 anni fa usando **Wordpress**, un'eccellente piattaforma di blogging così versatile da poter diventare qualsiasi cosa: portale, sito vetrina, piattaforma di ecommerce... e anche blog, ovviamente! 
+> Per avere una visione più chiara dell'argomento *blogging for developers*, leggete anche il mio articolo precedente: [Perché un programmatore dovrebbe avere un blog]({% post_url 2016-12-12-perche-un-programmatore-dovrebbe-avere-un-blog %})
 
 Tuttavia Wordpress ha alcuni requisiti che durano da 10 anni, ossia PHP e MySql. Ciò significa che per avere un blog bisogna necessariamente comprare uno spazio di hosting da qualche parte (a dire la verità i prezzi sono anche molto bassi per piattaforme non proprio performanti). Il modello di richiesta/risposta utilizzato da worpdress (principalmente *Apache*) e il fatto che per ogni richiesta si va sul db, l'hanno resa una delle piattaforme più lente in assoluto. 
 
