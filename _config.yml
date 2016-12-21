@@ -3,6 +3,7 @@ siteurl: http://michelenasti.com
 
 gems:
   - octopress-paginate
+  - jekyll-last-modified-at
 
 permalink: pretty
 
@@ -19,6 +20,7 @@ defaults:
     values:
       paginate: true
       comments: true
+      author: musikele
 
 name: Michele Nasti
 

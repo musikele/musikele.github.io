@@ -10,6 +10,9 @@
 				<meta name="description" content="Michele Nasti's personal blog'" />
   			<meta name="keywords" content="michele nasti" />
 			{% endif %}
+			{% if page.layout != "default" %} 
+				<meta http-equiv="last-modified" content="{{page.last_modified_at}}" />
+			{% endif %}
   		<!--<noscript>-->
   			<link rel="stylesheet" href="{{site.baseurl}}/css/skel.css" />
   			<link rel="stylesheet" href="{{site.baseurl}}/css/style.css" />
