@@ -27,14 +27,16 @@ Tuttavia Wordpress ha alcuni requisiti che durano da 10 anni, ossia PHP e MySql.
 
 Esistono altre piattaforme di blogging, cercherò di spiegare velocemente perchè secondo me non sono buone per un informatico: 
 
-- **medium** è la piattaforma cool del momento, ed è perfetta per chi _non_ scrive codice. Il bello di Medium è che ti trova i lettori (consigliando il tuo articolo a chi legge cose simili) ed è perfettamente integrato con i social. A parte il titolo e il contenuto del testo, non si può personalizzare nulla. Only content. No ads. 
+- **Medium** è la piattaforma cool del momento, ed è perfetta per chi _non_ scrive codice. Il bello di Medium è che ti trova i lettori (consigliando il tuo articolo a chi legge cose simili) ed è perfettamente integrato con i social. A parte il titolo e il contenuto del testo, non si può personalizzare nulla. Only content. No ads. 
 - **Linkedin Pulse** è la piattaforma di blogging di linkedin, e gli articoli condivisi su questa piattaforma vengono condivisi con gli utenti del social network. La cosa positiva è che non si parla a una platea generalista visto che gli utenti di linkedin sono quasi tutti "professionals" quindi si ricevono anche ottimi feedback. La cosa negativa è che non si può personalizzare alcunché.
 - **Tumblr** è un'altro social che in Italia non è famosissimo. Ho (purtroppo) visto dei blog tecnici su Tumblr che si mischiano con i blog dei quattordicenni in cerca di ansie e con, beh, il porno che su tumblr la fa da padrona. 
 
 Queste tre piattaforme non si pagano, e in generale non dovete fare nulla (hosting, installazione, etc) se non scrivere. Sarete però limitati a ciò che la piattaforma permette di fare: non potrete mettere ads, non potrete modificare il layout se non per alcune cose, etc. 
 
-Quasi tutte le piattaforme di cui vi ho parlato permettono di integrare codice esternamente tramite [Gist](https://gist.github.com/), che uno strumento fantastico per condividere snippet di codice al volo. 
+Quasi tutte le piattaforme di cui vi ho parlato permettono di integrare codice esternamente tramite [Gist di Github](https://gist.github.com/), uno strumento fantastico per condividere snippet di codice al volo. 
 
 ## E quindi?
 
-La mia scelta è ricaduta su [**Jekyll**](http://jekyllrb.com), anzi per essere precisi sull'accoppiata [**Jekyll + Github**](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/). Queste tecnologie sono alla base del blog che vedete ora, e in un prossimo articolo vi spiegherò le infinite potenzialità di questa scelta. 
+La mia scelta è ricaduta su [**Jekyll**](http://jekyllrb.com), anzi per essere precisi sull'accoppiata **Jekyll + Github**. Queste tecnologie sono alla base del blog che vedete ora, e in un prossimo articolo vi spiegherò le infinite potenzialità di questa scelta. 
+
+> Update: l'articolo su [Jekyll & Github]({% post_url 2016-12-22-jekyll-e-github-in-pratica %}) l'ho pubblicato. Check it out! 
