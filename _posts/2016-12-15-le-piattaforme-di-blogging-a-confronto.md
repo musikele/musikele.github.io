@@ -23,7 +23,7 @@ Ho iniziato la mia avventura circa 10 anni fa usando **Wordpress**, un'eccellent
 
 Tuttavia Wordpress ha alcuni requisiti che durano da 10 anni, ossia PHP e MySql. Ciò significa che per avere un blog bisogna necessariamente comprare uno spazio di hosting da qualche parte (a dire la verità i prezzi sono anche molto bassi per piattaforme non proprio performanti). Il modello di richiesta/risposta utilizzato da worpdress (principalmente *Apache*) e il fatto che per ogni richiesta si vada sul db, l'hanno resa una delle piattaforme più lente in assoluto. 
 
-Nota bene: esistono hosting ultra-ottimizzati per wordpress che costano anche 100$/mese, e sono potentissimi. Ma voi non avete questi soldi. 
+> Nota bene: esistono hosting ultra-ottimizzati per wordpress che costano anche 100$/mese, e sono potentissimi. Ma voi non avete questi soldi. 
 
 Esistono altre piattaforme di blogging, cercherò di spiegare velocemente perchè secondo me non sono buone per un informatico: 
 
