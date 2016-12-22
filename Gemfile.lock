@@ -50,6 +50,7 @@ DEPENDENCIES
   jekyll
   jekyll-last-modified-at
   octopress-paginate
+  rouge
 
 BUNDLED WITH
    1.13.6

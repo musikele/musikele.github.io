@@ -7,6 +7,9 @@ gems:
 
 permalink: pretty
 
+markdown: kramdown
+highlighter: rouge
+
 pagination:	
   limit: false
   per_page: 10
