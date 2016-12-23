@@ -1279,3 +1279,9 @@
 	.pull-right {
 		right: 0;
 	}
+
+	.button-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
