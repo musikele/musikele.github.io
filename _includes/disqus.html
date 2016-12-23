@@ -7,7 +7,7 @@
     
     var disqus_config = function () {
         this.page.url = "{{ site.siteurl }}{{ site.baseurl }}{{ include.posturl }}";
-        this.page.identifier = {% if page.dsq_thread_id %} '{{page.dsq_thread_id}}' {% else %} '{{include.posturl }}' {% endif %} ;
+        this.page.identifier = '{{include.posturl }}';
     };
     
 (function() { // DON'T EDIT BELOW THIS LINE
