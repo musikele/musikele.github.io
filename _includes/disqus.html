@@ -4,10 +4,11 @@
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
      */
-    
+    // this.page.url = "{{ site.siteurl }}{{ site.baseurl }}{{ include.posturl }}";
+		// this.page.identifier = '{{include.posturl }}';
     var disqus_config = function () {
-        this.page.url = "{{ site.siteurl }}{{ site.baseurl }}{{ include.posturl }}";
-        this.page.identifier = '{{include.posturl }}';
+    	var disqus_identifier = '{{ site.siteurl }}{{ site.baseurl }}{{ include.posturl }}';
+			var disqus_url = '{{include.posturl }}';
     };
     
 (function() { // DON'T EDIT BELOW THIS LINE
