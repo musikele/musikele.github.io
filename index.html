@@ -23,7 +23,7 @@ layout: default
 
 		<section>
 			{% if page.comments %}
-				{% include disqus.html siteurl=site.url posturl=post.url %}
+				<a href="{{post.url}}#disqus_thread">Commenti</a>
 			{% endif %}
 		</section>
 
