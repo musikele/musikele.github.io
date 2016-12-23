@@ -4,31 +4,32 @@ layout: default
 
 <!-- Main -->
 <div id="main">
-	<section>
-		{% for post in site.posts limit:1 %}
-		<header class="major">
-			<a href="{{ post.url }}">
-				<h1>{{ post.title }}</h1>
-			</a>
-			<p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}
-				{% if post.author %} 
-				• {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta
-				}}{% endif %}
-				</p>
-		</header>
+  <section>
+    {% for post in site.posts limit:1 %}
+    <header class="major">
+      <a href="{{ post.url }}">
+        <h1>{{ post.title }}</h1>
+      </a>
+      <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}
+        {% if post.author %} 
+        • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta
+        }}{% endif %}
+        </p>
+    </header>
 
-		<section>
-			{{ post.content }}
+    <section>
+      {{ post.content }}
+    </section>
+    
+		<section class="button-container">
+      {% if post.previous.url %}
+        <a href="{{post.previous.url}}" class="button"><< Older Posts</a> 
+      {% endif %}
+
+      {% if page.comments %}
+        <a class="button center" href="{{post.url}}#disqus_thread">Commenti</a>
+      {% endif %}
+
+    {% endfor %}
 		</section>
-
-		<section>
-			{% if page.comments %}
-				<a href="{{post.url}}#disqus_thread">Commenti</a>
-			{% endif %}
-		</section>
-
-		 {% if post.previous.url %}
-			<a href="{{post.previous.url}}" class="button"><< Older Posts</a> 
-		 {% endif %}
-		{% endfor %}
-	</section>
+  </section>
