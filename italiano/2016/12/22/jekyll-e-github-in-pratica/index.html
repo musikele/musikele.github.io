@@ -9,7 +9,7 @@
   		<meta name="keywords" content="github, blogging, jekyll, markdown" />
 			
 			 
-				<meta http-equiv="last-modified" content="2016-12-22 14:03:23 +0000" />
+				<meta http-equiv="last-modified" content="2017-01-02 10:46:54 +0000" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -41,14 +41,14 @@
         <section>
             <p>In questo articolo spiegheremo rapidamente come installare un blog jekyll su github.</p>
 
-<p><img src="/images/jekyll_logo.png" /></p>
+<p><img src="/images/jekyll_logo.png" alt="" /></p>
 
 <blockquote>
   <p><strong>Nerd Alert</strong>: dovete saper usare il <strong>terminale</strong> e <strong>git</strong> ! Se volete, facciamo un tutorial anche su questi due argomenti.</p>
 </blockquote>
 
 <blockquote>
-  <p>Ho <a href="/italiano/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll/">parlato ampiamente</a> del perchè Jekyll è una buona soluzione di blogging, adatta agli sviluppatori.</p>
+  <p>Ho <a href="/italiano/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll/">parlato ampiamente</a> del perchè Jekyll sia una buona soluzione di blogging, adatta agli sviluppatori.</p>
 </blockquote>
 
 <h2 id="inizializzare-github">Inizializzare Github</h2>
@@ -67,19 +67,25 @@
 <p>Qualunque scelta abbiate fatto, siete già pronti per servire i vostri file. Facciamo subito una prova. Per non ripetere gli esempi due volte immaginiamo di stare creando un blog e quindi facciamo gli esempi sul <em>secondo caso</em>.</p>
 
 <ol>
-  <li>Create e scaricate il repository col vostro username in locale
-    <div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">git</span><span class="kv"> clone https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
+  <li>Create e scaricate il repository col vostro username in locale</li>
+</ol>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">git</span><span class="kv"> clone https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
 </span><span class="w">$ </span><span class="nc">cd</span><span class="kv"> &lt;username&gt;.github.io 
 </span></code></pre>
-    </div>
-  </li>
-  <li>in questa directory potrete creare un simpatico file html e committarlo: sarà automaticamente servito :)
-    <div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">echo</span><span class="kv"> &lt;h1&gt;Hello World&lt;/h1&gt; &gt;&gt; index.html
+</div>
+
+<ol>
+  <li>in questa directory potrete creare un simpatico file html e committarlo: sarà automaticamente servito :)</li>
+</ol>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">echo</span><span class="kv"> &lt;h1&gt;Hello World&lt;/h1&gt; &gt;&gt; index.html
 </span><span class="w">$ </span><span class="nc">git</span><span class="kv"> commit -am "first commit"
 </span><span class="w">$ </span><span class="nc">git</span><span class="kv"> push 
 </span></code></pre>
-    </div>
-  </li>
+</div>
+
+<ol>
   <li>puntate il browser a <code class="highlighter-rouge">http://&lt;username&gt;.github.io</code> e gustatevi il risultato.</li>
 </ol>
 
@@ -89,7 +95,7 @@
 
 <h2 id="ma-questo-non-è-jekyll-installiamolo">Ma questo non è Jekyll: installiamolo</h2>
 
-<p>Per prima cosa <a href="https://www.ruby-lang.org/it/">installate Ruby</a>, un linguggio di programmazione utilizzatissimo in USA  e pochissimo in EU: le istruzioni variano da sistema a sistema, e forse sarà questo il passo più complesso del tutorial.</p>
+<p>Per prima cosa <a href="https://www.ruby-lang.org/it/">installate Ruby</a>, un linguggio di programmazione utilizzatissimo in USA e pochissimo in EU: le istruzioni variano da sistema a sistema, e forse sarà questo il passo più complesso del tutorial.</p>
 
 <p>Una volta installato ruby, dovrete installare jekyll. Questo passo sarà facile grazie a un comando (<code class="highlighter-rouge">gem</code>) incluso in ruby che permette di installare script:</p>
 
@@ -131,7 +137,7 @@
 
 <p>Nella directory <code class="highlighter-rouge">_posts/</code> scriveremo i nostri post.</p>
 
-<p>Non  voglio ripetere altro, visto che nella <a href="https://jekyllrb.com/docs/home/">doc ufficiale</a> di Jekyll c’è praticamente tutto quello che dovreste sapere. Solo una cosa mi preme dirvi…</p>
+<p>Non voglio ripetere altro, visto che nella <a href="https://jekyllrb.com/docs/home/">doc ufficiale</a> di Jekyll c’è praticamente tutto quello che dovreste sapere. Solo una cosa mi preme dirvi…</p>
 
 <p>Se avete committato, il vostro blog è già visibile a <code class="highlighter-rouge">http://&lt;username&gt;.github.io</code> - provare per credere !</p>
 
