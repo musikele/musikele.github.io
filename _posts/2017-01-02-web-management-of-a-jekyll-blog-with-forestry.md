@@ -1,6 +1,6 @@
 ---
-title: 'Web management of a Jekyll blog with Forestry.io '
-date: '2017-01-02 12:25:31'
+title: 'Web management of a Jekyll blog with Forestry'
+date: '2017-01-02 00:00:00'
 paginate: true
 comments: true
 author: musikele
