@@ -28,8 +28,8 @@ Here's a screenshot of my backend while I am writing this article in a wysiwyg e
 
 You get a
 
-* **wysiwyg editor**for posts and pages that is completely in-sync with the repository
-*   a **custom url**to access the blog-management without going to forestry.io website everytime
+* **wysiwyg editor** for posts and pages that is completely in-sync with the repository
+*   a **custom url** to access the blog-management without going to forestry.io website everytime
 *   support for **parameters** in front matter (with auto recognition!)
 *  support for **drafts**
 *  **upload** of images and files
