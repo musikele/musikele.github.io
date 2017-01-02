@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+			
+				<title>Alcune Best Practices per non impazzire con i DB relazionali - Michele Nasti</title>
+				<meta name="description" content="
+  Cerchiamo di avere poche ma semplici regole di gestione del DB che servono a non impazzire in futuro, fin'ora quelle più semplici che ho usato e che hanno portato alla miglior comprensione possibile (parlo di un team di 30 devs) è:
+
+
+" />
+  		<meta name="keywords" content="best practices, database relazionali, RDBMS, sql" />
+			
+			 
+				<meta http-equiv="last-modified" content="2016-11-29 10:11:54 +0000" />
+			
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+				<link rel="stylesheet" href="/css/colorful.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title"><a href="/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/">Alcune Best Practices per non impazzire con i DB relazionali</a></h2>
+                <p class="post-meta">Jul 3, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <div>
+  Cerchiamo di avere poche ma semplici regole di gestione del DB che servono a non impazzire in futuro, fin'ora quelle più semplici che ho usato e che hanno portato alla miglior comprensione possibile (parlo di un team di 30 devs) è:
+</div>
+
+<div>
+  <ul>
+    <li>
+      <strong>chiamare tutte le tabelle al singolare</strong> (es. PRODOTTO e non PRODOTTI)
+    </li>
+    <li>
+      <strong>tutte le tabelle devono avere un solo ID</strong> (<span style="text-decoration: underline;">niente chiavi composite!</span>) - di tipo String o Long. <ul>
+        <li>
+          <span class="lang:default decode:true  crayon-inline ">String</span>  quando nel db ci saranno parecchi inserimenti e potremmo usare una funzione per generare stringhe casuali (UUID) da usare come ID.
+        </li>
+        <li>
+          <span class="lang:default decode:true  crayon-inline ">Long</span>  quando ci sono pochi inserimenti ma molte letture, così da facilitare gli indexer. Supponiamo di avere 30000 inserimenti simultanei, il 30.000esimo deve aspettare che i precedenti 29.999 record abbiano ricevuto un ID numerico. In questo caso conviene usare la strategia precedente (String).
+        </li>
+      </ul>
+    </li>
+    
+    <li>
+      quando ci sono relazioni con altre tabelle, <strong>la colonna che gestisce la relazione si chiamerà "NOMEALTRATABELLA_ID</strong>"
+    </li>
+    <li>
+      Quando ci sono tabelle che mappano <strong>relazioni molti-a-molti</strong>, chiamare la tabella semplicemente ENTITY1_ENTITY2 , magari provando a inserire come nome della prima entità quella che "gestisce" la relazione. Però non è davvero importante l'ordine in cui compaiono, l'importante è che si segua una convenzione.
+    </li>
+    <li>
+      <strong>evitare di chiamare colonne con il prefisso NOT_ e similari</strong>, visto che il nostro cervello fa uno sforzo algebrico per capirne il significato (es. NOT_PRESENT a false, vuol dire che è presente... Ma perchè non chiamare la colonna PRESENT e settare il valore a true?!)
+    </li>
+  </ul>
+  
+  <div>
+    ho lavorato in un'azienda dove il DB di 3000 tabelle era organizzato in questo modo e si capiva tutto. Hibernate quasi non necessitava di configurazione. Ora lavoro in un posto dove il db è vecchio 30 anni e hano fatto il contrario di queste regole; non si capisce una vacca.
+  </div>
+</div>
+
+        </section>
+
+				<section>
+					
+						<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'http://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'http://michelenasti.com/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/';
+			var disqus_identifier = 'http://michelenasti.com/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					
+				</section>
+
+        <footer> 
+					<br> 
+					Altri articoli: 
+					<br>
+          <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="/2015/06/impostare-phpunit-in-intellij/">Impostare PHPUnit in IntelliJ</a></h2>
+                    </header>
+                    <section>
+                        <p>Se state lavorando a un progetto creato col framework <strong>Symfony2,</strong> in <strong>PHP</strong>, è molto probabile che state cercando un IDE che vi permette di utilizzare tutti gli strumenti necessari allo sviluppo.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2015/06/impostare-phpunit-in-intellij/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="/2015/07/instantiate-beans-with-spring-without-autowired/">Instantiate beans with Spring without @Autowired</a></h2>
+                    </header>
+                    <section>
+                        <p>Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/07/instantiate-beans-with-spring-without-autowired/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

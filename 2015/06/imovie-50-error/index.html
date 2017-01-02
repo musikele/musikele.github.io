@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+			
+				<title>iMovie and the -50 error - Michele Nasti</title>
+				<meta name="description" content="Yesterday I had to realize a quick video for a family celebration so I decided to use iMovie for the first time since I had bought my Mac in 2012.
+
+" />
+  		<meta name="keywords" content="-50 error, apple, imovie" />
+			
+			 
+				<meta http-equiv="last-modified" content="2016-11-29 10:11:54 +0000" />
+			
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+				<link rel="stylesheet" href="/css/colorful.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title"><a href="/2015/06/imovie-50-error/">iMovie and the -50 error</a></h2>
+                <p class="post-meta">Jun 22, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg"><img class="alignleft size-full wp-image-320" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?fit=400%2C400" alt="imovie400" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?w=400 400w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=150%2C150 150w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=300%2C300 300w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1" /></a>Yesterday I had to realize a quick video for a family celebration so I decided to use <strong>iMovie</strong> for the first time since I had bought my Mac in 2012.</p>
+
+<p>iMovie is smart and it is very easy to prepare a video without being an expert of video editing. Of course it was what I was searching for, and in about 2 hours I managed to make the video.</p>
+
+<p>The problem arose when I tried to create a <strong>mpg file</strong> of the video. There’s a button <strong>“share” -&gt; “file”</strong> with some settings about the video, and I simply left all with default values.</p>
+
+<p>My first 5-6 attempts where blocked by a very strange <strong>-50 error</strong>.  There was <strong>no description of what was going on</strong>, so I tried to be friend with Google. Unfortunately they all described error -49 and I was a bit disappointed, however it seems that nobody really knows where’s the problem and here are the suggestions that worked for me:</p>
+
+<ul>
+  <li>disable Time Machine while rendering the video;</li>
+  <li>disable iCloud;</li>
+  <li>disable other cloud services that are scanning the rendering directory (dropbox, google drive, owncloud, etc. In my case, owncloud was scanning Pictures folder).</li>
+</ul>
+
+<p>At first, none of these suggestions solved the problem.</p>
+
+<p>Another strange thing was that <strong>the video was stopping always at the same point</strong> - I could see the output video, and instead of 4 minutes it was about 3:15 minutes. I reviewed the video and I found something corrupted, like a flickering in the video; it worked fine during preview but the Renderer Job failed for this. I deleted this video and tried again. (In reality, I only dropped the corrupted frames, removing the bad part from the clip).</p>
+
+<p><strong>The video still gave -50 errors , but to my surprise, the rendering process was continuing.</strong> At the end the video was completed and it played well in Vlc and QuickTime. So My suggestions are to</p>
+
+<ol>
+  <li>disable the services listed before</li>
+  <li>check if the rendering blocks always at the same point</li>
+  <li>check if the rendering really stops or if continues until the end. Ignore errors that don’t block the rendering.</li>
+</ol>
+
+<p>While waiting for an Apple iFix, maybe this will save 3-4 hours to understand what’s going on.</p>
+
+        </section>
+
+				<section>
+					
+						<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'http://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'http://michelenasti.com/2015/06/imovie-50-error/';
+			var disqus_identifier = 'http://michelenasti.com/2015/06/imovie-50-error/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					
+				</section>
+
+        <footer> 
+					<br> 
+					Altri articoli: 
+					<br>
+          <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">iFrame, Safari, iOs e la lotta all'ultimo millisecondo</a></h2>
+                    </header>
+                    <section>
+                        <p>Tutto è nato da una richiesta innocua da parte del capo: la webapp che abbiamo realizzato, e che deve operare principalmente sui pc del nostro cliente, sarà mostrata ad un’importante fiera a fine maggio, quindi dobbiamo rivederla e ottimizzarla per tablet.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="/2015/06/impostare-phpunit-in-intellij/">Impostare PHPUnit in IntelliJ</a></h2>
+                    </header>
+                    <section>
+                        <p>Se state lavorando a un progetto creato col framework <strong>Symfony2,</strong> in <strong>PHP</strong>, è molto probabile che state cercando un IDE che vi permette di utilizzare tutti gli strumenti necessari allo sviluppo.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/06/impostare-phpunit-in-intellij/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+			
+				<title>Pay attention to the ".active" progress bar class in Bootstrap - Michele Nasti</title>
+				<meta name="description" content="Yesterday a coworker calls me because he wants to understand why, after loading the search results on a given page, we had an active CPU running. In fact, after the data is loaded, the CPU goes from 10% to20% without any apparent cause.
+
+" />
+  		<meta name="keywords" content="bootstrap, performance, progress bar" />
+			
+			 
+				<meta http-equiv="last-modified" content="2016-11-29 10:11:54 +0000" />
+			
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+				<link rel="stylesheet" href="/css/colorful.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title"><a href="/2015/02/attenti-alla-classe-active-delle-progress-bar-bootstrap-3/">Pay attention to the ".active" progress bar class in Bootstrap</a></h2>
+                <p class="post-meta">Feb 11, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/bootstrap-3-progress-bars.jpg"><img class=" size-medium wp-image-141 alignleft" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/bootstrap-3-progress-bars-300x147.jpg?fit=300%2C147" alt="bootstrap-3-progress-bars" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/bootstrap-3-progress-bars.jpg?resize=300%2C147 300w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/bootstrap-3-progress-bars.jpg?w=650 650w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>Yesterday a coworker calls me because he wants to understand why, <strong>after loading the search results on a given page, we had an active CPU running</strong>. In fact, after the data is loaded, the CPU goes from 10% to20% without any apparent cause.</p>
+
+<p>Astonished, we started to find out all the possible causes to this.</p>
+
+<p>Is this the famous “<em>Angular Performance Problem</em>” that we have all read on the web (but never found in practice)? Well, the profiler said that nothing was happening on the page.</p>
+
+<p>Maybe we are loading too much data from the search? 87 kb is not that much, we have loaded far more data without problems.</p>
+
+<p>Suddenly we have a brainwave: <strong>on that page we have an animated progress bar for each search result.</strong> With developer tools I delete all this progress bars <em>et voilà</em>: <strong>CPU calms down to 0%. </strong></p>
+
+<p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png"><img class="alignnone wp-image-142" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png?resize=700%2C289" alt="progress bar bootstrap" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png?w=864 864w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/progress-bar-bootstrap.png?resize=300%2C124 300w" sizes="(max-width: 700px) 100vw, 700px" data-recalc-dims="1" /></a></p>
+
+<p>Our error has been to leave the class <span class="lang:default decode:true  crayon-inline ">active</span> on our progress bars, and if you go on the <a href="http://getbootstrap.com/components/#progress-animated">official bootstrap page</a> about it, there is no evidence of this behavior. (click on the “toggle animation” button to see it in action).</p>
+
+<p>Well, apart from the fact that we had this 25 progress bars moving on the page, we really didn’t have any clue of what was going on. Our browser is doing a lot of work to animate things smoothly, and as I said <em>bootstrap documentation does never mention this high CPU usage</em>. But did we really need it? of course not, so we took away the <span class="lang:default decode:true  crayon-inline ">active </span> class and leaved a striped, but static progress bar.</p>
+
+<p><strong>Beware of all transitions that you have on your page, they consume more CPU than you might think;</strong> and if a computer is slightly outdated (who said “cheap phones”?) your customers might experience bad performance.</p>
+
+        </section>
+
+				<section>
+					
+						<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'http://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'http://michelenasti.com/2015/02/attenti-alla-classe-active-delle-progress-bar-bootstrap-3/';
+			var disqus_identifier = 'http://michelenasti.com/2015/02/attenti-alla-classe-active-delle-progress-bar-bootstrap-3/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					
+				</section>
+
+        <footer> 
+					<br> 
+					Altri articoli: 
+					<br>
+          <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="/2015/02/webapp-nel-tempo-libero-con-approccio-mean/">WebApp nel tempo libero con approccio MEAN</a></h2>
+                    </header>
+                    <section>
+                        <p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/650_1000_mean_stack.png"><img class=" size-medium wp-image-130 alignright" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/650_1000_mean_stack-300x203.png?fit=300%2C203" alt="MEAN stack" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/650_1000_mean_stack.png?resize=300%2C203 300w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/650_1000_mean_stack.png?w=650 650w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>E’ una di quelle domande poste da un amico che ha letto il mio precedente articolo (<a href="http://michelenasti.com/2015/02/pro-e-contro-di-angularjs-dopo-2-mesi-di-lavoro/">pro e contro di Angular dopo due mesi di lavoro</a>). Lui è un ex-collega universitario che da qualche tempo non ha più la possibilità di programmare; siccome ha voglia di aggiornarsi, ha chiesto un po’ in giro quali sono gli ultimi trend.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2015/02/webapp-nel-tempo-libero-con-approccio-mean/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="/2015/02/quando-assumere-generalisti-vs-specialisti/">Quando assumere Generalisti vs Specialisti</a></h2>
+                    </header>
+                    <section>
+                        <p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs.jpg"><img class=" size-medium wp-image-151 alignright" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs-300x300.jpg?fit=300%2C300" alt="generalists vs Specialists" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs.jpg?w=300 300w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs.jpg?resize=150%2C150 150w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>Oggi voglio riproporre in Italiano un articolo di una persona molto skillata sulle tecnologie web, Nicolas Zakas. Zakas ha scritto un <a href="http://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691/ref=sr_1_13?tag=nczonline-20">libro su Javascript</a> che ho letto per metà e che mi ha dato le basi per capire Javascript dal di dentro, ossia tutte le sue parti più nascoste come scoping, prototyping, type system, object model, etc.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/02/quando-assumere-generalisti-vs-specialisti/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

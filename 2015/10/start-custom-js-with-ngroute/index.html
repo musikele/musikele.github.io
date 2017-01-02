@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+			
+				<title>My problem: start custom js code with ngRoute - Michele Nasti</title>
+				<meta name="description" content="The problem is: I took a theme for a website and now I am angularizing it, mainly to use two features of this framework: the ngImport feature (for the footer) and ngRoute, to get a dynamic menu for my website.
+
+" />
+  		<meta name="keywords" content="" />
+			
+			 
+				<meta http-equiv="last-modified" content="2016-11-28 12:18:29 +0000" />
+			
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+				<link rel="stylesheet" href="/css/colorful.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title"><a href="/2015/10/start-custom-js-with-ngroute/">My problem: start custom js code with ngRoute</a></h2>
+                <p class="post-meta">Oct 30, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <p>The problem is: I took a theme for a website and now I am <em>angularizing</em> it, mainly to use two features of this framework: the <strong>ngImport</strong> feature (for the footer) and <strong>ngRoute</strong>, to get a dynamic menu for my website.</p>
+
+<p>After 2-3 hours of playing, I almost gave up.</p>
+
+<p>This template is built in a very classical way, so all js libraries are just JS files that are imported in each page. We are talking of libraries like jquery, parallax, and others.</p>
+
+<p>My “angularization” of the website started like this: from the home page, divide the toolbar (it will be my index) from the content.</p>
+
+<p>At this step I already had problems: jquery was not firing its events on the content page.</p>
+
+<p><strong>BEFORE</strong> the page loaded, then scripts started and jquery found its way to start its functions on the elements. <strong>NOW</strong> the header loads, then all the scripts load, then the content loads, then… Nothing. Seems that i can execute only Angularjs code at this point.</p>
+
+<p>I managed to solve creating a function that wraps the jquery code and calling it everytime I change page; but maybe I have to do this for every other library? Is there a more generic way?</p>
+
+<p><strong>RequireJs</strong> might be the solution and I am exploring it, however I am also concerned with how many libraries I am injecting in my website: right now we are already using 190 Mb of RAM…  Too much for a simple website IMHO.</p>
+
+<p>Let me get back to my dirty website… My feeling is that <strong>Angular was too much to get just this simple routing capability,</strong> maybe I have to explore other libraries to get what I want. Any other idea/solution will be very much appreciated!</p>
+
+        </section>
+
+				<section>
+					
+						<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'http://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'http://michelenasti.com/2015/10/start-custom-js-with-ngroute/';
+			var disqus_identifier = 'http://michelenasti.com/2015/10/start-custom-js-with-ngroute/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					
+				</section>
+
+        <footer> 
+					<br> 
+					Altri articoli: 
+					<br>
+          <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="/2015/10/slide-del-mio-mini-talk-su-nodejs-al-linux-day-salerno-2015/">Slide del mio mini-talk su NodeJS al Linux Day Salerno 2015</a></h2>
+                    </header>
+                    <section>
+                        <p>Ecco le slide del mio talk al Linux Day Salerno!</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2015/10/slide-del-mio-mini-talk-su-nodejs-al-linux-day-salerno-2015/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/">Angularizing a jQuery website template: what I discovered, what I have done</a></h2>
+                    </header>
+                    <section>
+                        <p>In my <a href="http://michelenasti.com/2015/10/start-custom-js-with-ngroute/">last post</a> I talked about angularizing a jQuery template for a new website I am developing.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

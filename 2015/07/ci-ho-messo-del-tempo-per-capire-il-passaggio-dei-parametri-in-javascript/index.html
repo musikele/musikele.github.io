@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+			
+				<title>Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript - Michele Nasti</title>
+				<meta name="description" content="Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “arguments” mi si è aperto un mondo!
+
+" />
+  		<meta name="keywords" content="funzioni, javascript, parametri, sintassi" />
+			
+			 
+				<meta http-equiv="last-modified" content="2016-11-29 10:11:54 +0000" />
+			
+  		<!--<noscript>-->
+  			<link rel="stylesheet" href="/css/skel.css" />
+  			<link rel="stylesheet" href="/css/style.css" />
+  			<link rel="stylesheet" href="/css/style-xlarge.css" />
+				<link rel="stylesheet" href="/css/colorful.css" />
+  		<!--</noscript>-->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+		<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/page/">Archives</a>
+</header>
+
+<div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title"><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h2>
+                <p class="post-meta">Jul 21, 2015 • musikele</p>
+        </header>
+
+        <section>
+            <p>Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “<em>arguments</em>” mi si è aperto un mondo!</p>
+
+<p>Anni fa infatti mi chiedevo com’è possibile che in JS si possa passare un numero arbitrario di parametri alle funzioni, per di più senza specificare il tipo degli argomenti. All’epoca (circa 10 anni fa) Java era il mio linguaggio preferito, e avrei voltuo che tutto somigliasse a Java. Per fortuna così non è!</p>
+
+<p>A una funzione JS non importa quanti parametri vengono passati, nè si interessa del tipo. Ad esempio, potreste definire una funzione con due parametri ma poi potreste passarne tre, o uno, zero, mille - davvero, non è <em>sintatticamente</em> importante.</p>
+
+<p>Questo accade perchè <strong>gli argomenti di una funzione JS vengono rappresentati internamente come un array</strong>. L’array si chiama <span class="lang:js decode:true  crayon-inline ">arguments</span>  lo si può utilizzare all’interno di una funzione per ricavare il valore degli elementi passati.</p>
+
+<p>Si può accedere a tutti i parametri di una funzione usando la notazione con le parentesi quadre, dunque, e <span class="lang:default decode:true  crayon-inline ">arguments[0]</span> sarà il primo parametro, <span class="lang:default decode:true crayon-inline">arguments[1]</span> il secondo, e così via. Si può utilizzare <span class="lang:default decode:true  crayon-inline ">arguments.length</span> per conoscere il numero di parametri passati.</p>
+
+<p>Dunque potremmo scrivere una funzione nel modo classico di JS (esplicitando i parametri):</p>
+
+<pre class="lang:js decode:true" title="classico modo di definire una funzione">function sayHi(name, message) {
+    alert("ciao " + name + ", " + message);
+}</pre>
+
+<p>oppure usando <span class="lang:default decode:true  crayon-inline ">arguments</span> :</p>
+
+<pre class="lang:js decode:true " title="usando arguments">function sayHi() {
+    alert("ciao " + arguments[0] + ", " + arguments[1]);
+}</pre>
+
+<p>Come si può vedere, la funzione sayHi è stata definita senza nessun argomento in input, eppure si comporterà allo stesso modo. Questo mostra anche una delle caratteristiche di Javascript: <strong>i parametri col nome sono una convenienza, non una necessità</strong>.</p>
+
+<p>Ne approfitto anche per dire che, se usate lo <em>“strict mode”</em> di JS, non potrete assegnare valori a <span class="lang:default decode:true  crayon-inline ">arguments</span> . Ossia <span class="lang:default decode:true  crayon-inline ">arguments[0] = “ciao”</span>  restituirà un errore!</p>
+
+<p>Gli argomenti col nome possono anche essere utilizzati con arguments, javascript non si lamenterà.</p>
+
+<h3 id="loverloading-in-javascript-che-non-esiste">L’overloading in Javascript (che non esiste)</h3>
+
+<p>L’overloading, così come definito negli altri linguaggi, in JS semplicemente non esiste. Per ottenere un effetto simile, ossia una funzione che si comporta diversamente in base al numero o al tipo degli argomenti in input, dobbiamo fare una sorta di switch su <span class="lang:default decode:true  crayon-inline">arguments.length</span> o sul tipo degli argomenti.  Ciò che realmente conta in JS è il nome della funzione, e se due funzioni hanno lo stesso nome, vale sempre l’ultima analizzata.</p>
+
+<p>Analizziamo il seguente snippet di codice:</p>
+
+<pre class="lang:js decode:true">function aggiungiUnNumero(num) {
+   return num+100;
+}
+
+function aggiungiUnNumero(num) {
+   return num1+200; 
+}
+
+var result = aggiungiUnNumero(100) //300</pre>
+
+<p>la seconda definizione di aggiungiUnNumero ha sovrascritto la prima !</p>
+
+<h3 id="conclusioni">Conclusioni</h3>
+
+<p>Ci sono tante parti di JS che ho capito tardi, altre che non ho ancora capito. Una cosa che mi ha fatto intuire la potenza di JS è il fatto che una funzione può prendere in input altre funzioni, e restituirne una come output. Di questo parlerò in futuro. Adios!</p>
+
+        </section>
+
+				<section>
+					
+						<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'http://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'http://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/';
+			var disqus_identifier = 'http://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					
+				</section>
+
+        <footer> 
+					<br> 
+					Altri articoli: 
+					<br>
+          <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="/2015/07/instantiate-beans-with-spring-without-autowired/">Instantiate beans with Spring without @Autowired</a></h2>
+                    </header>
+                    <section>
+                        <p>Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2015/07/instantiate-beans-with-spring-without-autowired/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="/2015/07/informatica-antincendio/">Informatica Antincendio</a></h2>
+                    </header>
+                    <section>
+                        <p>Si: l’articolo che sto per scrivere parla proprio di questo: <strong>Informatica Antincendio</strong>.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="//2015/07/informatica-antincendio/" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        ---
+<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
