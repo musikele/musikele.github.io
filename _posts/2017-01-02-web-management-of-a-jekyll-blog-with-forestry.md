@@ -29,9 +29,7 @@ Here's a screenshot of my backend while I am writing this article in a wysiwyg e
 You get a 
 
 *   **wysiwyg editor** <span style="letter-spacing: 0.01em;">for posts and pages that is completely in-sync with the repository</span>  
-
 *   a **custom url** <span style="letter-spacing: 0.01em;">to access the blog-management without going to forestry.io website everytime</span>  
-
 *   <span style="letter-spacing: 0.01em;">support for **parameters** in front matter (with auto recognition!) </span>
 *   <span style="letter-spacing: 0.01em;">support for **drafts** </span>
 *   <span style="letter-spacing: 0.01em;">**upload** of images and files</span>
