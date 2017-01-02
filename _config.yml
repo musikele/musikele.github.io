@@ -44,3 +44,5 @@ exclude:
 - deploy.sh
 - compile.sh
 - start.sh
+
+timezone: Europe/Rome
