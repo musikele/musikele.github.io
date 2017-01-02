@@ -24,6 +24,7 @@ defaults:
       paginate: true
       comments: true
       author: musikele
+			categories: italiano 
 
 name: Michele Nasti
 
