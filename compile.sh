@@ -2,6 +2,8 @@
 
 echo "start compiling..."
 
+echo "Server date: $(date)" 
+
 SOURCE_BRANCH="develop"
 REPO=https://github.com/musikele/musikele.github.io.git
 
