@@ -4,8 +4,6 @@ date: '2017-01-02 12:25:31'
 paginate: true
 comments: true
 author: musikele
-categories:
-- english
 layout: post
 ---
 I have successfully moved all my blog from Wordpress to Jekyll (what you see is the proof of it!) but there was one thing I was really missing: a web console to easily manage the blog when I don't have a computer on hand.
