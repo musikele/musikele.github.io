@@ -12,7 +12,7 @@ cd compile
 git checkout $SOURCE_BRANCH || git checkout --orphan $SOURCE_BRANCH
 
 bundle install
-bundle exec jekyll build
+bundle exec jekyll build --future
 cd _site/
 cp -r ./* ../../out/
 cd ..
