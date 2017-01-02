@@ -5,7 +5,7 @@ gems:
   - octopress-paginate
   - jekyll-last-modified-at
 
-permalink: pretty
+permalink: /:year/:month/:day/:title.html
 
 markdown: kramdown
 highlighter: rouge
@@ -24,7 +24,6 @@ defaults:
       paginate: true
       comments: true
       author: musikele
-      categories: italiano 
 
 name: Michele Nasti
 
