@@ -5,6 +5,7 @@ date: 2015-01-07T21:36:19+00:00
 author: musikele
 layout: page
 guid: http://michelenasti.com/?page_id=9
+permalink: chi-sono-michele-nasti/
 dsq_thread_id:
   - "4126982487"
 ---

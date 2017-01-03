@@ -5,6 +5,7 @@ date: 2016-10-13T16:31:21+00:00
 author: musikele
 layout: page
 guid: http://michelenasti.com/?page_id=1023
+permalink: talks-conferences/
 ---
 In questa pagina cercherò di tenere traccia dei talk che ho tenuto nel corso degli anni.
 
