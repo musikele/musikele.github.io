@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Angularizing a jQuery website template: what I discovered, what I have done - Michele Nasti</title>
 				<meta name="description" content="In my last post I talked about angularizing a jQuery template for a new website I am developing.
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

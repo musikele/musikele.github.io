@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript - Michele Nasti</title>
 				<meta name="description" content="Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “arguments” mi si è aperto un mondo!
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

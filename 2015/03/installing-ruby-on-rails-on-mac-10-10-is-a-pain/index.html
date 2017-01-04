@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Installing Ruby On Rails on Mac 10.10 is a pain - Michele Nasti</title>
 				<meta name="description" content="I’ve tried many “howto install Ruby” and “how to install Rails”, at the end the only installation method that works on Mac 10.10 (Yosemite) is this: Setup Ruby On Rails on Mac OS X 10.10 Yosemite
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

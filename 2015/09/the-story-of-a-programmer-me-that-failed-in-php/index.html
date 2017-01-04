@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>the story of a programmer (me) that failed in PHP - Michele Nasti</title>
 				<meta name="description" content="Some time ago a friend of mine called and said: “Hey! I just coded the app I was thinking about three years ago, would you want to join me?”
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

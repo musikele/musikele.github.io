@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>React.js day a Napoli: impressioni - Michele Nasti</title>
 				<meta name="description" content="Hi all,
@@ -20,11 +25,6 @@ Ieri ho partecipato al primo evento su React organizzato a Napoli, nella sede di
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

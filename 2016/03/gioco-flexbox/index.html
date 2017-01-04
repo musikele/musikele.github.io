@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Vuoi imparare flexbox ma ti annoi? Prova questo gioco - Michele Nasti</title>
 				<meta name="description" content="Tutti abbiamo sentito parlare di flexbox, spero, è una nuova spec di css3 che permette di organizzare gli elementi di una pagina web in maniera più semplice rispetto a prima. Nonostante sia una feature per così dire moderna è ben supportata da tutti i browser (anche mobile!).
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Essere bravi colleghi evitando di committare cazzate - Michele Nasti</title>
 				<meta name="description" content="Ogni volta che qualcuno committa qualcosa di rotto, gli altri dev del team perdono tempo per capire cosa è successo e come risolvere. Se io fossi il boss mi assicurerei che i miei sviluppatori seguano i passi che descrivo nell’articolo, altrimenti gli pagherei lo stipendio per perdere tempo riparando danni altrui. 
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

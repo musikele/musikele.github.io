@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>La Programmazione Funzionale con le Funzioni Pure - Michele Nasti</title>
 				<meta name="description" content="Le Funzioni Pure sono uno dei pilastri fondamentali della programmazione funzionale. La definizione vera è qualcosa di astruso e non la scriverò perchè la capirebbero in pochi; invece  in parole povere è addirittura un concetto semplice.
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

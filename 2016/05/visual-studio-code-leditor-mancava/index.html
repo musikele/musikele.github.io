@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Visual Studio Code, l'editor che mancava per JS e Node - Michele Nasti</title>
 				<meta name="description" content="Visual Studio Code è l’editor/IDE Javascript definitivo. Lo so, mi sto sbilanciando, la concorrenza è tanta, ma ha alcune feature essenziali a costo quasi zero. E pensare che è sviluppato e sponsorizzato da Microsoft ! Chi l’avrebbe mai detto 5 anni fa?
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

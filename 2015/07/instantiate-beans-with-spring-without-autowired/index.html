@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Instantiate beans with Spring without @Autowired - Michele Nasti</title>
 				<meta name="description" content="Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

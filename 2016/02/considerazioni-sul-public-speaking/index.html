@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Considerazioni sul Public Speaking - Michele Nasti</title>
 				<meta name="description" content="Qualche giorno fa ho tenuto il talk su NodeJS al Napoli DevDay, 30-40 minuti di pura pazzia. Nel 2015 ho parlato, sempre di NodeJs, al Linux Day a Salerno e anche lì mi sono dovuto misurare con una bella platea. Dunque, con due talk all’attivo, posso discutere di public speaking? Essendo questo il mio blog, direi proprio di SI 🙂 Quindi eccovi alcune considerazioni fresche di giornata.
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>&#8220;quanto ci metti?&#8221; - perchè i programmatori sono delle pippe col time management - Michele Nasti</title>
 				<meta name="description" content="Il boss vi spiega una funzionalità da implementare, una bella cosa che va dal front-end al db, regole di business, interazioni UI, chiamate a servizi esterni, etc. e poi la fatidica domanda: “quanto ci vuole?” e voi, candidamente e onestamente, rispondete gentili: “mah, un giorno credo…”
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

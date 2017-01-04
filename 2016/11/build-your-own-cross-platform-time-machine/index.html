@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>I was not satisfied with Time Machine so I wrote my own Backup System - Michele Nasti</title>
 				<meta name="description" content="When I bought my first Apple computer, 4 years ago, I had a big problem: my data would be backed up in an encrypted and proprietary format. This meant that I could not access to my data from a linux or windows computer. I’m not a fanboy, and I happily use every possible system on earth, so this is a huge issue for me. 4 years ago I decided to overcome this problem by starting the writing My Own Cross-Platform bash-based Time Machine!
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

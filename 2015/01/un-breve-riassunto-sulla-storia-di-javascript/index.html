@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>Un breve riassunto sulla storia di Javascript - Michele Nasti</title>
 				<meta name="description" content="Javascript è un linguaggio ideato da Brendan Eich, che all’epoca lavorava in Netscape. Il principale utilizzo di Javascript doveva essere quello di evitare rimbalzi di richeste / risposte da client a server solo per delle banali validazioni nei form. All’epoca, nel 1995, caricare una pagina poteva costare tantissimo e vedersela ritornare indietro con la scritta “devi accettare questa clausola per continuare” poteva essere moooolto costoso.
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   	<head>
+			<script>
+				var host = "michelenasti.com";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+    		window.location.protocol = "https";
+			</script>
 			
 				<title>What’s new in Javascript? - Michele Nasti</title>
 				<meta name="description" content="Javascript esiste praticamente da sempre, per me che ho conosciuto i computer quando Netscape Navigator era alla versione 3. E da sempre ce l’hanno raccontato male: ci hanno parlato delle sue limitazioni, del linguaggio che non si capisce, del codice interpretato, la sicurezza, i cookies etc…
@@ -18,11 +23,6 @@
 				<link rel="stylesheet" href="/css/colorful.css" />
   		<!--</noscript>-->
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
   	</head>
 
 	<body id="top">
