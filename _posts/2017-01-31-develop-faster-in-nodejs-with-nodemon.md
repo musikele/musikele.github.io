@@ -18,7 +18,7 @@ but what if the app crashes? What if you change the content of a file? we must r
 
 Yes, I know that node applications start in a heartbeat. But... we still have to ALT-TAB to the console and restart :/
 
-<img src="" alt="nodemon logo">
+<img src="/images/nodemon.svg" alt="nodemon logo">
 
 That's what [_nodemon_](https://github.com/remy/nodemon) is for. It will restart the app for you in case of crashes of file changes.
 
