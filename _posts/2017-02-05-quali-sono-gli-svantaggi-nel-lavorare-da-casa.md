@@ -1,5 +1,5 @@
 ---
-title: Quali sono gli svantaggi nel lavorare da casa?
+title: Quali sono gli svantaggi del lavoro da remoto?
 date: '2017-02-05 19:48:28'
 paginate: true
 comments: true
