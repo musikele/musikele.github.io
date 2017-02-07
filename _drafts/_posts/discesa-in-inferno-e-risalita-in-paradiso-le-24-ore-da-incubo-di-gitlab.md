@@ -4,6 +4,8 @@ date: '2017-02-07 11:33:49'
 ---
 **Il 1 febbraio 2017** è accaduto ciò che nessun'azienda al mondo si augura: un database admin, durante un'operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.
 
+![]({{ site.baseurl }}/images/gitlab_logo.svg)
+
 [**Gitlab**](https://about.gitlab.com) è una startup americana di hosting di codice via git. In questo settore le più note sono **Github** e **Bitbucket**, giusto per darvi un'idea dei competitor.
 
 Gitlab era principalmente nota perché ospitava un'intera piattaforma di continuous integration al suo interno integrata con docker, cosa che gli altri competitor più affermati invece delegano a servizi esterni (a pagamento).
