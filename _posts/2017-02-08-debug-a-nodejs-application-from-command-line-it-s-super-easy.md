@@ -46,7 +46,7 @@ debug>
 
 Let's skip the first two lines, they are just diplayed for nerds.
 
-As you can see, nodejs has blocked the execution at line 1 of the file, as you can see from the `>` mark.
+Nodejs has blocked the execution at line 1 of the file, as you can see from the `>` mark.
 
 > It's best to say now that when NodeJS blocks at a line, the line is **NOT** executed. So, in the example, we are _before_ the first istruction is ever executed.
 
