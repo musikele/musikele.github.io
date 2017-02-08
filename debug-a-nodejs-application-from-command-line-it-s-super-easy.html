@@ -2,7 +2,7 @@
 
 <p>In NodeJS debugging can be also done via command line - it’s not <em>point n’ click</em>, but it’s still easy and straightforward.</p>
 
-<p>I want tell lies to you, <em>I still debug my applications in a IDE</em> :) But if I’m debugging something over <code class="highlighter-rouge">ssh</code>, this tool comes in hand.</p>
+<p>I want tell lies to you, <em>I debug my applications in a IDE</em> :) But if I’m debugging something over <code class="highlighter-rouge">ssh</code>, this tool comes in hand.</p>
 
 <h2 id="an-example-file-to-play-with">An example file to play with</h2>
 
@@ -55,6 +55,7 @@ break in book.js:6
   8
 </code></pre>
 </div>
+
 <p>Now the first line has been executed (the creation of the <code class="highlighter-rouge">book</code> object); node has now stopped to the next executable instruction.</p>
 
 <p>In this easy example, going from one instruction to another using <code class="highlighter-rouge">n</code> might be interesting, but complex applications can contain thousands of lines of code, so jumping with <code class="highlighter-rouge">n</code> is not a great idea. Exit from debug for now.</p>
