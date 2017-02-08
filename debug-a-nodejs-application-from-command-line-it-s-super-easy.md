@@ -5,15 +5,15 @@ paginate: true
 comments: true
 author: musikele
 ---
-If you want to seriously develop a nodejs application, you can't continue to put `console.log()` statements everywhere. It's just a pain! That's why every modern language has debug support via various tools. 
+If you want to seriously develop a nodejs application, you can't continue to put `console.log()` statements everywhere. It's just a pain! That's why every modern language has debug support via various tools.
 
-In NodeJS debugging can be also done via command line - it's not *point n' click*, but it's still easy and straightforward. 
+In NodeJS debugging can be also done via command line - it's not _point n' click_, but it's still easy and straightforward.
 
-I want tell lies to you, *I still debug my applications in a IDE* :) But if I'm debugging something over `ssh`, this tool comes in hand. 
+I want tell lies to you, _I debug my applications in a IDE_ :) But if I'm debugging something over `ssh`, this tool comes in hand.
 
-## An example file to play with 
+## An example file to play with
 
-Save this file as `book.js` : 
+Save this file as `book.js` :
 
 ```javascript
 let book = {
@@ -27,9 +27,9 @@ book.category = 'recipes';
 console.log(book);
 ```
 
-## debug! 
+## debug!
 
-To run this file you can launch `node book.js`; however, in case you want to **debug** you just add an option: 
+To run this file you can launch `node book.js`; however, in case you want to **debug** you just add an option:
 
 ```terminal
 $ node debug book.js 
@@ -43,13 +43,13 @@ break in book.js:1
 debug>
 ```
 
-Let's skip the first two lines, they are just diplayed for nerds. 
+Let's skip the first two lines, they are just diplayed for nerds.
 
-As you can see, nodejs has blocked the execution at line 1 of the file, as you can see from the `>` mark. 
+As you can see, nodejs has blocked the execution at line 1 of the file, as you can see from the `>` mark.
 
-> It's best to say now that when NodeJS blocks at a line, the line is **NOT** executed. So, in the example, we are *before* the first istruction is ever executed. 
+> It's best to say now that when NodeJS blocks at a line, the line is **NOT** executed. So, in the example, we are _before_ the first istruction is ever executed.
 
-To continue to the next line, press `n`(next) and hit Enter: 
+To continue to the next line, press `n`(next) and hit Enter:
 
 ```terminal
 debug> n
@@ -60,13 +60,14 @@ break in book.js:6
   7 book.category = 'recipes'
   8
 ```
-Now the first line has been executed (the creation of the `book` object); node has now stopped to the next executable instruction. 
 
-In this easy example, going from one instruction to another using `n` might be interesting, but complex applications can contain thousands of lines of code, so jumping with `n` is not a great idea. Exit from debug for now. 
+Now the first line has been executed (the creation of the `book` object); node has now stopped to the next executable instruction.
 
-> To exit from the debugger you can type `quit` or press `Ctrl+C` twice. 
+In this easy example, going from one instruction to another using `n` might be interesting, but complex applications can contain thousands of lines of code, so jumping with `n` is not a great idea. Exit from debug for now.
 
-We might want to stop at a specific point, for example before setting the `category` attribute to the book: 
+> To exit from the debugger you can type `quit` or press `Ctrl+C` twice.
+
+We might want to stop at a specific point, for example before setting the `category` attribute to the book:
 
 ```javascript
 ...
@@ -76,7 +77,7 @@ book.category = 'recipes';
 ...
 ```
 
-if we want to jump directly to the place where the `debugger` instruction is, you can just hit `c` (continue): 
+if we want to jump directly to the place where the `debugger` instruction is, you can just hit `c` (continue):
 
 ```terminal
 debug> c
@@ -89,11 +90,11 @@ break in book.js:7
 debug>
 ```
 
-As you can see the debugger has now stopped at line 7, where the `debugger` instruction was. **It's important to say that `debugger` instruction is ignored when running the application normally**. 
+As you can see the debugger has now stopped at line 7, where the `debugger` instruction was. **It's important to say that `debugger` instruction is ignored when running the application normally**.
 
-Ok, now we know how to stop in a nodejs application, but how can we inspect the value of objects? 
+Ok, now we know how to stop in a nodejs application, but how can we inspect the value of objects?
 
-just hit `repl`: 
+just hit `repl`:
 
 ```terminal
 debug> repl
@@ -101,19 +102,19 @@ Press Ctrl + C to leave debug repl
 >
 ```
 
-Now we are in a Javascript console, like the one we have in a browser. we can execute expressions like `var a = 1+3`; the interesting thing is that we have **access to variables defined until the break point**: infact we can inspect our `book` variable and see that ... 
+Now we are in a Javascript console, like the one we have in a browser. we can execute expressions like `var a = 1+3`; the interesting thing is that we have **access to variables defined until the break point**: infact we can inspect our `book` variable and see that ...
 
-```terminal 
+```terminal
 > book
 { title: 'cooking with Trump', ISBN: '1234567' }
 ```
 
-...`category` attribute is not defined, since it will be executed later, at line 8. 
+...`category` attribute is not defined, since it will be executed later, at line 8.
 
-Using `repl` you can also modify the value of objects, and this is great if you are in a loop and want to go directly to the value that you want, or to simulate complex cases. 
+Using `repl` you can also modify the value of objects, and this is great if you are in a loop and want to go directly to the value that you want, or to simulate complex cases.
 
-To exit from `repl` just hit `Ctrl+C` to return to `debug>` prompt. 
+To exit from `repl` just hit `Ctrl+C` to return to `debug>` prompt.
 
 ## Now you can debug like a boss
 
-Show this to your friends, they'll respect you more after this. 
+Show this to your friends, they'll respect you more after this.
