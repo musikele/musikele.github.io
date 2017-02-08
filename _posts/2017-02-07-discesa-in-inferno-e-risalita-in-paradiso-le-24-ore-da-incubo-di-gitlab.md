@@ -39,7 +39,7 @@ E' a questo punto che in Gitlab si rendono conto di avere un'occasione da sfrutt
 
 **La prima cosa che fanno è mettere su un [google docs](https://docs.google.com/document/d/1GCK53YDcBWQveod9kfzW-VCxIABGiryG7_z_6jHdVik/pub)** condiviso in cui spiegano l'accaduto, i tentativi, le scoperte.
 
-La seconda cosa che mi ha sorpreso è il **live streaming su youtube** (era [qui](https://www.youtube.com/watch?v=63wCG86ih94), ora non funziona più) di dei dipendenti di gitlab che mostravano live tutte le operazioni messe in pratica per ripristinare il database. Tramite la chat i dipendenti di gitlab parlavano con gli spettatori, e rispondevano alle loro domande. A video, le loro facce e il terminale che mostrava l'output di comandi impronunciabili.
+La seconda cosa che mi ha sorpreso è il **live streaming su youtube** (era [qui](https://www.youtube.com/watch?v=63wCG86ih94), ora non funziona più) dei dipendenti di gitlab che mostravano live tutte le operazioni messe in pratica per ripristinare il database. Tramite la chat i dipendenti di gitlab parlavano con gli spettatori, e rispondevano alle loro domande. A video c'erano le loro facce e il terminale che mostrava l'output di comandi impronunciabili. 
 
 La domanda più gettonata è stata questa:
 
