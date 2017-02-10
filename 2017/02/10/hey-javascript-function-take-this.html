@@ -14,7 +14,7 @@
   		<meta name="keywords" content="" />
 			
 			 
-				<meta http-equiv="last-modified" content="2017-02-10 13:34:20 +0100" />
+				<meta http-equiv="last-modified" content="2017-02-10 13:45:08 +0100" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -124,13 +124,13 @@
 
 <h3 id="why-the-first-sayhi-returns-undefined">Why the first <code class="highlighter-rouge">sayHi</code> returns undefined?</h3>
 
-<p>because <code class="highlighter-rouge">this</code> is not bound!</p>
+<p>because <code class="highlighter-rouge">this</code> is not bound to the context!</p>
 
 <h3 id="what-is-happening-at-the-last-function-sayhialt-">What is happening at the last function, <code class="highlighter-rouge">sayHiAlt</code> ?!</h3>
 
-<p>this might seem strange, but this is ES6 at all of it’s power. First, this is like assigning a function to a variable, like we saw in the third example of this article.</p>
+<p>This is ES6 at all of it’s power. First, we are assigning a function to a variable, like we saw in the third example of this article; then, we are using another ES6 to assign the function to a property with the same name.</p>
 
-<p>Then, we are using another ES6 to assign the function to a property with the same name. In fact, thanks to <a href="https://babeljs.io/repl/">babel online REPL</a> (a place where you can past ES6 code and see it in ES5), the previous snippet becomes this:</p>
+<p>Thanks to <a href="https://babeljs.io/repl/">babel online REPL</a> (a place where you can past ES6 code and see it in ES5), the previous snippet becomes this:</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
 
@@ -145,6 +145,12 @@
 <span class="p">};</span>
 </code></pre>
 </div>
+
+<p>## What should I use?</p>
+
+<p>Use <code class="highlighter-rouge">() =&gt; {}</code> always, because it’s simpler; usually you don’t need <code class="highlighter-rouge">this</code> to work.</p>
+
+<p>But if you need… you know what to do.</p>
 
 <p>After writing <code class="highlighter-rouge">this</code> article, I can finally say: ES6 doesn’t care about <code class="highlighter-rouge">this</code>, but you should.</p>
 
