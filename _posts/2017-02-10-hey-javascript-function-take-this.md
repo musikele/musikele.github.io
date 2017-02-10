@@ -21,10 +21,10 @@ function sayHello() {
 This kind of functions will be "hoisted", this means that the function will be read before any other code, and used when called. So you can also write this with no error:
 
 ```javascript
-// no error, because the function declaration 
-// is read and hoisted
+// no error: this is executed later
 sayHello(); 
 
+//this is read and hoisted first 
 function sayHello() {
    console.log("hello!") 
 }
