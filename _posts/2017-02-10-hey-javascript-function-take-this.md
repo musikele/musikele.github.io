@@ -85,13 +85,13 @@ This is a template string in Javascript. this translates in `"Hi. I\'m " + this.
 
 ### Why the first `sayHi` returns undefined?
 
-because `this` is not bound!
+because `this` is not bound to the context! 
 
 ### What is happening at the last function, `sayHiAlt` ?!
 
-this might seem strange, but this is ES6 at all of it's power. First, this is like assigning a function to a variable, like we saw in the third example of this article.
+This is ES6 at all of it's power. First, we are assigning a function to a variable, like we saw in the third example of this article; then, we are using another ES6 to assign the function to a property with the same name. 
 
-Then, we are using another ES6 to assign the function to a property with the same name. In fact, thanks to [babel online REPL](https://babeljs.io/repl/) (a place where you can past ES6 code and see it in ES5), the previous snippet becomes this:  
+Thanks to [babel online REPL](https://babeljs.io/repl/) (a place where you can past ES6 code and see it in ES5), the previous snippet becomes this:  
 
 ```javascript
 'use strict';
@@ -106,5 +106,11 @@ var user = {
     }
 };
 ```
+
+## What should I use? 
+
+Use `() => {}` always, because it's simpler; usually you don't need `this` to work. 
+
+But if you need... you know what to do. 
 
 After writing `this` article, I can finally say: ES6 doesn't care about `this`, but you should. 
