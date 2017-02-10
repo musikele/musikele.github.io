@@ -106,4 +106,4 @@ var user = {
 };
 ```
 
-After writing `this` article, I can finally say: ES6 doesn't care about `this`. 
+After writing `this` article, I can finally say: ES6 doesn't care about `this`, but you should. 
