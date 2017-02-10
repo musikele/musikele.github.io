@@ -111,6 +111,6 @@ var user = {
 
 Use `() => {}` always, because it's simpler; usually you don't need `this` to work. 
 
-But if you need... you know what to do. 
+But if you need `this`, ... you know what to do. 
 
 After writing `this` article, I can finally say: ES6 doesn't care about `this`, but you should. 
