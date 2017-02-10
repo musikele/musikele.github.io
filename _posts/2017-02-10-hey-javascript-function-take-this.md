@@ -8,6 +8,8 @@ layout: post
 ---
 In this article I'm going to do a quick recap of ES5 and ES6 functions, explaining what happens to `this`.
 
+![]({{ site.baseurl }}/images/this.jpeg)
+
 ## Functions as you may already know: plain-old-classic ES5
 
 As you know, in javascript you can define a function in many ways. The standard, 20-years-old way of declaring a function is this:
