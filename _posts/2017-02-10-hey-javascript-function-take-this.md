@@ -76,21 +76,21 @@ user.sayHi(); // "Hi. I'm undefined"
 user.sayHiAlt(); // "Hi. I'm Michele"
 ```
 
-What's happening? Let's dip in. 
+What's happening? Let's dip in.
 
-### what is ```Hi. I'm ${this.name}```? 
+### what is `Hi. I'm ${this.name}`?
 
 This is a template string in Javascript. this translates in `"Hi. I\'m " + this.name`.
 
-### Why the first `sayHi` returns undefined? 
+### Why the first `sayHi` returns undefined?
 
 because `this` is not bound!
 
-### What is happening at the last function, `sayHiAlt` ?! 
+### What is happening at the last function, `sayHiAlt` ?!
 
-this might seem strange, but this is ES6 at all of it's power. First, this is like assigning a function to a variable, like we saw in the third example of this article. 
+this might seem strange, but this is ES6 at all of it's power. First, this is like assigning a function to a variable, like we saw in the third example of this article.
 
-Then, we are using another ES6 to assign the function to a property with the same name. Infact, thanks to [babel online repl](babeljs.io/repl/) (a place where you can past ES6 code and see it in ES5), the previous code becomes this: 
+Then, we are using another ES6 to assign the function to a property with the same name. In fact, thanks to [babel online REPL](https://babeljs.io/repl/) (a place where you can past ES6 code and see it in ES5), the previous snippet becomes this:  
 
 ```javascript
 'use strict';
