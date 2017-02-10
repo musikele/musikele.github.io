@@ -107,7 +107,7 @@ var user = {
 };
 ```
 
-## What should I use? 
+## What should I use? 
 
 Use `() => {}` always, because it's simpler; usually you don't need `this` to work. 
 
