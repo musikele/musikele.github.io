@@ -1,12 +1,16 @@
 ---
 title: I libri motivazionali funzionano?
-date: 2017-02-15 00:00
+date: 2017-02-15 01:00
 author: musikele
 layout: post
 permalink: libri-motivazionali/
 categories:
 - Italiano
 tags:
+- rework
+- "è facile smettere di fumare se sai come farlo"
+- chi ha e chi non ha
+- miracle morning
 - libri
 - motivazione
 ---
