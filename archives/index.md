@@ -8,10 +8,15 @@ Here's the long list of articles I wrote in these years, in Italian and English.
 <br />&nbsp;
 <section>
 	<div class="row">
-		{% for post in paginator.posts reversed %}
+		{% for post in paginator.posts %}
 			<article class="{% cycle '6u', '6u$' %} 12u(small)">
 				<header>
 					<h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+					<p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}
+        {% if post.author %} 
+        • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta
+        }}{% endif %}
+        </p>
 				</header>
 				<section>
 					{{ post.excerpt }}
@@ -26,10 +31,10 @@ Here's the long list of articles I wrote in these years, in Italian and English.
 	</div>
 </section>
 
-{% if paginator.next_page_path != nil %}
-<a href="{{paginator.next_page_path}}" class="button"><< Newer</a> 
+{% if paginator.previous_page_path != nil %}
+<a href="{{paginator.previous_page_path}}" class="button pull-right">Newer >></a> 
 {% endif %}
 
-{% if paginator.previous_page_path != nil %}
-<a href="{{paginator.previous_page_path}}" class="button pull-right">Older >></a> 
+{% if paginator.next_page_path != nil %}
+<a href="{{paginator.next_page_path}}" class="button"><< Older</a> 
 {% endif %}

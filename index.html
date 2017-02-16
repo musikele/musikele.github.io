@@ -5,8 +5,8 @@ layout: default
 <!-- Main -->
 <div id="main">
   <section>
-    {% for post in site.posts limit:1 %}
-    <header class="major">
+    {% for post in site.posts limit:10 %}
+		<header class="major">
       <a href="{{ post.url }}">
         <h1>{{ post.title }}</h1>
       </a>
@@ -18,18 +18,16 @@ layout: default
     </header>
 
     <section>
-      {{ post.content }}
+      {{ post.excerpt }} <a href="{{post.url}}">Read More...</a> 
     </section>
-    
-		<section class="button-container">
-      {% if post.previous.url %}
-        <a href="{{post.previous.url}}" class="button"><< Older Posts</a> 
-      {% endif %}
 
-      {% if page.comments %}
-        <a class="button center" href="{{post.url}}#disqus_thread">Lascia un commento</a>
-      {% endif %}
+		<hr/>
 
     {% endfor %}
+
+		<section class="button-container">
+      {% if paginator.next_page_path %}
+        <a href="/archives{{paginator.next_page_path}}" class="button"><< Older Posts</a> 
+      {% endif %}
 		</section>
   </section>
