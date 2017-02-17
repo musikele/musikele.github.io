@@ -23,15 +23,16 @@ Anche se il mio linguaggio di riferimento è Java, usato principalmente a lavoro
 
 Il mio sogno è di lavorare in un contesto innovativo dove i problemi tecnici e logici sono all'ordine del giorno. Fare il solito gestionale è importante e porta soldi, ma è anche palloso. Mi considero un creativo dunque mi annoio a fare le stesse cose sempre nello stesso modo. Però ho anche un forte senso di responsabilità sulle cose da fare: non vi preoccupate, non lascio il lavoro a metà.
 
+<div class='buzz' style='position: relative; padding-bottom: 50%; padding-top: 70px; height: 0; overflow: hidden;'><iframe src='https://buzzoole.com/KyEQax7eJeGOZ6xv/influence?w=true' width='100%' height='100%' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;' scrolling='no'></iframe></div>
+
+<br />
+
 [<img src="https://i0.wp.com/static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33_it_IT.png?resize=160%2C33&#038;ssl=1" alt="Visualizza il profilo di Michele Nasti su LinkedIn" border="0" data-recalc-dims="1" />](http://it.linkedin.com/in/michelenasti)
   
-<a class="twitter-follow-button" href="https://twitter.com/micnasti" data-show-count="false" data-size="large">Follow @micnasti</a>
+<div style="margin-left: auto; margin-right: auto;text-align: center;"><a href="https://twitter.com/micnasti" class="twitter-follow-button" data-show-count="false">Follow @micnasti</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><span>
 
 
 
 
 
 [<img title="profile for musikele at Stack Overflow, Q&A for professional and enthusiast programmers" src="https://i0.wp.com/stackoverflow.com/users/flair/1020090.png?resize=208%2C58" alt="profile for musikele at Stack Overflow, Q&A for professional and enthusiast programmers" data-recalc-dims="1" />](http://stackoverflow.com/users/1020090/musikele) 
-
-<div class="buzz" style="position: relative; padding-bottom: 90%; padding-top: 70px; height: 0; overflow: hidden;">
-</div>
