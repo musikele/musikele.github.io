@@ -4,6 +4,7 @@ date: '2017-02-14 11:29:00'
 paginate: true
 comments: true
 author: musikele
+layout: post
 ---
 What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let's find out the surprising truth about this stuff. 
 
@@ -41,15 +42,11 @@ Back to the quiz... what is the expected outcome?
 |----|----|----|----|
 |Starting App<br>First setTimeout<br>Second setTimeout<br>Finishing app | Starting App<br>Second setTimeout<br>Finishing app<br>First setTimeout | Starting App<br>Finishing app<br>Second setTimeout<br>First setTimeout | Starting App<br>Second setTimeout<br>First setTimeout<br>Finishing app
 
+<br> 
+
 What's your choice? Don't scroll down and think a little bit... 
 
-<script>
-$('answer').onClick(function() {
-  $('answer').contents().first()[0].textContent = '#3';
-});
-</script>
-
-Hey, you could just paste this code in your browser's console to discover that ... the right answer is <span id="answer">**CLICK HERE TO KNOW THE ANSWER**</span>. 
+Hey, you could just paste this code in your browser's console to discover that ... the right answer is **#3**. 
 
 This behaviour may seem surprising but it is perfectly legit. 
 
