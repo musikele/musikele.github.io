@@ -10,6 +10,7 @@ tags:
 - javascript
 - async
 - event loop
+permalink: the-javascript-event-loop-for-dummies/
 ---
 What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let's find out the surprising truth about this stuff. 
 
