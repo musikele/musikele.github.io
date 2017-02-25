@@ -67,20 +67,18 @@ So what happens when an asynchronus event happen, like the `setTimeout`?
 
 Bearing this in mind, let's return to the basis.
 
-1. The first `console.log()` is printed. 
+- The first `console.log()` is printed: `Starting app`
 
-2. The first block is evaluated: 
-
+- The first block is evaluated: 
 ```javascript
 //first block 
 setTimeout(() => {
   console.log('First setTimeout');
 }, 2000);
 ```
-
 This code says: *after 2000 milliseconds, trigger the function specified as first argument*. Since `() => { ... }` is a function, this is put in a **callback queue** ready to get fired when the conditions occour. 
 
-3. The second block is evaluated: 
+- The second block is evaluated: 
 
 ```javascript
 //second block 
@@ -88,29 +86,30 @@ setTimeout(() => {
   console.log('Second setTimeout');
 }, 0);
 ```
-
-Another explanation. This code says: *after zero milliseconds, fire the function specified as first argument*. One would expect to be fired instantly, but this does not happen: The function is put in a **callback queue**, and when NodeJS believes the conditions are respected, the function is fired. 
+Another explanation. This code says: *after zero milliseconds, fire the function specified as first argument*. One would expect to be fired instantly, but this does not happen: The function is put in a **callback queue**, and when NodeJS believes the conditions are respected, the function is fired.
 
 Node cannot fire the function NOW because there's other javascript code being executed in the stack: it's the *main program*, the one that starts with the first `console.log()`. Think of this as a being wrapped inside a function; nodeJS is evaluating **this** function and cannot evaluate others. 
 
-4. The last `console.log()` is evaluated and `Finishing app` is written to console. 
+- The last `console.log()` is evaluated and `Finishing app` is written to console. 
 
-5. NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It's NodeJS's responsibility to select the right one: since the second `setTimeout` had a higher priority, it will be fired first: you'll then see `Second setTimeout`. 
+- NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It's NodeJS's responsibility to select the right one: since the second `setTimeout` had a higher priority, it will be fired first: you'll then see `Second setTimeout`. 
 
-6. Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block `setTimeout` callback, and will print `First setTimeout`. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end. 
+- Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block `setTimeout` callback, and will print `First setTimeout`. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end. 
 
 ### What happens when you read data from a file or receive a response from the network? 
 
 The behaviour is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible. 
 
-### The advantages of this 
+### The advantages of this 
 
 The main advantage is that **the CPU will not stop when waiting for an I/O event**: it will just put the callback in the queue, and Node will execute the next availabe function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread). 
 
-## The disadvantage
+### The disadvantage
 
 The first disadvantage is that **programming with async in mind and with callbacks is profundly different** from the past: it is more difficoult to reason about and to debug, at start. However, once you truly understand the phylosophy and the way it works, you'll never want to come back again. 
 
 ## So? What you suggest? 
 
-Node.js is a great idea made simple: a complex use case solved smartly. I can only suggest you to google *NodeJS vs XXX performance", change XXX with wathever you want... You'll find that [an interpreted language, with no tweaks, is faster than well-established platforms](https://dzone.com/articles/performance-comparison-between) (Caution: old article! but the phylosophy still holds) with years of optimization. 
+Node.js is a great idea made simple: a complex use case solved smartly. **Learning Node will help you become a better programmer**, and this applies even if you work with other languages. 
+
+I can only suggest you to google *NodeJS vs XXX performance", change XXX with wathever you want... You'll find that [an interpreted language, with no tweaks, is faster than well-established platforms](https://dzone.com/articles/performance-comparison-between) (Caution: old article! but the main points still hold) with years of optimization. 	
