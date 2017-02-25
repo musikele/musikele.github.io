@@ -14,7 +14,7 @@
   		<meta name="keywords" content="javascript, async, event loop" />
 			
 			 
-				<meta http-equiv="last-modified" content="2017-02-25 13:56:08 +0100" />
+				<meta http-equiv="last-modified" content="2017-02-25 14:09:21 +0100" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -116,27 +116,21 @@
 
 <p>Bearing this in mind, let’s return to the basis.</p>
 
-<ol>
+<ul>
   <li>
-    <p>The first <code class="highlighter-rouge">console.log()</code> is printed.</p>
+    <p>The first <code class="highlighter-rouge">console.log()</code> is printed: <code class="highlighter-rouge">Starting app</code></p>
   </li>
-  <li>
-    <p>The first block is evaluated:</p>
-  </li>
-</ol>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//first block </span>
+  <li>The first block is evaluated:
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//first block </span>
 <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
 <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
 </code></pre>
-</div>
-
-<p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code class="highlighter-rouge">() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occour.</p>
-
-<ol>
+    </div>
+    <p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code class="highlighter-rouge">() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occour.</p>
+  </li>
   <li>The second block is evaluated:</li>
-</ol>
+</ul>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//second block </span>
 <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -144,12 +138,11 @@
 <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
 </div>
-
 <p>Another explanation. This code says: <em>after zero milliseconds, fire the function specified as first argument</em>. One would expect to be fired instantly, but this does not happen: The function is put in a <strong>callback queue</strong>, and when NodeJS believes the conditions are respected, the function is fired.</p>
 
 <p>Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the <em>main program</em>, the one that starts with the first <code class="highlighter-rouge">console.log()</code>. Think of this as a being wrapped inside a function; nodeJS is evaluating <strong>this</strong> function and cannot evaluate others.</p>
 
-<ol>
+<ul>
   <li>
     <p>The last <code class="highlighter-rouge">console.log()</code> is evaluated and <code class="highlighter-rouge">Finishing app</code> is written to console.</p>
   </li>
@@ -159,23 +152,25 @@
   <li>
     <p>Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block <code class="highlighter-rouge">setTimeout</code> callback, and will print <code class="highlighter-rouge">First setTimeout</code>. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end.</p>
   </li>
-</ol>
+</ul>
 
 <h3 id="what-happens-when-you-read-data-from-a-file-or-receive-a-response-from-the-network">What happens when you read data from a file or receive a response from the network?</h3>
 
 <p>The behaviour is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible.</p>
 
-<p>### The advantages of this</p>
+<h3 id="the-advantages-of-this">The advantages of this</h3>
 
 <p>The main advantage is that <strong>the CPU will not stop when waiting for an I/O event</strong>: it will just put the callback in the queue, and Node will execute the next availabe function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread).</p>
 
-<h2 id="the-disadvantage">The disadvantage</h2>
+<h3 id="the-disadvantage">The disadvantage</h3>
 
 <p>The first disadvantage is that <strong>programming with async in mind and with callbacks is profundly different</strong> from the past: it is more difficoult to reason about and to debug, at start. However, once you truly understand the phylosophy and the way it works, you’ll never want to come back again.</p>
 
 <h2 id="so-what-you-suggest">So? What you suggest?</h2>
 
-<p>Node.js is a great idea made simple: a complex use case solved smartly. I can only suggest you to google *NodeJS vs XXX performance”, change XXX with wathever you want… You’ll find that <a href="https://dzone.com/articles/performance-comparison-between">an interpreted language, with no tweaks, is faster than well-established platforms</a> (Caution: old article! but the phylosophy still holds) with years of optimization.</p>
+<p>Node.js is a great idea made simple: a complex use case solved smartly. <strong>Learning Node will help you become a better programmer</strong>, and this applies even if you work with other languages.</p>
+
+<p>I can only suggest you to google *NodeJS vs XXX performance”, change XXX with wathever you want… You’ll find that <a href="https://dzone.com/articles/performance-comparison-between">an interpreted language, with no tweaks, is faster than well-established platforms</a> (Caution: old article! but the main points still hold) with years of optimization.</p>
 
         </section>
 
