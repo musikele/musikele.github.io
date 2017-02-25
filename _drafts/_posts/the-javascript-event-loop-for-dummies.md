@@ -5,6 +5,11 @@ paginate: true
 comments: true
 author: musikele
 layout: post
+category: English 
+tags: 
+- javascript
+- async
+- event loop
 ---
 What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let's find out the surprising truth about this stuff. 
 
@@ -90,4 +95,22 @@ Node cannot fire the function NOW because there's other javascript code being ex
 
 4. The last `console.log()` is evaluated and `Finishing app` is written to console. 
 
-5. NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It's NodeJS's responsibility to 
+5. NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It's NodeJS's responsibility to select the right one: since the second `setTimeout` had a higher priority, it will be fired first: you'll then see `Second setTimeout`. 
+
+6. Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block `setTimeout` callback, and will print `First setTimeout`. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end. 
+
+### What happens when you read data from a file or receive a response from the network? 
+
+The behaviour is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible. 
+
+### The advantages of this 
+
+The main advantage is that **the CPU will not stop when waiting for an I/O event**: it will just put the callback in the queue, and Node will execute the next availabe function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread). 
+
+## The disadvantage
+
+The first disadvantage is that **programming with async in mind and with callbacks is profundly different** from the past: it is more difficoult to reason about and to debug, at start. However, once you truly understand the phylosophy and the way it works, you'll never want to come back again. 
+
+## So? What you suggest? 
+
+Node.js is a great idea made simple: a complex use case solved smartly. I can only suggest you to google *NodeJS vs XXX performance", change XXX with wathever you want... You'll find that [an interpreted language, with no tweaks, is faster than well-established platforms](https://dzone.com/articles/performance-comparison-between) (Caution: old article! but the phylosophy still holds) with years of optimization. 
