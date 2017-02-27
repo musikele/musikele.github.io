@@ -8,13 +8,13 @@
 			</script>
 			
 				<title>The Javascript Event Loop for dummies - Michele Nasti</title>
-				<meta name="description" content="What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff. 
+				<meta name="description" content="What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.
 
 " />
   		<meta name="keywords" content="javascript, async, event loop" />
 			
 			 
-				<meta http-equiv="last-modified" content="2017-02-25 14:10:30 +0100" />
+				<meta http-equiv="last-modified" content="2017-02-27 10:32:01 +0100" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -45,7 +45,7 @@
         </header>
 
         <section>
-            <p>What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff. </p>
+            <p>What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.</p>
 
 <p><img src="/images/o_weighted_hula_hoop-1.jpg" alt="An event loop. The dancer is not included." /></p>
 
@@ -78,25 +78,52 @@
 <p>Back to the quiz… what is the expected outcome?</p>
 
 <table>
-  <thead>
-    <tr>
-      <th>#1</th>
-      <th>#2</th>
-      <th>#3</th>
-      <th>#4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Starting App<br />First setTimeout<br />Second setTimeout<br />Finishing app</td>
-      <td>Starting App<br />Second setTimeout<br />Finishing app<br />First setTimeout</td>
-      <td>Starting App<br />Finishing app<br />Second setTimeout<br />First setTimeout</td>
-      <td>Starting App<br />Second setTimeout<br />First setTimeout<br />Finishing app</td>
-    </tr>
-  </tbody>
-</table>
 
-<p><br /></p>
+<thead>
+
+<tr>
+
+<th>#1</th>
+
+<th>#2</th>
+
+<th>#3</th>
+
+<th>#4</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Starting App  
+First setTimeout  
+Second setTimeout  
+Finishing app</td>
+
+<td>Starting App  
+Second setTimeout  
+Finishing app  
+First setTimeout</td>
+
+<td>Starting App  
+Finishing app  
+Second setTimeout  
+First setTimeout</td>
+
+<td>Starting App  
+Second setTimeout  
+First setTimeout  
+Finishing app</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 <p>What’s your choice? Don’t scroll down and think a little bit…</p>
 
@@ -108,11 +135,11 @@
 
 <h2 id="what-is-really-happening-under-the-hood">what is really happening under the hood</h2>
 
-<p>Let’s start with a Dogma: <strong>in Javascript there is just one thread</strong>. (<em>This is not correct anymore, because in the last years a new technology called <code class="highlighter-rouge">Service Workers</code> has become available; but it is not important for now.</em>) Everything is always executed in the same thread, even events that happen asynchronusly.</p>
+<p>Let’s start with a Dogma: <strong>in Javascript there is just one thread</strong>. (<em>This is not correct anymore, because in the last years a new technology called <code class="highlighter-rouge">Service Workers</code> has become available; but it is not important for now.</em>) Everything is always executed in the same thread, even events that happen asynchronously.</p>
 
-<p>So what happens when an asynchronus event happen, like the <code class="highlighter-rouge">setTimeout</code>?</p>
+<p>So what happens when an asynchronous event happen, like the <code class="highlighter-rouge">setTimeout</code>?</p>
 
-<p><code class="highlighter-rouge">setTimeout</code> is a good example of an asynchronus event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.</p>
+<p><code class="highlighter-rouge">setTimeout</code> is a good example of an asynchronous event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.</p>
 
 <p>Bearing this in mind, let’s return to the basis.</p>
 
@@ -120,15 +147,21 @@
   <li>
     <p>The first <code class="highlighter-rouge">console.log()</code> is printed: <code class="highlighter-rouge">Starting app</code></p>
   </li>
-  <li>The first block is evaluated:
-    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//first block </span>
+  <li>
+    <p>The first block is evaluated:</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//first block </span>
 <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
 <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
 </code></pre>
-    </div>
-    <p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code class="highlighter-rouge">() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occour.</p>
-  </li>
+</div>
+
+<p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code class="highlighter-rouge">() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occur.</p>
+
+<ul>
   <li>The second block is evaluated:</li>
 </ul>
 
@@ -138,6 +171,7 @@
 <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
 </div>
+
 <p>Another explanation. This code says: <em>after zero milliseconds, fire the function specified as first argument</em>. One would expect to be fired instantly, but this does not happen: The function is put in a <strong>callback queue</strong>, and when NodeJS believes the conditions are respected, the function is fired.</p>
 
 <p>Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the <em>main program</em>, the one that starts with the first <code class="highlighter-rouge">console.log()</code>. Think of this as a being wrapped inside a function; nodeJS is evaluating <strong>this</strong> function and cannot evaluate others.</p>
@@ -156,21 +190,21 @@
 
 <h3 id="what-happens-when-you-read-data-from-a-file-or-receive-a-response-from-the-network">What happens when you read data from a file or receive a response from the network?</h3>
 
-<p>The behaviour is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible.</p>
+<p>The behavior is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible.</p>
 
 <h3 id="the-advantages-of-this">The advantages of this</h3>
 
-<p>The main advantage is that <strong>the CPU will not stop when waiting for an I/O event</strong>: it will just put the callback in the queue, and Node will execute the next availabe function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread).</p>
+<p>The main advantage is that <strong>the CPU will not stop when waiting for an I/O event</strong>: it will just put the callback in the queue, and Node will execute the next available function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread).</p>
 
 <h3 id="the-disadvantage">The disadvantage</h3>
 
-<p>The first disadvantage is that <strong>programming with async in mind and with callbacks is profundly different</strong> from the past: it is more difficoult to reason about and to debug, at start. However, once you truly understand the phylosophy and the way it works, you’ll never want to come back again.</p>
+<p>The first disadvantage is that <strong>programming with async in mind and with callbacks is profoundly different</strong> from the past: it is more difficult to reason about and to debug, at start. However, once you truly understand the philosophy and the way it works, you’ll never want to come back again.</p>
 
 <h2 id="so-what-you-suggest">So? What you suggest?</h2>
 
 <p>Node.js is a great idea made simple: a complex use case solved smartly. <strong>Learning Node will help you become a better programmer</strong>, and this applies even if you work with other languages.</p>
 
-<p>I can only suggest you to google *NodeJS vs XXX performance”, change XXX with wathever you want… You’ll find that <a href="https://dzone.com/articles/performance-comparison-between">an interpreted language, with no tweaks, is faster than well-established platforms</a> (Caution: old article! but the main points still hold) with years of optimization.</p>
+<p>I can only suggest you to google *NodeJS vs XXX performance”, change XXX with whatever you want… You’ll find that <a href="https://dzone.com/articles/performance-comparison-between">an interpreted language, with no tweaks, is faster than well-established platforms</a> (Caution: old article! but the main points still hold) with years of optimization.</p>
 
         </section>
 
