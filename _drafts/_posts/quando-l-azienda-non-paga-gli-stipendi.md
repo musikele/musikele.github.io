@@ -11,7 +11,7 @@ tags:
 ---
 Qualche anno fa **l'azienda per cui lavoravo ha attraversato un periodo di crisi e lo stipendio arrivava a singhiozzo** (anzi, non arrivava proprio). Lo ricordo come uno dei periodi più brutti della mia vita... In questo post voglio parlarne anche per chi è stato o starà nella mia stessa situazione. 
 
-Per rispetto agli ex colleghi ancora coinvolti in questa vicenda, non voglio citare il nome dell'azienda che attualmente è in liquidazione; sappiate che ci sono persone che non hanno avuto la fortuna di trovare un altro lavoro, e altri che aspettano ancora i soldi dovuti. 
+> Per rispetto agli ex colleghi ancora coinvolti in questa vicenda, non voglio citare il nome dell'azienda che attualmente è in liquidazione; sappiate che ci sono persone che non hanno avuto la fortuna di trovare un altro lavoro, e altri che aspettano ancora i soldi dovuti. 
 
 ## I fatti
 
@@ -37,7 +37,7 @@ Me ne sono andato con un credito di 4500 €, e ad oggi restano solo 450€ anco
 
 ## Come ci si sente
 
-**La sensazione che ho avuto nei periodi più bui era che la colpa fosse mia**. Ricordo in particolare il periodo di Natale, quando non potevo comprare nemmeno un regalino a mia moglie perché avevo 4,5€ sul conto. L'inconscio mi faceva apparire che non era l'azienda ad essere nel torto, **ero io a non aver fatto la cosa giusta (quale, poi?!) al momento giusto. **
+**La sensazione che ho avuto nei periodi più bui era che la colpa fosse mia**. Ricordo in particolare il periodo di Natale, quando non potevo comprare nemmeno un regalino a mia moglie perché avevo 4,5€ sul conto. L'inconscio mi faceva apparire che non era l'azienda ad essere nel torto, **ero io a non aver fatto la cosa giusta (quale, poi?!) al momento giusto.**
 
 **E' stata dura prendere qualsiasi decisione perché avevo sempre la sensazione di perderci qualcosa, ma non saprei dirvi cosa.** E non vi parlo nemmeno della sensazione di irriconoscenza che ho avuto verso l'azienda "madre" del progetto, che mi hanno aiutato quando hanno potuto, e che ho provato a mollare un paio di volte. Insomma, una situazione psicologica molto debole. 
 
@@ -49,4 +49,4 @@ A mente fredda è facile parlare, ma ci sono alcuni suggerimenti che posso darvi
 2.  Se avete un buon gruzzolo messo da parte e potete permettervi uno-due mesi senza stipendio (che, pur restando in azienda, accadrà), **vi conviene licenziarvi IMMEDIATAMENTE per giusta causa e fare domanda di disoccupazione all'INPS.** In rete si trovano molti articoli a riguardo. E' importante sapere che se vi licenziate "normalmente" non avete diritto a niente, ma il mancato stipendio è considerabile come "giusta causa", purché dopo iniziate una causa civile contro il datore di lavoro per riavere i soldi indietro (altra condizione affinché l'INPS eroghi la disoccupazione). 
 3.  **Restare in azienda e sperare di essere licenziati è una pessima idea.** Psicologicamente subirete tutto voi ed è una tattica estenuante. Anzi, non è nemmeno una tattica: è come stare su una barca in pieno oceano col mare in tempesta. 
 
-Io spero che non vi accada mai nulla di tutto ciò, ma se vi è accaduto e volete provare a spiegare come vi siete sentiti e cosa avete fatto per uscirne, questo blog è a vostra disposizione. **Non fate nomi di aziende perché io modero tutto e i commenti offensivi o diffamatori saranno immediatamente cancellati. **
+Io spero che non vi accada mai nulla di tutto ciò, ma se vi è accaduto e volete provare a spiegare come vi siete sentiti e cosa avete fatto per uscirne, questo blog è a vostra disposizione. **Non fate nomi di aziende perché io modero tutto e i commenti offensivi o diffamatori saranno immediatamente cancellati.**
