@@ -22,7 +22,7 @@ Ovviamente non parlo secondo me, eh. Ma secondo **Reid Hoffman**, fondatore di L
 
 [<img class="aligncenter size-full wp-image-441" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/11/startup-of-u.jpg?fit=312%2C500" alt="startup-of-u" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/11/startup-of-u.jpg?w=312 312w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/11/startup-of-u.jpg?resize=187%2C300 187w" sizes="(max-width: 312px) 100vw, 312px" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/11/startup-of-u.jpg)
 
-Hoffman ha scritto un libro, [Startup Of You](http://www.amazon.com/The-Start-up-You-Yourself-Transform-ebook/dp/B0050DIWHU) (in italiano: [Teniamoci in contatto](http://www.amazon.com/The-Start-up-You-Yourself-Transform-ebook/dp/B0050DIWHU)), in cui dà suggerimenti su come migliorare la propria carriera adottando gli stessi meccanismi analitici e decisionali che utilizzano le startup.
+Hoffman ha scritto un libro, [Startup Of You](http://amzn.to/2mstZED) (in italiano: [Teniamoci in contatto](http://amzn.to/2mssyFV)), in cui dà suggerimenti su come migliorare la propria carriera adottando gli stessi meccanismi analitici e decisionali che utilizzano le startup.
 
 Dovreste già saperlo, ma le startup sono aziende allo stadio embrionale che implementano un'idea (spesso tecnologica e/o rivoluzionaria) e che puntano a fare tanti soldi, subito.
 

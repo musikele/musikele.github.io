@@ -17,11 +17,11 @@ tags:
 
 In una discussione con alcuni miei amici abbiamo iniziato a parlare di libri che stavamo leggendo in questo periodo, e ne è nato un discorso sui libri *motivazionali* (quei libri che ti insegnano a essere una persona migliore).  
 
-**Enrico** sta leggendo [**Miracle Morning**, *trasforma la tua vita un mattino alla volta prima delle 8:00*](https://www.amazon.it/miracle-morning-Trasforma-mattino-volta/dp/8893191121/ref=pd_sim_14_5?_encoding=UTF8&psc=1&refRID=1ZMET94H2Q05RBZ9PGZ3). E' uno dei libri che ho nella lista quindi sono estremamente curioso.
+**Enrico** sta leggendo [**Miracle Morning**, *trasforma la tua vita un mattino alla volta prima delle 8:00*](http://amzn.to/2mKm1Ti). E' uno dei libri che ho nella lista quindi sono estremamente curioso.
 
 ![miracle morning]({{site.baseurl}}/images/miracle-morning.jpg)
 
-Tuttavia, io ho una "politica" per cui non compro un nuovo libro se prima non ho finito il precedente, e sto ancora leggendo [**Chi ha e chi non ha**, *Storie di disuguaglianze*](https://www.amazon.it/Chi-chi-non-Storie-disuguaglianze/dp/8815253076/ref=sr_1_1?s=books&ie=UTF8&qid=1487148788&sr=1-1&keywords=chi+ha+e+chi+non+ha) libro a tratti pesantuccio e a tratti molto leggero che parla di disuguaglianza economica (non sociale). 
+Tuttavia, io ho una "politica" per cui non compro un nuovo libro se prima non ho finito il precedente, e sto ancora leggendo [**Chi ha e chi non ha**, *Storie di disuguaglianze*](http://amzn.to/2mK757I) libro a tratti pesantuccio e a tratti molto leggero che parla di disuguaglianza economica (non sociale). 
 
 ![Chi ha e chi non ha]({{site.baseurl}}/images/chi-ha-chi-non-ha.jpg)
 
@@ -40,7 +40,7 @@ Da qui in poi il mio articolo assume un tono più colloquiale, anche per rappres
 
 **Enrico** - In effetti a ripensarci forse non ci sono mai riuscito semplicemente leggendo, anzi non ricordo proprio di aver mai ottenuto risultato. Di sicuro mi è capitato di cambiare abitudini nella mia vita ma ci sono riuscito quasi inconsciamente, perché ero fortemente motivato a raggiungere un obiettivo. L'ho fatto senza pianificare niente, semplicemente sono cambiato in base ad un desiderio e ad un'esigenza, quindi in maniera naturale. La cosa complicata, dove i libri possono aiutarti, è pianificare e forzare il cambiamento, ossia possono ispirarti in qualche modo e rafforzare qualcosa che stavi già pensando.
 
-**Io** - Un libro che è riuscito a cambiare qualcosa è stato [**è facile smettere di fumare se sai come farlo**](https://www.amazon.it/facile-smettere-fumare-come-farlo/dp/8890123303/ref=sr_1_1?s=books&ie=UTF8&qid=1487149295&sr=1-1&keywords=è+facile+smettere+di+fumare+se+sai+come+farlo): avevo provato a smettere di fumare altre volte prima, ad esempio diminuendo le sigarette o smettendo di punto in bianco, e poi sono sempre tornato a fumare. Con il libro invece ho fumato fino all'ultima pagina, l'ho finito e mi sono chiesto: "mah?!" dopodiché non ho mai più fumato.
+**Io** - Un libro che è riuscito a cambiare qualcosa è stato [**è facile smettere di fumare se sai come farlo**](http://amzn.to/2mJYCkP): avevo provato a smettere di fumare altre volte prima, ad esempio diminuendo le sigarette o smettendo di punto in bianco, e poi sono sempre tornato a fumare. Con il libro invece ho fumato fino all'ultima pagina, l'ho finito e mi sono chiesto: "mah?!" dopodiché non ho mai più fumato.
 
 ![E' facile smettere di fumare se sai come farlo]({{site.baseurl}}/images/smettere-fumare.jpg)
 
