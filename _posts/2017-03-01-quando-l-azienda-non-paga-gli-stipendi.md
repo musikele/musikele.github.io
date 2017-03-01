@@ -9,6 +9,7 @@ tags:
 - stipendio
 categories: Italiano
 category: Italiano
+layout: post
 ---
 Qualche anno fa **l'azienda per cui lavoravo ha attraversato un periodo di crisi e lo stipendio arrivava a singhiozzo** (o peggio, non arrivava proprio). Lo ricordo come uno dei periodi più brutti della mia vita.
 
