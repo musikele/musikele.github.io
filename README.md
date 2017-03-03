@@ -1,3 +1,5 @@
 # blog
-My blog
-# dotnet-iframe
+My blog. 
+
+To start: 
+./start.sh
