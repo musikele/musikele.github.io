@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator><link href="http://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-03-05T13:01:26+01:00</updated><id>http://michelenasti.com/</id><title type="html">Michele Nasti</title><subtitle>Full stack Developer with an eye for the web</subtitle><entry><title type="html">Quando l’azienda non paga gli stipendi</title><link href="http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html" rel="alternate" type="text/html" title=" Quando l'azienda non paga gli stipendi" /><published>2017-02-28T11:36:03+01:00</published><updated>2017-03-01T09:52:21+01:00</updated><id>http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi</id><content type="html" xml:base="http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html">&lt;p&gt;Qualche anno fa &lt;strong&gt;l’azienda per cui lavoravo ha attraversato un periodo di crisi e lo stipendio arrivava a singhiozzo&lt;/strong&gt; (o peggio, non arrivava proprio). Lo ricordo come uno dei periodi più brutti della mia vita.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>I'm a full stack Developer with an eye for the web.</description>
+    <link>http://michelenasti.com/</link>
+    <atom:link href="http://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
+    <updated>2017-03-05T15:52:33+01:00</updated>
+    <id>http://michelenasti.com</id>
+    <author>
+      <name></name>
+    </author>
+    
+      <item>
+        <title> Quando l'azienda non paga gli stipendi</title>
+        <link>http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html</guid>
+        <pubDate>Tue, 28 Feb 2017 11:36:03 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Qualche anno fa &lt;strong&gt;l’azienda per cui lavoravo ha attraversato un periodo di crisi e lo stipendio arrivava a singhiozzo&lt;/strong&gt; (o peggio, non arrivava proprio). Lo ricordo come uno dei periodi più brutti della mia vita.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Per rispetto agli ex colleghi ancora coinvolti in questa vicenda, non voglio citare il nome dell’azienda che attualmente è in liquidazione; sappiate che ci sono persone che non hanno avuto la fortuna di trovare un altro lavoro, e altri che aspettano ancora i soldi dovuti.&lt;/p&gt;
@@ -42,7 +62,99 @@
   &lt;li&gt;&lt;strong&gt;Restare in azienda e sperare di essere licenziati è una pessima idea.&lt;/strong&gt; Psicologicamente subirete tutto voi ed è estenuante. Anzi, non è nemmeno una tattica: è come stare su una barca in pieno oceano col mare in tempesta - o con la calma piatta: state bene finché avete viveri. &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Io spero che non vi accada mai nulla di tutto ciò, ma se vi è accaduto e volete provare a spiegare come vi siete sentiti e cosa avete fatto per uscirne, questo blog è a vostra disposizione. &lt;strong&gt;Non fate nomi di aziende perché io modero tutto e i commenti offensivi o diffamatori saranno immediatamente cancellati.&lt;/strong&gt; Grazie per la comprensione.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="stipendio" /><summary type="html">Qualche anno fa l’azienda per cui lavoravo ha attraversato un periodo di crisi e lo stipendio arrivava a singhiozzo (o peggio, non arrivava proprio). Lo ricordo come uno dei periodi più brutti della mia vita.</summary></entry><entry><title type="html">The Javascript Event Loop for dummies</title><link href="http://michelenasti.com/the-javascript-event-loop-for-dummies/" rel="alternate" type="text/html" title="The Javascript Event Loop for dummies" /><published>2017-02-25T11:29:00+01:00</published><updated>2017-02-27T12:48:16+01:00</updated><id>http://michelenasti.com/the-javascript-event-loop-for-dummies</id><content type="html" xml:base="http://michelenasti.com/the-javascript-event-loop-for-dummies/">&lt;p&gt;What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.&lt;/p&gt;
+&lt;p&gt;Io spero che non vi accada mai nulla di tutto ciò, ma se vi è accaduto e volete provare a spiegare come vi siete sentiti e cosa avete fatto per uscirne, questo blog è a vostra disposizione. &lt;strong&gt;Non fate nomi di aziende perché io modero tutto e i commenti offensivi o diffamatori saranno immediatamente cancellati.&lt;/strong&gt; Grazie per la comprensione.&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1> Quando l'azienda non paga gli stipendi</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt="  Quando l'azienda non paga gli stipendi ">
+                          <figcaption> Quando l'azienda non paga gli stipendi</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-28 11:36:03 CET">Tue, 28 Feb 2017 11:36:03 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Qualche anno fa <strong>l’azienda per cui lavoravo ha attraversato un periodo di crisi e lo stipendio arrivava a singhiozzo</strong> (o peggio, non arrivava proprio). Lo ricordo come uno dei periodi più brutti della mia vita.</p>
+
+<blockquote>
+  <p>Per rispetto agli ex colleghi ancora coinvolti in questa vicenda, non voglio citare il nome dell’azienda che attualmente è in liquidazione; sappiate che ci sono persone che non hanno avuto la fortuna di trovare un altro lavoro, e altri che aspettano ancora i soldi dovuti.</p>
+</blockquote>
+
+<h2 id="i-fatti">I fatti</h2>
+
+<p>Sono stato assunto da un’azienda di consulenza e, come tutti i consulenti, sono stato mandato a lavorare presso un’altra azienda “madre”. <strong>Per i primi 3-4 mesi il lavoro è stato fantastico</strong>, ricordo soprattutto la spensieratezza di conoscere i nuovi colleghi e i progetti su cui dovevo lavorare.</p>
+
+<p>Dopo i primi mesi, tuttavia, arrivarono <strong>le prime comunicazioni che lo stipendio sarebbe stato pagato in ritardo</strong> - prima 5 giorni, poi 10 giorni, poi 20 giorni… si fece dicembre e arrivò la comunicazione definitiva, <strong>“non sappiamo quando avremo modo di pagare la tredicesima e la mensilità”</strong>.</p>
+
+<p><strong>I miei giorni lavorativi scorrevano apparentemente normali</strong>, andavo a lavoro tutti i giorni e cercavo di dare il massimo come faccio sempre; <strong>era anche difficile parlare di queste cose con i colleghi e con i capi</strong>, perché tutti gli altri erano dipendenti dell’azienda madre quindi avevo pochi colleghi diretti. L’unica persona con cui potevo sfogarmi era mia moglie (quindi immaginatevi il clima a casa).</p>
+
+<h2 id="i-tentativi-di-cambiare-la-mia-situazione">I tentativi di cambiare la mia situazione</h2>
+
+<p><strong>La prima cosa che ho provato a fare è di trovare un altro lavoro, e in effetti l’ho anche trovato.</strong> Ho firmato una lettera di assunzione con un’altra azienda, e ho comunicato le dimissioni nei termini (45 giorni! caspita quanto ci vuole a licenziarsi quando manca l’ossigeno), <strong>ma cinque giorni prima delle dimissioni effettive mi chiama per ritrattare</strong>: <em>“Michele, aspettavamo soldi dalla regione che non sono arrivati. Se puoi, se puoi resta dove sei.”</em></p>
+
+<p>Mi è caduto il mondo addosso. <strong>Dopo aver trovato una via d’uscita, scopro che era un vicolo cieco</strong> e devo tornare indietro e rifare tutto da capo.</p>
+
+<p><strong>Con la testa bassa vado dal responsabile del progetto</strong> a cui lavoravo <strong>e gli chiedo se è disposto a riprendermi</strong>, ovviamente valutandomi per il mio lavoro e senza alcuna presunzione di essere “perdonato”. Voi cosa avreste fatto? <strong>Beh lui si è sbracciato per tenermi a lavoro</strong>, e a tre giorni dalle dimissioni ufficiali (con quintali di carte già spedite a INPS, consulenti del lavoro, etc) abbiamo ritirato tutto.</p>
+
+<p>Contemporaneamente, la mia azienda di consulenza (quella che mi pagava lo stipendio) giurava e spergiurava di aver risolto i problemi finanziari, e quindi c’era da stare tranquilli. Ovviamente non era affatto così.</p>
+
+<p>Dopo altri 3-4 mesi di pagamenti a singhiozzo, ritorno dal mio responsabile sul progetto - quello che mi aveva “ripreso” a seguito del casino delle dimissioni ritirate - e gli spiego per la prima volta come stanno le cose davvero. <strong>Gli dico che non ce la faccio più, che mi sembra di essere un cretino e che non so come gestire la situazione</strong>. A questo punto l’azienda “madre” mi aiuta a trovare un’altra società satellite dando di nuovo le dimissioni a 45 giorni con la determinazione che stavolta, anche a costo di rimanere senza lavoro, non avrei voluto avere più niente a che fare con un’azienda che non paga.</p>
+
+<p>Me ne sono andato con un credito di 4500 €, e ad oggi restano solo 450€ ancora da avere (che forse non rivedrò mai più). Altri miei ex colleghi aspettano cifre più alte, dell’ordine di 10.000€ (TFR e arretrati). </p>
+
+<h2 id="come-ci-si-sente">Come ci si sente</h2>
+
+<p><strong>La sensazione che ho avuto nei periodi più bui era che la colpa fosse mia</strong>. Ricordo in particolare il periodo di Natale, quando non potevo comprare nemmeno un regalino a mia moglie perché avevo 4,5€ sul conto! L’inconscio mi faceva apparire che non era l’azienda ad essere nel torto, <strong>ero io a non aver fatto la cosa giusta (quale, poi?!) al momento giusto.</strong></p>
+
+<p><strong>E’ stata dura prendere qualsiasi decisione perché avevo sempre la sensazione di perderci qualcosa, ma non saprei dirvi cosa.</strong> E non vi parlo nemmeno della sensazione di irriconoscenza che ho avuto verso l’azienda “madre” del progetto, che mi hanno aiutato quando hanno potuto, e che ho provato a mollare un paio di volte. Insomma, una situazione psicologica debole.</p>
+
+<h2 id="cosa-si-può-fare-per-evitare-tutto-questo">Cosa si può fare per evitare tutto questo</h2>
+
+<p>A mente fredda è facile parlare, ma ci sono alcuni suggerimenti che posso darvi.</p>
+
+<ol>
+  <li>Al primo accenno di stipendio pagato in ritardo o non pagato affatto, <strong>cercate un’alternativa</strong>. L’ideale è rassegnare le dimissioni “normali” così non perdete mensilità, TFR, e quanto altro. Non credete a chi vi dice che tutto si aggiusterà, a meno che non abbiate accesso a conti e contratti e possiate dire con tranquillità che le cose stiano davvero a posto.</li>
+  <li>Se avete un buon gruzzolo messo da parte e potete permettervi uno-due mesi senza stipendio (che, pur restando in azienda, accadrà), e se siete a almeno 3 mensilità arretrate, <strong>vi conviene licenziarvi IMMEDIATAMENTE per giusta causa e fare domanda di disoccupazione all’INPS.</strong> In rete si trovano <a href="http://www.guidafisco.it/mancato-pagamento-stipendio-dimissioni-870">molti articoli a riguardo</a>. E’ importante sapere che se vi licenziate “normalmente” non avete diritto a niente, ma il mancato stipendio è considerabile come <em>giusta causa</em>, purché dopo iniziate una causa civile contro il datore di lavoro per riavere i soldi indietro (altra condizione affinché l’INPS eroghi la disoccupazione).</li>
+  <li><strong>Restare in azienda e sperare di essere licenziati è una pessima idea.</strong> Psicologicamente subirete tutto voi ed è estenuante. Anzi, non è nemmeno una tattica: è come stare su una barca in pieno oceano col mare in tempesta - o con la calma piatta: state bene finché avete viveri. </li>
+</ol>
+
+<p>Io spero che non vi accada mai nulla di tutto ciò, ma se vi è accaduto e volete provare a spiegare come vi siete sentiti e cosa avete fatto per uscirne, questo blog è a vostra disposizione. <strong>Non fate nomi di aziende perché io modero tutto e i commenti offensivi o diffamatori saranno immediatamente cancellati.</strong> Grazie per la comprensione.</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>The Javascript Event Loop for dummies</title>
+        <link>http://michelenasti.com/the-javascript-event-loop-for-dummies/</link>
+        <guid isPermaLink="true">http://michelenasti.com/the-javascript-event-loop-for-dummies/</guid>
+        <pubDate>Sat, 25 Feb 2017 11:29:00 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/o_weighted_hula_hoop-1.jpg&quot; alt=&quot;An event loop. The dancer is not included.&quot; /&gt;&lt;/p&gt;
 
@@ -201,7 +313,214 @@ Finishing app&lt;/td&gt;
 
 &lt;p&gt;Node.js is a great idea made simple: a complex use case solved smartly. &lt;strong&gt;Learning Node will help you become a better programmer&lt;/strong&gt;, and this applies even if you work with other languages.&lt;/p&gt;
 
-&lt;p&gt;I can only suggest you to google *NodeJS vs XXX performance”, change XXX with whatever you want… You’ll find that &lt;a href=&quot;https://dzone.com/articles/performance-comparison-between&quot;&gt;an interpreted language, with no tweaks, is faster than well-established platforms&lt;/a&gt; (Caution: old article! but the main points still hold) with years of optimization.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="async" /><category term="event loop" /><summary type="html">What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.</summary></entry><entry><title type="html">I libri motivazionali funzionano?</title><link href="http://michelenasti.com/libri-motivazionali/" rel="alternate" type="text/html" title="I libri motivazionali funzionano?" /><published>2017-02-15T01:00:00+01:00</published><updated>2017-03-01T13:10:50+01:00</updated><id>http://michelenasti.com/libri-motivazionali</id><content type="html" xml:base="http://michelenasti.com/libri-motivazionali/">&lt;p&gt;In una discussione con alcuni miei amici abbiamo iniziato a parlare di libri che stavamo leggendo in questo periodo, e ne è nato un discorso sui libri &lt;em&gt;motivazionali&lt;/em&gt; (quei libri che ti insegnano a essere una persona migliore).&lt;/p&gt;
+&lt;p&gt;I can only suggest you to google *NodeJS vs XXX performance”, change XXX with whatever you want… You’ll find that &lt;a href=&quot;https://dzone.com/articles/performance-comparison-between&quot;&gt;an interpreted language, with no tweaks, is faster than well-established platforms&lt;/a&gt; (Caution: old article! but the main points still hold) with years of optimization.&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/the-javascript-event-loop-for-dummies/">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>The Javascript Event Loop for dummies</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" The Javascript Event Loop for dummies ">
+                          <figcaption>The Javascript Event Loop for dummies</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-25 11:29:00 CET">Sat, 25 Feb 2017 11:29:00 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.</p>
+
+<p><img src="/images/o_weighted_hula_hoop-1.jpg" alt="An event loop. The dancer is not included." /></p>
+
+<h2 id="quiz-whats-going-on">Quiz: what’s going on?</h2>
+
+<p>Let’s consider this small javascript program. What will be printed?</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Starting app'</span><span class="p">);</span>
+
+<span class="c1">//first block </span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+
+<span class="c1">//second block </span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Second setTimeout'</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Finishing app'</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>In case you don’t know: <code class="highlighter-rouge">setTimeout</code> is a javascript global function used to fire an action (the first argument) when the delay (second argument) is elapsed.</p>
+
+<p>So the first <code class="highlighter-rouge">setTimeout()</code> block will wait two seconds and then will write <code class="highlighter-rouge">First setTimeout</code> on console.</p>
+
+<p>The second block will wait 0 milliseconds (… it doesn’t wait at all!) and then write <code class="highlighter-rouge">Second setTimeout</code> to the console).</p>
+
+<p>Back to the quiz… what is the expected outcome?</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#1</th>
+
+<th>#2</th>
+
+<th>#3</th>
+
+<th>#4</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Starting App  
+First setTimeout  
+Second setTimeout  
+Finishing app</td>
+
+<td>Starting App  
+Second setTimeout  
+Finishing app  
+First setTimeout</td>
+
+<td>Starting App  
+Finishing app  
+Second setTimeout  
+First setTimeout</td>
+
+<td>Starting App  
+Second setTimeout  
+First setTimeout  
+Finishing app</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>What’s your choice? Don’t scroll down and think a little bit…</p>
+
+<p>Hey, you could just paste this code in your browser’s console to discover that … the right answer is <strong>#3</strong>.</p>
+
+<p>This behaviour may seem surprising but is perfectly legit.</p>
+
+<p>Why?</p>
+
+<h2 id="what-is-really-happening-under-the-hood">what is really happening under the hood</h2>
+
+<p>Let’s start with a Dogma: <strong>in Javascript there is just one thread</strong>. (<em>This is not correct anymore, because in the last years a new technology called <code class="highlighter-rouge">Service Workers</code> has become available; but it is not important for now.</em>) Everything is always executed in the same thread, even events that happen asynchronously.</p>
+
+<p>So what happens when an asynchronous event happen, like the <code class="highlighter-rouge">setTimeout</code>?</p>
+
+<p><code class="highlighter-rouge">setTimeout</code> is a good example of an asynchronous event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.</p>
+
+<p>Bearing this in mind, let’s return to the basis.</p>
+
+<ul>
+  <li>
+    <p>The first <code class="highlighter-rouge">console.log()</code> is printed: <code class="highlighter-rouge">Starting app</code></p>
+  </li>
+  <li>
+    <p>The first block is evaluated:</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//first block </span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code class="highlighter-rouge">() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occur.</p>
+
+<ul>
+  <li>The second block is evaluated:</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//second block </span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Second setTimeout'</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Another explanation. This code says: <em>after zero milliseconds, fire the function specified as first argument</em>. One would expect to be fired instantly, but this does not happen: The function is put in a <strong>callback queue</strong>, and when NodeJS believes the conditions are respected, the function is fired.</p>
+
+<p>Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the <em>main program</em>, the one that starts with the first <code class="highlighter-rouge">console.log()</code>. Think of this as a being wrapped inside a function; nodeJS is evaluating <strong>this</strong> function and cannot evaluate others.</p>
+
+<ul>
+  <li>
+    <p>The last <code class="highlighter-rouge">console.log()</code> is evaluated and <code class="highlighter-rouge">Finishing app</code> is written to console.</p>
+  </li>
+  <li>
+    <p>NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It’s NodeJS’s responsibility to select the right one: since the second <code class="highlighter-rouge">setTimeout</code> had a higher priority, it will be fired first: you’ll then see <code class="highlighter-rouge">Second setTimeout</code>.</p>
+  </li>
+  <li>
+    <p>Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block <code class="highlighter-rouge">setTimeout</code> callback, and will print <code class="highlighter-rouge">First setTimeout</code>. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end.</p>
+  </li>
+</ul>
+
+<h3 id="what-happens-when-you-read-data-from-a-file-or-receive-a-response-from-the-network">What happens when you read data from a file or receive a response from the network?</h3>
+
+<p>The behavior is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible.</p>
+
+<h3 id="the-advantages-of-this">The advantages of this</h3>
+
+<p>The main advantage is that <strong>the CPU will not stop when waiting for an I/O event</strong>: it will just put the callback in the queue, and Node will execute the next available function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread).</p>
+
+<h3 id="the-disadvantage">The disadvantage</h3>
+
+<p>The first disadvantage is that <strong>programming with async in mind and with callbacks is profoundly different</strong> from the past: it is more difficult to reason about and to debug, at start. However, once you truly understand the philosophy and the way it works, you’ll never want to come back again.</p>
+
+<h2 id="so-what-you-suggest">So? What you suggest?</h2>
+
+<p>Node.js is a great idea made simple: a complex use case solved smartly. <strong>Learning Node will help you become a better programmer</strong>, and this applies even if you work with other languages.</p>
+
+<p>I can only suggest you to google *NodeJS vs XXX performance”, change XXX with whatever you want… You’ll find that <a href="https://dzone.com/articles/performance-comparison-between">an interpreted language, with no tweaks, is faster than well-established platforms</a> (Caution: old article! but the main points still hold) with years of optimization.</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>I libri motivazionali funzionano?</title>
+        <link>http://michelenasti.com/libri-motivazionali/</link>
+        <guid isPermaLink="true">http://michelenasti.com/libri-motivazionali/</guid>
+        <pubDate>Wed, 15 Feb 2017 01:00:00 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;In una discussione con alcuni miei amici abbiamo iniziato a parlare di libri che stavamo leggendo in questo periodo, e ne è nato un discorso sui libri &lt;em&gt;motivazionali&lt;/em&gt; (quei libri che ti insegnano a essere una persona migliore).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Enrico&lt;/strong&gt; sta leggendo &lt;a href=&quot;http://amzn.to/2mKm1Ti&quot;&gt;&lt;strong&gt;Miracle Morning&lt;/strong&gt;, &lt;em&gt;trasforma la tua vita un mattino alla volta prima delle 8:00&lt;/em&gt;&lt;/a&gt;. E’ uno dei libri che ho nella lista quindi sono estremamente curioso.&lt;/p&gt;
 
@@ -265,7 +584,119 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è &lt;a
 
 &lt;p&gt;Qui si conclude la discussione “aulica”, poi da buoni amici abbiamo iniziato a parlare d’altro.&lt;/p&gt;
 
-&lt;p&gt;Mi piacerebbe sapere da voi, c’è qualche libro motivazionale che avete letto? Che giudizio ne date? Fatemi sapere la vostra nei commenti. Buon lavoro!&lt;/p&gt;</content><author><name>musikele</name></author><category term="rework" /><category term="è facile smettere di fumare se sai come farlo" /><category term="chi ha e chi non ha" /><category term="miracle morning" /><category term="libri" /><category term="motivazione" /><summary type="html">In una discussione con alcuni miei amici abbiamo iniziato a parlare di libri che stavamo leggendo in questo periodo, e ne è nato un discorso sui libri motivazionali (quei libri che ti insegnano a essere una persona migliore).</summary></entry><entry><title type="html">hey javascript function, take this!</title><link href="http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html" rel="alternate" type="text/html" title="hey javascript function, take this!" /><published>2017-02-10T10:05:22+01:00</published><updated>2017-02-15T10:39:32+01:00</updated><id>http://michelenasti.com/2017/02/10/hey-javascript-function-take-this</id><content type="html" xml:base="http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html">&lt;p&gt;In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Mi piacerebbe sapere da voi, c’è qualche libro motivazionale che avete letto? Che giudizio ne date? Fatemi sapere la vostra nei commenti. Buon lavoro!&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/libri-motivazionali/">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>I libri motivazionali funzionano?</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" I libri motivazionali funzionano? ">
+                          <figcaption>I libri motivazionali funzionano?</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-15 01:00:00 CET">Wed, 15 Feb 2017 01:00:00 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>In una discussione con alcuni miei amici abbiamo iniziato a parlare di libri che stavamo leggendo in questo periodo, e ne è nato un discorso sui libri <em>motivazionali</em> (quei libri che ti insegnano a essere una persona migliore).</p>
+
+<p><strong>Enrico</strong> sta leggendo <a href="http://amzn.to/2mKm1Ti"><strong>Miracle Morning</strong>, <em>trasforma la tua vita un mattino alla volta prima delle 8:00</em></a>. E’ uno dei libri che ho nella lista quindi sono estremamente curioso.</p>
+
+<p><img src="/images/miracle-morning.jpg" alt="miracle morning" /></p>
+
+<p>Tuttavia, io ho una “politica” per cui non compro un nuovo libro se prima non ho finito il precedente, e sto ancora leggendo <a href="http://amzn.to/2mK757I"><strong>Chi ha e chi non ha</strong>, <em>Storie di disuguaglianze</em></a> libro a tratti pesantuccio e a tratti molto leggero che parla di disuguaglianza economica (non sociale).</p>
+
+<p><img src="/images/chi-ha-chi-non-ha.jpg" alt="Chi ha e chi non ha" /></p>
+
+<p>Tra i capitoli si parla, ad esempio, di:</p>
+<ul>
+  <li>come si fa a misurare se una nazione è composta da ricchi o poveri;</li>
+  <li>chi è stato l’uomo più ricco della storia;</li>
+  <li>come interpretare le migrazioni di massa dei nostri giorni;</li>
+  <li>perchè solo 8 club di calcio dopo il 2001 sono diventati ricchissimi e gli altri annaspano;</li>
+  <li>Stati Uniti e Argentina sono partiti dalla stessa condizione economica, nel 1800. come mai ora sono così diverse? cosa è successo?</li>
+</ul>
+
+<p>Da qui in poi il mio articolo assume un tono più colloquiale, anche per rappresentare meglio le cose che ci siamo detti.</p>
+
+<p><strong>Michele (non io)</strong> - ho una domanda per voi. Leggendo tanto e provando a correggere alcune abitudini, non vi capita di non riuscirci? Ovvero di riuscirci solo all’inizio quando ci s’impone di cambiare qualcosa, ma poi appena cambia una virgola nella routine le cose lette vengono abbandonate. La domanda è quante volte le metodologie lette poi le avete davvero applicate nella vita quotidiana.</p>
+
+<p><strong>Io</strong> - A me questo capita con lo sport… specialmente quello che faccio da solo. Avevo preso la bellissima abitudine di andare a correre alle 19 tutte le sere … un’oretta di corsa. Poi una volta è venuto a piovere, un’altro giorno c’era un servizio da fare, poi un’altra cosa… e alla fine mi sono demotivato.</p>
+
+<p><strong>Enrico</strong> - In effetti a ripensarci forse non ci sono mai riuscito semplicemente leggendo, anzi non ricordo proprio di aver mai ottenuto risultato. Di sicuro mi è capitato di cambiare abitudini nella mia vita ma ci sono riuscito quasi inconsciamente, perché ero fortemente motivato a raggiungere un obiettivo. L’ho fatto senza pianificare niente, semplicemente sono cambiato in base ad un desiderio e ad un’esigenza, quindi in maniera naturale. La cosa complicata, dove i libri possono aiutarti, è pianificare e forzare il cambiamento, ossia possono ispirarti in qualche modo e rafforzare qualcosa che stavi già pensando.</p>
+
+<p><strong>Io</strong> - Un libro che è riuscito a cambiare qualcosa è stato <a href="http://amzn.to/2mJYCkP"><strong>è facile smettere di fumare se sai come farlo</strong></a>: avevo provato a smettere di fumare altre volte prima, ad esempio diminuendo le sigarette o smettendo di punto in bianco, e poi sono sempre tornato a fumare. Con il libro invece ho fumato fino all’ultima pagina, l’ho finito e mi sono chiesto: “mah?!” dopodiché non ho mai più fumato.</p>
+
+<p><img src="/images/smettere-fumare.jpg" alt="E' facile smettere di fumare se sai come farlo" /></p>
+
+<blockquote>
+  <p>Ho fumato per un periodo circa 10 anni fa. Troppo tardi per arrabbiarsi ora, mamma :)</p>
+</blockquote>
+
+<p><strong>Michele</strong> - Waaa sta cosa di quel libro mi ha sempre intrigato, perchè non sei il primo che me lo dice. E’ incredibile.</p>
+
+<p><strong>Io</strong> - In quel caso penso che mi abbia dato delle motivazioni psicologiche profonde che mi hanno fatto decidere di non prendere mai più una sigaretta. Quasi a dire “sono un cretino se fumo ancora”. Ma ammetto che ero fortemente determinato a smettere già di mio.
+Altri amici a cui ho passato il libro e che non erano davvero intenzionati a smettere mi hanno detto tutti la stessa cosa: arrivati a metà libro si sono accorti che se avessero continuato avrebbero smesso davvero, … e hanno smesso di leggere.
+In generale comunque non vado molto dietro a questi libri motivazionali. Ho sempre paura che raccontino fuffa. Però se anche per 1 settimana mi fanno diventare una persona migliore, un tentativo bisogna farlo.</p>
+
+<p><strong>Enrico</strong> - Ad esempio, avevo iniziato a svegliarmi prima perché mi rendevo conto la mattina passava troppo velocemente e non riuscivo a fare tutte le cose che volevo. Poi sono capitato su questo libro che ha confermato alcune intuizioni che avevo, mi ha spiegato anche un possibile metodo da adottare per poter ottenere di più. Ora lo adatterò un po’ alle mie esigenze, però diciamo che ti dà una possibile strada da percorrere e ti suggerisce alcune riflessioni alle quali può darsi saresti arrivato da solo, ma anche no.</p>
+
+<p><strong>Michele</strong> - E’ logico che se è un argomento che già stai approfondendo, il risultato viene massimizzato. Quindi il concetto è tutto lì, questi libri aiutano quando sei pronto a recepirne l’insegnamento o le idee che ti propongono.</p>
+
+<p><strong>Enrico</strong> - Si, sono strapieni di fuffa, nel ho letti abbastanza da capire come prendermi solo i punti salienti. Questi libri sono fatti per abbracciare un pubblico ampio e persuadere le menti di persone che vanno dalla casalinga di 60 anni al ragazzino di 16 anni.
+E’ normale che ti devono indorare la pillola in mille modi, ripeterti i concetti in mille salse fino a convincerti che quello che dicono è giusto; anche in questo, ad esempio, alcuni capitoli sono proprio l’identica copia di un altro, riformulato con esempi o strutturando il pensiero in ordine inverso. Alla fine si leggono velocemente proprio per questo :) 
+Vi posso dare un’altra informazione: il libro più bello che ho letto è <a href="https://michelenasti.com/2016/03/5-motivi-cui-rework-ti-cambiera-la-vita/">REWORK</a></p>
+
+<p><img src="/wp-content/uploads/2016/03/wp-1457508741600-2.jpg" alt="Rework" /></p>
+
+<ul>
+  <li>
+    <p><strong>IO</strong> - letto anch’io!</p>
+  </li>
+  <li>
+    <p><strong>Enrico</strong> - l’ho apprezzato oltre per quello che dice anche perché è scritto in maniera essenziale, va dritto al punto senza perdersi in mille chiacchiere.</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>Qui si conclude la discussione “aulica”, poi da buoni amici abbiamo iniziato a parlare d’altro.</p>
+
+<p>Mi piacerebbe sapere da voi, c’è qualche libro motivazionale che avete letto? Che giudizio ne date? Fatemi sapere la vostra nei commenti. Buon lavoro!</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>hey javascript function, take this!</title>
+        <link>http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html</guid>
+        <pubDate>Fri, 10 Feb 2017 10:05:22 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/this.jpg&quot; alt=&quot;&quot; /&gt;\&lt;/p&gt;
 
@@ -374,7 +805,164 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è &lt;a
 
 &lt;p&gt;But if you need &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, … you know what to do.&lt;/p&gt;
 
-&lt;p&gt;After writing &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; article, I can finally say: ES6 doesn’t care about &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, but you should.&lt;/p&gt;</content><author><name>musikele</name></author><summary type="html">In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to this.</summary></entry><entry><title type="html">Debug a NodeJS application from command line - it’s super easy!</title><link href="http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html" rel="alternate" type="text/html" title="Debug a NodeJS application from command line - it's super easy!" /><published>2017-02-08T12:17:15+01:00</published><updated>2017-02-08T16:48:13+01:00</updated><id>http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy</id><content type="html" xml:base="http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html">&lt;p&gt;If you want to seriously develop a nodejs application, you can’t continue to put &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.&lt;/p&gt;
+&lt;p&gt;After writing &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; article, I can finally say: ES6 doesn’t care about &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, but you should.&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>hey javascript function, take this!</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" hey javascript function, take this! ">
+                          <figcaption>hey javascript function, take this!</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-10 10:05:22 CET">Fri, 10 Feb 2017 10:05:22 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to <code class="highlighter-rouge">this</code>.</p>
+
+<p><img src="/images/this.jpg" alt="" />\</p>
+
+<h2 id="functions-as-you-may-already-know-plain-old-classic-es5">Functions as you may already know: plain-old-classic ES5</h2>
+
+<p>As you know, in javascript you can define a function in many ways. The standard, 20-years-old way of declaring a function is this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hello!"</span><span class="p">)</span> 
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>This kind of functions will be “hoisted”, this means that the function will be read before any other code, and used when called. So you can also write this with no error:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// no error: this is executed later</span>
+<span class="nx">sayHello</span><span class="p">();</span> 
+
+<span class="c1">//this is read and hoisted first </span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hello!"</span><span class="p">)</span> 
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>If you find this behaviour too strange (at first glance, it is!), you can <strong>assign a function to a variable</strong>. In this case the function will be read and executed only when used:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//sayHello();  if called here, like before, ERROR! </span>
+
+<span class="kd">var</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello!"</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="nx">sayHello</span><span class="p">();</span> <span class="c1">// no error because it is used after the definition</span>
+</code></pre>
+</div>
+
+<h2 id="functions-in-es6">Functions in ES6</h2>
+
+<p>Now we can have a quick look to new kind of functions introduced in ES6. Here is the first example:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">sayHello</span><span class="p">(</span><span class="s1">'Michele'</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>what happened? we have stripped out the <code class="highlighter-rouge">function</code> keyword, put an arrow (<code class="highlighter-rouge">=&gt;</code>) between the arguments and the body of the function, and that’s it! More expressive and fun to use.</p>
+
+<h2 id="functions-in-es6-in-js-objects">Functions, in ES6, in JS Objects</h2>
+
+<p>There is just one thing to note: <strong>the ES6 version of the function does not bind <code class="highlighter-rouge">this</code></strong>. What the heck does this mean?!</p>
+
+<p>Have a look at this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="s1">'Michele'</span><span class="p">,</span>
+  <span class="na">sayHi</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Hi</span><span class="p">.</span> <span class="nx">I</span><span class="s1">'m ${this.name}`);
+  },
+  sayHiAlt () {
+    console.log(`Hi. I'</span><span class="nx">m</span> <span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">user</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span> <span class="c1">// "Hi. I'm undefined"</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">sayHiAlt</span><span class="p">();</span> <span class="c1">// "Hi. I'm Michele"</span>
+</code></pre>
+</div>
+
+<p>What’s happening? Let’s dip in.</p>
+
+<h3 id="what-is-hi-im-thisname">what is <code class="highlighter-rouge">Hi. I'm ${this.name}</code>?</h3>
+
+<p>This is a template string in Javascript. this translates in <code class="highlighter-rouge">"Hi. I\'m " + this.name</code>.</p>
+
+<h3 id="why-the-first-sayhi-returns-undefined">Why the first <code class="highlighter-rouge">sayHi</code> returns undefined?</h3>
+
+<p>because <code class="highlighter-rouge">this</code> is not bound to the context!</p>
+
+<h3 id="what-is-happening-at-the-last-function-sayhialt-">What is happening at the last function, <code class="highlighter-rouge">sayHiAlt</code> ?!</h3>
+
+<p>This is ES6 at all of it’s power. First, we are assigning a function to a variable, like we saw in the third example of this article; then, we are using another ES6 to assign the function to a property with the same name.</p>
+
+<p>Thanks to <a href="https://babeljs.io/repl/">babel online REPL</a> (a place where you can past ES6 code and see it in ES5), the previous snippet becomes this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s1">'Michele'</span><span class="p">,</span>
+    <span class="na">sayHi</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hi. I\'m '</span> <span class="o">+</span> <span class="kc">undefined</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">sayHiAlt</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">sayHiAlt</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hi. I\'m '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<h2 id="what-should-i-use">What should I use?</h2>
+
+<p>Use <code class="highlighter-rouge">() =&gt; {}</code> always, because it’s simpler; usually you don’t need <code class="highlighter-rouge">this</code> to work.</p>
+
+<p>But if you need <code class="highlighter-rouge">this</code>, … you know what to do.</p>
+
+<p>After writing <code class="highlighter-rouge">this</code> article, I can finally say: ES6 doesn’t care about <code class="highlighter-rouge">this</code>, but you should.</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>Debug a NodeJS application from command line - it's super easy!</title>
+        <link>http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html</guid>
+        <pubDate>Wed, 08 Feb 2017 12:17:15 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;If you want to seriously develop a nodejs application, you can’t continue to put &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.&lt;/p&gt;
 
 &lt;p&gt;In NodeJS debugging can be also done via command line - it’s not &lt;em&gt;point n’ click&lt;/em&gt;, but it’s still easy and straightforward.&lt;/p&gt;
 
@@ -490,7 +1078,171 @@ Press Ctrl + C to leave debug repl
 
 &lt;h2 id=&quot;now-you-can-debug-like-a-boss&quot;&gt;Now you can debug like a boss&lt;/h2&gt;
 
-&lt;p&gt;Show this to your friends, they’ll respect you more after this.&lt;/p&gt;</content><author><name>musikele</name></author><summary type="html">If you want to seriously develop a nodejs application, you can’t continue to put console.log() statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.</summary></entry><entry><title type="html">Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</title><link href="http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html" rel="alternate" type="text/html" title="Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab" /><published>2017-02-07T11:33:49+01:00</published><updated>2017-02-08T09:40:20+01:00</updated><id>http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab</id><content type="html" xml:base="http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html">&lt;p&gt;&lt;strong&gt;Il 1 febbraio 2017&lt;/strong&gt; è accaduto ciò che nessun’azienda al mondo si augura: un database admin, durante un’operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.&lt;/p&gt;
+&lt;p&gt;Show this to your friends, they’ll respect you more after this.&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Debug a NodeJS application from command line - it's super easy!</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" Debug a NodeJS application from command line - it's super easy! ">
+                          <figcaption>Debug a NodeJS application from command line - it's super easy!</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-08 12:17:15 CET">Wed, 08 Feb 2017 12:17:15 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>If you want to seriously develop a nodejs application, you can’t continue to put <code class="highlighter-rouge">console.log()</code> statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.</p>
+
+<p>In NodeJS debugging can be also done via command line - it’s not <em>point n’ click</em>, but it’s still easy and straightforward.</p>
+
+<p>I want tell lies to you, <em>I debug my applications in a IDE</em> :) But if I’m debugging something over <code class="highlighter-rouge">ssh</code>, this tool comes in hand.</p>
+
+<h2 id="an-example-file-to-play-with">An example file to play with</h2>
+
+<p>Save this file as <code class="highlighter-rouge">book.js</code> :</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">title</span><span class="p">:</span> <span class="s1">'NodeJS for dummies'</span><span class="p">,</span>
+  <span class="na">ISBN</span><span class="p">:</span> <span class="s1">'1234567'</span>
+<span class="p">};</span>
+
+<span class="nx">book</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'cooking with Trump'</span><span class="p">;</span>
+<span class="nx">book</span><span class="p">.</span><span class="nx">category</span> <span class="o">=</span> <span class="s1">'recipes'</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<h2 id="debug">debug!</h2>
+
+<p>To run this file you can launch <code class="highlighter-rouge">node book.js</code>; however, in case you want to <strong>debug</strong> you just add an option:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> debug book.js 
+</span>
+&lt; Debugger listening on 127.0.0.1:5858
+connecting to 127.0.0.1:5858 ... ok
+break in book.js:1
+&gt; 1 let book = {
+  2   title: 'NodeJS for dummies',
+  3   ISBN: '1234567'
+debug&gt;
+</code></pre>
+</div>
+
+<p>Let’s skip the first two lines, they are just diplayed for nerds.</p>
+
+<p>Nodejs has blocked the execution at line 1 of the file, as you can see from the <code class="highlighter-rouge">&gt;</code> mark.</p>
+
+<blockquote>
+  <p>It’s best to say now that when NodeJS blocks at a line, the line is <strong>NOT</strong> executed. So, in the example, we are <em>before</em> the first istruction is ever executed.</p>
+</blockquote>
+
+<p>To continue to the next line, press <code class="highlighter-rouge">n</code>(next) and hit Enter:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; n
+break in book.js:6
+  4 };
+  5
+&gt; 6 book.title = 'cooking with Trump';
+  7 book.category = 'recipes'
+  8
+</code></pre>
+</div>
+
+<p>Now the first line has been executed (the creation of the <code class="highlighter-rouge">book</code> object); node has now stopped to the next executable instruction.</p>
+
+<p>In this easy example, going from one instruction to another using <code class="highlighter-rouge">n</code> might be interesting, but complex applications can contain thousands of lines of code, so jumping with <code class="highlighter-rouge">n</code> is not a great idea. Exit from debug for now.</p>
+
+<blockquote>
+  <p>To exit from the debugger you can type <code class="highlighter-rouge">quit</code> or press <code class="highlighter-rouge">Ctrl+C</code> twice.</p>
+</blockquote>
+
+<p>We might want to stop at a specific point, for example before setting the <code class="highlighter-rouge">category</code> attribute to the book:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<span class="nx">book</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'cooking with Trump'</span><span class="p">;</span>
+<span class="kr">debugger</span><span class="p">;</span> 
+<span class="nx">book</span><span class="p">.</span><span class="nx">category</span> <span class="o">=</span> <span class="s1">'recipes'</span><span class="p">;</span>
+<span class="p">...</span>
+</code></pre>
+</div>
+
+<p>if we want to jump directly to the place where the <code class="highlighter-rouge">debugger</code> instruction is, you can just hit <code class="highlighter-rouge">c</code> (continue):</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; c
+break in book.js:7
+  5
+  6 book.title = 'cooking with Trump'
+&gt; 7 debugger;
+  8 book.category = 'recipes'
+  9
+debug&gt;
+</code></pre>
+</div>
+
+<p>As you can see the debugger has now stopped at line 7, where the <code class="highlighter-rouge">debugger</code> instruction was. <strong>It’s important to say that <code class="highlighter-rouge">debugger</code> instruction is ignored when running the application normally</strong>.</p>
+
+<p>Ok, now we know how to stop in a nodejs application, but how can we inspect the value of objects?</p>
+
+<p>just hit <code class="highlighter-rouge">repl</code>:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; repl
+Press Ctrl + C to leave debug repl
+&gt;
+</code></pre>
+</div>
+
+<p>Now we are in a Javascript console, like the one we have in a browser. we can execute expressions like <code class="highlighter-rouge">var a = 1+3</code>; the interesting thing is that we have <strong>access to variables defined until the break point</strong>: infact we can inspect our <code class="highlighter-rouge">book</code> variable and see that …</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>&gt; book
+{ title: 'cooking with Trump', ISBN: '1234567' }
+</code></pre>
+</div>
+
+<p>…<code class="highlighter-rouge">category</code> attribute is not defined, since it will be executed later, at line 8.</p>
+
+<p>Using <code class="highlighter-rouge">repl</code> you can also modify the value of objects, and this is great if you are in a loop and want to go directly to the value that you want, or to simulate complex cases.</p>
+
+<p>To exit from <code class="highlighter-rouge">repl</code> just hit <code class="highlighter-rouge">Ctrl+C</code> to return to <code class="highlighter-rouge">debug&gt;</code> prompt.</p>
+
+<h2 id="now-you-can-debug-like-a-boss">Now you can debug like a boss</h2>
+
+<p>Show this to your friends, they’ll respect you more after this.</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</title>
+        <link>http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</guid>
+        <pubDate>Tue, 07 Feb 2017 11:33:49 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;&lt;strong&gt;Il 1 febbraio 2017&lt;/strong&gt; è accaduto ciò che nessun’azienda al mondo si augura: un database admin, durante un’operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/gitlab_logo.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -549,7 +1301,114 @@ Press Ctrl + C to leave debug repl
 
 &lt;p&gt;&lt;strong&gt;Gitlab è di nuovo in funzione&lt;/strong&gt;, il ripristino è stato lentamente completato e tutta questa vicenda ha generato un grande “&lt;em&gt;abbraccione&lt;/em&gt;” da parte della community di sviluppatori di tutto il mondo.&lt;/p&gt;
 
-&lt;p&gt;Questo è quel genere di disastri che &lt;strong&gt;non dovrebbero MAI accadere&lt;/strong&gt; e per cui &lt;strong&gt;conviene sempre avere più di un backup e testarlo regolarmente&lt;/strong&gt;. E voi avete un piano di disaster recovery?&lt;/p&gt;</content><author><name>musikele</name></author><summary type="html">Il 1 febbraio 2017 è accaduto ciò che nessun’azienda al mondo si augura: un database admin, durante un’operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.</summary></entry><entry><title type="html">Quali sono gli svantaggi del lavoro da remoto?</title><link href="http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html" rel="alternate" type="text/html" title="Quali sono gli svantaggi del lavoro da remoto?" /><published>2017-02-05T01:00:00+01:00</published><updated>2017-02-16T09:37:19+01:00</updated><id>http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa</id><content type="html" xml:base="http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html">&lt;p&gt;Salvo sporadiche trasferte a Biella, dove risiedono gran parte dei miei colleghi, io lavoro prevalentemente da remoto, a Salerno.&lt;/p&gt;
+&lt;p&gt;Questo è quel genere di disastri che &lt;strong&gt;non dovrebbero MAI accadere&lt;/strong&gt; e per cui &lt;strong&gt;conviene sempre avere più di un backup e testarlo regolarmente&lt;/strong&gt;. E voi avete un piano di disaster recovery?&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab ">
+                          <figcaption>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-07 11:33:49 CET">Tue, 07 Feb 2017 11:33:49 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p><strong>Il 1 febbraio 2017</strong> è accaduto ciò che nessun’azienda al mondo si augura: un database admin, durante un’operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.</p>
+
+<p><img src="/images/gitlab_logo.svg" alt="" /></p>
+
+<p><a href="https://about.gitlab.com"><strong>Gitlab</strong></a> è una startup americana di hosting di codice via git. In questo settore le più note sono <strong>Github</strong> e <strong>Bitbucket</strong>, giusto per darvi un’idea dei competitor.</p>
+
+<p>Gitlab era principalmente nota perché ospitava un’intera piattaforma di continuous integration al suo interno integrata con docker, cosa che gli altri competitor più affermati invece delegano a servizi esterni (a pagamento).</p>
+
+<h3 id="poco-male-abbiamo-i-backup-abbiamo-i-backup-vero">Poco male, abbiamo i Backup… Abbiamo i backup, vero?</h3>
+
+<p><strong>Gitlab va offline deliberatamente</strong>, finché non riescono a ripristinare il database. Pensate un attimo alla vostra azienda che chiude per un giorno o due a causa di un incidente di questo tipo: clienti paganti furiosi, il web che legge e scrive di te, migliaia di post indignati e social arrabbiati.</p>
+
+<p>Contemporaneamente, <strong>una buona fetta di programmatori nel mondo inizia a provare compassione.</strong> Io stesso, autore di questo articolo, ho per errore cancellato una volta tutto il database di test (di test, per fortuna!) della mia azienda. Ma almeno avevamo un backup.</p>
+
+<p>Torniamo a Gitlab: scatta la ricerca dei backup. Secondo le loro procedure interne, <strong>Gitlab ha almeno 5 backup differenti, ma uno dopo l’altro si scopre che non funzionano</strong>.</p>
+
+<ul>
+  <li>
+    <p>I backup regolari sembrano non essere più in funzione: fallivano silenziosamente da mesi, e nessuno se ne era mai accorto.</p>
+  </li>
+  <li>
+    <p>Il dump del database non funziona a causa di un mismatch tra il tipo del db e l’eseguibile che lo leggeva/eseguiva.</p>
+  </li>
+  <li>
+    <p>gli snapshot del disco sono abilitati per i file comuni, ma non per i dischi del db.</p>
+  </li>
+  <li>
+    <p>Neanche il backup su S3 stava funzionando</p>
+  </li>
+  <li>
+    <p>a causa di alcuni script automatici che rimuovono i vecchi backup, non c’era più nulla di utilizzabile da poter ripristinare</p>
+  </li>
+</ul>
+
+<p>Fortunatamente, <strong>lo stesso admin che ha lanciato il comando per errore aveva fatto uno snapshot a mano del db sulla sua macchina locale. </strong></p>
+
+<p>L’ultimo backup corrispondeva a 6 ore fa, e su una macchina non direttamente connessa al cluster di server; <strong>il ripristino del backup è avvenuto lentamente con una perdita di tutti i dati delle ultime sei ore. </strong></p>
+
+<h3 id="come-trasformare-un-disastro-in-unoperazione-mediatica">Come trasformare un disastro in un’operazione mediatica</h3>
+
+<p>E’ a questo punto che in Gitlab si rendono conto di avere un’occasione da sfruttare: stanno ricevendo un’incredibile esposizione mediatica.</p>
+
+<p><strong>La prima cosa che fanno è mettere su un <a href="https://docs.google.com/document/d/1GCK53YDcBWQveod9kfzW-VCxIABGiryG7_z_6jHdVik/pub">google docs</a></strong> condiviso in cui spiegano l’accaduto, i tentativi, le scoperte.</p>
+
+<p>La seconda cosa che mi ha sorpreso è il <strong>live streaming su youtube</strong> (era <a href="https://www.youtube.com/watch?v=63wCG86ih94">qui</a>, ora non funziona più) dei dipendenti di gitlab che mostravano live tutte le operazioni messe in pratica per ripristinare il database. Tramite la chat i dipendenti di gitlab parlavano con gli spettatori, e rispondevano alle loro domande. A video c’erano le loro facce e il terminale che mostrava l’output di comandi impronunciabili.</p>
+
+<p>La domanda più gettonata è stata questa:</p>
+
+<blockquote>
+  <p>Q: Who did it, will they be fired?<br />
+<span style="letter-spacing: 0.01em; font-style: normal;"><strong>A: Someone made a mistake, they won’t be fired.</strong></span></p>
+</blockquote>
+
+<p>(Traduzione: <em>Verrà licenziato quello che ha cancellato il db?</em> <strong>No, non sarà licenziato</strong>.)</p>
+
+<h3 id="e-ora">E ora?</h3>
+
+<p><strong>Gitlab è di nuovo in funzione</strong>, il ripristino è stato lentamente completato e tutta questa vicenda ha generato un grande “<em>abbraccione</em>” da parte della community di sviluppatori di tutto il mondo.</p>
+
+<p>Questo è quel genere di disastri che <strong>non dovrebbero MAI accadere</strong> e per cui <strong>conviene sempre avere più di un backup e testarlo regolarmente</strong>. E voi avete un piano di disaster recovery?</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>Quali sono gli svantaggi del lavoro da remoto?</title>
+        <link>http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</guid>
+        <pubDate>Sun, 05 Feb 2017 01:00:00 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Salvo sporadiche trasferte a Biella, dove risiedono gran parte dei miei colleghi, io lavoro prevalentemente da remoto, a Salerno.&lt;/p&gt;
 
 &lt;p&gt;Quando lavoravo in un’azienda tradizionale pensavo al lavoro da remoto come la &lt;em&gt;liberazione da tutti i mali&lt;/em&gt;; non ho cambiato idea, ma adesso sono più consapevole che &lt;strong&gt;ci sono anche dei lati negativi,&lt;/strong&gt; che tra l’altro impattano poco sulla qualità del lavoro e molto sulla qualità della vita.&lt;/p&gt;
 
@@ -638,7 +1497,144 @@ Press Ctrl + C to leave debug repl
 
 &lt;h2 id=&quot;conclusioni&quot;&gt;Conclusioni&lt;/h2&gt;
 
-&lt;p&gt;Resto dell’opinione che lavorare da remoto permette di migliorare la qualità del singolo e trovare i migliori talenti su scala più ampia; ma &lt;strong&gt;c&lt;span style=&quot;letter-spacing: 0.01em;&quot;&gt;hi lavora da remoto ed è alla prima esperienza deve sapere che tra tante rose ci sono anche alcune spine. &lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="remoto" /><category term="remote working" /><category term="svantaggi" /><summary type="html">Salvo sporadiche trasferte a Biella, dove risiedono gran parte dei miei colleghi, io lavoro prevalentemente da remoto, a Salerno.</summary></entry><entry><title type="html">Node useful libraries - manage command line arguments with YARGS</title><link href="http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html" rel="alternate" type="text/html" title="Node useful libraries - manage command line arguments with YARGS" /><published>2017-02-02T10:45:38+01:00</published><updated>2017-02-02T12:26:30+01:00</updated><id>http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs</id><content type="html" xml:base="http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html">&lt;p&gt;When dealing with command line arguments in NodeJS we all know that we have to enquire &lt;code class=&quot;highlighter-rouge&quot;&gt;process.argv&lt;/code&gt; object.&lt;/p&gt;
+&lt;p&gt;Resto dell’opinione che lavorare da remoto permette di migliorare la qualità del singolo e trovare i migliori talenti su scala più ampia; ma &lt;strong&gt;c&lt;span style=&quot;letter-spacing: 0.01em;&quot;&gt;hi lavora da remoto ed è alla prima esperienza deve sapere che tra tante rose ci sono anche alcune spine. &lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Quali sono gli svantaggi del lavoro da remoto?</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" Quali sono gli svantaggi del lavoro da remoto? ">
+                          <figcaption>Quali sono gli svantaggi del lavoro da remoto?</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-05 01:00:00 CET">Sun, 05 Feb 2017 01:00:00 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Salvo sporadiche trasferte a Biella, dove risiedono gran parte dei miei colleghi, io lavoro prevalentemente da remoto, a Salerno.</p>
+
+<p>Quando lavoravo in un’azienda tradizionale pensavo al lavoro da remoto come la <em>liberazione da tutti i mali</em>; non ho cambiato idea, ma adesso sono più consapevole che <strong>ci sono anche dei lati negativi,</strong> che tra l’altro impattano poco sulla qualità del lavoro e molto sulla qualità della vita.</p>
+
+<h2 id="1-camminerai-molto-meno">1. Camminerai molto meno</h2>
+
+<p>Grazie all’Activity Tracker che ho comprato da qualche anno possiamo fare un’analisi sui passi fatti quando lavoravo in azienda e da remoto.</p>
+
+<p>Questa è una <strong>settimana tipo del lavoro in azienda</strong>. Le misurazioni risalgono a <strong>gennaio 2016</strong>:</p>
+
+<p><img src="/images/Schermata%202017-02-05%20alle%2019.42.56.png" alt="" /></p>
+
+<p>Quella settimana <strong>ho fatto 78.000 passi</strong> - sono più di 10.000 passi al giorno. (Il sonno è sempre stato un problema, mi piace andare a letto tardi).</p>
+
+<p>Una giornata di lavoro tipica era così composta:</p>
+
+<ul>
+  <li><strong>6.50</strong>: sveglia</li>
+  <li><strong>7.25</strong>: autobus per Napoli</li>
+  <li><strong>8.15</strong>: arrivo a Napoli, se è bel tempo vado a piedi (circa 15-20 min).</li>
+  <li><strong>8.45</strong>: arrivo in ufficio … inizio giornata di lavoro</li>
+  <li><strong>18.00</strong>: fine giornata di lavoro, a piedi verso l’autobus (15-20 minuti)</li>
+</ul>
+
+<p>2 volte a settimana c’è allenamento e il weekend poteva capitare una partita di tennis.</p>
+
+<p>Passiamo ora allo stesso periodo (più o meno) del 2017, <strong>quando già lavoravo da remoto</strong>. Aggravante: c’è anche una neonata per casa, che a 2 mesi richiede molte attenzioni :)</p>
+
+<p><img src="/images/Schermata%202017-02-05%20alle%2019.43.16.png" alt="" /></p>
+
+<p><span style="letter-spacing: 0.18px;">Lasciamo stare la notte del venerdì, in cui ho probabilmente tolto l’orologio, per il resto il grafico è molto indicativo. </span></p>
+
+<p><span style="letter-spacing: 0.18px;"><strong>Il numero di passi è sceso a 51000</strong>: 27000 passi in meno. </span></p>
+
+<p><span style="letter-spacing: 0.18px;">La mia giornata tipica è così cambiata: </span></p>
+
+<ul>
+  <li>sveglia intorno alle <strong>8:00</strong>, colazione, etc.</li>
+  <li><strong>ore 9:00</strong>: mi sposto nell’ufficio di fianco casa, dove lavorano anche altre persone che però fanno altro.</li>
+  <li><strong>ore 18:30-19:00</strong>: finisco di lavorare e mi dedico a famiglia, hobby, sport, etc.</li>
+</ul>
+
+<p>Gli allenamenti di tennis sono rimasti invariati, sempre 2 a settimana, più una partita nel weekend.</p>
+
+<p><strong>Morale:</strong> lavorando da remoto non solo potrete organizzare il lavoro come credete, ma anche la vostra vita. <strong>Cercate di non soccombere alle comodità</strong>: praticare sport non basta.  Serve un’attitudine a fare di più.</p>
+
+<p><strong>Soluzione</strong>: mi impegnerò a fare una <strong>corsetta</strong> / passeggiata la <strong>mattina</strong>. Chi viene con me?</p>
+
+<h2 id="scompare-la-cognizione-del-tempo-soprattutto-se-il-problema-è-interessante">Scompare la cognizione del tempo, soprattutto se il problema è interessante</h2>
+
+<p>Quando lavoravo in un’azienda tradizionale solo alcuni problemi erano interessanti, più spesso era il solito copia &amp; incolla. Alle 17.50 mi buttavo giù per le scale felice di aver completato un’altra giornata di lavoro, per prendere l’autobus e tornare a casa.</p>
+
+<p>Adesso invece mi piace trovare soluzioni sfiziose anche a problemi semplici, e in generale mi diverto a programmare “a modo mio” (nel miglior modo possibile, coi test automatici, code coverage, etc).</p>
+
+<p><strong>La cognizione del tempo sfugge</strong>: non sono mai stato molto disciplinato, e sono anche una persona che si distrae facilmente; ciò non aiuta.</p>
+
+<p>Così <strong>capita spesso di restare a programmare fino alle 19 e anche le 19.30</strong>, tant’è che rischio di fare tardi agli allenamenti e sentire mia moglie brontolare: “ma quando torni? non starai lavorando troppo?”</p>
+
+<p><strong>Una volta pensavo che lavorando da remoto avrei eliminato tutte le distrazioni; anche se ho beneficiato di molti effetti positivi, mi sono ritrovato a lavorare di più.</strong></p>
+
+<p><strong>Soluzione</strong>: anche qui, essendo un fattore direttamente dipendente da me, <strong>disciplina</strong>.</p>
+
+<h2 id="mancanza-di-colleghi-con-cui-discutere-a-grandi-linee-di-informatica">Mancanza di colleghi con cui discutere a grandi linee di informatica</h2>
+
+<p>E’ bello internet, è bello facebook, è bello hacker news. E’ bello twitter, slack, e il blog. Ma certe volte vorresti alzare la testa e sentire l’opinione di qualcuno che “ne capisce”. Classiche domande che un collega può aiutare o comunque mostrare empatia:</p>
+
+<ul>
+  <li>
+    <p>Devo comprare un computer nuovo, che prendo?</p>
+  </li>
+  <li>
+    <p>Perché venerdì compilava, e oggi (lunedì mattina) no?</p>
+  </li>
+  <li>
+    <p>Hai sentito l’ultima di Microsoft / Apple / Facebook / Google … ?</p>
+  </li>
+  <li>
+    <p>Chissà se esiste una libreria che fa X-Y-Z (elenco di feature) ?</p>
+  </li>
+</ul>
+
+<p>Per non dare segni di schizofrenia preferisco lavorare da un ufficio vicino casa, dove ci sono altre fantastiche persone che si occupano di altro; sebbene si inizino le migliori discussioni generali, a volte sarebbe meglio chiacchierare con qualcuno che “parla la tua lingua”.</p>
+
+<p>Per questo motivo, quando posso, <strong>vado a lavorare a Salerno città</strong> dove altri amici informatici (anch’essi lavoratori da remoto) possono raggiungermi e lavorare insieme. <span style="letter-spacing: 0.01em;"><strong>Il consiglio, dunque, è di lavorare da un coworking e <u>mai</u> da casa</strong>. </span></p>
+
+<p><em>Curiosità: andare a lavorare a Salerno costa (parcheggio e benzina) ma cammino anche 3-4000 passi in più.</em></p>
+
+<h2 id="conclusioni">Conclusioni</h2>
+
+<p>Resto dell’opinione che lavorare da remoto permette di migliorare la qualità del singolo e trovare i migliori talenti su scala più ampia; ma <strong>c<span style="letter-spacing: 0.01em;">hi lavora da remoto ed è alla prima esperienza deve sapere che tra tante rose ci sono anche alcune spine. </span></strong></p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>Node useful libraries - manage command line arguments with YARGS</title>
+        <link>http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html</guid>
+        <pubDate>Thu, 02 Feb 2017 10:45:38 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;When dealing with command line arguments in NodeJS we all know that we have to enquire &lt;code class=&quot;highlighter-rouge&quot;&gt;process.argv&lt;/code&gt; object.&lt;/p&gt;
 
 &lt;p&gt;This object contains all the strings that compose our nodejs app, so for example&lt;/p&gt;
 
@@ -736,7 +1732,153 @@ Press Ctrl + C to leave debug repl
 
 &lt;p&gt;Easy, isn’t it?&lt;/p&gt;
 
-&lt;p&gt;Now you are ready to write your beautiful command line app and be super productive !&lt;/p&gt;</content><author><name>musikele</name></author><summary type="html">When dealing with command line arguments in NodeJS we all know that we have to enquire process.argv object.</summary></entry><entry><title type="html">Tool of the week: Develop faster in NodeJS with Nodemon</title><link href="http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html" rel="alternate" type="text/html" title="Tool of the week: Develop faster in NodeJS with Nodemon " /><published>2017-01-31T09:56:51+01:00</published><updated>2017-01-31T10:12:44+01:00</updated><id>http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon</id><content type="html" xml:base="http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">&lt;p&gt;Are you frustrated when you hit an error in your NodeJS application because, after a crash, you have to restart it? Do you want to &lt;em&gt;immediately&lt;/em&gt; see the app restarted when you change a file? With &lt;strong&gt;Nodemon&lt;/strong&gt; this will never be a problem again.&lt;/p&gt;
+&lt;p&gt;Now you are ready to write your beautiful command line app and be super productive !&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Node useful libraries - manage command line arguments with YARGS</h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" Node useful libraries - manage command line arguments with YARGS ">
+                          <figcaption>Node useful libraries - manage command line arguments with YARGS</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-02-02 10:45:38 CET">Thu, 02 Feb 2017 10:45:38 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>When dealing with command line arguments in NodeJS we all know that we have to enquire <code class="highlighter-rouge">process.argv</code> object.</p>
+
+<p>This object contains all the strings that compose our nodejs app, so for example</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js balance 
+</span></code></pre>
+</div>
+
+<p>can be read inside <code class="highlighter-rouge">bank.js</code> as:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">)</span> 
+<span class="cm">/* outputs: 
+[
+  '/usr/local/bin/node', 
+  '/path/to/bank.js',
+  'balance'
+]
+*/</span>
+</code></pre>
+</div>
+
+<p>That’s a simple case, and we know that <code class="highlighter-rouge">process.argv[2]</code> will contain the “command” provided to our script, <code class="highlighter-rouge">bank.js</code> (that is also <code class="highlighter-rouge">process.argv[1]</code>).</p>
+
+<p>But what if we want to accept parameters like:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js sendMoney --recipient="James" 
+</span></code></pre>
+</div>
+
+<p>or this:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js sendMoney --recipient "James Woods" 
+</span></code></pre>
+</div>
+
+<p>Well, now the problem is becoming a bit more complex, expecially if we want to handle everything with <code class="highlighter-rouge">process.argv</code>. Maybe if there’s a library that handles all of this…</p>
+
+<h2 id="yargs-the-module-that-handles-command-line-parameters">YARGS: the module that handles command line parameters</h2>
+
+<p><a href="http://yargs.js.org">YARGS</a> is a npm module that will transform your <code class="highlighter-rouge">process.argv</code> into a javascript object. It will handle all the special cases, spaces, quotes, arguments, for you.</p>
+
+<p>Yargs is completely configurable, but its defaults are the best choice for you and your users.</p>
+
+<p>First, let’s install this module and save it in our current project:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> i -s yargs 
+</span></code></pre>
+</div>
+
+<p>To use yargs you only have two steps to do:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">yargs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">argv</span> <span class="o">=</span> <span class="nx">yargs</span><span class="p">.</span><span class="nx">argv</span><span class="p">;</span> 
+</code></pre>
+</div>
+
+<p>Now we have an object <code class="highlighter-rouge">argv</code> with all the properties set to the command line.</p>
+
+<p>Let’s do a quick example:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js sendMoney --recipient "James Woods" 
+</span></code></pre>
+</div>
+
+<p>process.argv will show this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">);</span>
+<span class="cm">/* prints: 
+[ '/usr/local/bin/node',
+  '/path/to/bank.js',
+  'sendMoney',
+  '--recipient',
+  'James Woods' ]
+*/</span>
+</code></pre>
+</div>
+
+<p>While YARGS will return this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">argv</span><span class="p">)</span>
+<span class="cm">/* prints: 
+{ _: [ 'sendMoney' ],
+  recipient: 'James Woods',
+  '$0': 'bank.js' }
+*/</span> 
+</code></pre>
+</div>
+
+<p>As you can see, now we have a Javascript obect with some properties that resamble what we have passed on the command line.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">argv._</code> contains the program commands, like <code class="highlighter-rouge">balance</code>, <code class="highlighter-rouge">sendMoney</code>, etc.</li>
+  <li><code class="highlighter-rouge">argv.recipient</code> contains the property associated  with <code class="highlighter-rouge">--recipient="James Woods"</code>. Note: you can also use spaces, or remove the quotes in case of a single word… Yargs will contain this for you.</li>
+  <li><code class="highlighter-rouge">argv.$0</code> contains the name of the js file, in case you need it.</li>
+</ul>
+
+<p>Easy, isn’t it?</p>
+
+<p>Now you are ready to write your beautiful command line app and be super productive !</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>Tool of the week: Develop faster in NodeJS with Nodemon </title>
+        <link>http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html</guid>
+        <pubDate>Tue, 31 Jan 2017 09:56:51 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Are you frustrated when you hit an error in your NodeJS application because, after a crash, you have to restart it? Do you want to &lt;em&gt;immediately&lt;/em&gt; see the app restarted when you change a file? With &lt;strong&gt;Nodemon&lt;/strong&gt; this will never be a problem again.&lt;/p&gt;
 
 &lt;p&gt;When you start a NodeJS application, you usually do something like this:&lt;/p&gt;
 
@@ -768,7 +1910,87 @@ Press Ctrl + C to leave debug repl
 
 &lt;p&gt;Under the hood, Nodemon will check if your files have changed (or if the process is terminated) and will restart your app everytime the condition is met.&lt;/p&gt;
 
-&lt;p&gt;A very useful tool for developer ninjas!&lt;/p&gt;</content><author><name>musikele</name></author><summary type="html">Are you frustrated when you hit an error in your NodeJS application because, after a crash, you have to restart it? Do you want to immediately see the app restarted when you change a file? With Nodemon this will never be a problem again.</summary></entry><entry><title type="html">PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda?</title><link href="http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html" rel="alternate" type="text/html" title="PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? " /><published>2017-01-30T09:45:00+01:00</published><updated>2017-01-30T09:52:42+01:00</updated><id>http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda</id><content type="html" xml:base="http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html">&lt;p&gt;Dopo aver partecipato a una bella discussione on line su quale fosse la migliore scelta per il &lt;em&gt;primo lavoro per un programmatore, &lt;/em&gt; ho deciso di ripubblicare la mia risposta anche sul blog. &lt;/p&gt;
+&lt;p&gt;A very useful tool for developer ninjas!&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Tool of the week: Develop faster in NodeJS with Nodemon </h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" Tool of the week: Develop faster in NodeJS with Nodemon  ">
+                          <figcaption>Tool of the week: Develop faster in NodeJS with Nodemon </figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-01-31 09:56:51 CET">Tue, 31 Jan 2017 09:56:51 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Are you frustrated when you hit an error in your NodeJS application because, after a crash, you have to restart it? Do you want to <em>immediately</em> see the app restarted when you change a file? With <strong>Nodemon</strong> this will never be a problem again.</p>
+
+<p>When you start a NodeJS application, you usually do something like this:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> app.js 
+</span></code></pre>
+</div>
+
+<p>but what if the app crashes? What if you change the content of a file? we must return to the terminal and start it again! What a waste of time!</p>
+
+<p>Yes, I know that node applications start in a heartbeat. But… we still have to ALT-TAB to the console and restart :/</p>
+
+<p><img src="/images/nodemon.svg" alt="nodemon logo" /></p>
+
+<p>That’s what <a href="https://github.com/remy/nodemon"><em>nodemon</em></a> is for. It will restart the app for you in case of crashes of file changes.</p>
+
+<p>Simply install it globally</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> install -g nodemon 
+</span></code></pre>
+</div>
+
+<p>and start your applications with nodemon:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">nodemon</span><span class="kv"> app.js 
+</span></code></pre>
+</div>
+
+<p>You can also pass parameters via command line, if you need it; nodemon will handle everything for you.</p>
+
+<p>Under the hood, Nodemon will check if your files have changed (or if the process is terminated) and will restart your app everytime the condition is met.</p>
+
+<p>A very useful tool for developer ninjas!</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </title>
+        <link>http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</link>
+        <guid isPermaLink="true">http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</guid>
+        <pubDate>Mon, 30 Jan 2017 09:45:00 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Dopo aver partecipato a una bella discussione on line su quale fosse la migliore scelta per il &lt;em&gt;primo lavoro per un programmatore, &lt;/em&gt; ho deciso di ripubblicare la mia risposta anche sul blog. &lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.facebook.com/groups/OrientamentoUscitaInformaticaSalerno/permalink/1220485904665717/&quot;&gt;Su Facebook&lt;/a&gt; troverete il thread originale. &lt;/p&gt;
 
@@ -791,4 +2013,69 @@ Press Ctrl + C to leave debug repl
 
 &lt;p&gt;In una piccola azienda invece si imparano gli strumenti più alla moda, si ha la possibilità di entrare a contatto con ambienti più vivaci, dove si seguono i trend. Forse &lt;em&gt;l’aspetto tecnico conta di più&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Se non pensiamo per un attimo al primo ma al secondo, successivo lavoro, forse da un’azienda piccola é più facile saltare a un’azienda grande. Viceversa, da una grande azienda che ti da stabilità, ma ti insegna cose vecchie, bisogna fare qualche sforzo in più se si vuole andare verso aziende più piccole (o si vuole fondarne una).&lt;/p&gt;</content><author><name>musikele</name></author><summary type="html">Dopo aver partecipato a una bella discussione on line su quale fosse la migliore scelta per il primo lavoro per un programmatore,  ho deciso di ripubblicare la mia risposta anche sul blog. </summary></entry></feed>
+&lt;p&gt;Se non pensiamo per un attimo al primo ma al secondo, successivo lavoro, forse da un’azienda piccola é più facile saltare a un’azienda grande. Viceversa, da una grande azienda che ti da stabilità, ma ti insegna cose vecchie, bisogna fare qualche sforzo in più se si vuole andare verso aziende più piccole (o si vuole fondarne una).&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </h1>
+                      
+                      <figure>
+                          <img src="http://michelenasti.com/images/sitelogo_640x492.png" alt=" PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda?  ">
+                          <figcaption>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-01-30 09:45:00 CET">Mon, 30 Jan 2017 09:45:00 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Dopo aver partecipato a una bella discussione on line su quale fosse la migliore scelta per il <em>primo lavoro per un programmatore, </em> ho deciso di ripubblicare la mia risposta anche sul blog. </p>
+
+<p><a href="https://www.facebook.com/groups/OrientamentoUscitaInformaticaSalerno/permalink/1220485904665717/">Su Facebook</a> troverete il thread originale. </p>
+
+<p><strong>In questi giorni mi domando spesso se per una persona che deve affacciarsi al mondo del lavoro sarebbe meglio aspirare ad entrare in una grande azienda o è indifferente?</strong></p>
+
+<p><em>La mia riposta: </em></p>
+
+<p>Ho lavorato in due aziende medie e in una più piccola. Il primo assunto é fare ciò che ti piace, a quel punto starai bene ovunque.</p>
+
+<p>Da un punto di vista qualitativo, le aziende grandi non preferiscono tecnologie cutting edge e anzi preferiscono la stabilità di tecnologie consolidate su cui hanno investito soldi e skill. I progetti che realizzano sono generalmente di system integration (… gestionali) con alti carichi di utenti e dati. In una grande azienda il lavoro può essere bello o brutto a seconda di com’é il capo, ma tieni presente che sei solo un numero. <em>Ovviamente ci sono tante eccezioni a quello che ti ho detto.</em></p>
+
+<p>In una startup o piccola azienda cambia tutto. I progetti in genere o hanno il requisito di <strong>consegnare subito</strong> (se é un’azienda di consulenza) o di <strong>essere belli e fighi</strong> (se cerchi di vendere un prodotto tuo). Hai più controllo su ciò che puoi fare, puoi decidere come farlo, spesso lavorando con lo strumento che ritieni più giusto per il tuo lavoro. In termini di soldi puoi guadagnare più o meno rispetto ad un enterprise, soprattutto se l’azienda é tua. Di sicuro impari tanto perché dovrai capirne non solo di software ma metterai la mano a marketing, pubblicità, social, etc. Insomma ce n’é per tutti. <br />
+<em>Anche qui ci sono le dovute eccezioni.</em></p>
+
+<p>In ogni caso non considerarti mai arrivato: continua a fare colloqui con le aziende che reputi più interessanti, e migliora sempre il tuo “saldo mensile”. Nessuno ti darà un aumento perché sei un dipendente “fedele”!</p>
+
+<p>Mentre sono sul treno, di ritorno da una trasferta di lavoro, ho aggiunto un altro pezzo di ragionamento. <strong>Lavorando in una big corporation cosa si guadagna?</strong> A parte i soldi, intendo.</p>
+
+<p>In una big si impara a <strong>lavorare con metodo</strong>, a fare <em>stime</em>. Si impara anche a fare <em>un mucchio di soldi</em> (non voi, il progetto!) su decisioni tecniche anche un po’ obsolete.</p>
+
+<p>In una piccola azienda invece si imparano gli strumenti più alla moda, si ha la possibilità di entrare a contatto con ambienti più vivaci, dove si seguono i trend. Forse <em>l’aspetto tecnico conta di più</em>.</p>
+
+<p>Se non pensiamo per un attimo al primo ma al secondo, successivo lavoro, forse da un’azienda piccola é più facile saltare a un’azienda grande. Viceversa, da una grande azienda che ti da stabilità, ma ti insegna cose vecchie, bisogna fare qualche sforzo in più se si vuole andare verso aziende più piccole (o si vuole fondarne una).</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+  </channel>
+</rss>
