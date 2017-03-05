@@ -3,7 +3,6 @@ siteurl: http://michelenasti.com
 
 gems:
   - jekyll-last-modified-at
-  - jekyll-feed
   - jekyll-paginate
 
 permalink: /:year/:month/:day/:title.html
@@ -28,9 +27,9 @@ defaults:
       comments: true
       author: musikele
 
-name: Michele Nasti
+name: Michele Nasti\'s blog
 
-description: Full stack Developer with an eye for the web
+description: I'm a full stack Developer with an eye for the web.
 
 github_username: musikele
 twitter_username: micnasti

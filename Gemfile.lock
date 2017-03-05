@@ -17,8 +17,6 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
-    jekyll-feed (0.9.1)
-      jekyll (~> 3.3)
     jekyll-last-modified-at (1.0.1)
       jekyll (~> 3.3)
       posix-spawn (~> 0.3.9)
@@ -49,7 +47,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
-  jekyll-feed
   jekyll-last-modified-at
   jekyll-paginate
   rouge
