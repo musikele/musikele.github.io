@@ -3,18 +3,18 @@
   <channel>
     <title></title>
     <description>I'm a full stack Developer with an eye for the web.</description>
-    <link>http://michelenasti.com/</link>
-    <atom:link href="http://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-05T15:55:57+01:00</updated>
-    <id>http://michelenasti.com</id>
+    <link>https://michelenasti.com/</link>
+    <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
+    <updated>2017-03-05T15:58:34+01:00</updated>
+    <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
     
       <item>
         <title> Quando l'azienda non paga gli stipendi</title>
-        <link>http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html</guid>
+        <link>https://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html</guid>
         <pubDate>Tue, 28 Feb 2017 11:36:03 +0100</pubDate>
         <author></author>
         
@@ -71,7 +71,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -80,7 +80,7 @@
                       <h1> Quando l'azienda non paga gli stipendi</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt="  Quando l'azienda non paga gli stipendi ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt="  Quando l'azienda non paga gli stipendi ">
                           <figcaption> Quando l'azienda non paga gli stipendi</figcaption>
                       </figure>
                       
@@ -149,8 +149,8 @@
     
       <item>
         <title>The Javascript Event Loop for dummies</title>
-        <link>http://michelenasti.com/the-javascript-event-loop-for-dummies/</link>
-        <guid isPermaLink="true">http://michelenasti.com/the-javascript-event-loop-for-dummies/</guid>
+        <link>https://michelenasti.com/the-javascript-event-loop-for-dummies/</link>
+        <guid isPermaLink="true">https://michelenasti.com/the-javascript-event-loop-for-dummies/</guid>
         <pubDate>Sat, 25 Feb 2017 11:29:00 +0100</pubDate>
         <author></author>
         
@@ -322,7 +322,7 @@ Finishing app&lt;/td&gt;
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/the-javascript-event-loop-for-dummies/">
+                <link rel="canonical" href="https://michelenasti.com/the-javascript-event-loop-for-dummies/">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -331,7 +331,7 @@ Finishing app&lt;/td&gt;
                       <h1>The Javascript Event Loop for dummies</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" The Javascript Event Loop for dummies ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" The Javascript Event Loop for dummies ">
                           <figcaption>The Javascript Event Loop for dummies</figcaption>
                       </figure>
                       
@@ -515,8 +515,8 @@ Finishing app</td>
     
       <item>
         <title>I libri motivazionali funzionano?</title>
-        <link>http://michelenasti.com/libri-motivazionali/</link>
-        <guid isPermaLink="true">http://michelenasti.com/libri-motivazionali/</guid>
+        <link>https://michelenasti.com/libri-motivazionali/</link>
+        <guid isPermaLink="true">https://michelenasti.com/libri-motivazionali/</guid>
         <pubDate>Wed, 15 Feb 2017 01:00:00 +0100</pubDate>
         <author></author>
         
@@ -593,7 +593,7 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è &lt;a
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/libri-motivazionali/">
+                <link rel="canonical" href="https://michelenasti.com/libri-motivazionali/">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -602,7 +602,7 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è &lt;a
                       <h1>I libri motivazionali funzionano?</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" I libri motivazionali funzionano? ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" I libri motivazionali funzionano? ">
                           <figcaption>I libri motivazionali funzionano?</figcaption>
                       </figure>
                       
@@ -691,8 +691,8 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è <a hr
     
       <item>
         <title>hey javascript function, take this!</title>
-        <link>http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html</guid>
+        <link>https://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html</guid>
         <pubDate>Fri, 10 Feb 2017 10:05:22 +0100</pubDate>
         <author></author>
         
@@ -814,7 +814,7 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è <a hr
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -823,7 +823,7 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è <a hr
                       <h1>hey javascript function, take this!</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" hey javascript function, take this! ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" hey javascript function, take this! ">
                           <figcaption>hey javascript function, take this!</figcaption>
                       </figure>
                       
@@ -957,8 +957,8 @@ Vi posso dare un’altra informazione: il libro più bello che ho letto è <a hr
     
       <item>
         <title>Debug a NodeJS application from command line - it's super easy!</title>
-        <link>http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html</guid>
+        <link>https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html</guid>
         <pubDate>Wed, 08 Feb 2017 12:17:15 +0100</pubDate>
         <author></author>
         
@@ -1087,7 +1087,7 @@ Press Ctrl + C to leave debug repl
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -1096,7 +1096,7 @@ Press Ctrl + C to leave debug repl
                       <h1>Debug a NodeJS application from command line - it's super easy!</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" Debug a NodeJS application from command line - it's super easy! ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Debug a NodeJS application from command line - it's super easy! ">
                           <figcaption>Debug a NodeJS application from command line - it's super easy!</figcaption>
                       </figure>
                       
@@ -1237,8 +1237,8 @@ Press Ctrl + C to leave debug repl
     
       <item>
         <title>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</title>
-        <link>http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</guid>
+        <link>https://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</guid>
         <pubDate>Tue, 07 Feb 2017 11:33:49 +0100</pubDate>
         <author></author>
         
@@ -1310,7 +1310,7 @@ Press Ctrl + C to leave debug repl
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -1319,7 +1319,7 @@ Press Ctrl + C to leave debug repl
                       <h1>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab ">
                           <figcaption>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</figcaption>
                       </figure>
                       
@@ -1403,8 +1403,8 @@ Press Ctrl + C to leave debug repl
     
       <item>
         <title>Quali sono gli svantaggi del lavoro da remoto?</title>
-        <link>http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</guid>
+        <link>https://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</guid>
         <pubDate>Sun, 05 Feb 2017 01:00:00 +0100</pubDate>
         <author></author>
         
@@ -1506,7 +1506,7 @@ Press Ctrl + C to leave debug repl
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -1515,7 +1515,7 @@ Press Ctrl + C to leave debug repl
                       <h1>Quali sono gli svantaggi del lavoro da remoto?</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" Quali sono gli svantaggi del lavoro da remoto? ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Quali sono gli svantaggi del lavoro da remoto? ">
                           <figcaption>Quali sono gli svantaggi del lavoro da remoto?</figcaption>
                       </figure>
                       
@@ -1629,8 +1629,8 @@ Press Ctrl + C to leave debug repl
     
       <item>
         <title>Node useful libraries - manage command line arguments with YARGS</title>
-        <link>http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html</guid>
+        <link>https://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html</guid>
         <pubDate>Thu, 02 Feb 2017 10:45:38 +0100</pubDate>
         <author></author>
         
@@ -1741,7 +1741,7 @@ Press Ctrl + C to leave debug repl
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -1750,7 +1750,7 @@ Press Ctrl + C to leave debug repl
                       <h1>Node useful libraries - manage command line arguments with YARGS</h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" Node useful libraries - manage command line arguments with YARGS ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Node useful libraries - manage command line arguments with YARGS ">
                           <figcaption>Node useful libraries - manage command line arguments with YARGS</figcaption>
                       </figure>
                       
@@ -1873,8 +1873,8 @@ Press Ctrl + C to leave debug repl
     
       <item>
         <title>Tool of the week: Develop faster in NodeJS with Nodemon </title>
-        <link>http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html</guid>
+        <link>https://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html</guid>
         <pubDate>Tue, 31 Jan 2017 09:56:51 +0100</pubDate>
         <author></author>
         
@@ -1919,7 +1919,7 @@ Press Ctrl + C to leave debug repl
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -1928,7 +1928,7 @@ Press Ctrl + C to leave debug repl
                       <h1>Tool of the week: Develop faster in NodeJS with Nodemon </h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" Tool of the week: Develop faster in NodeJS with Nodemon  ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Tool of the week: Develop faster in NodeJS with Nodemon  ">
                           <figcaption>Tool of the week: Develop faster in NodeJS with Nodemon </figcaption>
                       </figure>
                       
@@ -1985,8 +1985,8 @@ Press Ctrl + C to leave debug repl
     
       <item>
         <title>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </title>
-        <link>http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</link>
-        <guid isPermaLink="true">http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</guid>
+        <link>https://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</guid>
         <pubDate>Mon, 30 Jan 2017 09:45:00 +0100</pubDate>
         <author></author>
         
@@ -2022,7 +2022,7 @@ Press Ctrl + C to leave debug repl
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="http://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html">
+                <link rel="canonical" href="https://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -2031,7 +2031,7 @@ Press Ctrl + C to leave debug repl
                       <h1>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </h1>
                       
                       <figure>
-                          <img src="http://michelenasti.com/images/michele_nasti.jpg" alt=" PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda?  ">
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda?  ">
                           <figcaption>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </figcaption>
                       </figure>
                       
