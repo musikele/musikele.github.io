@@ -6,7 +6,7 @@ layout: default
 <div id="main">
   <section>
     {% for post in site.posts limit:10 %}
-		<header class="major">
+    <header class="major">
       <a href="{{ post.url }}">
         <h1>{{ post.title }}</h1>
       </a>
@@ -21,13 +21,11 @@ layout: default
       {{ post.excerpt }} <a href="{{post.url}}">Read More...</a> 
     </section>
 
-		<hr/>
+    <hr/>
 
     {% endfor %}
 
-		<section class="button-container">
-      {% if paginator.next_page_path %}
-        <a href="/archives{{paginator.next_page_path}}" class="button"><< Older Posts</a> 
-      {% endif %}
-		</section>
+    <section class="button-container">
+        <a href="archives/page2/" class="button"><< Older Posts</a> 
+    </section>
   </section>

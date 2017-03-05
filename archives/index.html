@@ -31,10 +31,10 @@ Here's the long list of articles I wrote in these years, in Italian and English.
 	</div>
 </section>
 
-{% if paginator.previous_page_path != nil %}
+{% if paginator.previous_page != nil %}
 <a href="{{paginator.previous_page_path}}" class="button pull-right">Newer >></a> 
 {% endif %}
 
-{% if paginator.next_page_path != nil %}
+{% if paginator.next_page != nil %}
 <a href="{{paginator.next_page_path}}" class="button"><< Older</a> 
 {% endif %}
