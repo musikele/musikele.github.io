@@ -36,7 +36,7 @@ _Not me in the photo. This is the Italian way to promise. I love his way of look
 
 I don't want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.
 
-However ES6 ha standardized this, and now we have a fantastic `Promise` object. Let's see how to use it.
+However ES6 has standardized this, and now we have a fantastic `Promise` object. Let's see how to use it.
 
 The following snippet will create a Promise that waits 2,5 seconds and then sends a message `Hey. it worked`:
 
