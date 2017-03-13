@@ -5,11 +5,317 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-13T13:04:38+01:00</updated>
+    <updated>2017-03-13T13:07:22+01:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
+    
+      <item>
+        <title>JS Promises: description, pros, cons of this ES6 construct</title>
+        <link>https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html</guid>
+        <pubDate>Sun, 12 Mar 2017 14:06:29 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;I hope that you have done some kind of exploration with Javascript, NodeJS and asynchronous constructs right now.&lt;/p&gt;
+
+&lt;p&gt;To recap: when you wait for an asnyc operation to handle the result, for example in NodeJS when we read a file, we do this:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'filename.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+   &lt;span class=&quot;c1&quot;&gt;//now you can use the data object &lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is the standard, classic way of handling asynchronicity in NodeJS and Javascript.&lt;/p&gt;
+
+&lt;p&gt;In the last few years a new approach has come to rise, first from outside libraries, then as part of ES6 language: &lt;strong&gt;Promises&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/promise.jpg&quot; alt=&quot;&quot; style=&quot;float: none;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Not me in the photo. This is the Italian way to promise. I love his way of looking guilty. &lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;i-promise-that-i-will-give-you-the-result&quot;&gt;I promise that I will give you the result&lt;/h2&gt;
+
+&lt;p&gt;I don’t want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.&lt;/p&gt;
+
+&lt;p&gt;However ES6 ha standardized this, and now we have a fantastic &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt; object. Let’s see how to use it.&lt;/p&gt;
+
+&lt;p&gt;The following snippet will create a Promise that waits 2,5 seconds and then sends a message &lt;code class=&quot;highlighter-rouge&quot;&gt;Hey. it worked&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somePromise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// only one can be called and only once &lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hey. it worked'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;                      &lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//reject('Unable to fulfill promise');          //3&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt; 
+
+&lt;span class=&quot;nx&quot;&gt;somePromise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;                                   &lt;span class=&quot;c1&quot;&gt;//4&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Success: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Error: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My definition of promises: &lt;strong&gt;a &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt; is a wrapper object that you use to encapsulate a function that might return a value in the future&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We declare a promise as showed in (1): &lt;code class=&quot;highlighter-rouge&quot;&gt;new Promise()&lt;/code&gt; with a function inside.&lt;/p&gt;
+
+&lt;p&gt;This function takes two arguments that are two other functions, usually called &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt;. So the full specification is &lt;code class=&quot;highlighter-rouge&quot;&gt;let somePromise = new Promise((resolve, reject) =&amp;gt; {...});&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;How do you use these two parameters? &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; (2) is a function used to return a value, when the function ends normally (e.g. reading a file, you get the content of the file and return to the caller); &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt; (3) is used when you encounter a problem (e.g. you couldn’t read the file).&lt;/p&gt;
+
+&lt;p&gt;There are some bonds on using Promises:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;you cannot call both &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt;in your code. As soon as one of the two functions gets called, the promise stops.&lt;/li&gt;
+  &lt;li&gt;if you don’t call any of the two functions, the promise will hang.&lt;/li&gt;
+  &lt;li&gt;you can only pass &lt;strong&gt;one&lt;/strong&gt; parameter to &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt;. If you have more stuff to pass, wrap everything in an object.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ok, now we have defined a promise. How do we use it? An example is shown in (4): we just call the promise and then use the &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; method to use the response.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; can take two functions as arguments:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the first callback is called when the promise ends correctly, with the value contained in &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;the second callback is the &lt;em&gt;error handler&lt;/em&gt;, so you might want to use it when you want to get data from the &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt; function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;chaining-promises&quot;&gt;Chaining promises&lt;/h2&gt;
+
+&lt;p&gt;This approach is nice, but the true power comes when you can &lt;code class=&quot;highlighter-rouge&quot;&gt;chain&lt;/code&gt; many promises one after another.&lt;/p&gt;
+
+&lt;p&gt;The following code shows a function &lt;code class=&quot;highlighter-rouge&quot;&gt;asyncAdd&lt;/code&gt; that adds two numbers after 1,5 seconds. I bet your calculator is faster. It does however some checks on the type of &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;, to be sure they are numbers.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;asyncAdd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Arguments must be numbers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;asyncAdd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// (1)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;                  &lt;span class=&quot;c1&quot;&gt;// (2)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;asyncAdd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'33'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// (3)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;// (4)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Should be 45:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;// (5)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Quiz&lt;/strong&gt;: what does this code print? (Answer down)&lt;/p&gt;
+
+&lt;p&gt;In (1) we are evaluating the first sum. &lt;strong&gt;Then&lt;/strong&gt; (2) (&lt;em&gt;Look how it is semantically fantastic to express this concept in plain english!!!&lt;/em&gt;) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (&lt;strong&gt;note! it is a string!&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;Since we are returning a function that returns a promise, we can chain the two promises with another &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We didn’t write the second &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; callback, because we have used the &lt;code class=&quot;highlighter-rouge&quot;&gt;.catch()&lt;/code&gt; method. We will explain this in a second.&lt;/p&gt;
+
+&lt;p&gt;In the second &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt; (4) we would print the result of the total sum.&lt;/p&gt;
+
+&lt;p&gt;Lastly, in (5) we have the &lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt; block. In the preceeding paragraph we were saying that you can handle errors inside every &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt;, but if you chain many &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; together and the first one fails, the others get executed. Usually you don’t want this, because the next &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; block depends on the result of the first.&lt;/p&gt;
+
+&lt;p&gt;So, if you just want to stop an operation at the first error encountered, you can use a single &lt;code class=&quot;highlighter-rouge&quot;&gt;catch()&lt;/code&gt; block at the end: whatever promise will fail, be it the first or the last, the &lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt; block will be called to handle the failure. So easy to reason about.&lt;/p&gt;
+
+&lt;p&gt;(Sorry, no answer for the quiz… run it and see!)&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;A promise is a new construct that, after some practice, becomes a powerful tool for your async constructs.&lt;/p&gt;
+
+&lt;p&gt;The advantages are that you don’t have to write anymore nested callbacks with a lot of indented code, that is often complex to reason about, and to handle errors.&lt;/p&gt;
+
+&lt;p&gt;The disadvantage is that there is much more than what I wrote in this article, about promises, that covers every possible edge case that naturally occours when you work with async code. However, what you read here should cover 80% of your needs.&lt;/p&gt;
+
+&lt;p&gt;You can transform every callback in a promise; many NodeJS core developers don’t like promises at all, and use only callbacks. Popular libraries in NPM use one way or the other to deliver results, so you might be forced to use one or the other approach based on this.&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>JS Promises: description, pros, cons of this ES6 construct</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" JS Promises: description, pros, cons of this ES6 construct ">
+                          <figcaption>JS Promises: description, pros, cons of this ES6 construct</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-03-12 14:06:29 CET">Sun, 12 Mar 2017 14:06:29 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>I hope that you have done some kind of exploration with Javascript, NodeJS and asynchronous constructs right now.</p>
+
+<p>To recap: when you wait for an asnyc operation to handle the result, for example in NodeJS when we read a file, we do this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'filename.txt'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span> 
+   <span class="c1">//now you can use the data object </span>
+   <span class="p">...</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>This is the standard, classic way of handling asynchronicity in NodeJS and Javascript.</p>
+
+<p>In the last few years a new approach has come to rise, first from outside libraries, then as part of ES6 language: <strong>Promises</strong>.</p>
+
+<p><img src="/images/promise.jpg" alt="" style="float: none;" /></p>
+
+<p><em>Not me in the photo. This is the Italian way to promise. I love his way of looking guilty. </em></p>
+
+<h2 id="i-promise-that-i-will-give-you-the-result">I promise that I will give you the result</h2>
+
+<p>I don’t want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.</p>
+
+<p>However ES6 ha standardized this, and now we have a fantastic <code class="highlighter-rouge">Promise</code> object. Let’s see how to use it.</p>
+
+<p>The following snippet will create a Promise that waits 2,5 seconds and then sends a message <code class="highlighter-rouge">Hey. it worked</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">somePromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="c1">//1</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// only one can be called and only once </span>
+    <span class="nx">resolve</span><span class="p">(</span><span class="s1">'Hey. it worked'</span><span class="p">);</span>                      <span class="c1">//2</span>
+    <span class="c1">//reject('Unable to fulfill promise');          //3</span>
+  <span class="p">},</span> <span class="mi">2500</span><span class="p">);</span>
+<span class="p">});</span> 
+
+<span class="nx">somePromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>                                   <span class="c1">//4</span>
+  <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Success: '</span> <span class="o">+</span> <span class="nx">message</span><span class="p">);</span>
+  <span class="p">},</span> 
+  <span class="p">(</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Error: '</span><span class="p">,</span> <span class="nx">errorMessage</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+</div>
+
+<p>My definition of promises: <strong>a <code class="highlighter-rouge">Promise</code> is a wrapper object that you use to encapsulate a function that might return a value in the future</strong>.</p>
+
+<p>We declare a promise as showed in (1): <code class="highlighter-rouge">new Promise()</code> with a function inside.</p>
+
+<p>This function takes two arguments that are two other functions, usually called <code class="highlighter-rouge">resolve</code> and <code class="highlighter-rouge">reject</code>. So the full specification is <code class="highlighter-rouge">let somePromise = new Promise((resolve, reject) =&gt; {...});</code>.</p>
+
+<p>How do you use these two parameters? <code class="highlighter-rouge">resolve</code> (2) is a function used to return a value, when the function ends normally (e.g. reading a file, you get the content of the file and return to the caller); <code class="highlighter-rouge">reject</code> (3) is used when you encounter a problem (e.g. you couldn’t read the file).</p>
+
+<p>There are some bonds on using Promises:</p>
+
+<ul>
+  <li>you cannot call both <code class="highlighter-rouge">resolve</code> or <code class="highlighter-rouge">reject</code>in your code. As soon as one of the two functions gets called, the promise stops.</li>
+  <li>if you don’t call any of the two functions, the promise will hang.</li>
+  <li>you can only pass <strong>one</strong> parameter to <code class="highlighter-rouge">resolve</code> or <code class="highlighter-rouge">reject</code>. If you have more stuff to pass, wrap everything in an object.</li>
+</ul>
+
+<p>Ok, now we have defined a promise. How do we use it? An example is shown in (4): we just call the promise and then use the <code class="highlighter-rouge">then</code> method to use the response.</p>
+
+<p><code class="highlighter-rouge">then</code> can take two functions as arguments:</p>
+
+<ul>
+  <li>the first callback is called when the promise ends correctly, with the value contained in <code class="highlighter-rouge">resolve</code></li>
+  <li>the second callback is the <em>error handler</em>, so you might want to use it when you want to get data from the <code class="highlighter-rouge">reject</code> function.</li>
+</ul>
+
+<h2 id="chaining-promises">Chaining promises</h2>
+
+<p>This approach is nice, but the true power comes when you can <code class="highlighter-rouge">chain</code> many promises one after another.</p>
+
+<p>The following code shows a function <code class="highlighter-rouge">asyncAdd</code> that adds two numbers after 1,5 seconds. I bet your calculator is faster. It does however some checks on the type of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>, to be sure they are numbers.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">asyncAdd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span> <span class="o">===</span> <span class="s1">'number'</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">b</span> <span class="o">===</span> <span class="s1">'number'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="s1">'Arguments must be numbers'</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">1500</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="nx">asyncAdd</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>                         <span class="c1">// (1)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>                  <span class="c1">// (2)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">asyncAdd</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="s1">'33'</span><span class="p">);</span>     <span class="c1">// (3)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>                     <span class="c1">// (4)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Should be 45:'</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span> 
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>           <span class="c1">// (5)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
+  <span class="p">})</span>
+</code></pre>
+</div>
+
+<p><strong>Quiz</strong>: what does this code print? (Answer down)</p>
+
+<p>In (1) we are evaluating the first sum. <strong>Then</strong> (2) (<em>Look how it is semantically fantastic to express this concept in plain english!!!</em>) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (<strong>note! it is a string!</strong>).</p>
+
+<p>Since we are returning a function that returns a promise, we can chain the two promises with another <code class="highlighter-rouge">then()</code>.</p>
+
+<p>We didn’t write the second <code class="highlighter-rouge">then</code> callback, because we have used the <code class="highlighter-rouge">.catch()</code> method. We will explain this in a second.</p>
+
+<p>In the second <code class="highlighter-rouge">then()</code> (4) we would print the result of the total sum.</p>
+
+<p>Lastly, in (5) we have the <code class="highlighter-rouge">catch</code> block. In the preceeding paragraph we were saying that you can handle errors inside every <code class="highlighter-rouge">then</code>, but if you chain many <code class="highlighter-rouge">then</code> together and the first one fails, the others get executed. Usually you don’t want this, because the next <code class="highlighter-rouge">then</code> block depends on the result of the first.</p>
+
+<p>So, if you just want to stop an operation at the first error encountered, you can use a single <code class="highlighter-rouge">catch()</code> block at the end: whatever promise will fail, be it the first or the last, the <code class="highlighter-rouge">catch</code> block will be called to handle the failure. So easy to reason about.</p>
+
+<p>(Sorry, no answer for the quiz… run it and see!)</p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>A promise is a new construct that, after some practice, becomes a powerful tool for your async constructs.</p>
+
+<p>The advantages are that you don’t have to write anymore nested callbacks with a lot of indented code, that is often complex to reason about, and to handle errors.</p>
+
+<p>The disadvantage is that there is much more than what I wrote in this article, about promises, that covers every possible edge case that naturally occours when you work with async code. However, what you read here should cover 80% of your needs.</p>
+
+<p>You can transform every callback in a promise; many NodeJS core developers don’t like promises at all, and use only callbacks. Popular libraries in NPM use one way or the other to deliver results, so you might be forced to use one or the other approach based on this.</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
     
       <item>
         <title> Quando l'azienda non paga gli stipendi</title>
@@ -1969,100 +2275,6 @@ Press Ctrl + C to leave debug repl
 <p>Under the hood, Nodemon will check if your files have changed (or if the process is terminated) and will restart your app everytime the condition is met.</p>
 
 <p>A very useful tool for developer ninjas!</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </title>
-        <link>https://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</link>
-        <guid isPermaLink="true">https://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</guid>
-        <pubDate>Mon, 30 Jan 2017 09:45:00 +0100</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;Dopo aver partecipato a una bella discussione on line su quale fosse la migliore scelta per il &lt;em&gt;primo lavoro per un programmatore, &lt;/em&gt; ho deciso di ripubblicare la mia risposta anche sul blog. &lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/groups/OrientamentoUscitaInformaticaSalerno/permalink/1220485904665717/&quot;&gt;Su Facebook&lt;/a&gt; troverete il thread originale. &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;In questi giorni mi domando spesso se per una persona che deve affacciarsi al mondo del lavoro sarebbe meglio aspirare ad entrare in una grande azienda o è indifferente?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;La mia riposta: &lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Ho lavorato in due aziende medie e in una più piccola. Il primo assunto é fare ciò che ti piace, a quel punto starai bene ovunque.&lt;/p&gt;
-
-&lt;p&gt;Da un punto di vista qualitativo, le aziende grandi non preferiscono tecnologie cutting edge e anzi preferiscono la stabilità di tecnologie consolidate su cui hanno investito soldi e skill. I progetti che realizzano sono generalmente di system integration (… gestionali) con alti carichi di utenti e dati. In una grande azienda il lavoro può essere bello o brutto a seconda di com’é il capo, ma tieni presente che sei solo un numero. &lt;em&gt;Ovviamente ci sono tante eccezioni a quello che ti ho detto.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In una startup o piccola azienda cambia tutto. I progetti in genere o hanno il requisito di &lt;strong&gt;consegnare subito&lt;/strong&gt; (se é un’azienda di consulenza) o di &lt;strong&gt;essere belli e fighi&lt;/strong&gt; (se cerchi di vendere un prodotto tuo). Hai più controllo su ciò che puoi fare, puoi decidere come farlo, spesso lavorando con lo strumento che ritieni più giusto per il tuo lavoro. In termini di soldi puoi guadagnare più o meno rispetto ad un enterprise, soprattutto se l’azienda é tua. Di sicuro impari tanto perché dovrai capirne non solo di software ma metterai la mano a marketing, pubblicità, social, etc. Insomma ce n’é per tutti. &lt;br /&gt;
-&lt;em&gt;Anche qui ci sono le dovute eccezioni.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In ogni caso non considerarti mai arrivato: continua a fare colloqui con le aziende che reputi più interessanti, e migliora sempre il tuo “saldo mensile”. Nessuno ti darà un aumento perché sei un dipendente “fedele”!&lt;/p&gt;
-
-&lt;p&gt;Mentre sono sul treno, di ritorno da una trasferta di lavoro, ho aggiunto un altro pezzo di ragionamento. &lt;strong&gt;Lavorando in una big corporation cosa si guadagna?&lt;/strong&gt; A parte i soldi, intendo.&lt;/p&gt;
-
-&lt;p&gt;In una big si impara a &lt;strong&gt;lavorare con metodo&lt;/strong&gt;, a fare &lt;em&gt;stime&lt;/em&gt;. Si impara anche a fare &lt;em&gt;un mucchio di soldi&lt;/em&gt; (non voi, il progetto!) su decisioni tecniche anche un po’ obsolete.&lt;/p&gt;
-
-&lt;p&gt;In una piccola azienda invece si imparano gli strumenti più alla moda, si ha la possibilità di entrare a contatto con ambienti più vivaci, dove si seguono i trend. Forse &lt;em&gt;l’aspetto tecnico conta di più&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Se non pensiamo per un attimo al primo ma al secondo, successivo lavoro, forse da un’azienda piccola é più facile saltare a un’azienda grande. Viceversa, da una grande azienda che ti da stabilità, ma ti insegna cose vecchie, bisogna fare qualche sforzo in più se si vuole andare verso aziende più piccole (o si vuole fondarne una).&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda?  ">
-                          <figcaption>PRIMO LAVORO DA INFORMATICO - meglio una piccola o una grande azienda? </figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-01-30 09:45:00 CET">Mon, 30 Jan 2017 09:45:00 +0100</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p>Dopo aver partecipato a una bella discussione on line su quale fosse la migliore scelta per il <em>primo lavoro per un programmatore, </em> ho deciso di ripubblicare la mia risposta anche sul blog. </p>
-
-<p><a href="https://www.facebook.com/groups/OrientamentoUscitaInformaticaSalerno/permalink/1220485904665717/">Su Facebook</a> troverete il thread originale. </p>
-
-<p><strong>In questi giorni mi domando spesso se per una persona che deve affacciarsi al mondo del lavoro sarebbe meglio aspirare ad entrare in una grande azienda o è indifferente?</strong></p>
-
-<p><em>La mia riposta: </em></p>
-
-<p>Ho lavorato in due aziende medie e in una più piccola. Il primo assunto é fare ciò che ti piace, a quel punto starai bene ovunque.</p>
-
-<p>Da un punto di vista qualitativo, le aziende grandi non preferiscono tecnologie cutting edge e anzi preferiscono la stabilità di tecnologie consolidate su cui hanno investito soldi e skill. I progetti che realizzano sono generalmente di system integration (… gestionali) con alti carichi di utenti e dati. In una grande azienda il lavoro può essere bello o brutto a seconda di com’é il capo, ma tieni presente che sei solo un numero. <em>Ovviamente ci sono tante eccezioni a quello che ti ho detto.</em></p>
-
-<p>In una startup o piccola azienda cambia tutto. I progetti in genere o hanno il requisito di <strong>consegnare subito</strong> (se é un’azienda di consulenza) o di <strong>essere belli e fighi</strong> (se cerchi di vendere un prodotto tuo). Hai più controllo su ciò che puoi fare, puoi decidere come farlo, spesso lavorando con lo strumento che ritieni più giusto per il tuo lavoro. In termini di soldi puoi guadagnare più o meno rispetto ad un enterprise, soprattutto se l’azienda é tua. Di sicuro impari tanto perché dovrai capirne non solo di software ma metterai la mano a marketing, pubblicità, social, etc. Insomma ce n’é per tutti. <br />
-<em>Anche qui ci sono le dovute eccezioni.</em></p>
-
-<p>In ogni caso non considerarti mai arrivato: continua a fare colloqui con le aziende che reputi più interessanti, e migliora sempre il tuo “saldo mensile”. Nessuno ti darà un aumento perché sei un dipendente “fedele”!</p>
-
-<p>Mentre sono sul treno, di ritorno da una trasferta di lavoro, ho aggiunto un altro pezzo di ragionamento. <strong>Lavorando in una big corporation cosa si guadagna?</strong> A parte i soldi, intendo.</p>
-
-<p>In una big si impara a <strong>lavorare con metodo</strong>, a fare <em>stime</em>. Si impara anche a fare <em>un mucchio di soldi</em> (non voi, il progetto!) su decisioni tecniche anche un po’ obsolete.</p>
-
-<p>In una piccola azienda invece si imparano gli strumenti più alla moda, si ha la possibilità di entrare a contatto con ambienti più vivaci, dove si seguono i trend. Forse <em>l’aspetto tecnico conta di più</em>.</p>
-
-<p>Se non pensiamo per un attimo al primo ma al secondo, successivo lavoro, forse da un’azienda piccola é più facile saltare a un’azienda grande. Viceversa, da una grande azienda che ti da stabilità, ma ti insegna cose vecchie, bisogna fare qualche sforzo in più se si vuole andare verso aziende più piccole (o si vuole fondarne una).</p>
 
                   
                     <footer>
