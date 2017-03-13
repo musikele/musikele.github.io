@@ -14,7 +14,7 @@
   		<meta name="keywords" content="javascript, es6, promises" />
 			
 			 
-				<meta http-equiv="last-modified" content="2017-03-13 16:26:17 +0100" />
+				<meta http-equiv="last-modified" content="2017-03-13 16:35:03 +0100" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -215,7 +215,7 @@
 </code></pre>
 </div>
 
-<p><strong>Quiz</strong>: what does this code print? (Answer down)</p>
+<p><strong>Quiz</strong>: what does this code print? (Answer below)</p>
 
 <p>In (1) we are evaluating the first sum. <strong>Then</strong> (2) (<em>Look how it is semantically fantastic to express this concept in plain english!!!</em>) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (<strong>note! it is a string!</strong>).</p>
 
@@ -225,7 +225,7 @@
 
 <p>In the second <code class="highlighter-rouge">then()</code> (4) we would print the result of the total sum.</p>
 
-<p>Lastly, in (5) we have the <code class="highlighter-rouge">catch</code> block. In the preceeding paragraph we were saying that you can handle errors inside every <code class="highlighter-rouge">then</code>, but if you chain many <code class="highlighter-rouge">then</code> together and the first one fails, the others get executed. Usually you don’t want this, because the next <code class="highlighter-rouge">then</code> block depends on the result of the first.</p>
+<p>Lastly, in (5) we have the <code class="highlighter-rouge">catch</code> block. In the previous paragraph we were saying that you can handle errors inside every <code class="highlighter-rouge">then</code>, but if you chain many <code class="highlighter-rouge">then</code> together and the first one fails, the others are still executed. Usually you don’t want this, because the next <code class="highlighter-rouge">then</code> depends on the result of the previous.</p>
 
 <p>So, if you just want to stop an operation at the first error encountered, you can use a single <code class="highlighter-rouge">catch()</code> block at the end: whatever promise will fail, be it the first or the last, the <code class="highlighter-rouge">catch</code> block will be called to handle the failure. So easy to reason about.</p>
 

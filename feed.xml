@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-13T16:27:12+01:00</updated>
+    <updated>2017-03-13T16:36:15+01:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -123,7 +123,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Quiz&lt;/strong&gt;: what does this code print? (Answer down)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quiz&lt;/strong&gt;: what does this code print? (Answer below)&lt;/p&gt;
 
 &lt;p&gt;In (1) we are evaluating the first sum. &lt;strong&gt;Then&lt;/strong&gt; (2) (&lt;em&gt;Look how it is semantically fantastic to express this concept in plain english!!!&lt;/em&gt;) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (&lt;strong&gt;note! it is a string!&lt;/strong&gt;).&lt;/p&gt;
 
@@ -133,7 +133,7 @@
 
 &lt;p&gt;In the second &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt; (4) we would print the result of the total sum.&lt;/p&gt;
 
-&lt;p&gt;Lastly, in (5) we have the &lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt; block. In the preceeding paragraph we were saying that you can handle errors inside every &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt;, but if you chain many &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; together and the first one fails, the others get executed. Usually you don’t want this, because the next &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; block depends on the result of the first.&lt;/p&gt;
+&lt;p&gt;Lastly, in (5) we have the &lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt; block. In the previous paragraph we were saying that you can handle errors inside every &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt;, but if you chain many &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; together and the first one fails, the others are still executed. Usually you don’t want this, because the next &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; depends on the result of the previous.&lt;/p&gt;
 
 &lt;p&gt;So, if you just want to stop an operation at the first error encountered, you can use a single &lt;code class=&quot;highlighter-rouge&quot;&gt;catch()&lt;/code&gt; block at the end: whatever promise will fail, be it the first or the last, the &lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt; block will be called to handle the failure. So easy to reason about.&lt;/p&gt;
 
@@ -278,7 +278,7 @@
 </code></pre>
 </div>
 
-<p><strong>Quiz</strong>: what does this code print? (Answer down)</p>
+<p><strong>Quiz</strong>: what does this code print? (Answer below)</p>
 
 <p>In (1) we are evaluating the first sum. <strong>Then</strong> (2) (<em>Look how it is semantically fantastic to express this concept in plain english!!!</em>) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (<strong>note! it is a string!</strong>).</p>
 
@@ -288,7 +288,7 @@
 
 <p>In the second <code class="highlighter-rouge">then()</code> (4) we would print the result of the total sum.</p>
 
-<p>Lastly, in (5) we have the <code class="highlighter-rouge">catch</code> block. In the preceeding paragraph we were saying that you can handle errors inside every <code class="highlighter-rouge">then</code>, but if you chain many <code class="highlighter-rouge">then</code> together and the first one fails, the others get executed. Usually you don’t want this, because the next <code class="highlighter-rouge">then</code> block depends on the result of the first.</p>
+<p>Lastly, in (5) we have the <code class="highlighter-rouge">catch</code> block. In the previous paragraph we were saying that you can handle errors inside every <code class="highlighter-rouge">then</code>, but if you chain many <code class="highlighter-rouge">then</code> together and the first one fails, the others are still executed. Usually you don’t want this, because the next <code class="highlighter-rouge">then</code> depends on the result of the previous.</p>
 
 <p>So, if you just want to stop an operation at the first error encountered, you can use a single <code class="highlighter-rouge">catch()</code> block at the end: whatever promise will fail, be it the first or the last, the <code class="highlighter-rouge">catch</code> block will be called to handle the failure. So easy to reason about.</p>
 
