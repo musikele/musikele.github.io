@@ -112,7 +112,7 @@ asyncAdd(5, 7)                         // (1)
   })
 ```
 
-**Quiz**: what does this code print? (Answer down)
+**Quiz**: what does this code print? (Answer below)
 
 In (1) we are evaluating the first sum. **Then** (2) (_Look how it is semantically fantastic to express this concept in plain english!!!_) we write the result to console, and return another operation (3): we add the result to the number '33' (**note! it is a string!**).
 
@@ -122,7 +122,7 @@ We didn't write the second `then` callback, because we have used the `.catch()` 
 
 In the second `then()` (4) we would print the result of the total sum.
 
-Lastly, in (5) we have the `catch` block. In the preceeding paragraph we were saying that you can handle errors inside every `then`, but if you chain many `then` together and the first one fails, the others get executed. Usually you don't want this, because the next `then` block depends on the result of the first.
+Lastly, in (5) we have the `catch` block. In the previous paragraph we were saying that you can handle errors inside every `then`, but if you chain many `then` together and the first one fails, the others are still executed. Usually you don't want this, because the next `then` depends on the result of the previous.
 
 So, if you just want to stop an operation at the first error encountered, you can use a single `catch()` block at the end: whatever promise will fail, be it the first or the last, the `catch` block will be called to handle the failure. So easy to reason about.
 
