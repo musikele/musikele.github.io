@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-13T16:25:09+01:00</updated>
+    <updated>2017-03-13T16:27:12+01:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -43,7 +43,7 @@
 
 &lt;p&gt;I don’t want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.&lt;/p&gt;
 
-&lt;p&gt;However ES6 ha standardized this, and now we have a fantastic &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt; object. Let’s see how to use it.&lt;/p&gt;
+&lt;p&gt;However ES6 has standardized this, and now we have a fantastic &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt; object. Let’s see how to use it.&lt;/p&gt;
 
 &lt;p&gt;The following snippet will create a Promise that waits 2,5 seconds and then sends a message &lt;code class=&quot;highlighter-rouge&quot;&gt;Hey. it worked&lt;/code&gt;:&lt;/p&gt;
 
@@ -198,7 +198,7 @@
 
 <p>I don’t want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.</p>
 
-<p>However ES6 ha standardized this, and now we have a fantastic <code class="highlighter-rouge">Promise</code> object. Let’s see how to use it.</p>
+<p>However ES6 has standardized this, and now we have a fantastic <code class="highlighter-rouge">Promise</code> object. Let’s see how to use it.</p>
 
 <p>The following snippet will create a Promise that waits 2,5 seconds and then sends a message <code class="highlighter-rouge">Hey. it worked</code>:</p>
 
