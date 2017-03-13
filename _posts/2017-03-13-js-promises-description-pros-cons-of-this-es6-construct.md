@@ -13,7 +13,7 @@ tags:
 ---
 I hope that you have done some kind of exploration with Javascript, NodeJS and asynchronous constructs right now.
 
-To recap: when you wait for an asnyc operation to handle the result, for example in NodeJS when we read a file, we do this:
+To recap: when you wait for an async operation to handle the result, for example in NodeJS when we read a file, we do this:
 
 ```javascript
 const fs = require('fs');
