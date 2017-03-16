@@ -3,7 +3,6 @@ paginate: true
 comments: true
 author: musikele
 title: 'Two easy ways perform GET requests in NodeJS '
-category: Italiano
 layout: post
 date: '2017-03-13T23:07:41+00:00'
 tags:
@@ -11,6 +10,7 @@ tags:
 - Nodejs
 - Request
 - Axios
+categories: Italiano
 ---
 Today I want to talk about something that we all need during our programming life: requesting data from a remote server. We will do this using callbacks and promises, to show both the approaches.
 
@@ -82,7 +82,7 @@ let encodedAddress = encodeURIComponent(address);
 
 ## Axios: a Promise based equivalent
 
-[In my last article we talked about promises](https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html), so we would like to se these in action, right? We have two options, the first is to wrap `request` in a promise (easy, but more code); the second is to **use a library already built with promises in mind**.
+[In my last article we talked about promises](https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html), so we would like to see these in action, right? We have two options, the first is to wrap `request` in a promise (easy, but more code); the second is to **use a library already built with promises in mind**.
 
 The one I use, and that is super popular, is called **[`Axios`](https://www.npmjs.com/package/axios)**: Here's the description
 
