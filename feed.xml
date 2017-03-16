@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-15T16:33:11+01:00</updated>
+    <updated>2017-03-16T11:06:37+01:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -90,7 +90,7 @@ results[0].geometry.location.lng
 
 &lt;h2 id=&quot;axios-a-promise-based-equivalent&quot;&gt;Axios: a Promise based equivalent&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html&quot;&gt;In my last article we talked about promises&lt;/a&gt;, so we would like to se these in action, right? We have two options, the first is to wrap &lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt; in a promise (easy, but more code); the second is to &lt;strong&gt;use a library already built with promises in mind&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html&quot;&gt;In my last article we talked about promises&lt;/a&gt;, so we would like to see these in action, right? We have two options, the first is to wrap &lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt; in a promise (easy, but more code); the second is to &lt;strong&gt;use a library already built with promises in mind&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;The one I use, and that is super popular, is called &lt;strong&gt;&lt;a href=&quot;https://www.npmjs.com/package/axios&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Axios&lt;/code&gt;&lt;/a&gt;&lt;/strong&gt;: Here’s the description&lt;/p&gt;
 
@@ -245,7 +245,7 @@ results[0].geometry.location.lng
 
 <h2 id="axios-a-promise-based-equivalent">Axios: a Promise based equivalent</h2>
 
-<p><a href="https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">In my last article we talked about promises</a>, so we would like to se these in action, right? We have two options, the first is to wrap <code class="highlighter-rouge">request</code> in a promise (easy, but more code); the second is to <strong>use a library already built with promises in mind</strong>.</p>
+<p><a href="https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">In my last article we talked about promises</a>, so we would like to see these in action, right? We have two options, the first is to wrap <code class="highlighter-rouge">request</code> in a promise (easy, but more code); the second is to <strong>use a library already built with promises in mind</strong>.</p>
 
 <p>The one I use, and that is super popular, is called <strong><a href="https://www.npmjs.com/package/axios"><code class="highlighter-rouge">Axios</code></a></strong>: Here’s the description</p>
 
