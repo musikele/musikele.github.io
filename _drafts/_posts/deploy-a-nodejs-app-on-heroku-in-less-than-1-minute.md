@@ -11,7 +11,7 @@ tags:
 - heroku
 - express
 ---
-Actually, the time you need to deploy an app depends on how fast you are to copy & paste.
+Actually, the time you need to deploy an app depends on how fast you are to copy & paste. 
 
 ### Steps to do just the first time
 
