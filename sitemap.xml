@@ -16,6 +16,19 @@
    
  
   <url>
+    <loc>https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html</loc> 
+    <lastmod>2017-03-18T14:18:53+01:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
     <loc>https://michelenasti.com/2017/03/14/two-easy-ways-perform-get-requests-in-nodejs.html</loc> 
     <lastmod>2017-03-14T00:07:41+01:00</lastmod>
     
@@ -1542,7 +1555,7 @@
   <url>
     <loc>https://michelenasti.com/feed.xml</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1557,7 +1570,7 @@
   <url>
     <loc>https://michelenasti.com/archives/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1572,7 +1585,7 @@
   <url>
     <loc>https://michelenasti.com/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1587,7 +1600,7 @@
   <url>
     <loc>https://michelenasti.com/js/init.js</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1619,7 +1632,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page2/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1634,7 +1647,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page3/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1649,7 +1662,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page4/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1664,7 +1677,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page5/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1679,7 +1692,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page6/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1694,7 +1707,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page7/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1709,7 +1722,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page8/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1724,7 +1737,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page9/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1739,7 +1752,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page10/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1754,7 +1767,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page11/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1769,7 +1782,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page12/</loc>
     
-    <lastmod>2017-03-22T16:37:57+01:00</lastmod>
+    <lastmod>2017-03-23T11:54:52+01:00</lastmod>
     
     
     <changefreq>monthly</changefreq>

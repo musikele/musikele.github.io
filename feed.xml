@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-22T16:37:57+01:00</updated>
+    <updated>2017-03-23T11:54:52+01:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -193,6 +193,148 @@
 <p>Un altra conseguenza è che non è la lingua che si parla a rendere <em>grande</em> un workplace. </p>
 
 <p>Infine: meglio un ottimo performer con un inglese zoppicante, o un  inglese madrelingua che lavora così così?</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
+    
+      <item>
+        <title>Deploy a NodeJS app on Heroku in less than 1 minute</title>
+        <link>https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html</guid>
+        <pubDate>Sat, 18 Mar 2017 14:18:53 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Actually, the time you need to deploy an app depends on how fast you are to copy &amp;amp; paste.&lt;/p&gt;
+
+&lt;h3 id=&quot;steps-to-set-up-the-environment-the-first-time&quot;&gt;Steps to set up the environment the first time&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Sign up (or log in) to
+  &lt;a href=&quot;http://heroku.com&quot;&gt;heroku.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;download
+  &lt;a href=&quot;https://devcenter.heroku.com/articles/heroku-cli&quot;&gt;heroku’s command for the console&lt;/a&gt; (select the right version for your operating system).&lt;/li&gt;
+  &lt;li&gt;be sure the command is installed: &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku -v&lt;/code&gt; (you should see some output)&lt;/li&gt;
+  &lt;li&gt;launch &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku login&lt;/code&gt;and log in with your email and password.&lt;/li&gt;
+  &lt;li&gt;Upload ssh keys to heroku: &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku keys:add&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -v git@heroku.com&lt;/code&gt;: even if the command seems to fail, check that the long output contains the row
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;debug1: Authentication succeeded (publickey).
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Generally it is one of the last 5-6 rows. If this log is present, everything is set up correctly.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;steps-to-set-up-the-environment-with-the-nodejs-app&quot;&gt;Steps to set up the environment with the NodeJs app&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Set the host port of your application as an environment variable:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const port = process.env.PORT || 3000 ;  
+... 
+app.listen(port);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; script, in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;:
+```
+“scripts”: {
+ “start”: “node server.js”,
+ …
+ }&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check that the app runs: correctly: &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;launch &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku create&lt;/code&gt;: will create a new remote for your repository named &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push heroku&lt;/code&gt; : will push your code to heroku&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;heroku open&lt;/code&gt;: will open your webapp in the browser&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For every modification you do to your code, just commit and &lt;code class=&quot;highlighter-rouge&quot;&gt;git push heroku&lt;/code&gt;!&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Deploy a NodeJS app on Heroku in less than 1 minute</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Deploy a NodeJS app on Heroku in less than 1 minute ">
+                          <figcaption>Deploy a NodeJS app on Heroku in less than 1 minute</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-03-18 14:18:53 CET">Sat, 18 Mar 2017 14:18:53 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Actually, the time you need to deploy an app depends on how fast you are to copy &amp; paste.</p>
+
+<h3 id="steps-to-set-up-the-environment-the-first-time">Steps to set up the environment the first time</h3>
+<ol>
+  <li>Sign up (or log in) to
+  <a href="http://heroku.com">heroku.com</a></li>
+  <li>download
+  <a href="https://devcenter.heroku.com/articles/heroku-cli">heroku’s command for the console</a> (select the right version for your operating system).</li>
+  <li>be sure the command is installed: <code class="highlighter-rouge">heroku -v</code> (you should see some output)</li>
+  <li>launch <code class="highlighter-rouge">heroku login</code>and log in with your email and password.</li>
+  <li>Upload ssh keys to heroku: <code class="highlighter-rouge">heroku keys:add</code></li>
+  <li><code class="highlighter-rouge">ssh -v git@heroku.com</code>: even if the command seems to fail, check that the long output contains the row
+    <div class="highlighter-rouge"><pre class="highlight"><code>debug1: Authentication succeeded (publickey).
+</code></pre>
+    </div>
+    <p>Generally it is one of the last 5-6 rows. If this log is present, everything is set up correctly.</p>
+  </li>
+</ol>
+
+<h3 id="steps-to-set-up-the-environment-with-the-nodejs-app">Steps to set up the environment with the NodeJs app</h3>
+<ul>
+  <li>Set the host port of your application as an environment variable:
+    <div class="highlighter-rouge"><pre class="highlight"><code>const port = process.env.PORT || 3000 ;  
+... 
+app.listen(port);
+</code></pre>
+    </div>
+  </li>
+  <li>set the <code class="highlighter-rouge">npm start</code> script, in <code class="highlighter-rouge">package.json</code>:
+```
+“scripts”: {
+ “start”: “node server.js”,
+ …
+ }</li>
+</ul>
+
+<p>```</p>
+
+<ul>
+  <li>
+    <p>Check that the app runs: correctly: <code class="highlighter-rouge">npm start</code></p>
+  </li>
+  <li>launch <code class="highlighter-rouge">heroku create</code>: will create a new remote for your repository named <code class="highlighter-rouge">heroku</code></li>
+  <li><code class="highlighter-rouge">git push heroku</code> : will push your code to heroku</li>
+  <li><code class="highlighter-rouge">heroku open</code>: will open your webapp in the browser</li>
+</ul>
+
+<p>For every modification you do to your code, just commit and <code class="highlighter-rouge">git push heroku</code>!</p>
 
                   
                     <footer>
@@ -2195,232 +2337,6 @@ Press Ctrl + C to leave debug repl
 <p><strong>Gitlab è di nuovo in funzione</strong>, il ripristino è stato lentamente completato e tutta questa vicenda ha generato un grande “<em>abbraccione</em>” da parte della community di sviluppatori di tutto il mondo.</p>
 
 <p>Questo è quel genere di disastri che <strong>non dovrebbero MAI accadere</strong> e per cui <strong>conviene sempre avere più di un backup e testarlo regolarmente</strong>. E voi avete un piano di disaster recovery?</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>Quali sono gli svantaggi del lavoro da remoto?</title>
-        <link>https://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</link>
-        <guid isPermaLink="true">https://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</guid>
-        <pubDate>Sun, 05 Feb 2017 01:00:00 +0100</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;Salvo sporadiche trasferte a Biella, dove risiedono gran parte dei miei colleghi, io lavoro prevalentemente da remoto, a Salerno.&lt;/p&gt;
-
-&lt;p&gt;Quando lavoravo in un’azienda tradizionale pensavo al lavoro da remoto come la &lt;em&gt;liberazione da tutti i mali&lt;/em&gt;; non ho cambiato idea, ma adesso sono più consapevole che &lt;strong&gt;ci sono anche dei lati negativi,&lt;/strong&gt; che tra l’altro impattano poco sulla qualità del lavoro e molto sulla qualità della vita.&lt;/p&gt;
-
-&lt;h2 id=&quot;1-camminerai-molto-meno&quot;&gt;1. Camminerai molto meno&lt;/h2&gt;
-
-&lt;p&gt;Grazie all’Activity Tracker che ho comprato da qualche anno possiamo fare un’analisi sui passi fatti quando lavoravo in azienda e da remoto.&lt;/p&gt;
-
-&lt;p&gt;Questa è una &lt;strong&gt;settimana tipo del lavoro in azienda&lt;/strong&gt;. Le misurazioni risalgono a &lt;strong&gt;gennaio 2016&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Schermata%202017-02-05%20alle%2019.42.56.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Quella settimana &lt;strong&gt;ho fatto 78.000 passi&lt;/strong&gt; - sono più di 10.000 passi al giorno. (Il sonno è sempre stato un problema, mi piace andare a letto tardi).&lt;/p&gt;
-
-&lt;p&gt;Una giornata di lavoro tipica era così composta:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;6.50&lt;/strong&gt;: sveglia&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;7.25&lt;/strong&gt;: autobus per Napoli&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;8.15&lt;/strong&gt;: arrivo a Napoli, se è bel tempo vado a piedi (circa 15-20 min).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;8.45&lt;/strong&gt;: arrivo in ufficio … inizio giornata di lavoro&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;18.00&lt;/strong&gt;: fine giornata di lavoro, a piedi verso l’autobus (15-20 minuti)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;2 volte a settimana c’è allenamento e il weekend poteva capitare una partita di tennis.&lt;/p&gt;
-
-&lt;p&gt;Passiamo ora allo stesso periodo (più o meno) del 2017, &lt;strong&gt;quando già lavoravo da remoto&lt;/strong&gt;. Aggravante: c’è anche una neonata per casa, che a 2 mesi richiede molte attenzioni :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Schermata%202017-02-05%20alle%2019.43.16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;letter-spacing: 0.18px;&quot;&gt;Lasciamo stare la notte del venerdì, in cui ho probabilmente tolto l’orologio, per il resto il grafico è molto indicativo. &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;letter-spacing: 0.18px;&quot;&gt;&lt;strong&gt;Il numero di passi è sceso a 51000&lt;/strong&gt;: 27000 passi in meno. &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;letter-spacing: 0.18px;&quot;&gt;La mia giornata tipica è così cambiata: &lt;/span&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;sveglia intorno alle &lt;strong&gt;8:00&lt;/strong&gt;, colazione, etc.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ore 9:00&lt;/strong&gt;: mi sposto nell’ufficio di fianco casa, dove lavorano anche altre persone che però fanno altro.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ore 18:30-19:00&lt;/strong&gt;: finisco di lavorare e mi dedico a famiglia, hobby, sport, etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Gli allenamenti di tennis sono rimasti invariati, sempre 2 a settimana, più una partita nel weekend.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Morale:&lt;/strong&gt; lavorando da remoto non solo potrete organizzare il lavoro come credete, ma anche la vostra vita. &lt;strong&gt;Cercate di non soccombere alle comodità&lt;/strong&gt;: praticare sport non basta.  Serve un’attitudine a fare di più.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soluzione&lt;/strong&gt;: mi impegnerò a fare una &lt;strong&gt;corsetta&lt;/strong&gt; / passeggiata la &lt;strong&gt;mattina&lt;/strong&gt;. Chi viene con me?&lt;/p&gt;
-
-&lt;h2 id=&quot;scompare-la-cognizione-del-tempo-soprattutto-se-il-problema-è-interessante&quot;&gt;Scompare la cognizione del tempo, soprattutto se il problema è interessante&lt;/h2&gt;
-
-&lt;p&gt;Quando lavoravo in un’azienda tradizionale solo alcuni problemi erano interessanti, più spesso era il solito copia &amp;amp; incolla. Alle 17.50 mi buttavo giù per le scale felice di aver completato un’altra giornata di lavoro, per prendere l’autobus e tornare a casa.&lt;/p&gt;
-
-&lt;p&gt;Adesso invece mi piace trovare soluzioni sfiziose anche a problemi semplici, e in generale mi diverto a programmare “a modo mio” (nel miglior modo possibile, coi test automatici, code coverage, etc).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;La cognizione del tempo sfugge&lt;/strong&gt;: non sono mai stato molto disciplinato, e sono anche una persona che si distrae facilmente; ciò non aiuta.&lt;/p&gt;
-
-&lt;p&gt;Così &lt;strong&gt;capita spesso di restare a programmare fino alle 19 e anche le 19.30&lt;/strong&gt;, tant’è che rischio di fare tardi agli allenamenti e sentire mia moglie brontolare: “ma quando torni? non starai lavorando troppo?”&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Una volta pensavo che lavorando da remoto avrei eliminato tutte le distrazioni; anche se ho beneficiato di molti effetti positivi, mi sono ritrovato a lavorare di più.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soluzione&lt;/strong&gt;: anche qui, essendo un fattore direttamente dipendente da me, &lt;strong&gt;disciplina&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;mancanza-di-colleghi-con-cui-discutere-a-grandi-linee-di-informatica&quot;&gt;Mancanza di colleghi con cui discutere a grandi linee di informatica&lt;/h2&gt;
-
-&lt;p&gt;E’ bello internet, è bello facebook, è bello hacker news. E’ bello twitter, slack, e il blog. Ma certe volte vorresti alzare la testa e sentire l’opinione di qualcuno che “ne capisce”. Classiche domande che un collega può aiutare o comunque mostrare empatia:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Devo comprare un computer nuovo, che prendo?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Perché venerdì compilava, e oggi (lunedì mattina) no?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Hai sentito l’ultima di Microsoft / Apple / Facebook / Google … ?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Chissà se esiste una libreria che fa X-Y-Z (elenco di feature) ?&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Per non dare segni di schizofrenia preferisco lavorare da un ufficio vicino casa, dove ci sono altre fantastiche persone che si occupano di altro; sebbene si inizino le migliori discussioni generali, a volte sarebbe meglio chiacchierare con qualcuno che “parla la tua lingua”.&lt;/p&gt;
-
-&lt;p&gt;Per questo motivo, quando posso, &lt;strong&gt;vado a lavorare a Salerno città&lt;/strong&gt; dove altri amici informatici (anch’essi lavoratori da remoto) possono raggiungermi e lavorare insieme. &lt;span style=&quot;letter-spacing: 0.01em;&quot;&gt;&lt;strong&gt;Il consiglio, dunque, è di lavorare da un coworking e &lt;u&gt;mai&lt;/u&gt; da casa&lt;/strong&gt;. &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Curiosità: andare a lavorare a Salerno costa (parcheggio e benzina) ma cammino anche 3-4000 passi in più.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusioni&quot;&gt;Conclusioni&lt;/h2&gt;
-
-&lt;p&gt;Resto dell’opinione che lavorare da remoto permette di migliorare la qualità del singolo e trovare i migliori talenti su scala più ampia; ma &lt;strong&gt;c&lt;span style=&quot;letter-spacing: 0.01em;&quot;&gt;hi lavora da remoto ed è alla prima esperienza deve sapere che tra tante rose ci sono anche alcune spine. &lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>Quali sono gli svantaggi del lavoro da remoto?</h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Quali sono gli svantaggi del lavoro da remoto? ">
-                          <figcaption>Quali sono gli svantaggi del lavoro da remoto?</figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-02-05 01:00:00 CET">Sun, 05 Feb 2017 01:00:00 +0100</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p>Salvo sporadiche trasferte a Biella, dove risiedono gran parte dei miei colleghi, io lavoro prevalentemente da remoto, a Salerno.</p>
-
-<p>Quando lavoravo in un’azienda tradizionale pensavo al lavoro da remoto come la <em>liberazione da tutti i mali</em>; non ho cambiato idea, ma adesso sono più consapevole che <strong>ci sono anche dei lati negativi,</strong> che tra l’altro impattano poco sulla qualità del lavoro e molto sulla qualità della vita.</p>
-
-<h2 id="1-camminerai-molto-meno">1. Camminerai molto meno</h2>
-
-<p>Grazie all’Activity Tracker che ho comprato da qualche anno possiamo fare un’analisi sui passi fatti quando lavoravo in azienda e da remoto.</p>
-
-<p>Questa è una <strong>settimana tipo del lavoro in azienda</strong>. Le misurazioni risalgono a <strong>gennaio 2016</strong>:</p>
-
-<p><img src="/images/Schermata%202017-02-05%20alle%2019.42.56.png" alt="" /></p>
-
-<p>Quella settimana <strong>ho fatto 78.000 passi</strong> - sono più di 10.000 passi al giorno. (Il sonno è sempre stato un problema, mi piace andare a letto tardi).</p>
-
-<p>Una giornata di lavoro tipica era così composta:</p>
-
-<ul>
-  <li><strong>6.50</strong>: sveglia</li>
-  <li><strong>7.25</strong>: autobus per Napoli</li>
-  <li><strong>8.15</strong>: arrivo a Napoli, se è bel tempo vado a piedi (circa 15-20 min).</li>
-  <li><strong>8.45</strong>: arrivo in ufficio … inizio giornata di lavoro</li>
-  <li><strong>18.00</strong>: fine giornata di lavoro, a piedi verso l’autobus (15-20 minuti)</li>
-</ul>
-
-<p>2 volte a settimana c’è allenamento e il weekend poteva capitare una partita di tennis.</p>
-
-<p>Passiamo ora allo stesso periodo (più o meno) del 2017, <strong>quando già lavoravo da remoto</strong>. Aggravante: c’è anche una neonata per casa, che a 2 mesi richiede molte attenzioni :)</p>
-
-<p><img src="/images/Schermata%202017-02-05%20alle%2019.43.16.png" alt="" /></p>
-
-<p><span style="letter-spacing: 0.18px;">Lasciamo stare la notte del venerdì, in cui ho probabilmente tolto l’orologio, per il resto il grafico è molto indicativo. </span></p>
-
-<p><span style="letter-spacing: 0.18px;"><strong>Il numero di passi è sceso a 51000</strong>: 27000 passi in meno. </span></p>
-
-<p><span style="letter-spacing: 0.18px;">La mia giornata tipica è così cambiata: </span></p>
-
-<ul>
-  <li>sveglia intorno alle <strong>8:00</strong>, colazione, etc.</li>
-  <li><strong>ore 9:00</strong>: mi sposto nell’ufficio di fianco casa, dove lavorano anche altre persone che però fanno altro.</li>
-  <li><strong>ore 18:30-19:00</strong>: finisco di lavorare e mi dedico a famiglia, hobby, sport, etc.</li>
-</ul>
-
-<p>Gli allenamenti di tennis sono rimasti invariati, sempre 2 a settimana, più una partita nel weekend.</p>
-
-<p><strong>Morale:</strong> lavorando da remoto non solo potrete organizzare il lavoro come credete, ma anche la vostra vita. <strong>Cercate di non soccombere alle comodità</strong>: praticare sport non basta.  Serve un’attitudine a fare di più.</p>
-
-<p><strong>Soluzione</strong>: mi impegnerò a fare una <strong>corsetta</strong> / passeggiata la <strong>mattina</strong>. Chi viene con me?</p>
-
-<h2 id="scompare-la-cognizione-del-tempo-soprattutto-se-il-problema-è-interessante">Scompare la cognizione del tempo, soprattutto se il problema è interessante</h2>
-
-<p>Quando lavoravo in un’azienda tradizionale solo alcuni problemi erano interessanti, più spesso era il solito copia &amp; incolla. Alle 17.50 mi buttavo giù per le scale felice di aver completato un’altra giornata di lavoro, per prendere l’autobus e tornare a casa.</p>
-
-<p>Adesso invece mi piace trovare soluzioni sfiziose anche a problemi semplici, e in generale mi diverto a programmare “a modo mio” (nel miglior modo possibile, coi test automatici, code coverage, etc).</p>
-
-<p><strong>La cognizione del tempo sfugge</strong>: non sono mai stato molto disciplinato, e sono anche una persona che si distrae facilmente; ciò non aiuta.</p>
-
-<p>Così <strong>capita spesso di restare a programmare fino alle 19 e anche le 19.30</strong>, tant’è che rischio di fare tardi agli allenamenti e sentire mia moglie brontolare: “ma quando torni? non starai lavorando troppo?”</p>
-
-<p><strong>Una volta pensavo che lavorando da remoto avrei eliminato tutte le distrazioni; anche se ho beneficiato di molti effetti positivi, mi sono ritrovato a lavorare di più.</strong></p>
-
-<p><strong>Soluzione</strong>: anche qui, essendo un fattore direttamente dipendente da me, <strong>disciplina</strong>.</p>
-
-<h2 id="mancanza-di-colleghi-con-cui-discutere-a-grandi-linee-di-informatica">Mancanza di colleghi con cui discutere a grandi linee di informatica</h2>
-
-<p>E’ bello internet, è bello facebook, è bello hacker news. E’ bello twitter, slack, e il blog. Ma certe volte vorresti alzare la testa e sentire l’opinione di qualcuno che “ne capisce”. Classiche domande che un collega può aiutare o comunque mostrare empatia:</p>
-
-<ul>
-  <li>
-    <p>Devo comprare un computer nuovo, che prendo?</p>
-  </li>
-  <li>
-    <p>Perché venerdì compilava, e oggi (lunedì mattina) no?</p>
-  </li>
-  <li>
-    <p>Hai sentito l’ultima di Microsoft / Apple / Facebook / Google … ?</p>
-  </li>
-  <li>
-    <p>Chissà se esiste una libreria che fa X-Y-Z (elenco di feature) ?</p>
-  </li>
-</ul>
-
-<p>Per non dare segni di schizofrenia preferisco lavorare da un ufficio vicino casa, dove ci sono altre fantastiche persone che si occupano di altro; sebbene si inizino le migliori discussioni generali, a volte sarebbe meglio chiacchierare con qualcuno che “parla la tua lingua”.</p>
-
-<p>Per questo motivo, quando posso, <strong>vado a lavorare a Salerno città</strong> dove altri amici informatici (anch’essi lavoratori da remoto) possono raggiungermi e lavorare insieme. <span style="letter-spacing: 0.01em;"><strong>Il consiglio, dunque, è di lavorare da un coworking e <u>mai</u> da casa</strong>. </span></p>
-
-<p><em>Curiosità: andare a lavorare a Salerno costa (parcheggio e benzina) ma cammino anche 3-4000 passi in più.</em></p>
-
-<h2 id="conclusioni">Conclusioni</h2>
-
-<p>Resto dell’opinione che lavorare da remoto permette di migliorare la qualità del singolo e trovare i migliori talenti su scala più ampia; ma <strong>c<span style="letter-spacing: 0.01em;">hi lavora da remoto ed è alla prima esperienza deve sapere che tra tante rose ci sono anche alcune spine. </span></strong></p>
 
                   
                     <footer>
