@@ -49,8 +49,7 @@ app.listen(port);
 
 ```
 
-- Check that the app runs: correctly: `npm start`
-
+- Check that the app runs correctly: `npm start`
 - launch `heroku create`: will create a new remote for your repository named `heroku`
 - `git push heroku` : will push your code to heroku
 - `heroku open`: will open your webapp in the browser 
