@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-23T11:54:52+01:00</updated>
+    <updated>2017-03-23T12:02:32+01:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -216,7 +216,10 @@
         
           <description>&lt;p&gt;Actually, the time you need to deploy an app depends on how fast you are to copy &amp;amp; paste.&lt;/p&gt;
 
-&lt;h3 id=&quot;steps-to-set-up-the-environment-the-first-time&quot;&gt;Steps to set up the environment the first time&lt;/h3&gt;
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Your code must be hosted in a git repository.&lt;/p&gt;
+
+&lt;h2 id=&quot;steps-to-set-up-the-environment-the-first-time&quot;&gt;Steps to set up the environment the first time&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;Sign up (or log in) to
   &lt;a href=&quot;http://heroku.com&quot;&gt;heroku.com&lt;/a&gt;&lt;/li&gt;
@@ -233,7 +236,7 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;steps-to-set-up-the-environment-with-the-nodejs-app&quot;&gt;Steps to set up the environment with the NodeJs app&lt;/h3&gt;
+&lt;h2 id=&quot;steps-to-set-up-the-environment-with-the-nodejs-app&quot;&gt;Steps to set up the environment with the NodeJs app&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Set the host port of your application as an environment variable:
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const port = process.env.PORT || 3000 ;  
@@ -242,15 +245,16 @@ app.listen(port);
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; script, in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;:
-```
-“scripts”: {
- “start”: “node server.js”,
- …
- }&lt;/li&gt;
+  &lt;li&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; script, in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;```&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+   &quot;start&quot;: &quot;node server.js&quot;,
+   ...
+   }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -289,7 +293,10 @@ app.listen(port);
                   
                     <p>Actually, the time you need to deploy an app depends on how fast you are to copy &amp; paste.</p>
 
-<h3 id="steps-to-set-up-the-environment-the-first-time">Steps to set up the environment the first time</h3>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Your code must be hosted in a git repository.</p>
+
+<h2 id="steps-to-set-up-the-environment-the-first-time">Steps to set up the environment the first time</h2>
 <ol>
   <li>Sign up (or log in) to
   <a href="http://heroku.com">heroku.com</a></li>
@@ -306,7 +313,7 @@ app.listen(port);
   </li>
 </ol>
 
-<h3 id="steps-to-set-up-the-environment-with-the-nodejs-app">Steps to set up the environment with the NodeJs app</h3>
+<h2 id="steps-to-set-up-the-environment-with-the-nodejs-app">Steps to set up the environment with the NodeJs app</h2>
 <ul>
   <li>Set the host port of your application as an environment variable:
     <div class="highlighter-rouge"><pre class="highlight"><code>const port = process.env.PORT || 3000 ;  
@@ -315,15 +322,16 @@ app.listen(port);
 </code></pre>
     </div>
   </li>
-  <li>set the <code class="highlighter-rouge">npm start</code> script, in <code class="highlighter-rouge">package.json</code>:
-```
-“scripts”: {
- “start”: “node server.js”,
- …
- }</li>
+  <li>set the <code class="highlighter-rouge">npm start</code> script, in <code class="highlighter-rouge">package.json</code>:</li>
 </ul>
 
-<p>```</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
+   "start": "node server.js",
+   ...
+   }
+
+</code></pre>
+</div>
 
 <ul>
   <li>

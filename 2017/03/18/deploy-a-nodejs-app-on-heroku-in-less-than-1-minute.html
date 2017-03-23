@@ -14,7 +14,7 @@
   		<meta name="keywords" content="nodejs, heroku, express" />
 			
 			 
-				<meta http-equiv="last-modified" content="2017-03-23 11:53:27 +0100" />
+				<meta http-equiv="last-modified" content="2017-03-23 12:01:37 +0100" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -112,7 +112,10 @@
 
         	<p>Actually, the time you need to deploy an app depends on how fast you are to copy &amp; paste.</p>
 
-<h3 id="steps-to-set-up-the-environment-the-first-time">Steps to set up the environment the first time</h3>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Your code must be hosted in a git repository.</p>
+
+<h2 id="steps-to-set-up-the-environment-the-first-time">Steps to set up the environment the first time</h2>
 <ol>
   <li>Sign up (or log in) to
   <a href="http://heroku.com">heroku.com</a></li>
@@ -129,7 +132,7 @@
   </li>
 </ol>
 
-<h3 id="steps-to-set-up-the-environment-with-the-nodejs-app">Steps to set up the environment with the NodeJs app</h3>
+<h2 id="steps-to-set-up-the-environment-with-the-nodejs-app">Steps to set up the environment with the NodeJs app</h2>
 <ul>
   <li>Set the host port of your application as an environment variable:
     <div class="highlighter-rouge"><pre class="highlight"><code>const port = process.env.PORT || 3000 ;  
@@ -138,15 +141,16 @@ app.listen(port);
 </code></pre>
     </div>
   </li>
-  <li>set the <code class="highlighter-rouge">npm start</code> script, in <code class="highlighter-rouge">package.json</code>:
-```
-“scripts”: {
- “start”: “node server.js”,
- …
- }</li>
+  <li>set the <code class="highlighter-rouge">npm start</code> script, in <code class="highlighter-rouge">package.json</code>:</li>
 </ul>
 
-<p>```</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
+   "start": "node server.js",
+   ...
+   }
+
+</code></pre>
+</div>
 
 <ul>
   <li>
