@@ -13,7 +13,10 @@ tags:
 ---
 Actually, the time you need to deploy an app depends on how fast you are to copy & paste.
 
-### Steps to set up the environment the first time
+## Prerequisites
+Your code must be hosted in a git repository.
+
+## Steps to set up the environment the first time
 1. Sign up (or log in) to
   <a href="http://heroku.com">heroku.com</a>
 1. download
@@ -27,7 +30,7 @@ debug1: Authentication succeeded (publickey).
 ```
 Generally it is one of the last 5-6 rows. If this log is present, everything is set up correctly. 
 
-### Steps to set up the environment with the NodeJs app
+## Steps to set up the environment with the NodeJs app
 - Set the host port of your application as an environment variable:
 ```
 const port = process.env.PORT || 3000 ;  
