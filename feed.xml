@@ -5,11 +5,263 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-24T21:22:43+01:00</updated>
+    <updated>2017-03-24T21:40:15+01:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
+    
+      <item>
+        <title>Easy testing of NodeJS applications with Mocha</title>
+        <link>https://michelenasti.com/2017/03/23/node-js-testing-easy-with-mocha.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/03/23/node-js-testing-easy-with-mocha.html</guid>
+        <pubDate>Thu, 23 Mar 2017 18:13:00 +0100</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Testing in Javascript has become an immensely popular argument, but still there’s a lot of people that has not clear how to do it effectively. &lt;a href=&quot;/2016/08/my-very-personal-javascript-fatigue/&quot;&gt;I was one of these&lt;/a&gt;. There are many troubles that a young developer has to overcome in order to master Javascript testing. In this article, I’m going to explain Javascript testing with Mocha, a powerful library.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-testing-in-javascript&quot;&gt;Why testing in Javascript&lt;/h2&gt;
+
+&lt;p&gt;An easy example. You write a function that takes only one argument, and use it extensively. After some days, you modify this function to take two arguments.&lt;/p&gt;
+
+&lt;p&gt;Obviously you try to find every place where this function is called and add the missing parameter. Since the scripting nature of the language, how can you tell that this modification did not break anything? How to discover rapidly what to fix? Are users our only testers?&lt;/p&gt;
+
+&lt;h2 id=&quot;setup-the-example&quot;&gt;Setup the example&lt;/h2&gt;
+
+&lt;p&gt;Let’s write a simple Node test file. Let’s call it &lt;code class=&quot;highlighter-rouge&quot;&gt;utils.js&lt;/code&gt;, a file where we put all the functions that do not fit in a specific module.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports.add = (a,b) =&amp;amp;gt;  a + b;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s it! Let’s test this function. Is our sum function really doing its job?&lt;/p&gt;
+
+&lt;h2 id=&quot;setup-the-test&quot;&gt;Setup the test&lt;/h2&gt;
+
+&lt;p&gt;First, let’s install 
+&lt;a href=&quot;https://mochajs.org&quot;&gt;&lt;strong&gt;Mocha&lt;/strong&gt;&lt;/a&gt;. This is easy as launching&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ npm install --save-dev mocha 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s modify our &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; (you did run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;, didn’t you?) to add a new task:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+    ... 
+    &quot;test&quot;: &quot;mocha **/*.test.js&quot;
+  },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Mocha will be installed as a &lt;em&gt;development dependency&lt;/em&gt;, this means that it is not necessary to run our code. Some deployment systems (like Heroku) will not download these dev dependencies.&lt;/p&gt;
+
+&lt;p&gt;As you can see, the &lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt; command will execute all files in every directory ending with &lt;code class=&quot;highlighter-rouge&quot;&gt;.test.js&lt;/code&gt;. This is incredibly fast.&lt;/p&gt;
+
+&lt;p&gt;Let’s create in the very same directory where we put &lt;code class=&quot;highlighter-rouge&quot;&gt;utils.js&lt;/code&gt;, another file called &lt;code class=&quot;highlighter-rouge&quot;&gt;utils.test.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is the test code:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const utils = require('./utils'); //(1)
+
+it('should add two numbers', () =&amp;amp;gt; {   //(2)
+  let res = utils.add(33,11);
+  if (res !== 44) {
+     throw new Error(`Expected: 44, but got ${res}`); //(3)
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And now you can simply run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm test&lt;/code&gt;. you should see an out like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ npm test
+
+&amp;amp;gt; node-tests@1.0.0 test /Users/michelenasti/Doc
+uments/node-tests
+&amp;amp;gt; mocha **/*.test.js
+
+
+
+  ✓ should add two numbers
+
+  1 passing (13ms)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;whats-going-on&quot;&gt;What’s going on&lt;/h2&gt;
+
+&lt;p&gt;Our tests are run directly by Mocha, that’s why we don’t import the library in this function.&lt;/p&gt;
+
+&lt;p&gt;Mocha provides us a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;it()&lt;/code&gt;. You might notice this function at (1). It takes two parameters: a description of the test, and a function with the code to execute.&lt;/p&gt;
+
+&lt;p&gt;In the JS community tests are usually written in a &lt;em&gt;Behaviour Driven Development&lt;/em&gt; paradygm, this is a complex notion, for now let’s just say that test description starts with “&lt;em&gt;should …&lt;/em&gt;”. I’ll write more in the future :)&lt;/p&gt;
+
+&lt;p&gt;The second argument passed to &lt;code class=&quot;highlighter-rouge&quot;&gt;it()&lt;/code&gt; is a function with the actual test code. Here we call the function under test, take the result and check the correctness.&lt;/p&gt;
+
+&lt;p&gt;How Mocha decides if a test has passed or not? If no errors are thrown in our test code, then the test is marked as passed. On the other side, if an &lt;code class=&quot;highlighter-rouge&quot;&gt;Error()&lt;/code&gt; object is thrown, the test will stop and the message of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Error&lt;/code&gt; is printed to the terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Exercise for you: modify &lt;code class=&quot;highlighter-rouge&quot;&gt;utils.js&lt;/code&gt; to let the test fail :)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;do-js-developers-throw-errors-to-test-their-functions&quot;&gt;Do JS developers throw errors to test their functions?&lt;/h2&gt;
+
+&lt;p&gt;No, in reality JS developers NEVER throw Errors. Usually in JS we use some other libraries to &lt;em&gt;assert&lt;/em&gt; some properties on the result, using functions that are more expressive. We will talk about this aspect in another post. However, I think that seeing how tests work without assertion libraries is &lt;em&gt;fundamental&lt;/em&gt; to use such libraries.&lt;/p&gt;
+
+&lt;h2 id=&quot;last-but-not-least&quot;&gt;Last but not least&lt;/h2&gt;
+
+&lt;p&gt;Do you want your test to run automatically everytime you change some file? Of course you can, mixing some code coming from a previous post (&lt;a href=&quot;https://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html&quot;&gt;nodemon&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; add the script &lt;code class=&quot;highlighter-rouge&quot;&gt;test-watch&lt;/code&gt;…&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;mocha **/*.test.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;test-watch&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;nodemon --exec \&quot;npm test\&quot;&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Happy testing!&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/03/23/node-js-testing-easy-with-mocha.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Easy testing of NodeJS applications with Mocha</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Easy testing of NodeJS applications with Mocha ">
+                          <figcaption>Easy testing of NodeJS applications with Mocha</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-03-23 18:13:00 CET">Thu, 23 Mar 2017 18:13:00 +0100</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Testing in Javascript has become an immensely popular argument, but still there’s a lot of people that has not clear how to do it effectively. <a href="/2016/08/my-very-personal-javascript-fatigue/">I was one of these</a>. There are many troubles that a young developer has to overcome in order to master Javascript testing. In this article, I’m going to explain Javascript testing with Mocha, a powerful library.</p>
+
+<h2 id="why-testing-in-javascript">Why testing in Javascript</h2>
+
+<p>An easy example. You write a function that takes only one argument, and use it extensively. After some days, you modify this function to take two arguments.</p>
+
+<p>Obviously you try to find every place where this function is called and add the missing parameter. Since the scripting nature of the language, how can you tell that this modification did not break anything? How to discover rapidly what to fix? Are users our only testers?</p>
+
+<h2 id="setup-the-example">Setup the example</h2>
+
+<p>Let’s write a simple Node test file. Let’s call it <code class="highlighter-rouge">utils.js</code>, a file where we put all the functions that do not fit in a specific module.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>module.exports.add = (a,b) =&amp;gt;  a + b;
+</code></pre>
+</div>
+
+<p>That’s it! Let’s test this function. Is our sum function really doing its job?</p>
+
+<h2 id="setup-the-test">Setup the test</h2>
+
+<p>First, let’s install 
+<a href="https://mochajs.org"><strong>Mocha</strong></a>. This is easy as launching</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install --save-dev mocha 
+</code></pre>
+</div>
+
+<p>Let’s modify our <code class="highlighter-rouge">package.json</code> (you did run <code class="highlighter-rouge">npm init</code>, didn’t you?) to add a new task:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
+    ... 
+    "test": "mocha **/*.test.js"
+  },
+</code></pre>
+</div>
+
+<p>Mocha will be installed as a <em>development dependency</em>, this means that it is not necessary to run our code. Some deployment systems (like Heroku) will not download these dev dependencies.</p>
+
+<p>As you can see, the <code class="highlighter-rouge">test</code> command will execute all files in every directory ending with <code class="highlighter-rouge">.test.js</code>. This is incredibly fast.</p>
+
+<p>Let’s create in the very same directory where we put <code class="highlighter-rouge">utils.js</code>, another file called <code class="highlighter-rouge">utils.test.js</code>.</p>
+
+<p>Here is the test code:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>const utils = require('./utils'); //(1)
+
+it('should add two numbers', () =&amp;gt; {   //(2)
+  let res = utils.add(33,11);
+  if (res !== 44) {
+     throw new Error(`Expected: 44, but got ${res}`); //(3)
+  }
+});
+</code></pre>
+</div>
+
+<p>And now you can simply run <code class="highlighter-rouge">npm test</code>. you should see an out like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm test
+
+&amp;gt; node-tests@1.0.0 test /Users/michelenasti/Doc
+uments/node-tests
+&amp;gt; mocha **/*.test.js
+
+
+
+  ✓ should add two numbers
+
+  1 passing (13ms)
+
+</code></pre>
+</div>
+
+<h2 id="whats-going-on">What’s going on</h2>
+
+<p>Our tests are run directly by Mocha, that’s why we don’t import the library in this function.</p>
+
+<p>Mocha provides us a function called <code class="highlighter-rouge">it()</code>. You might notice this function at (1). It takes two parameters: a description of the test, and a function with the code to execute.</p>
+
+<p>In the JS community tests are usually written in a <em>Behaviour Driven Development</em> paradygm, this is a complex notion, for now let’s just say that test description starts with “<em>should …</em>”. I’ll write more in the future :)</p>
+
+<p>The second argument passed to <code class="highlighter-rouge">it()</code> is a function with the actual test code. Here we call the function under test, take the result and check the correctness.</p>
+
+<p>How Mocha decides if a test has passed or not? If no errors are thrown in our test code, then the test is marked as passed. On the other side, if an <code class="highlighter-rouge">Error()</code> object is thrown, the test will stop and the message of the <code class="highlighter-rouge">Error</code> is printed to the terminal.</p>
+
+<p><em>Exercise for you: modify <code class="highlighter-rouge">utils.js</code> to let the test fail :)</em></p>
+
+<h2 id="do-js-developers-throw-errors-to-test-their-functions">Do JS developers throw errors to test their functions?</h2>
+
+<p>No, in reality JS developers NEVER throw Errors. Usually in JS we use some other libraries to <em>assert</em> some properties on the result, using functions that are more expressive. We will talk about this aspect in another post. However, I think that seeing how tests work without assertion libraries is <em>fundamental</em> to use such libraries.</p>
+
+<h2 id="last-but-not-least">Last but not least</h2>
+
+<p>Do you want your test to run automatically everytime you change some file? Of course you can, mixing some code coming from a previous post (<a href="https://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">nodemon</a>).</p>
+
+<p>In <code class="highlighter-rouge">package.json</code> add the script <code class="highlighter-rouge">test-watch</code>…</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span> <span class="p">{</span>
+   <span class="s2">"test"</span><span class="err">:</span> <span class="s2">"mocha **/*.test.js"</span><span class="p">,</span>
+   <span class="s2">"test-watch"</span><span class="err">:</span> <span class="s2">"nodemon --exec \"npm test\""</span>
+  <span class="p">},</span>
+</code></pre>
+</div>
+
+<p>Happy testing!</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
     
       <item>
         <title>L'Inglese tra italiani, a lavoro, è una scelta sbagliata</title>
@@ -2169,172 +2421,6 @@ Press Ctrl + C to leave debug repl
 <h2 id="now-you-can-debug-like-a-boss">Now you can debug like a boss</h2>
 
 <p>Show this to your friends, they’ll respect you more after this.</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</title>
-        <link>https://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</link>
-        <guid isPermaLink="true">https://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</guid>
-        <pubDate>Tue, 07 Feb 2017 11:33:49 +0100</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;&lt;strong&gt;Il 1 febbraio 2017&lt;/strong&gt; è accaduto ciò che nessun’azienda al mondo si augura: un database admin, durante un’operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/gitlab_logo.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://about.gitlab.com&quot;&gt;&lt;strong&gt;Gitlab&lt;/strong&gt;&lt;/a&gt; è una startup americana di hosting di codice via git. In questo settore le più note sono &lt;strong&gt;Github&lt;/strong&gt; e &lt;strong&gt;Bitbucket&lt;/strong&gt;, giusto per darvi un’idea dei competitor.&lt;/p&gt;
-
-&lt;p&gt;Gitlab era principalmente nota perché ospitava un’intera piattaforma di continuous integration al suo interno integrata con docker, cosa che gli altri competitor più affermati invece delegano a servizi esterni (a pagamento).&lt;/p&gt;
-
-&lt;h3 id=&quot;poco-male-abbiamo-i-backup-abbiamo-i-backup-vero&quot;&gt;Poco male, abbiamo i Backup… Abbiamo i backup, vero?&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Gitlab va offline deliberatamente&lt;/strong&gt;, finché non riescono a ripristinare il database. Pensate un attimo alla vostra azienda che chiude per un giorno o due a causa di un incidente di questo tipo: clienti paganti furiosi, il web che legge e scrive di te, migliaia di post indignati e social arrabbiati.&lt;/p&gt;
-
-&lt;p&gt;Contemporaneamente, &lt;strong&gt;una buona fetta di programmatori nel mondo inizia a provare compassione.&lt;/strong&gt; Io stesso, autore di questo articolo, ho per errore cancellato una volta tutto il database di test (di test, per fortuna!) della mia azienda. Ma almeno avevamo un backup.&lt;/p&gt;
-
-&lt;p&gt;Torniamo a Gitlab: scatta la ricerca dei backup. Secondo le loro procedure interne, &lt;strong&gt;Gitlab ha almeno 5 backup differenti, ma uno dopo l’altro si scopre che non funzionano&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;I backup regolari sembrano non essere più in funzione: fallivano silenziosamente da mesi, e nessuno se ne era mai accorto.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Il dump del database non funziona a causa di un mismatch tra il tipo del db e l’eseguibile che lo leggeva/eseguiva.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;gli snapshot del disco sono abilitati per i file comuni, ma non per i dischi del db.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Neanche il backup su S3 stava funzionando&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;a causa di alcuni script automatici che rimuovono i vecchi backup, non c’era più nulla di utilizzabile da poter ripristinare&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Fortunatamente, &lt;strong&gt;lo stesso admin che ha lanciato il comando per errore aveva fatto uno snapshot a mano del db sulla sua macchina locale. &lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;L’ultimo backup corrispondeva a 6 ore fa, e su una macchina non direttamente connessa al cluster di server; &lt;strong&gt;il ripristino del backup è avvenuto lentamente con una perdita di tutti i dati delle ultime sei ore. &lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;come-trasformare-un-disastro-in-unoperazione-mediatica&quot;&gt;Come trasformare un disastro in un’operazione mediatica&lt;/h3&gt;
-
-&lt;p&gt;E’ a questo punto che in Gitlab si rendono conto di avere un’occasione da sfruttare: stanno ricevendo un’incredibile esposizione mediatica.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;La prima cosa che fanno è mettere su un &lt;a href=&quot;https://docs.google.com/document/d/1GCK53YDcBWQveod9kfzW-VCxIABGiryG7_z_6jHdVik/pub&quot;&gt;google docs&lt;/a&gt;&lt;/strong&gt; condiviso in cui spiegano l’accaduto, i tentativi, le scoperte.&lt;/p&gt;
-
-&lt;p&gt;La seconda cosa che mi ha sorpreso è il &lt;strong&gt;live streaming su youtube&lt;/strong&gt; (era &lt;a href=&quot;https://www.youtube.com/watch?v=63wCG86ih94&quot;&gt;qui&lt;/a&gt;, ora non funziona più) dei dipendenti di gitlab che mostravano live tutte le operazioni messe in pratica per ripristinare il database. Tramite la chat i dipendenti di gitlab parlavano con gli spettatori, e rispondevano alle loro domande. A video c’erano le loro facce e il terminale che mostrava l’output di comandi impronunciabili.&lt;/p&gt;
-
-&lt;p&gt;La domanda più gettonata è stata questa:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Q: Who did it, will they be fired?&lt;br /&gt;
-&lt;span style=&quot;letter-spacing: 0.01em; font-style: normal;&quot;&gt;&lt;strong&gt;A: Someone made a mistake, they won’t be fired.&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;(Traduzione: &lt;em&gt;Verrà licenziato quello che ha cancellato il db?&lt;/em&gt; &lt;strong&gt;No, non sarà licenziato&lt;/strong&gt;.)&lt;/p&gt;
-
-&lt;h3 id=&quot;e-ora&quot;&gt;E ora?&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Gitlab è di nuovo in funzione&lt;/strong&gt;, il ripristino è stato lentamente completato e tutta questa vicenda ha generato un grande “&lt;em&gt;abbraccione&lt;/em&gt;” da parte della community di sviluppatori di tutto il mondo.&lt;/p&gt;
-
-&lt;p&gt;Questo è quel genere di disastri che &lt;strong&gt;non dovrebbero MAI accadere&lt;/strong&gt; e per cui &lt;strong&gt;conviene sempre avere più di un backup e testarlo regolarmente&lt;/strong&gt;. E voi avete un piano di disaster recovery?&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab ">
-                          <figcaption>Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-02-07 11:33:49 CET">Tue, 07 Feb 2017 11:33:49 +0100</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p><strong>Il 1 febbraio 2017</strong> è accaduto ciò che nessun’azienda al mondo si augura: un database admin, durante un’operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.</p>
-
-<p><img src="/images/gitlab_logo.svg" alt="" /></p>
-
-<p><a href="https://about.gitlab.com"><strong>Gitlab</strong></a> è una startup americana di hosting di codice via git. In questo settore le più note sono <strong>Github</strong> e <strong>Bitbucket</strong>, giusto per darvi un’idea dei competitor.</p>
-
-<p>Gitlab era principalmente nota perché ospitava un’intera piattaforma di continuous integration al suo interno integrata con docker, cosa che gli altri competitor più affermati invece delegano a servizi esterni (a pagamento).</p>
-
-<h3 id="poco-male-abbiamo-i-backup-abbiamo-i-backup-vero">Poco male, abbiamo i Backup… Abbiamo i backup, vero?</h3>
-
-<p><strong>Gitlab va offline deliberatamente</strong>, finché non riescono a ripristinare il database. Pensate un attimo alla vostra azienda che chiude per un giorno o due a causa di un incidente di questo tipo: clienti paganti furiosi, il web che legge e scrive di te, migliaia di post indignati e social arrabbiati.</p>
-
-<p>Contemporaneamente, <strong>una buona fetta di programmatori nel mondo inizia a provare compassione.</strong> Io stesso, autore di questo articolo, ho per errore cancellato una volta tutto il database di test (di test, per fortuna!) della mia azienda. Ma almeno avevamo un backup.</p>
-
-<p>Torniamo a Gitlab: scatta la ricerca dei backup. Secondo le loro procedure interne, <strong>Gitlab ha almeno 5 backup differenti, ma uno dopo l’altro si scopre che non funzionano</strong>.</p>
-
-<ul>
-  <li>
-    <p>I backup regolari sembrano non essere più in funzione: fallivano silenziosamente da mesi, e nessuno se ne era mai accorto.</p>
-  </li>
-  <li>
-    <p>Il dump del database non funziona a causa di un mismatch tra il tipo del db e l’eseguibile che lo leggeva/eseguiva.</p>
-  </li>
-  <li>
-    <p>gli snapshot del disco sono abilitati per i file comuni, ma non per i dischi del db.</p>
-  </li>
-  <li>
-    <p>Neanche il backup su S3 stava funzionando</p>
-  </li>
-  <li>
-    <p>a causa di alcuni script automatici che rimuovono i vecchi backup, non c’era più nulla di utilizzabile da poter ripristinare</p>
-  </li>
-</ul>
-
-<p>Fortunatamente, <strong>lo stesso admin che ha lanciato il comando per errore aveva fatto uno snapshot a mano del db sulla sua macchina locale. </strong></p>
-
-<p>L’ultimo backup corrispondeva a 6 ore fa, e su una macchina non direttamente connessa al cluster di server; <strong>il ripristino del backup è avvenuto lentamente con una perdita di tutti i dati delle ultime sei ore. </strong></p>
-
-<h3 id="come-trasformare-un-disastro-in-unoperazione-mediatica">Come trasformare un disastro in un’operazione mediatica</h3>
-
-<p>E’ a questo punto che in Gitlab si rendono conto di avere un’occasione da sfruttare: stanno ricevendo un’incredibile esposizione mediatica.</p>
-
-<p><strong>La prima cosa che fanno è mettere su un <a href="https://docs.google.com/document/d/1GCK53YDcBWQveod9kfzW-VCxIABGiryG7_z_6jHdVik/pub">google docs</a></strong> condiviso in cui spiegano l’accaduto, i tentativi, le scoperte.</p>
-
-<p>La seconda cosa che mi ha sorpreso è il <strong>live streaming su youtube</strong> (era <a href="https://www.youtube.com/watch?v=63wCG86ih94">qui</a>, ora non funziona più) dei dipendenti di gitlab che mostravano live tutte le operazioni messe in pratica per ripristinare il database. Tramite la chat i dipendenti di gitlab parlavano con gli spettatori, e rispondevano alle loro domande. A video c’erano le loro facce e il terminale che mostrava l’output di comandi impronunciabili.</p>
-
-<p>La domanda più gettonata è stata questa:</p>
-
-<blockquote>
-  <p>Q: Who did it, will they be fired?<br />
-<span style="letter-spacing: 0.01em; font-style: normal;"><strong>A: Someone made a mistake, they won’t be fired.</strong></span></p>
-</blockquote>
-
-<p>(Traduzione: <em>Verrà licenziato quello che ha cancellato il db?</em> <strong>No, non sarà licenziato</strong>.)</p>
-
-<h3 id="e-ora">E ora?</h3>
-
-<p><strong>Gitlab è di nuovo in funzione</strong>, il ripristino è stato lentamente completato e tutta questa vicenda ha generato un grande “<em>abbraccione</em>” da parte della community di sviluppatori di tutto il mondo.</p>
-
-<p>Questo è quel genere di disastri che <strong>non dovrebbero MAI accadere</strong> e per cui <strong>conviene sempre avere più di un backup e testarlo regolarmente</strong>. E voi avete un piano di disaster recovery?</p>
 
                   
                     <footer>
