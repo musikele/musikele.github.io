@@ -35,7 +35,7 @@ const expect = require('expect');
 
 const utils = require('./utils');
 
-it('should add two numbers', () =&gt; {
+it('should add two numbers', () => {
   let res = utils.add(33, 11);
 
   expect(res).toBe(44).toBeA('number');
@@ -52,8 +52,8 @@ Let's prepare an example async function:
 
 ```
 //utils.js
-module.exports.asyncAdd = (a,b, callback) =&gt; {
-  setTimeout(() =&gt; {
+module.exports.asyncAdd = (a,b, callback) => {
+  setTimeout(() => {
     callback(a+b);
   }, 1000);
 }
@@ -64,8 +64,8 @@ How do we test it? The first approach we might think would be to write the test 
 
 ```
 //utils.test.js
-it('should add two numbers', () =&gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&gt; {
+it('should add two numbers', () => {
+  let res = utils.asyncAdd(33, 11, (res) => {
   
     // will this work? 
     expect(res).toBe(44).toBeA('number'); 
@@ -80,8 +80,8 @@ How can we fix this? Mocha has a super-simple solution, just add a `done` argume
 
 ```
 //utils.test.js
-it('should add two numbers', (done) =&gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&gt; {
+it('should add two numbers', (done) => {
+  let res = utils.asyncAdd(33, 11, (res) => {
   
     expect(res).toBe(44).toBeA('number'); 
     done();
@@ -160,4 +160,4 @@ Since this Mocha test is async, we need a way to tell mocha that the test has en
 
 For a novice, the problem of testing Node apps is that there are many libraries the same thing. For an expert, this becomes an advantage: you can choose the best for your purposes (but you must know them in advance). 
 
-By the way, testing is important. Test everything is testable. Otherwise, maintaining javascript code can only be a mess. 
+By the way, testing is important. Test everything is testable. Otherwise, maintaining javascript code can only be a mess.
