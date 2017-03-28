@@ -150,7 +150,7 @@ it('should return hello world response', (done) => {
 });
 ```
 
-That's interesting. At (1) we are importing the express app and using `supertest` to wrap it. Then we perform a `get` request over `/` (see (2) and start expecting things about the result. Unfortunately, supertest has another `expect` method that is not related to the one in the `expect` library. 
+That's interesting. At (1) we are importing the express app and using `supertest` to wrap it. Then we perform a `get` request over `/` (2) and start expecting things about the result. Unfortunately, supertest has another `expect` method that is not related to the one in the `expect` library. 
 
 By the way, with supertest we can make assumptions about the status code (3), and if we want to assert something about the body of the request, we can do like in (4): when using a callback we can do everything over the `res` variable, and infact we are using the `expect` library to see if the body includes the `error` property. 
 
