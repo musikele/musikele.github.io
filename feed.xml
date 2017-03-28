@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-03-28T16:08:57+02:00</updated>
+    <updated>2017-03-28T16:23:22+02:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -40,7 +40,7 @@ const expect = require('expect');
 
 const utils = require('./utils');
 
-it('should add two numbers', () =&amp;amp;gt; {
+it('should add two numbers', () =&amp;gt; {
   let res = utils.add(33, 11);
 
   expect(res).toBe(44).toBeA('number');
@@ -57,8 +57,8 @@ it('should add two numbers', () =&amp;amp;gt; {
 &lt;p&gt;Let’s prepare an example async function:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//utils.js
-module.exports.asyncAdd = (a,b, callback) =&amp;amp;gt; {
-  setTimeout(() =&amp;amp;gt; {
+module.exports.asyncAdd = (a,b, callback) =&amp;gt; {
+  setTimeout(() =&amp;gt; {
     callback(a+b);
   }, 1000);
 }
@@ -69,8 +69,8 @@ module.exports.asyncAdd = (a,b, callback) =&amp;amp;gt; {
 &lt;p&gt;How do we test it? The first approach we might think would be to write the test like before:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//utils.test.js
-it('should add two numbers', () =&amp;amp;gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&amp;amp;gt; {
+it('should add two numbers', () =&amp;gt; {
+  let res = utils.asyncAdd(33, 11, (res) =&amp;gt; {
   
     // will this work? 
     expect(res).toBe(44).toBeA('number'); 
@@ -85,8 +85,8 @@ it('should add two numbers', () =&amp;amp;gt; {
 &lt;p&gt;How can we fix this? Mocha has a super-simple solution, just add a &lt;code class=&quot;highlighter-rouge&quot;&gt;done&lt;/code&gt; argument to the test callback. When &lt;code class=&quot;highlighter-rouge&quot;&gt;done&lt;/code&gt; is present, Mocha will not end the test before you call the &lt;code class=&quot;highlighter-rouge&quot;&gt;done()&lt;/code&gt; function. Let’s try:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//utils.test.js
-it('should add two numbers', (done) =&amp;amp;gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&amp;amp;gt; {
+it('should add two numbers', (done) =&amp;gt; {
+  let res = utils.asyncAdd(33, 11, (res) =&amp;gt; {
   
     expect(res).toBe(44).toBeA('number'); 
     done();
@@ -216,7 +216,7 @@ const expect = require('expect');
 
 const utils = require('./utils');
 
-it('should add two numbers', () =&amp;gt; {
+it('should add two numbers', () =&gt; {
   let res = utils.add(33, 11);
 
   expect(res).toBe(44).toBeA('number');
@@ -233,8 +233,8 @@ it('should add two numbers', () =&amp;gt; {
 <p>Let’s prepare an example async function:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>//utils.js
-module.exports.asyncAdd = (a,b, callback) =&amp;gt; {
-  setTimeout(() =&amp;gt; {
+module.exports.asyncAdd = (a,b, callback) =&gt; {
+  setTimeout(() =&gt; {
     callback(a+b);
   }, 1000);
 }
@@ -245,8 +245,8 @@ module.exports.asyncAdd = (a,b, callback) =&amp;gt; {
 <p>How do we test it? The first approach we might think would be to write the test like before:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>//utils.test.js
-it('should add two numbers', () =&amp;gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&amp;gt; {
+it('should add two numbers', () =&gt; {
+  let res = utils.asyncAdd(33, 11, (res) =&gt; {
   
     // will this work? 
     expect(res).toBe(44).toBeA('number'); 
@@ -261,8 +261,8 @@ it('should add two numbers', () =&amp;gt; {
 <p>How can we fix this? Mocha has a super-simple solution, just add a <code class="highlighter-rouge">done</code> argument to the test callback. When <code class="highlighter-rouge">done</code> is present, Mocha will not end the test before you call the <code class="highlighter-rouge">done()</code> function. Let’s try:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>//utils.test.js
-it('should add two numbers', (done) =&amp;gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&amp;gt; {
+it('should add two numbers', (done) =&gt; {
+  let res = utils.asyncAdd(33, 11, (res) =&gt; {
   
     expect(res).toBe(44).toBeA('number'); 
     done();

@@ -15,7 +15,7 @@ testing NodeJS with Mocha you might have grasped the fundamental concepts of Nod
   		<meta name="keywords" content="testing, nodejs, async, express" />
 			
 			 
-				<meta http-equiv="last-modified" content="2017-03-28 16:02:29 +0200" />
+				<meta http-equiv="last-modified" content="2017-03-28 16:21:57 +0200" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -135,7 +135,7 @@ const expect = require('expect');
 
 const utils = require('./utils');
 
-it('should add two numbers', () =&amp;gt; {
+it('should add two numbers', () =&gt; {
   let res = utils.add(33, 11);
 
   expect(res).toBe(44).toBeA('number');
@@ -152,8 +152,8 @@ it('should add two numbers', () =&amp;gt; {
 <p>Let’s prepare an example async function:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>//utils.js
-module.exports.asyncAdd = (a,b, callback) =&amp;gt; {
-  setTimeout(() =&amp;gt; {
+module.exports.asyncAdd = (a,b, callback) =&gt; {
+  setTimeout(() =&gt; {
     callback(a+b);
   }, 1000);
 }
@@ -164,8 +164,8 @@ module.exports.asyncAdd = (a,b, callback) =&amp;gt; {
 <p>How do we test it? The first approach we might think would be to write the test like before:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>//utils.test.js
-it('should add two numbers', () =&amp;gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&amp;gt; {
+it('should add two numbers', () =&gt; {
+  let res = utils.asyncAdd(33, 11, (res) =&gt; {
   
     // will this work? 
     expect(res).toBe(44).toBeA('number'); 
@@ -180,8 +180,8 @@ it('should add two numbers', () =&amp;gt; {
 <p>How can we fix this? Mocha has a super-simple solution, just add a <code class="highlighter-rouge">done</code> argument to the test callback. When <code class="highlighter-rouge">done</code> is present, Mocha will not end the test before you call the <code class="highlighter-rouge">done()</code> function. Let’s try:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>//utils.test.js
-it('should add two numbers', (done) =&amp;gt; {
-  let res = utils.asyncAdd(33, 11, (res) =&amp;gt; {
+it('should add two numbers', (done) =&gt; {
+  let res = utils.asyncAdd(33, 11, (res) =&gt; {
   
     expect(res).toBe(44).toBeA('number'); 
     done();
