@@ -104,7 +104,7 @@ I have already talked about the [`expect`](https://michelenasti.com/2017/03/27/b
 
 The good thing is, **`expect` has also a way to create mocks - that they call spies**.
 
-What is a spy? it's a function that can substitute the real implementation. It can be "trained" to return any value you want, to simulate errors, throw exceptions, etc. 
+What is a _spy_? it's a function that can substitute the real implementation. It can be "trained" to return the value you want, to simulate errors, throw exceptions, etc. 
 
 With spies, you can also check that the function has been called, with the right parameters. 
 
