@@ -27,7 +27,8 @@ Stavolta l'esempio l'ho preparato in Java, il linguaggio OO per eccellenza. Ho c
 
 Nel main invece vedete un po' di operazioni sugli Stormi. Quanto vale result?
 
-<pre class="lang:default decode:true" title="codice object oriented che fa quel che vuole">class Stormo {
+```java
+class Stormo {
 
 	public int gabbiani;
 
@@ -59,39 +60,43 @@ public class Test {
 
 		System.out.println(result);
 	}
-}</pre>
+}
+```
 
-Quanti gabbiani contate? Quanto vale <span class="lang:default decode:true crayon-inline ">result</span>  alla fine del Main ?
+Quanti gabbiani contate? Quanto vale `result` alla fine del Main ?
 
-La risposta che avete contato voi è ... 16. La riposta del compilatore invece è ... 32. E l'oggetto <span class="lang:default decode:true crayon-inline ">stormo_a</span>  è addirittura cambiato!
+La risposta che avete contato voi è ... 16. La riposta del compilatore invece è ... 32. E l'oggetto `stormo_a` è addirittura cambiato!
 
 Come vedete, sono bastate poche righe di codice per ottenere un risultato sballato e un bug piuttosto evidente.
 
-Uno dei problemi che affligge questo codice è che va a mutare lo stato interno dell'oggetto; se i metodi <span class="lang:default decode:true  crayon-inline">unisci</span> e <span class="lang:default decode:true  crayon-inline">riproduci</span>  avessero restituito copie e lasciato immutato la classe stessa, ora non saremmo qui a parlarne.
+Uno dei problemi che affligge questo codice è che va a mutare lo stato interno dell'oggetto; se i metodi `unisci` e `riproduci` avessero restituito copie e lasciato immutato la classe stessa, ora non saremmo qui a parlarne.
 
-^^^EDIT:
+### EDIT:
 
 Amici suggeriscono di mostrare cosa si dovrebbe cambiare affinchè il codice funzioni.
 
-Io modificherei i metodi <span class="lang:default decode:true  crayon-inline ">unisci</span>  e <span class="lang:default decode:true  crayon-inline ">riproduci</span>  per ottenere il risultato corretto:
+Io modificherei i metodi `unisci` e `riproduci` per ottenere il risultato corretto:
 
-<pre class="lang:java decode:true">public Stormo unisci(Stormo other) {
+```java
+public Stormo unisci(Stormo other) {
     return new Stormo(this.gabbiani+other.gabbiani);
 }
 
 public Stormo riproduci(Stormo other) {
      return new Stormo(this.gabbiani*other.gabbiani);
-}</pre>
+}
+```
 
 Ed è qui che si applica il concetto di **immutabilità**: non ci sono side effects sull'oggetto chiamato e viene restituito un nuovo oggetto contenente le nuove proprietà.
 
-^^^FINE EDIT
+--- 
 
 Dunque ciò che dicono i miei amici e colleghi è giusto, nel senso che con la programmazione a oggetti (ma anche con la programmazione iterativa) i problemi si risolvono comunque; l'approccio funzionale permette però di avere qualche altro gadget nel coltellino svizzero del programmatore, di scrivere codice più bello, più espressivo, più succinto.
 
 Per completezza, riporto qui l'esempio (con i termini inglesi) in javascript così potrete eseguirlo nella console del browser (senza che aprite eclipse...). Anche questo esempio è preso da [Mostly Adequate Guide to Functional Programming, capitolo 1.](https://github.com/MostlyAdequate/mostly-adequate-guide/blob/master/ch1.md)
 
-<pre class="lang:js decode:true">var Flock = function(n) {
+```java
+var Flock = function(n) {
   this.seagulls = n;
 };
 
@@ -111,6 +116,5 @@ var flock_c = new Flock(0);
 
 var result = flock_a.conjoin(flock_c)
     .breed(flock_b).conjoin(flock_a.breed(flock_b)).seagulls;
-//=&gt; 32</pre>
-
- 
+//=> 32
+```
