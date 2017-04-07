@@ -23,14 +23,14 @@ module.exports.handleSignup = (email, password) => {
   // save the user to the database
   db.saveUser({ email, password });
   // ...
-  };
+};
 ```
 
 This `app.js`, at some point, calls the `db.saveUser()` function. Let's see the `db` module:
 
 ```
 // file db.js
-module.exports.saveUser = user =&amp;gt; {
+module.exports.saveUser = user => {
   console.log('Saving the user...', user);
 };
 ```
@@ -39,7 +39,7 @@ Nothing very special, it's just a demo. Let's go with the important question.
 
 ## How do we unit-test app.js?
 
-For those not used to unit testing, it is a way of testing classes atomically. This means that app.js may depend on other classes, but we will not test these.
+For those not used to **unit testing**, it **is a way of testing classes atomically**. This means that app.js may depend on other classes, but we will not test these.
 
 Let me be more specific. the `db` module could be really calling a database, this means that if the database connection is not working, the test would fail. OR, if the test is *really* saving a user, next time we launch the test it could be failing because the user is already in the db.
 
@@ -67,7 +67,7 @@ $ npm i --save-dev rewire
 
 `rewire()` works like the `require()` function, this mean that you _could_ use rewire for your applications, even if it does not make any sense. It is indeed very useful in tests. 
 
-When you `rewire` a module, the module is imported _but_ some new methods are imported: these are `__get__` and `__set__`. Whith these two methods you can retrive any local variable instantiated in another module. 
+When you `rewire` a module, the module is imported _but_ some new methods are added: these are `__get__()` and `__set__()`. Whith these two methods you can retrive any local variable instantiated locally. 
 
 Example: 
 
@@ -94,9 +94,9 @@ const db = {
 app.__set__('db', db); //this will not work in this case!
 ```
 
-Since `db` is declared as a `const` in `app`, `rewire` cannot do any magic: `const` variables in javascript are not reassignable. 
+Since `db` is declared as a `const` in `app`, `rewire` cannot do the magic: `const` variables in javascript are not reassignable. 
 
-However, even if the `db` object is not reassignable, we can still modify its internals, as long they are declared as `let` and `var`. That's **why we will mock the single functions and not the whole object**. 
+However, even if the `db` object is not reassignable, we can still modify its internals, as long they are declared as `let` and `var`. That's **why we will mock single functions and not the whole object**. 
 
 ## 2. Before showing the code, let me introduce to you: expect.createSpy() 
 
