@@ -2,15 +2,15 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Fantastic Unit Tests in Javascript with Mocks'
+title: Fantastic Unit Tests in Javascript with Mocks
 category: Italiano
 layout: post
-date: '2017-04-07T09:49:56+00:00'
+date: '2017-04-07 09:49:00'
 tags:
 - nodejs
 - testing
 - rewire
-- expect.createSpy
+- expect
 ---
 Let's start with the example. We have two files, one that is the main one called `app.js` that exports just one method, called `handleSignup()`:
 
