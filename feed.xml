@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-04-07T11:35:08+02:00</updated>
+    <updated>2017-04-07T12:38:38+02:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -28,14 +28,14 @@ module.exports.handleSignup = (email, password) =&amp;gt; {
   // save the user to the database
   db.saveUser({ email, password });
   // ...
-  };
+};
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;This &lt;code class=&quot;highlighter-rouge&quot;&gt;app.js&lt;/code&gt;, at some point, calls the &lt;code class=&quot;highlighter-rouge&quot;&gt;db.saveUser()&lt;/code&gt; function. Let’s see the &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt; module:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// file db.js
-module.exports.saveUser = user =&amp;amp;amp;gt; {
+module.exports.saveUser = user =&amp;gt; {
   console.log('Saving the user...', user);
 };
 &lt;/code&gt;&lt;/pre&gt;
@@ -45,7 +45,7 @@ module.exports.saveUser = user =&amp;amp;amp;gt; {
 
 &lt;h2 id=&quot;how-do-we-unit-test-appjs&quot;&gt;How do we unit-test app.js?&lt;/h2&gt;
 
-&lt;p&gt;For those not used to unit testing, it is a way of testing classes atomically. This means that app.js may depend on other classes, but we will not test these.&lt;/p&gt;
+&lt;p&gt;For those not used to &lt;strong&gt;unit testing&lt;/strong&gt;, it &lt;strong&gt;is a way of testing classes atomically&lt;/strong&gt;. This means that app.js may depend on other classes, but we will not test these.&lt;/p&gt;
 
 &lt;p&gt;Let me be more specific. the &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt; module could be really calling a database, this means that if the database connection is not working, the test would fail. OR, if the test is &lt;em&gt;really&lt;/em&gt; saving a user, next time we launch the test it could be failing because the user is already in the db.&lt;/p&gt;
 
@@ -73,7 +73,7 @@ module.exports.saveUser = user =&amp;amp;amp;gt; {
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rewire()&lt;/code&gt; works like the &lt;code class=&quot;highlighter-rouge&quot;&gt;require()&lt;/code&gt; function, this mean that you &lt;em&gt;could&lt;/em&gt; use rewire for your applications, even if it does not make any sense. It is indeed very useful in tests.&lt;/p&gt;
 
-&lt;p&gt;When you &lt;code class=&quot;highlighter-rouge&quot;&gt;rewire&lt;/code&gt; a module, the module is imported &lt;em&gt;but&lt;/em&gt; some new methods are imported: these are &lt;code class=&quot;highlighter-rouge&quot;&gt;__get__&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;__set__&lt;/code&gt;. Whith these two methods you can retrive any local variable instantiated in another module.&lt;/p&gt;
+&lt;p&gt;When you &lt;code class=&quot;highlighter-rouge&quot;&gt;rewire&lt;/code&gt; a module, the module is imported &lt;em&gt;but&lt;/em&gt; some new methods are added: these are &lt;code class=&quot;highlighter-rouge&quot;&gt;__get__()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;__set__()&lt;/code&gt;. Whith these two methods you can retrive any local variable instantiated locally.&lt;/p&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
 
@@ -100,9 +100,9 @@ module.exports.saveUser = user =&amp;amp;amp;gt; {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Since &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt; is declared as a &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rewire&lt;/code&gt; cannot do any magic: &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; variables in javascript are not reassignable.&lt;/p&gt;
+&lt;p&gt;Since &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt; is declared as a &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rewire&lt;/code&gt; cannot do the magic: &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; variables in javascript are not reassignable.&lt;/p&gt;
 
-&lt;p&gt;However, even if the &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt; object is not reassignable, we can still modify its internals, as long they are declared as &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;. That’s &lt;strong&gt;why we will mock the single functions and not the whole object&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;However, even if the &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt; object is not reassignable, we can still modify its internals, as long they are declared as &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;. That’s &lt;strong&gt;why we will mock single functions and not the whole object&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;2-before-showing-the-code-let-me-introduce-to-you-expectcreatespy&quot;&gt;2. Before showing the code, let me introduce to you: expect.createSpy()&lt;/h2&gt;
 
@@ -110,7 +110,7 @@ module.exports.saveUser = user =&amp;amp;amp;gt; {
 
 &lt;p&gt;The good thing is, &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;expect&lt;/code&gt; has also a way to create mocks - that they call spies&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;What is a spy? it’s a function that can substitute the real implementation. It can be “trained” to return any value you want, to simulate errors, throw exceptions, etc.&lt;/p&gt;
+&lt;p&gt;What is a &lt;em&gt;spy&lt;/em&gt;? it’s a function that can substitute the real implementation. It can be “trained” to return the value you want, to simulate errors, throw exceptions, etc.&lt;/p&gt;
 
 &lt;p&gt;With spies, you can also check that the function has been called, with the right parameters.&lt;/p&gt;
 
@@ -189,14 +189,14 @@ module.exports.handleSignup = (email, password) =&gt; {
   // save the user to the database
   db.saveUser({ email, password });
   // ...
-  };
+};
 </code></pre>
 </div>
 
 <p>This <code class="highlighter-rouge">app.js</code>, at some point, calls the <code class="highlighter-rouge">db.saveUser()</code> function. Let’s see the <code class="highlighter-rouge">db</code> module:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>// file db.js
-module.exports.saveUser = user =&amp;amp;gt; {
+module.exports.saveUser = user =&gt; {
   console.log('Saving the user...', user);
 };
 </code></pre>
@@ -206,7 +206,7 @@ module.exports.saveUser = user =&amp;amp;gt; {
 
 <h2 id="how-do-we-unit-test-appjs">How do we unit-test app.js?</h2>
 
-<p>For those not used to unit testing, it is a way of testing classes atomically. This means that app.js may depend on other classes, but we will not test these.</p>
+<p>For those not used to <strong>unit testing</strong>, it <strong>is a way of testing classes atomically</strong>. This means that app.js may depend on other classes, but we will not test these.</p>
 
 <p>Let me be more specific. the <code class="highlighter-rouge">db</code> module could be really calling a database, this means that if the database connection is not working, the test would fail. OR, if the test is <em>really</em> saving a user, next time we launch the test it could be failing because the user is already in the db.</p>
 
@@ -234,7 +234,7 @@ module.exports.saveUser = user =&amp;amp;gt; {
 
 <p><code class="highlighter-rouge">rewire()</code> works like the <code class="highlighter-rouge">require()</code> function, this mean that you <em>could</em> use rewire for your applications, even if it does not make any sense. It is indeed very useful in tests.</p>
 
-<p>When you <code class="highlighter-rouge">rewire</code> a module, the module is imported <em>but</em> some new methods are imported: these are <code class="highlighter-rouge">__get__</code> and <code class="highlighter-rouge">__set__</code>. Whith these two methods you can retrive any local variable instantiated in another module.</p>
+<p>When you <code class="highlighter-rouge">rewire</code> a module, the module is imported <em>but</em> some new methods are added: these are <code class="highlighter-rouge">__get__()</code> and <code class="highlighter-rouge">__set__()</code>. Whith these two methods you can retrive any local variable instantiated locally.</p>
 
 <p>Example:</p>
 
@@ -261,9 +261,9 @@ module.exports.saveUser = user =&amp;amp;gt; {
 </code></pre>
 </div>
 
-<p>Since <code class="highlighter-rouge">db</code> is declared as a <code class="highlighter-rouge">const</code> in <code class="highlighter-rouge">app</code>, <code class="highlighter-rouge">rewire</code> cannot do any magic: <code class="highlighter-rouge">const</code> variables in javascript are not reassignable.</p>
+<p>Since <code class="highlighter-rouge">db</code> is declared as a <code class="highlighter-rouge">const</code> in <code class="highlighter-rouge">app</code>, <code class="highlighter-rouge">rewire</code> cannot do the magic: <code class="highlighter-rouge">const</code> variables in javascript are not reassignable.</p>
 
-<p>However, even if the <code class="highlighter-rouge">db</code> object is not reassignable, we can still modify its internals, as long they are declared as <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">var</code>. That’s <strong>why we will mock the single functions and not the whole object</strong>.</p>
+<p>However, even if the <code class="highlighter-rouge">db</code> object is not reassignable, we can still modify its internals, as long they are declared as <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">var</code>. That’s <strong>why we will mock single functions and not the whole object</strong>.</p>
 
 <h2 id="2-before-showing-the-code-let-me-introduce-to-you-expectcreatespy">2. Before showing the code, let me introduce to you: expect.createSpy()</h2>
 
@@ -271,7 +271,7 @@ module.exports.saveUser = user =&amp;amp;gt; {
 
 <p>The good thing is, <strong><code class="highlighter-rouge">expect</code> has also a way to create mocks - that they call spies</strong>.</p>
 
-<p>What is a spy? it’s a function that can substitute the real implementation. It can be “trained” to return any value you want, to simulate errors, throw exceptions, etc.</p>
+<p>What is a <em>spy</em>? it’s a function that can substitute the real implementation. It can be “trained” to return the value you want, to simulate errors, throw exceptions, etc.</p>
 
 <p>With spies, you can also check that the function has been called, with the right parameters.</p>
 
