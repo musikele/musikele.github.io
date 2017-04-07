@@ -14,7 +14,7 @@
   		<meta name="keywords" content="functional programming, object oriented, programmazione funzionale" />
 			
 			 
-				<meta http-equiv="last-modified" content="2016-12-09 19:31:29 +0100" />
+				<meta http-equiv="last-modified" content="2017-04-07 16:38:35 +0200" />
 			
   		<!--<noscript>-->
   			<link rel="stylesheet" href="/css/skel.css" />
@@ -120,92 +120,97 @@
 
 <p>Nel main invece vedete un po’ di operazioni sugli Stormi. Quanto vale result?</p>
 
-<pre class="lang:default decode:true" title="codice object oriented che fa quel che vuole">class Stormo {
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Stormo</span> <span class="o">{</span>
 
-	public int gabbiani;
+	<span class="kd">public</span> <span class="kt">int</span> <span class="n">gabbiani</span><span class="o">;</span>
 
-	public Stormo(int n) {
-		this.gabbiani = n;
-	}
+	<span class="kd">public</span> <span class="nf">Stormo</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">gabbiani</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public Stormo unisci(Stormo other) {
-		this.gabbiani += other.gabbiani;
-		return this;
-	}
+	<span class="kd">public</span> <span class="n">Stormo</span> <span class="nf">unisci</span><span class="o">(</span><span class="n">Stormo</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">gabbiani</span> <span class="o">+=</span> <span class="n">other</span><span class="o">.</span><span class="na">gabbiani</span><span class="o">;</span>
+		<span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public Stormo riproduci(Stormo other) {
-		this.gabbiani = this.gabbiani * other.gabbiani;
-		return this;
-	}
-}
+	<span class="kd">public</span> <span class="n">Stormo</span> <span class="nf">riproduci</span><span class="o">(</span><span class="n">Stormo</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">gabbiani</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">gabbiani</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="na">gabbiani</span><span class="o">;</span>
+		<span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
 
-public class Test {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
 
-	public static void main(String args[]) {
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
 
-		Stormo stormo_a = new Stormo(4);
-		Stormo stormo_b = new Stormo(2);
-		Stormo stormo_c = new Stormo(0);
+		<span class="n">Stormo</span> <span class="n">stormo_a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stormo</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+		<span class="n">Stormo</span> <span class="n">stormo_b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stormo</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+		<span class="n">Stormo</span> <span class="n">stormo_c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stormo</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
 
-		int result = stormo_a.unisci(stormo_c).riproduci(stormo_b)
-                  .unisci(stormo_a.riproduci(stormo_b)).gabbiani;
+		<span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">stormo_a</span><span class="o">.</span><span class="na">unisci</span><span class="o">(</span><span class="n">stormo_c</span><span class="o">).</span><span class="na">riproduci</span><span class="o">(</span><span class="n">stormo_b</span><span class="o">)</span>
+                  <span class="o">.</span><span class="na">unisci</span><span class="o">(</span><span class="n">stormo_a</span><span class="o">.</span><span class="na">riproduci</span><span class="o">(</span><span class="n">stormo_b</span><span class="o">)).</span><span class="na">gabbiani</span><span class="o">;</span>
 
-		System.out.println(result);
-	}
-}</pre>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
-<p>Quanti gabbiani contate? Quanto vale <span class="lang:default decode:true crayon-inline ">result</span>  alla fine del Main ?</p>
+<p>Quanti gabbiani contate? Quanto vale <code class="highlighter-rouge">result</code> alla fine del Main ?</p>
 
-<p>La risposta che avete contato voi è … 16. La riposta del compilatore invece è … 32. E l’oggetto <span class="lang:default decode:true crayon-inline ">stormo_a</span>  è addirittura cambiato!</p>
+<p>La risposta che avete contato voi è … 16. La riposta del compilatore invece è … 32. E l’oggetto <code class="highlighter-rouge">stormo_a</code> è addirittura cambiato!</p>
 
 <p>Come vedete, sono bastate poche righe di codice per ottenere un risultato sballato e un bug piuttosto evidente.</p>
 
-<p>Uno dei problemi che affligge questo codice è che va a mutare lo stato interno dell’oggetto; se i metodi <span class="lang:default decode:true  crayon-inline">unisci</span> e <span class="lang:default decode:true  crayon-inline">riproduci</span>  avessero restituito copie e lasciato immutato la classe stessa, ora non saremmo qui a parlarne.</p>
+<p>Uno dei problemi che affligge questo codice è che va a mutare lo stato interno dell’oggetto; se i metodi <code class="highlighter-rouge">unisci</code> e <code class="highlighter-rouge">riproduci</code> avessero restituito copie e lasciato immutato la classe stessa, ora non saremmo qui a parlarne.</p>
 
-<p>^^^EDIT:</p>
+<p>### EDIT:</p>
 
 <p>Amici suggeriscono di mostrare cosa si dovrebbe cambiare affinchè il codice funzioni.</p>
 
-<p>Io modificherei i metodi <span class="lang:default decode:true  crayon-inline ">unisci</span>  e <span class="lang:default decode:true  crayon-inline ">riproduci</span>  per ottenere il risultato corretto:</p>
+<p>Io modificherei i metodi <code class="highlighter-rouge">unisci</code> e <code class="highlighter-rouge">riproduci</code> per ottenere il risultato corretto:</p>
 
-<pre class="lang:java decode:true">public Stormo unisci(Stormo other) {
-    return new Stormo(this.gabbiani+other.gabbiani);
-}
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="n">Stormo</span> <span class="nf">unisci</span><span class="o">(</span><span class="n">Stormo</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">Stormo</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">gabbiani</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="na">gabbiani</span><span class="o">);</span>
+<span class="o">}</span>
 
-public Stormo riproduci(Stormo other) {
-     return new Stormo(this.gabbiani*other.gabbiani);
-}</pre>
+<span class="kd">public</span> <span class="n">Stormo</span> <span class="nf">riproduci</span><span class="o">(</span><span class="n">Stormo</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+     <span class="k">return</span> <span class="k">new</span> <span class="nf">Stormo</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">gabbiani</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="na">gabbiani</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Ed è qui che si applica il concetto di <strong>immutabilità</strong>: non ci sono side effects sull’oggetto chiamato e viene restituito un nuovo oggetto contenente le nuove proprietà.</p>
 
-<p>^^^FINE EDIT</p>
+<hr />
 
 <p>Dunque ciò che dicono i miei amici e colleghi è giusto, nel senso che con la programmazione a oggetti (ma anche con la programmazione iterativa) i problemi si risolvono comunque; l’approccio funzionale permette però di avere qualche altro gadget nel coltellino svizzero del programmatore, di scrivere codice più bello, più espressivo, più succinto.</p>
 
 <p>Per completezza, riporto qui l’esempio (con i termini inglesi) in javascript così potrete eseguirlo nella console del browser (senza che aprite eclipse…). Anche questo esempio è preso da <a href="https://github.com/MostlyAdequate/mostly-adequate-guide/blob/master/ch1.md">Mostly Adequate Guide to Functional Programming, capitolo 1.</a></p>
 
-<pre class="lang:js decode:true">var Flock = function(n) {
-  this.seagulls = n;
-};
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">var</span> <span class="n">Flock</span> <span class="o">=</span> <span class="n">function</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">seagulls</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+<span class="o">};</span>
 
-Flock.prototype.conjoin = function(other) {
-  this.seagulls += other.seagulls;
-  return this;
-};
+<span class="n">Flock</span><span class="o">.</span><span class="na">prototype</span><span class="o">.</span><span class="na">conjoin</span> <span class="o">=</span> <span class="n">function</span><span class="o">(</span><span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">seagulls</span> <span class="o">+=</span> <span class="n">other</span><span class="o">.</span><span class="na">seagulls</span><span class="o">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+<span class="o">};</span>
 
-Flock.prototype.breed = function(other) {
-  this.seagulls = this.seagulls * other.seagulls;
-  return this;
-};
+<span class="n">Flock</span><span class="o">.</span><span class="na">prototype</span><span class="o">.</span><span class="na">breed</span> <span class="o">=</span> <span class="n">function</span><span class="o">(</span><span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">seagulls</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">seagulls</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="na">seagulls</span><span class="o">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+<span class="o">};</span>
 
-var flock_a = new Flock(4);
-var flock_b = new Flock(2);
-var flock_c = new Flock(0);
+<span class="n">var</span> <span class="n">flock_a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flock</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+<span class="n">var</span> <span class="n">flock_b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flock</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">var</span> <span class="n">flock_c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flock</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
 
-var result = flock_a.conjoin(flock_c)
-    .breed(flock_b).conjoin(flock_a.breed(flock_b)).seagulls;
-//=&gt; 32</pre>
-
+<span class="n">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">flock_a</span><span class="o">.</span><span class="na">conjoin</span><span class="o">(</span><span class="n">flock_c</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">breed</span><span class="o">(</span><span class="n">flock_b</span><span class="o">).</span><span class="na">conjoin</span><span class="o">(</span><span class="n">flock_a</span><span class="o">.</span><span class="na">breed</span><span class="o">(</span><span class="n">flock_b</span><span class="o">)).</span><span class="na">seagulls</span><span class="o">;</span>
+<span class="c1">//=&gt; 32</span>
+</code></pre>
+</div>
 
 
 					
