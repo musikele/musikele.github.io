@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Diventare "Senior" con Javascript: le funzioni filter, map, reduce'
+title: 'Diventare Senior™ con Javascript: le funzioni filter, map, reduce'
 category: Italiano
 layout: post
 date: '2017-04-14 10:09:00'
