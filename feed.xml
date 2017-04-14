@@ -5,11 +5,177 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-04-12T18:24:39+02:00</updated>
+    <updated>2017-04-14T10:52:07+02:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
+    
+      <item>
+        <title>Diventare &quot;Senior&quot; con Javascript: le funzioni filter, map, reduce</title>
+        <link>https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html</guid>
+        <pubDate>Fri, 14 Apr 2017 10:09:00 +0200</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Si può lavorare per anni con javascript senza mai arrivare a conoscere tre funzioni fantastiche (e standard) che permettono di scrivere codice veloce e testabile.&lt;/p&gt;
+
+&lt;p&gt;E’ vero che si diventa senior principalmente con l’esperienza, ma se dite di aver lavorato per 3+ anni con JS dovete anche mostrare che avete un’&lt;em&gt;esperienza di un certo livello&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Aprite la console del browser e provate gli esempi!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;a-partire-da-un-array-come-filtriamo-solo-gli-elementi-pari-senza-usare-il-ciclo-for&quot;&gt;A partire da un array, come filtriamo solo gli elementi pari senza usare il ciclo for?&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filtered&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filtered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;filter()&lt;/code&gt; prende in input una funzione di &lt;em&gt;test&lt;/em&gt; che viene eseguita su ogni elemento dell’input: se la funzione restituisce &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;elem&lt;/code&gt; viene aggiunto all’array in output.&lt;/p&gt;
+
+&lt;h3 id=&quot;come-raddoppiamo-tutti-gli-element-di-un-array-senza-usare-il-ciclo-for&quot;&gt;Come raddoppiamo tutti gli element di un array senza usare il ciclo for?&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mapped&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mapped&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Anche qui la funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;map()&lt;/code&gt; prende in input una funzione che viene eseguita su ogni elemento dell’input. Per ogni elemento, questo viene &lt;em&gt;trasformato&lt;/em&gt; in un altro valore in base al risultato della funzione.&lt;/p&gt;
+
+&lt;h3 id=&quot;come-sommiamo-tutti-gli-elementi-di-un-array-senza-usare-il-ciclo-for&quot;&gt;Come sommiamo tutti gli elementi di un array senza usare il ciclo for?&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reduced&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reduce()&lt;/code&gt; è più complessa da spiegare, ma poi sarà facilissima da usare: permette di applicare una funzione &lt;em&gt;N-a-1&lt;/em&gt; dove da un array tiriamo fuori un unico risultato. Nel nostro esempio abbiamo applicato la somma (voi come esercizio potreste provare a tirare fuori la media!).&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reduce()&lt;/code&gt; prende in input due elementi: una funzione e un elemento di partenza (Sarebbe lo &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; specificato in fondo). Per capire cosa accade, facciamo un esempio sull’array &lt;code class=&quot;highlighter-rouge&quot;&gt;[8, 7]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alla prima iterazione viene chiamata la funzione con &lt;code class=&quot;highlighter-rouge&quot;&gt;prev = 0&lt;/code&gt; e &lt;code class=&quot;highlighter-rouge&quot;&gt;elem = 8&lt;/code&gt;: siccome stiamo iterando sul primo elemento e non c’è nessun elemento precedente, viene usato il secondo argomento di &lt;code class=&quot;highlighter-rouge&quot;&gt;reduce&lt;/code&gt; come valore di inizio (ricordate quello &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; lì in fondo?). A questo punto viene eseguita la somma, che è &lt;code class=&quot;highlighter-rouge&quot;&gt;8&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alla seconda iterazione, la funzione viene chiamata con &lt;code class=&quot;highlighter-rouge&quot;&gt;prev = 8&lt;/code&gt; (risultato dell’iterazione precedente!) e &lt;code class=&quot;highlighter-rouge&quot;&gt;elem = 7&lt;/code&gt;:  Anche in questo caso verrà eseguita la somma che è &lt;code class=&quot;highlighter-rouge&quot;&gt;15&lt;/code&gt;, che sarà anche l’output di &lt;code class=&quot;highlighter-rouge&quot;&gt;reduce&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;domanda-implicita-del-lettore-perchè-tutto-staccanimento-contro-il-ciclo-for&quot;&gt;(Domanda implicita del lettore: Perchè tutto st’accanimento contro il ciclo for?)&lt;/h3&gt;
+&lt;p&gt;Il ciclo for è un ottimo costrutto per iterare gli array, tuttavia non fa capire a chi legge cosa sta accadendo, oltre al fatto di non essere manutenibile. e componibile.&lt;/p&gt;
+
+&lt;p&gt;Supponiamo di voler filtrare tutti i numeri pari da un array; successivamente raddoppiarli e poi sommarli (ossia, la composizione delle tre domande precedenti).&lt;/p&gt;
+
+&lt;p&gt;Con le funzioni presentate prima, ecco la soluzione:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;E’ ovvio che si può scrivere anche con un bel (paio di) for. Ma quante righe ci vogliono? e rileggendolo dopo sei mesi, si capisce?&lt;/p&gt;
+
+&lt;p&gt;Per concludere, con la svolta funzionale di altri linguaggi (chi ha detto Java?!) questi concetti sono stati applicati anche altrove, proprio per la loro semplicità e componibilità. Magari hanno altri nomi, ma il funzionamento è lo stesso. Cercateli e …usateli!&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Diventare &quot;Senior&quot; con Javascript: le funzioni filter, map, reduce</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Diventare "Senior" con Javascript: le funzioni filter, map, reduce ">
+                          <figcaption>Diventare "Senior" con Javascript: le funzioni filter, map, reduce</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-04-14 10:09:00 CEST">Fri, 14 Apr 2017 10:09:00 +0200</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Si può lavorare per anni con javascript senza mai arrivare a conoscere tre funzioni fantastiche (e standard) che permettono di scrivere codice veloce e testabile.</p>
+
+<p>E’ vero che si diventa senior principalmente con l’esperienza, ma se dite di aver lavorato per 3+ anni con JS dovete anche mostrare che avete un’<em>esperienza di un certo livello</em>.</p>
+
+<p><strong>Aprite la console del browser e provate gli esempi!</strong></p>
+
+<h3 id="a-partire-da-un-array-come-filtriamo-solo-gli-elementi-pari-senza-usare-il-ciclo-for">A partire da un array, come filtriamo solo gli elementi pari senza usare il ciclo for?</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filtered</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">filter()</code> prende in input una funzione di <em>test</em> che viene eseguita su ogni elemento dell’input: se la funzione restituisce <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">elem</code> viene aggiunto all’array in output.</p>
+
+<h3 id="come-raddoppiamo-tutti-gli-element-di-un-array-senza-usare-il-ciclo-for">Come raddoppiamo tutti gli element di un array senza usare il ciclo for?</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">mapped</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">elem</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mapped</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Anche qui la funzione <code class="highlighter-rouge">map()</code> prende in input una funzione che viene eseguita su ogni elemento dell’input. Per ogni elemento, questo viene <em>trasformato</em> in un altro valore in base al risultato della funzione.</p>
+
+<h3 id="come-sommiamo-tutti-gli-elementi-di-un-array-senza-usare-il-ciclo-for">Come sommiamo tutti gli elementi di un array senza usare il ciclo for?</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">reduced</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">elem</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reduced</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">reduce()</code> è più complessa da spiegare, ma poi sarà facilissima da usare: permette di applicare una funzione <em>N-a-1</em> dove da un array tiriamo fuori un unico risultato. Nel nostro esempio abbiamo applicato la somma (voi come esercizio potreste provare a tirare fuori la media!).</p>
+
+<p><code class="highlighter-rouge">reduce()</code> prende in input due elementi: una funzione e un elemento di partenza (Sarebbe lo <code class="highlighter-rouge">0</code> specificato in fondo). Per capire cosa accade, facciamo un esempio sull’array <code class="highlighter-rouge">[8, 7]</code>.</p>
+
+<p>Alla prima iterazione viene chiamata la funzione con <code class="highlighter-rouge">prev = 0</code> e <code class="highlighter-rouge">elem = 8</code>: siccome stiamo iterando sul primo elemento e non c’è nessun elemento precedente, viene usato il secondo argomento di <code class="highlighter-rouge">reduce</code> come valore di inizio (ricordate quello <code class="highlighter-rouge">0</code> lì in fondo?). A questo punto viene eseguita la somma, che è <code class="highlighter-rouge">8</code>.</p>
+
+<p>Alla seconda iterazione, la funzione viene chiamata con <code class="highlighter-rouge">prev = 8</code> (risultato dell’iterazione precedente!) e <code class="highlighter-rouge">elem = 7</code>:  Anche in questo caso verrà eseguita la somma che è <code class="highlighter-rouge">15</code>, che sarà anche l’output di <code class="highlighter-rouge">reduce</code>.</p>
+
+<h3 id="domanda-implicita-del-lettore-perchè-tutto-staccanimento-contro-il-ciclo-for">(Domanda implicita del lettore: Perchè tutto st’accanimento contro il ciclo for?)</h3>
+<p>Il ciclo for è un ottimo costrutto per iterare gli array, tuttavia non fa capire a chi legge cosa sta accadendo, oltre al fatto di non essere manutenibile. e componibile.</p>
+
+<p>Supponiamo di voler filtrare tutti i numeri pari da un array; successivamente raddoppiarli e poi sommarli (ossia, la composizione delle tre domande precedenti).</p>
+
+<p>Con le funzioni presentate prima, ecco la soluzione:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span>
+	<span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">elem</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">elem</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>E’ ovvio che si può scrivere anche con un bel (paio di) for. Ma quante righe ci vogliono? e rileggendolo dopo sei mesi, si capisce?</p>
+
+<p>Per concludere, con la svolta funzionale di altri linguaggi (chi ha detto Java?!) questi concetti sono stati applicati anche altrove, proprio per la loro semplicità e componibilità. Magari hanno altri nomi, ma il funzionamento è lo stesso. Cercateli e …usateli!</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
     
       <item>
         <title>All my articles about Testing in Javascript in one post</title>
@@ -2069,372 +2235,6 @@ results[0].geometry.location.lng
 </ol>
 
 <p>Io spero che non vi accada mai nulla di tutto ciò, ma se vi è accaduto e volete provare a spiegare come vi siete sentiti e cosa avete fatto per uscirne, questo blog è a vostra disposizione. <strong>Non fate nomi di aziende perché io modero tutto e i commenti offensivi o diffamatori saranno immediatamente cancellati.</strong> Grazie per la comprensione.</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>The Javascript Event Loop for dummies</title>
-        <link>https://michelenasti.com/the-javascript-event-loop-for-dummies/</link>
-        <guid isPermaLink="true">https://michelenasti.com/the-javascript-event-loop-for-dummies/</guid>
-        <pubDate>Sat, 25 Feb 2017 11:29:00 +0100</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/o_weighted_hula_hoop-1.jpg&quot; alt=&quot;An event loop. The dancer is not included.&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;quiz-whats-going-on&quot;&gt;Quiz: what’s going on?&lt;/h2&gt;
-
-&lt;p&gt;Let’s consider this small javascript program. What will be printed?&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Starting app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//first block &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'First setTimeout'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//second block &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Second setTimeout'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Finishing app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;In case you don’t know: &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; is a javascript global function used to fire an action (the first argument) when the delay (second argument) is elapsed.&lt;/p&gt;
-
-&lt;p&gt;So the first &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout()&lt;/code&gt; block will wait two seconds and then will write &lt;code class=&quot;highlighter-rouge&quot;&gt;First setTimeout&lt;/code&gt; on console.&lt;/p&gt;
-
-&lt;p&gt;The second block will wait 0 milliseconds (… it doesn’t wait at all!) and then write &lt;code class=&quot;highlighter-rouge&quot;&gt;Second setTimeout&lt;/code&gt; to the console).&lt;/p&gt;
-
-&lt;p&gt;Back to the quiz… what is the expected outcome?&lt;/p&gt;
-
-&lt;table&gt;
-
-&lt;thead&gt;
-
-&lt;tr&gt;
-
-&lt;th&gt;#1&lt;/th&gt;
-
-&lt;th&gt;#2&lt;/th&gt;
-
-&lt;th&gt;#3&lt;/th&gt;
-
-&lt;th&gt;#4&lt;/th&gt;
-
-&lt;/tr&gt;
-
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-
-&lt;tr&gt;
-
-&lt;td&gt;Starting App  
-First setTimeout  
-Second setTimeout  
-Finishing app&lt;/td&gt;
-
-&lt;td&gt;Starting App  
-Second setTimeout  
-Finishing app  
-First setTimeout&lt;/td&gt;
-
-&lt;td&gt;Starting App  
-Finishing app  
-Second setTimeout  
-First setTimeout&lt;/td&gt;
-
-&lt;td&gt;Starting App  
-Second setTimeout  
-First setTimeout  
-Finishing app&lt;/td&gt;
-
-&lt;/tr&gt;
-
-&lt;/tbody&gt;
-
-&lt;/table&gt;
-
-&lt;p&gt;What’s your choice? Don’t scroll down and think a little bit…&lt;/p&gt;
-
-&lt;p&gt;Hey, you could just paste this code in your browser’s console to discover that … the right answer is &lt;strong&gt;#3&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;This behaviour may seem surprising but is perfectly legit.&lt;/p&gt;
-
-&lt;p&gt;Why?&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-really-happening-under-the-hood&quot;&gt;what is really happening under the hood&lt;/h2&gt;
-
-&lt;p&gt;Let’s start with a Dogma: &lt;strong&gt;in Javascript there is just one thread&lt;/strong&gt;. (&lt;em&gt;This is not correct anymore, because in the last years a new technology called &lt;code class=&quot;highlighter-rouge&quot;&gt;Service Workers&lt;/code&gt; has become available; but it is not important for now.&lt;/em&gt;) Everything is always executed in the same thread, even events that happen asynchronously.&lt;/p&gt;
-
-&lt;p&gt;So what happens when an asynchronous event happen, like the &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; is a good example of an asynchronous event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.&lt;/p&gt;
-
-&lt;p&gt;Bearing this in mind, let’s return to the basis.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The first &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; is printed: &lt;code class=&quot;highlighter-rouge&quot;&gt;Starting app&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The first block is evaluated:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//first block &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'First setTimeout'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This code says: &lt;em&gt;after 2000 milliseconds, trigger the function specified as first argument&lt;/em&gt;. Since &lt;code class=&quot;highlighter-rouge&quot;&gt;() =&amp;gt; { ... }&lt;/code&gt; is a function, this is put in a &lt;strong&gt;callback queue&lt;/strong&gt; ready to get fired when the conditions occur.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The second block is evaluated:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//second block &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Second setTimeout'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Another explanation. This code says: &lt;em&gt;after zero milliseconds, fire the function specified as first argument&lt;/em&gt;. One would expect to be fired instantly, but this does not happen: The function is put in a &lt;strong&gt;callback queue&lt;/strong&gt;, and when NodeJS believes the conditions are respected, the function is fired.&lt;/p&gt;
-
-&lt;p&gt;Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the &lt;em&gt;main program&lt;/em&gt;, the one that starts with the first &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt;. Think of this as a being wrapped inside a function; nodeJS is evaluating &lt;strong&gt;this&lt;/strong&gt; function and cannot evaluate others.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The last &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; is evaluated and &lt;code class=&quot;highlighter-rouge&quot;&gt;Finishing app&lt;/code&gt; is written to console.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It’s NodeJS’s responsibility to select the right one: since the second &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; had a higher priority, it will be fired first: you’ll then see &lt;code class=&quot;highlighter-rouge&quot;&gt;Second setTimeout&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; callback, and will print &lt;code class=&quot;highlighter-rouge&quot;&gt;First setTimeout&lt;/code&gt;. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;what-happens-when-you-read-data-from-a-file-or-receive-a-response-from-the-network&quot;&gt;What happens when you read data from a file or receive a response from the network?&lt;/h3&gt;
-
-&lt;p&gt;The behavior is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-advantages-of-this&quot;&gt;The advantages of this&lt;/h3&gt;
-
-&lt;p&gt;The main advantage is that &lt;strong&gt;the CPU will not stop when waiting for an I/O event&lt;/strong&gt;: it will just put the callback in the queue, and Node will execute the next available function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread).&lt;/p&gt;
-
-&lt;h3 id=&quot;the-disadvantage&quot;&gt;The disadvantage&lt;/h3&gt;
-
-&lt;p&gt;The first disadvantage is that &lt;strong&gt;programming with async in mind and with callbacks is profoundly different&lt;/strong&gt; from the past: it is more difficult to reason about and to debug, at start. However, once you truly understand the philosophy and the way it works, you’ll never want to come back again.&lt;/p&gt;
-
-&lt;h2 id=&quot;so-what-you-suggest&quot;&gt;So? What you suggest?&lt;/h2&gt;
-
-&lt;p&gt;Node.js is a great idea made simple: a complex use case solved smartly. &lt;strong&gt;Learning Node will help you become a better programmer&lt;/strong&gt;, and this applies even if you work with other languages.&lt;/p&gt;
-
-&lt;p&gt;I can only suggest you to google *NodeJS vs XXX performance”, change XXX with whatever you want… You’ll find that &lt;a href=&quot;https://dzone.com/articles/performance-comparison-between&quot;&gt;an interpreted language, with no tweaks, is faster than well-established platforms&lt;/a&gt; (Caution: old article! but the main points still hold) with years of optimization.&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/the-javascript-event-loop-for-dummies/">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>The Javascript Event Loop for dummies</h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" The Javascript Event Loop for dummies ">
-                          <figcaption>The Javascript Event Loop for dummies</figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-02-25 11:29:00 CET">Sat, 25 Feb 2017 11:29:00 +0100</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p>What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.</p>
-
-<p><img src="/images/o_weighted_hula_hoop-1.jpg" alt="An event loop. The dancer is not included." /></p>
-
-<h2 id="quiz-whats-going-on">Quiz: what’s going on?</h2>
-
-<p>Let’s consider this small javascript program. What will be printed?</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Starting app'</span><span class="p">);</span>
-
-<span class="c1">//first block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
-
-<span class="c1">//second block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Second setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Finishing app'</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<p>In case you don’t know: <code class="highlighter-rouge">setTimeout</code> is a javascript global function used to fire an action (the first argument) when the delay (second argument) is elapsed.</p>
-
-<p>So the first <code class="highlighter-rouge">setTimeout()</code> block will wait two seconds and then will write <code class="highlighter-rouge">First setTimeout</code> on console.</p>
-
-<p>The second block will wait 0 milliseconds (… it doesn’t wait at all!) and then write <code class="highlighter-rouge">Second setTimeout</code> to the console).</p>
-
-<p>Back to the quiz… what is the expected outcome?</p>
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>#1</th>
-
-<th>#2</th>
-
-<th>#3</th>
-
-<th>#4</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>Starting App  
-First setTimeout  
-Second setTimeout  
-Finishing app</td>
-
-<td>Starting App  
-Second setTimeout  
-Finishing app  
-First setTimeout</td>
-
-<td>Starting App  
-Finishing app  
-Second setTimeout  
-First setTimeout</td>
-
-<td>Starting App  
-Second setTimeout  
-First setTimeout  
-Finishing app</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<p>What’s your choice? Don’t scroll down and think a little bit…</p>
-
-<p>Hey, you could just paste this code in your browser’s console to discover that … the right answer is <strong>#3</strong>.</p>
-
-<p>This behaviour may seem surprising but is perfectly legit.</p>
-
-<p>Why?</p>
-
-<h2 id="what-is-really-happening-under-the-hood">what is really happening under the hood</h2>
-
-<p>Let’s start with a Dogma: <strong>in Javascript there is just one thread</strong>. (<em>This is not correct anymore, because in the last years a new technology called <code class="highlighter-rouge">Service Workers</code> has become available; but it is not important for now.</em>) Everything is always executed in the same thread, even events that happen asynchronously.</p>
-
-<p>So what happens when an asynchronous event happen, like the <code class="highlighter-rouge">setTimeout</code>?</p>
-
-<p><code class="highlighter-rouge">setTimeout</code> is a good example of an asynchronous event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.</p>
-
-<p>Bearing this in mind, let’s return to the basis.</p>
-
-<ul>
-  <li>
-    <p>The first <code class="highlighter-rouge">console.log()</code> is printed: <code class="highlighter-rouge">Starting app</code></p>
-  </li>
-  <li>
-    <p>The first block is evaluated:</p>
-  </li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//first block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code class="highlighter-rouge">() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occur.</p>
-
-<ul>
-  <li>The second block is evaluated:</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//second block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Second setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<p>Another explanation. This code says: <em>after zero milliseconds, fire the function specified as first argument</em>. One would expect to be fired instantly, but this does not happen: The function is put in a <strong>callback queue</strong>, and when NodeJS believes the conditions are respected, the function is fired.</p>
-
-<p>Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the <em>main program</em>, the one that starts with the first <code class="highlighter-rouge">console.log()</code>. Think of this as a being wrapped inside a function; nodeJS is evaluating <strong>this</strong> function and cannot evaluate others.</p>
-
-<ul>
-  <li>
-    <p>The last <code class="highlighter-rouge">console.log()</code> is evaluated and <code class="highlighter-rouge">Finishing app</code> is written to console.</p>
-  </li>
-  <li>
-    <p>NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It’s NodeJS’s responsibility to select the right one: since the second <code class="highlighter-rouge">setTimeout</code> had a higher priority, it will be fired first: you’ll then see <code class="highlighter-rouge">Second setTimeout</code>.</p>
-  </li>
-  <li>
-    <p>Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block <code class="highlighter-rouge">setTimeout</code> callback, and will print <code class="highlighter-rouge">First setTimeout</code>. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end.</p>
-  </li>
-</ul>
-
-<h3 id="what-happens-when-you-read-data-from-a-file-or-receive-a-response-from-the-network">What happens when you read data from a file or receive a response from the network?</h3>
-
-<p>The behavior is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible.</p>
-
-<h3 id="the-advantages-of-this">The advantages of this</h3>
-
-<p>The main advantage is that <strong>the CPU will not stop when waiting for an I/O event</strong>: it will just put the callback in the queue, and Node will execute the next available function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread).</p>
-
-<h3 id="the-disadvantage">The disadvantage</h3>
-
-<p>The first disadvantage is that <strong>programming with async in mind and with callbacks is profoundly different</strong> from the past: it is more difficult to reason about and to debug, at start. However, once you truly understand the philosophy and the way it works, you’ll never want to come back again.</p>
-
-<h2 id="so-what-you-suggest">So? What you suggest?</h2>
-
-<p>Node.js is a great idea made simple: a complex use case solved smartly. <strong>Learning Node will help you become a better programmer</strong>, and this applies even if you work with other languages.</p>
-
-<p>I can only suggest you to google *NodeJS vs XXX performance”, change XXX with whatever you want… You’ll find that <a href="https://dzone.com/articles/performance-comparison-between">an interpreted language, with no tweaks, is faster than well-established platforms</a> (Caution: old article! but the main points still hold) with years of optimization.</p>
 
                   
                     <footer>
