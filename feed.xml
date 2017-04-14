@@ -5,14 +5,14 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-04-14T14:56:36+02:00</updated>
+    <updated>2017-04-14T14:57:06+02:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
     
       <item>
-        <title>Diventare &quot;Senior&quot; con Javascript: le funzioni filter, map, reduce</title>
+        <title>Diventare Senior™ con Javascript: le funzioni filter, map, reduce</title>
         <link>https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html</guid>
         <pubDate>Fri, 14 Apr 2017 10:09:00 +0200</pubDate>
@@ -92,11 +92,11 @@
               <body>
                 <article>
                   <header>
-                      <h1>Diventare &quot;Senior&quot; con Javascript: le funzioni filter, map, reduce</h1>
+                      <h1>Diventare Senior™ con Javascript: le funzioni filter, map, reduce</h1>
                       
                       <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Diventare "Senior" con Javascript: le funzioni filter, map, reduce ">
-                          <figcaption>Diventare "Senior" con Javascript: le funzioni filter, map, reduce</figcaption>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Diventare Senior™ con Javascript: le funzioni filter, map, reduce ">
+                          <figcaption>Diventare Senior™ con Javascript: le funzioni filter, map, reduce</figcaption>
                       </figure>
                       
                       <time class="op-published" dateTime="2017-04-14 10:09:00 CEST">Fri, 14 Apr 2017 10:09:00 +0200</time>
