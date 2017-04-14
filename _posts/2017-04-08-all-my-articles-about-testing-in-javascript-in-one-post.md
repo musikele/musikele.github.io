@@ -3,13 +3,13 @@ paginate: true
 comments: true
 author: musikele
 title: All my articles about Testing in Javascript in one post
-category: English
 layout: post
 date: '2017-04-08T13:23:03+00:00'
 tags:
 - testing
 - nodejs
 - javascript
+categories: English
 ---
 
 
