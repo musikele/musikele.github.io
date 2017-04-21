@@ -12,7 +12,6 @@ tags:
 - startup of you
 ---
 
-
 Oggi vorrei parlarvi di **come assumersi dei rischi intelligenti. **Intelligenti in che senso?!
 
 Questo post ce l'ho in testa da molto tempo, almeno da quando ho letto il libro [Startup Of You](http://amzn.to/2oaDAB6) di Reid Hoffman (fondatore di LinkedIn) e Ben Casnocha. Per i duri di comprendorio inglese qui c'è la [versione in Italiano](http://amzn.to/2oQsY92).
