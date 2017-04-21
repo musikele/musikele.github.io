@@ -3,8 +3,21 @@
  
  
   <url>
+    <loc>https://michelenasti.com/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html</loc> 
+    <lastmod>2017-04-21T00:00:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+   
+ 
+  <url>
     <loc>https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html</loc> 
-    <lastmod>2017-04-14T10:09:00+02:00</lastmod>
+    <lastmod>2017-04-14T10:09:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -17,7 +30,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html</loc> 
-    <lastmod>2017-04-08T15:23:03+02:00</lastmod>
+    <lastmod>2017-04-08T13:23:03+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -30,7 +43,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/04/07/fantastic-unit-tests-in-javascript-with-mocks.html</loc> 
-    <lastmod>2017-04-07T09:49:00+02:00</lastmod>
+    <lastmod>2017-04-07T09:49:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -43,7 +56,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html</loc> 
-    <lastmod>2017-03-27T12:55:00+02:00</lastmod>
+    <lastmod>2017-03-27T10:55:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -56,7 +69,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/03/23/node-js-testing-easy-with-mocha.html</loc> 
-    <lastmod>2017-03-23T18:13:00+01:00</lastmod>
+    <lastmod>2017-03-23T18:13:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -69,7 +82,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/03/20/l-inglese-tra-italiani-a-lavoro-e-una-scelta-sbagliata.html</loc> 
-    <lastmod>2017-03-20T10:56:01+01:00</lastmod>
+    <lastmod>2017-03-20T09:56:01+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -82,7 +95,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html</loc> 
-    <lastmod>2017-03-18T14:18:53+01:00</lastmod>
+    <lastmod>2017-03-18T13:18:53+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -94,8 +107,8 @@
    
  
   <url>
-    <loc>https://michelenasti.com/2017/03/14/two-easy-ways-perform-get-requests-in-nodejs.html</loc> 
-    <lastmod>2017-03-14T00:07:41+01:00</lastmod>
+    <loc>https://michelenasti.com/2017/03/13/two-easy-ways-perform-get-requests-in-nodejs.html</loc> 
+    <lastmod>2017-03-13T23:07:41+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -108,7 +121,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html</loc> 
-    <lastmod>2017-03-12T14:06:29+01:00</lastmod>
+    <lastmod>2017-03-12T13:06:29+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -121,7 +134,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html</loc> 
-    <lastmod>2017-02-28T11:36:03+01:00</lastmod>
+    <lastmod>2017-02-28T10:36:03+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -134,7 +147,7 @@
  
   <url>
     <loc>https://michelenasti.com/the-javascript-event-loop-for-dummies/</loc> 
-    <lastmod>2017-02-25T11:29:00+01:00</lastmod>
+    <lastmod>2017-02-25T11:29:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -147,7 +160,7 @@
  
   <url>
     <loc>https://michelenasti.com/libri-motivazionali/</loc> 
-    <lastmod>2017-02-15T01:00:00+01:00</lastmod>
+    <lastmod>2017-02-15T01:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -160,7 +173,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html</loc> 
-    <lastmod>2017-02-10T10:05:22+01:00</lastmod>
+    <lastmod>2017-02-10T10:05:22+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -173,7 +186,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html</loc> 
-    <lastmod>2017-02-08T12:17:15+01:00</lastmod>
+    <lastmod>2017-02-08T12:17:15+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -186,7 +199,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html</loc> 
-    <lastmod>2017-02-07T11:33:49+01:00</lastmod>
+    <lastmod>2017-02-07T11:33:49+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -199,7 +212,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/02/05/quali-sono-gli-svantaggi-nel-lavorare-da-casa.html</loc> 
-    <lastmod>2017-02-05T01:00:00+01:00</lastmod>
+    <lastmod>2017-02-05T00:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -212,7 +225,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html</loc> 
-    <lastmod>2017-02-02T10:45:38+01:00</lastmod>
+    <lastmod>2017-02-02T10:45:38+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -225,7 +238,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html</loc> 
-    <lastmod>2017-01-31T09:56:51+01:00</lastmod>
+    <lastmod>2017-01-31T09:56:51+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -238,7 +251,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/01/30/primo-lavoro-da-informatico-meglio-una-piccola-o-una-grande-azienda.html</loc> 
-    <lastmod>2017-01-30T09:45:00+01:00</lastmod>
+    <lastmod>2017-01-30T09:45:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -251,7 +264,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/01/12/stampare-comandi-di-uno-script-bash.html</loc> 
-    <lastmod>2017-01-12T15:37:51+01:00</lastmod>
+    <lastmod>2017-01-12T15:37:51+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -264,7 +277,7 @@
  
   <url>
     <loc>https://michelenasti.com/2017/01/02/web-management-of-a-jekyll-blog-with-forestry.html</loc> 
-    <lastmod>2017-01-02T00:00:00+01:00</lastmod>
+    <lastmod>2017-01-02T00:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -277,7 +290,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/12/22/jekyll-e-github-in-pratica.html</loc> 
-    <lastmod>2016-12-22T00:00:00+01:00</lastmod>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -290,7 +303,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html</loc> 
-    <lastmod>2016-12-18T00:00:00+01:00</lastmod>
+    <lastmod>2016-12-18T00:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -303,7 +316,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/12/15/le-piattaforme-di-blogging-a-confronto.html</loc> 
-    <lastmod>2016-12-15T00:00:00+01:00</lastmod>
+    <lastmod>2016-12-15T00:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -316,7 +329,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/12/12/perche-un-programmatore-dovrebbe-avere-un-blog.html</loc> 
-    <lastmod>2016-12-12T00:00:00+01:00</lastmod>
+    <lastmod>2016-12-12T00:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -329,7 +342,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/11/tasse-e-disuguaglianza/</loc> 
-    <lastmod>2016-11-23T10:30:00+01:00</lastmod>
+    <lastmod>2016-11-23T09:30:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -342,7 +355,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/11/ognuno-vota-le-tasse-che-vuole-pagare/</loc> 
-    <lastmod>2016-11-23T10:30:00+01:00</lastmod>
+    <lastmod>2016-11-23T09:30:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -355,7 +368,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/11/esportazioni-e-reddito/</loc> 
-    <lastmod>2016-11-22T01:31:39+01:00</lastmod>
+    <lastmod>2016-11-22T00:31:39+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -368,7 +381,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/11/come-riconoscere-una-persona-che-fa-gioco-di-squadra/</loc> 
-    <lastmod>2016-11-21T10:30:00+01:00</lastmod>
+    <lastmod>2016-11-21T09:30:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -381,7 +394,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/11/build-your-own-cross-platform-time-machine/</loc> 
-    <lastmod>2016-11-05T11:15:45+01:00</lastmod>
+    <lastmod>2016-11-05T10:15:45+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -394,7 +407,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/11/orientdb/</loc> 
-    <lastmod>2016-11-04T11:06:00+01:00</lastmod>
+    <lastmod>2016-11-04T10:06:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -407,7 +420,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/</loc> 
-    <lastmod>2016-10-28T20:30:55+02:00</lastmod>
+    <lastmod>2016-10-28T18:30:55+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -420,7 +433,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/</loc> 
-    <lastmod>2016-10-14T14:36:20+02:00</lastmod>
+    <lastmod>2016-10-14T12:36:20+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -433,7 +446,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/09/come-ho-cambiato-lavoro-prequel-di-come-lavorare-da-remoto/</loc> 
-    <lastmod>2016-09-19T11:14:50+02:00</lastmod>
+    <lastmod>2016-09-19T09:14:50+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -446,7 +459,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/09/come-lavorare-da-remoto/</loc> 
-    <lastmod>2016-09-18T20:23:43+02:00</lastmod>
+    <lastmod>2016-09-18T18:23:43+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -459,7 +472,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/09/to-log-php-soap-call-with-nusoap/</loc> 
-    <lastmod>2016-09-13T21:30:47+02:00</lastmod>
+    <lastmod>2016-09-13T19:30:47+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -472,7 +485,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/08/my-very-personal-javascript-fatigue/</loc> 
-    <lastmod>2016-08-31T01:34:08+02:00</lastmod>
+    <lastmod>2016-08-30T23:34:08+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -485,7 +498,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/07/progetti-a-cui-lavoro-hype-carta-di-credito-conto-bancario-app-3-in-1/</loc> 
-    <lastmod>2016-07-17T17:13:25+02:00</lastmod>
+    <lastmod>2016-07-17T15:13:25+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -498,7 +511,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/06/come-scrivere-un-annuncio-di-lavoro-efficace/</loc> 
-    <lastmod>2016-06-25T13:22:11+02:00</lastmod>
+    <lastmod>2016-06-25T11:22:11+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -511,7 +524,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/</loc> 
-    <lastmod>2016-06-23T20:41:54+02:00</lastmod>
+    <lastmod>2016-06-23T18:41:54+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -524,7 +537,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/06/flow-typscript-type-checking-javascript/</loc> 
-    <lastmod>2016-06-06T20:00:46+02:00</lastmod>
+    <lastmod>2016-06-06T18:00:46+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -537,7 +550,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/05/visual-studio-code-leditor-mancava/</loc> 
-    <lastmod>2016-05-27T10:28:39+02:00</lastmod>
+    <lastmod>2016-05-27T08:28:39+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -550,7 +563,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/04/gestire-le-dipendenze-frontend-con-bower/</loc> 
-    <lastmod>2016-04-28T09:15:32+02:00</lastmod>
+    <lastmod>2016-04-28T07:15:32+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -563,7 +576,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/04/limportanza-di-un-pet-project-spiegata-da-chi-non-ne-ha-mai-realizzato-uno/</loc> 
-    <lastmod>2016-04-04T20:14:18+02:00</lastmod>
+    <lastmod>2016-04-04T18:14:18+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -576,7 +589,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/03/programmare-nodejs-the-right-way/</loc> 
-    <lastmod>2016-03-23T10:46:28+01:00</lastmod>
+    <lastmod>2016-03-23T09:46:28+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -589,7 +602,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/03/gioco-flexbox/</loc> 
-    <lastmod>2016-03-13T17:27:01+01:00</lastmod>
+    <lastmod>2016-03-13T16:27:01+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -602,7 +615,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/03/5-motivi-cui-rework-ti-cambiera-la-vita/</loc> 
-    <lastmod>2016-03-09T20:33:14+01:00</lastmod>
+    <lastmod>2016-03-09T19:33:14+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -615,7 +628,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/</loc> 
-    <lastmod>2016-03-04T21:37:24+01:00</lastmod>
+    <lastmod>2016-03-04T20:37:24+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -628,7 +641,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/02/javascript-meetup-a-salerno/</loc> 
-    <lastmod>2016-02-29T09:15:19+01:00</lastmod>
+    <lastmod>2016-02-29T08:15:19+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -641,7 +654,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/02/considerazioni-sul-public-speaking/</loc> 
-    <lastmod>2016-02-27T11:10:23+01:00</lastmod>
+    <lastmod>2016-02-27T10:10:23+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -654,7 +667,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/02/il-battesimo-del-sangue-il-talk-su-nodejs-al-napoli-devday/</loc> 
-    <lastmod>2016-02-25T20:00:36+01:00</lastmod>
+    <lastmod>2016-02-25T19:00:36+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -667,7 +680,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/02/quanto-ci-metti-problemi-time-management/</loc> 
-    <lastmod>2016-02-19T13:47:00+01:00</lastmod>
+    <lastmod>2016-02-19T12:47:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -680,7 +693,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/02/ho-partecipato-a-google-hashcode2016-ecco-come-andata/</loc> 
-    <lastmod>2016-02-15T21:23:33+01:00</lastmod>
+    <lastmod>2016-02-15T20:23:33+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -693,7 +706,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/02/possiamo-dire-conosciamo-tecnologia/</loc> 
-    <lastmod>2016-02-15T12:06:14+01:00</lastmod>
+    <lastmod>2016-02-15T11:06:14+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -706,7 +719,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/02/alla-scoperta-del-machine-learning/</loc> 
-    <lastmod>2016-02-08T10:40:09+01:00</lastmod>
+    <lastmod>2016-02-08T09:40:09+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -719,7 +732,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/i-colloqui-di-lavoro-iniziano-e-finiscono-su-facebook/</loc> 
-    <lastmod>2016-02-01T00:02:35+01:00</lastmod>
+    <lastmod>2016-01-31T23:02:35+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -732,7 +745,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/saro-al-codemotion-2016-roma/</loc> 
-    <lastmod>2016-01-29T19:00:39+01:00</lastmod>
+    <lastmod>2016-01-29T18:00:39+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -745,7 +758,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/</loc> 
-    <lastmod>2016-01-28T14:30:16+01:00</lastmod>
+    <lastmod>2016-01-28T13:30:16+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -758,7 +771,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/guida-agli-annunci-di-lavoro-per-sviluppatori/</loc> 
-    <lastmod>2016-01-26T19:22:27+01:00</lastmod>
+    <lastmod>2016-01-26T18:22:27+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -771,7 +784,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/creare-dinamicamente-groovy-beans-in-spring/</loc> 
-    <lastmod>2016-01-26T11:10:01+01:00</lastmod>
+    <lastmod>2016-01-26T10:10:01+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -784,7 +797,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/realizzare-un-piccolo-motore-di-scripting-in-una-webapp-java-con-groovy/</loc> 
-    <lastmod>2016-01-22T11:10:35+01:00</lastmod>
+    <lastmod>2016-01-22T10:10:35+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -797,7 +810,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/</loc> 
-    <lastmod>2016-01-13T11:10:58+01:00</lastmod>
+    <lastmod>2016-01-13T10:10:58+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -810,7 +823,7 @@
  
   <url>
     <loc>https://michelenasti.com/2016/01/la-programmazione-funzionale-con-le-funzioni-pure/</loc> 
-    <lastmod>2016-01-12T11:10:50+01:00</lastmod>
+    <lastmod>2016-01-12T10:10:50+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -823,7 +836,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/12/essere-bravi-colleghi-evitando-di-committare-cazzate/</loc> 
-    <lastmod>2015-12-24T11:30:46+01:00</lastmod>
+    <lastmod>2015-12-24T10:30:46+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -836,7 +849,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/</loc> 
-    <lastmod>2015-12-11T09:34:51+01:00</lastmod>
+    <lastmod>2015-12-11T08:34:51+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -849,7 +862,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/</loc> 
-    <lastmod>2015-12-01T14:30:15+01:00</lastmod>
+    <lastmod>2015-12-01T13:30:15+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -862,7 +875,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/459/</loc> 
-    <lastmod>2015-11-28T11:02:43+01:00</lastmod>
+    <lastmod>2015-11-28T10:02:43+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -875,7 +888,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/tutti-modi-generare-id-hibernate-jpa/</loc> 
-    <lastmod>2015-11-27T11:00:50+01:00</lastmod>
+    <lastmod>2015-11-27T10:00:50+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -888,7 +901,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/</loc> 
-    <lastmod>2015-11-24T20:30:36+01:00</lastmod>
+    <lastmod>2015-11-24T19:30:36+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -901,7 +914,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/serve-un-piano/</loc> 
-    <lastmod>2015-11-20T11:30:00+01:00</lastmod>
+    <lastmod>2015-11-20T10:30:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -914,7 +927,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/i-tre-pilastri-per-migliorare-la-propria-carriera/</loc> 
-    <lastmod>2015-11-18T19:09:10+01:00</lastmod>
+    <lastmod>2015-11-18T18:09:10+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -927,7 +940,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/react-js-day-a-napoli-impressioni/</loc> 
-    <lastmod>2015-11-17T14:30:16+01:00</lastmod>
+    <lastmod>2015-11-17T13:30:16+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -940,7 +953,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/</loc> 
-    <lastmod>2015-11-12T10:09:18+01:00</lastmod>
+    <lastmod>2015-11-12T09:09:18+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -953,7 +966,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/</loc> 
-    <lastmod>2015-11-04T14:30:55+01:00</lastmod>
+    <lastmod>2015-11-04T13:30:55+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -966,7 +979,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/10/start-custom-js-with-ngroute/</loc> 
-    <lastmod>2015-10-30T09:26:03+01:00</lastmod>
+    <lastmod>2015-10-30T08:26:03+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -979,7 +992,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/10/slide-del-mio-mini-talk-su-nodejs-al-linux-day-salerno-2015/</loc> 
-    <lastmod>2015-10-23T20:34:12+02:00</lastmod>
+    <lastmod>2015-10-23T18:34:12+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -992,7 +1005,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/10/libreria-del-giorno-imbroglia-i-server-di-continuous-automation-con-wolkswagen/</loc> 
-    <lastmod>2015-10-13T20:25:17+02:00</lastmod>
+    <lastmod>2015-10-13T18:25:17+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1005,7 +1018,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/10/follow-me-on-twitter-and-linkedin/</loc> 
-    <lastmod>2015-10-09T20:45:20+02:00</lastmod>
+    <lastmod>2015-10-09T18:45:20+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1018,7 +1031,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/10/perche-node-js-e-cosi-difficile-da-imparare-per-chi-viene-da-java/</loc> 
-    <lastmod>2015-10-06T21:00:12+02:00</lastmod>
+    <lastmod>2015-10-06T19:00:12+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1031,7 +1044,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/</loc> 
-    <lastmod>2015-09-08T21:22:35+02:00</lastmod>
+    <lastmod>2015-09-08T19:22:35+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1044,7 +1057,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/</loc> 
-    <lastmod>2015-07-28T22:30:09+02:00</lastmod>
+    <lastmod>2015-07-28T20:30:09+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1057,7 +1070,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/07/css-position/</loc> 
-    <lastmod>2015-07-27T21:00:55+02:00</lastmod>
+    <lastmod>2015-07-27T19:00:55+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1070,7 +1083,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/07/informatica-antincendio/</loc> 
-    <lastmod>2015-07-26T21:25:19+02:00</lastmod>
+    <lastmod>2015-07-26T19:25:19+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1083,7 +1096,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/</loc> 
-    <lastmod>2015-07-21T20:30:10+02:00</lastmod>
+    <lastmod>2015-07-21T18:30:10+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1096,7 +1109,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/</loc> 
-    <lastmod>2015-07-14T20:30:45+02:00</lastmod>
+    <lastmod>2015-07-14T18:30:45+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1109,7 +1122,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/</loc> 
-    <lastmod>2015-07-03T20:30:16+02:00</lastmod>
+    <lastmod>2015-07-03T18:30:16+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1122,7 +1135,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/06/impostare-phpunit-in-intellij/</loc> 
-    <lastmod>2015-06-24T15:30:12+02:00</lastmod>
+    <lastmod>2015-06-24T13:30:12+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1135,7 +1148,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/06/imovie-50-error/</loc> 
-    <lastmod>2015-06-22T21:00:16+02:00</lastmod>
+    <lastmod>2015-06-22T19:00:16+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1148,7 +1161,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/</loc> 
-    <lastmod>2015-05-27T10:00:27+02:00</lastmod>
+    <lastmod>2015-05-27T08:00:27+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1161,7 +1174,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/</loc> 
-    <lastmod>2015-05-26T10:58:58+02:00</lastmod>
+    <lastmod>2015-05-26T08:58:58+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1174,7 +1187,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/</loc> 
-    <lastmod>2015-05-17T02:19:27+02:00</lastmod>
+    <lastmod>2015-05-17T00:19:27+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1187,7 +1200,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/05/basta-ai-powerpoint-fatti-male/</loc> 
-    <lastmod>2015-05-06T20:32:43+02:00</lastmod>
+    <lastmod>2015-05-06T18:32:43+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1200,7 +1213,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/</loc> 
-    <lastmod>2015-05-05T20:45:08+02:00</lastmod>
+    <lastmod>2015-05-05T18:45:08+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1213,7 +1226,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/</loc> 
-    <lastmod>2015-05-04T20:30:41+02:00</lastmod>
+    <lastmod>2015-05-04T18:30:41+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1226,7 +1239,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/04/la-libreria-js-del-giorno-elevator-js/</loc> 
-    <lastmod>2015-04-24T11:41:54+02:00</lastmod>
+    <lastmod>2015-04-24T09:41:54+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1239,7 +1252,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/04/should-i-learn-php-symphony/</loc> 
-    <lastmod>2015-04-17T15:45:46+02:00</lastmod>
+    <lastmod>2015-04-17T13:45:46+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1252,7 +1265,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/04/how-would-you-call-your-bleeding-edge-stuff-framework-in-all-programming-languages-and-platforms/</loc> 
-    <lastmod>2015-04-14T19:22:00+02:00</lastmod>
+    <lastmod>2015-04-14T17:22:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1265,7 +1278,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/04/the-blog-app-in-ruby-on-rails-iteration-2/</loc> 
-    <lastmod>2015-04-13T22:30:12+02:00</lastmod>
+    <lastmod>2015-04-13T20:30:12+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1278,7 +1291,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/04/intellij-idea-alla-fine-e-arrivato-lamore/</loc> 
-    <lastmod>2015-04-09T15:30:21+02:00</lastmod>
+    <lastmod>2015-04-09T13:30:21+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1291,7 +1304,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/04/blogzinga/</loc> 
-    <lastmod>2015-04-08T23:49:22+02:00</lastmod>
+    <lastmod>2015-04-08T21:49:22+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1304,7 +1317,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/</loc> 
-    <lastmod>2015-03-30T10:14:53+02:00</lastmod>
+    <lastmod>2015-03-30T08:14:53+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1317,7 +1330,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/03/installing-ruby-on-rails-on-mac-10-10-is-a-pain/</loc> 
-    <lastmod>2015-03-30T00:13:30+02:00</lastmod>
+    <lastmod>2015-03-29T22:13:30+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1330,7 +1343,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/03/codemotion-roma-2015-raccontiamo-questa-prima-giornata/</loc> 
-    <lastmod>2015-03-27T22:25:17+01:00</lastmod>
+    <lastmod>2015-03-27T21:25:17+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1343,7 +1356,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/03/howto-create-a-blog-with-ruby-on-rails/</loc> 
-    <lastmod>2015-03-24T14:30:53+01:00</lastmod>
+    <lastmod>2015-03-24T13:30:53+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1356,7 +1369,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/03/playing-with-my-friends-3d-printer/</loc> 
-    <lastmod>2015-03-19T10:05:39+01:00</lastmod>
+    <lastmod>2015-03-19T09:05:39+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1369,7 +1382,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/</loc> 
-    <lastmod>2015-03-15T18:24:44+01:00</lastmod>
+    <lastmod>2015-03-15T17:24:44+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1382,7 +1395,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/02/scrivere-codice-migliore-rispondendo-a-12-semplici-domande/</loc> 
-    <lastmod>2015-02-24T14:15:36+01:00</lastmod>
+    <lastmod>2015-02-24T13:15:36+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1395,7 +1408,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/02/quando-assumere-generalisti-vs-specialisti/</loc> 
-    <lastmod>2015-02-19T14:00:32+01:00</lastmod>
+    <lastmod>2015-02-19T13:00:32+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1408,7 +1421,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/02/attenti-alla-classe-active-delle-progress-bar-bootstrap-3/</loc> 
-    <lastmod>2015-02-11T14:15:36+01:00</lastmod>
+    <lastmod>2015-02-11T13:15:36+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1421,7 +1434,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/02/webapp-nel-tempo-libero-con-approccio-mean/</loc> 
-    <lastmod>2015-02-06T11:17:38+01:00</lastmod>
+    <lastmod>2015-02-06T10:17:38+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1434,7 +1447,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/02/pro-e-contro-di-angularjs-dopo-2-mesi-di-lavoro/</loc> 
-    <lastmod>2015-02-02T10:55:11+01:00</lastmod>
+    <lastmod>2015-02-02T09:55:11+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1447,7 +1460,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/imparare-a-programmare-come-chef-cannavacciuolo/</loc> 
-    <lastmod>2015-01-29T21:13:20+01:00</lastmod>
+    <lastmod>2015-01-29T20:13:20+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1460,7 +1473,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/a-video-that-makes-italians-proud-of-their-country/</loc> 
-    <lastmod>2015-01-24T19:51:46+01:00</lastmod>
+    <lastmod>2015-01-24T18:51:46+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1473,7 +1486,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/how-to-style-a-button-to-upload-a-file/</loc> 
-    <lastmod>2015-01-20T21:44:52+01:00</lastmod>
+    <lastmod>2015-01-20T20:44:52+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1486,7 +1499,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/codemotion-2015/</loc> 
-    <lastmod>2015-01-17T17:08:36+01:00</lastmod>
+    <lastmod>2015-01-17T16:08:36+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1499,7 +1512,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/</loc> 
-    <lastmod>2015-01-13T14:30:46+01:00</lastmod>
+    <lastmod>2015-01-13T13:30:46+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1512,7 +1525,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/hackerando-la-caldaia-junkers-ceraclass-smart-incasso-per-farla-funzionare-col-termostato-netatmo/</loc> 
-    <lastmod>2015-01-11T17:20:32+01:00</lastmod>
+    <lastmod>2015-01-11T16:20:32+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1525,7 +1538,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/uscire-dalla-comfort-zone-per-ottenere-piu-successo/</loc> 
-    <lastmod>2015-01-09T10:11:25+01:00</lastmod>
+    <lastmod>2015-01-09T09:11:25+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1538,7 +1551,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/convertire-un-array-di-byte-in-un-file-java-con-fileoutputstream/</loc> 
-    <lastmod>2015-01-08T11:49:51+01:00</lastmod>
+    <lastmod>2015-01-08T10:49:51+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1551,7 +1564,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/chiamare-una-funzione-javascript-subito-dopo-averla-definita/</loc> 
-    <lastmod>2015-01-08T10:14:21+01:00</lastmod>
+    <lastmod>2015-01-08T09:14:21+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1564,7 +1577,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/il-document-object-model-dom/</loc> 
-    <lastmod>2015-01-08T09:53:26+01:00</lastmod>
+    <lastmod>2015-01-08T08:53:26+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1577,7 +1590,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/</loc> 
-    <lastmod>2015-01-08T00:01:17+01:00</lastmod>
+    <lastmod>2015-01-07T23:01:17+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1590,7 +1603,7 @@
  
   <url>
     <loc>https://michelenasti.com/2015/01/whats-new-in-javascript/</loc> 
-    <lastmod>2015-01-07T22:54:52+01:00</lastmod>
+    <lastmod>2015-01-07T21:54:52+00:00</lastmod>
     
     <changefreq>monthly</changefreq>
     
@@ -1605,7 +1618,7 @@
   <url>
     <loc>https://michelenasti.com/chi-sono-michele-nasti/</loc>
     
-    <lastmod>2015-01-07T22:36:19+01:00</lastmod>
+    <lastmod>2015-01-07T21:36:19+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1620,7 +1633,7 @@
   <url>
     <loc>https://michelenasti.com/feed.xml</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1635,7 +1648,7 @@
   <url>
     <loc>https://michelenasti.com/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1650,7 +1663,7 @@
   <url>
     <loc>https://michelenasti.com/archives/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1665,7 +1678,7 @@
   <url>
     <loc>https://michelenasti.com/js/init.js</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1682,7 +1695,7 @@
   <url>
     <loc>https://michelenasti.com/talks-conferences/</loc>
     
-    <lastmod>2016-10-13T16:31:21+02:00</lastmod>
+    <lastmod>2016-10-13T16:31:21+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1697,7 +1710,7 @@
   <url>
     <loc>https://michelenasti.com/archives/saved_elements/time_management_zakas</loc>
     
-    <lastmod>2017-04-12T20:13:17+02:00</lastmod>
+    <lastmod>2017-04-12T18:13:17+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1712,7 +1725,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page2/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1727,7 +1740,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page3/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1742,7 +1755,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page4/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1757,7 +1770,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page5/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1772,7 +1785,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page6/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1787,7 +1800,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page7/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1802,7 +1815,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page8/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1817,7 +1830,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page9/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1832,7 +1845,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page10/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1847,7 +1860,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page11/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1862,7 +1875,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page12/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
@@ -1877,7 +1890,7 @@
   <url>
     <loc>https://michelenasti.com/archives/page13/</loc>
     
-    <lastmod>2017-04-21T10:55:36+02:00</lastmod>
+    <lastmod>2017-04-21T09:17:02+00:00</lastmod>
     
     
     <changefreq>monthly</changefreq>
