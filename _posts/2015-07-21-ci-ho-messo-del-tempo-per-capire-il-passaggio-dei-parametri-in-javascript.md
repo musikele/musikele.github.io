@@ -22,35 +22,40 @@ Anni fa infatti mi chiedevo com'è possibile che in JS si possa passare un numer
 
 A una funzione JS non importa quanti parametri vengono passati, nè si interessa del tipo. Ad esempio, potreste definire una funzione con due parametri ma poi potreste passarne tre, o uno, zero, mille - davvero, non è _sintatticamente_ importante.
 
-Questo accade perchè **gli argomenti di una funzione JS vengono rappresentati internamente come un array**. L'array si chiama <span class="lang:js decode:true  crayon-inline ">arguments</span>  lo si può utilizzare all'interno di una funzione per ricavare il valore degli elementi passati.
+Questo accade perchè **gli argomenti di una funzione JS vengono rappresentati internamente come un array**. L'array si chiama `arguments` e lo si può utilizzare all'interno di una funzione per ricavare il valore degli elementi passati.
 
-Si può accedere a tutti i parametri di una funzione usando la notazione con le parentesi quadre, dunque, e <span class="lang:default decode:true  crayon-inline ">arguments[0]</span> sarà il primo parametro, <span class="lang:default decode:true crayon-inline">arguments[1]</span> il secondo, e così via. Si può utilizzare <span class="lang:default decode:true  crayon-inline ">arguments.length</span> per conoscere il numero di parametri passati.
+Si può accedere a tutti i parametri di una funzione usando la notazione con le parentesi quadre, dunque, e `arguments[0]` sarà il primo parametro, `arguments[1]` il secondo, e così via. Si può utilizzare `arguments.length` per conoscere il numero di parametri passati.
 
 Dunque potremmo scrivere una funzione nel modo classico di JS (esplicitando i parametri):
 
-<pre class="lang:js decode:true" title="classico modo di definire una funzione">function sayHi(name, message) {
+```javascript
+function sayHi(name, message) {
     alert("ciao " + name + ", " + message);
-}</pre>
+}
+```
 
-oppure usando <span class="lang:default decode:true  crayon-inline ">arguments</span> :
+oppure usando `arguments`:
 
-<pre class="lang:js decode:true " title="usando arguments">function sayHi() {
+```javascript
+function sayHi() {
     alert("ciao " + arguments[0] + ", " + arguments[1]);
-}</pre>
+}
+```
 
 Come si può vedere, la funzione sayHi è stata definita senza nessun argomento in input, eppure si comporterà allo stesso modo. Questo mostra anche una delle caratteristiche di Javascript: **i parametri col nome sono una convenienza, non una necessità**.
 
-Ne approfitto anche per dire che, se usate lo _"strict mode"_ di JS, non potrete assegnare valori a <span class="lang:default decode:true  crayon-inline ">arguments</span> . Ossia <span class="lang:default decode:true  crayon-inline ">arguments[0] = "ciao"</span>  restituirà un errore!
+Ne approfitto anche per dire che, se usate lo _"strict mode"_ di JS, non potrete assegnare valori a `arguments`. Ossia `arguments[0] = "ciao"` restituirà un errore!
 
 Gli argomenti col nome possono anche essere utilizzati con arguments, javascript non si lamenterà.
 
 ### L'overloading in Javascript (che non esiste)
 
-L'overloading, così come definito negli altri linguaggi, in JS semplicemente non esiste. Per ottenere un effetto simile, ossia una funzione che si comporta diversamente in base al numero o al tipo degli argomenti in input, dobbiamo fare una sorta di switch su <span class="lang:default decode:true  crayon-inline">arguments.length</span> o sul tipo degli argomenti.  Ciò che realmente conta in JS è il nome della funzione, e se due funzioni hanno lo stesso nome, vale sempre l'ultima analizzata.
+L'overloading, così come definito negli altri linguaggi, in JS semplicemente non esiste. Per ottenere un effetto simile, ossia una funzione che si comporta diversamente in base al numero o al tipo degli argomenti in input, dobbiamo fare una sorta di switch su `arguments.length` o sul tipo degli argomenti.  Ciò che realmente conta in JS è il nome della funzione, e se due funzioni hanno lo stesso nome, vale sempre l'ultima analizzata.
 
 Analizziamo il seguente snippet di codice:
 
-<pre class="lang:js decode:true">function aggiungiUnNumero(num) {
+```javascript
+function aggiungiUnNumero(num) {
    return num+100;
 }
 
@@ -58,7 +63,8 @@ function aggiungiUnNumero(num) {
    return num1+200; 
 }
 
-var result = aggiungiUnNumero(100) //300</pre>
+var result = aggiungiUnNumero(100) //300
+```
 
 la seconda definizione di aggiungiUnNumero ha sovrascritto la prima !
 
