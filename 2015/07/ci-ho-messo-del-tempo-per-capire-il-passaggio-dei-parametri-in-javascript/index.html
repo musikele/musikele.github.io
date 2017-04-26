@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
-  	<head>
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
-			
-				<title>Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript - Michele Nasti's blog</title>
-				<meta name="description" content="Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “arguments” mi si è aperto un mondo!
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript - Michele Nasti's blog</title>
+	<meta name="description" content="Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “arguments” mi si è aperto un mondo!
 
 " />
-  		<meta name="keywords" content="funzioni, javascript, parametri, sintassi" />
-			
-			 
-				<meta http-equiv="last-modified" content="2016-11-29 10:11:54 +0000" />
-			
-  		<!--<noscript>-->
-  			<link rel="stylesheet" href="/css/skel.css" />
-  			<link rel="stylesheet" href="/css/style.css" />
-  			<link rel="stylesheet" href="/css/style-xlarge.css" />
-				<link rel="stylesheet" href="/css/colorful.css" />
-				<link rel="stylesheet" href="/css/social.css" />
-				<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" />
-				<!-- facebook Open Graph Metadatas -->
+	<meta name="keywords" content="funzioni, javascript, parametri, sintassi" />  
+	<meta http-equiv="last-modified" content="2017-04-26 13:35:45 +0000" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
 <meta content="your_facebook_app_id" property="fb:app_id">
 <meta content="" property="og:site_name">
 
@@ -77,22 +74,30 @@
 
 
 <meta property="fb:pages" content="1069985669778335" />
-  		<!--</noscript>-->
-  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-  	</head>
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	<body id="top">
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
 
-		<header id="header">
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
 	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
 	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
 	</h1>
 <a href="/chi-sono-michele-nasti/">Chi sono</a> | 
 <a href="/talks-conferences/">Talks &amp; Conferences</a> | 
 <a href="/archives/">Archives</a>
-</header>
-
-<div id="main">
+</header> <div id="main">
     <article>
         <header class="major">
             <h2 class="post-title"><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h2>
@@ -118,43 +123,49 @@
 
 <p>A una funzione JS non importa quanti parametri vengono passati, nè si interessa del tipo. Ad esempio, potreste definire una funzione con due parametri ma poi potreste passarne tre, o uno, zero, mille - davvero, non è <em>sintatticamente</em> importante.</p>
 
-<p>Questo accade perchè <strong>gli argomenti di una funzione JS vengono rappresentati internamente come un array</strong>. L’array si chiama <span class="lang:js decode:true  crayon-inline ">arguments</span>  lo si può utilizzare all’interno di una funzione per ricavare il valore degli elementi passati.</p>
+<p>Questo accade perchè <strong>gli argomenti di una funzione JS vengono rappresentati internamente come un array</strong>. L’array si chiama <code class="highlighter-rouge">arguments</code> e lo si può utilizzare all’interno di una funzione per ricavare il valore degli elementi passati.</p>
 
-<p>Si può accedere a tutti i parametri di una funzione usando la notazione con le parentesi quadre, dunque, e <span class="lang:default decode:true  crayon-inline ">arguments[0]</span> sarà il primo parametro, <span class="lang:default decode:true crayon-inline">arguments[1]</span> il secondo, e così via. Si può utilizzare <span class="lang:default decode:true  crayon-inline ">arguments.length</span> per conoscere il numero di parametri passati.</p>
+<p>Si può accedere a tutti i parametri di una funzione usando la notazione con le parentesi quadre, dunque, e <code class="highlighter-rouge">arguments[0]</code> sarà il primo parametro, <code class="highlighter-rouge">arguments[1]</code> il secondo, e così via. Si può utilizzare <code class="highlighter-rouge">arguments.length</code> per conoscere il numero di parametri passati.</p>
 
 <p>Dunque potremmo scrivere una funzione nel modo classico di JS (esplicitando i parametri):</p>
 
-<pre class="lang:js decode:true" title="classico modo di definire una funzione">function sayHi(name, message) {
-    alert("ciao " + name + ", " + message);
-}</pre>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHi</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">"ciao "</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-<p>oppure usando <span class="lang:default decode:true  crayon-inline ">arguments</span> :</p>
+<p>oppure usando <code class="highlighter-rouge">arguments</code>:</p>
 
-<pre class="lang:js decode:true " title="usando arguments">function sayHi() {
-    alert("ciao " + arguments[0] + ", " + arguments[1]);
-}</pre>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">"ciao "</span> <span class="o">+</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>Come si può vedere, la funzione sayHi è stata definita senza nessun argomento in input, eppure si comporterà allo stesso modo. Questo mostra anche una delle caratteristiche di Javascript: <strong>i parametri col nome sono una convenienza, non una necessità</strong>.</p>
 
-<p>Ne approfitto anche per dire che, se usate lo <em>“strict mode”</em> di JS, non potrete assegnare valori a <span class="lang:default decode:true  crayon-inline ">arguments</span> . Ossia <span class="lang:default decode:true  crayon-inline ">arguments[0] = “ciao”</span>  restituirà un errore!</p>
+<p>Ne approfitto anche per dire che, se usate lo <em>“strict mode”</em> di JS, non potrete assegnare valori a <code class="highlighter-rouge">arguments</code>. Ossia <code class="highlighter-rouge">arguments[0] = "ciao"</code> restituirà un errore!</p>
 
 <p>Gli argomenti col nome possono anche essere utilizzati con arguments, javascript non si lamenterà.</p>
 
 <h3 id="loverloading-in-javascript-che-non-esiste">L’overloading in Javascript (che non esiste)</h3>
 
-<p>L’overloading, così come definito negli altri linguaggi, in JS semplicemente non esiste. Per ottenere un effetto simile, ossia una funzione che si comporta diversamente in base al numero o al tipo degli argomenti in input, dobbiamo fare una sorta di switch su <span class="lang:default decode:true  crayon-inline">arguments.length</span> o sul tipo degli argomenti.  Ciò che realmente conta in JS è il nome della funzione, e se due funzioni hanno lo stesso nome, vale sempre l’ultima analizzata.</p>
+<p>L’overloading, così come definito negli altri linguaggi, in JS semplicemente non esiste. Per ottenere un effetto simile, ossia una funzione che si comporta diversamente in base al numero o al tipo degli argomenti in input, dobbiamo fare una sorta di switch su <code class="highlighter-rouge">arguments.length</code> o sul tipo degli argomenti.  Ciò che realmente conta in JS è il nome della funzione, e se due funzioni hanno lo stesso nome, vale sempre l’ultima analizzata.</p>
 
 <p>Analizziamo il seguente snippet di codice:</p>
 
-<pre class="lang:js decode:true">function aggiungiUnNumero(num) {
-   return num+100;
-}
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">aggiungiUnNumero</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">num</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span>
+<span class="p">}</span>
 
-function aggiungiUnNumero(num) {
-   return num1+200; 
-}
+<span class="kd">function</span> <span class="nx">aggiungiUnNumero</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">num1</span><span class="o">+</span><span class="mi">200</span><span class="p">;</span> 
+<span class="p">}</span>
 
-var result = aggiungiUnNumero(100) //300</pre>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">aggiungiUnNumero</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1">//300</span>
+</code></pre>
+</div>
 
 <p>la seconda definizione di aggiungiUnNumero ha sovrascritto la prima !</p>
 
@@ -261,8 +272,8 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
 
 
-        <!-- Footer -->
-        <footer id="footer">
+	<!-- Footer -->
+	<footer id="footer">
 	<ul class="icons">
 
 		
@@ -302,20 +313,11 @@ s.setAttribute('data-timestamp', +new Date());
 		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
 	</ul>
 </footer>
-<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-  		<script src="/js/jquery.min.js"></script>
-  		<script src="/js/jquery.poptrox.min.js"></script>
-  		<script src="/js/skel.min.js"></script>
-  		<script src="/js/init.js"></script>
-			<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
 
-  ga('create', 'UA-88764277-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-	</body>
 </html>
