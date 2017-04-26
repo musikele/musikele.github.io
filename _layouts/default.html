@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html>
-  	<head>
-			<script>
-				var host = "michelenasti.com";
-				if ((host == window.location.host) && (window.location.protocol != "https:"))
-    		window.location.protocol = "https";
-			</script>
-			{% if page.title %}
-				<title>{{ page.title }} - {{ site.name }}</title>
-				<meta name="description" content="{{page.excerpt | strip_html }}" />
-  		<meta name="keywords" content="{{page.tags | join: ', '}}" />
-			{% else %} 
-				<title>{{ site.name }} - {{ site.description }}</title>
-				<meta name="description" content="Michele Nasti's personal blog'" />
-  			<meta name="keywords" content="michele nasti" />
-			{% endif %}
-			{% if page.layout != "default" %} 
-				<meta http-equiv="last-modified" content="{{page.last_modified_at}}" />
-			{% endif %}
-  		<!--<noscript>-->
-  			<link rel="stylesheet" href="{{site.baseurl}}/css/skel.css" />
-  			<link rel="stylesheet" href="{{site.baseurl}}/css/style.css" />
-  			<link rel="stylesheet" href="{{site.baseurl}}/css/style-xlarge.css" />
-				<link rel="stylesheet" href="{{site.baseurl}}/css/colorful.css" />
-				<link rel="stylesheet" href="{{site.baseurl}}/css/social.css" />
-				<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" />
-				{% include metadata.html %}
-  		<!--</noscript>-->
-  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-  	</head>
 
-	<body id="top">
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	{% if page.title %}
+	<title>{{ page.title }} - {{ site.name }}</title>
+	<meta name="description" content="{{page.excerpt | strip_html }}" />
+	<meta name="keywords" content="{{page.tags | join: ', '}}" /> {% else %}
+	<title>{{ site.name }} - {{ site.description }}</title>
+	<meta name="description" content="Michele Nasti's personal blog'" />
+	<meta name="keywords" content="michele nasti" /> {% endif %} {% if page.layout != "default" %}
+	<meta http-equiv="last-modified" content="{{page.last_modified_at}}" /> {% endif %}
+	<!--<noscript>-->
+	<link rel="stylesheet" href="{{site.baseurl}}/css/skel.css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/css/style.css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/css/style-xlarge.css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/css/colorful.css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> {% include metadata.html %}
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	{% include analytics.html %}
+</head>
 
-		{% include header.html %}
+<body id="top">
 
-{{ content }}
+	{% include header.html %} {{ content }}
 
-        <!-- Footer -->
-        {% include footer.html %}
-<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-  		<script src="{{site.baseurl}}/js/jquery.min.js"></script>
-  		<script src="{{site.baseurl}}/js/jquery.poptrox.min.js"></script>
-  		<script src="{{site.baseurl}}/js/skel.min.js"></script>
-  		<script src="{{site.baseurl}}/js/init.js"></script>
-			{% include analytics.html %}
-	</body>
+	<!-- Footer -->
+	{% include footer.html %}
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="{{site.baseurl}}/js/jquery.min.js"></script>
+	<script src="{{site.baseurl}}/js/jquery.poptrox.min.js"></script>
+	<script src="{{site.baseurl}}/js/skel.min.js"></script>
+	<script src="{{site.baseurl}}/js/init.js"></script>
+</body>
+
 </html>
