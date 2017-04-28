@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="browser, document object model, dom, internet explorer, javascript, netscape" />  
-	<meta http-equiv="last-modified" content="2017-04-28 09:06:34 +0000" /> 
+	<meta http-equiv="last-modified" content="2017-04-28 09:11:29 +0000" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -132,21 +132,23 @@
 <p>Il <strong>Document Object Model (DOM)</strong> è una API per l’XML che è stata estesa per l’HTML. il DOM mappa l’intera pagina come una gerarchia di nodi. Considerando un semplice file html, come</p>
 
 <div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-	<span class="nt">&lt;title&gt;</span>This is a title!<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>Hello World!<span class="nt">&lt;/body&gt;</span>
+	<span class="nt">&lt;head&gt;</span>
+		<span class="nt">&lt;title&gt;</span>This is a title!<span class="nt">&lt;/title&gt;</span>
+	<span class="nt">&lt;/head&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+		Hello World!
+	<span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
 </div>
 
 <p>Questo documento viene rappresentato come un albero la cui radice è il nodo <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>, i figli di <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> sono <code class="highlighter-rouge">&lt;head&gt;</code> e <code class="highlighter-rouge">&lt;body&gt;</code>, e così via.</p>
 
-<p>## il DOM è necessario?</p>
+<h2 id="il-dom-è-necessario">il DOM è necessario?</h2>
 
 <p>A partire da Internet Explorer 4 e Netscape Navigator 4 (ragazzi, stiamo parlando del giurassico) questi browser iniziarono a supportare delle forme di Dynamic Html (DHTML), grazie al quale potevano modificare il contenuto di una pagina senza ricaricarla. Fu un enorme passo avanti per il web, ma anche un grande problema per gli sviluppatori: i due browser implementavano specifiche diverse, e a farne le spese spesso erano gli utenti. (I problemi non si risolvevano dicendo “vabbè, ora scarico l’altro browser e vedo come si vede la pagina”… Internet era leeeeentiiiiisssiiiiiimooooooo). Siccome non si poteva attendere che uno dei due browser vincesse sull’altro, e per preservare la natura “aperta” del web, il W3C (ente che sovrintende le regole del web) decise di standardizzare il DOM.</p>
 
-<p>## DOM levels</p>
+<h2 id="dom-levels">DOM levels</h2>
 
 <p>Il <strong>DOM di livello 1</strong> divenne uno standard nel 1998. Era composto da due parti: il <em>Core</em>, che forniva gli strumenti per mappare un documento XML, e per fare ricerche e manipolazione al suo interno; e il <em>DOM HTML</em>, un’estensione del Core, che aggiungeva metodi specifici per l’HTML. Da notare che i DOM non è specifico a Javascript ma anzi è stato implementato in altri linguaggi.</p>
 
