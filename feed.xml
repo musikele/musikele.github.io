@@ -5,11 +5,343 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-05-03T15:54:31+00:00</updated>
+    <updated>2017-05-04T13:50:35+00:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
+    
+      <item>
+        <title>Agile? No grazie, noi siamo Lean</title>
+        <link>https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html</guid>
+        <pubDate>Thu, 04 May 2017 00:00:00 +0000</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Agile, agile, agile… ormai tutti fanno Agile, implementando un framework tipo Scrum (che è uno dei possibili modi di essere Agile).&lt;/p&gt;
+
+&lt;p&gt;Per dare una definizione: siete &lt;em&gt;Agile&lt;/em&gt;® se la vostra metodologia di sviluppo segue il &lt;a href=&quot;http://agilemanifesto.org/iso/it/manifesto.html&quot;&gt;&lt;em&gt;Manifesto Agile&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tuttavia, è facile prendere un framework (ripeto: Scrum) e sputtanarlo per tirare fuori qualcosa che non va. Spesso ciò accade quando il management continua a ragionare a delivery fisse, chi-fa-cosa, butta-a-mare-la-qualità-dobbiamo-consegnà, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/geografia_metodologie.png&quot; alt=&quot;Quest'immagine prova a spiegare com'è fatto il mondo&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ma-in-questo-post-dovevi-parlare-di-lean&quot;&gt;Ma in questo post dovevi parlare di LEAN&lt;/h2&gt;
+
+&lt;p&gt;Avete ragione.&lt;/p&gt;
+
+&lt;p&gt;Ritorniamo sulle definizioni. &lt;em&gt;Lean&lt;/em&gt; (in italiano: magro, scarno) è un termine preso in prestito dal settore manifatturiero, e consiste in una serie di principi da seguire per ottenere &lt;em&gt;qualità, velocità &amp;amp; soddisfazione del cliente&lt;/em&gt;. (Stesse finalità di Agile!)&lt;/p&gt;
+
+&lt;p&gt;Il punto è che i principi base del &lt;em&gt;Lean thinking&lt;/em&gt; non sono filosofici, ma pratici. Vediamoli:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Eliminate Waste&lt;/strong&gt;: fate riunioni che non servono? Non fatele. Scrivete documenti che nessuno leggerà? Non scriveteli. Più chiaro di così!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Build Quality In&lt;/strong&gt;: Mettere in pratica tutte quelle pratiche che portano a evitare i bug, o a correggerli subito. Correggerli dopo è sempre peggio.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Create Knowledge&lt;/strong&gt;: All’inizio di un progetto difficilmente avrete idea di cosa vuole il cliente. Inoltre, ciò che sapete voi è molto diverso da ciò che conosce il vostro collega. Creare conoscenza significa soprattutto &lt;em&gt;condividerla&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Defer Commitment&lt;/strong&gt;: Prendere le decisioni all’ultmo momento utile (ossia quando non sono più rinviabili) permette di avere la maggior conoscenza possibile, e quindi di prendere decisioni migliori.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deliver Fast&lt;/strong&gt;: Prima fate vedere il prodotto al cliente, prima saprete se è quello che vuole.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Respect People&lt;/strong&gt;: non significa solo evitare di mandare a cagare il tuo collega; significa anche rispettare le scelte del gruppo, riconoscerne gli sforzi e aiutarli quando gli sforzi non producono frutti.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Optimize the Whole&lt;/strong&gt;. Ottimizzare il processo, nella sua interezza, significa applicare i punti precedenti. Si deve ottimizzare continuamente, a ogni livello.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fin qui era filosofia. Ma praticamente che dobbiamo fare?&lt;/p&gt;
+
+&lt;h2 id=&quot;lean-in-pratica-gli-step-zero&quot;&gt;Lean in pratica: gli step zero&lt;/h2&gt;
+
+&lt;p&gt;Per essere Lean nel mondo del software ci sono due &lt;strong&gt;step zero&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Source code management&lt;/strong&gt; - perchè il codice non si condivide più via email o via floppy da un bel pò. Tools come SVN (antichi!) o GIT dovreste conoscerli tutti ormai.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scripted builds&lt;/strong&gt; - il vostro prodotto deve essere generabile a partire da &lt;strong&gt;un solo comando&lt;/strong&gt;. Ancora meglio: ogni volta che committate, un ambiente di &lt;em&gt;continuous integration&lt;/em&gt; dovrebbe far partire una build automatica e verificare che sia tutto ok. Non dimenticate di mandare una mail a chi ha rotto la build ;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Principi Lean rispettati&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;create knowledge&lt;/strong&gt; - il codice è in un solo posto&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;eliminate waste&lt;/strong&gt; - nessun lavoro manuale per compilare e deployare il progetto!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;build quality in&lt;/strong&gt; - l’automazione elimina possibili cause d’errore.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vediamo ora altre pratiche che possono aiutarvi a diventare &lt;em&gt;Lean&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;il-meeting-giornaliero&quot;&gt;Il meeting giornaliero&lt;/h3&gt;
+
+&lt;p&gt;Se dovessi scegliere un unico punto da implementare, tra tutti i punti di questo articolo, il meeting giornaliero è sicuramente quello che sceglierei io. &lt;em&gt;La comunicazione tra membri del team è dannatamente importante.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Per fare un daily meeting perfetto bisogna:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;farlo tutti i giorni, alla stessa ora&lt;/li&gt;
+  &lt;li&gt;non deve superare 15 minuti&lt;/li&gt;
+  &lt;li&gt;partecipano e parlano tutti&lt;/li&gt;
+  &lt;li&gt;quando parla qualcuno non si fanno domande e non si interrompe&lt;/li&gt;
+  &lt;li&gt;si risponde a tre domande: &lt;em&gt;cosa ho fatto ieri?&lt;/em&gt;, &lt;em&gt;cosa farò oggi?&lt;/em&gt;, &lt;em&gt;che problemi ho avuto?&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;facoltativo&lt;/em&gt;: fare il meeting in piedi (così durerà anche meno di 15 minuti)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Principi Lean rispettati&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;respect people&lt;/em&gt; - stiamo mettendo il team al centro dello sviluppo. Tutti si sentiranno di far parte di una squadra.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;create knowledge&lt;/em&gt; - Parlare di ciò che si sta facendo è il modo migliore di creare una conoscenza condivisa.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;testing-automatico&quot;&gt;Testing automatico&lt;/h3&gt;
+&lt;p&gt;Qui parliamo dell’&lt;strong&gt;esecuzione automatica dei test a partire da un singolo comando&lt;/strong&gt;, con tanto di report a fine esecuzione. In questo modo avremo test che sono sempre eseguiti nello stesso modo e che non sono soggetti a errori umani.&lt;/p&gt;
+
+&lt;p&gt;I test dovrebbero essere lanciati sia dai singoli sviluppatori mentre realizzano le feature, che dall’ambiene di continuous integration quando committiamo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Principi Lean rispettati&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Build Quality In&lt;/em&gt; - test automatici eseguiti regolarmente aiutano a prevenire i difetti.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Eliminate Waste&lt;/em&gt; - i bug vengono trovati prima, e quindi corretti prima.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Create Knowledge&lt;/em&gt; - i test sono un modo per documentare come funziona il codice.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;continuous-integration&quot;&gt;Continuous Integration&lt;/h3&gt;
+&lt;p&gt;La &lt;strong&gt;continuous integration&lt;/strong&gt; è una pratica che consiste nell’integrare i piccoli cambiamenti al codice in maniera frequente. Ciò cerca di ridurre, o addirittura eliminare, la fase di integrazione post-sviluppo.&lt;/p&gt;
+
+&lt;p&gt;Per farlo:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Usate una macchina (vera o virtuale) per il sistema di CI.&lt;/li&gt;
+  &lt;li&gt;a ogni commit, la CI deve far partire una build e i test.&lt;/li&gt;
+  &lt;li&gt;I developer devono aggiornare il codice una volta al giorno; una volta all’ora è meglio.&lt;/li&gt;
+  &lt;li&gt;Le build fallite devono essere subito sistemate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Principi Lean rispettati&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Build Quality In&lt;/em&gt; - in Continuous Integration, siamo sicuri che il codice sia sempre funzionante.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Eliminate Waste&lt;/em&gt; - E’ più efficiente integrare continuamente piccole modifiche che una singola grande fase di integrazione finale.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;less-code&quot;&gt;Less Code&lt;/h3&gt;
+&lt;p&gt;“Less Code” significa &lt;strong&gt;scrivere solo il codice necessario per implementare la funzionalità richiesta&lt;/strong&gt;. Qui stiamo ribadendo il principio della semplicità: se una cosa è piccola è anche facile capirla; un codice sorgente vasto diventa difficile non solo da capire, ma anche testare e debuggare. Scrivere (&lt;em&gt;poco&lt;/em&gt;) codice in modo semplice è un’arte. Per poter scrivere meno codice bisogna:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;eliminare codice inutile&lt;/strong&gt;. Facile a dirsi 😊 In pratica bisogna trovare il codice, o le &lt;em&gt;forze&lt;/em&gt; che creano il codice non necessario, ed eliminarlo. Ogni codice aggiunto al repository deve essere &lt;em&gt;giustificabile&lt;/em&gt;. Sviluppa solo per l’iterazione o il task corrente, non per quelle del futuro che verrà. (Verrà?)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Migliorare l’efficienza del codice&lt;/strong&gt;. Ciò si fa applicando degli standard o comunque le best practices.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Principi Lean rispettati&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Build Quality In&lt;/em&gt; - Codice che fa quello che deve fare. Cosa vuoi di più?&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Eliminate Waste&lt;/em&gt; - Codice che non serve, o mega-design-patterns che non si capiscono (o che si capiscono solo nella mente dell’autore), sono scoraggiati.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;short-iterations&quot;&gt;Short Iterations&lt;/h3&gt;
+
+&lt;p&gt;Prima si sviluppavano applicazioni con un ciclo di rilascio da 6 mesi a 1 anno; adesso la moda è 15/30 giorni. Questo tipo di rilasci permette ai clienti di capire se stiamo realizzando davvero il software di cui hanno bisogno, e permette di capirlo &lt;em&gt;prima che sia troppo tardi&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Principi Lean rispettati&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Eliminate Waste&lt;/em&gt; - rilasci frequenti permettono di concentrarsi solo su ciò che serve davvero.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Deliver Fast&lt;/em&gt; - Il nuovo codice viene rilasciato al cliente ad intervalli regolari.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;customer-partecipation&quot;&gt;Customer Partecipation&lt;/h3&gt;
+
+&lt;p&gt;In passato il cliente veniva coinvolto solo per le specifiche, a inizio progetto, e poi ci si vedeva alla fine per mostrare il risultato. E lì sentivi frasi “ma non era quello che volevo” 😫&lt;/p&gt;
+
+&lt;p&gt;Usando un approccio &lt;em&gt;Lean&lt;/em&gt; invece il cliente fa parte del team. E’ il cliente a fornire i requisiti, a prioritizzarli, e ad accettarli a fine iterazione.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Principi Lean rispettati&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Create Knowledge&lt;/em&gt; - Attraverso la collaborazione col cliente, i requisiti vengono determinati prima e meglio.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Defer Commitment&lt;/em&gt; - Siccome il cliente è coinvolto nel processo, è possibile prendere le decisioni architetturali solo quando servono.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lean-è-uguale-o-diverso-da-agile&quot;&gt;Lean è uguale o diverso da Agile?&lt;/h2&gt;
+
+&lt;p&gt;Chi ha fatto un po’ di Agile starà ora dicendo: “Ma tutte queste cose le facciamo anche noi!”. Già! Dov’è la differenza?&lt;/p&gt;
+
+&lt;p&gt;Le differenze sono sostanzialmente due: &lt;em&gt;scope&lt;/em&gt; e &lt;em&gt;focus&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;Agile&lt;/strong&gt; lo scopo è di migliorare lo sviluppo del software e si focalizza sull’adattabilità e sul rilascio veloce. Oppure, come piace dire a me, si parte dalla filosofia e si trovano i mezzi per metterla in pratica.&lt;/p&gt;
+
+&lt;p&gt;Nell’approccio &lt;strong&gt;Lean&lt;/strong&gt; invece si guarda al quadro generale, e ci si focalizza più sulle pratiche (che sono il punto di partenza!) che sulla filosofia. Infatti &lt;strong&gt;non è obbligatorio mettere in pratica contemporaneamente tutte le pratiche&lt;/strong&gt;, si può tranquillamente iniziare a integrarle una alla volta; e soprattutto, si può seguire qualsiasi tipo di metodologia ma usare le pratiche &lt;em&gt;Lean&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Per questo, &lt;strong&gt;negli ultimi team con cui ho collaborato&lt;/strong&gt;, piuttosto che mettere insieme tutte le cerimonie di Scrum &lt;strong&gt;ho preferito privilegiare quelle pratiche che sicuramente avrebbero portato un valore effettivo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Non avrei conosciuto le pratiche Lean senza Agile. &lt;strong&gt;Non potrei fare Agile senza mettere in pratica i principi Lean. Al contrario, si può essere Lean senza essere Agile&lt;/strong&gt;. Questi due mondi si sovrappongono per molte cose e sono, alla fine della fiera, &lt;strong&gt;complementari tra loro&lt;/strong&gt;.&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Agile? No grazie, noi siamo Lean</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Agile? No grazie, noi siamo Lean ">
+                          <figcaption>Agile? No grazie, noi siamo Lean</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-05-04 00:00:00 UTC">Thu, 04 May 2017 00:00:00 +0000</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Agile, agile, agile… ormai tutti fanno Agile, implementando un framework tipo Scrum (che è uno dei possibili modi di essere Agile).</p>
+
+<p>Per dare una definizione: siete <em>Agile</em>® se la vostra metodologia di sviluppo segue il <a href="http://agilemanifesto.org/iso/it/manifesto.html"><em>Manifesto Agile</em></a>.</p>
+
+<p>Tuttavia, è facile prendere un framework (ripeto: Scrum) e sputtanarlo per tirare fuori qualcosa che non va. Spesso ciò accade quando il management continua a ragionare a delivery fisse, chi-fa-cosa, butta-a-mare-la-qualità-dobbiamo-consegnà, etc.</p>
+
+<p><img src="/images/geografia_metodologie.png" alt="Quest'immagine prova a spiegare com'è fatto il mondo" /></p>
+
+<h2 id="ma-in-questo-post-dovevi-parlare-di-lean">Ma in questo post dovevi parlare di LEAN</h2>
+
+<p>Avete ragione.</p>
+
+<p>Ritorniamo sulle definizioni. <em>Lean</em> (in italiano: magro, scarno) è un termine preso in prestito dal settore manifatturiero, e consiste in una serie di principi da seguire per ottenere <em>qualità, velocità &amp; soddisfazione del cliente</em>. (Stesse finalità di Agile!)</p>
+
+<p>Il punto è che i principi base del <em>Lean thinking</em> non sono filosofici, ma pratici. Vediamoli:</p>
+
+<ul>
+  <li><strong>Eliminate Waste</strong>: fate riunioni che non servono? Non fatele. Scrivete documenti che nessuno leggerà? Non scriveteli. Più chiaro di così!</li>
+  <li><strong>Build Quality In</strong>: Mettere in pratica tutte quelle pratiche che portano a evitare i bug, o a correggerli subito. Correggerli dopo è sempre peggio.</li>
+  <li><strong>Create Knowledge</strong>: All’inizio di un progetto difficilmente avrete idea di cosa vuole il cliente. Inoltre, ciò che sapete voi è molto diverso da ciò che conosce il vostro collega. Creare conoscenza significa soprattutto <em>condividerla</em>.</li>
+  <li><strong>Defer Commitment</strong>: Prendere le decisioni all’ultmo momento utile (ossia quando non sono più rinviabili) permette di avere la maggior conoscenza possibile, e quindi di prendere decisioni migliori.</li>
+  <li><strong>Deliver Fast</strong>: Prima fate vedere il prodotto al cliente, prima saprete se è quello che vuole.</li>
+  <li><strong>Respect People</strong>: non significa solo evitare di mandare a cagare il tuo collega; significa anche rispettare le scelte del gruppo, riconoscerne gli sforzi e aiutarli quando gli sforzi non producono frutti.</li>
+  <li><strong>Optimize the Whole</strong>. Ottimizzare il processo, nella sua interezza, significa applicare i punti precedenti. Si deve ottimizzare continuamente, a ogni livello.</li>
+</ul>
+
+<p>Fin qui era filosofia. Ma praticamente che dobbiamo fare?</p>
+
+<h2 id="lean-in-pratica-gli-step-zero">Lean in pratica: gli step zero</h2>
+
+<p>Per essere Lean nel mondo del software ci sono due <strong>step zero</strong>:</p>
+<ul>
+  <li><strong>Source code management</strong> - perchè il codice non si condivide più via email o via floppy da un bel pò. Tools come SVN (antichi!) o GIT dovreste conoscerli tutti ormai.</li>
+  <li><strong>Scripted builds</strong> - il vostro prodotto deve essere generabile a partire da <strong>un solo comando</strong>. Ancora meglio: ogni volta che committate, un ambiente di <em>continuous integration</em> dovrebbe far partire una build automatica e verificare che sia tutto ok. Non dimenticate di mandare una mail a chi ha rotto la build ;)</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><strong>create knowledge</strong> - il codice è in un solo posto</li>
+  <li><strong>eliminate waste</strong> - nessun lavoro manuale per compilare e deployare il progetto!</li>
+  <li><strong>build quality in</strong> - l’automazione elimina possibili cause d’errore.</li>
+</ul>
+
+<p>Vediamo ora altre pratiche che possono aiutarvi a diventare <em>Lean</em>.</p>
+
+<h3 id="il-meeting-giornaliero">Il meeting giornaliero</h3>
+
+<p>Se dovessi scegliere un unico punto da implementare, tra tutti i punti di questo articolo, il meeting giornaliero è sicuramente quello che sceglierei io. <em>La comunicazione tra membri del team è dannatamente importante.</em></p>
+
+<p>Per fare un daily meeting perfetto bisogna:</p>
+<ul>
+  <li>farlo tutti i giorni, alla stessa ora</li>
+  <li>non deve superare 15 minuti</li>
+  <li>partecipano e parlano tutti</li>
+  <li>quando parla qualcuno non si fanno domande e non si interrompe</li>
+  <li>si risponde a tre domande: <em>cosa ho fatto ieri?</em>, <em>cosa farò oggi?</em>, <em>che problemi ho avuto?</em></li>
+  <li><em>facoltativo</em>: fare il meeting in piedi (così durerà anche meno di 15 minuti)</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>respect people</em> - stiamo mettendo il team al centro dello sviluppo. Tutti si sentiranno di far parte di una squadra.</li>
+  <li><em>create knowledge</em> - Parlare di ciò che si sta facendo è il modo migliore di creare una conoscenza condivisa.</li>
+</ul>
+
+<h3 id="testing-automatico">Testing automatico</h3>
+<p>Qui parliamo dell’<strong>esecuzione automatica dei test a partire da un singolo comando</strong>, con tanto di report a fine esecuzione. In questo modo avremo test che sono sempre eseguiti nello stesso modo e che non sono soggetti a errori umani.</p>
+
+<p>I test dovrebbero essere lanciati sia dai singoli sviluppatori mentre realizzano le feature, che dall’ambiene di continuous integration quando committiamo.</p>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Build Quality In</em> - test automatici eseguiti regolarmente aiutano a prevenire i difetti.</li>
+  <li><em>Eliminate Waste</em> - i bug vengono trovati prima, e quindi corretti prima.</li>
+  <li><em>Create Knowledge</em> - i test sono un modo per documentare come funziona il codice.</li>
+</ul>
+
+<h3 id="continuous-integration">Continuous Integration</h3>
+<p>La <strong>continuous integration</strong> è una pratica che consiste nell’integrare i piccoli cambiamenti al codice in maniera frequente. Ciò cerca di ridurre, o addirittura eliminare, la fase di integrazione post-sviluppo.</p>
+
+<p>Per farlo:</p>
+<ul>
+  <li>Usate una macchina (vera o virtuale) per il sistema di CI.</li>
+  <li>a ogni commit, la CI deve far partire una build e i test.</li>
+  <li>I developer devono aggiornare il codice una volta al giorno; una volta all’ora è meglio.</li>
+  <li>Le build fallite devono essere subito sistemate.</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Build Quality In</em> - in Continuous Integration, siamo sicuri che il codice sia sempre funzionante.</li>
+  <li><em>Eliminate Waste</em> - E’ più efficiente integrare continuamente piccole modifiche che una singola grande fase di integrazione finale.</li>
+</ul>
+
+<h3 id="less-code">Less Code</h3>
+<p>“Less Code” significa <strong>scrivere solo il codice necessario per implementare la funzionalità richiesta</strong>. Qui stiamo ribadendo il principio della semplicità: se una cosa è piccola è anche facile capirla; un codice sorgente vasto diventa difficile non solo da capire, ma anche testare e debuggare. Scrivere (<em>poco</em>) codice in modo semplice è un’arte. Per poter scrivere meno codice bisogna:</p>
+
+<ul>
+  <li><strong>eliminare codice inutile</strong>. Facile a dirsi 😊 In pratica bisogna trovare il codice, o le <em>forze</em> che creano il codice non necessario, ed eliminarlo. Ogni codice aggiunto al repository deve essere <em>giustificabile</em>. Sviluppa solo per l’iterazione o il task corrente, non per quelle del futuro che verrà. (Verrà?)</li>
+  <li><strong>Migliorare l’efficienza del codice</strong>. Ciò si fa applicando degli standard o comunque le best practices.</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Build Quality In</em> - Codice che fa quello che deve fare. Cosa vuoi di più?</li>
+  <li><em>Eliminate Waste</em> - Codice che non serve, o mega-design-patterns che non si capiscono (o che si capiscono solo nella mente dell’autore), sono scoraggiati.</li>
+</ul>
+
+<h3 id="short-iterations">Short Iterations</h3>
+
+<p>Prima si sviluppavano applicazioni con un ciclo di rilascio da 6 mesi a 1 anno; adesso la moda è 15/30 giorni. Questo tipo di rilasci permette ai clienti di capire se stiamo realizzando davvero il software di cui hanno bisogno, e permette di capirlo <em>prima che sia troppo tardi</em>.</p>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Eliminate Waste</em> - rilasci frequenti permettono di concentrarsi solo su ciò che serve davvero.</li>
+  <li><em>Deliver Fast</em> - Il nuovo codice viene rilasciato al cliente ad intervalli regolari.</li>
+</ul>
+
+<h3 id="customer-partecipation">Customer Partecipation</h3>
+
+<p>In passato il cliente veniva coinvolto solo per le specifiche, a inizio progetto, e poi ci si vedeva alla fine per mostrare il risultato. E lì sentivi frasi “ma non era quello che volevo” 😫</p>
+
+<p>Usando un approccio <em>Lean</em> invece il cliente fa parte del team. E’ il cliente a fornire i requisiti, a prioritizzarli, e ad accettarli a fine iterazione.</p>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Create Knowledge</em> - Attraverso la collaborazione col cliente, i requisiti vengono determinati prima e meglio.</li>
+  <li><em>Defer Commitment</em> - Siccome il cliente è coinvolto nel processo, è possibile prendere le decisioni architetturali solo quando servono.</li>
+</ul>
+
+<h2 id="lean-è-uguale-o-diverso-da-agile">Lean è uguale o diverso da Agile?</h2>
+
+<p>Chi ha fatto un po’ di Agile starà ora dicendo: “Ma tutte queste cose le facciamo anche noi!”. Già! Dov’è la differenza?</p>
+
+<p>Le differenze sono sostanzialmente due: <em>scope</em> e <em>focus</em>.</p>
+
+<p>In <strong>Agile</strong> lo scopo è di migliorare lo sviluppo del software e si focalizza sull’adattabilità e sul rilascio veloce. Oppure, come piace dire a me, si parte dalla filosofia e si trovano i mezzi per metterla in pratica.</p>
+
+<p>Nell’approccio <strong>Lean</strong> invece si guarda al quadro generale, e ci si focalizza più sulle pratiche (che sono il punto di partenza!) che sulla filosofia. Infatti <strong>non è obbligatorio mettere in pratica contemporaneamente tutte le pratiche</strong>, si può tranquillamente iniziare a integrarle una alla volta; e soprattutto, si può seguire qualsiasi tipo di metodologia ma usare le pratiche <em>Lean</em>.</p>
+
+<p>Per questo, <strong>negli ultimi team con cui ho collaborato</strong>, piuttosto che mettere insieme tutte le cerimonie di Scrum <strong>ho preferito privilegiare quelle pratiche che sicuramente avrebbero portato un valore effettivo</strong>.</p>
+
+<p>Non avrei conosciuto le pratiche Lean senza Agile. <strong>Non potrei fare Agile senza mettere in pratica i principi Lean. Al contrario, si può essere Lean senza essere Agile</strong>. Questi due mondi si sovrappongono per molte cose e sono, alla fine della fiera, <strong>complementari tra loro</strong>.</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
     
       <item>
         <title>&quot;Vorrei, ma ho paura che vada male&quot;	&amp;#58 come assumersi dei &quot;rischi intelligenti&quot;</title>
@@ -1971,312 +2303,6 @@ results[0].geometry.location.lng
 <p>This depends on you! <strong>I prefer promises</strong>, because I find them more natural, but being a Node coder means you can choose and decide what’s best for you. Both are well tested libraries with well known patterns, so you only have to choose the one you love.</p>
 
 <p>Cheers from <code class="highlighter-rouge">40.7802306</code>, <code class="highlighter-rouge">14.7010686</code> !</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>JS Promises: description, pros, cons of this ES6 construct</title>
-        <link>https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html</link>
-        <guid isPermaLink="true">https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html</guid>
-        <pubDate>Sun, 12 Mar 2017 13:06:29 +0000</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;I hope that you have done some kind of exploration with Javascript, NodeJS and asynchronous constructs right now.&lt;/p&gt;
-
-&lt;p&gt;To recap: when you wait for an async operation to handle the result, for example in NodeJS when we read a file, we do this:&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'filename.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
-   &lt;span class=&quot;c1&quot;&gt;//now you can use the data object &lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This is the standard, classic way of handling asynchronicity in NodeJS and Javascript.&lt;/p&gt;
-
-&lt;p&gt;In the last few years a new approach has come to rise, first from outside libraries, then as part of ES6 language: &lt;strong&gt;Promises&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/promise.jpg&quot; alt=&quot;&quot; style=&quot;float: none;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Not me in the photo. This is the Italian way to promise. I love his way of looking guilty. &lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;i-promise-that-i-will-give-you-the-result&quot;&gt;I promise that I will give you the result&lt;/h2&gt;
-
-&lt;p&gt;I don’t want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.&lt;/p&gt;
-
-&lt;p&gt;However ES6 has standardized this, and now we have a fantastic &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt; object. Let’s see how to use it.&lt;/p&gt;
-
-&lt;p&gt;The following snippet will create a Promise that waits 2,5 seconds and then sends a message &lt;code class=&quot;highlighter-rouge&quot;&gt;Hey. it worked&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somePromise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// only one can be called and only once &lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hey. it worked'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;                      &lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//reject('Unable to fulfill promise');          //3&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt; 
-
-&lt;span class=&quot;nx&quot;&gt;somePromise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;                                   &lt;span class=&quot;c1&quot;&gt;//4&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Success: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Error: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;My definition of promises: &lt;strong&gt;a &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt; is a wrapper object that you use to encapsulate a function that might return a value in the future&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;We declare a promise as showed in (1): &lt;code class=&quot;highlighter-rouge&quot;&gt;new Promise()&lt;/code&gt; with a function inside.&lt;/p&gt;
-
-&lt;p&gt;This function takes two arguments that are two other functions, usually called &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt;. So the full specification is &lt;code class=&quot;highlighter-rouge&quot;&gt;let somePromise = new Promise((resolve, reject) =&amp;gt; {...});&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;How do you use these two parameters? &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; (2) is a function used to return a value, when the function ends normally (e.g. reading a file, you get the content of the file and return to the caller); &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt; (3) is used when you encounter a problem (e.g. you couldn’t read the file).&lt;/p&gt;
-
-&lt;p&gt;There are some bonds on using Promises:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;you cannot call both &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt;in your code. As soon as one of the two functions gets called, the promise stops.&lt;/li&gt;
-  &lt;li&gt;if you don’t call any of the two functions, the promise will hang.&lt;/li&gt;
-  &lt;li&gt;you can only pass &lt;strong&gt;one&lt;/strong&gt; parameter to &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt;. If you have more stuff to pass, wrap everything in an object.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ok, now we have defined a promise. How do we use it? An example is shown in (4): we just call the promise and then use the &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; method to use the response.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; can take two functions as arguments:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the first callback is called when the promise ends correctly, with the value contained in &lt;code class=&quot;highlighter-rouge&quot;&gt;resolve&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;the second callback is the &lt;em&gt;error handler&lt;/em&gt;, so you might want to use it when you want to get data from the &lt;code class=&quot;highlighter-rouge&quot;&gt;reject&lt;/code&gt; function.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;chaining-promises&quot;&gt;Chaining promises&lt;/h2&gt;
-
-&lt;p&gt;This approach is nice, but the true power comes when you can &lt;code class=&quot;highlighter-rouge&quot;&gt;chain&lt;/code&gt; many promises one after another.&lt;/p&gt;
-
-&lt;p&gt;The following code shows a function &lt;code class=&quot;highlighter-rouge&quot;&gt;asyncAdd&lt;/code&gt; that adds two numbers after 1,5 seconds. I bet your calculator is faster. It does however some checks on the type of &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;, to be sure they are numbers.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;asyncAdd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Arguments must be numbers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;asyncAdd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// (1)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;                  &lt;span class=&quot;c1&quot;&gt;// (2)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;asyncAdd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'33'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// (3)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;// (4)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Should be 45:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;// (5)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Quiz&lt;/strong&gt;: what does this code print? (Answer below)&lt;/p&gt;
-
-&lt;p&gt;In (1) we are evaluating the first sum. &lt;strong&gt;Then&lt;/strong&gt; (2) (&lt;em&gt;Look how it is semantically fantastic to express this concept in plain english!!!&lt;/em&gt;) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (&lt;strong&gt;note! it is a string!&lt;/strong&gt;).&lt;/p&gt;
-
-&lt;p&gt;Since we are returning a function that returns a promise, we can chain the two promises with another &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;We didn’t write the second &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; callback, because we have used the &lt;code class=&quot;highlighter-rouge&quot;&gt;.catch()&lt;/code&gt; method. We will explain this in a second.&lt;/p&gt;
-
-&lt;p&gt;In the second &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt; (4) we would print the result of the total sum.&lt;/p&gt;
-
-&lt;p&gt;Lastly, in (5) we have the &lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt; block. In the previous paragraph we were saying that you can handle errors inside every &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt;, but if you chain many &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; together and the first one fails, the others are still executed. Usually you don’t want this, because the next &lt;code class=&quot;highlighter-rouge&quot;&gt;then&lt;/code&gt; depends on the result of the previous.&lt;/p&gt;
-
-&lt;p&gt;So, if you just want to stop an operation at the first error encountered, you can use a single &lt;code class=&quot;highlighter-rouge&quot;&gt;catch()&lt;/code&gt; block at the end: whatever promise will fail, be it the first or the last, the &lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt; block will be called to handle the failure. So easy to reason about.&lt;/p&gt;
-
-&lt;p&gt;(Sorry, no answer for the quiz… run it and see!)&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
-
-&lt;p&gt;A promise is a new construct that, after some practice, becomes a powerful tool for your async constructs.&lt;/p&gt;
-
-&lt;p&gt;The advantages are that you don’t have to write anymore nested callbacks with a lot of indented code, that is often complex to reason about, and to handle errors.&lt;/p&gt;
-
-&lt;p&gt;The disadvantage is that there is much more than what I wrote in this article, about promises, that covers every possible edge case that naturally occours when you work with async code. However, what you read here should cover 80% of your needs.&lt;/p&gt;
-
-&lt;p&gt;You can transform every callback in a promise; many NodeJS core developers don’t like promises at all, and use only callbacks. Popular libraries in NPM use one way or the other to deliver results, so you might be forced to use one or the other approach based on this.&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>JS Promises: description, pros, cons of this ES6 construct</h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" JS Promises: description, pros, cons of this ES6 construct ">
-                          <figcaption>JS Promises: description, pros, cons of this ES6 construct</figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-03-12 13:06:29 UTC">Sun, 12 Mar 2017 13:06:29 +0000</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p>I hope that you have done some kind of exploration with Javascript, NodeJS and asynchronous constructs right now.</p>
-
-<p>To recap: when you wait for an async operation to handle the result, for example in NodeJS when we read a file, we do this:</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
-<span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'filename.txt'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-   <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span> 
-   <span class="c1">//now you can use the data object </span>
-   <span class="p">...</span>
-<span class="p">});</span>
-</code></pre>
-</div>
-
-<p>This is the standard, classic way of handling asynchronicity in NodeJS and Javascript.</p>
-
-<p>In the last few years a new approach has come to rise, first from outside libraries, then as part of ES6 language: <strong>Promises</strong>.</p>
-
-<p><img src="/images/promise.jpg" alt="" style="float: none;" /></p>
-
-<p><em>Not me in the photo. This is the Italian way to promise. I love his way of looking guilty. </em></p>
-
-<h2 id="i-promise-that-i-will-give-you-the-result">I promise that I will give you the result</h2>
-
-<p>I don’t want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.</p>
-
-<p>However ES6 has standardized this, and now we have a fantastic <code class="highlighter-rouge">Promise</code> object. Let’s see how to use it.</p>
-
-<p>The following snippet will create a Promise that waits 2,5 seconds and then sends a message <code class="highlighter-rouge">Hey. it worked</code>:</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">somePromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="c1">//1</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// only one can be called and only once </span>
-    <span class="nx">resolve</span><span class="p">(</span><span class="s1">'Hey. it worked'</span><span class="p">);</span>                      <span class="c1">//2</span>
-    <span class="c1">//reject('Unable to fulfill promise');          //3</span>
-  <span class="p">},</span> <span class="mi">2500</span><span class="p">);</span>
-<span class="p">});</span> 
-
-<span class="nx">somePromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>                                   <span class="c1">//4</span>
-  <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Success: '</span> <span class="o">+</span> <span class="nx">message</span><span class="p">);</span>
-  <span class="p">},</span> 
-  <span class="p">(</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Error: '</span><span class="p">,</span> <span class="nx">errorMessage</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">);</span>
-</code></pre>
-</div>
-
-<p>My definition of promises: <strong>a <code class="highlighter-rouge">Promise</code> is a wrapper object that you use to encapsulate a function that might return a value in the future</strong>.</p>
-
-<p>We declare a promise as showed in (1): <code class="highlighter-rouge">new Promise()</code> with a function inside.</p>
-
-<p>This function takes two arguments that are two other functions, usually called <code class="highlighter-rouge">resolve</code> and <code class="highlighter-rouge">reject</code>. So the full specification is <code class="highlighter-rouge">let somePromise = new Promise((resolve, reject) =&gt; {...});</code>.</p>
-
-<p>How do you use these two parameters? <code class="highlighter-rouge">resolve</code> (2) is a function used to return a value, when the function ends normally (e.g. reading a file, you get the content of the file and return to the caller); <code class="highlighter-rouge">reject</code> (3) is used when you encounter a problem (e.g. you couldn’t read the file).</p>
-
-<p>There are some bonds on using Promises:</p>
-
-<ul>
-  <li>you cannot call both <code class="highlighter-rouge">resolve</code> or <code class="highlighter-rouge">reject</code>in your code. As soon as one of the two functions gets called, the promise stops.</li>
-  <li>if you don’t call any of the two functions, the promise will hang.</li>
-  <li>you can only pass <strong>one</strong> parameter to <code class="highlighter-rouge">resolve</code> or <code class="highlighter-rouge">reject</code>. If you have more stuff to pass, wrap everything in an object.</li>
-</ul>
-
-<p>Ok, now we have defined a promise. How do we use it? An example is shown in (4): we just call the promise and then use the <code class="highlighter-rouge">then</code> method to use the response.</p>
-
-<p><code class="highlighter-rouge">then</code> can take two functions as arguments:</p>
-
-<ul>
-  <li>the first callback is called when the promise ends correctly, with the value contained in <code class="highlighter-rouge">resolve</code></li>
-  <li>the second callback is the <em>error handler</em>, so you might want to use it when you want to get data from the <code class="highlighter-rouge">reject</code> function.</li>
-</ul>
-
-<h2 id="chaining-promises">Chaining promises</h2>
-
-<p>This approach is nice, but the true power comes when you can <code class="highlighter-rouge">chain</code> many promises one after another.</p>
-
-<p>The following code shows a function <code class="highlighter-rouge">asyncAdd</code> that adds two numbers after 1,5 seconds. I bet your calculator is faster. It does however some checks on the type of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>, to be sure they are numbers.</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">asyncAdd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span> <span class="o">===</span> <span class="s1">'number'</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">b</span> <span class="o">===</span> <span class="s1">'number'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">resolve</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">reject</span><span class="p">(</span><span class="s1">'Arguments must be numbers'</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">},</span> <span class="mi">1500</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">};</span>
-
-<span class="nx">asyncAdd</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>                         <span class="c1">// (1)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>                  <span class="c1">// (2)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">asyncAdd</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="s1">'33'</span><span class="p">);</span>     <span class="c1">// (3)</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>                     <span class="c1">// (4)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Should be 45:'</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span> 
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>           <span class="c1">// (5)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
-  <span class="p">})</span>
-</code></pre>
-</div>
-
-<p><strong>Quiz</strong>: what does this code print? (Answer below)</p>
-
-<p>In (1) we are evaluating the first sum. <strong>Then</strong> (2) (<em>Look how it is semantically fantastic to express this concept in plain english!!!</em>) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (<strong>note! it is a string!</strong>).</p>
-
-<p>Since we are returning a function that returns a promise, we can chain the two promises with another <code class="highlighter-rouge">then()</code>.</p>
-
-<p>We didn’t write the second <code class="highlighter-rouge">then</code> callback, because we have used the <code class="highlighter-rouge">.catch()</code> method. We will explain this in a second.</p>
-
-<p>In the second <code class="highlighter-rouge">then()</code> (4) we would print the result of the total sum.</p>
-
-<p>Lastly, in (5) we have the <code class="highlighter-rouge">catch</code> block. In the previous paragraph we were saying that you can handle errors inside every <code class="highlighter-rouge">then</code>, but if you chain many <code class="highlighter-rouge">then</code> together and the first one fails, the others are still executed. Usually you don’t want this, because the next <code class="highlighter-rouge">then</code> depends on the result of the previous.</p>
-
-<p>So, if you just want to stop an operation at the first error encountered, you can use a single <code class="highlighter-rouge">catch()</code> block at the end: whatever promise will fail, be it the first or the last, the <code class="highlighter-rouge">catch</code> block will be called to handle the failure. So easy to reason about.</p>
-
-<p>(Sorry, no answer for the quiz… run it and see!)</p>
-
-<h2 id="conclusions">Conclusions</h2>
-
-<p>A promise is a new construct that, after some practice, becomes a powerful tool for your async constructs.</p>
-
-<p>The advantages are that you don’t have to write anymore nested callbacks with a lot of indented code, that is often complex to reason about, and to handle errors.</p>
-
-<p>The disadvantage is that there is much more than what I wrote in this article, about promises, that covers every possible edge case that naturally occours when you work with async code. However, what you read here should cover 80% of your needs.</p>
-
-<p>You can transform every callback in a promise; many NodeJS core developers don’t like promises at all, and use only callbacks. Popular libraries in NPM use one way or the other to deliver results, so you might be forced to use one or the other approach based on this.</p>
 
                   
                     <footer>
