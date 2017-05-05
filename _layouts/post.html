@@ -1,72 +1,61 @@
----
-layout: default
----
+--- layout: default ---
 
 <div id="main">
-    <article>
-        <header class="major">
-            <h2 class="post-title"><a href="{{page.url}}">{{ page.title }}</a></h2>
-                <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-        </header>
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="{{page.url}}">{{ page.title }}</a></h2>
+			<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta
+				}}{% endif %}</p>
+		</header>
 
-        <section>
+		<section>
 
-					<p>{% include adsense.html %}</p>
+			{{ content }} {% include social.md %}
 
-        	{{ content }}
+		</section>
 
-					{% include social.md %}
+		<section>
+			{% if page.comments %} {% include disqus.html %} {% endif %}
+		</section>
 
-					<p>{% include adsense.html %}</p>
-        </section>
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				{% if page.previous %}
 
-				<section>
-					{% if page.comments %}
-						{% include disqus.html %}
-					{% endif %}
-				</section>
+				<article class="{% cycle '6u', '6u$' %} 12u(small) excerpt">
+					<header>
+						<h2><a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
+					</header>
+					<section>
+						{{ page.previous.excerpt }}
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="{{ site.baseurl }}{{ page.previous.url }}" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				{% endif %} {% if page.next %}
 
-        <footer> 
-					<br> 
-					Altri articoli: 
-					<br>
-          <div class="row">
-            {% if page.previous %}
-            
-                <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt">
-                    <header>
-                        <h2><a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
-                    </header>
-                    <section>
-                        {{ page.previous.excerpt }}
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="{{ site.baseurl }}{{ page.previous.url }}" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            {% endif %}
-            
-            {% if page.next %}
-            
-                <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
-                    <header>
-                        <h2><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a></h2>
-                    </header>
-                    <section>
-                        {{ page.next.excerpt | markdownify }}
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="{{ site.baseurl }}/{{ page.next.url }}" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            {% endif %}
-            </div>
-        </footer>
+				<article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a></h2>
+					</header>
+					<section>
+						{{ page.next.excerpt | markdownify }}
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="{{ site.baseurl }}/{{ page.next.url }}" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				{% endif %}
+			</div>
+		</footer>
 
-    </article>
+	</article>
 
 </div>
