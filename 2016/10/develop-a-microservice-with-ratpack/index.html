@@ -1,123 +1,15 @@
-<!DOCTYPE html>
-<html>
+--- layout: default ---
 
-<head>
-	<script>
-		var host = "michelenasti.com";
-		if ((host == window.location.host) && (window.location.protocol != "https:"))
-			window.location.protocol = "https";
-	</script>
-	
-	<title>Develop a microservice with Ratpack - Michele Nasti's blog</title>
-	<meta name="description" content="Ratpack is a microservice framework written in Java8 and Groovy. It really helps to write applications with complex requirements." />
-	<meta name="keywords" content="groovy, java, java 8, microservices, ratpack" />  
-	<meta http-equiv="last-modified" content="2016-12-12 09:16:06 +0000" /> 
-	<!--<noscript>-->
-	<link rel="stylesheet" href="/css/skel.css" />
-	<link rel="stylesheet" href="/css/style.css" />
-	<link rel="stylesheet" href="/css/style-xlarge.css" />
-	<link rel="stylesheet" href="/css/colorful.css" />
-	<link rel="stylesheet" href="/css/social.css" />
-	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="" property="og:site_name">
+<div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2016/10/develop-a-microservice-with-ratpack/">Develop a microservice with Ratpack</a></h2>
+			<p class="post-meta">Oct 28, 2016 • musikele</p>
+		</header>
 
-  <meta content="Develop a microservice with Ratpack" property="og:title">
+		<section>
 
-
-  <meta content="article" property="og:type">
-
-
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
-
-
-  <meta content="https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/" property="og:url">
-
-
-  <meta content="2016-10-28T18:30:55+00:00" property="article:published_time">
-  <meta content="https://michelenasti.com/about/" property="article:author">
-
-
-  <meta content="/img/logo-high-resolution.png" property="og:image">
-
-
-  
-  <meta content="Italiano" property="article:section">
-  
-
-
-  
-  <meta content="groovy" property="article:tag">
-  
-  <meta content="java" property="article:tag">
-  
-  <meta content="java 8" property="article:tag">
-  
-  <meta content="microservices" property="article:tag">
-  
-  <meta content="ratpack" property="article:tag">
-  
-
-
-<!-- Twitter cards metadatas -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-
-  <meta name="twitter:title" content="Develop a microservice with Ratpack">
-
-
-  <meta name="twitter:url" content="https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/">
-
-
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
-
-
-<meta property="fb:pages" content="1069985669778335" />
-	<!--</noscript>-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-88764277-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</head>
-
-<body id="top">
-
-	<header id="header">
-	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
-	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
-	</h1>
-<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
-<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
-<a href="/archives/">Archives</a>
-</header> <div id="main">
-    <article>
-        <header class="major">
-            <h2 class="post-title"><a href="/2016/10/develop-a-microservice-with-ratpack/">Develop a microservice with Ratpack</a></h2>
-                <p class="post-meta">Oct 28, 2016 • musikele</p>
-        </header>
-
-        <section>
-
-					<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- banner sotto al titolo - Michelenasti.com -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9588917209740632"
-     data-ad-slot="5184740634"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
-
-        	<p><a href="https://ratpack.io">Ratpack</a> is a lightly opinionated framework that’s perfect for backends written with a RESTful specification. I am using it in a project that we are developing, and of course it’s a microservice.</p>
+			<p><a href="https://ratpack.io">Ratpack</a> is a lightly opinionated framework that’s perfect for backends written with a RESTful specification. I am using it in a project that we are developing, and of course it’s a microservice.</p>
 
 <p><img class="wp-image-1122 aligncenter" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2016/10/Schermata-2016-10-28-alle-15.16.51.png?resize=551%2C205" alt="schermata-2016-10-28-alle-15-16-51" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2016/10/Schermata-2016-10-28-alle-15.16.51.png?w=551 551w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2016/10/Schermata-2016-10-28-alle-15.16.51.png?resize=300%2C112 300w" sizes="(max-width: 551px) 100vw, 551px" data-recalc-dims="1" /></p>
 
@@ -161,9 +53,7 @@
 <p>I want to rewrite everything in Groovy, as I said. I also have to finish the book to uncover all Ratpack powers. I have made many mistakes in the past, expecially from not having undestood how handlers work and how to pass data between handlers. That’s why I say the book is useful.</p>
 
 <p>If you have ever tried ratpack, feel free to give me your impressions! Expecially if they are negative.</p>
-
-
-					
+ 
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
   <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/&text=Develop a microservice with Ratpack:%20https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Develop a microservice with Ratpack) + ':%20'  + encodeURIComponent(https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
@@ -171,21 +61,10 @@
   <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/&title=Develop a microservice with Ratpack&summary=&source=https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2016/10/develop-a-microservice-with-ratpack/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
-					<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- banner sotto al titolo - Michelenasti.com -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9588917209740632"
-     data-ad-slot="5184740634"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
-        </section>
+		</section>
 
-				<section>
-					
-						<div id="disqus_thread"></div>
+		<section>
+			 <div id="disqus_thread"></div>
 <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -207,106 +86,51 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-					
-				</section>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
 
-        <footer> 
-					<br> 
-					Altri articoli: 
-					<br>
-          <div class="row">
-            
-            
-                <article class="6u 12u(small) excerpt">
-                    <header>
-                        <h2><a href="/2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/">Slides del talk &#8220;Perchè il tuo prossimo lavoro è una 💩 @ DevFest</a></h2>
-                    </header>
-                    <section>
-                        <p>Ecco le mie slides del talk.</p>
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/">Slides del talk &#8220;Perchè il tuo prossimo lavoro è una 💩 @ DevFest</a></h2>
+					</header>
+					<section>
+						<p>Ecco le mie slides del talk.</p>
 
 
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="/2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            
-            
-            
-                <article class="6u$ 12u(small) excerpt f-right">
-                    <header>
-                        <h2><a href="/2016/11/orientdb/">OrientDB </a></h2>
-                    </header>
-                    <section>
-                        <p>Convenite con me che fare un DB é la cosa più difficile che ci sia? Seconda solo a fare un sistema operativo, diciamo 😇</p>
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2016/11/orientdb/">OrientDB </a></h2>
+					</header>
+					<section>
+						<p>Convenite con me che fare un DB é la cosa più difficile che ci sia? Seconda solo a fare un sistema operativo, diciamo 😇</p>
 
 
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="//2016/11/orientdb/" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            </div>
-        </footer>
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2016/11/orientdb/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
 
-    </article>
+	</article>
 
 </div>
-
-
-	<!-- Footer -->
-	<footer id="footer">
-	<ul class="icons">
-
-		
-		<li>
-			<a href="https://github.com/musikele" class="icon fa-github">
-				<span class="label">GitHub</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
-				<span class="label">Twitter</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
-				<span class="label">LinkedIn</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
-				<span class="label">Google+</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
-				<span class="label">Facebook</span>
-			</a>
-		</li>
-		  
-	</ul>
-	<ul class="copyright">
-		<li>&copy; Michele Nasti</li>
-		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
-	</ul>
-</footer>
-	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/jquery.poptrox.min.js"></script>
-	<script src="/js/skel.min.js"></script>
-	<script src="/js/init.js"></script>
-</body>
-
-</html>

@@ -1,123 +1,15 @@
-<!DOCTYPE html>
-<html>
+--- layout: default ---
 
-<head>
-	<script>
-		var host = "michelenasti.com";
-		if ((host == window.location.host) && (window.location.protocol != "https:"))
-			window.location.protocol = "https";
-	</script>
-	
-	<title>Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript - Michele Nasti's blog</title>
-	<meta name="description" content="Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “arguments” mi si è aperto un mondo!
+<div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h2>
+			<p class="post-meta">Jul 21, 2015 • musikele</p>
+		</header>
 
-" />
-	<meta name="keywords" content="funzioni, javascript, parametri, sintassi" />  
-	<meta http-equiv="last-modified" content="2017-04-26 13:35:45 +0000" /> 
-	<!--<noscript>-->
-	<link rel="stylesheet" href="/css/skel.css" />
-	<link rel="stylesheet" href="/css/style.css" />
-	<link rel="stylesheet" href="/css/style-xlarge.css" />
-	<link rel="stylesheet" href="/css/colorful.css" />
-	<link rel="stylesheet" href="/css/social.css" />
-	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="" property="og:site_name">
+		<section>
 
-  <meta content="Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript" property="og:title">
-
-
-  <meta content="article" property="og:type">
-
-
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
-
-
-  <meta content="https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" property="og:url">
-
-
-  <meta content="2015-07-21T18:30:10+00:00" property="article:published_time">
-  <meta content="https://michelenasti.com/about/" property="article:author">
-
-
-  <meta content="/img/logo-high-resolution.png" property="og:image">
-
-
-  
-  <meta content="Italiano" property="article:section">
-  
-
-
-  
-  <meta content="funzioni" property="article:tag">
-  
-  <meta content="javascript" property="article:tag">
-  
-  <meta content="parametri" property="article:tag">
-  
-  <meta content="sintassi" property="article:tag">
-  
-
-
-<!-- Twitter cards metadatas -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-
-  <meta name="twitter:title" content="Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript">
-
-
-  <meta name="twitter:url" content="https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">
-
-
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
-
-
-<meta property="fb:pages" content="1069985669778335" />
-	<!--</noscript>-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-88764277-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</head>
-
-<body id="top">
-
-	<header id="header">
-	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
-	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
-	</h1>
-<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
-<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
-<a href="/archives/">Archives</a>
-</header> <div id="main">
-    <article>
-        <header class="major">
-            <h2 class="post-title"><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h2>
-                <p class="post-meta">Jul 21, 2015 • musikele</p>
-        </header>
-
-        <section>
-
-					<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- banner sotto al titolo - Michelenasti.com -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9588917209740632"
-     data-ad-slot="5184740634"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
-
-        	<p>Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “<em>arguments</em>” mi si è aperto un mondo!</p>
+			<p>Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “<em>arguments</em>” mi si è aperto un mondo!</p>
 
 <p>Anni fa infatti mi chiedevo com’è possibile che in JS si possa passare un numero arbitrario di parametri alle funzioni, per di più senza specificare il tipo degli argomenti. All’epoca (circa 10 anni fa) Java era il mio linguaggio preferito, e avrei voltuo che tutto somigliasse a Java. Per fortuna così non è!</p>
 
@@ -172,9 +64,7 @@
 <h3 id="conclusioni">Conclusioni</h3>
 
 <p>Ci sono tante parti di JS che ho capito tardi, altre che non ho ancora capito. Una cosa che mi ha fatto intuire la potenza di JS è il fatto che una funzione può prendere in input altre funzioni, e restituirne una come output. Di questo parlerò in futuro. Adios!</p>
-
-
-					
+ 
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
   <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&text=Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript:%20https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
@@ -182,21 +72,10 @@
   <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&title=Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript&summary=&source=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
-					<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- banner sotto al titolo - Michelenasti.com -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9588917209740632"
-     data-ad-slot="5184740634"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
-        </section>
+		</section>
 
-				<section>
-					
-						<div id="disqus_thread"></div>
+		<section>
+			 <div id="disqus_thread"></div>
 <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -218,106 +97,51 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-					
-				</section>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
 
-        <footer> 
-					<br> 
-					Altri articoli: 
-					<br>
-          <div class="row">
-            
-            
-                <article class="6u 12u(small) excerpt">
-                    <header>
-                        <h2><a href="/2015/07/instantiate-beans-with-spring-without-autowired/">Instantiate beans with Spring without @Autowired</a></h2>
-                    </header>
-                    <section>
-                        <p>Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.</p>
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2015/07/instantiate-beans-with-spring-without-autowired/">Instantiate beans with Spring without @Autowired</a></h2>
+					</header>
+					<section>
+						<p>Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.</p>
 
 
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="/2015/07/instantiate-beans-with-spring-without-autowired/" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            
-            
-            
-                <article class="6u$ 12u(small) excerpt f-right">
-                    <header>
-                        <h2><a href="/2015/07/informatica-antincendio/">Informatica Antincendio</a></h2>
-                    </header>
-                    <section>
-                        <p>Si: l’articolo che sto per scrivere parla proprio di questo: <strong>Informatica Antincendio</strong>.</p>
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2015/07/instantiate-beans-with-spring-without-autowired/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2015/07/informatica-antincendio/">Informatica Antincendio</a></h2>
+					</header>
+					<section>
+						<p>Si: l’articolo che sto per scrivere parla proprio di questo: <strong>Informatica Antincendio</strong>.</p>
 
 
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="//2015/07/informatica-antincendio/" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            </div>
-        </footer>
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2015/07/informatica-antincendio/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
 
-    </article>
+	</article>
 
 </div>
-
-
-	<!-- Footer -->
-	<footer id="footer">
-	<ul class="icons">
-
-		
-		<li>
-			<a href="https://github.com/musikele" class="icon fa-github">
-				<span class="label">GitHub</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
-				<span class="label">Twitter</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
-				<span class="label">LinkedIn</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
-				<span class="label">Google+</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
-				<span class="label">Facebook</span>
-			</a>
-		</li>
-		  
-	</ul>
-	<ul class="copyright">
-		<li>&copy; Michele Nasti</li>
-		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
-	</ul>
-</footer>
-	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/jquery.poptrox.min.js"></script>
-	<script src="/js/skel.min.js"></script>
-	<script src="/js/init.js"></script>
-</body>
-
-</html>

@@ -1,127 +1,15 @@
-<!DOCTYPE html>
-<html>
+--- layout: default ---
 
-<head>
-	<script>
-		var host = "michelenasti.com";
-		if ((host == window.location.host) && (window.location.protocol != "https:"))
-			window.location.protocol = "https";
-	</script>
-	
-	<title>iFrame, Safari, iOs e la lotta all'ultimo millisecondo - Michele Nasti's blog</title>
-	<meta name="description" content="Tutto è nato da una richiesta innocua da parte del capo: la webapp che abbiamo realizzato, e che deve operare principalmente sui pc del nostro cliente, sarà mostrata ad un’importante fiera a fine maggio, quindi dobbiamo rivederla e ottimizzarla per tablet.
+<div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">iFrame, Safari, iOs e la lotta all'ultimo millisecondo</a></h2>
+			<p class="post-meta">May 27, 2015 • musikele</p>
+		</header>
 
-" />
-	<meta name="keywords" content="iframe, ios, ottimizzazione, problemi, safari, web development" />  
-	<meta http-equiv="last-modified" content="2016-11-29 10:11:54 +0000" /> 
-	<!--<noscript>-->
-	<link rel="stylesheet" href="/css/skel.css" />
-	<link rel="stylesheet" href="/css/style.css" />
-	<link rel="stylesheet" href="/css/style-xlarge.css" />
-	<link rel="stylesheet" href="/css/colorful.css" />
-	<link rel="stylesheet" href="/css/social.css" />
-	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="" property="og:site_name">
+		<section>
 
-  <meta content="iFrame, Safari, iOs e la lotta all'ultimo millisecondo" property="og:title">
-
-
-  <meta content="article" property="og:type">
-
-
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
-
-
-  <meta content="https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/" property="og:url">
-
-
-  <meta content="2015-05-27T08:00:27+00:00" property="article:published_time">
-  <meta content="https://michelenasti.com/about/" property="article:author">
-
-
-  <meta content="/img/logo-high-resolution.png" property="og:image">
-
-
-  
-  <meta content="Italiano" property="article:section">
-  
-
-
-  
-  <meta content="iframe" property="article:tag">
-  
-  <meta content="ios" property="article:tag">
-  
-  <meta content="ottimizzazione" property="article:tag">
-  
-  <meta content="problemi" property="article:tag">
-  
-  <meta content="safari" property="article:tag">
-  
-  <meta content="web development" property="article:tag">
-  
-
-
-<!-- Twitter cards metadatas -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-
-  <meta name="twitter:title" content="iFrame, Safari, iOs e la lotta all'ultimo millisecondo">
-
-
-  <meta name="twitter:url" content="https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">
-
-
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
-
-
-<meta property="fb:pages" content="1069985669778335" />
-	<!--</noscript>-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-88764277-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</head>
-
-<body id="top">
-
-	<header id="header">
-	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
-	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
-	</h1>
-<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
-<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
-<a href="/archives/">Archives</a>
-</header> <div id="main">
-    <article>
-        <header class="major">
-            <h2 class="post-title"><a href="/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">iFrame, Safari, iOs e la lotta all'ultimo millisecondo</a></h2>
-                <p class="post-meta">May 27, 2015 • musikele</p>
-        </header>
-
-        <section>
-
-					<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- banner sotto al titolo - Michelenasti.com -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9588917209740632"
-     data-ad-slot="5184740634"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
-
-        	<p>Tutto è nato da una richiesta innocua da parte del capo: la webapp che abbiamo realizzato, e che deve operare principalmente sui pc del nostro cliente, sarà mostrata ad un’importante fiera a fine maggio, quindi dobbiamo rivederla e ottimizzarla per tablet.</p>
+			<p>Tutto è nato da una richiesta innocua da parte del capo: la webapp che abbiamo realizzato, e che deve operare principalmente sui pc del nostro cliente, sarà mostrata ad un’importante fiera a fine maggio, quindi dobbiamo rivederla e ottimizzarla per tablet.</p>
 
 <p>Poco male, abbiamo usato Bootstrap per la UI, quindi si tratterà solo di limare, aggiustare, riorganizzare gli elementi sullo schermo.</p>
 
@@ -162,9 +50,7 @@
 </ul>
 
 <p>La soluzione a lungo termine è di modificare questo nostro framework e di usare qualcosa di più standard, come ui-router o ng-router di angular. Ciò che vorremmo evitare è di riscrivere tutte le pagine che abbiamo già realizzato, quindi cercheremo di usare l’approccio meno invasivo possibile.</p>
-
-
-					
+ 
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
   <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&text=iFrame, Safari, iOs e la lotta all'ultimo millisecondo:%20https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(iFrame, Safari, iOs e la lotta all'ultimo millisecondo) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
@@ -172,21 +58,10 @@
   <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&title=iFrame, Safari, iOs e la lotta all'ultimo millisecondo&summary=&source=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
-					<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- banner sotto al titolo - Michelenasti.com -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9588917209740632"
-     data-ad-slot="5184740634"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
-        </section>
+		</section>
 
-				<section>
-					
-						<div id="disqus_thread"></div>
+		<section>
+			 <div id="disqus_thread"></div>
 <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -208,106 +83,51 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-					
-				</section>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
 
-        <footer> 
-					<br> 
-					Altri articoli: 
-					<br>
-          <div class="row">
-            
-            
-                <article class="6u 12u(small) excerpt">
-                    <header>
-                        <h2><a href="/2015/05/selenium-webdriver-for-dummies/">Selenium WebDriver for dummies</a></h2>
-                    </header>
-                    <section>
-                        <p>Esistono tool che permettono di scrivere i casi di test che simulano il comportamento dell’utente e di eseguirli all’infinito, cosa utile per individuare eventuali regressioni durante lo sviluppo.</p>
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2015/05/selenium-webdriver-for-dummies/">Selenium WebDriver for dummies</a></h2>
+					</header>
+					<section>
+						<p>Esistono tool che permettono di scrivere i casi di test che simulano il comportamento dell’utente e di eseguirli all’infinito, cosa utile per individuare eventuali regressioni durante lo sviluppo.</p>
 
 
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="/2015/05/selenium-webdriver-for-dummies/" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            
-            
-            
-                <article class="6u$ 12u(small) excerpt f-right">
-                    <header>
-                        <h2><a href="/2015/06/imovie-50-error/">iMovie and the -50 error</a></h2>
-                    </header>
-                    <section>
-                        <p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg"><img class="alignleft size-full wp-image-320" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?fit=400%2C400" alt="imovie400" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?w=400 400w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=150%2C150 150w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=300%2C300 300w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1" /></a>Yesterday I had to realize a quick video for a family celebration so I decided to use <strong>iMovie</strong> for the first time since I had bought my Mac in 2012.</p>
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2015/05/selenium-webdriver-for-dummies/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2015/06/imovie-50-error/">iMovie and the -50 error</a></h2>
+					</header>
+					<section>
+						<p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg"><img class="alignleft size-full wp-image-320" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?fit=400%2C400" alt="imovie400" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?w=400 400w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=150%2C150 150w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=300%2C300 300w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1" /></a>Yesterday I had to realize a quick video for a family celebration so I decided to use <strong>iMovie</strong> for the first time since I had bought my Mac in 2012.</p>
 
 
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="//2015/06/imovie-50-error/" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            </div>
-        </footer>
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2015/06/imovie-50-error/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
 
-    </article>
+	</article>
 
 </div>
-
-
-	<!-- Footer -->
-	<footer id="footer">
-	<ul class="icons">
-
-		
-		<li>
-			<a href="https://github.com/musikele" class="icon fa-github">
-				<span class="label">GitHub</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
-				<span class="label">Twitter</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
-				<span class="label">LinkedIn</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
-				<span class="label">Google+</span>
-			</a>
-		</li>
-		 
-		<li>
-			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
-				<span class="label">Facebook</span>
-			</a>
-		</li>
-		  
-	</ul>
-	<ul class="copyright">
-		<li>&copy; Michele Nasti</li>
-		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
-	</ul>
-</footer>
-	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/jquery.poptrox.min.js"></script>
-	<script src="/js/skel.min.js"></script>
-	<script src="/js/init.js"></script>
-</body>
-
-</html>
