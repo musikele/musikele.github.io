@@ -5,11 +5,143 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-05-22T14:12:09+00:00</updated>
+    <updated>2017-05-22T17:06:05+00:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
+    
+      <item>
+        <title>I colloqui di lavoro nelle Big</title>
+        <link>https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html</guid>
+        <pubDate>Mon, 22 May 2017 15:08:19 +0000</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Recentemente sono stato speaker all’evento &lt;a href=&quot;https://www.meetup.com/it-IT/GDGCampania/events/239723850/&quot;&gt;pre-Google I/O&lt;/a&gt; organizzato dal &lt;a href=&quot;http://gdgcampania.com&quot;&gt;Google Developers Group Campania&lt;/a&gt;, a Napoli.&lt;/p&gt;
+
+&lt;p&gt;Il mio talk verteva sui colloqui di lavoro delle aziende top, e qui ci sta bene un bel disclaimer: &lt;em&gt;non ho mai fatto colloqui per aziende top  - tranne un piccolo frangente con Amazon&lt;/em&gt;. Ma ho letto molto sull’argomento, e ho chiesto in giro ad alcuni amici che hanno fatto le selezioni per queste aziende, quindi avevo un po’ di materiale che era bello condividere.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://docs.google.com/presentation/d/1eQce7aEOl8qaGPbmhQVmUQb99Sf2bioBJhmuEER4_B8/embed?start=false&amp;amp;loop=false&amp;amp;delayms=60000&quot; frameborder=&quot;0&quot; width=&quot;480&quot; height=&quot;389&quot; allowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Una parte del talk riguardava alcuni “rompicapi” che in passato, più che oggi, venivano sottoposti agli aspiranti candidati. Fermo restando che agli intervistatori non interessa sapere la risposta (ammesso che esista!), semmai vogliono vedere in che modo approcciate i problemi, che ragionamenti fate, insomma quanta creatività avete.&lt;/p&gt;
+
+&lt;p&gt;Torno a ribadire: queste domande sono “rare” e tutte le persone in carne ed ossa con cui ho parlato non le hanno ricevute; tuttavia, dato che esiste un libro sull’argomento (&lt;a href=&quot;http://amzn.to/2rKTgbo&quot;&gt;“sei abbastanza sveglio per lavorare in google?”, di William Poundstone&lt;/a&gt;), e considerato che sono un appassionato di indovinelli, non ho potuto ignorare.&lt;/p&gt;
+
+&lt;p&gt;A fine talk molti sono venuti per chiedermi le “soluzioni” (che ripeto: non sempre esistono) o gli approcci; altri sono venuti a pormi degli indovinelli, ai quali per mia fortuna sono riuscito a trovare la risposta in tempo (ed evitare la figura di merda 😅 ).&lt;/p&gt;
+
+&lt;p&gt;Eccovene alcuni!&lt;/p&gt;
+
+&lt;h3 id=&quot;dado-senza-dado&quot;&gt;Dado senza dado&lt;/h3&gt;
+
+&lt;p&gt;Sai simulare un dado con una monetina? Puoi lanciare la moneta più volte.&lt;/p&gt;
+
+&lt;h3 id=&quot;i-filosofi-bugiardi&quot;&gt;I Filosofi bugiardi&lt;/h3&gt;
+
+&lt;p&gt;Attorno a un tavolo sono seduti tanti filosofi. Alcuni dicono sempre la verità; altri solo bugie.&lt;/p&gt;
+
+&lt;p&gt;A turno, ogni filosofo prende la parola e dice: “Il filosofo alla mia sinistra è un bugiardo!”&lt;/p&gt;
+
+&lt;p&gt;Quando tutti i filosofi hanno espresso questo importantissimo concetto, prende la parola un altro filosofo ed esclama: “siamo 21 seduti a questo tavolo!”&lt;/p&gt;
+
+&lt;p&gt;Il suo vicino ribatte: “Non è vero! Siamo 22!”&lt;/p&gt;
+
+&lt;p&gt;Che diamine stanno dicendo?! Quanti sono? Chi ha ragione? Come sono seduti?&lt;/p&gt;
+
+&lt;h2 id=&quot;le-risposte-di-mia-moglie&quot;&gt;Le risposte di mia moglie&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Dado senza dado:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;Con la moneta entro in un negozio e compro il dado.&amp;nbsp;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Problema dei filosofi bugiardi:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;Cambio tavolo: vado a sedermi da un'altra parte.&amp;nbsp;&lt;/blockquote&gt;
+
+&lt;p&gt;Posso dirvi che in aziende come Google queste risposte non sarebbero state solo degli &lt;em&gt;ice-breaker&lt;/em&gt;, ma verrebbero probabilmente considerate nel giudizio globale del&lt;span style=&quot;font-size: 1rem;&quot;&gt; candidato. &lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-size: 1rem;&quot;&gt;Tuttavia non basta per superare il colloquio 😅  Scrivi la tua risposta nei commenti ;) &lt;/span&gt;&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>I colloqui di lavoro nelle Big</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" I colloqui di lavoro nelle Big ">
+                          <figcaption>I colloqui di lavoro nelle Big</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-05-22 15:08:19 UTC">Mon, 22 May 2017 15:08:19 +0000</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Recentemente sono stato speaker all’evento <a href="https://www.meetup.com/it-IT/GDGCampania/events/239723850/">pre-Google I/O</a> organizzato dal <a href="http://gdgcampania.com">Google Developers Group Campania</a>, a Napoli.</p>
+
+<p>Il mio talk verteva sui colloqui di lavoro delle aziende top, e qui ci sta bene un bel disclaimer: <em>non ho mai fatto colloqui per aziende top  - tranne un piccolo frangente con Amazon</em>. Ma ho letto molto sull’argomento, e ho chiesto in giro ad alcuni amici che hanno fatto le selezioni per queste aziende, quindi avevo un po’ di materiale che era bello condividere.</p>
+
+<iframe src="https://docs.google.com/presentation/d/1eQce7aEOl8qaGPbmhQVmUQb99Sf2bioBJhmuEER4_B8/embed?start=false&amp;loop=false&amp;delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<p>Una parte del talk riguardava alcuni “rompicapi” che in passato, più che oggi, venivano sottoposti agli aspiranti candidati. Fermo restando che agli intervistatori non interessa sapere la risposta (ammesso che esista!), semmai vogliono vedere in che modo approcciate i problemi, che ragionamenti fate, insomma quanta creatività avete.</p>
+
+<p>Torno a ribadire: queste domande sono “rare” e tutte le persone in carne ed ossa con cui ho parlato non le hanno ricevute; tuttavia, dato che esiste un libro sull’argomento (<a href="http://amzn.to/2rKTgbo">“sei abbastanza sveglio per lavorare in google?”, di William Poundstone</a>), e considerato che sono un appassionato di indovinelli, non ho potuto ignorare.</p>
+
+<p>A fine talk molti sono venuti per chiedermi le “soluzioni” (che ripeto: non sempre esistono) o gli approcci; altri sono venuti a pormi degli indovinelli, ai quali per mia fortuna sono riuscito a trovare la risposta in tempo (ed evitare la figura di merda 😅 ).</p>
+
+<p>Eccovene alcuni!</p>
+
+<h3 id="dado-senza-dado">Dado senza dado</h3>
+
+<p>Sai simulare un dado con una monetina? Puoi lanciare la moneta più volte.</p>
+
+<h3 id="i-filosofi-bugiardi">I Filosofi bugiardi</h3>
+
+<p>Attorno a un tavolo sono seduti tanti filosofi. Alcuni dicono sempre la verità; altri solo bugie.</p>
+
+<p>A turno, ogni filosofo prende la parola e dice: “Il filosofo alla mia sinistra è un bugiardo!”</p>
+
+<p>Quando tutti i filosofi hanno espresso questo importantissimo concetto, prende la parola un altro filosofo ed esclama: “siamo 21 seduti a questo tavolo!”</p>
+
+<p>Il suo vicino ribatte: “Non è vero! Siamo 22!”</p>
+
+<p>Che diamine stanno dicendo?! Quanti sono? Chi ha ragione? Come sono seduti?</p>
+
+<h2 id="le-risposte-di-mia-moglie">Le risposte di mia moglie</h2>
+
+<p><strong>Dado senza dado:</strong></p>
+
+<blockquote>Con la moneta entro in un negozio e compro il dado.&nbsp;</blockquote>
+
+<p><strong>Problema dei filosofi bugiardi:</strong></p>
+
+<blockquote>Cambio tavolo: vado a sedermi da un'altra parte.&nbsp;</blockquote>
+
+<p>Posso dirvi che in aziende come Google queste risposte non sarebbero state solo degli <em>ice-breaker</em>, ma verrebbero probabilmente considerate nel giudizio globale del<span style="font-size: 1rem;"> candidato. </span></p>
+
+<p><span style="font-size: 1rem;">Tuttavia non basta per superare il colloquio 😅  Scrivi la tua risposta nei commenti ;) </span></p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
     
       <item>
         <title>Agile? No grazie, noi siamo Lean</title>
@@ -1997,312 +2129,6 @@ app.listen(port);
 </ul>
 
 <p>For every modification you do to your code, just commit and <code class="highlighter-rouge">git push heroku</code>!</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>Two easy ways perform GET requests in NodeJS </title>
-        <link>https://michelenasti.com/2017/03/13/two-easy-ways-perform-get-requests-in-nodejs.html</link>
-        <guid isPermaLink="true">https://michelenasti.com/2017/03/13/two-easy-ways-perform-get-requests-in-nodejs.html</guid>
-        <pubDate>Mon, 13 Mar 2017 23:07:41 +0000</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;Today I want to talk about something that we all need during our programming life: requesting data from a remote server. We will do this using callbacks and promises, to show both the approaches.&lt;/p&gt;
-
-&lt;p&gt;We will see this specifically for NodeJS because it’s so simple that I couldn’t even imagine.&lt;/p&gt;
-
-&lt;p&gt;In this article I’m going to talk about two super-popular libraries that do the same thing, but expose their API to the developer differently. Let’s see what they do and how to use them.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/callbacks.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;a-simple-use-case-google-maps-api&quot;&gt;a simple use case: Google maps API&lt;/h2&gt;
-
-&lt;p&gt;Just as an example, we will write a simple program that takes a textual address (for example&lt;code class=&quot;highlighter-rouge&quot;&gt;Piazza della Concordia, Salerno&lt;/code&gt;) and return latitude and longitude.&lt;/p&gt;
-
-&lt;p&gt;The URL is this: &lt;a href=&quot;https://maps.googleapis.com/maps/api/geocode/json?address=piazza della concordia, salerno&quot;&gt;https://maps.googleapis.com/maps/api/geocode/json?address=piazza della concordia, salerno&lt;/a&gt;.  Clicking on this link you can see the response in json format.&lt;/p&gt;
-
-&lt;p&gt;Our mission is to retrive latitude and longitude, so&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;results[0].geometry.location.lat
-results[0].geometry.location.lng
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;request-the-name-says-it-all&quot;&gt;Request: the name says it all&lt;/h2&gt;
-
-&lt;p&gt;The first library I’m going to talk is simply called &lt;a href=&quot;https://www.npmjs.com/package/request&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt;&lt;/a&gt;. Install as always:&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;kv&quot;&gt; install request --save
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;From the NPM description:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Here is a NodeJS function that uses &lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt; to perform the call&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;encodedAddress&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//server unreachable&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
-      &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Unable to connect to Google Servers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// no results &lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ZERO_RESULTS'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Unable to find that address'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'OK'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;formatted_address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;latitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;longitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lng&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;encodeURIComponent()&lt;/code&gt; is a function that converts strings with special characters (like spaces, or quotes..) to a string that can be passed over a URI.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt; is just a function that takes an URI, some options, and will give the result in a &lt;strong&gt;callback&lt;/strong&gt;. Since we are following Node standard approach to callbacks, where the first argument is the error object, the return callback contains a &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt; as first argument.&lt;/p&gt;
-
-&lt;h2 id=&quot;axios-a-promise-based-equivalent&quot;&gt;Axios: a Promise based equivalent&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html&quot;&gt;In my last article we talked about promises&lt;/a&gt;, so we would like to see these in action, right? We have two options, the first is to wrap &lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt; in a promise (easy, but more code); the second is to &lt;strong&gt;use a library already built with promises in mind&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The one I use, and that is super popular, is called &lt;strong&gt;&lt;a href=&quot;https://www.npmjs.com/package/axios&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Axios&lt;/code&gt;&lt;/a&gt;&lt;/strong&gt;: Here’s the description&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Promise based HTTP client for the browser and node.js&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;To install:&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;kv&quot;&gt; install axios
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here is the snippet for the axios request:&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;encodedAddress&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;geocodeUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;axios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geocodeUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// throw error on no results&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ZERO_RESULTS'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Unable to find that address'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// return new promise with data (for chaining)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;latitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;longitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;formatted_address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;formatted_address&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// show data&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;latitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;formatted_address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;latitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;latitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;latitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;longitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;//error handling &lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The approach here is different. &lt;code class=&quot;highlighter-rouge&quot;&gt;axios.get()&lt;/code&gt; returns a Promise, that we chain with a call to the &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;Once we have the data, in the form of &lt;code class=&quot;highlighter-rouge&quot;&gt;response.data&lt;/code&gt;, we can extrapolate the fields we need.&lt;/p&gt;
-
-&lt;p&gt;I could just print the data in the first &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt; block, but to be more coherent with my design guidelines (&lt;em&gt;every function does just one thing&lt;/em&gt;) I wanted to separate the two operations so the first block will just retrieve the data, then returns another Promise (&lt;code class=&quot;highlighter-rouge&quot;&gt;return Promise.resolve({..})&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;The next &lt;code class=&quot;highlighter-rouge&quot;&gt;then()&lt;/code&gt; block will only display the data retrieved.&lt;/p&gt;
-
-&lt;h2 id=&quot;which-approach-do-you-prefer&quot;&gt;Which approach do you prefer?&lt;/h2&gt;
-
-&lt;p&gt;This depends on you! &lt;strong&gt;I prefer promises&lt;/strong&gt;, because I find them more natural, but being a Node coder means you can choose and decide what’s best for you. Both are well tested libraries with well known patterns, so you only have to choose the one you love.&lt;/p&gt;
-
-&lt;p&gt;Cheers from &lt;code class=&quot;highlighter-rouge&quot;&gt;40.7802306&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;14.7010686&lt;/code&gt; !&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/2017/03/13/two-easy-ways-perform-get-requests-in-nodejs.html">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>Two easy ways perform GET requests in NodeJS </h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Two easy ways perform GET requests in NodeJS  ">
-                          <figcaption>Two easy ways perform GET requests in NodeJS </figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-03-13 23:07:41 UTC">Mon, 13 Mar 2017 23:07:41 +0000</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p>Today I want to talk about something that we all need during our programming life: requesting data from a remote server. We will do this using callbacks and promises, to show both the approaches.</p>
-
-<p>We will see this specifically for NodeJS because it’s so simple that I couldn’t even imagine.</p>
-
-<p>In this article I’m going to talk about two super-popular libraries that do the same thing, but expose their API to the developer differently. Let’s see what they do and how to use them.</p>
-
-<p><img src="/images/callbacks.png" alt="" /></p>
-
-<h2 id="a-simple-use-case-google-maps-api">a simple use case: Google maps API</h2>
-
-<p>Just as an example, we will write a simple program that takes a textual address (for example<code class="highlighter-rouge">Piazza della Concordia, Salerno</code>) and return latitude and longitude.</p>
-
-<p>The URL is this: <a href="https://maps.googleapis.com/maps/api/geocode/json?address=piazza della concordia, salerno">https://maps.googleapis.com/maps/api/geocode/json?address=piazza della concordia, salerno</a>.  Clicking on this link you can see the response in json format.</p>
-
-<p>Our mission is to retrive latitude and longitude, so</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>results[0].geometry.location.lat
-results[0].geometry.location.lng
-</code></pre>
-</div>
-
-<h2 id="request-the-name-says-it-all">Request: the name says it all</h2>
-
-<p>The first library I’m going to talk is simply called <a href="https://www.npmjs.com/package/request"><code class="highlighter-rouge">request</code></a>. Install as always:</p>
-
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> install request --save
-</span></code></pre>
-</div>
-
-<p>From the NPM description:</p>
-
-<blockquote>
-  <p>Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.</p>
-</blockquote>
-
-<p>Here is a NodeJS function that uses <code class="highlighter-rouge">request</code> to perform the call</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">encodedAddress</span> <span class="o">=</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
-
-  <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="err">`</span><span class="na">https</span><span class="p">:</span><span class="c1">//maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,</span>
-    <span class="na">json</span><span class="p">:</span> <span class="kc">true</span>
-  <span class="p">},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-    <span class="c1">//server unreachable</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span> 
-      <span class="nx">callback</span><span class="p">(</span><span class="s1">'Unable to connect to Google Servers'</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// no results </span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">'ZERO_RESULTS'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">callback</span><span class="p">(</span><span class="s1">'Unable to find that address'</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">'OK'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">callback</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">address</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">formatted_address</span><span class="p">,</span>
-        <span class="na">latitude</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span>
-        <span class="na">longitude</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lng</span>
-      <span class="p">});</span>
-    <span class="p">}</span>
-
-  <span class="p">});</span>
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">encodeURIComponent()</code> is a function that converts strings with special characters (like spaces, or quotes..) to a string that can be passed over a URI.</p>
-
-<p><code class="highlighter-rouge">request</code> is just a function that takes an URI, some options, and will give the result in a <strong>callback</strong>. Since we are following Node standard approach to callbacks, where the first argument is the error object, the return callback contains a <code class="highlighter-rouge">undefined</code> as first argument.</p>
-
-<h2 id="axios-a-promise-based-equivalent">Axios: a Promise based equivalent</h2>
-
-<p><a href="https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">In my last article we talked about promises</a>, so we would like to see these in action, right? We have two options, the first is to wrap <code class="highlighter-rouge">request</code> in a promise (easy, but more code); the second is to <strong>use a library already built with promises in mind</strong>.</p>
-
-<p>The one I use, and that is super popular, is called <strong><a href="https://www.npmjs.com/package/axios"><code class="highlighter-rouge">Axios</code></a></strong>: Here’s the description</p>
-
-<blockquote>
-  <p>Promise based HTTP client for the browser and node.js</p>
-</blockquote>
-
-<p>To install:</p>
-
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> install axios
-</span></code></pre>
-</div>
-
-<p>Here is the snippet for the axios request:</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">encodedAddress</span> <span class="o">=</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">geocodeUrl</span> <span class="o">=</span> <span class="err">`</span><span class="nx">https</span><span class="err">:</span><span class="c1">//maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;</span>
-
-<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">geocodeUrl</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// throw error on no results</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">'ZERO_RESULTS'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Unable to find that address'</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="c1">// return new promise with data (for chaining)</span>
-  <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">({</span>
-    <span class="na">latitude</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span>
-    <span class="na">longitude</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span>
-    <span class="na">formatted_address</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">formatted_address</span>
-  <span class="p">});</span>
-
-  <span class="c1">// show data</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">latitude</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">response</span><span class="p">.</span><span class="nx">formatted_address</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">latitude</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">response</span><span class="p">.</span><span class="nx">latitude</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">latitude</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">response</span><span class="p">.</span><span class="nx">longitude</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
-
-  <span class="c1">//error handling </span>
-<span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-<span class="p">});</span> 
-</code></pre>
-</div>
-
-<p>The approach here is different. <code class="highlighter-rouge">axios.get()</code> returns a Promise, that we chain with a call to the <code class="highlighter-rouge">then()</code> method.</p>
-
-<p>Once we have the data, in the form of <code class="highlighter-rouge">response.data</code>, we can extrapolate the fields we need.</p>
-
-<p>I could just print the data in the first <code class="highlighter-rouge">then()</code> block, but to be more coherent with my design guidelines (<em>every function does just one thing</em>) I wanted to separate the two operations so the first block will just retrieve the data, then returns another Promise (<code class="highlighter-rouge">return Promise.resolve({..})</code>).</p>
-
-<p>The next <code class="highlighter-rouge">then()</code> block will only display the data retrieved.</p>
-
-<h2 id="which-approach-do-you-prefer">Which approach do you prefer?</h2>
-
-<p>This depends on you! <strong>I prefer promises</strong>, because I find them more natural, but being a Node coder means you can choose and decide what’s best for you. Both are well tested libraries with well known patterns, so you only have to choose the one you love.</p>
-
-<p>Cheers from <code class="highlighter-rouge">40.7802306</code>, <code class="highlighter-rouge">14.7010686</code> !</p>
 
                   
                     <footer>
