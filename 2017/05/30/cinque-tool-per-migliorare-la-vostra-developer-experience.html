@@ -9,9 +9,11 @@
 	</script>
 	
 	<title>Cinque tool per migliorare la vostra developer experience - Michele Nasti's blog</title>
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />  
-	<meta http-equiv="last-modified" content="2017-05-30 11:00:59 +0000" /> 
+	<meta name="description" content="Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra developer experience.
+
+" />
+	<meta name="keywords" content="git flow, mac-cli, oh-my-zsh, postman, ngrok" />  
+	<meta http-equiv="last-modified" content="2017-05-30 12:48:11 +0000" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -31,7 +33,7 @@
   <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
 
 
-  <meta content="https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience" property="og:url">
+  <meta content="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html" property="og:url">
 
 
   <meta content="2017-05-30T12:07:50+00:00" property="article:published_time">
@@ -41,7 +43,21 @@
   <meta content="/img/logo-high-resolution.png" property="og:image">
 
 
+  
+  <meta content="Italiano" property="article:section">
+  
 
+
+  
+  <meta content="git flow" property="article:tag">
+  
+  <meta content="mac-cli" property="article:tag">
+  
+  <meta content="oh-my-zsh" property="article:tag">
+  
+  <meta content="postman" property="article:tag">
+  
+  <meta content="ngrok" property="article:tag">
   
 
 
@@ -53,7 +69,7 @@
   <meta name="twitter:title" content="Cinque tool per migliorare la vostra developer experience">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience">
+  <meta name="twitter:url" content="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html">
 
 
   <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
@@ -86,13 +102,13 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h2 class="post-title"><a href="/cinque-tool-per-migliorare-la-vostra-developer-experience">Cinque tool per migliorare la vostra developer experience</a></h2>
+			<h2 class="post-title"><a href="/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html">Cinque tool per migliorare la vostra developer experience</a></h2>
 			<p class="post-meta">May 30, 2017 • musikele</p>
 		</header>
 
 		<section>
 
-			<p>Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permettono di migliorare la vostra developer experience.</p>
+			<p>Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra <em>developer experience</em>.</p>
 
 <h3 id="mac-command-line"><code class="highlighter-rouge">mac</code> command line</h3>
 
@@ -103,15 +119,9 @@
 <p>Un esempio?</p>
 
 <ul>
-  <li>
-    <p><code class="highlighter-rouge">mac ip:public</code> vi restituisce il vostro ip pubblico</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">mac speedtest</code> esegue uno speed test da linea di comando</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">mac memory</code> vi dice quale app sta consumando la vostra preziosa RAM</p>
-  </li>
+  <li><code class="highlighter-rouge">mac ip:public</code> vi restituisce il vostro ip pubblico</li>
+  <li><code class="highlighter-rouge">mac speedtest</code> esegue uno speed test da linea di comando</li>
+  <li><code class="highlighter-rouge">mac memory</code> vi dice quale app sta consumando la vostra preziosa RAM</li>
 </ul>
 
 <p>e tanti altri. Sono circa una cinquantina!</p>
@@ -120,17 +130,19 @@
 
 <p><a href="https://github.com/robbyrussell/oh-my-zsh">Oh-my-zsh</a> è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di bash. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:</p>
 
-<p><img src="/images/oh-my-zsh.jpg" alt="" />Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!</p>
+<p><img src="/images/oh-my-zsh.jpg" alt="" /></p>
+
+<p>Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!</p>
 
 <h3 id="ngrok-per-testare-chiamate-api-dallesterno"><code class="highlighter-rouge">ngrok</code>, per testare chiamate API dall’esterno</h3>
 
 <p>Dovete testare le chiamate di un sistema esterno verso il vostro software? Ad esempio, io ho avuto questa esigenza con le API di Paypal e Gestpay: a un certo punto questi sistemi dovevano notificarmi che i pagamenti erano andati a buon fine e mi avrebbero contattato agli indirizzi configurati.</p>
 
-<p>Come testare che le chiamate stessero andando a buon fine? Facile, con <a href="https://ngrok.com/">ngrok</a>: un tool che permette di creare un tunnel privato da un indirizzo http esterno.</p>
+<p>Come testare e come verificare il contenuto di queste chiamate? Facile, con <a href="https://ngrok.com/">ngrok</a>: un tool che permette di creare un tunnel privato da un indirizzo http esterno.</p>
 
 <p><img src="/images/ngrok.png" alt="" /></p>
 
-<p>Per farla facile, voi lanciate <code class="highlighter-rouge">ngrok http 8000</code> e ngrok creerà un indirizzo tipo <code class="highlighter-rouge">http://abc33344422.ngrok.io</code>. Se visitate questo indirizzo (anche dall’esterno!) sarete rediretti a<code class="highlighter-rouge">localhost:8000</code>. Tutto ciò che passa per questo indirizzo viene loggato e mostrato!</p>
+<p>Per farla facile, voi lanciate <code class="highlighter-rouge">ngrok http 8000</code> e ngrok creerà un indirizzo tipo <code class="highlighter-rouge">http://abc33344422.ngrok.io</code>. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a<code class="highlighter-rouge">localhost:8000</code>. Tutto ciò che passa per ngrok viene loggato e mostrato!</p>
 
 <h3 id="git-flow-una-metodologia-per-semplificare-e-standardizzare-git-nel-team">Git Flow, una metodologia per semplificare e standardizzare git nel team</h3>
 
@@ -141,49 +153,37 @@
 <p>Con git flow organizziamo il lavoro in due <em>meta-filoni</em>:</p>
 
 <ul>
-  <li>
-    <p>branch <code class="highlighter-rouge">master</code>, che corrisponde alle versioni rilasciate</p>
-  </li>
-  <li>
-    <p>branch <code class="highlighter-rouge">develop</code>, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.</p>
-  </li>
+  <li>branch <code class="highlighter-rouge">master</code>, che corrisponde alle versioni rilasciate</li>
+  <li>branch <code class="highlighter-rouge">develop</code>, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.</li>
 </ul>
 
 <p>Oltre a questi due branch “generali”, ogni azione degli sviluppatori è realizzata creando nuovi branch:</p>
 
 <ul>
-  <li>
-    <p>Gli sviluppi delle singole feature sui branch <code class="highlighter-rouge">feature/*tua_feature*</code></p>
-  </li>
-  <li>
-    <p>I rilasci (da develop a master) su branch chiamati <code class="highlighter-rouge">release/*nome_release*</code></p>
-  </li>
-  <li>
-    <p>le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch <code class="highlighter-rouge">hotfix/*nome_fix*</code>.</p>
-  </li>
+  <li>Gli sviluppi delle singole feature sui branch <code class="highlighter-rouge">feature/*tua_feature*</code></li>
+  <li>I rilasci (da develop a master) su branch chiamati <code class="highlighter-rouge">release/*nome_release*</code></li>
+  <li>le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch <code class="highlighter-rouge">hotfix/*nome_fix*</code>.</li>
 </ul>
 
 <p>Non ci avete capito niente? <a href="https://danielkummer.github.io/git-flow-cheatsheet/">Qui un grafico che prova a spiegare comandi e funzioni</a>.</p>
 
 <h3 id="bonus-postman-per-testare-le-interfacce-rest">Bonus: Postman per testare le interfacce Rest</h3>
 
-<p>Ho iniziato a lavorare che c’era SOAP e si stava appena iniziando a parlare di REST.</p>
-
-<p>Qualche anno dopo, SOAP è considerato legacy e tutti fanno REST, chi bene e chi male.</p>
+<p>Ho iniziato a lavorare che c’era SOAP e si stava appena iniziando a parlare di REST. Qualche anno dopo, SOAP è diventato <em>legacy</em> e tutti si dichiarano REST, chi bene e chi male.</p>
 
 <p>Ad ogni modo, è sorta l’esigenza di testare le interfacce REST e come testarle se non con <a href="https://www.getpostman.com/">Postman</a>?</p>
 
-<p><img src="https://www.getpostman.com/img/v2/logo-big.svg" alt="Postman" class=" forestry--none forestry--right forestry--none" style="float: none;" /></p>
+<p><img src="https://www.getpostman.com/img/v2/logo-big.svg" alt="Postman" /></p>
 
-<p>Questa è  una vera e propria applicazione che permette di effettuare ogni tipo di chiamata desideriate, GET - PUT - POST - HEAD etc. C’è la possibilità di salvare le chiamate, passare header aggiuntivi, visualizzare i dati in molti modi (ad esempio JSON), etc etc.</p>
+<p>Questa è  una vera e propria applicazione <em>standalone</em> che permette di effettuare ogni tipo di chiamata desideriate, GET - PUT - POST - HEAD etc. C’è la possibilità di salvare le chiamate, passare header aggiuntivi, visualizzare i dati in molti modi (ad esempio JSON), etc etc.</p>
 
-<p>Buon testing a tutti!</p>
+<p>Come dite? non è un tool da linea di comando? Avete ragione, ma questo è il mio blog e qui comando io 😂</p>
  
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience&text=Cinque tool per migliorare la vostra developer experience:%20https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Cinque tool per migliorare la vostra developer experience) + ':%20'  + encodeURIComponent(https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience&title=Cinque tool per migliorare la vostra developer experience&summary=&source=https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html&text=Cinque tool per migliorare la vostra developer experience:%20https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Cinque tool per migliorare la vostra developer experience) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html&title=Cinque tool per migliorare la vostra developer experience&summary=&source=https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 		</section>
@@ -199,8 +199,8 @@
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience';
-			var disqus_identifier = 'https://michelenasti.com/cinque-tool-per-migliorare-la-vostra-developer-experience';
+			var disqus_url = 'https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html';
+			var disqus_identifier = 'https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html';
 
     };
     
@@ -218,6 +218,23 @@ s.setAttribute('data-timestamp', +new Date());
 			<br> Altri articoli:
 			<br>
 			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2017/05/22/i-colloqui-di-lavoro-nelle-big.html">I colloqui di lavoro nelle Big</a></h2>
+					</header>
+					<section>
+						<p>Recentemente sono stato speaker all’evento <a href="https://www.meetup.com/it-IT/GDGCampania/events/239723850/">pre-Google I/O</a> organizzato dal <a href="http://gdgcampania.com">Google Developers Group Campania</a>, a Napoli.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2017/05/22/i-colloqui-di-lavoro-nelle-big.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
 				 
 			</div>
 		</footer>

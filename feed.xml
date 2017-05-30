@@ -5,11 +5,197 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-05-30T11:02:07+00:00</updated>
+    <updated>2017-05-30T12:51:21+00:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
+    
+      <item>
+        <title>Cinque tool per migliorare la vostra developer experience</title>
+        <link>https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html</guid>
+        <pubDate>Tue, 30 May 2017 12:07:50 +0000</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra &lt;em&gt;developer experience&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;mac-command-line&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac&lt;/code&gt; command line&lt;/h3&gt;
+
+&lt;p&gt;Si &lt;a href=&quot;https://github.com/guarinogabriel/Mac-CLI&quot;&gt;installa da linea di comando&lt;/a&gt; e crea un eseguibile, &lt;code class=&quot;highlighter-rouge&quot;&gt;mac&lt;/code&gt;, che permette di svolgere molte operazioni comuni con pochi click.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/demo-mac-cli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Un esempio?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac ip:public&lt;/code&gt; vi restituisce il vostro ip pubblico&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac speedtest&lt;/code&gt; esegue uno speed test da linea di comando&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac memory&lt;/code&gt; vi dice quale app sta consumando la vostra preziosa RAM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;e tanti altri. Sono circa una cinquantina!&lt;/p&gt;
+
+&lt;h3 id=&quot;oh-my-zsh-per-un-terminale-più-combattivo&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Oh-my-zsh&lt;/code&gt; per un terminale più combattivo&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;Oh-my-zsh&lt;/a&gt; è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di bash. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/oh-my-zsh.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!&lt;/p&gt;
+
+&lt;h3 id=&quot;ngrok-per-testare-chiamate-api-dallesterno&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ngrok&lt;/code&gt;, per testare chiamate API dall’esterno&lt;/h3&gt;
+
+&lt;p&gt;Dovete testare le chiamate di un sistema esterno verso il vostro software? Ad esempio, io ho avuto questa esigenza con le API di Paypal e Gestpay: a un certo punto questi sistemi dovevano notificarmi che i pagamenti erano andati a buon fine e mi avrebbero contattato agli indirizzi configurati.&lt;/p&gt;
+
+&lt;p&gt;Come testare e come verificare il contenuto di queste chiamate? Facile, con &lt;a href=&quot;https://ngrok.com/&quot;&gt;ngrok&lt;/a&gt;: un tool che permette di creare un tunnel privato da un indirizzo http esterno.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ngrok.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Per farla facile, voi lanciate &lt;code class=&quot;highlighter-rouge&quot;&gt;ngrok http 8000&lt;/code&gt; e ngrok creerà un indirizzo tipo &lt;code class=&quot;highlighter-rouge&quot;&gt;http://abc33344422.ngrok.io&lt;/code&gt;. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8000&lt;/code&gt;. Tutto ciò che passa per ngrok viene loggato e mostrato!&lt;/p&gt;
+
+&lt;h3 id=&quot;git-flow-una-metodologia-per-semplificare-e-standardizzare-git-nel-team&quot;&gt;Git Flow, una metodologia per semplificare e standardizzare git nel team&lt;/h3&gt;
+
+&lt;p&gt;Git flow è sia &lt;a href=&quot;https://github.com/nvie/gitflow&quot;&gt;un tool installabile da linea di comando&lt;/a&gt;, sia un approccio filosofico alla domanda “come lavorare in gruppo”.&lt;/p&gt;
+
+&lt;p&gt;Git è un potentissimo sistema di versioning e branching; spero per voi che lo stiate già utilizzando altrimenti brrrr.&lt;/p&gt;
+
+&lt;p&gt;Con git flow organizziamo il lavoro in due &lt;em&gt;meta-filoni&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;branch &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, che corrisponde alle versioni rilasciate&lt;/li&gt;
+  &lt;li&gt;branch &lt;code class=&quot;highlighter-rouge&quot;&gt;develop&lt;/code&gt;, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Oltre a questi due branch “generali”, ogni azione degli sviluppatori è realizzata creando nuovi branch:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gli sviluppi delle singole feature sui branch &lt;code class=&quot;highlighter-rouge&quot;&gt;feature/*tua_feature*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;I rilasci (da develop a master) su branch chiamati &lt;code class=&quot;highlighter-rouge&quot;&gt;release/*nome_release*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch &lt;code class=&quot;highlighter-rouge&quot;&gt;hotfix/*nome_fix*&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Non ci avete capito niente? &lt;a href=&quot;https://danielkummer.github.io/git-flow-cheatsheet/&quot;&gt;Qui un grafico che prova a spiegare comandi e funzioni&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;bonus-postman-per-testare-le-interfacce-rest&quot;&gt;Bonus: Postman per testare le interfacce Rest&lt;/h3&gt;
+
+&lt;p&gt;Ho iniziato a lavorare che c’era SOAP e si stava appena iniziando a parlare di REST. Qualche anno dopo, SOAP è diventato &lt;em&gt;legacy&lt;/em&gt; e tutti si dichiarano REST, chi bene e chi male.&lt;/p&gt;
+
+&lt;p&gt;Ad ogni modo, è sorta l’esigenza di testare le interfacce REST e come testarle se non con &lt;a href=&quot;https://www.getpostman.com/&quot;&gt;Postman&lt;/a&gt;?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.getpostman.com/img/v2/logo-big.svg&quot; alt=&quot;Postman&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Questa è  una vera e propria applicazione &lt;em&gt;standalone&lt;/em&gt; che permette di effettuare ogni tipo di chiamata desideriate, GET - PUT - POST - HEAD etc. C’è la possibilità di salvare le chiamate, passare header aggiuntivi, visualizzare i dati in molti modi (ad esempio JSON), etc etc.&lt;/p&gt;
+
+&lt;p&gt;Come dite? non è un tool da linea di comando? Avete ragione, ma questo è il mio blog e qui comando io 😂&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>Cinque tool per migliorare la vostra developer experience</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Cinque tool per migliorare la vostra developer experience ">
+                          <figcaption>Cinque tool per migliorare la vostra developer experience</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-05-30 12:07:50 UTC">Tue, 30 May 2017 12:07:50 +0000</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra <em>developer experience</em>.</p>
+
+<h3 id="mac-command-line"><code class="highlighter-rouge">mac</code> command line</h3>
+
+<p>Si <a href="https://github.com/guarinogabriel/Mac-CLI">installa da linea di comando</a> e crea un eseguibile, <code class="highlighter-rouge">mac</code>, che permette di svolgere molte operazioni comuni con pochi click.</p>
+
+<p><img src="/images/demo-mac-cli.gif" alt="" /></p>
+
+<p>Un esempio?</p>
+
+<ul>
+  <li><code class="highlighter-rouge">mac ip:public</code> vi restituisce il vostro ip pubblico</li>
+  <li><code class="highlighter-rouge">mac speedtest</code> esegue uno speed test da linea di comando</li>
+  <li><code class="highlighter-rouge">mac memory</code> vi dice quale app sta consumando la vostra preziosa RAM</li>
+</ul>
+
+<p>e tanti altri. Sono circa una cinquantina!</p>
+
+<h3 id="oh-my-zsh-per-un-terminale-più-combattivo"><code class="highlighter-rouge">Oh-my-zsh</code> per un terminale più combattivo</h3>
+
+<p><a href="https://github.com/robbyrussell/oh-my-zsh">Oh-my-zsh</a> è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di bash. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:</p>
+
+<p><img src="/images/oh-my-zsh.jpg" alt="" /></p>
+
+<p>Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!</p>
+
+<h3 id="ngrok-per-testare-chiamate-api-dallesterno"><code class="highlighter-rouge">ngrok</code>, per testare chiamate API dall’esterno</h3>
+
+<p>Dovete testare le chiamate di un sistema esterno verso il vostro software? Ad esempio, io ho avuto questa esigenza con le API di Paypal e Gestpay: a un certo punto questi sistemi dovevano notificarmi che i pagamenti erano andati a buon fine e mi avrebbero contattato agli indirizzi configurati.</p>
+
+<p>Come testare e come verificare il contenuto di queste chiamate? Facile, con <a href="https://ngrok.com/">ngrok</a>: un tool che permette di creare un tunnel privato da un indirizzo http esterno.</p>
+
+<p><img src="/images/ngrok.png" alt="" /></p>
+
+<p>Per farla facile, voi lanciate <code class="highlighter-rouge">ngrok http 8000</code> e ngrok creerà un indirizzo tipo <code class="highlighter-rouge">http://abc33344422.ngrok.io</code>. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a<code class="highlighter-rouge">localhost:8000</code>. Tutto ciò che passa per ngrok viene loggato e mostrato!</p>
+
+<h3 id="git-flow-una-metodologia-per-semplificare-e-standardizzare-git-nel-team">Git Flow, una metodologia per semplificare e standardizzare git nel team</h3>
+
+<p>Git flow è sia <a href="https://github.com/nvie/gitflow">un tool installabile da linea di comando</a>, sia un approccio filosofico alla domanda “come lavorare in gruppo”.</p>
+
+<p>Git è un potentissimo sistema di versioning e branching; spero per voi che lo stiate già utilizzando altrimenti brrrr.</p>
+
+<p>Con git flow organizziamo il lavoro in due <em>meta-filoni</em>:</p>
+
+<ul>
+  <li>branch <code class="highlighter-rouge">master</code>, che corrisponde alle versioni rilasciate</li>
+  <li>branch <code class="highlighter-rouge">develop</code>, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.</li>
+</ul>
+
+<p>Oltre a questi due branch “generali”, ogni azione degli sviluppatori è realizzata creando nuovi branch:</p>
+
+<ul>
+  <li>Gli sviluppi delle singole feature sui branch <code class="highlighter-rouge">feature/*tua_feature*</code></li>
+  <li>I rilasci (da develop a master) su branch chiamati <code class="highlighter-rouge">release/*nome_release*</code></li>
+  <li>le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch <code class="highlighter-rouge">hotfix/*nome_fix*</code>.</li>
+</ul>
+
+<p>Non ci avete capito niente? <a href="https://danielkummer.github.io/git-flow-cheatsheet/">Qui un grafico che prova a spiegare comandi e funzioni</a>.</p>
+
+<h3 id="bonus-postman-per-testare-le-interfacce-rest">Bonus: Postman per testare le interfacce Rest</h3>
+
+<p>Ho iniziato a lavorare che c’era SOAP e si stava appena iniziando a parlare di REST. Qualche anno dopo, SOAP è diventato <em>legacy</em> e tutti si dichiarano REST, chi bene e chi male.</p>
+
+<p>Ad ogni modo, è sorta l’esigenza di testare le interfacce REST e come testarle se non con <a href="https://www.getpostman.com/">Postman</a>?</p>
+
+<p><img src="https://www.getpostman.com/img/v2/logo-big.svg" alt="Postman" /></p>
+
+<p>Questa è  una vera e propria applicazione <em>standalone</em> che permette di effettuare ogni tipo di chiamata desideriate, GET - PUT - POST - HEAD etc. C’è la possibilità di salvare le chiamate, passare header aggiuntivi, visualizzare i dati in molti modi (ad esempio JSON), etc etc.</p>
+
+<p>Come dite? non è un tool da linea di comando? Avete ragione, ma questo è il mio blog e qui comando io 😂</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
     
       <item>
         <title>I colloqui di lavoro nelle Big</title>
@@ -1983,152 +2169,6 @@ uments/node-tests
 <p>Un altra conseguenza è che non è la lingua che si parla a rendere <em>grande</em> un workplace.</p>
 
 <p>Infine: meglio un ottimo performer con un inglese zoppicante, o un  inglese madrelingua che lavora così così?</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>Deploy a NodeJS app on Heroku in less than 1 minute</title>
-        <link>https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html</link>
-        <guid isPermaLink="true">https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html</guid>
-        <pubDate>Sat, 18 Mar 2017 13:18:53 +0000</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;Actually, the time you need to deploy an app depends on how fast you are to copy &amp;amp; paste.&lt;/p&gt;
-
-&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;Your code must be hosted in a git repository.&lt;/p&gt;
-
-&lt;h2 id=&quot;steps-to-set-up-the-environment-the-first-time&quot;&gt;Steps to set up the environment the first time&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Sign up (or log in) to
-  &lt;a href=&quot;http://heroku.com&quot;&gt;heroku.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;download
-  &lt;a href=&quot;https://devcenter.heroku.com/articles/heroku-cli&quot;&gt;heroku’s command for the console&lt;/a&gt; (select the right version for your operating system).&lt;/li&gt;
-  &lt;li&gt;be sure the command is installed: &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku -v&lt;/code&gt; (you should see some output)&lt;/li&gt;
-  &lt;li&gt;launch &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku login&lt;/code&gt;and log in with your email and password.&lt;/li&gt;
-  &lt;li&gt;Upload ssh keys to heroku: &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku keys:add&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -v git@heroku.com&lt;/code&gt;: even if the command seems to fail, check that the long output contains the row
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;debug1: Authentication succeeded (publickey).
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;Generally it is one of the last 5-6 rows. If this log is present, everything is set up correctly.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;steps-to-set-up-the-environment-with-the-nodejs-app&quot;&gt;Steps to set up the environment with the NodeJs app&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Set the host port of your application as an environment variable:
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const port = process.env.PORT || 3000 ;  
-... 
-app.listen(port);
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; script, in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
-   &quot;start&quot;: &quot;node server.js&quot;,
-   ...
-   }
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Check that the app runs correctly: &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;launch &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku create&lt;/code&gt;: will create a new remote for your repository named &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push heroku&lt;/code&gt; : will push your code to heroku&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;heroku open&lt;/code&gt;: will open your webapp in the browser&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For every modification you do to your code, just commit and &lt;code class=&quot;highlighter-rouge&quot;&gt;git push heroku&lt;/code&gt;!&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>Deploy a NodeJS app on Heroku in less than 1 minute</h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" Deploy a NodeJS app on Heroku in less than 1 minute ">
-                          <figcaption>Deploy a NodeJS app on Heroku in less than 1 minute</figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-03-18 13:18:53 UTC">Sat, 18 Mar 2017 13:18:53 +0000</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p>Actually, the time you need to deploy an app depends on how fast you are to copy &amp; paste.</p>
-
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Your code must be hosted in a git repository.</p>
-
-<h2 id="steps-to-set-up-the-environment-the-first-time">Steps to set up the environment the first time</h2>
-<ol>
-  <li>Sign up (or log in) to
-  <a href="http://heroku.com">heroku.com</a></li>
-  <li>download
-  <a href="https://devcenter.heroku.com/articles/heroku-cli">heroku’s command for the console</a> (select the right version for your operating system).</li>
-  <li>be sure the command is installed: <code class="highlighter-rouge">heroku -v</code> (you should see some output)</li>
-  <li>launch <code class="highlighter-rouge">heroku login</code>and log in with your email and password.</li>
-  <li>Upload ssh keys to heroku: <code class="highlighter-rouge">heroku keys:add</code></li>
-  <li><code class="highlighter-rouge">ssh -v git@heroku.com</code>: even if the command seems to fail, check that the long output contains the row
-    <div class="highlighter-rouge"><pre class="highlight"><code>debug1: Authentication succeeded (publickey).
-</code></pre>
-    </div>
-    <p>Generally it is one of the last 5-6 rows. If this log is present, everything is set up correctly.</p>
-  </li>
-</ol>
-
-<h2 id="steps-to-set-up-the-environment-with-the-nodejs-app">Steps to set up the environment with the NodeJs app</h2>
-<ul>
-  <li>Set the host port of your application as an environment variable:
-    <div class="highlighter-rouge"><pre class="highlight"><code>const port = process.env.PORT || 3000 ;  
-... 
-app.listen(port);
-</code></pre>
-    </div>
-  </li>
-  <li>set the <code class="highlighter-rouge">npm start</code> script, in <code class="highlighter-rouge">package.json</code>:</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
-   "start": "node server.js",
-   ...
-   }
-
-</code></pre>
-</div>
-
-<ul>
-  <li>Check that the app runs correctly: <code class="highlighter-rouge">npm start</code></li>
-  <li>launch <code class="highlighter-rouge">heroku create</code>: will create a new remote for your repository named <code class="highlighter-rouge">heroku</code></li>
-  <li><code class="highlighter-rouge">git push heroku</code> : will push your code to heroku</li>
-  <li><code class="highlighter-rouge">heroku open</code>: will open your webapp in the browser</li>
-</ul>
-
-<p>For every modification you do to your code, just commit and <code class="highlighter-rouge">git push heroku</code>!</p>
 
                   
                     <footer>
