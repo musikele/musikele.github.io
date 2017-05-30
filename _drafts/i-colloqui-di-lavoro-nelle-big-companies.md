@@ -30,7 +30,7 @@ L'idea di fondo è che più persone riescono a dare un giudizio imparziale su di
 
 Aumentando il numero di selezionatori si cerca di rendere imparziale il processo, anche se è davvero molto difficile definire cosa sia un processo "imparziale", perchè ogni selezionatore può fare tutte le domande che gli pare. 
 
-## Perchè tutti vogliono lavorare per le Big? 
+## Perchè tutti vogliono lavorare per le Big? 	
 
 Oltre al fatto che 
 - lavori a prodotti utilizzati comunemente da milioni (miliardi!) di persone 
@@ -68,7 +68,7 @@ E' vero, esistono on line molte storie (io leggo spesso Quora, ma anche Linkedin
 - Quando soffia il vento, un viaggio di andata e ritorno dura più tempo, meno tempo o lo stesso tempo? 
 - Voi e il vostro vicino mettete in vendita due oggetti identici a un mercatino dell'usato, in perfette e identiche condizioni. Voi lo mettete in vendita a 100€, il vicino a 40€. Supponendo di non essere in rapporti particolarmente amichevoli, cosa fate? (domanda da Wall Street)
 
-Innanzitutto c'è da dire questo genere di domande sta diventando sempre più raro: le compagnie stanno smettendo di usare questi quiz perchè richiedono troppo intuito, e non intelligenza; e l'intuito puoi averlo o non averlo, e se non hai l'intuizione giusta, magari scade il tempo senza che hai fatto alcun progresso. 
+Innanzitutto c'è da dire questo genere di domande sta diventando sempre più raro: le compagnie stanno smettendo di usare questi quiz perchè richiedono troppo intuito, e non intelligenza; e l'intuito puoi averlo o non averlo, e se non hai l'intuizione giusta, magari scade il tempo senza alcun progresso. 
 
 In realtà alle aziende non interessa la soluzione, bensì il ragionamento. Quanto più fate capire il modo in cui ragionate, le teorie che tirate fuori, le ricerche che fareste sul motore di ricerca a supporto o contro la vostra tesi, allora potreste rischiare addirittura di essere assunti. Inoltre, vengono valutate positivamente le risposte che approcciano i problemi in maniera creativa, piuttosto che risposte secche che non ammettono repliche.
 
@@ -147,7 +147,7 @@ Tante persone dopo un paio d'anni lasciano per un'offerta migliore; tutti però 
 
 ## C'è qualcosa di migliorabile nel processo di assunzione delle Big?
 
-Tutte le persone con cui ho parlato mi hanno descritto i processi di selezione in questo modo: video call, incontri sul posto con colloqui alla lavagna. ZERO codice scritto su un computer. In pratica il processo di selezione è fatto in modo da beccare degli ottimi _generalisti_ con solide basi teoriche. 
+Tutte le persone con cui ho parlato mi hanno descritto i processi di selezione in questo modo: video call, incontri sul posto con colloqui alla lavagna. ZERO codice scritto su un computer. In pratica il processo di selezione è fatto in modo da beccare degli ottimi _generalisti_ con solide basi teoriche.
 
 Se uscite dall'università e avete freschi tutti i concetti su algoritmi, design pattern e compagnia varia, avete qualche chance in più di superare il processo di selezione. 
 
