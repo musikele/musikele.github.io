@@ -58,11 +58,11 @@ Con git flow organizziamo il lavoro in due *meta-filoni*:
 
 Oltre a questi due branch "generali", ogni azione degli sviluppatori è realizzata creando nuovi branch:
 
-* Gli sviluppi delle singole feature sui branch `feature/&lt;tua_feature&gt;`
+* Gli sviluppi delle singole feature sui branch `feature/*tua_feature*`
 
-* I rilasci (da develop a master) su branch chiamati `release/&lt;nome_release&gt;`
+* I rilasci (da develop a master) su branch chiamati `release/*nome_release*`
 
-* le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch `hotfix/&lt;nome_fix&gt;`.
+* le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch `hotfix/*nome_fix*`.
 
 Non ci avete capito niente? [Qui un grafico che prova a spiegare comandi e funzioni](https://danielkummer.github.io/git-flow-cheatsheet/).
 
