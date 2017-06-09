@@ -69,11 +69,12 @@ E qui andiamo a finire su un'altra fissa dei founder: **sono così convinto che 
 I motivi possono essere tanti e diversi. Ad esempio:
 
 * **Il rischio**. Lo sviluppatore non vede prospettive nell'idea proposta e teme di rimanere con nulla in mano nel giro di poco.
-* **La sensazione di inadeguatezza. **Chi sono io per mettermi a fare il "capo" in una startup?
+* **La sensazione di inadeguatezza.** Chi sono io per mettermi a fare il "capo" in una startup?
 * **La mancanza di risparmi accantonati**. Senza soldi, è impossibile lavorare per un lungo periodo senza entrate.
 * **Quando si propone uno stipendio, questo è molto basso**. Un altro motivo per cui bisogna cercare tra i neolaureati.
 * **Quando lo stipendio è basso, si propongono le equity**. Per me le equity di un progetto in cui non credo valgono zero.
 * **Perché sembra che il grosso del lavoro lo debba fare proprio io**. Se il mio fantomatico CEO dice di aver fatto "tutto", tranne il prodotto, mentre io svilupperò lui che fa?
+* **Perchè io a questo CEO non lo conosco e non so se mi sta antipatico**. Come fai a _fidanzarti_ con uno che non conosci? 
 
 ## E' possibile superare questi problemi? Troverò sviluppatori per la mia idea?
 
