@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-06-09T09:36:20+00:00</updated>
+    <updated>2017-06-09T09:57:07+00:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -18,41 +18,20 @@
         <pubDate>Fri, 09 Jun 2017 09:20:50 +0000</pubDate>
         <author></author>
         
-          <description>&lt;p&gt;Ricevo almeno &lt;strong&gt;due richieste al mese&lt;/strong&gt; per collaborare con startup.&lt;/p&gt;
-
-&lt;p&gt;Più o meno il copione è sempre lo stesso:&lt;/p&gt;
+          <description>&lt;p&gt;Ricevo almeno &lt;strong&gt;due richieste al mese&lt;/strong&gt; per collaborare con startup. 
+Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Dimmi!”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, &lt;strong&gt;non abbiamo competitor&lt;/strong&gt;, etc etc”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Fantastico! Dove posso vedere una demo?”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla… Per caso sei interessato?”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Quindi non c’è nulla? solo un’idea nella tua testa?”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“…”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Ti darò una quota importante della società, il 30%”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“…”&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…”&lt;/li&gt;
+  &lt;li&gt;“Dimmi!”&lt;/li&gt;
+  &lt;li&gt;“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, &lt;strong&gt;non abbiamo competitor&lt;/strong&gt;, etc etc”&lt;/li&gt;
+  &lt;li&gt;“Fantastico! Dove posso vedere una demo?”&lt;/li&gt;
+  &lt;li&gt;“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla… Per caso sei interessato?”&lt;/li&gt;
+  &lt;li&gt;“Quindi non c’è nulla? solo un’idea nella tua testa?”&lt;/li&gt;
+  &lt;li&gt;“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”&lt;/li&gt;
+  &lt;li&gt;“…”&lt;/li&gt;
+  &lt;li&gt;“Ti darò una quota importante della società, il 30%”&lt;/li&gt;
+  &lt;li&gt;“…”&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;michele-sei-troppo-spocchioso&quot;&gt;Michele, sei troppo spocchioso&lt;/h2&gt;
@@ -89,14 +68,18 @@
 &lt;ul&gt;
   &lt;li&gt;affiatate tra di loro&lt;/li&gt;
   &lt;li&gt;avere lo stesso obiettivo&lt;/li&gt;
-  &lt;li&gt;persone che si fanno guidare dai “numeri” e non dai sentimentiUna coppia di sposi &lt;a href=&quot;http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/&quot;&gt;litiga in media 321 volte in un anno&lt;/a&gt; (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c’è amore ma ambizione.&lt;/li&gt;
+  &lt;li&gt;persone che si fanno guidare dai “numeri” e non dai sentimenti.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Una coppia di sposi &lt;a href=&quot;http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/&quot;&gt;litiga in media 321 volte in un anno&lt;/a&gt; (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c’è amore ma ambizione.&lt;/p&gt;
 
 &lt;p&gt;E qui andiamo a finire su un’altra fissa dei founder: &lt;strong&gt;sono così convinto che debba funzionare, che funzionerà&lt;/strong&gt;. Purtroppo non funziona così. Lo startupper eccellente fa esperimenti continui, verifica con i numeri che le sue ipotesi erano corrette, e se sono sbagliate, cambia modello di business.&lt;/p&gt;
 
 &lt;h2 id=&quot;perchè-non-riesco-a-trovare-sviluppatori-per-la-mia-startup&quot;&gt;Perchè non riesco a trovare sviluppatori per la mia startup?&lt;/h2&gt;
 
-&lt;p&gt;“Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventrae i capi in un’azienda che sarà anche la loro. Perchè non accettano?”&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventare capi in un’azienda che sarà anche loro. Perchè non accettano?&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;I motivi possono essere tanti e diversi. Ad esempio:&lt;/p&gt;
 
@@ -138,41 +121,20 @@
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
-                    <p>Ricevo almeno <strong>due richieste al mese</strong> per collaborare con startup.</p>
-
-<p>Più o meno il copione è sempre lo stesso:</p>
+                    <p>Ricevo almeno <strong>due richieste al mese</strong> per collaborare con startup. 
+Più o meno il copione è sempre lo stesso:</p>
 
 <ul>
-  <li>
-    <p>“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…”</p>
-  </li>
-  <li>
-    <p>“Dimmi!”</p>
-  </li>
-  <li>
-    <p>“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, <strong>non abbiamo competitor</strong>, etc etc”</p>
-  </li>
-  <li>
-    <p>“Fantastico! Dove posso vedere una demo?”</p>
-  </li>
-  <li>
-    <p>“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla… Per caso sei interessato?”</p>
-  </li>
-  <li>
-    <p>“Quindi non c’è nulla? solo un’idea nella tua testa?”</p>
-  </li>
-  <li>
-    <p>“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”</p>
-  </li>
-  <li>
-    <p>“…”</p>
-  </li>
-  <li>
-    <p>“Ti darò una quota importante della società, il 30%”</p>
-  </li>
-  <li>
-    <p>“…”</p>
-  </li>
+  <li>“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…”</li>
+  <li>“Dimmi!”</li>
+  <li>“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, <strong>non abbiamo competitor</strong>, etc etc”</li>
+  <li>“Fantastico! Dove posso vedere una demo?”</li>
+  <li>“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla… Per caso sei interessato?”</li>
+  <li>“Quindi non c’è nulla? solo un’idea nella tua testa?”</li>
+  <li>“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”</li>
+  <li>“…”</li>
+  <li>“Ti darò una quota importante della società, il 30%”</li>
+  <li>“…”</li>
 </ul>
 
 <h2 id="michele-sei-troppo-spocchioso">Michele, sei troppo spocchioso</h2>
@@ -209,14 +171,18 @@
 <ul>
   <li>affiatate tra di loro</li>
   <li>avere lo stesso obiettivo</li>
-  <li>persone che si fanno guidare dai “numeri” e non dai sentimentiUna coppia di sposi <a href="http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/">litiga in media 321 volte in un anno</a> (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c’è amore ma ambizione.</li>
+  <li>persone che si fanno guidare dai “numeri” e non dai sentimenti.</li>
 </ul>
+
+<p>Una coppia di sposi <a href="http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/">litiga in media 321 volte in un anno</a> (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c’è amore ma ambizione.</p>
 
 <p>E qui andiamo a finire su un’altra fissa dei founder: <strong>sono così convinto che debba funzionare, che funzionerà</strong>. Purtroppo non funziona così. Lo startupper eccellente fa esperimenti continui, verifica con i numeri che le sue ipotesi erano corrette, e se sono sbagliate, cambia modello di business.</p>
 
 <h2 id="perchè-non-riesco-a-trovare-sviluppatori-per-la-mia-startup">Perchè non riesco a trovare sviluppatori per la mia startup?</h2>
 
-<p>“Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventrae i capi in un’azienda che sarà anche la loro. Perchè non accettano?”</p>
+<blockquote>
+  <p>Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventare capi in un’azienda che sarà anche loro. Perchè non accettano?</p>
+</blockquote>
 
 <p>I motivi possono essere tanti e diversi. Ad esempio:</p>
 
