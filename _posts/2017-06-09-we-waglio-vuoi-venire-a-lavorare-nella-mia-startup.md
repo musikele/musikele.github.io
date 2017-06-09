@@ -11,7 +11,6 @@ tags:
 - lavoro
 ---
 
-
 Ricevo almeno **due richieste al mese** per collaborare con startup.
 
 Più o meno il copione è sempre lo stesso:
