@@ -64,7 +64,7 @@ E qui andiamo a finire su un'altra fissa dei founder: **sono così convinto che 
 
 ## Perchè non riesco a trovare sviluppatori per la mia startup?
 
-> Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventrae i capi in un'azienda che sarà anche la loro. Perchè non accettano?
+> Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventare capi in un'azienda che sarà anche loro. Perchè non accettano?
 
 I motivi possono essere tanti e diversi. Ad esempio:
 
