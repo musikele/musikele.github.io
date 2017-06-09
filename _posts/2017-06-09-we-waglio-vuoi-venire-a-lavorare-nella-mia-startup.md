@@ -11,28 +11,18 @@ tags:
 - lavoro
 ---
 
-Ricevo almeno **due richieste al mese** per collaborare con startup.
-
+Ricevo almeno **due richieste al mese** per collaborare con startup. 
 Più o meno il copione è sempre lo stesso:
 
 - "Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup..."
-
 - "Dimmi!"
-
 - "Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, **non abbiamo competitor**, etc etc"
-
 - "Fantastico! Dove posso vedere una demo?"
-
 - "No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla... Per caso sei interessato?"
-
 - "Quindi non c'è nulla? solo un'idea nella tua testa?"
-
 - "C'è molto più dell'idea! Ho quasi fatto tutto, manca solo il prodotto!"
-
 - "..."
-
 - "Ti darò una quota importante della società, il 30%"
-
 - "..."
 
 ## Michele, sei troppo spocchioso
@@ -66,13 +56,15 @@ Dovendo lavorare con qualcuno per lanciare un'azienda, con l'ansia costante di f
 
 * affiatate tra di loro
 * avere lo stesso obiettivo
-* persone che si fanno guidare dai "numeri" e non dai sentimentiUna coppia di sposi [litiga in media 321 volte in un anno](http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/) (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c'è amore ma ambizione. 
+* persone che si fanno guidare dai "numeri" e non dai sentimenti.
+
+Una coppia di sposi [litiga in media 321 volte in un anno](http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/) (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c'è amore ma ambizione. 
 
 E qui andiamo a finire su un'altra fissa dei founder: **sono così convinto che debba funzionare, che funzionerà**. Purtroppo non funziona così. Lo startupper eccellente fa esperimenti continui, verifica con i numeri che le sue ipotesi erano corrette, e se sono sbagliate, cambia modello di business.
 
 ## Perchè non riesco a trovare sviluppatori per la mia startup?
 
-"Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventrae i capi in un'azienda che sarà anche la loro. Perchè non accettano?"
+> Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventrae i capi in un'azienda che sarà anche la loro. Perchè non accettano?
 
 I motivi possono essere tanti e diversi. Ad esempio:
 
