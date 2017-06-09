@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-06-09T09:57:38+00:00</updated>
+    <updated>2017-06-09T10:03:09+00:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -22,15 +22,15 @@
 Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…“&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;“Dimmi!”&lt;/li&gt;
-  &lt;li&gt;“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, &lt;strong&gt;non abbiamo competitor&lt;/strong&gt;, etc etc”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, &lt;strong&gt;non abbiamo competitor&lt;/strong&gt;, etc etc”&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;“Fantastico! Dove posso vedere una demo?”&lt;/li&gt;
-  &lt;li&gt;“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla… Per caso sei interessato?”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi per realizzarla… Per caso sei interessato?”&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;“Quindi non c’è nulla? solo un’idea nella tua testa?”&lt;/li&gt;
-  &lt;li&gt;“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;“…”&lt;/li&gt;
-  &lt;li&gt;“Ti darò una quota importante della società, il 30%”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“Ti darò una quota importante della società, il 30%”&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;“…”&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -125,15 +125,15 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 Più o meno il copione è sempre lo stesso:</p>
 
 <ul>
-  <li>“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…”</li>
+  <li><em>“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…“</em></li>
   <li>“Dimmi!”</li>
-  <li>“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, <strong>non abbiamo competitor</strong>, etc etc”</li>
+  <li><em>“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, <strong>non abbiamo competitor</strong>, etc etc”</em></li>
   <li>“Fantastico! Dove posso vedere una demo?”</li>
-  <li>“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla… Per caso sei interessato?”</li>
+  <li><em>“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi per realizzarla… Per caso sei interessato?”</em></li>
   <li>“Quindi non c’è nulla? solo un’idea nella tua testa?”</li>
-  <li>“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”</li>
+  <li><em>“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”</em></li>
   <li>“…”</li>
-  <li>“Ti darò una quota importante della società, il 30%”</li>
+  <li><em>“Ti darò una quota importante della società, il 30%”</em></li>
   <li>“…”</li>
 </ul>
 
