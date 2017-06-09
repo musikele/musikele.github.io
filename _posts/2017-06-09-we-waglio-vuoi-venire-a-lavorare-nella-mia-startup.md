@@ -14,15 +14,15 @@ tags:
 Ricevo almeno **due richieste al mese** per collaborare con startup. 
 Più o meno il copione è sempre lo stesso:
 
-- "Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup..."
+- _"Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup..."_
 - "Dimmi!"
-- "Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, **non abbiamo competitor**, etc etc"
+- _"Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, **non abbiamo competitor**, etc etc"_
 - "Fantastico! Dove posso vedere una demo?"
-- "No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi (che molto spesso è una sola persona) per realizzarla... Per caso sei interessato?"
+- _"No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi per realizzarla... Per caso sei interessato?"_
 - "Quindi non c'è nulla? solo un'idea nella tua testa?"
-- "C'è molto più dell'idea! Ho quasi fatto tutto, manca solo il prodotto!"
+- _"C'è molto più dell'idea! Ho quasi fatto tutto, manca solo il prodotto!"_
 - "..."
-- "Ti darò una quota importante della società, il 30%"
+- _"Ti darò una quota importante della società, il 30%"_
 - "..."
 
 ## Michele, sei troppo spocchioso
