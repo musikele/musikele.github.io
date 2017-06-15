@@ -33,7 +33,7 @@ e tanti altri. Sono circa una cinquantina!
 
 ### `Oh-my-zsh` per un terminale più combattivo
 
-[Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) è un tool che va a sovrascrivere un po' di cose nei vostri file di configurazione di bash. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:
+[Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) è un tool che va a sovrascrivere un po' di cose nei vostri file di configurazione di zsh. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:
 
 ![](/images/oh-my-zsh.jpg)
 
