@@ -21,17 +21,12 @@
 {% endif %}
 {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="{{ site.url }}/about/" property="article:author">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
 {% endif %}
 {% if page.image %}
   <meta content="/img/posts/{{ page.image }}" property="og:image">
 {% else %}
   <meta content="/img/logo-high-resolution.png" property="og:image">
-{% endif %}
-{% if page.categories %}
-  {% for category in page.categories limit:1 %}
-  <meta content="{{ category }}" property="article:section">
-  {% endfor %}
 {% endif %}
 {% if page.tags %}
   {% for tag in page.tags %}
@@ -42,7 +37,7 @@
 <!-- Twitter cards metadatas -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
 {% if page.title %}
   <meta name="twitter:title" content="{{ page.title }}">
 {% else %}
@@ -59,4 +54,3 @@
 {% if page.header-img %}
   <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
 {% endif %}
-<meta property="fb:pages" content="1069985669778335" />
