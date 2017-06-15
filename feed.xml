@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-06-15T08:41:15+00:00</updated>
+    <updated>2017-06-15T10:13:35+00:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -242,7 +242,7 @@ Più o meno il copione è sempre lo stesso:</p>
 
 &lt;h3 id=&quot;oh-my-zsh-per-un-terminale-più-combattivo&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Oh-my-zsh&lt;/code&gt; per un terminale più combattivo&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;Oh-my-zsh&lt;/a&gt; è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di bash. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;Oh-my-zsh&lt;/a&gt; è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di zsh. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/oh-my-zsh.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -337,7 +337,7 @@ Più o meno il copione è sempre lo stesso:</p>
 
 <h3 id="oh-my-zsh-per-un-terminale-più-combattivo"><code class="highlighter-rouge">Oh-my-zsh</code> per un terminale più combattivo</h3>
 
-<p><a href="https://github.com/robbyrussell/oh-my-zsh">Oh-my-zsh</a> è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di bash. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:</p>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh">Oh-my-zsh</a> è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di zsh. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:</p>
 
 <p><img src="/images/oh-my-zsh.jpg" alt="" /></p>
 
