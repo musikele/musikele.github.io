@@ -2,10 +2,9 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Caspiterina quanto è complicato essere Elon Musk'
+title: 'Quanto è complicato essere Elon Musk'
 category: Italiano
 layout: post
-date: '2017-06-29 10:35'
 tags:
 - elon musk
 ---
