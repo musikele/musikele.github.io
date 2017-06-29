@@ -2,14 +2,13 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Caspiterina quanto è complicato essere Elon Musk '
+title: 'Caspiterina quanto è complicato essere Elon Musk'
 category: Italiano
 layout: post
-date: '2017-06-29T10:35:58+00:00'
+date: '2017-06-29 10:35'
 tags:
 - elon musk
 ---
-
 
 Stamattina ho "audioascoltato" [un libro su Elon Musk](http://amzn.to/2ullR8A), che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.
 
