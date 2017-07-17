@@ -1,15 +1,16 @@
 ---
-paginate: true
-comments: true
 author: musikele
-title: 'Recensione del libro: Codice Montemagno '
 category: Italiano
-layout: post
+comments: true
 date: '2017-07-17T10:34:52+00:00'
+layout: post
+paginate: true
 tags:
 - codice montemagno
 - marco montemagno
 - libri
+title: 'Recensione del libro: Codice Montemagno '
+undefined: '2017-07-17T10:02:00+02:00'
 ---
 
 
