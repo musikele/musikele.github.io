@@ -2,10 +2,9 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Recensione libro: Io, trafficante di Virus (Ilaria Capua)'
+title: 'Sei uno scienziato di fama internazionale e ti accusano di trafficare virus. Che fai?'
 category: Italiano
 layout: post
-date: '2017-07-18T10:45:37+00:00'
 tags:
 - ilaria capua
 - io trafficante di virus
@@ -13,7 +12,7 @@ tags:
 ---
 
 
-Oggi voglio parlarvi di un [libro](http://amzn.to/2taKqFg) che mi ha colpito. Per una volta esco fuori dal mondo informatico per sconfinare nel mondo della scienza veterinaria, che non è assolutamente il mio campo.
+Oggi voglio parlarvi di un [libro](http://amzn.to/2taKqFg) che mi ha colpito molto. Per una volta esco fuori dal mondo informatico per sconfinare nel mondo della scienza veterinaria, che non è assolutamente il mio campo.
 
 Qualche settimana fa ho ascoltato una radiointervista a Ilaria Capua, virologa di fama internazionale che lavorava presso l'istituto zootecnico di Legnaro.
 
