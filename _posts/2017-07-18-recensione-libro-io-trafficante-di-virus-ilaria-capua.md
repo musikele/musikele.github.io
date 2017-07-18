@@ -16,7 +16,7 @@ Oggi voglio parlarvi di un [libro](http://amzn.to/2taKqFg) che mi ha colpito mol
 
 Qualche settimana fa ho ascoltato una radiointervista a Ilaria Capua, virologa di fama internazionale che lavorava presso l'istituto zootecnico di Legnaro.
 
-<img src="{{ site.baseurl }}/images/trafficante_di_virus.png" class=" forestry--none" style="float: none;">
+<a href="http://amzn.to/2taKqFg"><img src="{{ site.baseurl }}/images/trafficante_di_virus.png" class=" forestry--none" style="float: none;"></a>
 
 ## Due parole sullo scienziato Ilaria Capua
 
