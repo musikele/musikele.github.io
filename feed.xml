@@ -5,7 +5,7 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-07-19T08:48:56+00:00</updated>
+    <updated>2017-07-19T11:10:39+02:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
@@ -15,7 +15,7 @@
         <title>Sei uno scienziato di fama internazionale e ti accusano di trafficare virus. Che fai?</title>
         <link>https://michelenasti.com/2017/07/18/recensione-libro-io-trafficante-di-virus-ilaria-capua.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/07/18/recensione-libro-io-trafficante-di-virus-ilaria-capua.html</guid>
-        <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 18 Jul 2017 00:00:00 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Oggi voglio parlarvi di un &lt;a href=&quot;http://amzn.to/2taKqFg&quot;&gt;libro&lt;/a&gt; che mi ha colpito molto. Per una volta esco fuori dal mondo informatico per sconfinare nel mondo della scienza veterinaria, che non è assolutamente il mio campo.&lt;/p&gt;
@@ -77,7 +77,7 @@
                           <figcaption>Sei uno scienziato di fama internazionale e ti accusano di trafficare virus. Che fai?</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-07-18 00:00:00 UTC">Tue, 18 Jul 2017 00:00:00 +0000</time>
+                      <time class="op-published" dateTime="2017-07-18 00:00:00 CEST">Tue, 18 Jul 2017 00:00:00 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -137,7 +137,7 @@
         <title>Recensione del libro: Codice Montemagno</title>
         <link>https://michelenasti.com/2017/07/17/recensione-del-libro-codice-montemagno.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/07/17/recensione-del-libro-codice-montemagno.html</guid>
-        <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 17 Jul 2017 00:00:00 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Il libro di cui vi parlo oggi è &lt;a href=&quot;http://amzn.to/2uqzV4j&quot;&gt;Codice Montemagno&lt;/a&gt;.&lt;/p&gt;
@@ -190,7 +190,7 @@
                           <figcaption>Recensione del libro: Codice Montemagno</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-07-17 00:00:00 UTC">Mon, 17 Jul 2017 00:00:00 +0000</time>
+                      <time class="op-published" dateTime="2017-07-17 00:00:00 CEST">Mon, 17 Jul 2017 00:00:00 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -241,7 +241,7 @@
         <title>Quanto è complicato essere Elon Musk</title>
         <link>https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html</guid>
-        <pubDate>Thu, 29 Jun 2017 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 29 Jun 2017 00:00:00 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Stamattina ho “audioascoltato” &lt;a href=&quot;http://amzn.to/2ullR8A&quot;&gt;un libro su Elon Musk&lt;/a&gt;, che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.&lt;/p&gt;
@@ -289,7 +289,7 @@
                           <figcaption>Quanto è complicato essere Elon Musk</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-06-29 00:00:00 UTC">Thu, 29 Jun 2017 00:00:00 +0000</time>
+                      <time class="op-published" dateTime="2017-06-29 00:00:00 CEST">Thu, 29 Jun 2017 00:00:00 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -335,7 +335,7 @@
         <title>We' waglio', vuoi venire a lavorare nella mia startup?</title>
         <link>https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html</guid>
-        <pubDate>Fri, 09 Jun 2017 09:20:50 +0000</pubDate>
+        <pubDate>Fri, 09 Jun 2017 11:20:50 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Ricevo almeno &lt;strong&gt;due richieste al mese&lt;/strong&gt; per collaborare con startup. 
@@ -438,7 +438,7 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
                           <figcaption>We' waglio', vuoi venire a lavorare nella mia startup?</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-06-09 09:20:50 UTC">Fri, 09 Jun 2017 09:20:50 +0000</time>
+                      <time class="op-published" dateTime="2017-06-09 11:20:50 CEST">Fri, 09 Jun 2017 11:20:50 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -539,7 +539,7 @@ Più o meno il copione è sempre lo stesso:</p>
         <title>Cinque tool per migliorare la vostra developer experience</title>
         <link>https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html</guid>
-        <pubDate>Tue, 30 May 2017 12:07:50 +0000</pubDate>
+        <pubDate>Tue, 30 May 2017 14:07:50 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra &lt;em&gt;developer experience&lt;/em&gt;.&lt;/p&gt;
@@ -633,7 +633,7 @@ Più o meno il copione è sempre lo stesso:</p>
                           <figcaption>Cinque tool per migliorare la vostra developer experience</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-05-30 12:07:50 UTC">Tue, 30 May 2017 12:07:50 +0000</time>
+                      <time class="op-published" dateTime="2017-05-30 14:07:50 CEST">Tue, 30 May 2017 14:07:50 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -725,7 +725,7 @@ Più o meno il copione è sempre lo stesso:</p>
         <title>I colloqui di lavoro nelle Big</title>
         <link>https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html</guid>
-        <pubDate>Mon, 22 May 2017 15:08:19 +0000</pubDate>
+        <pubDate>Mon, 22 May 2017 17:08:19 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Recentemente sono stato speaker all’evento &lt;a href=&quot;https://www.meetup.com/it-IT/GDGCampania/events/239723850/&quot;&gt;pre-Google I/O&lt;/a&gt; organizzato dal &lt;a href=&quot;http://gdgcampania.com&quot;&gt;Google Developers Group Campania&lt;/a&gt;, a Napoli.&lt;/p&gt;
@@ -792,7 +792,7 @@ Più o meno il copione è sempre lo stesso:</p>
                           <figcaption>I colloqui di lavoro nelle Big</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-05-22 15:08:19 UTC">Mon, 22 May 2017 15:08:19 +0000</time>
+                      <time class="op-published" dateTime="2017-05-22 17:08:19 CEST">Mon, 22 May 2017 17:08:19 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -857,7 +857,7 @@ Più o meno il copione è sempre lo stesso:</p>
         <title>Agile? No grazie, noi siamo Lean</title>
         <link>https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html</guid>
-        <pubDate>Thu, 04 May 2017 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 04 May 2017 00:00:00 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Agile, agile, agile… ormai tutti fanno Agile, implementando un framework tipo Scrum (che è uno dei possibili modi di essere Agile).&lt;/p&gt;
@@ -1024,7 +1024,7 @@ Più o meno il copione è sempre lo stesso:</p>
                           <figcaption>Agile? No grazie, noi siamo Lean</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-05-04 00:00:00 UTC">Thu, 04 May 2017 00:00:00 +0000</time>
+                      <time class="op-published" dateTime="2017-05-04 00:00:00 CEST">Thu, 04 May 2017 00:00:00 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -1189,7 +1189,7 @@ Più o meno il copione è sempre lo stesso:</p>
         <title>&quot;Vorrei, ma ho paura che vada male&quot;	&amp;#58 come assumersi dei &quot;rischi intelligenti&quot;</title>
         <link>https://michelenasti.com/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html</guid>
-        <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 21 Apr 2017 00:00:00 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Oggi vorrei parlarvi di &lt;strong&gt;come assumersi dei rischi intelligenti&lt;/strong&gt;. Intelligenti in che senso?!&lt;/p&gt;
@@ -1279,7 +1279,7 @@ Più o meno il copione è sempre lo stesso:</p>
                           <figcaption>"Vorrei, ma ho paura che vada male"	&#58 come assumersi dei "rischi intelligenti"</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-04-21 00:00:00 UTC">Fri, 21 Apr 2017 00:00:00 +0000</time>
+                      <time class="op-published" dateTime="2017-04-21 00:00:00 CEST">Fri, 21 Apr 2017 00:00:00 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -1367,7 +1367,7 @@ Più o meno il copione è sempre lo stesso:</p>
         <title>Diventare Senior™ con Javascript: le funzioni filter, map, reduce</title>
         <link>https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html</guid>
-        <pubDate>Fri, 14 Apr 2017 10:09:00 +0000</pubDate>
+        <pubDate>Fri, 14 Apr 2017 10:09:00 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Si può lavorare per anni con javascript senza mai arrivare a conoscere tre funzioni fantastiche (e standard) che permettono di scrivere codice veloce e testabile.&lt;/p&gt;
@@ -1451,7 +1451,7 @@ Più o meno il copione è sempre lo stesso:</p>
                           <figcaption>Diventare Senior™ con Javascript: le funzioni filter, map, reduce</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-04-14 10:09:00 UTC">Fri, 14 Apr 2017 10:09:00 +0000</time>
+                      <time class="op-published" dateTime="2017-04-14 10:09:00 CEST">Fri, 14 Apr 2017 10:09:00 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
@@ -1533,7 +1533,7 @@ Più o meno il copione è sempre lo stesso:</p>
         <title>All my articles about Testing in Javascript in one post</title>
         <link>https://michelenasti.com/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html</link>
         <guid isPermaLink="true">https://michelenasti.com/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html</guid>
-        <pubDate>Sat, 08 Apr 2017 13:23:03 +0000</pubDate>
+        <pubDate>Sat, 08 Apr 2017 15:23:03 +0200</pubDate>
         <author></author>
         
           <description>&lt;p&gt;Hey there,&lt;/p&gt;
@@ -1569,7 +1569,7 @@ Più o meno il copione è sempre lo stesso:</p>
                           <figcaption>All my articles about Testing in Javascript in one post</figcaption>
                       </figure>
                       
-                      <time class="op-published" dateTime="2017-04-08 13:23:03 UTC">Sat, 08 Apr 2017 13:23:03 +0000</time>
+                      <time class="op-published" dateTime="2017-04-08 15:23:03 CEST">Sat, 08 Apr 2017 15:23:03 +0200</time>
                       <time class="op-modified" dateTime=""></time>
                   </header>
                   
