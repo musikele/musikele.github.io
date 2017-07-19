@@ -1,4 +1,5 @@
 #!/bin/bash
+export TZ=Europe/Rome
 
 echo "start compiling..."
 

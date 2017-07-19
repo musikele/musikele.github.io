@@ -1,5 +1,6 @@
 #!/bin/bash
 #set -e # Exit with nonzero exit code if anything fails
+export TZ=Europe/Rome
 
 SOURCE_BRANCH="develop"
 TARGET_BRANCH="master"
