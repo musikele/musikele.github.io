@@ -5,11 +5,59 @@
     <description>I'm a full stack Developer with an eye for the web.</description>
     <link>https://michelenasti.com/</link>
     <atom:link href="https://michelenasti.com/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-07-19T11:10:39+02:00</updated>
+    <updated>2017-07-20T10:21:36+02:00</updated>
     <id>https://michelenasti.com</id>
     <author>
       <name></name>
     </author>
+    
+      <item>
+        <title>E' giusto fidarsi dei remote workers?</title>
+        <link>https://michelenasti.com/2017/07/19/e-giusto-fidarsi-dei-remote-workers.html</link>
+        <guid isPermaLink="true">https://michelenasti.com/2017/07/19/e-giusto-fidarsi-dei-remote-workers.html</guid>
+        <pubDate>Wed, 19 Jul 2017 00:00:00 +0200</pubDate>
+        <author></author>
+        
+          <description>&lt;p&gt;Cari amici, ho scritto &lt;a href=&quot;https://medium.com/bemind-me/e-giusto-fidarsi-dei-remote-workers-987ecc2d65be&quot;&gt;un articolo per il blog di Bemind&lt;/a&gt; sul tema del lavoro remoto e la fiducia tra capo e dipendente, ossia: possiamo fidarci dei lavoratori remoti? Cliccate sul link per leggerlo.&lt;/p&gt;
+</description>
+        
+        <content:encoded>
+            <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+              <head>
+                <meta charset="utf-8">
+                <link rel="canonical" href="https://michelenasti.com/2017/07/19/e-giusto-fidarsi-dei-remote-workers.html">
+                <meta property="op:markup_version" content="v1.0">
+              </head>
+              <body>
+                <article>
+                  <header>
+                      <h1>E' giusto fidarsi dei remote workers?</h1>
+                      
+                      <figure>
+                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" E' giusto fidarsi dei remote workers? ">
+                          <figcaption>E' giusto fidarsi dei remote workers?</figcaption>
+                      </figure>
+                      
+                      <time class="op-published" dateTime="2017-07-19 00:00:00 CEST">Wed, 19 Jul 2017 00:00:00 +0200</time>
+                      <time class="op-modified" dateTime=""></time>
+                  </header>
+                  
+                    <p>Cari amici, ho scritto <a href="https://medium.com/bemind-me/e-giusto-fidarsi-dei-remote-workers-987ecc2d65be">un articolo per il blog di Bemind</a> sul tema del lavoro remoto e la fiducia tra capo e dipendente, ossia: possiamo fidarci dei lavoratori remoti? Cliccate sul link per leggerlo.</p>
+
+                  
+                    <footer>
+                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
+                        <small>Copyright - Amit Seal Ami</small>
+                  </footer>
+                </article>
+              </body>
+            </html>
+        ]]>
+        </content:encoded>
+
+      </item>
     
       <item>
         <title>Sei uno scienziato di fama internazionale e ti accusano di trafficare virus. Che fai?</title>
@@ -1515,76 +1563,6 @@ Più o meno il copione è sempre lo stesso:</p>
 <p>E’ ovvio che si può scrivere anche con un bel (paio di) for. Ma quante righe ci vogliono? e rileggendolo dopo sei mesi, si capisce?</p>
 
 <p>Per concludere, con la svolta funzionale di altri linguaggi (chi ha detto Java?!) questi concetti sono stati applicati anche altrove, proprio per la loro semplicità e componibilità. Magari hanno altri nomi, ma il funzionamento è lo stesso. Cercateli e …usateli!</p>
-
-                  
-                    <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
-                  </footer>
-                </article>
-              </body>
-            </html>
-        ]]>
-        </content:encoded>
-
-      </item>
-    
-      <item>
-        <title>All my articles about Testing in Javascript in one post</title>
-        <link>https://michelenasti.com/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html</link>
-        <guid isPermaLink="true">https://michelenasti.com/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html</guid>
-        <pubDate>Sat, 08 Apr 2017 15:23:03 +0200</pubDate>
-        <author></author>
-        
-          <description>&lt;p&gt;Hey there,&lt;/p&gt;
-
-&lt;p&gt;in the last month I have done a great work to understand how testing in javascript could be done in a effective, elegant way.&lt;/p&gt;
-
-&lt;p&gt;Here are all my articles about it:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://michelenasti.com/2017/03/23/node-js-testing-easy-with-mocha.html&quot;&gt;Easy testing of NodeJS applications with Mocha&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://michelenasti.com/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html&quot;&gt;Become a test expert in NodeJS with these tricks&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://michelenasti.com/2017/04/07/fantastic-unit-tests-in-javascript-with-mocks.html&quot;&gt;Fantastic Unit Tests in Javascript with Mocks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Enjoy!&lt;/p&gt;
-</description>
-        
-        <content:encoded>
-            <![CDATA[
-                <!doctype html>
-                <html lang="en" prefix="op: http://media.facebook.com/op#">
-              <head>
-                <meta charset="utf-8">
-                <link rel="canonical" href="https://michelenasti.com/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">
-                <meta property="op:markup_version" content="v1.0">
-              </head>
-              <body>
-                <article>
-                  <header>
-                      <h1>All my articles about Testing in Javascript in one post</h1>
-                      
-                      <figure>
-                          <img src="https://michelenasti.com/images/michele_nasti.jpg" alt=" All my articles about Testing in Javascript in one post ">
-                          <figcaption>All my articles about Testing in Javascript in one post</figcaption>
-                      </figure>
-                      
-                      <time class="op-published" dateTime="2017-04-08 15:23:03 CEST">Sat, 08 Apr 2017 15:23:03 +0200</time>
-                      <time class="op-modified" dateTime=""></time>
-                  </header>
-                  
-                    <p>Hey there,</p>
-
-<p>in the last month I have done a great work to understand how testing in javascript could be done in a effective, elegant way.</p>
-
-<p>Here are all my articles about it:</p>
-<ul>
-  <li><a href="https://michelenasti.com/2017/03/23/node-js-testing-easy-with-mocha.html">Easy testing of NodeJS applications with Mocha</a></li>
-  <li><a href="https://michelenasti.com/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html">Become a test expert in NodeJS with these tricks</a></li>
-  <li><a href="https://michelenasti.com/2017/04/07/fantastic-unit-tests-in-javascript-with-mocks.html">Fantastic Unit Tests in Javascript with Mocks</a></li>
-</ul>
-
-<p>Enjoy!</p>
 
                   
                     <footer>
