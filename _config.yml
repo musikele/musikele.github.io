@@ -4,6 +4,7 @@ siteurl: https://michelenasti.com
 gems:
   - jekyll-last-modified-at
   - jekyll-paginate
+  - jekyll-feed
 
 permalink: /:year/:month/:day/:title.html
 

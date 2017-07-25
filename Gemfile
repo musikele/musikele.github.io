@@ -6,4 +6,5 @@ group :jekyll_plugins do
 	gem 'jekyll-last-modified-at'
 	gem 'rouge'
 	gem 'jekyll-paginate'
+	gem 'jekyll-feed'
 end
