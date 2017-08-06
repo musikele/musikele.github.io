@@ -21,17 +21,18 @@ Se come me odiate gli ombrelloni, la sabbia, la spiaggia, la crema solare etc et
 Considerato che, essendo campani, una settimana al mare la dobbiamo fare per forza (altrimenti i nonni ci cancellano dall'eredità), una settimana che la siamo concessa per noi. I motivi che ci hanno spinto fino a qui:
 
 * anche se la piccola è davvero molto piccola, e sta mangiando ancora pappette e omogeneizzati, mia moglie ha pensato che a 8 mesi il viaggio era "fattibile". Senza di lei non avrei saputo come muovermi. C'è tutto quell'universo fatto di pannolini e pastine in cui non mi sento a mio agio. Se vostra moglie non è d'accordo, non organizzate nulla :)
+
 * 8 mesi credo sia stata l'età minima per venire fin qui: se avete un bimbo più piccolo, non è cosa. La bimba a 8 mesi è sufficientemente sveglia da godersi le passeggiate (cascate, boschi, montagne, laghi...) e da stare seduta senza problemi nello zaino porta neonati.
 
 ## Come siamo arrivati fin qui
 
-Mia moglie non ama i viaggi in macchina troppo lunghi, specialmente perchè la bimba sta seduta dietro con lei. Quindi piuttosto che farci 14 ore di macchina abbiamo preferito volare fino a Bergamo - Orio al Serio e fittare un'auto. Se scegliete questa strada, alcune compagnie (es. Ryanair) vi faranno portare 2 bagagli in più per i neonati (noi abbiamo portato il sediolino auto e il passeggino).
+Mia moglie non ama i viaggi in macchina troppo lunghi, specialmente perchè la bimba sta seduta dietro con lei. Quindi piuttosto che farci 14 ore di auto abbiamo preferito volare fino a Bergamo - Orio al Serio e fittare un'auto. Se scegliete questa strada, alcune compagnie (es. Ryanair) vi faranno portare 2 bagagli in più per i neonati (noi abbiamo portato il sediolino auto e il passeggino).
 
 L'auto l'abbiamo fittata online su uno dei tanti portali. Prendete qualcosa di più grande di una Panda, visto che caricherete l'auto di valigie e persone.
 
 ## Cos'altro serve per godersi la vacanza
 
-Ammetto di averci ragionato su dopo aver prenotato: come faccio a portarmi una bimba in giro per i sentieri? In braccio è troppo pericoloso. Per cui, mi sono connesso al web e ho scoperto che esistono degli zaini porta neonati: il neonato sta seduto dietro la schiena del papà, ed è addirittura felice di girare dietro la schiena. Ha l'occasione di guardare il panorama senza sforzare collo o altro, inoltre è completamente assicurato allo zaino, non rischia di cadere.
+Ammetto di averci ragionato su solo dopo aver prenotato: come faccio a portarmi una bimba in giro per i sentieri? In braccio non è neanche un'ipotesi! Per cui, mi sono connesso al web e ho scoperto che esistono degli zaini porta neonati: il neonato sta seduto dietro la schiena del papà, ed è addirittura felice di girare dietro la schiena. Ha l'occasione di guardare il panorama senza sforzare collo o altro, inoltre è completamente assicurato allo zaino, non rischia di cadere.
 
 Gli zaini sono normalmente composti da parasole e kit anti pioggia, quindi anche le condizioni più estreme sono affrontabili (ma voi non uscite quando piove, right?)
 
@@ -44,6 +45,7 @@ Ho preso un appartamentino su AirBnb a Morgex, vicino Courmayeur. L'ho scelto un
 Se dovessi tornare probabilmente sceglierei altri due posti:
 
 * Cogne, con i suoi prati sconfinati
+
 * Aosta, per essere al centro della Valle, e poter andare in giro ovunque.
 
 In ogni caso la valle è "abbastanza" piccola, e i punti più remoti si raggiungono in max 1h di macchina.
