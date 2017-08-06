@@ -44,9 +44,9 @@ Ho preso un appartamentino su AirBnb a Morgex, vicino Courmayeur. L'ho scelto un
 
 Se dovessi tornare probabilmente sceglierei altri due posti:
 
-* Cogne, con i suoi prati sconfinati
+* **Cogne**, con i suoi prati sconfinati
 
-* Aosta, per essere al centro della Valle, e poter andare in giro ovunque.
+* **Aosta**, per essere al centro della Valle, poter andare in giro ovunque, e godersi anche la vita serale di una città.
 
 In ogni caso la valle è "abbastanza" piccola, e i punti più remoti si raggiungono in max 1h di macchina.
 
@@ -56,17 +56,17 @@ In ogni caso la valle è "abbastanza" piccola, e i punti più remoti si raggiung
 
 Essendo vicini a Courmayeur ho letto molte recensioni fantastiche su questa valle, soprattutto perchè è ancora selvaggia e preservata. La Val Ferret è una valle, appunto, tra due catene montuose che raggiungono i 3-4000 metri. Il comune non permette alle auto di arrivare fino in fondo: potete parcheggiare nel punto più lontano possibile e poi potrete prendere l'autobus per la località Arpnuova (cost del bus 1€, passa ogni mezz'ora). Da lì potete imboccare i due sentieri per il rifugio Elena, uno sale per la strada sterrata e l'altro è più selvaggio; fatene uno all'andata e un'altro al ritorno.
 
-**Perchè vederlo: **il panorama dal rifugio è fantastico, si vede tutto il ghiacciaio del Monte Bianco.
+**Perchè vederlo:** il panorama dal rifugio è fantastico, si vede tutto il ghiacciaio del Monte Bianco.
 
 **Difficoltà Familiare® (nuovo indice™ inventato da me, ossia quanto è difficile portarci su una bimba dietro la schiena, e la moglie)**: Siccome ci sono circa 300 mt di dislivello, la strada sterrata è molto facile ma in costante salita.
 
-**Bonus: **mangiate la crostata al rifugio. E' buona!
+**Bonus:** mangiate la crostata al rifugio. E' buona!
 
 ### Bionaz: dal lago di Place Moulin al rifugio Prarayer
 
 Arrivare al lago con l'auto è l'unica cosa difficile. Una volta parcheggiato (3€ tutto il giorno!) un comodissimo sentiero costeggia il lago artificiale (delimitato da una diga) e si potranno vedere fantastici panorami, oltre a cascate continue sia da un lato sia lungo il sentiero stesso. Dietro il rifugio poi c'è un fantastico prato verde e un ghiacciaio.
 
-**Perchè vederlo: **è un posto che non mi sarei aspettato di trovare.
+**Perchè vederlo:** è un posto che non mi sarei aspettato di trovare.
 
 **Difficoltà familiare:** Facilissimo.
 
@@ -76,11 +76,11 @@ Arrivare al lago con l'auto è l'unica cosa difficile. Una volta parcheggiato (3
 
 Questo sentiero è facilissimo e molto pittoresco. Si parcheggia lungo la strada vicino all'hotel Genzianella (non si paga) e si prende il sentiero che parte da lì, che è molto comodo. Il sentiero è molto bello già di suo, ma il laghetto alpino (quota 2066mt) è fantastico. In cima c'erano centinaia di famiglie con i bimbi e i cani: sembrava un concertone estivo di Cristina D'Avena. Forse la metafora non è congeniale visto che non riesce a trasmettere il senso di pace e il silenzio di cui si godeva lassù.
 
-**Perchè vederlo: **un lago a 2000 metri è qualcosa di purissimo. Ci si rilassa solo a stare lì.
+**Perchè vederlo:** un lago a 2000 metri è qualcosa di purissimo. Ci si rilassa solo a stare lì.
 
-**Difficoltà familiare: **Facile, il dislivello non è tantissimo.
+**Difficoltà familiare:** Facile, il dislivello non è tantissimo.
 
-**Bonus: **dopo esserci goduti il lago abbiamo fatto due cavolate; la prima è che abbiamo provato a circumnavigare il lago (non fatelo! Vi perderete come abbiamo fatto noi!) e la seconda è che siamo saliti sul Colle della Croce per vedere il panorama del Monte Bianco. anche se il panorama è fantastico, la salita è massacrante (soprattutto se avete una bimba dietro la schiena). Salite lassù solo se non avete zaini da portare con voi.
+**Bonus:** dopo esserci goduti il lago abbiamo fatto due cavolate; la prima è che abbiamo provato a fare il giro intorno al lago (non fatelo! Vi perderete come abbiamo fatto noi!) e la seconda è che siamo saliti sul Colle della Croce per vedere il panorama del Monte Bianco. anche se il panorama è fantastico, la salita è massacrante (soprattutto se avete una bimba dietro la schiena). Salite lassù solo se non avete zaini da portare con voi.
 
 ### Cogne e le cascate di Lillaz
 
