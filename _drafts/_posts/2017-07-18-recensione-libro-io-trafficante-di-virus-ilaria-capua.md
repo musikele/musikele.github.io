@@ -2,13 +2,15 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Sei uno scienziato di fama internazionale e ti accusano di trafficare virus. Che fai?'
-category: Italiano
+title: Sei uno scienziato di fama internazionale e ti accusano di trafficare virus.
+  Che fai?
 layout: post
 tags:
 - ilaria capua
 - io trafficante di virus
 - libro
+categories: Italiano
+date: 2017-07-18 00:00:00 +0000
 ---
 
 
