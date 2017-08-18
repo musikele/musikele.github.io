@@ -36,20 +36,22 @@ Il libro è piuttosto operativo, infatti superati i primi capitoli introduttivi 
 
 Ci sono cose che ho annotato e che mi hanno colpito maggiormente:
 
-* GH non è un insieme di tips n' tricks. E' una metodologia. Se trovate siti che vi propongono *cinquanta azioni di Growth Hacking che potete mettere in pratica sul vostro sito, *beh, scappate perchè non sanno nenache di che stanno parlando.
+* GH non è un insieme di tips n' tricks. E' una metodologia. Se trovate siti che vi propongono *cinquanta azioni di Growth Hacking che potete mettere in pratica sul vostro sito*, beh, scappate perchè non sanno nenache di che stanno parlando.
+
 * **NON iniziare il GH senza avere un sistema per misurare ogni possibile azione che ti interessa**. Ad esempio, se vuoi sapere quanti clienti vengono sul tuo sito da facebook, devi avere modo di poterlo tracciare (landing page dedicata, etc). Se vuoi tracciare il numero di clienti che si iscrivono tramite altri clienti, DEVI avere una piattaforma che ti permette di tracciare tutto.
+
 * Esistono **due momenti** per un'azienda che sta lanciando un prodotto: la fase **pre-market fit** e la fase **post-market fit**. In pratica, nella prima fase state realizzando un prodotto e state cercando di fare in modo che sia ciò di cui il cliente ha bisogno. In questa prima fase vi focalizzate sulle funzionalità più che sulla sua crescita. La seconda fase invece corrisponde a quando avrete creato un prodotto "valido", e potete finalmente dare fuoco al budget per pubblicizzarlo.
+
 * Il marketing non è qualcosa di esterno all'azienda, non è un ufficio a parte: **il primo growth hacker è il CEO**. Tutti dovrebbero sapere che esperimenti stiamo facendo, cosa ha funzionato, e cosa no.
 
 ## Ma la cosa che più mi ha sorpreso è che ...
 
 Non essendo un marketer non posso confermare nè smentire: **davvero nel marketing "classico" i soldi vengono spesi "alla cieca" senza nessun controllo sul risultato ottenuto?** Davvero non si misura nulla, se non il fatturato o il numero di clienti, in termini piuttosto generici? Su questo sono sconvolto: sarà che vengo dall'informatica, ma penso che se non ti poni obiettivi misurabili puoi dire tutto e il contrario di tutto, senza avere mai ragione.
 
-Infine, mi sono posto una domanda che - sono sicuro - si saranno posti tutti: **si può fare Growth Hacking per aziende tradizionali? **Io intendo per aziende che hanno un business decisamente offline, non so, pensate a una pizzeria o a un negozio di vestiti.
+Infine, mi sono posto una domanda che - sono sicuro - si saranno posti tutti: **si può fare Growth Hacking per aziende tradizionali?** Io intendo per aziende che hanno un business decisamente offline, non so, pensate a una pizzeria o a un negozio di vestiti.
 
 **La risposta del Growth Hacking "classico**": "si può fare, basta che la parte di promozione la fai online e continui a misurare tutte le azioni e reazioni".
 
 **La risposta di Michele Nasti™**: Si può fare anche se non si ha un sito internet, nè una presenza online consolidata: la metodologia è applicabile anche "fuori da internet" (è una metodologia!) e la parte di metriche può essere raccolta offline... e i calcoli si possono fare "a mano"... etc etc insomma è chiaro che diventa più complicato e, presumibilmente, impreciso, ma si può fare. Forse a questo step non ci siamo ancora arrivati, e servono ulteriori semplificazioni per migliorare il processo. Ma in cuor mio penso che si possa fare. L'unico vero problema è che **non è scalabile**: se il negozio è grande, o è molto trafficato, diventa difficile tracciare gli eventi che ci interessano.
 
 Bene, dopo tutto sto casino non mi resta che augurarvi un **crescita iperbolica**! Se diventate ricchi, ricordatevi di me.
-
