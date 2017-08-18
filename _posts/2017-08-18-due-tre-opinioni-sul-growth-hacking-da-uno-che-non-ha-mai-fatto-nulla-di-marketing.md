@@ -20,7 +20,7 @@ E' la buzzword del momento: un fenomeno che sta riguardando l'universo del marke
 
 Andiamo al sodo; ecco come è nato questo post: dal libro sul [Growth Hacking di Luca Barboni](http://amzn.to/2wfS2LO).
 
-[](http://amzn.to/2wfS2LO)[](http://amzn.to/2wfS2LO)
+[![]({{site.baseurl}}/images/growth_hacking.jpg)](http://amzn.to/2wfS2LO)
 
 ## Il libro
 
