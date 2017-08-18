@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.1">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-08-18T10:18:16+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Guida alla Val d’Aosta con un neonato</title><link href="https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html" rel="alternate" type="text/html" title="Guida alla Val d'Aosta con un neonato" /><published>2017-08-06T17:11:47+02:00</published><updated>2017-08-09T17:00:26+02:00</updated><id>https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato</id><content type="html" xml:base="https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html">&lt;p&gt;Questo post vuole provare ad essere sintetico, e contemporaneamente raccontare 7 giorni di vacanza in Val D’Aosta con una neonata (mia figlia aveva 8 mesi quando abbiamo fatto questo viaggio).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.1">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-08-18T10:31:33+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</title><link href="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html" rel="alternate" type="text/html" title="Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing" /><published>2017-08-18T00:00:00+02:00</published><updated>2017-08-18T10:29:25+02:00</updated><id>https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing</id><content type="html" xml:base="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">&lt;p&gt;Growth Hacking. &lt;strong&gt;Growth Hacking ovunque.&lt;/strong&gt; Pure nei bagni dell’autogrill.&lt;/p&gt;
+
+&lt;p&gt;E’ la buzzword del momento: un fenomeno che sta riguardando l’universo del marketing e delle startup, che si propone come la Metodologia Unica™ di accrescimento della vostra società, budget permettendo.&lt;/p&gt;
+
+&lt;p&gt;Andiamo al sodo; ecco come è nato questo post: dal libro sul &lt;a href=&quot;http://amzn.to/2wfS2LO&quot;&gt;Growth Hacking di Luca Barboni&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://amzn.to/2wfS2LO&quot;&gt;&lt;img src=&quot;/images/growth_hacking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;il-libro&quot;&gt;Il libro&lt;/h2&gt;
+
+&lt;p&gt;Sono rimasto molto soddisfatto da questo libro: io sono un programmatore e non conosco nulla di marketing. Per me il marketing era tutto quello che si faceva per sponsorizzare il prodotto sui vari canali: pubblicità, testi, immagni, grafiche, video, etc. In genere c’è un “budget” e un “reparto” della tua società che deve stare attento a come lo si spende. E’ questo, no?&lt;/p&gt;
+
+&lt;p&gt;Se la pensi così ti sarai accorto che c’è un problema enorme alla base: non saprai mai quale azione ha portato a un aumento del fatturato. I miei clienti hanno visto la pubblicità su facebook? Oppure quella in tv? O forse il cartellone sull’A4? Non c’è nessun modo per saperlo.&lt;/p&gt;
+
+&lt;p&gt;Il Growth Hacking invece è una disciplina empirica (col nome impronunciabile per un italiano) che permette di &lt;strong&gt;misurare,&lt;/strong&gt; tramite &lt;strong&gt;esperimenti controllati&lt;/strong&gt;, l’impatto di ogni tua azione sui tuoi clienti.&lt;/p&gt;
+
+&lt;p&gt;Il libro è piuttosto operativo, infatti superati i primi capitoli introduttivi troverete un’intera sezione su come mettere in pratica tutte le fasi che compongono la crescita di un prodotto: dal momento in cui un cliente vi scopre, al momento in cui acquista qualcosa da voi, fino al momento in cui vi consiglia a un amico.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosa-mi-ha-colpito&quot;&gt;Cosa mi ha colpito&lt;/h2&gt;
+
+&lt;p&gt;Ci sono cose che ho annotato e che mi hanno colpito maggiormente:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;GH non è un insieme di tips n’ tricks. E’ una metodologia. Se trovate siti che vi propongono &lt;em&gt;cinquanta azioni di Growth Hacking che potete mettere in pratica sul vostro sito&lt;/em&gt;, beh, scappate perchè non sanno nenache di che stanno parlando.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;NON iniziare il GH senza avere un sistema per misurare ogni possibile azione che ti interessa&lt;/strong&gt;. Ad esempio, se vuoi sapere quanti clienti vengono sul tuo sito da facebook, devi avere modo di poterlo tracciare (landing page dedicata, etc). Se vuoi tracciare il numero di clienti che si iscrivono tramite altri clienti, DEVI avere una piattaforma che ti permette di tracciare tutto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Esistono &lt;strong&gt;due momenti&lt;/strong&gt; per un’azienda che sta lanciando un prodotto: la fase &lt;strong&gt;pre-market fit&lt;/strong&gt; e la fase &lt;strong&gt;post-market fit&lt;/strong&gt;. In pratica, nella prima fase state realizzando un prodotto e state cercando di fare in modo che sia ciò di cui il cliente ha bisogno. In questa prima fase vi focalizzate sulle funzionalità più che sulla sua crescita. La seconda fase invece corrisponde a quando avrete creato un prodotto “valido”, e potete finalmente dare fuoco al budget per pubblicizzarlo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Il marketing non è qualcosa di esterno all’azienda, non è un ufficio a parte: &lt;strong&gt;il primo growth hacker è il CEO&lt;/strong&gt;. Tutti dovrebbero sapere che esperimenti stiamo facendo, cosa ha funzionato, e cosa no.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ma-la-cosa-che-più-mi-ha-sorpreso-è-che-&quot;&gt;Ma la cosa che più mi ha sorpreso è che …&lt;/h2&gt;
+
+&lt;p&gt;Non essendo un marketer non posso confermare nè smentire: &lt;strong&gt;davvero nel marketing “classico” i soldi vengono spesi “alla cieca” senza nessun controllo sul risultato ottenuto?&lt;/strong&gt; Davvero non si misura nulla, se non il fatturato o il numero di clienti, in termini piuttosto generici? Su questo sono sconvolto: sarà che vengo dall’informatica, ma penso che se non ti poni obiettivi misurabili puoi dire tutto e il contrario di tutto, senza avere mai ragione.&lt;/p&gt;
+
+&lt;p&gt;Infine, mi sono posto una domanda che - sono sicuro - si saranno posti tutti: &lt;strong&gt;si può fare Growth Hacking per aziende tradizionali?&lt;/strong&gt; Io intendo per aziende che hanno un business decisamente offline, non so, pensate a una pizzeria o a un negozio di vestiti.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La risposta del Growth Hacking “classico&lt;/strong&gt;”: “si può fare, basta che la parte di promozione la fai online e continui a misurare tutte le azioni e reazioni”.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La risposta di Michele Nasti™&lt;/strong&gt;: Si può fare anche se non si ha un sito internet, nè una presenza online consolidata: la metodologia è applicabile anche “fuori da internet” (è una metodologia!) e la parte di metriche può essere raccolta offline… e i calcoli si possono fare “a mano”… etc etc insomma è chiaro che diventa più complicato e, presumibilmente, impreciso, ma si può fare. Forse a questo step non ci siamo ancora arrivati, e servono ulteriori semplificazioni per migliorare il processo. Ma in cuor mio penso che si possa fare. L’unico vero problema è che &lt;strong&gt;non è scalabile&lt;/strong&gt;: se il negozio è grande, o è molto trafficato, diventa difficile tracciare gli eventi che ci interessano.&lt;/p&gt;
+
+&lt;p&gt;Bene, dopo tutto sto casino non mi resta che augurarvi un &lt;strong&gt;crescita iperbolica&lt;/strong&gt;! Se diventate ricchi, ricordatevi di me.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="growth hacking" /><category term="marketing" /><category term="libro" /><category term="luca barboni" /><summary type="html">Growth Hacking. Growth Hacking ovunque. Pure nei bagni dell’autogrill.</summary></entry><entry><title type="html">Guida alla Val d’Aosta con un neonato</title><link href="https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html" rel="alternate" type="text/html" title="Guida alla Val d'Aosta con un neonato" /><published>2017-08-06T17:11:47+02:00</published><updated>2017-08-09T17:00:26+02:00</updated><id>https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato</id><content type="html" xml:base="https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html">&lt;p&gt;Questo post vuole provare ad essere sintetico, e contemporaneamente raccontare 7 giorni di vacanza in Val D’Aosta con una neonata (mia figlia aveva 8 mesi quando abbiamo fatto questo viaggio).&lt;/p&gt;
 
 &lt;h2 id=&quot;premessa-perchè-val-daosta&quot;&gt;Premessa: perchè Val D’Aosta…&lt;/h2&gt;
 
@@ -543,68 +590,4 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;p&gt;Per questo, &lt;strong&gt;negli ultimi team con cui ho collaborato&lt;/strong&gt;, piuttosto che mettere insieme tutte le cerimonie di Scrum &lt;strong&gt;ho preferito privilegiare quelle pratiche che sicuramente avrebbero portato un valore effettivo&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Non avrei conosciuto le pratiche Lean senza Agile. &lt;strong&gt;Non potrei fare Agile senza mettere in pratica i principi Lean. Al contrario, si può essere Lean senza essere Agile&lt;/strong&gt;. Questi due mondi si sovrappongono per molte cose e sono, alla fine della fiera, &lt;strong&gt;complementari tra loro&lt;/strong&gt;.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="agile" /><category term="Lean" /><category term="scrum" /><category term="metodologie" /><summary type="html">Agile, agile, agile… ormai tutti fanno Agile, implementando un framework tipo Scrum (che è uno dei possibili modi di essere Agile).</summary></entry><entry><title type="html">“Vorrei, ma ho paura che vada male” &amp;amp;#58 come assumersi dei “rischi intelligenti”</title><link href="https://michelenasti.com/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html" rel="alternate" type="text/html" title="&quot;Vorrei, ma ho paura che vada male&quot;	&amp;#58 come assumersi dei &quot;rischi intelligenti&quot;" /><published>2017-04-21T00:00:00+02:00</published><updated>2017-04-21T11:14:29+02:00</updated><id>https://michelenasti.com/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti</id><content type="html" xml:base="https://michelenasti.com/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html">&lt;p&gt;Oggi vorrei parlarvi di &lt;strong&gt;come assumersi dei rischi intelligenti&lt;/strong&gt;. Intelligenti in che senso?!&lt;/p&gt;
-
-&lt;p&gt;Questo post ce l’ho in testa da molto tempo, almeno da quando ho letto il libro &lt;a href=&quot;http://amzn.to/2oaDAB6&quot;&gt;Startup Of You&lt;/a&gt; di Reid Hoffman (fondatore di LinkedIn) e Ben Casnocha. Per i duri di comprendorio inglese qui c’è la &lt;a href=&quot;http://amzn.to/2oQsY92&quot;&gt;versione in Italiano&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Nel libro gli autori spiegano cosa si può fare per &lt;strong&gt;conferire alla propria vita e alla propria carriera un atteggiamento “da startup”&lt;/strong&gt;: ci sono una lunga serie di consigli, discussioni, esempi, e insomma è uno dei libri che ho letto con più piacere.&lt;img src=&quot;/images/rischio-investimenti-definizione-749x400.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;i-rischi-intelligenti&quot;&gt;I rischi intelligenti&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Siamo abituati a pensare ai rischi come qualcosa di negativo&lt;/em&gt;: perdite di denaro sui mercati azionari, o guida di una moto senza casco. Ma il rischio non è un nemico; è qualcosa che fa intrinsecamente parte della nostra vita.&lt;/p&gt;
-
-&lt;p&gt;Le situazioni rischiose, comunque, sono quelle in cui la possibilità che le cose vadano male è decisamente più alto del vantaggio che si ottiene se le cose vanno bene.&lt;/p&gt;
-
-&lt;p&gt;Ad esempio, &lt;strong&gt;volare in aereo non è rischioso&lt;/strong&gt;, perché anche se lo scenario peggiore è &lt;em&gt;molto **doloroso&lt;/em&gt; la possibilità che questo accada è bassissima. Invece, il tempo di viaggio risparmiato è un dato di fatto.&lt;/p&gt;
-
-&lt;p&gt;Alcuni imprenditori sono dei cowboy del rischio; tuttavia, &lt;strong&gt;ciò che distingue un imprenditore giudizioso da un semplice spavaldo non è l’alta tolleranza al rischio, ma l’abilità di saperlo valutare e gestire correttamente&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Il rischio, in un contesto come quello del lavoro, è correlato alle scelte che facciamo, e alla possibilità che qualcosa vada storto. Ad esempio, quando cambiamo lavoro, ci assumiamo il rischio che il nuovo possa essere anche peggiore del vecchio, e invochiamo tutte le divinità affinché non sia così!&lt;/p&gt;
-
-&lt;p&gt;Ma non solo tutto ciò che facciamo comporta rischi; &lt;strong&gt;anche&lt;/strong&gt; &lt;strong&gt;ciò che NON facciamo è altamente rischioso&lt;/strong&gt;. Questo vale specialmente quando il mondo intorno a noi sta cambiando e richiede un nostro adattamento.&lt;/p&gt;
-
-&lt;h2 id=&quot;valutare-i-rischi&quot;&gt;Valutare i rischi&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Valutare i rischi è difficile, ma non impossibile. Gli imprenditori lo fanno tutti i giorni.&lt;/strong&gt; Tuttavia, essi non usano analisi matematiche o economiche (degne di Wall Street!) per prendere decisioni; sinceramente, non dovremmo farlo neanche noi.&lt;/p&gt;
-
-&lt;p&gt;Ecco alcuni princìpi guida:&lt;/p&gt;
-
-&lt;h3 id=&quot;1-stiamo-esagerando-nella-valutazione&quot;&gt;1. stiamo esagerando nella valutazione?&lt;/h3&gt;
-
-&lt;p&gt;Il primo passo nella valutazione di un rischio è ricordarsi che &lt;strong&gt;il caso peggiore probabilmente non è così brutto, o così probabile, come sembra&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-il-caso-peggiore-è-tollerabile&quot;&gt;2. Il caso peggiore è tollerabile?&lt;/h3&gt;
-
-&lt;p&gt;Se accade il caso peggiore cosa succede alla nostra vita? La reputazione scenderà a livelli sotto zero, perderemo tutti i soldi, la carriera sarà definitivamente finita?&lt;/p&gt;
-
-&lt;p&gt;Se nel caso peggiore accade che perdiamo &lt;em&gt;un po’&lt;/em&gt; di soldi, o veniamo licenziati (posto che riusciamo a trovare un altro lavoro subito), o rischi semplicemente di sentirti inadeguato, &lt;strong&gt;dovresti comunque provarci&lt;/strong&gt;. Almeno finché hai un &lt;a href=&quot;https://michelenasti.com/2015/11/serve-un-piano/&quot;&gt;solido Piano Z&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;3-puoi-cambiare-la-decisione-a-metà-dellopera-puoi-passare-al-piano-b&quot;&gt;3. Puoi cambiare la decisione a metà dell’opera? Puoi passare al piano B?&lt;/h3&gt;
-
-&lt;p&gt;Quando vediamo che le cose si stanno mettendo male, possiamo fare delle scelte che ti permettono di tornare indietro e ricominciare?&lt;/p&gt;
-
-&lt;h3 id=&quot;4-non-confondiamo-lincertezza-con-il-rischio&quot;&gt;4. Non confondiamo l’incertezza con il rischio&lt;/h3&gt;
-
-&lt;p&gt;Nessuno può sapere come andrà prima del tempo. Ma questo non significa che l’incertezza sia un rischio! &lt;strong&gt;Le opportunità migliori sono quelle con i più grandi punti interrogativi&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;5-considera-la-tua-età-e-a-che-fase-della-tua-vita-ti-trovi-quali-saranno-i-rischi-tra-un-paio-danni&quot;&gt;5. Considera la tua età e a che fase della tua vita ti trovi. Quali saranno i rischi tra un paio d’anni?&lt;/h3&gt;
-
-&lt;p&gt;Fallire da ragazzi è considerato formativo; è per questo che sono i ventenni a fondare le aziende più strampalate.&lt;/p&gt;
-
-&lt;p&gt;Man mano che invecchi, la tua percezione del rischio cambia. Arrivano i bambini, la casa, l’auto, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Meglio fare qualcosa di rischioso prima che sia troppo tardi&lt;/strong&gt; ;)&lt;/p&gt;
-
-&lt;h2 id=&quot;facciamo-un-rapido-test&quot;&gt;Facciamo un rapido test…&lt;/h2&gt;
-
-&lt;p&gt;Prendetevi 30 secondi per ogni punto sottostante. Provate a immaginare i pro e i contro delle seguenti situazioni. Considerati i cinque punti espressi precedentemente, come cambierebbe la tua vita se:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;trovi un lavoro fantastico e strapagato ma è negli USA&lt;/li&gt;
-  &lt;li&gt;la tua azienda smette di pagare gli stipendi&lt;/li&gt;
-  &lt;li&gt;inizi a dirigere un team&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Questo semplice esercizio mentale magari vi farà riflettere su come percepite il rischio; nel mio caso mi ha aiutato a fare scelte più consapevoli nel mondo del lavoro.&lt;/p&gt;
-
-&lt;p&gt;In bocca al rischio ;)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="rischi" /><category term="lavoro" /><category term="startup of you" /><summary type="html">Oggi vorrei parlarvi di come assumersi dei rischi intelligenti. Intelligenti in che senso?!</summary></entry></feed>
+&lt;p&gt;Non avrei conosciuto le pratiche Lean senza Agile. &lt;strong&gt;Non potrei fare Agile senza mettere in pratica i principi Lean. Al contrario, si può essere Lean senza essere Agile&lt;/strong&gt;. Questi due mondi si sovrappongono per molte cose e sono, alla fine della fiera, &lt;strong&gt;complementari tra loro&lt;/strong&gt;.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="agile" /><category term="Lean" /><category term="scrum" /><category term="metodologie" /><summary type="html">Agile, agile, agile… ormai tutti fanno Agile, implementando un framework tipo Scrum (che è uno dei possibili modi di essere Agile).</summary></entry></feed>
