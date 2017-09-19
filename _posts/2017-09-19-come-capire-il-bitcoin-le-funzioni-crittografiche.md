@@ -5,7 +5,7 @@ author: musikele
 title: 'Come capire il bitcoin: le funzioni crittografiche '
 category: Italiano
 layout: post
-date: '2017-09-19'
+date: 2017-09-19 10:15
 tags:
 - bitcoin
 - crittografia
