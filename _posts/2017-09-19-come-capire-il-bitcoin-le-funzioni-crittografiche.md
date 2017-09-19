@@ -3,14 +3,16 @@ paginate: true
 comments: true
 author: musikele
 title: 'Come capire il bitcoin: le funzioni crittografiche'
-category: Italiano
 layout: post
-date: '2017-09-19'
+date: 2017-09-19 00:00:00 +0000
 tags:
 - bitcoin
 - crittografia
 - hash
+categories: Italiano
+category: Italiano
 ---
+
 
 Ormai sono un paio di mesi che mi sono appassionato all'anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un'infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile...
 
@@ -39,7 +41,7 @@ Ora siamo pronti a sbizzarrirci. Da console apriamo l'environment invocando il c
 
 ```
 $ node 
-> let CryptoJS = require('crypto-js')
+&gt; let CryptoJS = require('crypto-js')
 undefined
 
 ```
@@ -49,10 +51,10 @@ Abbiamo appena importato la libreria che contiene le funzioni crittografiche pi�
 E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:
 
 ```
-> let message = "This is my password" 
-> let sha = CryptoJS.SHA256(message)
+&gt; let message = "This is my password" 
+&gt; let sha = CryptoJS.SHA256(message)
 
-> console.log(sha)
+&gt; console.log(sha)
 { words:
    [ -355107296,
      1827616648,
@@ -65,7 +67,7 @@ E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e
   sigBytes: 32 }
 undefined
 
-> console.log(sha.toString())
+&gt; console.log(sha.toString())
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 ```
@@ -82,11 +84,11 @@ Hai ragione a pensarlo, caro lettore, però non è così. Le funzioni hash (e qu
 
 * la funzione deve essere computata efficientemente: nell'esempio precedente accade tutto in pochissimi microsecondi.
 
-* la funzione è *collision-free*: è impossibile per chiunque trovare due stringhe diverse `x`e `y` che restituiscano lo stesso hash (matematicamente: `H(x) = H(y)`).
+* la funzione è [collision-resistent](https://en.wikipedia.org/wiki/Collision_resistance): è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse `x`e `y` che restituiscano lo stesso hash (matematicamente: `H(x) = H(y)`).
 
-* la funzione hash *nasconde* il messaggio originario: se vi do l'hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio, che noi potremmo definire come una "chiave" di crittografia, per intenderci.
+* la funzione hash *nasconde* il messaggio originario: se vi do l'hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata *salt*), che noi potremmo definire come una "chiave" di crittografia, per intenderci.
 
-* la funzione hash è *puzzle-friendly*: per ogni possibile hash, se la chiave (di cui abbiamo parlato al punto precedente) è scelta davvero a caso, è infattibile risalire al messaggio se non cercando nell'insieme di tutte le chiavi possibili. L'idea quindi è di fornire un *puzzle* di questo tipo: data una chiave (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all'insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.
+* la funzione hash è *puzzle-friendly*: per ogni possibile hash, se il salt è scelto davvero a caso, è infattibile risalire al messaggio se non cercando nell'insieme di tutte le chiavi possibili. L'idea quindi è di fornire un *puzzle* di questo tipo: dato un salt (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all'insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.
 
 Bel casino! Scommetto che la terza proprietà vi ha complicato la comprensione.
 
