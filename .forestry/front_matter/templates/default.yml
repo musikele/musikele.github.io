@@ -63,3 +63,10 @@ fields:
   description: 'The article title '
   config:
     required: true
+- type: datetime
+  default: Invalid date
+  label: date
+  name: date
+  config:
+    date_format: DD/MM/YYYY
+    required: true
