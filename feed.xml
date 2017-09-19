@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.1">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-09-19T10:18:34+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Come capire il bitcoin: le funzioni crittografiche</title><link href="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" rel="alternate" type="text/html" title="Come capire il bitcoin: le funzioni crittografiche " /><published>2017-09-19T10:15:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche</id><content type="html" xml:base="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">&lt;p&gt;Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…&lt;/p&gt;
+
+&lt;p&gt;Finchè si trattava di scimmiottare gli agenti di borsa era anche divertente, ma da quando abbiamo tenuto il &lt;a href=&quot;https://www.meetup.com/it-IT/preview/devday-salerno/events/242583299&quot;&gt;primo meetup a Salerno sul Bitcoin&lt;/a&gt; ho capito che bisognava assolutamente provare a capirne di più.&lt;/p&gt;
+
+&lt;p&gt;E allora mi sono iscritto a &lt;a href=&quot;https://www.coursera.org/learn/cryptocurrency/&quot;&gt;questo corso on line&lt;/a&gt; che frequento al mattino presto e che sta rispolverando concetti che avevo “quasi” dimenticato - anni fa ho sostenuto l’esame di sicurezza su reti e da allora ho promesso a me stesso che non avrei mai più fatto sicurezza, com’è bello quando la vita ti contraddice (e mi è capitato già un’altra decina di volte, pensate voi…)&lt;/p&gt;
+
+&lt;p&gt;In questo articolo vi parlo di un concetto chiave alla base di bitcoin, blockchain e tutto il resto appresso: le funzioni Hash.&lt;/p&gt;
+
+&lt;h3 id=&quot;le-funzioni-hash&quot;&gt;le funzioni Hash&lt;/h3&gt;
+
+&lt;p&gt;Hash in italiano significa &lt;em&gt;carne tritata&lt;/em&gt;, ma onestamente non ho mai visto un inglese fare le polpette quindi dobbiamo fidarci di google. Tuttavia carne tritata gli si addice: in effetti quello che fa una funzione hash è proprio di prendere un messaggio (pensate a una stringa, ma in realtà può essere qualunque oggetto), e calcolarne un valore di lunghezza fissa. Vediamone un esempio, mi appoggio a NodeJS per comodità e perchè è uno dei più immediati, ma volendo potete giocare con qualsiasi linguaggio perchè le funzioni di crittografia sono native in ogni ambiente.&lt;/p&gt;
+
+&lt;p&gt;Creiamo una directory di esempio e installiamo il modulo &lt;code class=&quot;highlighter-rouge&quot;&gt;crypto-js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkdir esempi-crypto
+$ cd esempi-crypto
+$ npm i -S crypto-js 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Forse l’environment vi darà degli errori che manca il file &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;, ma noi freghiamocene.&lt;/p&gt;
+
+&lt;p&gt;Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ node 
+&amp;gt; let CryptoJS = require('crypto-js')
+undefined
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Abbiamo appena importato la libreria che contiene le funzioni crittografiche più diffuse. Non preoccupatevi per quell’undefined.&lt;/p&gt;
+
+&lt;p&gt;E’ il momento di provare a fare l’hash di un messaggio. L’algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; let message = &quot;This is my password&quot; 
+&amp;gt; let sha = CryptoJS.SHA256(message)
+
+&amp;gt; console.log(sha)
+{ words:
+   [ -355107296,
+     1827616648,
+     440617958,
+     157501257,
+     219431749,
+     -1604612205,
+     -2070175323,
+     1954178935 ],
+  sigBytes: 32 }
+undefined
+
+&amp;gt; console.log(sha.toString())
+ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Cosa è accaduto nel primo caso? &lt;code class=&quot;highlighter-rouge&quot;&gt;sha&lt;/code&gt; è un oggetto contenente dei byte (tutta sta roba, a livello crittografico, opera su byte e non vorrei sconvolgervi ma SI, si può fare anche in nodejs e javascript in generale)&lt;/p&gt;
+
+&lt;p&gt;Però dei byte non ce ne facciamo niente, siamo pur sempre esseri umani e se vogliamo vedere &lt;code class=&quot;highlighter-rouge&quot;&gt;sha&lt;/code&gt; come stringa basta chiamare il metodo &lt;code class=&quot;highlighter-rouge&quot;&gt;toString()&lt;/code&gt; che ci restituisce lo stringone che vedete in fondo.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-me-sembra-solo-una-stringa-randomica&quot;&gt;“A me sembra solo una stringa randomica…”&lt;/h3&gt;
+
+&lt;p&gt;Hai ragione a pensarlo, caro lettore, però non è così. Le funzioni hash (e quindi anche SHA256 che abbiamo usato, che è una delle tante funzioni hash) garantiscono le seguenti proprietà:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una funzione hash prende ogni possibile stringa come input, e restituisce una stringa di dimensioni fisse.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;la funzione deve essere computata efficientemente: nell’esempio precedente accade tutto in pochissimi microsecondi.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;la funzione è &lt;em&gt;collision-free&lt;/em&gt;: è impossibile per chiunque trovare due stringhe diverse &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;e &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; che restituiscano lo stesso hash (matematicamente: &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = H(y)&lt;/code&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;la funzione hash &lt;em&gt;nasconde&lt;/em&gt; il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio, che noi potremmo definire come una “chiave” di crittografia, per intenderci.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;la funzione hash è &lt;em&gt;puzzle-friendly&lt;/em&gt;: per ogni possibile hash, se la chiave (di cui abbiamo parlato al punto precedente) è scelta davvero a caso, è infattibile risalire al messaggio se non cercando nell’insieme di tutte le chiavi possibili. L’idea quindi è di fornire un &lt;em&gt;puzzle&lt;/em&gt; di questo tipo: data una chiave (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all’insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bel casino! Scommetto che la terza proprietà vi ha complicato la comprensione.&lt;/p&gt;
+
+&lt;p&gt;Ma internet è pieno di risorse e ho trovato questa immagine che spiega molte cose. Il bitcoin si affida proprio a questo genere di puzzle per il mining. Nel primo esempio, data una chiave &lt;code class=&quot;highlighter-rouge&quot;&gt;Cheescake&lt;/code&gt;, trovare un hash che inizi con la lettera &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nel secondo esempio, si parte con la stringa &lt;code class=&quot;highlighter-rouge&quot;&gt;Ice ice baby - too cold!&lt;/code&gt;​ e bisogna trovare un hash che inizi con &lt;code class=&quot;highlighter-rouge&quot;&gt;Hi&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nel terzo esempio, si parte con la stringa &lt;code class=&quot;highlighter-rouge&quot;&gt;Who let them out?&lt;/code&gt;​ e si cerca un hash che inizi con &lt;code class=&quot;highlighter-rouge&quot;&gt;Dog&lt;/code&gt;​.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/solvingahashpuzzle.png&quot; alt=&quot;&quot; class=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Questa immagine l’ho presa dal sito &lt;a href=&quot;https://3583bytesready.net/2016/09/06/hash-puzzes-proofs-work-bitcoin/&quot;&gt;3583 bytes free, ready?&lt;/a&gt; che ha fatto il lavoro sporco per me.&lt;/p&gt;
+
+&lt;p&gt;Come possiamo vedere, per risolvere il primo puzzle ci sono voluti 15 tentativi, per il secondo 1797 e per risovlere il terzo ben 773177.&lt;/p&gt;
+
+&lt;p&gt;Questo gioco non è altro che il &lt;strong&gt;mining&lt;/strong&gt;: a partire dall’hash del blocco precedente, trovare un numero che restituisca un hash che inizia con … qualcosa, poi vedremo cosa. Questo problema non è facile e richiede milioni di milioni di calcoli, motivo per cui si ricevono dei bitcoin come premio.&lt;/p&gt;
+
+&lt;p&gt;Non mi resta  che salutarvi con l’hash di &lt;code class=&quot;highlighter-rouge&quot;&gt;Buona giornata&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alla prossima!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="bitcoin" /><category term="crittografia" /><category term="hash" /><summary type="html">Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…</summary></entry><entry><title type="html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</title><link href="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html" rel="alternate" type="text/html" title="Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing" /><published>2017-08-18T00:00:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing</id><content type="html" xml:base="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">&lt;p&gt;Growth Hacking. &lt;strong&gt;Growth Hacking ovunque.&lt;/strong&gt; Pure nei bagni dell’autogrill.&lt;/p&gt;
+
+&lt;p&gt;E’ la buzzword del momento: un fenomeno che sta riguardando l’universo del marketing e delle startup, che si propone come la Metodologia Unica™ di accrescimento della vostra società, budget permettendo.&lt;/p&gt;
+
+&lt;p&gt;Andiamo al sodo; ecco come è nato questo post: dal libro sul &lt;a href=&quot;http://amzn.to/2wfS2LO&quot;&gt;Growth Hacking di Luca Barboni&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://amzn.to/2wfS2LO&quot;&gt;&lt;img src=&quot;/images/growth_hacking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;il-libro&quot;&gt;Il libro&lt;/h2&gt;
+
+&lt;p&gt;Sono rimasto molto soddisfatto da questo libro: io sono un programmatore e non conosco nulla di marketing. Per me il marketing era tutto quello che si faceva per sponsorizzare il prodotto sui vari canali: pubblicità, testi, immagni, grafiche, video, etc. In genere c’è un “budget” e un “reparto” della tua società che deve stare attento a come lo si spende. E’ questo, no?&lt;/p&gt;
+
+&lt;p&gt;Se la pensi così ti sarai accorto che c’è un problema enorme alla base: non saprai mai quale azione ha portato a un aumento del fatturato. I miei clienti hanno visto la pubblicità su facebook? Oppure quella in tv? O forse il cartellone sull’A4? Non c’è nessun modo per saperlo.&lt;/p&gt;
+
+&lt;p&gt;Il Growth Hacking invece è una disciplina empirica (col nome impronunciabile per un italiano) che permette di &lt;strong&gt;misurare,&lt;/strong&gt; tramite &lt;strong&gt;esperimenti controllati&lt;/strong&gt;, l’impatto di ogni tua azione sui tuoi clienti.&lt;/p&gt;
+
+&lt;p&gt;Il libro è piuttosto operativo, infatti superati i primi capitoli introduttivi troverete un’intera sezione su come mettere in pratica tutte le fasi che compongono la crescita di un prodotto: dal momento in cui un cliente vi scopre, al momento in cui acquista qualcosa da voi, fino al momento in cui vi consiglia a un amico.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosa-mi-ha-colpito&quot;&gt;Cosa mi ha colpito&lt;/h2&gt;
+
+&lt;p&gt;Ci sono cose che ho annotato e che mi hanno colpito maggiormente:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;GH non è un insieme di tips n’ tricks. E’ una metodologia. Se trovate siti che vi propongono &lt;em&gt;cinquanta azioni di Growth Hacking che potete mettere in pratica sul vostro sito&lt;/em&gt;, beh, scappate perchè non sanno nenache di che stanno parlando.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;NON iniziare il GH senza avere un sistema per misurare ogni possibile azione che ti interessa&lt;/strong&gt;. Ad esempio, se vuoi sapere quanti clienti vengono sul tuo sito da facebook, devi avere modo di poterlo tracciare (landing page dedicata, etc). Se vuoi tracciare il numero di clienti che si iscrivono tramite altri clienti, DEVI avere una piattaforma che ti permette di tracciare tutto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Esistono &lt;strong&gt;due momenti&lt;/strong&gt; per un’azienda che sta lanciando un prodotto: la fase &lt;strong&gt;pre-market fit&lt;/strong&gt; e la fase &lt;strong&gt;post-market fit&lt;/strong&gt;. In pratica, nella prima fase state realizzando un prodotto e state cercando di fare in modo che sia ciò di cui il cliente ha bisogno. In questa prima fase vi focalizzate sulle funzionalità più che sulla sua crescita. La seconda fase invece corrisponde a quando avrete creato un prodotto “valido”, e potete finalmente dare fuoco al budget per pubblicizzarlo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Il marketing non è qualcosa di esterno all’azienda, non è un ufficio a parte: &lt;strong&gt;il primo growth hacker è il CEO&lt;/strong&gt;. Tutti dovrebbero sapere che esperimenti stiamo facendo, cosa ha funzionato, e cosa no.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ma-la-cosa-che-più-mi-ha-sorpreso-è-che-&quot;&gt;Ma la cosa che più mi ha sorpreso è che …&lt;/h2&gt;
+
+&lt;p&gt;Non essendo un marketer non posso confermare nè smentire: &lt;strong&gt;davvero nel marketing “classico” i soldi vengono spesi “alla cieca” senza nessun controllo sul risultato ottenuto?&lt;/strong&gt; Davvero non si misura nulla, se non il fatturato o il numero di clienti, in termini piuttosto generici? Su questo sono sconvolto: sarà che vengo dall’informatica, ma penso che se non ti poni obiettivi misurabili puoi dire tutto e il contrario di tutto, senza avere mai ragione.&lt;/p&gt;
+
+&lt;p&gt;Infine, mi sono posto una domanda che - sono sicuro - si saranno posti tutti: &lt;strong&gt;si può fare Growth Hacking per aziende tradizionali?&lt;/strong&gt; Io intendo per aziende che hanno un business decisamente offline, non so, pensate a una pizzeria o a un negozio di vestiti.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La risposta del Growth Hacking “classico&lt;/strong&gt;”: “si può fare, basta che la parte di promozione la fai online e continui a misurare tutte le azioni e reazioni”.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La risposta di Michele Nasti™&lt;/strong&gt;: Si può fare anche se non si ha un sito internet, nè una presenza online consolidata: la metodologia è applicabile anche “fuori da internet” (è una metodologia!) e la parte di metriche può essere raccolta offline… e i calcoli si possono fare “a mano”… etc etc insomma è chiaro che diventa più complicato e, presumibilmente, impreciso, ma si può fare. Forse a questo step non ci siamo ancora arrivati, e servono ulteriori semplificazioni per migliorare il processo. Ma in cuor mio penso che si possa fare. L’unico vero problema è che &lt;strong&gt;non è scalabile&lt;/strong&gt;: se il negozio è grande, o è molto trafficato, diventa difficile tracciare gli eventi che ci interessano.&lt;/p&gt;
+
+&lt;p&gt;Bene, dopo tutto sto casino non mi resta che augurarvi un &lt;strong&gt;crescita iperbolica&lt;/strong&gt;! Se diventate ricchi, ricordatevi di me.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="growth hacking" /><category term="marketing" /><category term="libro" /><category term="luca barboni" /><summary type="html">Growth Hacking. Growth Hacking ovunque. Pure nei bagni dell’autogrill.</summary></entry><entry><title type="html">Guida alla Val d’Aosta con un neonato</title><link href="https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html" rel="alternate" type="text/html" title="Guida alla Val d'Aosta con un neonato" /><published>2017-08-06T17:11:47+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato</id><content type="html" xml:base="https://michelenasti.com/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html">&lt;p&gt;Questo post vuole provare ad essere sintetico, e contemporaneamente raccontare 7 giorni di vacanza in Val D’Aosta con una neonata (mia figlia aveva 8 mesi quando abbiamo fatto questo viaggio).&lt;/p&gt;
+
+&lt;h2 id=&quot;premessa-perchè-val-daosta&quot;&gt;Premessa: perchè Val D’Aosta…&lt;/h2&gt;
+
+&lt;p&gt;Se come me odiate gli ombrelloni, la sabbia, la spiaggia, la crema solare etc etc, l’Italia è piena di posti fantastici in montagna: dal Trentino agli Appennini, ci sono tanti posti a quota almeno 1000 metri che meritano una visita. Sia perchè fa più fresco (abbiamo fatto questo viaggio quando l’Italia è stata attraversata da uno dei peggiori caldi di sempre) sia per godere dei bei panorami che solo la montagna sa offrire.&lt;/p&gt;
+
+&lt;h2 id=&quot;con-una-neonata&quot;&gt;…con una neonata&lt;/h2&gt;
+
+&lt;p&gt;Considerato che, essendo campani, una settimana al mare la dobbiamo fare per forza (altrimenti i nonni ci cancellano dall’eredità), un’altra settimana ce la siamo concessa per noi. I motivi che ci hanno spinto fino a qui:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;anche se la piccola è davvero molto piccola, e sta mangiando ancora pappette e omogeneizzati, mia moglie ha pensato che a 8 mesi il viaggio era “fattibile”. Senza di lei non avrei saputo come muovermi. C’è tutto quell’universo fatto di pannolini e pastine in cui non mi sento completamente a mio agio. Se vostra moglie non è d’accordo, non organizzate nulla :)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;8 mesi credo sia stata l’età minima per venire fin qui: se avete un bimbo più piccolo, non è cosa. La bimba a 8 mesi è sufficientemente sveglia da godersi le passeggiate (cascate, boschi, montagne, laghi…) e da stare seduta senza problemi nello zaino porta neonati.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;come-siamo-arrivati-fin-qui&quot;&gt;Come siamo arrivati fin qui&lt;/h2&gt;
+
+&lt;p&gt;Mia moglie non ama i viaggi in macchina troppo lunghi, specialmente perchè la bimba sta seduta dietro con lei. Quindi piuttosto che farci 14 ore di auto &lt;strong&gt;abbiamo preferito volare fino a Bergamo e fittare un’auto&lt;/strong&gt;. Se scegliete questa strada, alcune compagnie (es. Ryanair) vi faranno portare 2 bagagli in più per i neonati (noi abbiamo portato il sediolino auto e il passeggino).&lt;/p&gt;
+
+&lt;p&gt;L’auto l’abbiamo fittata online su uno dei tanti portali. Prendete qualcosa di più grande di una Panda, visto che caricherete l’auto di valigie e persone.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosaltro-serve-per-godersi-la-vacanza&quot;&gt;Cos’altro serve per godersi la vacanza&lt;/h2&gt;
+
+&lt;p&gt;Ammetto di averci ragionato su solo dopo aver prenotato: &lt;strong&gt;come faccio a portarmi una bimba in giro per i sentieri?&lt;/strong&gt; In braccio non è neanche un’ipotesi! Per cui, mi sono connesso al web e ho scoperto che &lt;strong&gt;esistono gli zaini porta neonati&lt;/strong&gt;: il neonato sta seduto dietro la schiena del papà, ed è addirittura felice. Ha l’occasione di guardare il panorama senza sforzare collo o altro, inoltre è completamente assicurato allo zaino, non rischiando di cadere.&lt;/p&gt;
+
+&lt;p&gt;Gli zaini sono normalmente composti da parasole e kit anti pioggia, quindi anche le condizioni più estreme sono affrontabili (ma voi non uscite quando piove, right?)&lt;/p&gt;
+
+&lt;p&gt;Ricordatevi che &lt;strong&gt;in montagna il meteo cambia facilmente&lt;/strong&gt;, quindi portatevi un maglione (io non l’ho mai messo) e/o una giacca a vento con cappuccio (neanche questa mai usata). A 2000 mt il vento può essere gelido. Nostra figlia era sempre a maniche lunghe e pantalone lungo, oltre al cappellino.&lt;/p&gt;
+
+&lt;h2 id=&quot;dove-abbiamo-alloggiato&quot;&gt;Dove abbiamo alloggiato&lt;/h2&gt;
+
+&lt;p&gt;Ho preso un &lt;strong&gt;appartamentino su AirBnb a Morgex&lt;/strong&gt;, vicino Courmayeur. L’ho scelto un po’ a caso, sarò sincero; tuttavia non ci siamo trovati male. La mia idea era di andare a Courmayeur, ma siccome le case costavano troppo, ho scelto quella che costava meno e che stava più vicina. Tanto, avendo la macchina, potevo muovermi in libertà (e così è stato).&lt;/p&gt;
+
+&lt;p&gt;Se dovessi tornare probabilmente sceglierei altri due posti:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cogne&lt;/strong&gt;, con i suoi prati sconfinati&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Aosta&lt;/strong&gt;, per essere al centro della Valle, poter andare in giro ovunque, e godersi anche la vita serale di una città.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In ogni caso la valle è “abbastanza” piccola, e i punti più remoti si raggiungono in max 1h di macchina.&lt;/p&gt;
+
+&lt;h2 id=&quot;le-passeggiate-che-abbiamo-fatto&quot;&gt;Le passeggiate che abbiamo fatto&lt;/h2&gt;
+
+&lt;h3 id=&quot;val-ferret-da-arpnuova-al-rifugio-elena&quot;&gt;Val Ferret: da Arpnuova al Rifugio Elena&lt;/h3&gt;
+
+&lt;p&gt;Essendo vicini a Courmayeur ho letto molte recensioni fantastiche su questa valle, soprattutto perchè è ancora selvaggia e ben preservata. La Val Ferret è una valle, appunto, tra catene montuose che raggiungono i 3-4000 metri. Il comune non permette alle auto di arrivare fino in fondo: potete parcheggiare nel punto più lontano possibile e poi potrete prendere l’autobus per la località Arpnuova (costo del bus 1€, passa ogni mezz’ora). Da lì potete imboccare i due sentieri per il rifugio Elena, uno sale per la strada sterrata e l’altro è più selvaggio; fatene uno all’andata e l’altro al ritorno.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/val_ferret.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Perchè vederlo:&lt;/strong&gt; il panorama dal rifugio è fantastico, si vede tutto il ghiacciaio del Monte Bianco.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Difficoltà Familiare® (nuovo indice™ inventato da me, ossia quanto è difficile portarci su una bimba dietro la schiena, e la moglie)&lt;/strong&gt;: Siccome ci sono circa 300 mt di dislivello, la strada sterrata è facile ma in costante salita. Fate molte soste.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus:&lt;/strong&gt; mangiate la crostata al rifugio. E’ buona!&lt;/p&gt;
+
+&lt;h3 id=&quot;bionaz-dal-lago-di-place-moulin-al-rifugio-prarayer&quot;&gt;Bionaz: dal lago di Place Moulin al rifugio Prarayer&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Arrivare al lago con l’auto è l’unica cosa difficile&lt;/strong&gt;. Una volta parcheggiato (3€ tutto il giorno!) un comodissimo sentiero costeggia il lago artificiale (delimitato da una diga) e si potranno vedere fantastici panorami, oltre a cascate continue sia da un lato sia lungo il sentiero stesso. Dietro il rifugio poi c’è un fantastico prato verde e un ghiacciaio.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/bionaz.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Perchè vederlo:&lt;/strong&gt; è un posto che non mi sarei aspettato di trovare.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Difficoltà familiare:&lt;/strong&gt; Facilissimo perchè praticamente in piano.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus:&lt;/strong&gt; come al solito, la crostata al rifugio: fantastica.&lt;/p&gt;
+
+&lt;h3 id=&quot;lago-darpy&quot;&gt;Lago d’Arpy&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Questo sentiero è facilissimo e molto pittoresco&lt;/strong&gt;. Si parcheggia lungo la strada vicino all’hotel Genzianella (non si paga) e si prende il sentiero che parte da lì, che è molto comodo. Il sentiero è molto bello già di suo, &lt;strong&gt;ma il laghetto alpino (quota 2066mt) è fantastico&lt;/strong&gt;. In cima c’erano centinaia di famiglie con i bimbi e i cani: sembrava un concertone estivo di Cristina D’Avena. Forse la metafora non è congeniale visto che non riesce a trasmettere il senso di pace e il silenzio di cui si godeva lassù.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/arpy.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Perchè vederlo:&lt;/strong&gt; un lago a 2000 metri è qualcosa di purissimo. Ci si rilassa solo a stare lì.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Difficoltà familiare:&lt;/strong&gt; Facile, il dislivello non è tantissimo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus:&lt;/strong&gt; dopo esserci goduti il lago abbiamo fatto due cavolate; la prima è che abbiamo provato a fare il giro intorno al lago (non fatelo! Vi perderete come abbiamo fatto noi!) e la seconda è che siamo saliti sul Colle della Croce per vedere il panorama del Monte Bianco. anche se il panorama è fantastico, la salita è massacrante (soprattutto se avete una bimba dietro la schiena). Salite lassù solo se non avete zaini da portare con voi.&lt;/p&gt;
+
+&lt;h3 id=&quot;cogne-e-le-cascate-di-lillaz&quot;&gt;Cogne e le cascate di Lillaz&lt;/h3&gt;
+
+&lt;p&gt;Cogne è uno dei paesini più caratteristici della Val D’Aosta. La piazzetta di Cogne da direttamente sul Gran Paradiso ed è fantastica anche solo per fare le foto: ci si può rilassare anche solo guardando il prato verde.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/cogne.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Oltre al centro cittadino di Cogne (parcheggio con strisce bianche in molti punti…) siamo stati anche alle cascate di Lillaz, nell’omonima frazione.&lt;/p&gt;
+
+&lt;p&gt;Il sentiero delle cascate è corto ma molto appeso: per fortuna facendo le foto a ogni cascata la stanchezza non si sente affatto. Il punto più suggestivo comunque è la cascata più grande, che sta dietro a una grossa recinzione “proprietà privata - mantenersi sul sentiero” che ci ha un po’ disorientati. Una volta entrati, siamo arrivati alla cascata più grande di tutte dove abbiamo anche messo i piedi in acqua (gelida, ovviamente).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/lillaz.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Perchè vederlo:&lt;/strong&gt; le cascate sono affascinanti a prescindere.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Difficoltà familiare:&lt;/strong&gt; “Quasi Facile”. In questo sentiero mia moglie ha iniziato a sentire dolori a un ginocchio, per fortuna era uno degli ultimi giorni.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus:&lt;/strong&gt; Entrate nella quasi-proprietà privata, superate la recinzione: dentro abbiamo trovato dei cavalli allo stato brado che stavano riposando e mangiando!&lt;/p&gt;
+
+&lt;h3 id=&quot;e-le-città&quot;&gt;E le città?&lt;/h3&gt;
+
+&lt;p&gt;Spezzate le escursioni con una visita a Courmayeur, Cogne, Aosta o comunque visitate i paesini che avete intorno: sono tutti in puro stile montano e meritano una passeggiata. In Estate ci sono centinaia di manifestazioni, concerti… Difficile annoiarsi!&lt;/p&gt;
+
+&lt;p&gt;7 giorni qui e vi ricaricate per un anno intero… almeno per me funziona così.&lt;/p&gt;
+
+&lt;p&gt;Buone vacanze!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="vacanze" /><category term="valledaosta" /><category term="cogne" /><category term="arpy" /><category term="lillaz" /><category term="bionaz" /><category term="prarayer" /><category term="vda" /><summary type="html">Questo post vuole provare ad essere sintetico, e contemporaneamente raccontare 7 giorni di vacanza in Val D’Aosta con una neonata (mia figlia aveva 8 mesi quando abbiamo fatto questo viaggio).</summary></entry><entry><title type="html">L’innovazione non copia</title><link href="https://michelenasti.com/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html" rel="alternate" type="text/html" title="L'innovazione non copia" /><published>2017-07-27T09:39:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one</id><content type="html" xml:base="https://michelenasti.com/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html">&lt;p&gt;Negli ultimi (in realtà anche &lt;em&gt;primi&lt;/em&gt;) 5 anni di carriera lavorativa, quante volte avrò detto “&lt;strong&gt;dai ragazzi, ci basta pensare a una bella idea e faremo soldi a palate&lt;/strong&gt;”? Ecco, se siamo ancora tutti &lt;em&gt;povery&lt;/em&gt; ci sarà un motivo. E il libro &lt;a href=&quot;https://www.amazon.it/segreti-startup-ovvero-costruisce-futuro/dp/8817080462/ref=as_li_ss_tl?ie=UTF8&amp;amp;qid=1501144633&amp;amp;sr=8-1&amp;amp;keywords=da+zero+a+uno&amp;amp;linkCode=ll1&amp;amp;tag=ilblodimicnas-21&amp;amp;linkId=7e1eada6bd03b1ae3cd088013adf3372&quot;&gt;From Zero to One&lt;/a&gt; (da me linkato nella versione italiana, &lt;em&gt;Da Zero a Uno&lt;/em&gt;) prova a spiegarci qual è.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/da-zero-a-uno.jpg&quot; class=&quot; forestry--none forestry--none&quot; style=&quot;float: none;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;chi-è-peter-thiel&quot;&gt;Chi è Peter Thiel&lt;/h2&gt;
+
+&lt;p&gt;Peter Thiel, autore del libro, è uno dei &lt;strong&gt;fondatori di Paypal&lt;/strong&gt;. Quella cricca di personaggi che all’epoca l’ha venduto a Ebay è oggi una delle &lt;em&gt;gang&lt;/em&gt; di miliardari più potenti del mondo. E il bello è che sono tutti &lt;em&gt;imprenditori seriali&lt;/em&gt;, quindi tutti si sono lanciati in altre aziende, chi come CEO chi come investitore.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Peter_Thiel_flag.jpeg.jpeg&quot; class=&quot; forestry--none forestry--none&quot; style=&quot;float: none;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La fortuna di noi informatici e non solo è che possiamo apprendere tanto da loro, visto che hanno scritto libri interessantissimi e di forte impatto: sul mio blog ho già parlato dei &lt;a href=&quot;https://michelenasti.com/2015/11/i-tre-pilastri-per-migliorare-la-propria-carriera/&quot;&gt;libri di Reid Hoffman&lt;/a&gt; e della &lt;a href=&quot;https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html&quot;&gt;vita di Elon Musk&lt;/a&gt;, altri membri della gang.&lt;/p&gt;
+
+&lt;p&gt;Dopo aver venduto Paypal, Thiel ha lanciato un suo fondo di investimento e tra le aziende che ha direttamente finanziato ce ne sono due che fruttano svariati milardi: una di queste è una piccola startup californiana di nome &lt;strong&gt;Facebook&lt;/strong&gt;, e un’altra è meno nota (opera nel settore dei big data) chiamata &lt;strong&gt;Palantir&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Insomma, Thiel è uno che di business se ne intende.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosa-mi-ha-colpito-del-libro&quot;&gt;Cosa mi ha colpito del libro&lt;/h2&gt;
+
+&lt;p&gt;Ci sono tantissimi spunti interessanti. Non voglio ripeterveli capitolo per capitolo, ma alcune cose sono da insegnare nelle facoltà di economia &amp;amp; informatica di tutto il mondo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una startup che inventa qualcosa di nuovo, che rivoluziona un mercato, va &lt;strong&gt;da zero a uno&lt;/strong&gt;: crea un nuovo business dove prima non c’era nulla. Chi invece migliora un prodotto già esistente va &lt;strong&gt;da uno a n&lt;/strong&gt;, e nell’opinione di Thiel così non farai mai il botto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Thiel ci tiene a precisare che andando da zero a uno creerai un monopolio, e nella sua visione i monopoli non sono un male: anzi, sono l’unico modo per fare soldi veri. Teniamo presente che comunque i migliori monopoli non dureranno all’infinito (10 anni?).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Uno dei criteri che usa Thiel nello scegliere le startup da finanziare è: &lt;strong&gt;il prodotto che mi si sta proponendo migliora di dieci volte altre soluzioni sul mercato?&lt;/strong&gt; Infatti secondo Thiel se non stiamo migliorando di almeno &lt;strong&gt;10x&lt;/strong&gt;, è inutile perderci tempo (e cita il caso delle startup che trattavano pannelli solari, che miglioravano le soluzioni esistenti di 1.5-2x. ).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;E’ una soluzione a un problema reale?&lt;/strong&gt; Nessuno vuole pagare per un prodotto che non serve, o in cui non vede alcun valore.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Come fare molti utenti in fretta?&lt;/strong&gt; Adesso risponderemmo in coro “Growth Hacking!” (recensione in arrivo!), ma questo è un problema da risolvere subito, addirittura quando la startup viene fondata. Thiel suggerisce di &lt;strong&gt;partire da una nicchia&lt;/strong&gt; e poi espandersi.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;L’importanza del cofounder.&lt;/strong&gt; Nel libro c’è un capitolo bellissimo sul momento in cui le startup nascono, che Thiel giudica un momento &lt;em&gt;magico&lt;/em&gt;. E ribadisce che &lt;a href=&quot;https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html&quot;&gt;tra i cofounder ci dev’essere un patto di sangue&lt;/a&gt;. A quest’affermazione segue il corollario:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Se hai un’idea, e all’atto della creazione dell’impresa non hai TUTTE le competenze per poterla sviluppare indipendentemente, &lt;strong&gt;LASCIA PERDERE&lt;/strong&gt;. Eviterai di farti male.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;ma-quando-la-fondi-la-tua-startup&quot;&gt;Ma quando la fondi la tua startup?&lt;/h2&gt;
+
+&lt;p&gt;E’ ancora presto: non so ancora qual è il problema che vorrei risolvere, come farci i soldi, ma almeno nel frattempo mi sto facendo una cultura ;)&lt;/p&gt;
+
+&lt;p&gt;C’è un’opinione diffusa che tutti gli informatici dovrebbero diventare miliardari perchè basta una buona idea e il gioco è fatto, ma tanti informatici poveri dimostrano che non è così.&lt;/p&gt;
+
+&lt;p&gt;Una volta ho letto un libro sull’&lt;em&gt;arte moderna&lt;/em&gt;, &lt;a href=&quot;https://www.amazon.it/potevo-anchio-Perch%C3%A9-contemporanea-davvero/dp/8804585579/ref=as_li_ss_tl?ie=UTF8&amp;amp;linkCode=ll1&amp;amp;tag=ilblodimicnas-21&amp;amp;linkId=87fce620f2dee7dd9857097b25f37a86&quot;&gt;“Lo potevo fare anch’io”&lt;/a&gt;. Ditemi la verità, quante volte l’avrete pensato guardando i quadri moderni? Il punto però è che non l’avete fatto. Non avete mai neanche provato a realizzare un quadro, e vi scandalizzate se ora valgono milioni. Ecco, &lt;strong&gt;con l’IT succede più o meno la stessa cosa&lt;/strong&gt;: ricordo quando da studente universitario mi lanciavo in dissertazioni coi colleghi, suggerendo che avremmo dovuto copiare questo &amp;amp; quello perchè ci voleva poco - la classica sindrome del “lo potevo fare anch’io”. Ma poi non l’abbiamo fatto.&lt;/p&gt;
+
+&lt;p&gt;Dopo aver letto alcuni libri sull’argomento ho francamente capito che, oltre ad avere un prodotto che spicca, una startup deve anche investire molto sul marketing e deve essere capace di trovare subito il modo di incamerare utenti &amp;amp; soldi, altrimenti… la fine è più vicina del previsto.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="peter thiel" /><category term="startup" /><category term="da zero a uno" /><category term="from zero to one" /><category term="paypal" /><category term="reid hoffman" /><category term="elon musk" /><category term="lo potevo fare anch'io" /><summary type="html">Negli ultimi (in realtà anche primi) 5 anni di carriera lavorativa, quante volte avrò detto “dai ragazzi, ci basta pensare a una bella idea e faremo soldi a palate”? Ecco, se siamo ancora tutti povery ci sarà un motivo. E il libro From Zero to One (da me linkato nella versione italiana, Da Zero a Uno) prova a spiegarci qual è.</summary></entry><entry><title type="html">E’ giusto fidarsi dei remote workers?</title><link href="https://michelenasti.com/2017/07/19/e-giusto-fidarsi-dei-remote-workers.html" rel="alternate" type="text/html" title="E' giusto fidarsi dei remote workers?" /><published>2017-07-19T00:00:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/07/19/e-giusto-fidarsi-dei-remote-workers</id><content type="html" xml:base="https://michelenasti.com/2017/07/19/e-giusto-fidarsi-dei-remote-workers.html">&lt;p&gt;Cari amici, ho scritto &lt;a href=&quot;https://medium.com/bemind-me/e-giusto-fidarsi-dei-remote-workers-987ecc2d65be&quot;&gt;un articolo per il blog di Bemind&lt;/a&gt; sul tema del lavoro remoto e la fiducia tra capo e dipendente, ossia: possiamo fidarci dei lavoratori remoti? Cliccate sul link per leggerlo.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro remoto" /><category term="remote working" /><category term="remote" /><category term="bemind" /><summary type="html">Cari amici, ho scritto un articolo per il blog di Bemind sul tema del lavoro remoto e la fiducia tra capo e dipendente, ossia: possiamo fidarci dei lavoratori remoti? Cliccate sul link per leggerlo.</summary></entry><entry><title type="html">Recensione del libro: Codice Montemagno</title><link href="https://michelenasti.com/2017/07/17/recensione-del-libro-codice-montemagno.html" rel="alternate" type="text/html" title="Recensione del libro: Codice Montemagno" /><published>2017-07-17T00:00:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/07/17/recensione-del-libro-codice-montemagno</id><content type="html" xml:base="https://michelenasti.com/2017/07/17/recensione-del-libro-codice-montemagno.html">&lt;p&gt;Il libro di cui vi parlo oggi è &lt;a href=&quot;http://amzn.to/2uqzV4j&quot;&gt;Codice Montemagno&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/codice_montemagno.jpg&quot; class=&quot; forestry--none forestry--none forestry--none&quot; style=&quot;float: none;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Marco &lt;em&gt;Monty&lt;/em&gt; Montemagno&lt;/strong&gt; è un esperto di social media e di comunicazione  italiano. Da circa 15-20 anni si occupa di tutto ciò che è tecnologia &amp;amp; comunicazione. Ha fondato la piattaforma Blogo nel 2005, che poi ha venduto, e ora diciamo che lavora &lt;em&gt;in proprio&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Un altro elemento per comprendere l’autore è la sua &lt;strong&gt;presenza on line&lt;/strong&gt;. Da circa 2 anni Marco pubblica un breve video quotidiano, in cui parla di business, comunicazione, digital, social, strategie, etc. Da quando ha iniziato quest’opera di divulgazione è passato da 7000 a 200.000 fan su facebook. A ogni video che posta fa centinaia di commenti e like. Perché?&lt;/p&gt;
+
+&lt;p&gt;Oltre che puntare ai contenuti, che sono di indubbia qualità, Marco ha ridefinito lo standard della comunicazione digitale in Italia. Ha creato un nuovo linguaggio visivo che, dobbiamo ammetterlo, è stato copiato in lungo e in largo dagli altri.&lt;/p&gt;
+
+&lt;h2 id=&quot;ma-parliamo-del-libro&quot;&gt;Ma parliamo del libro&lt;/h2&gt;
+
+&lt;p&gt;Se quindi conoscete Montemagno per i suoi trascorsi on line, non vi dovrebbe stupire il fatto che nel momento in cui ha “annunciato” il libro, quindi senza aver spedito neanche una copia, già era in cima alla classifica dei libri più venduti su Amazon.&lt;/p&gt;
+
+&lt;p&gt;Il libro è una versione riveduta e corretta, anzi meglio organizzata, di quanto ha già proposto online. Nel libro ci sono tantissime citazioni di altri libri (quanto leggi, monty?!) da cui partono una serie di riflessioni e come possiamo applicare questo genere di info al nostro business, che sia tradizionale o innovativo.&lt;/p&gt;
+
+&lt;p&gt;Mi hanno in particolare stupito un paio di paragrafi. Uno che analizzava il fenomeno Trump dal punto di vista mediatico e come fosse possibile prevedere, un anno prima delle elezioni, che le avrebbe vinte lui nonostante gli scandali. Questo perchè Trump è un personaggio mediatico straordinario (ricordate Berlusconi?) e quindi è un maestro nell’antica arte di “spararla grossa”.&lt;/p&gt;
+
+&lt;p&gt;Un altro spunto interessante riguarda il ruolo che i video avranno nel futuro dei social. Il testo ormai sta scomparando, complice anche una generazione di analfabeti funzionali che ci circonda (questa opinione è mia, non del Monty). I video invece funzionano perchè sono diretti, perchè Facebook li predilige rispetto al testo, e soprattutto perchè la gente li guarda. Ho suggerito a mia moglie di applicare questo consiglio dei video alla sua attività e lei ha potuto davvero confermare che il tasso di interazione ai suoi post è aumentato.&lt;/p&gt;
+
+&lt;h2 id=&quot;un-giudizio-più-ragionato&quot;&gt;Un giudizio più ragionato&lt;/h2&gt;
+
+&lt;p&gt;Se non avete mai visto nulla di Montemagno, questo libro sarà per voi una  sorpresa, specialmente se avete a che fare col digitale.&lt;/p&gt;
+
+&lt;p&gt;Se come me, avete visto una decina di suoi video (considerate che ne ha fatti più di 400!), il libro vi ripresenterà le idee in forma più chiara, discorsiva, organica.&lt;/p&gt;
+
+&lt;p&gt;I contenuti hanno secondo me senso a prescindere dal personaggio che li propone, anche se detti da lui che li ha vissuti in prima persona assumono un ulteriore senso di realtà.&lt;/p&gt;
+
+&lt;p&gt;Se invece pensi che i video di Montemagno siano banali, o li hai già visti tutti almeno due volte, puoi anche risparmiarti di comprare il libro: ti sembrerà di rileggere ciò che hai già sentito.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="codice montemagno" /><category term="marco montemagno" /><category term="libri" /><summary type="html">Il libro di cui vi parlo oggi è Codice Montemagno.</summary></entry><entry><title type="html">Quanto è complicato essere Elon Musk</title><link href="https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html" rel="alternate" type="text/html" title="Quanto è complicato essere Elon Musk" /><published>2017-06-29T00:00:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk</id><content type="html" xml:base="https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html">&lt;p&gt;Stamattina ho “audioascoltato” &lt;a href=&quot;http://amzn.to/2ullR8A&quot;&gt;un libro su Elon Musk&lt;/a&gt;, che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/FabMelodia-MarteELONmusk.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Da adolescente studiava solo le materie che riteneva davvero necessarie, come matematica e fisica; in tutte le altre si accontentava della sufficienza.&lt;/li&gt;
+  &lt;li&gt;Passava i weekend a leggere, dai fumetti alla fantascienza. Anche 2 libri al giorno!&lt;/li&gt;
+  &lt;li&gt;Veniva bullizzato perchè aveva quel famoso atteggiamento “so tutto io”&lt;/li&gt;
+  &lt;li&gt;E nella sua prima azienda, da lui fondata, era a capo dello sviluppo tecnico. Si confrontava tutti i giorni con persone che non avevano le sue spiccate doti e si incazzava quando gli sviluppatori non lo seguivano, non lo capivano, o lo contraddicevano. Addirittura gli sviluppatori, quando tornavano al lavoro al mattino, trovavano il loro lavoro cambiato o completato perchè Elon ci aveva messo mano!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Insomma, un personaggio davvero fuori dalle righe.I progetti più rivoluzionari vengono dalla testa di quest’uomo: l’&lt;strong&gt;auto elettrica&lt;/strong&gt;, il &lt;strong&gt;razzo spaziale riutilizzabile&lt;/strong&gt;, la &lt;strong&gt;capsula-treno superveloce&lt;/strong&gt;…&lt;/p&gt;
+
+&lt;p&gt;Qual è la differenza tra un genio come lui, e un genio qualsiasi? Elon (ormai siamo amici) ha uno spiccato senso degli affari. La sua intelligenza l’ha sempre utilizzata per ricavarci qualcosa, dal punto di vista economico. Ecco alcuni esempi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A 12 anni ha venduto il suo primo videogioco piuttosto rudimentale, per 550$.&lt;/li&gt;
+  &lt;li&gt;Al college, oltre a riparare pc e a scrivere piccoli software per gli amici, aveva trasformato il dormitorio in un night club in cui si pagava 5€ l’ingresso. Il sabato registravano anche 500 ingressi!&lt;/li&gt;
+  &lt;li&gt;Da adolescente stava per aprire una sala giochi col fratello, progetto arenatosi quando nessun adulto ha voluto mettere la firma per gli adempimenti normativi.&lt;/li&gt;
+  &lt;li&gt;Aveva meno di 30 anni ed era già multimilionario.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Musk ha davvero stravolto le idee che avevamo sulla genialità: in futuro lo paragoneremo a un Leonardo Da Vinci, o a un Einstein? Chissà.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="elon musk" /><summary type="html">Stamattina ho “audioascoltato” un libro su Elon Musk, che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.</summary></entry><entry><title type="html">We’ waglio’, vuoi venire a lavorare nella mia startup?</title><link href="https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html" rel="alternate" type="text/html" title="We' waglio', vuoi venire a lavorare nella mia startup?" /><published>2017-06-09T11:20:50+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup</id><content type="html" xml:base="https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html">&lt;p&gt;Ricevo almeno &lt;strong&gt;due richieste al mese&lt;/strong&gt; per collaborare con startup. 
+Più o meno il copione è sempre lo stesso:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…“&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;“Dimmi!”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, &lt;strong&gt;non abbiamo competitor&lt;/strong&gt;, etc etc”&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;“Fantastico! Dove posso vedere una demo?”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi per realizzarla… Per caso sei interessato?”&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;“Quindi non c’è nulla? solo un’idea nella tua testa?”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;“…”&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;“Ti darò una quota importante della società, il 30%”&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;“…”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;michele-sei-troppo-spocchioso&quot;&gt;Michele, sei troppo spocchioso&lt;/h2&gt;
+
+&lt;p&gt;Cari amici startupper, E’ dal 2012 che è esplosa la moda in Italia. Non so se ve ne ho mai parlato ma il mio rimpianto più grande è quello di &lt;strong&gt;non&lt;/strong&gt; aver lavorato in una startup, da neolaureato; ma questa è un’altra storia che approfondirò successivamente.&lt;/p&gt;
+
+&lt;p&gt;Ciò che sbagliano tutte le persone che mi contattano (e giuro che sono &lt;em&gt;almeno&lt;/em&gt; due al mese) è che pretendono che io debba rimanere affascinato dal loro racconto e quasi quasi debba chiedere io di lavorare per loro. Non funziona così.&lt;/p&gt;
+
+&lt;p&gt;Innanzitutto, &lt;strong&gt;la mia tolleranza al rischio si è abbassata di molto&lt;/strong&gt;. Ora che ho una figlia ci penso 10 volte prima di prendere qualsiasi scelta che possa compromettere non la mia vita, ma la sua. Per questo motivo &lt;em&gt;il momento migliore in cui si deve lanciare (o lavorare per) una startup è subito dopo l’università&lt;/em&gt;, quando si è ancora ragazzini e c’è un fantastico paracadute, ossia mamma &amp;amp; papà.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lavorare per una startup implica un periodo più o meno lungo di lavoro senza un’entrata fissa&lt;/strong&gt;, che in genere arriva quando si realizza una delle seguenti condizioni:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Un investitore ci mette i soldi&lt;/li&gt;
+  &lt;li&gt;La startup trova dei clienti paganti&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Trovare un investitore è difficile:  in Italia i fondi di investimento disposti a finanziare qualcosa si contano sulle dita di una mano. E se ti danno il cash, te lo danno quando hai almeno un MVP o una demo da mostrare.&lt;/p&gt;
+
+&lt;p&gt;Per questo penso che in Italia convenga partire con l’idea di fatturare prima possibile, per quanto difficile questo possa sembrare.&lt;/p&gt;
+
+&lt;p&gt;Motivo per cui scarto tutte le startup che non sanno rispondere alla domanda &lt;strong&gt;“come intendi fare soldi?”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;tra-ceo-e-cto-deve-esserci-qualcosa-di-più-forte-di-un-matrimonio&quot;&gt;Tra CEO e CTO deve esserci qualcosa di più forte di un matrimonio&lt;/h2&gt;
+
+&lt;p&gt;Leggevo un interessante articolo in cui si diceva che il 65% delle startup non falliscono perchè non trovano clienti o investitori, bensì perchè &lt;a href=&quot;http://money.cnn.com/2014/02/24/smallbusiness/startups-entrepreneur-cofounder/index.html&quot;&gt;i fondatori litigano&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mettiamoci nei panni dell’aspirante startupper che ho citato prima: contatta persone a caso su facebook chiedendogli di lavorare alla sua idea.&lt;/p&gt;
+
+&lt;p&gt;Troverà mai qualcuno? Gli auguro di si, ma non penso proprio che succederà in maniera così scontata. Ma chi?&lt;/p&gt;
+
+&lt;p&gt;Dovendo lavorare con qualcuno per lanciare un’azienda, con l’ansia costante di finire i soldi, le persone che fanno nascere una startup dovrebbero essere:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;affiatate tra di loro&lt;/li&gt;
+  &lt;li&gt;avere lo stesso obiettivo&lt;/li&gt;
+  &lt;li&gt;persone che si fanno guidare dai “numeri” e non dai sentimenti.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Una coppia di sposi &lt;a href=&quot;http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/&quot;&gt;litiga in media 321 volte in un anno&lt;/a&gt; (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c’è amore ma ambizione.&lt;/p&gt;
+
+&lt;p&gt;E qui andiamo a finire su un’altra fissa dei founder: &lt;strong&gt;sono così convinto che debba funzionare, che funzionerà&lt;/strong&gt;. Purtroppo non funziona così. Lo startupper eccellente fa esperimenti continui, verifica con i numeri che le sue ipotesi erano corrette, e se sono sbagliate, cambia modello di business.&lt;/p&gt;
+
+&lt;h2 id=&quot;perchè-non-riesco-a-trovare-sviluppatori-per-la-mia-startup&quot;&gt;Perchè non riesco a trovare sviluppatori per la mia startup?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventare capi in un’azienda che sarà anche loro. Perchè non accettano?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I motivi possono essere tanti e diversi. Ad esempio:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Il rischio&lt;/strong&gt;. Lo sviluppatore non vede prospettive nell’idea proposta e teme di rimanere con nulla in mano nel giro di poco.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;La sensazione di inadeguatezza.&lt;/strong&gt; Chi sono io per mettermi a fare il “capo” in una startup?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;La mancanza di risparmi accantonati&lt;/strong&gt;. Senza soldi, è impossibile lavorare per un lungo periodo senza entrate.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Quando si propone uno stipendio, questo è molto basso&lt;/strong&gt;. Un altro motivo per cui bisogna cercare tra i neolaureati.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Quando lo stipendio è basso, si propongono le equity&lt;/strong&gt;. Per me le equity di un progetto in cui non credo valgono zero.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Perché sembra che il grosso del lavoro lo debba fare proprio io&lt;/strong&gt;. Se il mio fantomatico CEO dice di aver fatto “tutto”, tranne il prodotto, mentre io svilupperò lui che fa?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Perchè io a questo CEO non lo conosco e non so se mi sta antipatico&lt;/strong&gt;. Come fai a &lt;em&gt;fidanzarti&lt;/em&gt; con uno che non conosci?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;e-possibile-superare-questi-problemi-troverò-sviluppatori-per-la-mia-idea&quot;&gt;E’ possibile superare questi problemi? Troverò sviluppatori per la mia idea?&lt;/h2&gt;
+
+&lt;p&gt;Ho dei consigli a riguardo, non posso garantire nulla, ma certe cose funzionano meglio di altre. Ne parlerò in futuro. Intanto, se avete critiche, suggerimenti o impressioni, i commenti sono qui sotto.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="startup" /><category term="lavoro" /><summary type="html">Ricevo almeno due richieste al mese per collaborare con startup. Più o meno il copione è sempre lo stesso:</summary></entry><entry><title type="html">Cinque tool per migliorare la vostra developer experience</title><link href="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html" rel="alternate" type="text/html" title="Cinque tool per migliorare la vostra developer experience" /><published>2017-05-30T14:07:50+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience</id><content type="html" xml:base="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html">&lt;p&gt;Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra &lt;em&gt;developer experience&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;mac-command-line&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac&lt;/code&gt; command line&lt;/h3&gt;
+
+&lt;p&gt;Si &lt;a href=&quot;https://github.com/guarinogabriel/Mac-CLI&quot;&gt;installa da linea di comando&lt;/a&gt; e crea un eseguibile, &lt;code class=&quot;highlighter-rouge&quot;&gt;mac&lt;/code&gt;, che permette di svolgere molte operazioni comuni con pochi click.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/demo-mac-cli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Un esempio?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac ip:public&lt;/code&gt; vi restituisce il vostro ip pubblico&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac speedtest&lt;/code&gt; esegue uno speed test da linea di comando&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac memory&lt;/code&gt; vi dice quale app sta consumando la vostra preziosa RAM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;e tanti altri. Sono circa una cinquantina!&lt;/p&gt;
+
+&lt;h3 id=&quot;oh-my-zsh-per-un-terminale-più-combattivo&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Oh-my-zsh&lt;/code&gt; per un terminale più combattivo&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;Oh-my-zsh&lt;/a&gt; è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di zsh. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/oh-my-zsh.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!&lt;/p&gt;
+
+&lt;h3 id=&quot;ngrok-per-testare-chiamate-api-dallesterno&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ngrok&lt;/code&gt;, per testare chiamate API dall’esterno&lt;/h3&gt;
+
+&lt;p&gt;Dovete testare le chiamate di un sistema esterno verso il vostro software? Ad esempio, io ho avuto questa esigenza con le API di Paypal e Gestpay: a un certo punto questi sistemi dovevano notificarmi che i pagamenti erano andati a buon fine e mi avrebbero contattato agli indirizzi configurati.&lt;/p&gt;
+
+&lt;p&gt;Come testare e come verificare il contenuto di queste chiamate? Facile, con &lt;a href=&quot;https://ngrok.com/&quot;&gt;ngrok&lt;/a&gt;: un tool che permette di creare un tunnel privato da un indirizzo http esterno.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ngrok.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Per farla facile, voi lanciate &lt;code class=&quot;highlighter-rouge&quot;&gt;ngrok http 8000&lt;/code&gt; e ngrok creerà un indirizzo tipo &lt;code class=&quot;highlighter-rouge&quot;&gt;http://abc33344422.ngrok.io&lt;/code&gt;. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8000&lt;/code&gt;. Tutto ciò che passa per ngrok viene loggato e mostrato!&lt;/p&gt;
+
+&lt;h3 id=&quot;git-flow-una-metodologia-per-semplificare-e-standardizzare-git-nel-team&quot;&gt;Git Flow, una metodologia per semplificare e standardizzare git nel team&lt;/h3&gt;
+
+&lt;p&gt;Git flow è sia &lt;a href=&quot;https://github.com/nvie/gitflow&quot;&gt;un tool installabile da linea di comando&lt;/a&gt;, sia un approccio filosofico alla domanda “come lavorare in gruppo”.&lt;/p&gt;
+
+&lt;p&gt;Git è un potentissimo sistema di versioning e branching; spero per voi che lo stiate già utilizzando altrimenti brrrr.&lt;/p&gt;
+
+&lt;p&gt;Con git flow organizziamo il lavoro in due &lt;em&gt;meta-filoni&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;branch &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, che corrisponde alle versioni rilasciate&lt;/li&gt;
+  &lt;li&gt;branch &lt;code class=&quot;highlighter-rouge&quot;&gt;develop&lt;/code&gt;, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Oltre a questi due branch “generali”, ogni azione degli sviluppatori è realizzata creando nuovi branch:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gli sviluppi delle singole feature sui branch &lt;code class=&quot;highlighter-rouge&quot;&gt;feature/*tua_feature*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;I rilasci (da develop a master) su branch chiamati &lt;code class=&quot;highlighter-rouge&quot;&gt;release/*nome_release*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch &lt;code class=&quot;highlighter-rouge&quot;&gt;hotfix/*nome_fix*&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Non ci avete capito niente? &lt;a href=&quot;https://danielkummer.github.io/git-flow-cheatsheet/&quot;&gt;Qui un grafico che prova a spiegare comandi e funzioni&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;bonus-postman-per-testare-le-interfacce-rest&quot;&gt;Bonus: Postman per testare le interfacce Rest&lt;/h3&gt;
+
+&lt;p&gt;Ho iniziato a lavorare che c’era SOAP e si stava appena iniziando a parlare di REST. Qualche anno dopo, SOAP è diventato &lt;em&gt;legacy&lt;/em&gt; e tutti si dichiarano REST, chi bene e chi male.&lt;/p&gt;
+
+&lt;p&gt;Ad ogni modo, è sorta l’esigenza di testare le interfacce REST e come testarle se non con &lt;a href=&quot;https://www.getpostman.com/&quot;&gt;Postman&lt;/a&gt;?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.getpostman.com/img/v2/logo-big.svg&quot; alt=&quot;Postman&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Questa è  una vera e propria applicazione &lt;em&gt;standalone&lt;/em&gt; che permette di effettuare ogni tipo di chiamata desideriate, GET - PUT - POST - HEAD etc. C’è la possibilità di salvare le chiamate, passare header aggiuntivi, visualizzare i dati in molti modi (ad esempio JSON), etc etc.&lt;/p&gt;
+
+&lt;p&gt;Come dite? non è un tool da linea di comando? Avete ragione, ma questo è il mio blog e qui comando io 😂&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="git flow" /><category term="mac-cli" /><category term="oh-my-zsh" /><category term="postman" /><category term="ngrok" /><summary type="html">Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra developer experience.</summary></entry><entry><title type="html">I colloqui di lavoro nelle Big</title><link href="https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html" rel="alternate" type="text/html" title="I colloqui di lavoro nelle Big" /><published>2017-05-22T17:08:19+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big</id><content type="html" xml:base="https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html">&lt;p&gt;Recentemente sono stato speaker all’evento &lt;a href=&quot;https://www.meetup.com/it-IT/GDGCampania/events/239723850/&quot;&gt;pre-Google I/O&lt;/a&gt; organizzato dal &lt;a href=&quot;http://gdgcampania.com&quot;&gt;Google Developers Group Campania&lt;/a&gt;, a Napoli.&lt;/p&gt;
+
+&lt;p&gt;Il mio talk verteva sui colloqui di lavoro delle aziende top, e qui ci sta bene un bel disclaimer: &lt;em&gt;non ho mai fatto colloqui per aziende top  - tranne un piccolo frangente con Amazon&lt;/em&gt;. Ma ho letto molto sull’argomento, e ho chiesto in giro ad alcuni amici che hanno fatto le selezioni per queste aziende, quindi avevo un po’ di materiale che era bello condividere.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://docs.google.com/presentation/d/1eQce7aEOl8qaGPbmhQVmUQb99Sf2bioBJhmuEER4_B8/embed?start=false&amp;amp;loop=false&amp;amp;delayms=60000&quot; frameborder=&quot;0&quot; width=&quot;480&quot; height=&quot;389&quot; allowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Una parte del talk riguardava alcuni “rompicapi” che in passato, più che oggi, venivano sottoposti agli aspiranti candidati. Fermo restando che agli intervistatori non interessa sapere la risposta (ammesso che esista!), semmai vogliono vedere in che modo approcciate i problemi, che ragionamenti fate, insomma quanta creatività avete.&lt;/p&gt;
+
+&lt;p&gt;Torno a ribadire: queste domande sono “rare” e tutte le persone in carne ed ossa con cui ho parlato non le hanno ricevute; tuttavia, dato che esiste un libro sull’argomento (&lt;a href=&quot;http://amzn.to/2rKTgbo&quot;&gt;“sei abbastanza sveglio per lavorare in google?”, di William Poundstone&lt;/a&gt;), e considerato che sono un appassionato di indovinelli, non ho potuto ignorare.&lt;/p&gt;
+
+&lt;p&gt;A fine talk molti sono venuti per chiedermi le “soluzioni” (che ripeto: non sempre esistono) o gli approcci; altri sono venuti a pormi degli indovinelli, ai quali per mia fortuna sono riuscito a trovare la risposta in tempo (ed evitare la figura di merda 😅 ).&lt;/p&gt;
+
+&lt;p&gt;Eccovene alcuni!&lt;/p&gt;
+
+&lt;h3 id=&quot;dado-senza-dado&quot;&gt;Dado senza dado&lt;/h3&gt;
+
+&lt;p&gt;Sai simulare un dado con una monetina? Puoi lanciare la moneta più volte.&lt;/p&gt;
+
+&lt;h3 id=&quot;i-filosofi-bugiardi&quot;&gt;I Filosofi bugiardi&lt;/h3&gt;
+
+&lt;p&gt;Attorno a un tavolo sono seduti tanti filosofi. Alcuni dicono sempre la verità; altri solo bugie.&lt;/p&gt;
+
+&lt;p&gt;A turno, ogni filosofo prende la parola e dice: “Il filosofo alla mia sinistra è un bugiardo!”&lt;/p&gt;
+
+&lt;p&gt;Quando tutti i filosofi hanno espresso questo importantissimo concetto, prende la parola un altro filosofo ed esclama: “siamo 21 seduti a questo tavolo!”&lt;/p&gt;
+
+&lt;p&gt;Il suo vicino ribatte: “Non è vero! Siamo 22!”&lt;/p&gt;
+
+&lt;p&gt;Che diamine stanno dicendo?! Quanti sono? Chi ha ragione? Come sono seduti?&lt;/p&gt;
+
+&lt;h2 id=&quot;le-risposte-di-mia-moglie&quot;&gt;Le risposte di mia moglie&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Dado senza dado:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;Con la moneta entro in un negozio e compro il dado.&amp;nbsp;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Problema dei filosofi bugiardi:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;Cambio tavolo: vado a sedermi da un'altra parte.&amp;nbsp;&lt;/blockquote&gt;
+
+&lt;p&gt;Posso dirvi che in aziende come Google queste risposte non sarebbero state solo degli &lt;em&gt;ice-breaker&lt;/em&gt;, ma verrebbero probabilmente considerate nel giudizio globale del&lt;span style=&quot;font-size: 1rem;&quot;&gt; candidato. &lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-size: 1rem;&quot;&gt;Tuttavia non basta per superare il colloquio 😅  Scrivi la tua risposta nei commenti ;) &lt;/span&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="colloqui di lavoro" /><summary type="html">Recentemente sono stato speaker all’evento pre-Google I/O organizzato dal Google Developers Group Campania, a Napoli.</summary></entry></feed>

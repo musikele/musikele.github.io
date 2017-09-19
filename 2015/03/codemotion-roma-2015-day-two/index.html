@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Codemotion Roma 2015 - day two - Michele Nasti's blog</title>
+	<meta name="description" content="Riprendiamo a parlare del Codemotion Roma, con qualche giorno di ritardo.
+
+" />
+	<meta name="keywords" content="codemotion, codemotion 2015, orientdb, red hat, stack overflow" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+  <meta content="Codemotion Roma 2015 - day two" property="og:title">
+
+
+  <meta content="article" property="og:type">
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+  <meta content="https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/" property="og:url">
+
+
+  <meta content="2015-03-30T10:14:53+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+  <meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+  
+  <meta content="codemotion" property="article:tag">
+  
+  <meta content="codemotion 2015" property="article:tag">
+  
+  <meta content="orientdb" property="article:tag">
+  
+  <meta content="red hat" property="article:tag">
+  
+  <meta content="stack overflow" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Codemotion Roma 2015 - day two">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/">
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2015/03/codemotion-roma-2015-day-two/">Codemotion Roma 2015 - day two</a></h2>
+			<p class="post-meta">Mar 30, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Riprendiamo a parlare del Codemotion Roma, con qualche giorno di ritardo.</p>
+
+<p>Red Hat distribuiva Fedora a tutti, o meglio a chi aveva la prontezza di riflessi di prendere un cappello:</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xHQg5tSlD/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Red Hat distribuisce Fedora per tutti al #Codemotion !</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T10:05:43+00:00">28 Mar 2015 alle ore 03:05 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>A seguire sono andato a sentire un talk su “AbsurdJS”, un framework che permette di scrivere HTML e CSS in Javascript:</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xSWowNSk0/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">AbsurdJS, un modo per scrivere css e html in javascript. Con Krasimir Tsonev #Codemotion</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T11:42:41+00:00">28 Mar 2015 alle ore 04:42 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>Uno dei talk più belli in assoluto è quello sull’architettura di Stack Overflow, in cui abbiamo praticamente capito che per realizzare un sito di successo bisogna mettere in discussione TUTTO quello che sappiamo; sicuramente nei prossimi giorni scriverò due righe su questo talk veramente interessante.</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xSW_RtSk2/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Architettura di Stack Overflow al #Codemotion</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T11:42:44+00:00">28 Mar 2015 alle ore 04:42 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>E’ tempo di gadget! Abbiamo partecipato a un contest di Google (uno di quelli in cui bisogna programmare per trovare la soluzione) e abbiamo vinto due porta-bibite by Google! Anche in questo caso, a giorni, vi parlerò del problema affrontato!</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xSXGdNSk3/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Si vincono ricchi premi da #Google al #Codemotion!</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T11:42:45+00:00">28 Mar 2015 alle ore 04:42 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>Un altro talk che abbiamo seguito è stato sul Lean Frontend Development:</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xeIjHtSrq/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Lean Frontend Development, con Matteo Guidotto al #Codemotion</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T13:25:37+00:00">28 Mar 2015 alle ore 06:25 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>Marco Fusco, direttamente da Red Hat, ci parla di RxJava, una libreria che permette di consumare gli oggetti di un flusso man mano che arrivano. (Ci ha fatto pariare perchè ci ricordava un nostro amico Mondragonese!)</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xjE4-NSio/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Con Mario Fusco di Red Hat che ci parla di RxJava! #Codemotion</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T14:08:48+00:00">28 Mar 2015 alle ore 07:08 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>Un’altra bella sorpresa di questo Codemotion: OrientDB, un database scritto da un team quasi tutto italiano, con un sacco di funzionalità e soprattutto dotato di une bella funzionalità: le live query. Ne parleremo in un articolo sicuramente!</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xsS8xNSvV/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Reactive Programming with nodejs, socket.io &amp; orientdb</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T15:29:22+00:00">28 Mar 2015 alle ore 08:29 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>Una foto con Enrico del team di Mangatar sfuggito alla foto del giorno prima:</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0xyg94tSuW/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Sembra l'orsetto di winner taco... Coi capelli fatti</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T16:23:43+00:00">28 Mar 2015 alle ore 09:23 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>Siamo in dirittura di arrivo. Raffaele di Mangatar aspetta di ricevere il premio “best gaming startup” del Codemotion, e noi pensiamo che sia uno scherzo…</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0x5Vd8tSud/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Girano strane voci su quel signorotto al centro della foto #Codemotion #mangatar #dengenchronicles</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Una foto pubblicata da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T17:23:18+00:00">28 Mar 2015 alle ore 10:23 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>… Invece hanno vinto davvero!</p>
+
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:8px;">
+    <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+      <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+      </div>
+    </div>
+    
+    <p style=" margin:8px 0 0 0; padding:0 4px;">
+      <a href="https://instagram.com/p/0x6L8BNSgC/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Ebbene ha vinto Mangatar! #Macomecaz #Codemotion #vivogliobene #mangatar</a>
+    </p>
+    
+    <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+      Un video pubblicato da @musikele in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-28T17:30:45+00:00">28 Mar 2015 alle ore 10:30 PDT</time>
+    </p>
+  </div>
+</blockquote>
+
+<p>E così si conclude la giornata! Corsa in metro fino a Tiburtina per prendere il treno che ci ha riportati a casa. E non abbiamo nemmeno vinto il premio a sorteggio, peccato!</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/&text=Codemotion Roma 2015 - day two:%20https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Codemotion Roma 2015 - day two) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/&title=Codemotion Roma 2015 - day two&summary=&source=https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/';
+			var disqus_identifier = 'https://michelenasti.com/2015/03/codemotion-roma-2015-day-two/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2015/03/installing-ruby-on-rails-on-mac-10-10-is-a-pain/">Installing Ruby On Rails on Mac 10.10 is a pain</a></h2>
+					</header>
+					<section>
+						<p>I’ve tried many “howto install Ruby” and “how to install Rails”, at the end the only installation method that works on Mac 10.10 (Yosemite) is this: <a href="https://gorails.com/setup/osx/10.10-yosemite">Setup Ruby On Rails on Mac OS X 10.10 Yosemite</a></p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2015/03/installing-ruby-on-rails-on-mac-10-10-is-a-pain/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2015/04/blogzinga/">BlogZinga!</a></h2>
+					</header>
+					<section>
+						<p><a href="http://www.blogzinga.it/#!/home">Sono su BlogZinga</a>!</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2015/04/blogzinga/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+
+</html>

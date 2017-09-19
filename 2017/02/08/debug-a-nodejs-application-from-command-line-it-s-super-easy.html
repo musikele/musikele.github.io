@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Debug a NodeJS application from command line - it's super easy! - Michele Nasti's blog</title>
+	<meta name="description" content="If you want to seriously develop a nodejs application, you can’t continue to put console.log() statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.
+
+" />
+	<meta name="keywords" content="" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+  <meta content="Debug a NodeJS application from command line - it's super easy!" property="og:title">
+
+
+  <meta content="article" property="og:type">
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+  <meta content="https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html" property="og:url">
+
+
+  <meta content="2017-02-08T12:17:15+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+  <meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Debug a NodeJS application from command line - it's super easy!">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html">
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html">Debug a NodeJS application from command line - it's super easy!</a></h2>
+			<p class="post-meta">Feb 8, 2017 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>If you want to seriously develop a nodejs application, you can’t continue to put <code class="highlighter-rouge">console.log()</code> statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.</p>
+
+<p>In NodeJS debugging can be also done via command line - it’s not <em>point n’ click</em>, but it’s still easy and straightforward.</p>
+
+<p>I want tell lies to you, <em>I debug my applications in a IDE</em> :) But if I’m debugging something over <code class="highlighter-rouge">ssh</code>, this tool comes in hand.</p>
+
+<h2 id="an-example-file-to-play-with">An example file to play with</h2>
+
+<p>Save this file as <code class="highlighter-rouge">book.js</code> :</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">title</span><span class="p">:</span> <span class="s1">'NodeJS for dummies'</span><span class="p">,</span>
+  <span class="na">ISBN</span><span class="p">:</span> <span class="s1">'1234567'</span>
+<span class="p">};</span>
+
+<span class="nx">book</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'cooking with Trump'</span><span class="p">;</span>
+<span class="nx">book</span><span class="p">.</span><span class="nx">category</span> <span class="o">=</span> <span class="s1">'recipes'</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<h2 id="debug">debug!</h2>
+
+<p>To run this file you can launch <code class="highlighter-rouge">node book.js</code>; however, in case you want to <strong>debug</strong> you just add an option:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> debug book.js 
+</span>
+&lt; Debugger listening on 127.0.0.1:5858
+connecting to 127.0.0.1:5858 ... ok
+break in book.js:1
+&gt; 1 let book = {
+  2   title: 'NodeJS for dummies',
+  3   ISBN: '1234567'
+debug&gt;
+</code></pre>
+</div>
+
+<p>Let’s skip the first two lines, they are just diplayed for nerds.</p>
+
+<p>Nodejs has blocked the execution at line 1 of the file, as you can see from the <code class="highlighter-rouge">&gt;</code> mark.</p>
+
+<blockquote>
+  <p>It’s best to say now that when NodeJS blocks at a line, the line is <strong>NOT</strong> executed. So, in the example, we are <em>before</em> the first istruction is ever executed.</p>
+</blockquote>
+
+<p>To continue to the next line, press <code class="highlighter-rouge">n</code>(next) and hit Enter:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; n
+break in book.js:6
+  4 };
+  5
+&gt; 6 book.title = 'cooking with Trump';
+  7 book.category = 'recipes'
+  8
+</code></pre>
+</div>
+
+<p>Now the first line has been executed (the creation of the <code class="highlighter-rouge">book</code> object); node has now stopped to the next executable instruction.</p>
+
+<p>In this easy example, going from one instruction to another using <code class="highlighter-rouge">n</code> might be interesting, but complex applications can contain thousands of lines of code, so jumping with <code class="highlighter-rouge">n</code> is not a great idea. Exit from debug for now.</p>
+
+<blockquote>
+  <p>To exit from the debugger you can type <code class="highlighter-rouge">quit</code> or press <code class="highlighter-rouge">Ctrl+C</code> twice.</p>
+</blockquote>
+
+<p>We might want to stop at a specific point, for example before setting the <code class="highlighter-rouge">category</code> attribute to the book:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<span class="nx">book</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'cooking with Trump'</span><span class="p">;</span>
+<span class="kr">debugger</span><span class="p">;</span> 
+<span class="nx">book</span><span class="p">.</span><span class="nx">category</span> <span class="o">=</span> <span class="s1">'recipes'</span><span class="p">;</span>
+<span class="p">...</span>
+</code></pre>
+</div>
+
+<p>if we want to jump directly to the place where the <code class="highlighter-rouge">debugger</code> instruction is, you can just hit <code class="highlighter-rouge">c</code> (continue):</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; c
+break in book.js:7
+  5
+  6 book.title = 'cooking with Trump'
+&gt; 7 debugger;
+  8 book.category = 'recipes'
+  9
+debug&gt;
+</code></pre>
+</div>
+
+<p>As you can see the debugger has now stopped at line 7, where the <code class="highlighter-rouge">debugger</code> instruction was. <strong>It’s important to say that <code class="highlighter-rouge">debugger</code> instruction is ignored when running the application normally</strong>.</p>
+
+<p>Ok, now we know how to stop in a nodejs application, but how can we inspect the value of objects?</p>
+
+<p>just hit <code class="highlighter-rouge">repl</code>:</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; repl
+Press Ctrl + C to leave debug repl
+&gt;
+</code></pre>
+</div>
+
+<p>Now we are in a Javascript console, like the one we have in a browser. we can execute expressions like <code class="highlighter-rouge">var a = 1+3</code>; the interesting thing is that we have <strong>access to variables defined until the break point</strong>: infact we can inspect our <code class="highlighter-rouge">book</code> variable and see that …</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>&gt; book
+{ title: 'cooking with Trump', ISBN: '1234567' }
+</code></pre>
+</div>
+
+<p>…<code class="highlighter-rouge">category</code> attribute is not defined, since it will be executed later, at line 8.</p>
+
+<p>Using <code class="highlighter-rouge">repl</code> you can also modify the value of objects, and this is great if you are in a loop and want to go directly to the value that you want, or to simulate complex cases.</p>
+
+<p>To exit from <code class="highlighter-rouge">repl</code> just hit <code class="highlighter-rouge">Ctrl+C</code> to return to <code class="highlighter-rouge">debug&gt;</code> prompt.</p>
+
+<h2 id="now-you-can-debug-like-a-boss">Now you can debug like a boss</h2>
+
+<p>Show this to your friends, they’ll respect you more after this.</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html&text=Debug a NodeJS application from command line - it's super easy!:%20https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Debug a NodeJS application from command line - it's super easy!) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html&title=Debug a NodeJS application from command line - it's super easy!&summary=&source=https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html';
+			var disqus_identifier = 'https://michelenasti.com/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html">Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</a></h2>
+					</header>
+					<section>
+						<p><strong>Il 1 febbraio 2017</strong> è accaduto ciò che nessun’azienda al mondo si augura: un database admin, durante un’operazione di manutenzione di una macchina, lancia il comando sbagliato sul cluster sbagliato e cancella tutto il database di produzione, circa 300 gb di dati andati in fumo.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2017/02/10/hey-javascript-function-take-this.html">hey javascript function, take this!</a></h2>
+					</header>
+					<section>
+						<p>In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to <code class="highlighter-rouge">this</code>.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2017/02/10/hey-javascript-function-take-this.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+
+</html>

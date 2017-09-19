@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>di ritorno dal Codemotion Milan 2015 - Michele Nasti's blog</title>
+	<meta name="description" content="Ed eccomi di ritorno dal secondo Codemotion dell’anno! Questa volta sono stato a Milano, dove ho seguito talk interessanti purtroppo solo per il giorno di sabato. Qui potete trovare altri articoli sul Codemotion di Roma.
+
+" />
+	<meta name="keywords" content="actors, angular, codemotion, codemotion 2015, programmazione funzionale, react, React native, ringpop" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+  <meta content="di ritorno dal Codemotion Milan 2015" property="og:title">
+
+
+  <meta content="article" property="og:type">
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+  <meta content="https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/" property="og:url">
+
+
+  <meta content="2015-11-24T20:30:36+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+  <meta content="/img/posts//wp-content/uploads/2015/11/wpid-wp-14482992317411.jpg" property="og:image">
+
+
+  
+  <meta content="actors" property="article:tag">
+  
+  <meta content="angular" property="article:tag">
+  
+  <meta content="codemotion" property="article:tag">
+  
+  <meta content="codemotion 2015" property="article:tag">
+  
+  <meta content="programmazione funzionale" property="article:tag">
+  
+  <meta content="react" property="article:tag">
+  
+  <meta content="React native" property="article:tag">
+  
+  <meta content="ringpop" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="di ritorno dal Codemotion Milan 2015">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/">
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2015/11/ritorno-dal-codemotion-milan-2015/">di ritorno dal Codemotion Milan 2015</a></h2>
+			<p class="post-meta">Nov 24, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Ed eccomi di ritorno dal <a href="http://milan2015.codemotionworld.com/">secondo Codemotion</a> dell’anno! Questa volta sono stato a Milano, dove ho seguito talk interessanti purtroppo solo per il giorno di sabato. Qui potete trovare altri articoli sul <a href="http://michelenasti.com/2015/01/codemotion-2015/">Codemotion di Roma</a>.</p>
+
+<p>Tralasciamo il disclaimer che do sempre, ossia che é importante andare alle conferenze perché si “annusano” i trend di oggi e di domani, e che comunque se non volete andare alle conferenze almeno aggiornatevi, perché tra 3-5 anni tutto sarà cambiato e voi… Meglio che non siate sempre gli stessi.</p>
+
+<p>Parliamo del talk che mi é piaciuto di più : <a href="https://github.com/uber/ringpop-node"><strong>Ringpop</strong></a>, un modulo lato server scritto in Node e Go da quei pazzi di Uber. Fondamentalmente é un sistema distribuito per scrivere codice lato server, in modo che sia scalabile, fault tolerant e sempre aggiornato. Ringpop si preoccupa di replicare i vari moduli del server e fa in modo che se uno di questi casca, gli altri sono capaci di accorgersene e possono anche riattivarlo. <em>Fiiigo</em>.</p>
+
+<p>Un altro talk degno di nota é quello di <a href="https://it.linkedin.com/in/mario-fusco-3467213"><strong>Mario Fusco</strong></a> sui <strong>paradigmi di programmazione concorrente per la JVM</strong>: secondo Mario l’unico paradigma che conosciamo tutti é quello basato sui thread, perché lo abbiamo studiato all’Università, ma é anche quello più inadeguato perché é così di basso livello che é facile che tutto vada in lock. E allora Mario proponeva una serie di paradigmi, che non cito tutti perché non ce li ho qui a portata di mano, ma comunque ne esistono almeno 5. Io ricordo il modello ad <a href="http://doc.akka.io/docs/akka/snapshot/scala/actors.html">Attori</a>, oppure <a href="https://github.com/ReactiveX/RxJava">RxJava</a>, oppure i parallel streams con l’approccio funzionale introdotto in Java 8.</p>
+
+<p>Il mio amico <a href="http://esposi.to">Gianluca Esposito</a> ha poi presentato un talk su <a href="https://facebook.github.io/react-native/"><strong>React Native</strong></a>, un framework che sta ottenendo un discreto successo di questi tempi. React di per sé é una libreria per creare la view di una webapp, e le sue prestazioni e il modello concettuale sono stati di sicuro l’innovazione frontend dell’anno, così come questo è stato l’anno della consacrazione per Angular.</p>
+
+<p>Due parole su React Native, e del perché é meglio di Ionic/Phonegap/you-name-it : una volta imparato React si utilizzano gli stessi concetti (non si deve imparare nulla di nuovo) per creare <strong>webapp native</strong> che non girano in una webview, anzi i vari blocchi vengono renderizzati come componenti nativi veri dunque massima performance. E anche lo sviluppo é facilitato dal live reload che la piattaforma offre.</p>
+
+<p>Altro talk degni di nota: “da Angular a React” (da cui ho preso l’immagine che vedete allegata), in cui lo speaker parlava principalmente delle difficoltà concettuali che ha avuto lui nel capire React, soprattutto quando vieni da un framework all-inclusive come Angular.</p>
+
+<p>E ora? Aspettiamo con ansia Codemotion Rome 2016!</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/&text=di ritorno dal Codemotion Milan 2015:%20https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(di ritorno dal Codemotion Milan 2015) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/&title=di ritorno dal Codemotion Milan 2015&summary=&source=https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/';
+			var disqus_identifier = 'https://michelenasti.com/2015/11/ritorno-dal-codemotion-milan-2015/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2015/11/serve-un-piano/">Serve un piano, anzi tre</a></h2>
+					</header>
+					<section>
+						<p>Continuiamo a <a href="http://michelenasti.com/2015/11/i-tre-pilastri-per-migliorare-la-propria-carriera/">raccontare</a> il libro “Startup Of U”, è questa volta passiamo all’azione. Serve un piano.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2015/11/serve-un-piano/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2015/11/tutti-modi-generare-id-hibernate-jpa/">Tutti i modi per generare ID in Hibernate &#038; JPA</a></h2>
+					</header>
+					<section>
+						<p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/11/hibernate.jpg"><img class="size-full wp-image-456 alignleft" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/11/hibernate.jpg?fit=200%2C195" alt="Veramente brutto il logo di Hibernate, vero? " data-recalc-dims="1" /></a>Siccome dovevo creare ID con alcune proprietà particolari per alcuni oggetti, ho iniziato a cercare tutti i vari modi in cui si potevano assegnare ID a oggetti JPA e Hibernate.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2015/11/tutti-modi-generare-id-hibernate-jpa/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+
+</html>

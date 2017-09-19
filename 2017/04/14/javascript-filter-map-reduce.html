@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Diventare Senior™ con Javascript: le funzioni filter, map, reduce - Michele Nasti's blog</title>
+	<meta name="description" content="Si può lavorare per anni con javascript senza mai arrivare a conoscere tre funzioni fantastiche (e standard) che permettono di scrivere codice veloce e testabile.
+
+" />
+	<meta name="keywords" content="javascript, filter, map, reduce" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+  <meta content="Diventare Senior™ con Javascript: le funzioni filter, map, reduce" property="og:title">
+
+
+  <meta content="article" property="og:type">
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+  <meta content="https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html" property="og:url">
+
+
+  <meta content="2017-04-14T10:09:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+  <meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="filter" property="article:tag">
+  
+  <meta content="map" property="article:tag">
+  
+  <meta content="reduce" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Diventare Senior™ con Javascript: le funzioni filter, map, reduce">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html">
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2017/04/14/javascript-filter-map-reduce.html">Diventare Senior™ con Javascript: le funzioni filter, map, reduce</a></h2>
+			<p class="post-meta">Apr 14, 2017 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Si può lavorare per anni con javascript senza mai arrivare a conoscere tre funzioni fantastiche (e standard) che permettono di scrivere codice veloce e testabile.</p>
+
+<p>E’ vero che si diventa senior principalmente con l’esperienza, ma se dite di aver lavorato per 3+ anni con JS dovete anche mostrare che avete un’<em>esperienza di un certo livello</em>.</p>
+
+<p><strong>Aprite la console del browser e provate gli esempi!</strong></p>
+
+<h3 id="a-partire-da-un-array-come-filtriamo-solo-gli-elementi-pari-senza-usare-il-ciclo-for">A partire da un array, come filtriamo solo gli elementi pari senza usare il ciclo for?</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filtered</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">filter()</code> prende in input una funzione di <em>test</em> che viene eseguita su ogni elemento dell’input: se la funzione restituisce <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">elem</code> viene aggiunto all’array in output.</p>
+
+<h3 id="come-raddoppiamo-tutti-gli-element-di-un-array-senza-usare-il-ciclo-for">Come raddoppiamo tutti gli element di un array senza usare il ciclo for?</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">mapped</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">elem</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mapped</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Anche qui la funzione <code class="highlighter-rouge">map()</code> prende in input una funzione che viene eseguita su ogni elemento dell’input. Per ogni elemento, questo viene <em>trasformato</em> in un altro valore in base al risultato della funzione.</p>
+
+<h3 id="come-sommiamo-tutti-gli-elementi-di-un-array-senza-usare-il-ciclo-for">Come sommiamo tutti gli elementi di un array senza usare il ciclo for?</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">reduced</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">elem</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reduced</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">reduce()</code> è più complessa da spiegare, ma poi sarà facilissima da usare: permette di applicare una funzione <em>N-a-1</em> dove da un array tiriamo fuori un unico risultato. Nel nostro esempio abbiamo applicato la somma (voi come esercizio potreste provare a tirare fuori la media!).</p>
+
+<p><code class="highlighter-rouge">reduce()</code> prende in input due elementi: una funzione e un elemento di partenza (Sarebbe lo <code class="highlighter-rouge">0</code> specificato in fondo). Per capire cosa accade, facciamo un esempio sull’array <code class="highlighter-rouge">[8, 7]</code>.</p>
+
+<p>Alla prima iterazione viene chiamata la funzione con <code class="highlighter-rouge">prev = 0</code> e <code class="highlighter-rouge">elem = 8</code>: siccome stiamo iterando sul primo elemento e non c’è nessun elemento precedente, viene usato il secondo argomento di <code class="highlighter-rouge">reduce</code> come valore di inizio (ricordate quello <code class="highlighter-rouge">0</code> lì in fondo?). A questo punto viene eseguita la somma, che è <code class="highlighter-rouge">8</code>.</p>
+
+<p>Alla seconda iterazione, la funzione viene chiamata con <code class="highlighter-rouge">prev = 8</code> (risultato dell’iterazione precedente!) e <code class="highlighter-rouge">elem = 7</code>:  Anche in questo caso verrà eseguita la somma che è <code class="highlighter-rouge">15</code>, che sarà anche l’output di <code class="highlighter-rouge">reduce</code>.</p>
+
+<h3 id="domanda-implicita-del-lettore-perchè-tutto-staccanimento-contro-il-ciclo-for">(Domanda implicita del lettore: Perchè tutto st’accanimento contro il ciclo for?)</h3>
+<p>Il ciclo for è un ottimo costrutto per iterare gli array, tuttavia non fa capire a chi legge cosa sta accadendo, oltre al fatto di non essere manutenibile. e componibile.</p>
+
+<p>Supponiamo di voler filtrare tutti i numeri pari da un array; successivamente raddoppiarli e poi sommarli (ossia, la composizione delle tre domande precedenti).</p>
+
+<p>Con le funzioni presentate prima, ecco la soluzione:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span>
+	<span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">elem</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">elem</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>E’ ovvio che si può scrivere anche con un bel (paio di) for. Ma quante righe ci vogliono? e rileggendolo dopo sei mesi, si capisce?</p>
+
+<p>Per concludere, con la svolta funzionale di altri linguaggi (chi ha detto Java?!) questi concetti sono stati applicati anche altrove, proprio per la loro semplicità e componibilità. Magari hanno altri nomi, ma il funzionamento è lo stesso. Cercateli e …usateli!</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html&text=Diventare Senior™ con Javascript: le funzioni filter, map, reduce:%20https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Diventare Senior™ con Javascript: le funzioni filter, map, reduce) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html&title=Diventare Senior™ con Javascript: le funzioni filter, map, reduce&summary=&source=https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html';
+			var disqus_identifier = 'https://michelenasti.com/2017/04/14/javascript-filter-map-reduce.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">All my articles about Testing in Javascript in one post</a></h2>
+					</header>
+					<section>
+						<p>Hey there,</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html">"Vorrei, ma ho paura che vada male"	&#58 come assumersi dei "rischi intelligenti"</a></h2>
+					</header>
+					<section>
+						<p>Oggi vorrei parlarvi di <strong>come assumersi dei rischi intelligenti</strong>. Intelligenti in che senso?!</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+
+</html>
