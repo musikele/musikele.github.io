@@ -41,7 +41,7 @@ Ora siamo pronti a sbizzarrirci. Da console apriamo l'environment invocando il c
 
 ```
 $ node 
-&gt; let CryptoJS = require('crypto-js')
+&amp;gt; let CryptoJS = require('crypto-js')
 undefined
 
 ```
@@ -51,10 +51,10 @@ Abbiamo appena importato la libreria che contiene le funzioni crittografiche pi�
 E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:
 
 ```
-&gt; let message = "This is my password" 
-&gt; let sha = CryptoJS.SHA256(message)
+&amp;gt; let message = "This is my password" 
+&amp;gt; let sha = CryptoJS.SHA256(message)
 
-&gt; console.log(sha)
+&amp;gt; console.log(sha)
 { words:
    [ -355107296,
      1827616648,
@@ -67,7 +67,7 @@ E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e
   sigBytes: 32 }
 undefined
 
-&gt; console.log(sha.toString())
+&amp;gt; console.log(sha.toString())
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 ```
@@ -84,9 +84,9 @@ Hai ragione a pensarlo, caro lettore, però non è così. Le funzioni hash (e qu
 
 * la funzione deve essere computata efficientemente: nell'esempio precedente accade tutto in pochissimi microsecondi.
 
-* la funzione è [collision-resistent](https://en.wikipedia.org/wiki/Collision_resistance): è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse `x`e `y` che restituiscano lo stesso hash (matematicamente: `H(x) = H(y)`).
+* la funzione è [collision-resistant](https://en.wikipedia.org/wiki/Collision_resistance): è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse `x`e `y` che restituiscano lo stesso hash (matematicamente: `H(x) = H(y)`).
 
-* la funzione hash *nasconde* il messaggio originario: se vi do l'hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata *salt*), che noi potremmo definire come una "chiave" di crittografia, per intenderci.
+* la funzione hash *nasconde* il messaggio originario: se vi do l'hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata *salt*), che noi potremmo definire come una "chiave" , per intenderci.
 
 * la funzione hash è *puzzle-friendly*: per ogni possibile hash, se il salt è scelto davvero a caso, è infattibile risalire al messaggio se non cercando nell'insieme di tutte le chiavi possibili. L'idea quindi è di fornire un *puzzle* di questo tipo: dato un salt (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all'insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.
 
