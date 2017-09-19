@@ -5,14 +5,12 @@ author: musikele
 title: 'Come capire il bitcoin: le funzioni crittografiche '
 category: Italiano
 layout: post
-date: 2017-09-19 08:32:52 +0000
+date: 2017-09-19 10:04
 tags:
 - bitcoin
 - crittografia
 - hash
-- firma digitale
 ---
-
 
 Ormai sono un paio di mesi che mi sono appassionato all'anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un'infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile...
 
