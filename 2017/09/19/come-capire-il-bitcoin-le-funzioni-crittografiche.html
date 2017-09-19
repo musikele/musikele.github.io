@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="bitcoin, crittografia, hash" />  
-	<meta http-equiv="last-modified" content="2017-09-19 12:19:17 +0200" /> 
+	<meta http-equiv="last-modified" content="2017-09-19 12:22:54 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -124,7 +124,7 @@ $ npm i -S crypto-js
 <p>Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando <code class="highlighter-rouge">node</code>:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ node 
-&amp;gt; let CryptoJS = require('crypto-js')
+&amp;amp;gt; let CryptoJS = require('crypto-js')
 undefined
 
 </code></pre>
@@ -134,10 +134,10 @@ undefined
 
 <p>E’ il momento di provare a fare l’hash di un messaggio. L’algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&amp;gt; let message = "This is my password" 
-&amp;gt; let sha = CryptoJS.SHA256(message)
+<div class="highlighter-rouge"><pre class="highlight"><code>&amp;amp;gt; let message = "This is my password" 
+&amp;amp;gt; let sha = CryptoJS.SHA256(message)
 
-&amp;gt; console.log(sha)
+&amp;amp;gt; console.log(sha)
 { words:
    [ -355107296,
      1827616648,
@@ -150,7 +150,7 @@ undefined
   sigBytes: 32 }
 undefined
 
-&amp;gt; console.log(sha.toString())
+&amp;amp;gt; console.log(sha.toString())
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 </code></pre>
@@ -172,10 +172,10 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
     <p>la funzione deve essere computata efficientemente: nell’esempio precedente accade tutto in pochissimi microsecondi.</p>
   </li>
   <li>
-    <p>la funzione è <a href="https://en.wikipedia.org/wiki/Collision_resistance">collision-resistent</a>: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse <code class="highlighter-rouge">x</code>e <code class="highlighter-rouge">y</code> che restituiscano lo stesso hash (matematicamente: <code class="highlighter-rouge">H(x) = H(y)</code>).</p>
+    <p>la funzione è <a href="https://en.wikipedia.org/wiki/Collision_resistance">collision-resistant</a>: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse <code class="highlighter-rouge">x</code>e <code class="highlighter-rouge">y</code> che restituiscano lo stesso hash (matematicamente: <code class="highlighter-rouge">H(x) = H(y)</code>).</p>
   </li>
   <li>
-    <p>la funzione hash <em>nasconde</em> il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata <em>salt</em>), che noi potremmo definire come una “chiave” di crittografia, per intenderci.</p>
+    <p>la funzione hash <em>nasconde</em> il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata <em>salt</em>), che noi potremmo definire come una “chiave” , per intenderci.</p>
   </li>
   <li>
     <p>la funzione hash è <em>puzzle-friendly</em>: per ogni possibile hash, se il salt è scelto davvero a caso, è infattibile risalire al messaggio se non cercando nell’insieme di tutte le chiavi possibili. L’idea quindi è di fornire un <em>puzzle</em> di questo tipo: dato un salt (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all’insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.</p>
