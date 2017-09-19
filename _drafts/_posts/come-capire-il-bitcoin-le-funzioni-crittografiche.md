@@ -24,7 +24,7 @@ In questo articolo vi parlo di un concetto chiave alla base di bitcoin, blockcha
 
 ### le funzioni Hash
 
-Hash in italiano significa "carne tritata", ma onestamente non ho mai sentito un inglese parlare di hamburger o comunque fare le polpette quindi dobbiamo fidarci di google. Tuttavia carne tritata gli si addice: in effetti quello che fa una funzione hash è proprio di prendere un messaggio (pensate a una stringa, ma in realtà può essere qualunque oggetto), e calcolarne un valore di lunghezza fissa. Vediamone un esempio, mi appoggio a NodeJS per comodità e perchè è uno dei più immediati, ma volendo potete giocare con qualsiasi linguaggio perchè le funzioni di crittografia sono native in ogni ambiente.
+Hash in italiano significa *carne tritata*, ma onestamente non ho mai visto un inglese fare le polpette quindi dobbiamo fidarci di google. Tuttavia carne tritata gli si addice: in effetti quello che fa una funzione hash è proprio di prendere un messaggio (pensate a una stringa, ma in realtà può essere qualunque oggetto), e calcolarne un valore di lunghezza fissa. Vediamone un esempio, mi appoggio a NodeJS per comodità e perchè è uno dei più immediati, ma volendo potete giocare con qualsiasi linguaggio perchè le funzioni di crittografia sono native in ogni ambiente.
 
 Creiamo una directory di esempio e installiamo il modulo `crypto-js`:
 
@@ -35,13 +35,13 @@ $ npm i -S crypto-js
 
 ```
 
-Forse l'environment vi darà degli errori che manca il file `package.json`, ma a noi non serve per adesso.
+Forse l'environment vi darà degli errori che manca il file `package.json`, ma noi freghiamocene.
 
-Ora siamo pronti a sbizzarrirci. Apriamo l'environment invocando il comando `node`:
+Ora siamo pronti a sbizzarrirci. Da console apriamo l'environment invocando il comando `node`:
 
 ```
 $ node 
-&amp;amp;amp;gt; let CryptoJS = require('crypto-js')
+&gt; let CryptoJS = require('crypto-js')
 undefined
 
 ```
@@ -51,10 +51,10 @@ Abbiamo appena importato la libreria che contiene le funzioni crittografiche pi�
 E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:
 
 ```
-&amp;amp;amp;gt; let message = "This is my password" 
-&amp;amp;amp;gt; let sha = CryptoJS.SHA256(message)
+&gt; let message = "This is my password" 
+&gt; let sha = CryptoJS.SHA256(message)
 
-&amp;amp;amp;gt; console.log(sha)
+&gt; console.log(sha)
 { words:
    [ -355107296,
      1827616648,
@@ -67,7 +67,7 @@ E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e
   sigBytes: 32 }
 undefined
 
-&amp;amp;amp;gt; console.log(sha.toString())
+&gt; console.log(sha.toString())
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 ```
@@ -78,7 +78,7 @@ Però dei byte non ce ne facciamo niente, siamo pur sempre esseri umani e se vog
 
 ### "A me sembra solo una stringa randomica..."
 
-Hai ragione a pensarlo, caro lettore, però non è così. Le funzioni hash (e quindi anche SHA256 che abbiamo usato, che è una delle possibili funzioni hash) garantiscono le seguenti proprietà:
+Hai ragione a pensarlo, caro lettore, però non è così. Le funzioni hash (e quindi anche SHA256 che abbiamo usato, che è una delle tante funzioni hash) garantiscono le seguenti proprietà:
 
 * Una funzione hash prende ogni possibile stringa come input, e restituisce una stringa di dimensioni fisse.
 
@@ -88,7 +88,7 @@ Hai ragione a pensarlo, caro lettore, però non è così. Le funzioni hash (e qu
 
 * la funzione hash *nasconde* il messaggio originario: se vi do l'hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio, che noi potremmo definire come una "chiave" di crittografia, per intenderci.
 
-* la funzione hash è *puzzle-friendly*: per ogni possibile hash, se la chiave (di cui abbiamo parlato al punto precedente) è scelta davvero a caso, è infattibile risalire al messaggio se non cercando nell'insieme di tutte le chiavi possibili. L'idea quindi è di fornire un "puzzle" di questo tipo: data una chiave (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all'insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.
+* la funzione hash è *puzzle-friendly*: per ogni possibile hash, se la chiave (di cui abbiamo parlato al punto precedente) è scelta davvero a caso, è infattibile risalire al messaggio se non cercando nell'insieme di tutte le chiavi possibili. L'idea quindi è di fornire un *puzzle* di questo tipo: data una chiave (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all'insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.
 
 Bel casino! Scommetto che la terza proprietà vi ha complicato la comprensione.
 
