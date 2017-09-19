@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Le tecnologie che compongono un blog Jekyll - Michele Nasti's blog</title>
+	<meta name="description" content="Gli ingredienti segreti di questo magico calderone che é il mio blog sono: Git, github, jekyll (con tanto html, css &amp; javascript), markdown. Vediamoli in dettaglio.
+
+" />
+	<meta name="keywords" content="git, github, blogging, jekyll, markdown, web, curriculum" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:07:48 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+  <meta content="Le tecnologie che compongono un blog Jekyll" property="og:title">
+
+
+  <meta content="article" property="og:type">
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+  <meta content="https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html" property="og:url">
+
+
+  <meta content="2016-12-18T00:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+  <meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+  
+  <meta content="git" property="article:tag">
+  
+  <meta content="github" property="article:tag">
+  
+  <meta content="blogging" property="article:tag">
+  
+  <meta content="jekyll" property="article:tag">
+  
+  <meta content="markdown" property="article:tag">
+  
+  <meta content="web" property="article:tag">
+  
+  <meta content="curriculum" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Le tecnologie che compongono un blog Jekyll">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html">
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html">Le tecnologie che compongono un blog Jekyll</a></h2>
+			<p class="post-meta">Dec 18, 2016 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Gli ingredienti segreti di questo magico calderone che é il mio blog sono: <strong>Git</strong>, <strong>github</strong>, <strong>jekyll</strong> (con tanto <strong>html</strong>, <strong>css</strong> &amp; <strong>javascript</strong>), <strong>markdown</strong>. Vediamoli in dettaglio.</p>
+
+<blockquote>
+  <p>Per sapere come mai mi sono orientato proprio su Jekyll come piattaforma di blogging, leggete il mio precedente articolo <a href="/2016/12/15/le-piattaforme-di-blogging-a-confronto.html">Le migliori piattaforme di blogging (per un developer) a confronto</a>.</p>
+</blockquote>
+
+<h2 id="git">Git</h2>
+
+<p><a href="http://rogerdudler.github.io/git-guide/index.it.html"><strong>Git</strong></a> é un tool di versionamento distribuito. Senza essere troppo formali, supponete di lavorare in 15 su un progetto e di non avere internet, né i computer connessi in rete. Per condividere il codice tra membri del progetto usate le penne usb. Questo scenario non è lontano nel tempo, durante i miei primi anni d’università era così che si collaborava ai progetti.</p>
+
+<p>Che succede se due Developer modificano lo stesso file? Come ce ne accorgiamo?</p>
+
+<p>Un tool di VCS (version control system) risolve proprio questo problema, ne esistono di diversi tipi (svn, che é centralizzato, Git che é distribuito). Su Git ci sono libri e siti web: una vera rivoluzione da quando é apparso. <strong>Da conoscere OBBLIGATORIAMENTE</strong>.</p>
+
+<h2 id="github">Github</h2>
+
+<p><a href="http://www.github.com">GitHub</a> é la community di programmatori  di questo decennio, insieme a <em>Stack Overflow</em>. Su github ci sono chili e chili di codice open source che le aziende commerciali prendono a piene mani per realizzare i loro prodotti commerciali. Forse non scriverete mai una libreria capace di attirare migliaia di Developers, ma conviene comunque imparare a usare <strong>git</strong> per scaricare codice altrui ;)</p>
+
+<p>Tramite git é possibile quindi scaricare codice altrui da github, vederne la history, e anche contribuire a progetti esterni. La cosa interessante é che potete caricare anche i VOSTRI progetti online, gratuitamente e illimitatamente, purché i repository siano pubblici (per quelli privati si paga). Ora che lo sapete, non dovreste mai più scrivere codice senza salvarlo su github.</p>
+
+<h2 id="jekyll">Jekyll</h2>
+
+<p><a href="https://jekyllrb.com">Jekyll</a> é un generatore di siti statici scritto in Ruby (ma non é importante conoscere Ruby) nato principalmente per generare blog, ma sul web si trovano facilmente dei template per creare anche altri tipi di siti: io ad esempio ho realizzato un sito-documentazione per un progetto a cui lavoro.</p>
+
+<p>Il fatto che il sito generato sia statico (html, js &amp; css) significa che non servono server potenti o software complessi per servire le richieste: il sito così costruito é il più veloce possibile - nessun tempo perso per costruire la pagina (il sito viene “compilato” all’inizio), nessuna richiesta a un database, ma solo latenza di rete (che non potete eliminare comunque).</p>
+
+<p>Vista la semplicità del sistema, Github ha lanciato <em>GitHub Pages</em>: pubblicando il vostro repository “sorgente”, github compilerà per voi il repo e lo mostrerà in formato html. Su come funziona tutto il giro, aspettatevi un mio aggiornamento a riguardo. (GitHub ha anche altre modalità di pubblicazione, alcune senza la potenza di Jekyll: provatele).</p>
+
+<h3 id="html-css--javascript">Html, css &amp; javascript</h3>
+
+<p>Visto che Jekyll genera un sito statico, occorre dare una user interface al vostro sito che sia gradevole: con Jekyll non siete limitati nel tipo di soluzioni che potete implementare, anzi tutto ciò che é frontend. Qui potrete sbizzarrirvi con le soluzioni più belle che potete, nessun limite, solo creatività.</p>
+
+<p>(WordPress, con i temi, ti nasconde questa fase e rende anche “scomoda” la personalizzazione di un tema).</p>
+
+<h2 id="markdown">Markdown</h2>
+
+<p>Come scrivo gli articoli del mio blog? Jekyll é predisposto per molti sistemi, ma quello più usato é <strong>Markdown</strong>. Esso é un <em>quasi</em>-standard, visto che ne esistono diverse implelentazioni e ci sono piccole divergenze, ma non é qualcosa che noterete davvero, almeno finché non dovrete andare “oltre”.</p>
+
+<p>Di base, un documento scritto in markdown non é nient’altro che un file di testo (solitamente con estensione <code class="highlighter-rouge">.md</code>) che jekyll trasformerà in un <code class="highlighter-rouge">.html</code>. La sintassi di markdown é molto leggibile, e non dovremo scimunirci per annidare tag nel modo corretto. Inoltre Mardown ha la possibilità di annidare codice sia inline <code class="highlighter-rouge">così</code>, sia scrivendo blocchi di codice su più righe:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//ad esempio, questo é un commento</span>
+<span class="kd">var</span> <span class="nx">ciao</span> <span class="o">=</span> <span class="s1">'beccatevi questo!'</span> <span class="p">;</span>
+</code></pre>
+</div>
+
+<p>Questo post é stato scritto in markdown da un telefonino!</p>
+
+<h2 id="ultime-considerazioni">ultime considerazioni</h2>
+
+<p>Passare a Jekyll può essere un processo lungo, per il numero di concetti da abbracciare, ma in verità tutto si impara nel giro di 2-3 giorni.</p>
+
+<p>La cosa positiva (e non mi stancherò mai di ripetere) é che nel realizzare il vostro blog/sito dimostrerete di conoscere tutta questa catena di tecnologie: Git, github, jekyll, markdown, html, css, javascript. Che combo!</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html&text=Le tecnologie che compongono un blog Jekyll:%20https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Le tecnologie che compongono un blog Jekyll) + ':%20'  + encodeURIComponent(https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html&title=Le tecnologie che compongono un blog Jekyll&summary=&source=https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html';
+			var disqus_identifier = 'https://michelenasti.com/2016/12/18/le-tecnologie-che-compongono-un-blog-jekyll.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2016/12/15/le-piattaforme-di-blogging-a-confronto.html">Le migliori piattaforme di blogging (per un developer) a confronto</a></h2>
+					</header>
+					<section>
+						<p>Ho iniziato la mia avventura circa 10 anni fa usando <strong>Wordpress</strong>, un’eccellente piattaforma di blogging così versatile da poter diventare qualsiasi cosa: portale, sito vetrina, piattaforma di ecommerce… e anche blog, ovviamente!</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2016/12/15/le-piattaforme-di-blogging-a-confronto.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2016/12/22/jekyll-e-github-in-pratica.html">Jekyll & Github in pratica</a></h2>
+					</header>
+					<section>
+						<p>In questo articolo spiegheremo rapidamente come installare un blog jekyll su github.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2016/12/22/jekyll-e-github-in-pratica.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+
+</html>

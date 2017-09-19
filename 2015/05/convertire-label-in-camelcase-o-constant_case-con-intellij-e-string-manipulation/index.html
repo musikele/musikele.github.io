@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation - Michele Nasti's blog</title>
+	<meta name="description" content="
+
+" />
+	<meta name="keywords" content="camel case, intellij, string manipulation" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:07:48 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+  <meta content="convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation" property="og:title">
+
+
+  <meta content="article" property="og:type">
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+  <meta content="https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/" property="og:url">
+
+
+  <meta content="2015-05-05T20:45:08+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+  <meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+  
+  <meta content="camel case" property="article:tag">
+  
+  <meta content="intellij" property="article:tag">
+  
+  <meta content="string manipulation" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/">
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h2 class="post-title"><a href="/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/">convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation</a></h2>
+			<p class="post-meta">May 5, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p><a href="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/05/string-manipulation.gif"><img class="alignleft wp-image-291 size-medium" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/05/string-manipulation-300x139.gif?fit=300%2C139" alt="string-manipulation" data-recalc-dims="1" /></a></p>
+
+<p>Spesso ci impelaghiamo in task pallosi e manuali (ma purtroppo necessari) per le azioni più disparate; penso a quando bisogna bonificare dei dati per il db (e quindi rimuovere caratteri non accettati) oppure formattarli in un certo modo. Bene, per tutto questo c’è il plugin di IntelliJ String Manipulation!</p>
+
+<p>Premetto che esistono centinaia di migliaia di Tool che fanno quello che sto per descrivere; io tuttavia uso IntelliJ quindi riuscire a risolvere tramite l’IDE gli fa acquistare centinaia di punti stima!</p>
+
+<p>Per chi se lo fosse perso, ecco un articolo su <a href="http://michelenasti.com/2015/04/intellij-idea-alla-fine-e-arrivato-lamore/">cosa mi piace di IntelliJ</a>.</p>
+
+<p>Problema: devo convertire una lista di stringhe come</p>
+
+<pre class="lang:default decode:true">Anagrafica
+Sesso
+Numero Civico Residenza
+Comune Residenza
+...</pre>
+
+<p>in quest’altro formato:</p>
+
+<pre class="lang:default decode:true">ANAGRAFICA
+SESSO
+NUMERO_CIVICO_RESIDENZA
+COMUNE_RESIDENZA
+</pre>
+
+<p>Questo perchè poi devo tradurre le label tramite <a href="https://angular-translate.github.io/">angular-translate</a>.</p>
+
+<p>Soluzione:</p>
+
+<p>Installando il plugin di IntelliJ String Manipulation (qui il <a href="https://plugins.jetbrains.com/plugin/2162?pr=phpStorm">suo sito web</a>), è possibile selezionare queste label e cliccare ALT-SHIFT-M e poi J … et voilà! il gioco è fatto.</p>
+
+<p>Il plugin fa molto altro, permette di trasformare in mille altri modi il testo, oltre ad altre funzioni che per ora non ho esplorato.</p>
+
+<p>E ora… siamo pronti ad affrontare anche i compiti più noiosi!</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/&text=convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation:%20https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/&title=convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation&summary=&source=https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/';
+			var disqus_identifier = 'https://michelenasti.com/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<article class="6u 12u(small) excerpt">
+					<header>
+						<h2><a href="/2015/05/coderdojo-a-salerno-la-mia-esperienza/">Coderdojo a Salerno: la mia esperienza</a></h2>
+					</header>
+					<section>
+						<p>Qualche giorno fa è stato organizzato un secondo appuntamento del <a href="http://www.coderdojoitalia.org/">CoderDojo</a> a Salerno, presso la sede di Puntolingue sul primo binario della stazione FS.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="/2015/05/coderdojo-a-salerno-la-mia-esperienza/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2015/05/basta-ai-powerpoint-fatti-male/">BASTA! ai powerpoint fatti male</a></h2>
+					</header>
+					<section>
+						<p>Questo articolo l’ho riadattato nel 2009 su un vecchio articolo di Paolo Attivissimo; ogni tanto qualche amico mi dice che deve preparare delle slide e io continuo a ripetere questi suggerimenti. Magari possono essere utili per chi deve ancora preparare le slide della tesi, o si sente insicuro. Seguite questi consigli: io l’ho fatto e ancora oggi ricordano le mie presentazioni all’università.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2015/05/basta-ai-powerpoint-fatti-male/" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+
+</html>
