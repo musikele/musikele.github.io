@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-09-19T10:52:08+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Come capire il bitcoin: le funzioni crittografiche</title><link href="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" rel="alternate" type="text/html" title="Come capire il bitcoin: le funzioni crittografiche" /><published>2017-09-19T00:00:00+02:00</published><updated>2017-09-19T10:50:48+02:00</updated><id>https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche</id><content type="html" xml:base="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">&lt;p&gt;Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-09-19T12:20:28+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Come capire il bitcoin: le funzioni crittografiche</title><link href="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" rel="alternate" type="text/html" title="Come capire il bitcoin: le funzioni crittografiche" /><published>2017-09-19T02:00:00+02:00</published><updated>2017-09-19T12:19:17+02:00</updated><id>https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche</id><content type="html" xml:base="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">&lt;p&gt;Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…&lt;/p&gt;
 
 &lt;p&gt;Finchè si trattava di scimmiottare gli agenti di borsa era anche divertente, ma da quando abbiamo tenuto il &lt;a href=&quot;https://www.meetup.com/it-IT/preview/devday-salerno/events/242583299&quot;&gt;primo meetup a Salerno sul Bitcoin&lt;/a&gt; ho capito che bisognava assolutamente provare a capirne di più.&lt;/p&gt;
 
@@ -24,7 +24,7 @@ $ npm i -S crypto-js
 &lt;p&gt;Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ node 
-&amp;gt; let CryptoJS = require('crypto-js')
+&amp;amp;gt; let CryptoJS = require('crypto-js')
 undefined
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -34,10 +34,10 @@ undefined
 
 &lt;p&gt;E’ il momento di provare a fare l’hash di un messaggio. L’algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; let message = &quot;This is my password&quot; 
-&amp;gt; let sha = CryptoJS.SHA256(message)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;amp;gt; let message = &quot;This is my password&quot; 
+&amp;amp;gt; let sha = CryptoJS.SHA256(message)
 
-&amp;gt; console.log(sha)
+&amp;amp;gt; console.log(sha)
 { words:
    [ -355107296,
      1827616648,
@@ -50,7 +50,7 @@ undefined
   sigBytes: 32 }
 undefined
 
-&amp;gt; console.log(sha.toString())
+&amp;amp;gt; console.log(sha.toString())
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -72,13 +72,13 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
     &lt;p&gt;la funzione deve essere computata efficientemente: nell’esempio precedente accade tutto in pochissimi microsecondi.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;la funzione è &lt;em&gt;collision-free&lt;/em&gt;: è impossibile per chiunque trovare due stringhe diverse &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;e &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; che restituiscano lo stesso hash (matematicamente: &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = H(y)&lt;/code&gt;).&lt;/p&gt;
+    &lt;p&gt;la funzione è &lt;a href=&quot;https://en.wikipedia.org/wiki/Collision_resistance&quot;&gt;collision-resistent&lt;/a&gt;: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;e &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; che restituiscano lo stesso hash (matematicamente: &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = H(y)&lt;/code&gt;).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;la funzione hash &lt;em&gt;nasconde&lt;/em&gt; il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio, che noi potremmo definire come una “chiave” di crittografia, per intenderci.&lt;/p&gt;
+    &lt;p&gt;la funzione hash &lt;em&gt;nasconde&lt;/em&gt; il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata &lt;em&gt;salt&lt;/em&gt;), che noi potremmo definire come una “chiave” di crittografia, per intenderci.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;la funzione hash è &lt;em&gt;puzzle-friendly&lt;/em&gt;: per ogni possibile hash, se la chiave (di cui abbiamo parlato al punto precedente) è scelta davvero a caso, è infattibile risalire al messaggio se non cercando nell’insieme di tutte le chiavi possibili. L’idea quindi è di fornire un &lt;em&gt;puzzle&lt;/em&gt; di questo tipo: data una chiave (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all’insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.&lt;/p&gt;
+    &lt;p&gt;la funzione hash è &lt;em&gt;puzzle-friendly&lt;/em&gt;: per ogni possibile hash, se il salt è scelto davvero a caso, è infattibile risalire al messaggio se non cercando nell’insieme di tutte le chiavi possibili. L’idea quindi è di fornire un &lt;em&gt;puzzle&lt;/em&gt; di questo tipo: dato un salt (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all’insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
