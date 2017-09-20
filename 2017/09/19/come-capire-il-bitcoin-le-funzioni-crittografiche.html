@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="bitcoin, crittografia, hash" />  
-	<meta http-equiv="last-modified" content="2017-09-19 12:22:54 +0200" /> 
+	<meta http-equiv="last-modified" content="2017-09-20 09:55:31 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -124,7 +124,7 @@ $ npm i -S crypto-js
 <p>Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando <code class="highlighter-rouge">node</code>:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ node 
-&amp;amp;gt; let CryptoJS = require('crypto-js')
+&gt; let CryptoJS = require('crypto-js')
 undefined
 
 </code></pre>
@@ -134,10 +134,10 @@ undefined
 
 <p>E’ il momento di provare a fare l’hash di un messaggio. L’algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&amp;amp;gt; let message = "This is my password" 
-&amp;amp;gt; let sha = CryptoJS.SHA256(message)
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; let message = "This is my password" 
+&gt; let sha = CryptoJS.SHA256(message)
 
-&amp;amp;gt; console.log(sha)
+&gt; console.log(sha)
 { words:
    [ -355107296,
      1827616648,
@@ -150,7 +150,7 @@ undefined
   sigBytes: 32 }
 undefined
 
-&amp;amp;gt; console.log(sha.toString())
+&gt; console.log(sha.toString())
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 </code></pre>
@@ -201,7 +201,6 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 <p>Non mi resta  che salutarvi con l’hash di <code class="highlighter-rouge">Buona giornata</code>:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
-
 </code></pre>
 </div>
 
