@@ -41,7 +41,7 @@ Ora siamo pronti a sbizzarrirci. Da console apriamo l'environment invocando il c
 
 ```
 $ node 
-&amp;gt; let CryptoJS = require('crypto-js')
+> let CryptoJS = require('crypto-js')
 undefined
 
 ```
@@ -51,10 +51,10 @@ Abbiamo appena importato la libreria che contiene le funzioni crittografiche pi�
 E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:
 
 ```
-&amp;gt; let message = "This is my password" 
-&amp;gt; let sha = CryptoJS.SHA256(message)
+> let message = "This is my password" 
+> let sha = CryptoJS.SHA256(message)
 
-&amp;gt; console.log(sha)
+> console.log(sha)
 { words:
    [ -355107296,
      1827616648,
@@ -67,7 +67,7 @@ E' il momento di provare a fare l'hash di un messaggio. L'algoritmo più usato e
   sigBytes: 32 }
 undefined
 
-&amp;gt; console.log(sha.toString())
+> console.log(sha.toString())
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 ```
@@ -110,7 +110,6 @@ Non mi resta  che salutarvi con l'hash di `Buona giornata`:
 
 ```
 9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
-
 ```
 
 Alla prossima!
