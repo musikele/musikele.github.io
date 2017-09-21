@@ -218,7 +218,7 @@ onwebtoken/verify.js:32
 Error
     at Object.module.exports [as verify] (/mnt/c/Users/miche/Documents/cod
 e/node-udemy/node-todo-api/node_modules/jsonwebtoken/verify.js:107:17)
-    at Object.&lt;anonymous&gt; (/mnt/c/Users/miche/Documents/code/node-udemy/no
+    at Object.<anonymous> (/mnt/c/Users/miche/Documents/code/node-udemy/no
 de-todo-api/playground/hashingJWT.js:11:19)
     at Module._compile (module.js:573:30)
     at Object.Module._extensions..js (module.js:584:10)
