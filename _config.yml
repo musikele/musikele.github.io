@@ -1,15 +1,14 @@
 url: https://michelenasti.com
 siteurl: https://michelenasti.com
 
-gems:
+plugins:
   - jekyll-last-modified-at
   - jekyll-paginate
   - jekyll-feed
 
 permalink: /:year/:month/:day/:title.html
 
-markdown: kramdown
-highlighter: rouge
+highlighter: none
 
 paginate: 10
 paginate_path: "archives/page:num"
