@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-09-21T18:51:43+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">JWT: what is it? How does it work? Why should we use it?</title><link href="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" rel="alternate" type="text/html" title="JWT: what is it? How does it work? Why should we use it?" /><published>2017-09-21T02:00:00+02:00</published><updated>2017-09-21T18:47:12+02:00</updated><id>https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt</id><content type="html" xml:base="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html">&lt;p&gt;In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-09-21T19:06:41+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">JWT: what is it? How does it work? Why should we use it?</title><link href="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" rel="alternate" type="text/html" title="JWT: what is it? How does it work? Why should we use it?" /><published>2017-09-21T02:00:00+02:00</published><updated>2017-09-21T19:05:19+02:00</updated><id>https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt</id><content type="html" xml:base="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html">&lt;p&gt;In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.&lt;/p&gt;
 
 &lt;p&gt;However, to understand JWT, we must step back and talk about hashing functions.&lt;/p&gt;
 
@@ -8,13 +8,12 @@
 
 &lt;p&gt;Create a new Node project anywhere you like. We will use this project to do our experiments. In order to use hashing functions in Node, create and enter a new directory, and install &lt;code&gt;crypto-js&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm i --save crypto-js
-
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npm i --save crypto-js
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now, let’s create a new file, &lt;code&gt;hashing.js&lt;/code&gt; and fill it with this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;const {SHA256} = require('crypto-js')
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const {SHA256} = require('crypto-js')
 
 let message = 'I am user number 3'
 
@@ -22,15 +21,13 @@ let hash = SHA256(message).toString();
 
 console.log(`Message: ${message}`)
 console.log(`Hash: ${hash}`)
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Let’s run this file. What will we get?&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ node hashing.js 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node hashing.js 
 Message: I am user number 3
 Hash: 9da4d19e100809d42da806c2b7df5cf37e72623d42f1669eb112e23f5c9d45a3
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;What’s happening here? We are importing the function &lt;code&gt;SHA256&lt;/code&gt;, that is one of the strongest hash functions we know for the moment, with mathematical proofs, etc. 256 is the number of bits of the hashed message.&lt;/p&gt;
@@ -56,7 +53,7 @@ Hash: 9da4d19e100809d42da806c2b7df5cf37e72623d42f1669eb112e23f5c9d45a3
 
 &lt;h2 id=&quot;when-to-use-a-hash&quot;&gt;When to use a hash&lt;/h2&gt;
 
-&lt;p&gt;You might use Hashes in a lot of different situations; we will use them in &lt;strong&gt;authentication&lt;/strong&gt;, but another famous use case is to store passwords in your database. &lt;a href=&quot;%7B%7Bsite.baseurl%7D%7D/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html&quot;&gt;Bitcoin also uses hashes to mine new bitcoins (italian)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You might use Hashes in a lot of different situations; we will use them in &lt;strong&gt;authentication&lt;/strong&gt;, but another famous use case is to store passwords in your database. &lt;a href=&quot;/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html&quot;&gt;Bitcoin also uses hashes to mine new bitcoins (italian)&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Passwords should never be stored as plaintext, because users have this bad habit to use the same password everywhere (I guess you don’t, do you?).&lt;/p&gt;
 
@@ -74,15 +71,14 @@ Hash: 9da4d19e100809d42da806c2b7df5cf37e72623d42f1669eb112e23f5c9d45a3
 
 &lt;p&gt;So let’s create a json object with the user’ ID:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;let data = {
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let data = {
     id: 4
 }
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;We obviously don’t want that the user can change their ID with some other ID, for example the admin ID. So we can create a new object called &lt;code&gt;token&lt;/code&gt; that contains the data and the hash of the data:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;let data = {
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let data = {
     id: 4
 };
 
@@ -90,7 +86,6 @@ let token = {
     data, 
     hash: SHA256(JSON.stringify(data)).toString()
 }
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;We now have a token, but … if the user tamper the data, he can just recalculate the hash and he won.&lt;/p&gt;
@@ -101,11 +96,10 @@ let token = {
 
 &lt;p&gt;So the previous example would be something like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;let token = {
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let token = {
     data, 
     hash: SHA256(JSON.stringify(data) + 'somesecret').toString()
 }
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Wait, but what if the user knows the salt? &lt;strong&gt;They shouldn’t!&lt;/strong&gt; Once they’re logged in, you send them this &lt;em&gt;token&lt;/em&gt; signed with the &lt;em&gt;server’s salt&lt;/em&gt; and you can be sure that the client cannot recreate the hash back again.&lt;/p&gt;
@@ -116,15 +110,14 @@ let token = {
 
 &lt;p&gt;Let’s install it:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm i --save jsonwebtoken 
-
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npm i --save jsonwebtoken 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;With this package we get two functions: one to &lt;strong&gt;create&lt;/strong&gt; the token (&lt;code&gt;sign&lt;/code&gt;), and another to &lt;strong&gt;verify&lt;/strong&gt; (&lt;code&gt;verify&lt;/code&gt;).&lt;/p&gt;
 
 &lt;p&gt;So let’s create a new file (we are not going to need the previous stuff anymore) and start over.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;const jwt = require('jonwebtoken')
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const jwt = require('jsonwebtoken')
 
 let data = {
     id: 10
@@ -133,15 +126,13 @@ let data = {
 let secret = '123abc'
 let token = jwt.sign(data, secret)
 console.log(token)
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;And this becomes:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ node jwtExample.js 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node jwtExample.js 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
 DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;this is different from the hash we presented before: it is divided in three blocks, and it’s clearly bigger. What’s going on?&lt;/p&gt;
@@ -160,13 +151,13 @@ DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;%7B%7Bsite.baseurl%7D%7D/images/jwt.PNG&quot; alt=&quot;screenshot of JWT website&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/jwt.PNG&quot; alt=&quot;screenshot of JWT website&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;verify-that-the-token-is-valid&quot;&gt;Verify that the token is valid&lt;/h3&gt;
 
 &lt;p&gt;Very very easy:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;//add this to the preceeding script 
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//add this to the preceeding script 
 
 let decoded = jwt.verify(token, secret)
 console.log('decoded', decoded)
@@ -175,7 +166,7 @@ console.log('decoded', decoded)
 
 &lt;p&gt;output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ node jwtExample.js 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node jwtExample.js 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
 DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
 decoded { id: 10, iat: 1505982519 }
@@ -184,7 +175,7 @@ decoded { id: 10, iat: 1505982519 }
 
 &lt;p&gt;And if we try to change anything in the token, or in the secret, we get a javascript Error back:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;//change the secret to fail the validation  
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//change the secret to fail the validation  
 
 let decoded = jwt.verify(token, secret+'blah')
 console.log('decoded', decoded)
@@ -193,7 +184,7 @@ console.log('decoded', decoded)
 
 &lt;p&gt;output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ node jwtExample.js 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node jwtExample.js 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
 DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
 
@@ -204,7 +195,7 @@ onwebtoken/verify.js:32
 Error
     at Object.module.exports [as verify] (/mnt/c/Users/miche/Documents/cod
 e/node-udemy/node-todo-api/node_modules/jsonwebtoken/verify.js:107:17)
-    at Object.&amp;amp;lt;anonymous&amp;amp;gt; (/mnt/c/Users/miche/Documents/code/node-udemy/no
+    at Object.&amp;lt;anonymous&amp;gt; (/mnt/c/Users/miche/Documents/code/node-udemy/no
 de-todo-api/playground/hashingJWT.js:11:19)
     at Module._compile (module.js:573:30)
     at Object.Module._extensions..js (module.js:584:10)
