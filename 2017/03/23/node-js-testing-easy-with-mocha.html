@@ -80,6 +80,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -110,11 +111,10 @@
 
 <h2 id="setup-the-example">Setup the example</h2>
 
-<p>Let’s write a simple Node test file. Let’s call it <code class="highlighter-rouge">utils.js</code>, a file where we put all the functions that do not fit in a specific module.</p>
+<p>Let’s write a simple Node test file. Let’s call it <code>utils.js</code>, a file where we put all the functions that do not fit in a specific module.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>module.exports.add = (a,b) =&amp;gt;  a + b;
+<pre><code>module.exports.add = (a,b) =&amp;gt;  a + b;
 </code></pre>
-</div>
 
 <p>That’s it! Let’s test this function. Is our sum function really doing its job?</p>
 
@@ -123,27 +123,25 @@
 <p>First, let’s install 
 <a href="https://mochajs.org"><strong>Mocha</strong></a>. This is easy as launching</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install --save-dev mocha 
+<pre><code>$ npm install --save-dev mocha 
 </code></pre>
-</div>
 
-<p>Let’s modify our <code class="highlighter-rouge">package.json</code> (you did run <code class="highlighter-rouge">npm init</code>, didn’t you?) to add a new task:</p>
+<p>Let’s modify our <code>package.json</code> (you did run <code>npm init</code>, didn’t you?) to add a new task:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
+<pre><code>"scripts": {
     ... 
     "test": "mocha **/*.test.js"
   },
 </code></pre>
-</div>
 
 <p>Mocha will be installed as a <em>development dependency</em>, this means that it is not necessary to run our code. Some deployment systems (like Heroku) will not download these dev dependencies.</p>
 
-<p>As you can see, the <code class="highlighter-rouge">test</code> command will execute all files in every directory ending with <code class="highlighter-rouge">.test.js</code>. This is incredibly fast.</p>
+<p>As you can see, the <code>test</code> command will execute all files in every directory ending with <code>.test.js</code>. This is incredibly fast.</p>
 
-<p>Let’s create in the very same directory where we put <code class="highlighter-rouge">utils.js</code>, another file called <code class="highlighter-rouge">utils.test.js</code>.</p>
+<p>Let’s create in the very same directory where we put <code>utils.js</code>, another file called <code>utils.test.js</code>.</p>
 
 <p>Here is the test code:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>const utils = require('./utils'); //(1)
+<pre><code>const utils = require('./utils'); //(1)
 
 it('should add two numbers', () =&amp;gt; {   //(2)
   let res = utils.add(33,11);
@@ -152,11 +150,10 @@ it('should add two numbers', () =&amp;gt; {   //(2)
   }
 });
 </code></pre>
-</div>
 
-<p>And now you can simply run <code class="highlighter-rouge">npm test</code>. you should see an out like this:</p>
+<p>And now you can simply run <code>npm test</code>. you should see an out like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm test
+<pre><code>$ npm test
 
 &amp;gt; node-tests@1.0.0 test /Users/michelenasti/Doc
 uments/node-tests
@@ -169,21 +166,20 @@ uments/node-tests
   1 passing (13ms)
 
 </code></pre>
-</div>
 
 <h2 id="whats-going-on">What’s going on</h2>
 
 <p>Our tests are run directly by Mocha, that’s why we don’t import the library in this function.</p>
 
-<p>Mocha provides us a function called <code class="highlighter-rouge">it()</code>. You might notice this function at (1). It takes two parameters: a description of the test, and a function with the code to execute.</p>
+<p>Mocha provides us a function called <code>it()</code>. You might notice this function at (1). It takes two parameters: a description of the test, and a function with the code to execute.</p>
 
 <p>In the JS community tests are usually written in a <em>Behaviour Driven Development</em> paradygm, this is a complex notion, for now let’s just say that test description starts with “<em>should …</em>”. I’ll write more in the future :)</p>
 
-<p>The second argument passed to <code class="highlighter-rouge">it()</code> is a function with the actual test code. Here we call the function under test, take the result and check the correctness.</p>
+<p>The second argument passed to <code>it()</code> is a function with the actual test code. Here we call the function under test, take the result and check the correctness.</p>
 
-<p>How Mocha decides if a test has passed or not? If no errors are thrown in our test code, then the test is marked as passed. On the other side, if an <code class="highlighter-rouge">Error()</code> object is thrown, the test will stop and the message of the <code class="highlighter-rouge">Error</code> is printed to the terminal.</p>
+<p>How Mocha decides if a test has passed or not? If no errors are thrown in our test code, then the test is marked as passed. On the other side, if an <code>Error()</code> object is thrown, the test will stop and the message of the <code>Error</code> is printed to the terminal.</p>
 
-<p><em>Exercise for you: modify <code class="highlighter-rouge">utils.js</code> to let the test fail :)</em></p>
+<p><em>Exercise for you: modify <code>utils.js</code> to let the test fail :)</em></p>
 
 <h2 id="do-js-developers-throw-errors-to-test-their-functions">Do JS developers throw errors to test their functions?</h2>
 
@@ -193,14 +189,13 @@ uments/node-tests
 
 <p>Do you want your test to run automatically everytime you change some file? Of course you can, mixing some code coming from a previous post (<a href="https://michelenasti.com/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">nodemon</a>).</p>
 
-<p>In <code class="highlighter-rouge">package.json</code> add the script <code class="highlighter-rouge">test-watch</code>…</p>
+<p>In <code>package.json</code> add the script <code>test-watch</code>…</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s2">"test"</span><span class="err">:</span> <span class="s2">"mocha **/*.test.js"</span><span class="p">,</span>
-   <span class="s2">"test-watch"</span><span class="err">:</span> <span class="s2">"nodemon --exec \"npm test\""</span>
-  <span class="p">},</span>
+<pre><code class="language-javascript">"scripts": {
+   "test": "mocha **/*.test.js",
+   "test-watch": "nodemon --exec \"npm test\""
+  },
 </code></pre>
-</div>
 
 <p>Happy testing!</p>
  
@@ -332,6 +327,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

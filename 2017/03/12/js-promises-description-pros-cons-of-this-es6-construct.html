@@ -78,6 +78,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -102,14 +103,13 @@
 
 <p>To recap: when you wait for an async operation to handle the result, for example in NodeJS when we read a file, we do this:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
-<span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'filename.txt'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-   <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span> 
-   <span class="c1">//now you can use the data object </span>
-   <span class="p">...</span>
-<span class="p">});</span>
+<pre><code class="language-javascript">const fs = require('fs');
+fs.readFile('filename.txt', (err, data) =&gt; {
+   if (err) throw err; 
+   //now you can use the data object 
+   ...
+});
 </code></pre>
-</div>
 
 <p>This is the standard, classic way of handling asynchronicity in NodeJS and Javascript.</p>
 
@@ -123,99 +123,97 @@
 
 <p>I don’t want to talk about the history of promises, because like everything in JS Promises have a complex story coming from many libraries doing the same thing, with different syntaxes and patterns.</p>
 
-<p>However ES6 has standardized this, and now we have a fantastic <code class="highlighter-rouge">Promise</code> object. Let’s see how to use it.</p>
+<p>However ES6 has standardized this, and now we have a fantastic <code>Promise</code> object. Let’s see how to use it.</p>
 
-<p>The following snippet will create a Promise that waits 2,5 seconds and then sends a message <code class="highlighter-rouge">Hey. it worked</code>:</p>
+<p>The following snippet will create a Promise that waits 2,5 seconds and then sends a message <code>Hey. it worked</code>:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">somePromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="c1">//1</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// only one can be called and only once </span>
-    <span class="nx">resolve</span><span class="p">(</span><span class="s1">'Hey. it worked'</span><span class="p">);</span>                      <span class="c1">//2</span>
-    <span class="c1">//reject('Unable to fulfill promise');          //3</span>
-  <span class="p">},</span> <span class="mi">2500</span><span class="p">);</span>
-<span class="p">});</span> 
+<pre><code class="language-javascript">let somePromise = new Promise((resolve, reject) =&gt; { //1
+  setTimeout(() =&gt; {
+    // only one can be called and only once 
+    resolve('Hey. it worked');                      //2
+    //reject('Unable to fulfill promise');          //3
+  }, 2500);
+}); 
 
-<span class="nx">somePromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>                                   <span class="c1">//4</span>
-  <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Success: '</span> <span class="o">+</span> <span class="nx">message</span><span class="p">);</span>
-  <span class="p">},</span> 
-  <span class="p">(</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Error: '</span><span class="p">,</span> <span class="nx">errorMessage</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">);</span>
+somePromise.then(                                   //4
+  (message) =&gt; {
+    console.log('Success: ' + message);
+  }, 
+  (errorMessage) =&gt; {
+    console.log('Error: ', errorMessage);
+  }
+);
 </code></pre>
-</div>
 
-<p>My definition of promises: <strong>a <code class="highlighter-rouge">Promise</code> is a wrapper object that you use to encapsulate a function that might return a value in the future</strong>.</p>
+<p>My definition of promises: <strong>a <code>Promise</code> is a wrapper object that you use to encapsulate a function that might return a value in the future</strong>.</p>
 
-<p>We declare a promise as showed in (1): <code class="highlighter-rouge">new Promise()</code> with a function inside.</p>
+<p>We declare a promise as showed in (1): <code>new Promise()</code> with a function inside.</p>
 
-<p>This function takes two arguments that are two other functions, usually called <code class="highlighter-rouge">resolve</code> and <code class="highlighter-rouge">reject</code>. So the full specification is <code class="highlighter-rouge">let somePromise = new Promise((resolve, reject) =&gt; {...});</code>.</p>
+<p>This function takes two arguments that are two other functions, usually called <code>resolve</code> and <code>reject</code>. So the full specification is <code>let somePromise = new Promise((resolve, reject) =&gt; {...});</code>.</p>
 
-<p>How do you use these two parameters? <code class="highlighter-rouge">resolve</code> (2) is a function used to return a value, when the function ends normally (e.g. reading a file, you get the content of the file and return to the caller); <code class="highlighter-rouge">reject</code> (3) is used when you encounter a problem (e.g. you couldn’t read the file).</p>
+<p>How do you use these two parameters? <code>resolve</code> (2) is a function used to return a value, when the function ends normally (e.g. reading a file, you get the content of the file and return to the caller); <code>reject</code> (3) is used when you encounter a problem (e.g. you couldn’t read the file).</p>
 
 <p>There are some bonds on using Promises:</p>
 
 <ul>
-  <li>you cannot call both <code class="highlighter-rouge">resolve</code> or <code class="highlighter-rouge">reject</code>in your code. As soon as one of the two functions gets called, the promise stops.</li>
+  <li>you cannot call both <code>resolve</code> or <code>reject</code>in your code. As soon as one of the two functions gets called, the promise stops.</li>
   <li>if you don’t call any of the two functions, the promise will hang.</li>
-  <li>you can only pass <strong>one</strong> parameter to <code class="highlighter-rouge">resolve</code> or <code class="highlighter-rouge">reject</code>. If you have more stuff to pass, wrap everything in an object.</li>
+  <li>you can only pass <strong>one</strong> parameter to <code>resolve</code> or <code>reject</code>. If you have more stuff to pass, wrap everything in an object.</li>
 </ul>
 
-<p>Ok, now we have defined a promise. How do we use it? An example is shown in (4): we just call the promise and then use the <code class="highlighter-rouge">then</code> method to use the response.</p>
+<p>Ok, now we have defined a promise. How do we use it? An example is shown in (4): we just call the promise and then use the <code>then</code> method to use the response.</p>
 
-<p><code class="highlighter-rouge">then</code> can take two functions as arguments:</p>
+<p><code>then</code> can take two functions as arguments:</p>
 
 <ul>
-  <li>the first callback is called when the promise ends correctly, with the value contained in <code class="highlighter-rouge">resolve</code></li>
-  <li>the second callback is the <em>error handler</em>, so you might want to use it when you want to get data from the <code class="highlighter-rouge">reject</code> function.</li>
+  <li>the first callback is called when the promise ends correctly, with the value contained in <code>resolve</code></li>
+  <li>the second callback is the <em>error handler</em>, so you might want to use it when you want to get data from the <code>reject</code> function.</li>
 </ul>
 
 <h2 id="chaining-promises">Chaining promises</h2>
 
-<p>This approach is nice, but the true power comes when you can <code class="highlighter-rouge">chain</code> many promises one after another.</p>
+<p>This approach is nice, but the true power comes when you can <code>chain</code> many promises one after another.</p>
 
-<p>The following code shows a function <code class="highlighter-rouge">asyncAdd</code> that adds two numbers after 1,5 seconds. I bet your calculator is faster. It does however some checks on the type of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>, to be sure they are numbers.</p>
+<p>The following code shows a function <code>asyncAdd</code> that adds two numbers after 1,5 seconds. I bet your calculator is faster. It does however some checks on the type of <code>a</code> and <code>b</code>, to be sure they are numbers.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">asyncAdd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span> <span class="o">===</span> <span class="s1">'number'</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">b</span> <span class="o">===</span> <span class="s1">'number'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">resolve</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">reject</span><span class="p">(</span><span class="s1">'Arguments must be numbers'</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">},</span> <span class="mi">1500</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">};</span>
+<pre><code class="language-javascript">let asyncAdd = (a, b) =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      if (typeof a === 'number' &amp;&amp; typeof b === 'number') {
+        resolve(a + b);
+      } else {
+        reject('Arguments must be numbers');
+      }
+    }, 1500);
+  });
+};
 
-<span class="nx">asyncAdd</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>                         <span class="c1">// (1)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>                  <span class="c1">// (2)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">asyncAdd</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="s1">'33'</span><span class="p">);</span>     <span class="c1">// (3)</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>                     <span class="c1">// (4)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Should be 45:'</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span> 
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>           <span class="c1">// (5)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
-  <span class="p">})</span>
+asyncAdd(5, 7)                         // (1)
+  .then((result) =&gt; {                  // (2)
+    console.log(result);
+    return asyncAdd(result, '33');     // (3)
+  })
+  .then((res) =&gt; {                     // (4)
+    console.log('Should be 45:', res); 
+  })
+  .catch((errorMessage) =&gt; {           // (5)
+    console.log(errorMessage);
+  })
 </code></pre>
-</div>
 
 <p><strong>Quiz</strong>: what does this code print? (Answer below)</p>
 
 <p>In (1) we are evaluating the first sum. <strong>Then</strong> (2) (<em>Look how it is semantically fantastic to express this concept in plain english!!!</em>) we write the result to console, and return another operation (3): we add the result to the number ‘33’ (<strong>note! it is a string!</strong>).</p>
 
-<p>Since we are returning a function that returns a promise, we can chain the two promises with another <code class="highlighter-rouge">then()</code>.</p>
+<p>Since we are returning a function that returns a promise, we can chain the two promises with another <code>then()</code>.</p>
 
-<p>We didn’t write the second <code class="highlighter-rouge">then</code> callback, because we have used the <code class="highlighter-rouge">.catch()</code> method. We will explain this in a second.</p>
+<p>We didn’t write the second <code>then</code> callback, because we have used the <code>.catch()</code> method. We will explain this in a second.</p>
 
-<p>In the second <code class="highlighter-rouge">then()</code> (4) we would print the result of the total sum.</p>
+<p>In the second <code>then()</code> (4) we would print the result of the total sum.</p>
 
-<p>Lastly, in (5) we have the <code class="highlighter-rouge">catch</code> block. In the previous paragraph we were saying that you can handle errors inside every <code class="highlighter-rouge">then</code>, but if you chain many <code class="highlighter-rouge">then</code> together and the first one fails, the others are still executed. Usually you don’t want this, because the next <code class="highlighter-rouge">then</code> depends on the result of the previous.</p>
+<p>Lastly, in (5) we have the <code>catch</code> block. In the previous paragraph we were saying that you can handle errors inside every <code>then</code>, but if you chain many <code>then</code> together and the first one fails, the others are still executed. Usually you don’t want this, because the next <code>then</code> depends on the result of the previous.</p>
 
-<p>So, if you just want to stop an operation at the first error encountered, you can use a single <code class="highlighter-rouge">catch()</code> block at the end: whatever promise will fail, be it the first or the last, the <code class="highlighter-rouge">catch</code> block will be called to handle the failure. So easy to reason about.</p>
+<p>So, if you just want to stop an operation at the first error encountered, you can use a single <code>catch()</code> block at the end: whatever promise will fail, be it the first or the last, the <code>catch</code> block will be called to handle the failure. So easy to reason about.</p>
 
 <p>(Sorry, no answer for the quiz… run it and see!)</p>
 
@@ -356,6 +354,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

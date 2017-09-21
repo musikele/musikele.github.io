@@ -80,6 +80,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -108,38 +109,35 @@
 
 <h3 id="a-partire-da-un-array-come-filtriamo-solo-gli-elementi-pari-senza-usare-il-ciclo-for">A partire da un array, come filtriamo solo gli elementi pari senza usare il ciclo for?</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+<pre><code class="language-javascript">let arr = [1, 2, 3, 4, 5, 7, 8];
 
-<span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">});</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filtered</span><span class="p">);</span>
+let filtered = arr.filter((elem) =&gt; { return elem % 2 === 0 });
+console.log(filtered);
 </code></pre>
-</div>
 
-<p><code class="highlighter-rouge">filter()</code> prende in input una funzione di <em>test</em> che viene eseguita su ogni elemento dell’input: se la funzione restituisce <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">elem</code> viene aggiunto all’array in output.</p>
+<p><code>filter()</code> prende in input una funzione di <em>test</em> che viene eseguita su ogni elemento dell’input: se la funzione restituisce <code>true</code>, <code>elem</code> viene aggiunto all’array in output.</p>
 
 <h3 id="come-raddoppiamo-tutti-gli-element-di-un-array-senza-usare-il-ciclo-for">Come raddoppiamo tutti gli element di un array senza usare il ciclo for?</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">mapped</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">elem</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">});</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mapped</span><span class="p">);</span>
+<pre><code class="language-javascript">let mapped = arr.map((elem) =&gt; { return elem * 2 });
+console.log(mapped);
 </code></pre>
-</div>
 
-<p>Anche qui la funzione <code class="highlighter-rouge">map()</code> prende in input una funzione che viene eseguita su ogni elemento dell’input. Per ogni elemento, questo viene <em>trasformato</em> in un altro valore in base al risultato della funzione.</p>
+<p>Anche qui la funzione <code>map()</code> prende in input una funzione che viene eseguita su ogni elemento dell’input. Per ogni elemento, questo viene <em>trasformato</em> in un altro valore in base al risultato della funzione.</p>
 
 <h3 id="come-sommiamo-tutti-gli-elementi-di-un-array-senza-usare-il-ciclo-for">Come sommiamo tutti gli elementi di un array senza usare il ciclo for?</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">reduced</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">elem</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reduced</span><span class="p">);</span>
+<pre><code class="language-javascript">let reduced = arr.reduce((prev, elem) =&gt; { return prev + elem }, 0);
+console.log(reduced);
 </code></pre>
-</div>
 
-<p><code class="highlighter-rouge">reduce()</code> è più complessa da spiegare, ma poi sarà facilissima da usare: permette di applicare una funzione <em>N-a-1</em> dove da un array tiriamo fuori un unico risultato. Nel nostro esempio abbiamo applicato la somma (voi come esercizio potreste provare a tirare fuori la media!).</p>
+<p><code>reduce()</code> è più complessa da spiegare, ma poi sarà facilissima da usare: permette di applicare una funzione <em>N-a-1</em> dove da un array tiriamo fuori un unico risultato. Nel nostro esempio abbiamo applicato la somma (voi come esercizio potreste provare a tirare fuori la media!).</p>
 
-<p><code class="highlighter-rouge">reduce()</code> prende in input due elementi: una funzione e un elemento di partenza (Sarebbe lo <code class="highlighter-rouge">0</code> specificato in fondo). Per capire cosa accade, facciamo un esempio sull’array <code class="highlighter-rouge">[8, 7]</code>.</p>
+<p><code>reduce()</code> prende in input due elementi: una funzione e un elemento di partenza (Sarebbe lo <code>0</code> specificato in fondo). Per capire cosa accade, facciamo un esempio sull’array <code>[8, 7]</code>.</p>
 
-<p>Alla prima iterazione viene chiamata la funzione con <code class="highlighter-rouge">prev = 0</code> e <code class="highlighter-rouge">elem = 8</code>: siccome stiamo iterando sul primo elemento e non c’è nessun elemento precedente, viene usato il secondo argomento di <code class="highlighter-rouge">reduce</code> come valore di inizio (ricordate quello <code class="highlighter-rouge">0</code> lì in fondo?). A questo punto viene eseguita la somma, che è <code class="highlighter-rouge">8</code>.</p>
+<p>Alla prima iterazione viene chiamata la funzione con <code>prev = 0</code> e <code>elem = 8</code>: siccome stiamo iterando sul primo elemento e non c’è nessun elemento precedente, viene usato il secondo argomento di <code>reduce</code> come valore di inizio (ricordate quello <code>0</code> lì in fondo?). A questo punto viene eseguita la somma, che è <code>8</code>.</p>
 
-<p>Alla seconda iterazione, la funzione viene chiamata con <code class="highlighter-rouge">prev = 8</code> (risultato dell’iterazione precedente!) e <code class="highlighter-rouge">elem = 7</code>:  Anche in questo caso verrà eseguita la somma che è <code class="highlighter-rouge">15</code>, che sarà anche l’output di <code class="highlighter-rouge">reduce</code>.</p>
+<p>Alla seconda iterazione, la funzione viene chiamata con <code>prev = 8</code> (risultato dell’iterazione precedente!) e <code>elem = 7</code>:  Anche in questo caso verrà eseguita la somma che è <code>15</code>, che sarà anche l’output di <code>reduce</code>.</p>
 
 <h3 id="domanda-implicita-del-lettore-perchè-tutto-staccanimento-contro-il-ciclo-for">(Domanda implicita del lettore: Perchè tutto st’accanimento contro il ciclo for?)</h3>
 <p>Il ciclo for è un ottimo costrutto per iterare gli array, tuttavia non fa capire a chi legge cosa sta accadendo, oltre al fatto di non essere manutenibile. e componibile.</p>
@@ -148,14 +146,13 @@
 
 <p>Con le funzioni presentate prima, ecco la soluzione:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span>
-	<span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
-	<span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">elem</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-	<span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">elem</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<pre><code class="language-javascript">let result = arr
+	.filter((elem) =&gt; elem % 2 === 0)
+	.map((elem) =&gt; elem * 2)
+	.reduce((prev, elem) =&gt; prev + elem, 0);
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+console.log(result);
 </code></pre>
-</div>
 
 <p>E’ ovvio che si può scrivere anche con un bel (paio di) for. Ma quante righe ci vogliono? e rileggendolo dopo sei mesi, si capisce?</p>
 
@@ -288,6 +285,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

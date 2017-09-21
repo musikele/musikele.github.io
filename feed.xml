@@ -1,4 +1,205 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-09-20T09:58:15+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Come capire il bitcoin: le funzioni crittografiche</title><link href="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" rel="alternate" type="text/html" title="Come capire il bitcoin: le funzioni crittografiche" /><published>2017-09-19T02:00:00+02:00</published><updated>2017-09-20T09:55:31+02:00</updated><id>https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche</id><content type="html" xml:base="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">&lt;p&gt;Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-09-21T11:31:16+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">JWT: what is it? How does it work? Why we should use it?</title><link href="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" rel="alternate" type="text/html" title="JWT: what is it? How does it work? Why we should use it?" /><published>2017-09-21T00:00:00+02:00</published><updated>2017-09-21T11:30:07+02:00</updated><id>https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt</id><content type="html" xml:base="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html">&lt;p&gt;In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.&lt;/p&gt;
+
+&lt;p&gt;However, to understand JWT, we must step back and talk about hashing functions.&lt;/p&gt;
+
+&lt;h2 id=&quot;hashing-a-one-way-transformation-function&quot;&gt;Hashing: a one-way transformation function&lt;/h2&gt;
+
+&lt;p&gt;JWT is universal, it will be easy to grasp the concepts in any language you like, but I’ll use NodeJS for this post.&lt;/p&gt;
+
+&lt;p&gt;Create a new Node project anywhere you like. We will use this project to do our experiments. In order to use hashing functions in Node, create and enter a new directory, and install &lt;code&gt;crypto-js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npm i --save crypto-js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, let’s create a new file, &lt;code&gt;hashing.js&lt;/code&gt; and fill it with this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const {SHA256} = require('crypto-js')
+
+let message = 'I am user number 3'
+
+let hash = SHA256(message).toString();
+
+console.log(`Message: ${message}`)
+console.log(`Hash: ${hash}`)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s run this file. What will we get?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node hashing.js 
+Message: I am user number 3
+Hash: 9da4d19e100809d42da806c2b7df5cf37e72623d42f1669eb112e23f5c9d45a3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What’s happening here? We are importing the function &lt;code&gt;SHA256&lt;/code&gt;, that is one of the strongest hash functions we know for the moment, with mathematical proofs, etc. 256 is the number of bits of the hashed message.&lt;/p&gt;
+
+&lt;p&gt;Basically, the &lt;code&gt;message&lt;/code&gt; text will be converted in a new string of just 256 bits, and this string has some unique properties:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the same message will always receive the same hash.&lt;/li&gt;
+  &lt;li&gt;If you change just one character from the &lt;code&gt;message&lt;/code&gt; string, you get a completely different hash.&lt;/li&gt;
+  &lt;li&gt;The probability that two different strings get the same hash is definitely low.&lt;/li&gt;
+  &lt;li&gt;It’s impossible to get the original message back.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Curious? I won’t lie to you, security is one of the hottest themes in computer science; this stuff is hard, btw we are just using it and the three points before should be sufficient for you to understand.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-to-use-a-hash&quot;&gt;When to use a hash&lt;/h2&gt;
+
+&lt;p&gt;You might use Hashes in a lot of different situations; we will use them in &lt;strong&gt;authentication&lt;/strong&gt;, but another famous use case is to store passwords in your database. &lt;a href=&quot;/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html&quot;&gt;Bitcoin also uses hashes to mine new bitcoins (italian)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Passwords should never be stored as plaintext, because users have this bad habit to use the same password everywhere (I guess you don’t, do you?).&lt;/p&gt;
+
+&lt;p&gt;So, when a user logs in your system, you should hash their password, and see if it matches the one stored on the db.&lt;/p&gt;
+
+&lt;p&gt;To increase security, always use HTTPS too.&lt;/p&gt;
+
+&lt;h3 id=&quot;back-to-our-hashes&quot;&gt;Back to our hashes&lt;/h3&gt;
+
+&lt;p&gt;So the user has logged in. Now we want to provide them with a token that certifies that they are who they say they are. What can we do?&lt;/p&gt;
+
+&lt;p&gt;It’s not so safe to send the password over and over; an attacker could steal it by listening to the network calls (man in the middle attacks) or by just hacking the client, or the server.&lt;/p&gt;
+
+&lt;p&gt;The safest way is to provide them with a &lt;strong&gt;token&lt;/strong&gt;. A token is a piece of data (a json, obviously) with some authentication data we need. We give this token to the client, and he will send it back to us with every request.&lt;/p&gt;
+
+&lt;p&gt;So let’s create a json object with the user’ ID:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let data = {
+    id: 4
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We obviously don’t want that the user can change their ID with some other ID, for example the admin ID. So we can create a new object called &lt;code&gt;token&lt;/code&gt; that contains the data and the hash of the data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let data = {
+    id: 4
+};
+
+let token = {
+    data, 
+    hash: SHA256(JSON.stringify(data)).toString()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We now have a token, but … if the user tamper the data, he can just recalculate the hash and he won.&lt;/p&gt;
+
+&lt;h3 id=&quot;salting-the-hash&quot;&gt;Salting the HASH&lt;/h3&gt;
+
+&lt;p&gt;How can we prevent that the user won’t tamper the data? The most used technique it’s also the simplest: we just concatenate a string, called &lt;strong&gt;salt&lt;/strong&gt;, that in our case is a secret password.&lt;/p&gt;
+
+&lt;p&gt;So the previous example would be something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;let token = {
+    data, 
+    hash: SHA256(JSON.stringify(data) + 'somesecret').toString()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wait, but what if the user knows the salt? &lt;strong&gt;They shouldn’t!&lt;/strong&gt; Once they’re logged in, you send them this &lt;em&gt;token&lt;/em&gt; signed with the &lt;em&gt;server’s salt&lt;/em&gt; and you can be sure that the client cannot recreate the hash back again.&lt;/p&gt;
+
+&lt;h2 id=&quot;dont-reinvent-the-wheel-json-web-token&quot;&gt;Don’t reinvent the wheel: Json Web Token&lt;/h2&gt;
+
+&lt;p&gt;We could write all the edge cases, but that would be a lot of work. Instead, there’s a library that does just  this, &lt;strong&gt;JSON Web Token&lt;/strong&gt; (JWT): it has becomed a de-facto standard for authentication tokens, even if not all the web loves it.&lt;/p&gt;
+
+&lt;p&gt;Let’s install it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npm i --save jsonwebtoken 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this package we get two functions: one to &lt;strong&gt;create&lt;/strong&gt; the token (&lt;code&gt;sign&lt;/code&gt;), and another to &lt;strong&gt;verify&lt;/strong&gt; (&lt;code&gt;verify&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;So let’s create a new file (we are not going to need the previous stuff anymore) and start over.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const jwt = require('jonwebtoken')
+
+let data = {
+    id: 10
+};
+
+let secret = '123abc'
+let token = jwt.sign(data, secret)
+console.log(token)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this becomes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node jwtExample.js 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
+DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;this is different from the hash we presented before: it is divided in three blocks, and it’s clearly bigger. What’s going on?&lt;/p&gt;
+
+&lt;p&gt;Let’s copy this string and go over &lt;a href=&quot;http://jwt.io&quot;&gt;jwt.io&lt;/a&gt;, where you’ll see a cool tool that will explain the JWT: paste it in the left side.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We see the &lt;strong&gt;header&lt;/strong&gt;, that contains the algorithm used the type of token issued;&lt;/li&gt;
+  &lt;li&gt;we see the &lt;strong&gt;payload&lt;/strong&gt;, that contains our original data along with a new property called &lt;code&gt;iat&lt;/code&gt;(&lt;em&gt;Issued at&lt;/em&gt;, the time this token was created);&lt;/li&gt;
+  &lt;li&gt;and finally we see the &lt;strong&gt;verify signature&lt;/strong&gt; that will allow us to inser the secret and verify that the token is right. Try to insert our &lt;code&gt;secret&lt;/code&gt; (&lt;code&gt;123abc&lt;/code&gt;) and the verification box will change to &lt;em&gt;Signature Verified&lt;/em&gt; ;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/jwt.PNG&quot; alt=&quot;screenshot of JWT website&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;verify-that-the-token-is-valid&quot;&gt;Verify that the token is valid&lt;/h3&gt;
+
+&lt;p&gt;Very very easy:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//add this to the preceeding script 
+
+let decoded = jwt.verify(token, secret)
+console.log('decoded', decoded)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node jwtExample.js 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
+DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
+decoded { id: 10, iat: 1505982519 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And if we try to change anything in the token, or in the secret, we get a javascript Error back:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//change the secret to fail the validation  
+
+let decoded = jwt.verify(token, secret+'blah')
+console.log('decoded', decoded)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ node jwtExample.js 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
+DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
+
+/mnt/c/Users/miche/Documents/code/node-udemy/node-todo-api/node_modules/js
+onwebtoken/verify.js:32
+      if (err) throw err;
+               ^
+Error
+    at Object.module.exports [as verify] (/mnt/c/Users/miche/Documents/cod
+e/node-udemy/node-todo-api/node_modules/jsonwebtoken/verify.js:107:17)
+    at Object.&amp;lt;anonymous&amp;gt; (/mnt/c/Users/miche/Documents/code/node-udemy/no
+de-todo-api/playground/hashingJWT.js:11:19)
+    at Module._compile (module.js:573:30)
+    at Object.Module._extensions..js (module.js:584:10)
+    at Module.load (module.js:507:32)
+    at tryModuleLoad (module.js:470:12)
+    at Function.Module._load (module.js:462:3)
+    at Function.Module.runMain (module.js:609:10)
+    at startup (bootstrap_node.js:158:16)
+    at bootstrap_node.js:598:3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Not very clear, but once you know, you’ll catch it.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;In the past years I have dealt with authentication checking &lt;em&gt;on database&lt;/em&gt; if the user was logged.&lt;/p&gt;
+
+&lt;p&gt;Think about it: for. every. request. How much delay we introduced? Could we scale? Obviously not!&lt;/p&gt;
+
+&lt;p&gt;With JWT the database is not needed anymore (at every request), because we can stay safe that the user has not tampered data and because we know when the token was issued, so we can decide to block the authentication after, you say, 24 hours.&lt;/p&gt;
+
+&lt;p&gt;Now you can handle as many users you can, thanks to hash functions and JWT!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="authentication" /><category term="jwt" /><summary type="html">In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.</summary></entry><entry><title type="html">Come capire il bitcoin: le funzioni crittografiche</title><link href="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" rel="alternate" type="text/html" title="Come capire il bitcoin: le funzioni crittografiche" /><published>2017-09-19T02:00:00+02:00</published><updated>2017-09-20T09:55:31+02:00</updated><id>https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche</id><content type="html" xml:base="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">&lt;p&gt;Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…&lt;/p&gt;
 
 &lt;p&gt;Finchè si trattava di scimmiottare gli agenti di borsa era anche divertente, ma da quando abbiamo tenuto il &lt;a href=&quot;https://www.meetup.com/it-IT/preview/devday-salerno/events/242583299&quot;&gt;primo meetup a Salerno sul Bitcoin&lt;/a&gt; ho capito che bisognava assolutamente provare a capirne di più.&lt;/p&gt;
 
@@ -10,31 +211,29 @@
 
 &lt;p&gt;Hash in italiano significa &lt;em&gt;carne tritata&lt;/em&gt;, ma onestamente non ho mai visto un inglese fare le polpette quindi dobbiamo fidarci di google. Tuttavia carne tritata gli si addice: in effetti quello che fa una funzione hash è proprio di prendere un messaggio (pensate a una stringa, ma in realtà può essere qualunque oggetto), e calcolarne un valore di lunghezza fissa. Vediamone un esempio, mi appoggio a NodeJS per comodità e perchè è uno dei più immediati, ma volendo potete giocare con qualsiasi linguaggio perchè le funzioni di crittografia sono native in ogni ambiente.&lt;/p&gt;
 
-&lt;p&gt;Creiamo una directory di esempio e installiamo il modulo &lt;code class=&quot;highlighter-rouge&quot;&gt;crypto-js&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Creiamo una directory di esempio e installiamo il modulo &lt;code&gt;crypto-js&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkdir esempi-crypto
+&lt;pre&gt;&lt;code&gt;$ mkdir esempi-crypto
 $ cd esempi-crypto
 $ npm i -S crypto-js 
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;Forse l’environment vi darà degli errori che manca il file &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;, ma noi freghiamocene.&lt;/p&gt;
+&lt;p&gt;Forse l’environment vi darà degli errori che manca il file &lt;code&gt;package.json&lt;/code&gt;, ma noi freghiamocene.&lt;/p&gt;
 
-&lt;p&gt;Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando &lt;code&gt;node&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ node 
+&lt;pre&gt;&lt;code&gt;$ node 
 &amp;gt; let CryptoJS = require('crypto-js')
 undefined
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;Abbiamo appena importato la libreria che contiene le funzioni crittografiche più diffuse. Non preoccupatevi per quell’undefined.&lt;/p&gt;
 
 &lt;p&gt;E’ il momento di provare a fare l’hash di un messaggio. L’algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; let message = &quot;This is my password&quot; 
+&lt;pre&gt;&lt;code&gt;&amp;gt; let message = &quot;This is my password&quot; 
 &amp;gt; let sha = CryptoJS.SHA256(message)
 
 &amp;gt; console.log(sha)
@@ -54,11 +253,10 @@ undefined
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;Cosa è accaduto nel primo caso? &lt;code class=&quot;highlighter-rouge&quot;&gt;sha&lt;/code&gt; è un oggetto contenente dei byte (tutta sta roba, a livello crittografico, opera su byte e non vorrei sconvolgervi ma SI, si può fare anche in nodejs e javascript in generale)&lt;/p&gt;
+&lt;p&gt;Cosa è accaduto nel primo caso? &lt;code&gt;sha&lt;/code&gt; è un oggetto contenente dei byte (tutta sta roba, a livello crittografico, opera su byte e non vorrei sconvolgervi ma SI, si può fare anche in nodejs e javascript in generale)&lt;/p&gt;
 
-&lt;p&gt;Però dei byte non ce ne facciamo niente, siamo pur sempre esseri umani e se vogliamo vedere &lt;code class=&quot;highlighter-rouge&quot;&gt;sha&lt;/code&gt; come stringa basta chiamare il metodo &lt;code class=&quot;highlighter-rouge&quot;&gt;toString()&lt;/code&gt; che ci restituisce lo stringone che vedete in fondo.&lt;/p&gt;
+&lt;p&gt;Però dei byte non ce ne facciamo niente, siamo pur sempre esseri umani e se vogliamo vedere &lt;code&gt;sha&lt;/code&gt; come stringa basta chiamare il metodo &lt;code&gt;toString()&lt;/code&gt; che ci restituisce lo stringone che vedete in fondo.&lt;/p&gt;
 
 &lt;h3 id=&quot;a-me-sembra-solo-una-stringa-randomica&quot;&gt;“A me sembra solo una stringa randomica…”&lt;/h3&gt;
 
@@ -72,7 +270,7 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
     &lt;p&gt;la funzione deve essere computata efficientemente: nell’esempio precedente accade tutto in pochissimi microsecondi.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;la funzione è &lt;a href=&quot;https://en.wikipedia.org/wiki/Collision_resistance&quot;&gt;collision-resistant&lt;/a&gt;: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;e &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; che restituiscano lo stesso hash (matematicamente: &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = H(y)&lt;/code&gt;).&lt;/p&gt;
+    &lt;p&gt;la funzione è &lt;a href=&quot;https://en.wikipedia.org/wiki/Collision_resistance&quot;&gt;collision-resistant&lt;/a&gt;: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse &lt;code&gt;x&lt;/code&gt;e &lt;code&gt;y&lt;/code&gt; che restituiscano lo stesso hash (matematicamente: &lt;code&gt;H(x) = H(y)&lt;/code&gt;).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;la funzione hash &lt;em&gt;nasconde&lt;/em&gt; il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata &lt;em&gt;salt&lt;/em&gt;), che noi potremmo definire come una “chiave” , per intenderci.&lt;/p&gt;
@@ -84,11 +282,11 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 &lt;p&gt;Bel casino! Scommetto che la terza proprietà vi ha complicato la comprensione.&lt;/p&gt;
 
-&lt;p&gt;Ma internet è pieno di risorse e ho trovato questa immagine che spiega molte cose. Il bitcoin si affida proprio a questo genere di puzzle per il mining. Nel primo esempio, data una chiave &lt;code class=&quot;highlighter-rouge&quot;&gt;Cheescake&lt;/code&gt;, trovare un hash che inizi con la lettera &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ma internet è pieno di risorse e ho trovato questa immagine che spiega molte cose. Il bitcoin si affida proprio a questo genere di puzzle per il mining. Nel primo esempio, data una chiave &lt;code&gt;Cheescake&lt;/code&gt;, trovare un hash che inizi con la lettera &lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Nel secondo esempio, si parte con la stringa &lt;code class=&quot;highlighter-rouge&quot;&gt;Ice ice baby - too cold!&lt;/code&gt;​ e bisogna trovare un hash che inizi con &lt;code class=&quot;highlighter-rouge&quot;&gt;Hi&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Nel secondo esempio, si parte con la stringa &lt;code&gt;Ice ice baby - too cold!&lt;/code&gt;​ e bisogna trovare un hash che inizi con &lt;code&gt;Hi&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Nel terzo esempio, si parte con la stringa &lt;code class=&quot;highlighter-rouge&quot;&gt;Who let them out?&lt;/code&gt;​ e si cerca un hash che inizi con &lt;code class=&quot;highlighter-rouge&quot;&gt;Dog&lt;/code&gt;​.&lt;/p&gt;
+&lt;p&gt;Nel terzo esempio, si parte con la stringa &lt;code&gt;Who let them out?&lt;/code&gt;​ e si cerca un hash che inizi con &lt;code&gt;Dog&lt;/code&gt;​.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/solvingahashpuzzle.png&quot; alt=&quot;&quot; class=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -98,11 +296,10 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 &lt;p&gt;Questo gioco non è altro che il &lt;strong&gt;mining&lt;/strong&gt;: a partire dall’hash del blocco precedente, trovare un numero che restituisca un hash che inizia con … qualcosa, poi vedremo cosa. Questo problema non è facile e richiede milioni di milioni di calcoli, motivo per cui si ricevono dei bitcoin come premio.&lt;/p&gt;
 
-&lt;p&gt;Non mi resta  che salutarvi con l’hash di &lt;code class=&quot;highlighter-rouge&quot;&gt;Buona giornata&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Non mi resta  che salutarvi con l’hash di &lt;code&gt;Buona giornata&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
+&lt;pre&gt;&lt;code&gt;9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;Alla prossima!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="bitcoin" /><category term="crittografia" /><category term="hash" /><summary type="html">Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…</summary></entry><entry><title type="html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</title><link href="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html" rel="alternate" type="text/html" title="Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing" /><published>2017-08-18T00:00:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing</id><content type="html" xml:base="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">&lt;p&gt;Growth Hacking. &lt;strong&gt;Growth Hacking ovunque.&lt;/strong&gt; Pure nei bagni dell’autogrill.&lt;/p&gt;
 
@@ -445,23 +642,23 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;p&gt;Ho dei consigli a riguardo, non posso garantire nulla, ma certe cose funzionano meglio di altre. Ne parlerò in futuro. Intanto, se avete critiche, suggerimenti o impressioni, i commenti sono qui sotto.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="startup" /><category term="lavoro" /><summary type="html">Ricevo almeno due richieste al mese per collaborare con startup. Più o meno il copione è sempre lo stesso:</summary></entry><entry><title type="html">Cinque tool per migliorare la vostra developer experience</title><link href="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html" rel="alternate" type="text/html" title="Cinque tool per migliorare la vostra developer experience" /><published>2017-05-30T14:07:50+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience</id><content type="html" xml:base="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html">&lt;p&gt;Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra &lt;em&gt;developer experience&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;mac-command-line&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac&lt;/code&gt; command line&lt;/h3&gt;
+&lt;h3 id=&quot;mac-command-line&quot;&gt;&lt;code&gt;mac&lt;/code&gt; command line&lt;/h3&gt;
 
-&lt;p&gt;Si &lt;a href=&quot;https://github.com/guarinogabriel/Mac-CLI&quot;&gt;installa da linea di comando&lt;/a&gt; e crea un eseguibile, &lt;code class=&quot;highlighter-rouge&quot;&gt;mac&lt;/code&gt;, che permette di svolgere molte operazioni comuni con pochi click.&lt;/p&gt;
+&lt;p&gt;Si &lt;a href=&quot;https://github.com/guarinogabriel/Mac-CLI&quot;&gt;installa da linea di comando&lt;/a&gt; e crea un eseguibile, &lt;code&gt;mac&lt;/code&gt;, che permette di svolgere molte operazioni comuni con pochi click.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/demo-mac-cli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Un esempio?&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac ip:public&lt;/code&gt; vi restituisce il vostro ip pubblico&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac speedtest&lt;/code&gt; esegue uno speed test da linea di comando&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac memory&lt;/code&gt; vi dice quale app sta consumando la vostra preziosa RAM&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;mac ip:public&lt;/code&gt; vi restituisce il vostro ip pubblico&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;mac speedtest&lt;/code&gt; esegue uno speed test da linea di comando&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;mac memory&lt;/code&gt; vi dice quale app sta consumando la vostra preziosa RAM&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;e tanti altri. Sono circa una cinquantina!&lt;/p&gt;
 
-&lt;h3 id=&quot;oh-my-zsh-per-un-terminale-più-combattivo&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Oh-my-zsh&lt;/code&gt; per un terminale più combattivo&lt;/h3&gt;
+&lt;h3 id=&quot;oh-my-zsh-per-un-terminale-più-combattivo&quot;&gt;&lt;code&gt;Oh-my-zsh&lt;/code&gt; per un terminale più combattivo&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;Oh-my-zsh&lt;/a&gt; è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di zsh. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:&lt;/p&gt;
 
@@ -469,7 +666,7 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;p&gt;Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!&lt;/p&gt;
 
-&lt;h3 id=&quot;ngrok-per-testare-chiamate-api-dallesterno&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ngrok&lt;/code&gt;, per testare chiamate API dall’esterno&lt;/h3&gt;
+&lt;h3 id=&quot;ngrok-per-testare-chiamate-api-dallesterno&quot;&gt;&lt;code&gt;ngrok&lt;/code&gt;, per testare chiamate API dall’esterno&lt;/h3&gt;
 
 &lt;p&gt;Dovete testare le chiamate di un sistema esterno verso il vostro software? Ad esempio, io ho avuto questa esigenza con le API di Paypal e Gestpay: a un certo punto questi sistemi dovevano notificarmi che i pagamenti erano andati a buon fine e mi avrebbero contattato agli indirizzi configurati.&lt;/p&gt;
 
@@ -477,7 +674,7 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/ngrok.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Per farla facile, voi lanciate &lt;code class=&quot;highlighter-rouge&quot;&gt;ngrok http 8000&lt;/code&gt; e ngrok creerà un indirizzo tipo &lt;code class=&quot;highlighter-rouge&quot;&gt;http://abc33344422.ngrok.io&lt;/code&gt;. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8000&lt;/code&gt;. Tutto ciò che passa per ngrok viene loggato e mostrato!&lt;/p&gt;
+&lt;p&gt;Per farla facile, voi lanciate &lt;code&gt;ngrok http 8000&lt;/code&gt; e ngrok creerà un indirizzo tipo &lt;code&gt;http://abc33344422.ngrok.io&lt;/code&gt;. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a&lt;code&gt;localhost:8000&lt;/code&gt;. Tutto ciò che passa per ngrok viene loggato e mostrato!&lt;/p&gt;
 
 &lt;h3 id=&quot;git-flow-una-metodologia-per-semplificare-e-standardizzare-git-nel-team&quot;&gt;Git Flow, una metodologia per semplificare e standardizzare git nel team&lt;/h3&gt;
 
@@ -488,16 +685,16 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 &lt;p&gt;Con git flow organizziamo il lavoro in due &lt;em&gt;meta-filoni&lt;/em&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;branch &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, che corrisponde alle versioni rilasciate&lt;/li&gt;
-  &lt;li&gt;branch &lt;code class=&quot;highlighter-rouge&quot;&gt;develop&lt;/code&gt;, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.&lt;/li&gt;
+  &lt;li&gt;branch &lt;code&gt;master&lt;/code&gt;, che corrisponde alle versioni rilasciate&lt;/li&gt;
+  &lt;li&gt;branch &lt;code&gt;develop&lt;/code&gt;, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Oltre a questi due branch “generali”, ogni azione degli sviluppatori è realizzata creando nuovi branch:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Gli sviluppi delle singole feature sui branch &lt;code class=&quot;highlighter-rouge&quot;&gt;feature/*tua_feature*&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;I rilasci (da develop a master) su branch chiamati &lt;code class=&quot;highlighter-rouge&quot;&gt;release/*nome_release*&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch &lt;code class=&quot;highlighter-rouge&quot;&gt;hotfix/*nome_fix*&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Gli sviluppi delle singole feature sui branch &lt;code&gt;feature/*tua_feature*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;I rilasci (da develop a master) su branch chiamati &lt;code&gt;release/*nome_release*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch &lt;code&gt;hotfix/*nome_fix*&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Non ci avete capito niente? &lt;a href=&quot;https://danielkummer.github.io/git-flow-cheatsheet/&quot;&gt;Qui un grafico che prova a spiegare comandi e funzioni&lt;/a&gt;.&lt;/p&gt;
@@ -512,46 +709,4 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;p&gt;Questa è  una vera e propria applicazione &lt;em&gt;standalone&lt;/em&gt; che permette di effettuare ogni tipo di chiamata desideriate, GET - PUT - POST - HEAD etc. C’è la possibilità di salvare le chiamate, passare header aggiuntivi, visualizzare i dati in molti modi (ad esempio JSON), etc etc.&lt;/p&gt;
 
-&lt;p&gt;Come dite? non è un tool da linea di comando? Avete ragione, ma questo è il mio blog e qui comando io 😂&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="git flow" /><category term="mac-cli" /><category term="oh-my-zsh" /><category term="postman" /><category term="ngrok" /><summary type="html">Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra developer experience.</summary></entry><entry><title type="html">I colloqui di lavoro nelle Big</title><link href="https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html" rel="alternate" type="text/html" title="I colloqui di lavoro nelle Big" /><published>2017-05-22T17:08:19+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big</id><content type="html" xml:base="https://michelenasti.com/2017/05/22/i-colloqui-di-lavoro-nelle-big.html">&lt;p&gt;Recentemente sono stato speaker all’evento &lt;a href=&quot;https://www.meetup.com/it-IT/GDGCampania/events/239723850/&quot;&gt;pre-Google I/O&lt;/a&gt; organizzato dal &lt;a href=&quot;http://gdgcampania.com&quot;&gt;Google Developers Group Campania&lt;/a&gt;, a Napoli.&lt;/p&gt;
-
-&lt;p&gt;Il mio talk verteva sui colloqui di lavoro delle aziende top, e qui ci sta bene un bel disclaimer: &lt;em&gt;non ho mai fatto colloqui per aziende top  - tranne un piccolo frangente con Amazon&lt;/em&gt;. Ma ho letto molto sull’argomento, e ho chiesto in giro ad alcuni amici che hanno fatto le selezioni per queste aziende, quindi avevo un po’ di materiale che era bello condividere.&lt;/p&gt;
-
-&lt;iframe src=&quot;https://docs.google.com/presentation/d/1eQce7aEOl8qaGPbmhQVmUQb99Sf2bioBJhmuEER4_B8/embed?start=false&amp;amp;loop=false&amp;amp;delayms=60000&quot; frameborder=&quot;0&quot; width=&quot;480&quot; height=&quot;389&quot; allowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Una parte del talk riguardava alcuni “rompicapi” che in passato, più che oggi, venivano sottoposti agli aspiranti candidati. Fermo restando che agli intervistatori non interessa sapere la risposta (ammesso che esista!), semmai vogliono vedere in che modo approcciate i problemi, che ragionamenti fate, insomma quanta creatività avete.&lt;/p&gt;
-
-&lt;p&gt;Torno a ribadire: queste domande sono “rare” e tutte le persone in carne ed ossa con cui ho parlato non le hanno ricevute; tuttavia, dato che esiste un libro sull’argomento (&lt;a href=&quot;http://amzn.to/2rKTgbo&quot;&gt;“sei abbastanza sveglio per lavorare in google?”, di William Poundstone&lt;/a&gt;), e considerato che sono un appassionato di indovinelli, non ho potuto ignorare.&lt;/p&gt;
-
-&lt;p&gt;A fine talk molti sono venuti per chiedermi le “soluzioni” (che ripeto: non sempre esistono) o gli approcci; altri sono venuti a pormi degli indovinelli, ai quali per mia fortuna sono riuscito a trovare la risposta in tempo (ed evitare la figura di merda 😅 ).&lt;/p&gt;
-
-&lt;p&gt;Eccovene alcuni!&lt;/p&gt;
-
-&lt;h3 id=&quot;dado-senza-dado&quot;&gt;Dado senza dado&lt;/h3&gt;
-
-&lt;p&gt;Sai simulare un dado con una monetina? Puoi lanciare la moneta più volte.&lt;/p&gt;
-
-&lt;h3 id=&quot;i-filosofi-bugiardi&quot;&gt;I Filosofi bugiardi&lt;/h3&gt;
-
-&lt;p&gt;Attorno a un tavolo sono seduti tanti filosofi. Alcuni dicono sempre la verità; altri solo bugie.&lt;/p&gt;
-
-&lt;p&gt;A turno, ogni filosofo prende la parola e dice: “Il filosofo alla mia sinistra è un bugiardo!”&lt;/p&gt;
-
-&lt;p&gt;Quando tutti i filosofi hanno espresso questo importantissimo concetto, prende la parola un altro filosofo ed esclama: “siamo 21 seduti a questo tavolo!”&lt;/p&gt;
-
-&lt;p&gt;Il suo vicino ribatte: “Non è vero! Siamo 22!”&lt;/p&gt;
-
-&lt;p&gt;Che diamine stanno dicendo?! Quanti sono? Chi ha ragione? Come sono seduti?&lt;/p&gt;
-
-&lt;h2 id=&quot;le-risposte-di-mia-moglie&quot;&gt;Le risposte di mia moglie&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Dado senza dado:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;Con la moneta entro in un negozio e compro il dado.&amp;nbsp;&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Problema dei filosofi bugiardi:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;Cambio tavolo: vado a sedermi da un'altra parte.&amp;nbsp;&lt;/blockquote&gt;
-
-&lt;p&gt;Posso dirvi che in aziende come Google queste risposte non sarebbero state solo degli &lt;em&gt;ice-breaker&lt;/em&gt;, ma verrebbero probabilmente considerate nel giudizio globale del&lt;span style=&quot;font-size: 1rem;&quot;&gt; candidato. &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-size: 1rem;&quot;&gt;Tuttavia non basta per superare il colloquio 😅  Scrivi la tua risposta nei commenti ;) &lt;/span&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="colloqui di lavoro" /><summary type="html">Recentemente sono stato speaker all’evento pre-Google I/O organizzato dal Google Developers Group Campania, a Napoli.</summary></entry></feed>
+&lt;p&gt;Come dite? non è un tool da linea di comando? Avete ragione, ma questo è il mio blog e qui comando io 😂&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="git flow" /><category term="mac-cli" /><category term="oh-my-zsh" /><category term="postman" /><category term="ngrok" /><summary type="html">Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra developer experience.</summary></entry></feed>

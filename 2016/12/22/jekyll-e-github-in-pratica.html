@@ -80,6 +80,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -114,13 +115,13 @@
 
 <h2 id="inizializzare-github">Inizializzare Github</h2>
 
-<p>Per prima cosa, <a href="https://github.com/join?source=login">aprite un account su Github</a>. Una volta registrati avrete un indirizzo col vostro nome utente. Ad esempio, il mio account è <code class="highlighter-rouge">http://github.com/musikele</code>.</p>
+<p>Per prima cosa, <a href="https://github.com/join?source=login">aprite un account su Github</a>. Una volta registrati avrete un indirizzo col vostro nome utente. Ad esempio, il mio account è <code>http://github.com/musikele</code>.</p>
 
 <p>La funzione di github che vi permette di pubblicare siti statici si chiama <strong>Github Pages</strong>. Potete scegliere se attivare le github pages per:</p>
 
 <ul>
-  <li><strong>un progetto</strong> - ad esempio, se avete un repository git chiamato <code class="highlighter-rouge">blog</code> all’indirizzo <code class="highlighter-rouge">http://github.com/musikele/blog</code>), potreste servire i file contenuti all’indirizzo <code class="highlighter-rouge">http://musikele.github.io/blog</code>.</li>
-  <li><strong>il vostro nome utente (o organizzazione)</strong> - se create un repository chiamato <code class="highlighter-rouge">musikele.github.io</code> (quindi <code class="highlighter-rouge">http://github.com/musikele/musikele.github.io</code>), i file html saranno serviti direttamente da <code class="highlighter-rouge">http://musikele.github.com</code>.</li>
+  <li><strong>un progetto</strong> - ad esempio, se avete un repository git chiamato <code>blog</code> all’indirizzo <code>http://github.com/musikele/blog</code>), potreste servire i file contenuti all’indirizzo <code>http://musikele.github.io/blog</code>.</li>
+  <li><strong>il vostro nome utente (o organizzazione)</strong> - se create un repository chiamato <code>musikele.github.io</code> (quindi <code>http://github.com/musikele/musikele.github.io</code>), i file html saranno serviti direttamente da <code>http://musikele.github.com</code>.</li>
 </ul>
 
 <p>Quale sia la vostra scelta dipende da voi; per un blog personale è meglio un sito che non contiene sottopath, mentre per documentare un progetto è meglio il primo sistema.</p>
@@ -131,23 +132,21 @@
   <li>Create e scaricate il repository col vostro username in locale</li>
 </ol>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">git</span><span class="kv"> clone https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
-</span><span class="w">$ </span><span class="nc">cd</span><span class="kv"> &lt;username&gt;.github.io 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ git clone https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
+$ cd &lt;username&gt;.github.io 
+</code></pre>
 
 <ol>
   <li>in questa directory potrete creare un simpatico file html e committarlo: sarà automaticamente servito :)</li>
 </ol>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">echo</span><span class="kv"> &lt;h1&gt;Hello World&lt;/h1&gt; &gt;&gt; index.html
-</span><span class="w">$ </span><span class="nc">git</span><span class="kv"> commit -am "first commit"
-</span><span class="w">$ </span><span class="nc">git</span><span class="kv"> push 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ echo &lt;h1&gt;Hello World&lt;/h1&gt; &gt;&gt; index.html
+$ git commit -am "first commit"
+$ git push 
+</code></pre>
 
 <ol>
-  <li>puntate il browser a <code class="highlighter-rouge">http://&lt;username&gt;.github.io</code> e gustatevi il risultato.</li>
+  <li>puntate il browser a <code>http://&lt;username&gt;.github.io</code> e gustatevi il risultato.</li>
 </ol>
 
 <blockquote>
@@ -158,49 +157,45 @@
 
 <p>Per prima cosa <a href="https://www.ruby-lang.org/it/">installate Ruby</a>, un linguggio di programmazione utilizzatissimo in USA e pochissimo in EU: le istruzioni variano da sistema a sistema, e forse sarà questo il passo più complesso del tutorial.</p>
 
-<p>Una volta installato ruby, dovrete installare jekyll. Questo passo sarà facile grazie a un comando (<code class="highlighter-rouge">gem</code>) incluso in ruby che permette di installare script:</p>
+<p>Una volta installato ruby, dovrete installare jekyll. Questo passo sarà facile grazie a un comando (<code>gem</code>) incluso in ruby che permette di installare script:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">gem</span><span class="kv"> install jekyll bundler
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ gem install jekyll bundler
+</code></pre>
 
 <blockquote>
-  <p><code class="highlighter-rouge">jekyll</code> sappiamo cos’è, <code class="highlighter-rouge">budler</code> è un tool consigliato per evitare che futuri aggiornamenti rompano tutto.</p>
+  <p><code>jekyll</code> sappiamo cos’è, <code>budler</code> è un tool consigliato per evitare che futuri aggiornamenti rompano tutto.</p>
 </blockquote>
 
 <p>Ora jekyll è installato sul vostro sistema come applicativo utilizzabile da console.</p>
 
-<p>Assumendo di trovarci nella cartella del bog (<code class="highlighter-rouge">&lt;username&gt;.github.io/</code>), cancelliamo tutti i file precedentemente creati e creiamo la struttura di jekyll:</p>
+<p>Assumendo di trovarci nella cartella del bog (<code>&lt;username&gt;.github.io/</code>), cancelliamo tutti i file precedentemente creati e creiamo la struttura di jekyll:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">rm</span><span class="kv"> ./* # cancelliamo ogni file precedentemente creato... 
-</span><span class="w">$ </span><span class="nc">jekyll</span><span class="kv"> new . # crea la struttura base di jekyll nella directory corrente 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ rm ./* # cancelliamo ogni file precedentemente creato... 
+$ jekyll new . # crea la struttura base di jekyll nella directory corrente 
+</code></pre>
 
 <p>Verifichiamo che funziona tutto, lanciamo jekyll:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">bundle</span><span class="kv"> exec jekyll serve 
-</span>  # =&gt; Now browse to http://localhost:4000 
+<pre><code class="language-terminal">$ bundle exec jekyll serve 
+  # =&gt; Now browse to http://localhost:4000 
   # Ctrl+C per interrompere 
 </code></pre>
-</div>
 
 <p>Questo è un buon momento per committare…</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">git</span><span class="kv"> commit -am "jekyll new ."
-</span><span class="w">$ </span><span class="nc">git</span><span class="kv"> push
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ git commit -am "jekyll new ."
+$ git push
+</code></pre>
 
 <h2 id="comè-fatto-jekyll">Com’è fatto jekyll</h2>
 
-<p>La directory structure di Jekyll la trovate <a href="https://jekyllrb.com/docs/structure/">qui</a>. La cosa importante da sapere è che <code class="highlighter-rouge">_site/</code> conterrà il vostro sito generato in html, quello che github compilerà e servirà via http.</p>
+<p>La directory structure di Jekyll la trovate <a href="https://jekyllrb.com/docs/structure/">qui</a>. La cosa importante da sapere è che <code>_site/</code> conterrà il vostro sito generato in html, quello che github compilerà e servirà via http.</p>
 
-<p>Nella directory <code class="highlighter-rouge">_posts/</code> scriveremo i nostri post.</p>
+<p>Nella directory <code>_posts/</code> scriveremo i nostri post.</p>
 
 <p>Non voglio ripetere altro, visto che nella <a href="https://jekyllrb.com/docs/home/">doc ufficiale</a> di Jekyll c’è praticamente tutto quello che dovreste sapere. Solo una cosa mi preme dirvi…</p>
 
-<p>Se avete committato, il vostro blog è già visibile a <code class="highlighter-rouge">http://&lt;username&gt;.github.io</code> - provare per credere !</p>
+<p>Se avete committato, il vostro blog è già visibile a <code>http://&lt;username&gt;.github.io</code> - provare per credere !</p>
  
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/12/22/jekyll-e-github-in-pratica.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/12/22/jekyll-e-github-in-pratica.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
@@ -329,6 +324,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

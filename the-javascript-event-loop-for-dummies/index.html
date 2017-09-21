@@ -78,6 +78,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -106,27 +107,26 @@
 
 <p>Let’s consider this small javascript program. What will be printed?</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Starting app'</span><span class="p">);</span>
+<pre><code class="language-javascript">console.log('Starting app');
 
-<span class="c1">//first block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+//first block 
+setTimeout(() =&gt; {
+  console.log('First setTimeout');
+}, 2000);
 
-<span class="c1">//second block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Second setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+//second block 
+setTimeout(() =&gt; {
+  console.log('Second setTimeout');
+}, 0);
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Finishing app'</span><span class="p">);</span>
+console.log('Finishing app');
 </code></pre>
-</div>
 
-<p>In case you don’t know: <code class="highlighter-rouge">setTimeout</code> is a javascript global function used to fire an action (the first argument) when the delay (second argument) is elapsed.</p>
+<p>In case you don’t know: <code>setTimeout</code> is a javascript global function used to fire an action (the first argument) when the delay (second argument) is elapsed.</p>
 
-<p>So the first <code class="highlighter-rouge">setTimeout()</code> block will wait two seconds and then will write <code class="highlighter-rouge">First setTimeout</code> on console.</p>
+<p>So the first <code>setTimeout()</code> block will wait two seconds and then will write <code>First setTimeout</code> on console.</p>
 
-<p>The second block will wait 0 milliseconds (… it doesn’t wait at all!) and then write <code class="highlighter-rouge">Second setTimeout</code> to the console).</p>
+<p>The second block will wait 0 milliseconds (… it doesn’t wait at all!) and then write <code>Second setTimeout</code> to the console).</p>
 
 <p>Back to the quiz… what is the expected outcome?</p>
 
@@ -188,56 +188,54 @@ Finishing app</td>
 
 <h2 id="what-is-really-happening-under-the-hood">what is really happening under the hood</h2>
 
-<p>Let’s start with a Dogma: <strong>in Javascript there is just one thread</strong>. (<em>This is not correct anymore, because in the last years a new technology called <code class="highlighter-rouge">Service Workers</code> has become available; but it is not important for now.</em>) Everything is always executed in the same thread, even events that happen asynchronously.</p>
+<p>Let’s start with a Dogma: <strong>in Javascript there is just one thread</strong>. (<em>This is not correct anymore, because in the last years a new technology called <code>Service Workers</code> has become available; but it is not important for now.</em>) Everything is always executed in the same thread, even events that happen asynchronously.</p>
 
-<p>So what happens when an asynchronous event happen, like the <code class="highlighter-rouge">setTimeout</code>?</p>
+<p>So what happens when an asynchronous event happen, like the <code>setTimeout</code>?</p>
 
-<p><code class="highlighter-rouge">setTimeout</code> is a good example of an asynchronous event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.</p>
+<p><code>setTimeout</code> is a good example of an asynchronous event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.</p>
 
 <p>Bearing this in mind, let’s return to the basis.</p>
 
 <ul>
   <li>
-    <p>The first <code class="highlighter-rouge">console.log()</code> is printed: <code class="highlighter-rouge">Starting app</code></p>
+    <p>The first <code>console.log()</code> is printed: <code>Starting app</code></p>
   </li>
   <li>
     <p>The first block is evaluated:</p>
   </li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//first block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'First setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<pre><code class="language-javascript">//first block 
+setTimeout(() =&gt; {
+  console.log('First setTimeout');
+}, 2000);
 </code></pre>
-</div>
 
-<p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code class="highlighter-rouge">() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occur.</p>
+<p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code>() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occur.</p>
 
 <ul>
   <li>The second block is evaluated:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//second block </span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Second setTimeout'</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<pre><code class="language-javascript">//second block 
+setTimeout(() =&gt; {
+  console.log('Second setTimeout');
+}, 0);
 </code></pre>
-</div>
 
 <p>Another explanation. This code says: <em>after zero milliseconds, fire the function specified as first argument</em>. One would expect to be fired instantly, but this does not happen: The function is put in a <strong>callback queue</strong>, and when NodeJS believes the conditions are respected, the function is fired.</p>
 
-<p>Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the <em>main program</em>, the one that starts with the first <code class="highlighter-rouge">console.log()</code>. Think of this as a being wrapped inside a function; nodeJS is evaluating <strong>this</strong> function and cannot evaluate others.</p>
+<p>Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the <em>main program</em>, the one that starts with the first <code>console.log()</code>. Think of this as a being wrapped inside a function; nodeJS is evaluating <strong>this</strong> function and cannot evaluate others.</p>
 
 <ul>
   <li>
-    <p>The last <code class="highlighter-rouge">console.log()</code> is evaluated and <code class="highlighter-rouge">Finishing app</code> is written to console.</p>
+    <p>The last <code>console.log()</code> is evaluated and <code>Finishing app</code> is written to console.</p>
   </li>
   <li>
-    <p>NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It’s NodeJS’s responsibility to select the right one: since the second <code class="highlighter-rouge">setTimeout</code> had a higher priority, it will be fired first: you’ll then see <code class="highlighter-rouge">Second setTimeout</code>.</p>
+    <p>NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It’s NodeJS’s responsibility to select the right one: since the second <code>setTimeout</code> had a higher priority, it will be fired first: you’ll then see <code>Second setTimeout</code>.</p>
   </li>
   <li>
-    <p>Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block <code class="highlighter-rouge">setTimeout</code> callback, and will print <code class="highlighter-rouge">First setTimeout</code>. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end.</p>
+    <p>Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block <code>setTimeout</code> callback, and will print <code>First setTimeout</code>. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end.</p>
   </li>
 </ul>
 
@@ -386,6 +384,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

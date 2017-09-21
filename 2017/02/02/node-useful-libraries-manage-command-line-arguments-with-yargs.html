@@ -72,6 +72,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -92,100 +93,91 @@
 
 		<section>
 
-			<p>When dealing with command line arguments in NodeJS we all know that we have to enquire <code class="highlighter-rouge">process.argv</code> object.</p>
+			<p>When dealing with command line arguments in NodeJS we all know that we have to enquire <code>process.argv</code> object.</p>
 
 <p>This object contains all the strings that compose our nodejs app, so for example</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js balance 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ node bank.js balance 
+</code></pre>
 
-<p>can be read inside <code class="highlighter-rouge">bank.js</code> as:</p>
+<p>can be read inside <code>bank.js</code> as:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">)</span> 
-<span class="cm">/* outputs: 
+<pre><code class="language-javascript">console.log(process.argv) 
+/* outputs: 
 [
   '/usr/local/bin/node', 
   '/path/to/bank.js',
   'balance'
 ]
-*/</span>
+*/
 </code></pre>
-</div>
 
-<p>That’s a simple case, and we know that <code class="highlighter-rouge">process.argv[2]</code> will contain the “command” provided to our script, <code class="highlighter-rouge">bank.js</code> (that is also <code class="highlighter-rouge">process.argv[1]</code>).</p>
+<p>That’s a simple case, and we know that <code>process.argv[2]</code> will contain the “command” provided to our script, <code>bank.js</code> (that is also <code>process.argv[1]</code>).</p>
 
 <p>But what if we want to accept parameters like:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js sendMoney --recipient="James" 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ node bank.js sendMoney --recipient="James" 
+</code></pre>
 
 <p>or this:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js sendMoney --recipient "James Woods" 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ node bank.js sendMoney --recipient "James Woods" 
+</code></pre>
 
-<p>Well, now the problem is becoming a bit more complex, expecially if we want to handle everything with <code class="highlighter-rouge">process.argv</code>. Maybe if there’s a library that handles all of this…</p>
+<p>Well, now the problem is becoming a bit more complex, expecially if we want to handle everything with <code>process.argv</code>. Maybe if there’s a library that handles all of this…</p>
 
 <h2 id="yargs-the-module-that-handles-command-line-parameters">YARGS: the module that handles command line parameters</h2>
 
-<p><a href="http://yargs.js.org">YARGS</a> is a npm module that will transform your <code class="highlighter-rouge">process.argv</code> into a javascript object. It will handle all the special cases, spaces, quotes, arguments, for you.</p>
+<p><a href="http://yargs.js.org">YARGS</a> is a npm module that will transform your <code>process.argv</code> into a javascript object. It will handle all the special cases, spaces, quotes, arguments, for you.</p>
 
 <p>Yargs is completely configurable, but its defaults are the best choice for you and your users.</p>
 
 <p>First, let’s install this module and save it in our current project:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> i -s yargs 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ npm i -s yargs 
+</code></pre>
 
 <p>To use yargs you only have two steps to do:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">yargs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">argv</span> <span class="o">=</span> <span class="nx">yargs</span><span class="p">.</span><span class="nx">argv</span><span class="p">;</span> 
+<pre><code class="language-javascript">const yargs = require('yargs');
+const argv = yargs.argv; 
 </code></pre>
-</div>
 
-<p>Now we have an object <code class="highlighter-rouge">argv</code> with all the properties set to the command line.</p>
+<p>Now we have an object <code>argv</code> with all the properties set to the command line.</p>
 
 <p>Let’s do a quick example:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> bank.js sendMoney --recipient "James Woods" 
-</span></code></pre>
-</div>
+<pre><code class="language-terminal">$ node bank.js sendMoney --recipient "James Woods" 
+</code></pre>
 
 <p>process.argv will show this:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">);</span>
-<span class="cm">/* prints: 
+<pre><code class="language-javascript">console.log(process.argv);
+/* prints: 
 [ '/usr/local/bin/node',
   '/path/to/bank.js',
   'sendMoney',
   '--recipient',
   'James Woods' ]
-*/</span>
+*/
 </code></pre>
-</div>
 
 <p>While YARGS will return this:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">argv</span><span class="p">)</span>
-<span class="cm">/* prints: 
+<pre><code class="language-javascript">console.log(argv)
+/* prints: 
 { _: [ 'sendMoney' ],
   recipient: 'James Woods',
   '$0': 'bank.js' }
-*/</span> 
+*/ 
 </code></pre>
-</div>
 
 <p>As you can see, now we have a Javascript obect with some properties that resamble what we have passed on the command line.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">argv._</code> contains the program commands, like <code class="highlighter-rouge">balance</code>, <code class="highlighter-rouge">sendMoney</code>, etc.</li>
-  <li><code class="highlighter-rouge">argv.recipient</code> contains the property associated  with <code class="highlighter-rouge">--recipient="James Woods"</code>. Note: you can also use spaces, or remove the quotes in case of a single word… Yargs will contain this for you.</li>
-  <li><code class="highlighter-rouge">argv.$0</code> contains the name of the js file, in case you need it.</li>
+  <li><code>argv._</code> contains the program commands, like <code>balance</code>, <code>sendMoney</code>, etc.</li>
+  <li><code>argv.recipient</code> contains the property associated  with <code>--recipient="James Woods"</code>. Note: you can also use spaces, or remove the quotes in case of a single word… Yargs will contain this for you.</li>
+  <li><code>argv.$0</code> contains the name of the js file, in case you need it.</li>
 </ul>
 
 <p>Easy, isn’t it?</p>
@@ -319,6 +311,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

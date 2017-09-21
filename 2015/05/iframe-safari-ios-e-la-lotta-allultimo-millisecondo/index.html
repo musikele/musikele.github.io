@@ -84,6 +84,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -128,7 +129,7 @@
   </p>
 </div>
 
-<p>L’impatto di questo approccio è stato devastante: se pure lo sviluppo era in qualche modo semplificato, ogni volta che cliccavamo su una pagina veniva ricaricato tutto, da Angular fino al css, e non so se lo sapete ma finchè angular non viene caricato l’utente vede le parentesi graffe (<code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> ) tipiche di Angular. Inoltre sui tablet avevamo un degrado delle prestazioni, perchè gli iFrame sono gli elementi più pesanti da aggiungere al DOM e tutto il traffico di rete che generavamo a ogni pagina ci rubava secondi preziosi. Su un tablet più datato avevamo una pagina che si caricava in 40 secondi ! Un esempio di benchmark lo trovate qui a lato.</p>
+<p>L’impatto di questo approccio è stato devastante: se pure lo sviluppo era in qualche modo semplificato, ogni volta che cliccavamo su una pagina veniva ricaricato tutto, da Angular fino al css, e non so se lo sapete ma finchè angular non viene caricato l’utente vede le parentesi graffe (<code>{{ }}</code> ) tipiche di Angular. Inoltre sui tablet avevamo un degrado delle prestazioni, perchè gli iFrame sono gli elementi più pesanti da aggiungere al DOM e tutto il traffico di rete che generavamo a ogni pagina ci rubava secondi preziosi. Su un tablet più datato avevamo una pagina che si caricava in 40 secondi ! Un esempio di benchmark lo trovate qui a lato.</p>
 
 <p>Altri due gravissimi problemi: <strong>su iPad alcuni iframe (non tutti) non scrollano</strong>; inoltre avevamo trovato un bug che <strong>dopo un po’ di navigazione della nostra webapp, safari crasha senza dare troppe spiegazioni</strong>.</p>
 
@@ -273,6 +274,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

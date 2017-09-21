@@ -78,6 +78,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -109,13 +110,12 @@
   <a href="http://heroku.com">heroku.com</a></li>
   <li>download
   <a href="https://devcenter.heroku.com/articles/heroku-cli">heroku’s command for the console</a> (select the right version for your operating system).</li>
-  <li>be sure the command is installed: <code class="highlighter-rouge">heroku -v</code> (you should see some output)</li>
-  <li>launch <code class="highlighter-rouge">heroku login</code>and log in with your email and password.</li>
-  <li>Upload ssh keys to heroku: <code class="highlighter-rouge">heroku keys:add</code></li>
-  <li><code class="highlighter-rouge">ssh -v git@heroku.com</code>: even if the command seems to fail, check that the long output contains the row
-    <div class="highlighter-rouge"><pre class="highlight"><code>debug1: Authentication succeeded (publickey).
+  <li>be sure the command is installed: <code>heroku -v</code> (you should see some output)</li>
+  <li>launch <code>heroku login</code>and log in with your email and password.</li>
+  <li>Upload ssh keys to heroku: <code>heroku keys:add</code></li>
+  <li><code>ssh -v git@heroku.com</code>: even if the command seems to fail, check that the long output contains the row
+    <pre><code>debug1: Authentication succeeded (publickey).
 </code></pre>
-    </div>
     <p>Generally it is one of the last 5-6 rows. If this log is present, everything is set up correctly.</p>
   </li>
 </ol>
@@ -123,31 +123,29 @@
 <h2 id="steps-to-set-up-the-environment-with-the-nodejs-app">Steps to set up the environment with the NodeJs app</h2>
 <ul>
   <li>Set the host port of your application as an environment variable:
-    <div class="highlighter-rouge"><pre class="highlight"><code>const port = process.env.PORT || 3000 ;  
+    <pre><code>const port = process.env.PORT || 3000 ;  
 ... 
 app.listen(port);
 </code></pre>
-    </div>
   </li>
-  <li>set the <code class="highlighter-rouge">npm start</code> script, in <code class="highlighter-rouge">package.json</code>:</li>
+  <li>set the <code>npm start</code> script, in <code>package.json</code>:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
+<pre><code>"scripts": {
    "start": "node server.js",
    ...
    }
 
 </code></pre>
-</div>
 
 <ul>
-  <li>Check that the app runs correctly: <code class="highlighter-rouge">npm start</code></li>
-  <li>launch <code class="highlighter-rouge">heroku create</code>: will create a new remote for your repository named <code class="highlighter-rouge">heroku</code></li>
-  <li><code class="highlighter-rouge">git push heroku</code> : will push your code to heroku</li>
-  <li><code class="highlighter-rouge">heroku open</code>: will open your webapp in the browser</li>
+  <li>Check that the app runs correctly: <code>npm start</code></li>
+  <li>launch <code>heroku create</code>: will create a new remote for your repository named <code>heroku</code></li>
+  <li><code>git push heroku</code> : will push your code to heroku</li>
+  <li><code>heroku open</code>: will open your webapp in the browser</li>
 </ul>
 
-<p>For every modification you do to your code, just commit and <code class="highlighter-rouge">git push heroku</code>!</p>
+<p>For every modification you do to your code, just commit and <code>git push heroku</code>!</p>
  
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
@@ -276,6 +274,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

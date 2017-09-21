@@ -72,6 +72,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -96,9 +97,8 @@
 
 <p>When you start a NodeJS application, you usually do something like this:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> app.js 
-</span></code></pre>
-</div>
+<pre><code class="language-console">$ node app.js 
+</code></pre>
 
 <p>but what if the app crashes? What if you change the content of a file? we must return to the terminal and start it again! What a waste of time!</p>
 
@@ -110,15 +110,13 @@
 
 <p>Simply install it globally</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> install -g nodemon 
-</span></code></pre>
-</div>
+<pre><code class="language-console">$ npm install -g nodemon 
+</code></pre>
 
 <p>and start your applications with nodemon:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">nodemon</span><span class="kv"> app.js 
-</span></code></pre>
-</div>
+<pre><code class="language-console">$ nodemon app.js 
+</code></pre>
 
 <p>You can also pass parameters via command line, if you need it; nodemon will handle everything for you.</p>
 
@@ -189,7 +187,7 @@ s.setAttribute('data-timestamp', +new Date());
 						<h2><a href="/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html">Node useful libraries - manage command line arguments with YARGS</a></h2>
 					</header>
 					<section>
-						<p>When dealing with command line arguments in NodeJS we all know that we have to enquire <code class="highlighter-rouge">process.argv</code> object.</p>
+						<p>When dealing with command line arguments in NodeJS we all know that we have to enquire <code>process.argv</code> object.</p>
 
 
 					</section>
@@ -253,6 +251,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

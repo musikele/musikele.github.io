@@ -72,6 +72,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -94,9 +95,8 @@
 
 			<p>Se avete scritto uno script bash <em>complesso</em> e volete cosa accade step by step, una soluzione semplice è usare lanciare il comando così:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">bash</span><span class="kv"> -x script.sh 
-</span></code></pre>
-</div>
+<pre><code class="language-console">$ bash -x script.sh 
+</code></pre>
 
 <p>In questo modo vedrete tutti i comandi che vengono lanciati, e le variabili che vengono settate, etc etc.</p>
 
@@ -231,6 +231,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

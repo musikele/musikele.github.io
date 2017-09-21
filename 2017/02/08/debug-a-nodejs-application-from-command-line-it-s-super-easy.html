@@ -72,6 +72,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -92,34 +93,33 @@
 
 		<section>
 
-			<p>If you want to seriously develop a nodejs application, you can’t continue to put <code class="highlighter-rouge">console.log()</code> statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.</p>
+			<p>If you want to seriously develop a nodejs application, you can’t continue to put <code>console.log()</code> statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.</p>
 
 <p>In NodeJS debugging can be also done via command line - it’s not <em>point n’ click</em>, but it’s still easy and straightforward.</p>
 
-<p>I want tell lies to you, <em>I debug my applications in a IDE</em> :) But if I’m debugging something over <code class="highlighter-rouge">ssh</code>, this tool comes in hand.</p>
+<p>I want tell lies to you, <em>I debug my applications in a IDE</em> :) But if I’m debugging something over <code>ssh</code>, this tool comes in hand.</p>
 
 <h2 id="an-example-file-to-play-with">An example file to play with</h2>
 
-<p>Save this file as <code class="highlighter-rouge">book.js</code> :</p>
+<p>Save this file as <code>book.js</code> :</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">title</span><span class="p">:</span> <span class="s1">'NodeJS for dummies'</span><span class="p">,</span>
-  <span class="na">ISBN</span><span class="p">:</span> <span class="s1">'1234567'</span>
-<span class="p">};</span>
+<pre><code class="language-javascript">let book = {
+  title: 'NodeJS for dummies',
+  ISBN: '1234567'
+};
 
-<span class="nx">book</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'cooking with Trump'</span><span class="p">;</span>
-<span class="nx">book</span><span class="p">.</span><span class="nx">category</span> <span class="o">=</span> <span class="s1">'recipes'</span><span class="p">;</span>
+book.title = 'cooking with Trump';
+book.category = 'recipes';
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+console.log(book);
 </code></pre>
-</div>
 
 <h2 id="debug">debug!</h2>
 
-<p>To run this file you can launch <code class="highlighter-rouge">node book.js</code>; however, in case you want to <strong>debug</strong> you just add an option:</p>
+<p>To run this file you can launch <code>node book.js</code>; however, in case you want to <strong>debug</strong> you just add an option:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">node</span><span class="kv"> debug book.js 
-</span>
+<pre><code class="language-terminal">$ node debug book.js 
+
 &lt; Debugger listening on 127.0.0.1:5858
 connecting to 127.0.0.1:5858 ... ok
 break in book.js:1
@@ -128,19 +128,18 @@ break in book.js:1
   3   ISBN: '1234567'
 debug&gt;
 </code></pre>
-</div>
 
 <p>Let’s skip the first two lines, they are just diplayed for nerds.</p>
 
-<p>Nodejs has blocked the execution at line 1 of the file, as you can see from the <code class="highlighter-rouge">&gt;</code> mark.</p>
+<p>Nodejs has blocked the execution at line 1 of the file, as you can see from the <code>&gt;</code> mark.</p>
 
 <blockquote>
   <p>It’s best to say now that when NodeJS blocks at a line, the line is <strong>NOT</strong> executed. So, in the example, we are <em>before</em> the first istruction is ever executed.</p>
 </blockquote>
 
-<p>To continue to the next line, press <code class="highlighter-rouge">n</code>(next) and hit Enter:</p>
+<p>To continue to the next line, press <code>n</code>(next) and hit Enter:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; n
+<pre><code class="language-terminal">debug&gt; n
 break in book.js:6
   4 };
   5
@@ -148,29 +147,27 @@ break in book.js:6
   7 book.category = 'recipes'
   8
 </code></pre>
-</div>
 
-<p>Now the first line has been executed (the creation of the <code class="highlighter-rouge">book</code> object); node has now stopped to the next executable instruction.</p>
+<p>Now the first line has been executed (the creation of the <code>book</code> object); node has now stopped to the next executable instruction.</p>
 
-<p>In this easy example, going from one instruction to another using <code class="highlighter-rouge">n</code> might be interesting, but complex applications can contain thousands of lines of code, so jumping with <code class="highlighter-rouge">n</code> is not a great idea. Exit from debug for now.</p>
+<p>In this easy example, going from one instruction to another using <code>n</code> might be interesting, but complex applications can contain thousands of lines of code, so jumping with <code>n</code> is not a great idea. Exit from debug for now.</p>
 
 <blockquote>
-  <p>To exit from the debugger you can type <code class="highlighter-rouge">quit</code> or press <code class="highlighter-rouge">Ctrl+C</code> twice.</p>
+  <p>To exit from the debugger you can type <code>quit</code> or press <code>Ctrl+C</code> twice.</p>
 </blockquote>
 
-<p>We might want to stop at a specific point, for example before setting the <code class="highlighter-rouge">category</code> attribute to the book:</p>
+<p>We might want to stop at a specific point, for example before setting the <code>category</code> attribute to the book:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
-<span class="nx">book</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'cooking with Trump'</span><span class="p">;</span>
-<span class="kr">debugger</span><span class="p">;</span> 
-<span class="nx">book</span><span class="p">.</span><span class="nx">category</span> <span class="o">=</span> <span class="s1">'recipes'</span><span class="p">;</span>
-<span class="p">...</span>
+<pre><code class="language-javascript">...
+book.title = 'cooking with Trump';
+debugger; 
+book.category = 'recipes';
+...
 </code></pre>
-</div>
 
-<p>if we want to jump directly to the place where the <code class="highlighter-rouge">debugger</code> instruction is, you can just hit <code class="highlighter-rouge">c</code> (continue):</p>
+<p>if we want to jump directly to the place where the <code>debugger</code> instruction is, you can just hit <code>c</code> (continue):</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; c
+<pre><code class="language-terminal">debug&gt; c
 break in book.js:7
   5
   6 book.title = 'cooking with Trump'
@@ -179,32 +176,29 @@ break in book.js:7
   9
 debug&gt;
 </code></pre>
-</div>
 
-<p>As you can see the debugger has now stopped at line 7, where the <code class="highlighter-rouge">debugger</code> instruction was. <strong>It’s important to say that <code class="highlighter-rouge">debugger</code> instruction is ignored when running the application normally</strong>.</p>
+<p>As you can see the debugger has now stopped at line 7, where the <code>debugger</code> instruction was. <strong>It’s important to say that <code>debugger</code> instruction is ignored when running the application normally</strong>.</p>
 
 <p>Ok, now we know how to stop in a nodejs application, but how can we inspect the value of objects?</p>
 
-<p>just hit <code class="highlighter-rouge">repl</code>:</p>
+<p>just hit <code>repl</code>:</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>debug&gt; repl
+<pre><code class="language-terminal">debug&gt; repl
 Press Ctrl + C to leave debug repl
 &gt;
 </code></pre>
-</div>
 
-<p>Now we are in a Javascript console, like the one we have in a browser. we can execute expressions like <code class="highlighter-rouge">var a = 1+3</code>; the interesting thing is that we have <strong>access to variables defined until the break point</strong>: infact we can inspect our <code class="highlighter-rouge">book</code> variable and see that …</p>
+<p>Now we are in a Javascript console, like the one we have in a browser. we can execute expressions like <code>var a = 1+3</code>; the interesting thing is that we have <strong>access to variables defined until the break point</strong>: infact we can inspect our <code>book</code> variable and see that …</p>
 
-<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>&gt; book
+<pre><code class="language-terminal">&gt; book
 { title: 'cooking with Trump', ISBN: '1234567' }
 </code></pre>
-</div>
 
-<p>…<code class="highlighter-rouge">category</code> attribute is not defined, since it will be executed later, at line 8.</p>
+<p>…<code>category</code> attribute is not defined, since it will be executed later, at line 8.</p>
 
-<p>Using <code class="highlighter-rouge">repl</code> you can also modify the value of objects, and this is great if you are in a loop and want to go directly to the value that you want, or to simulate complex cases.</p>
+<p>Using <code>repl</code> you can also modify the value of objects, and this is great if you are in a loop and want to go directly to the value that you want, or to simulate complex cases.</p>
 
-<p>To exit from <code class="highlighter-rouge">repl</code> just hit <code class="highlighter-rouge">Ctrl+C</code> to return to <code class="highlighter-rouge">debug&gt;</code> prompt.</p>
+<p>To exit from <code>repl</code> just hit <code>Ctrl+C</code> to return to <code>debug&gt;</code> prompt.</p>
 
 <h2 id="now-you-can-debug-like-a-boss">Now you can debug like a boss</h2>
 
@@ -273,7 +267,7 @@ s.setAttribute('data-timestamp', +new Date());
 						<h2><a href="/2017/02/10/hey-javascript-function-take-this.html">hey javascript function, take this!</a></h2>
 					</header>
 					<section>
-						<p>In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to <code class="highlighter-rouge">this</code>.</p>
+						<p>In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to <code>this</code>.</p>
 
 
 					</section>
@@ -337,6 +331,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

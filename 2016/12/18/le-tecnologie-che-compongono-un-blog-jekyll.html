@@ -86,6 +86,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -144,12 +145,11 @@
 
 <p>Come scrivo gli articoli del mio blog? Jekyll é predisposto per molti sistemi, ma quello più usato é <strong>Markdown</strong>. Esso é un <em>quasi</em>-standard, visto che ne esistono diverse implelentazioni e ci sono piccole divergenze, ma non é qualcosa che noterete davvero, almeno finché non dovrete andare “oltre”.</p>
 
-<p>Di base, un documento scritto in markdown non é nient’altro che un file di testo (solitamente con estensione <code class="highlighter-rouge">.md</code>) che jekyll trasformerà in un <code class="highlighter-rouge">.html</code>. La sintassi di markdown é molto leggibile, e non dovremo scimunirci per annidare tag nel modo corretto. Inoltre Mardown ha la possibilità di annidare codice sia inline <code class="highlighter-rouge">così</code>, sia scrivendo blocchi di codice su più righe:</p>
+<p>Di base, un documento scritto in markdown non é nient’altro che un file di testo (solitamente con estensione <code>.md</code>) che jekyll trasformerà in un <code>.html</code>. La sintassi di markdown é molto leggibile, e non dovremo scimunirci per annidare tag nel modo corretto. Inoltre Mardown ha la possibilità di annidare codice sia inline <code>così</code>, sia scrivendo blocchi di codice su più righe:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//ad esempio, questo é un commento</span>
-<span class="kd">var</span> <span class="nx">ciao</span> <span class="o">=</span> <span class="s1">'beccatevi questo!'</span> <span class="p">;</span>
+<pre><code class="language-javascript">//ad esempio, questo é un commento
+var ciao = 'beccatevi questo!' ;
 </code></pre>
-</div>
 
 <p>Questo post é stato scritto in markdown da un telefonino!</p>
 
@@ -286,6 +286,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

@@ -78,6 +78,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -116,7 +117,7 @@
 
 <h3 id="un-buon-motivo-per-usare-ng-bind">Un buon motivo per usare ng-bind</h3>
 
-<p>Solitamente non dovreste rinunciare alla potenza espressiva delle <code class="highlighter-rouge"><span class="p">{</span><span class="err">{...</span><span class="p">}</span><span class="err">}</span></code> , però c’è un caso speciale che magari <code class="highlighter-rouge">ng-bind</code> può essere d’aiuto: al caricamento della prima pagina della nostra webapp.</p>
+<p>Solitamente non dovreste rinunciare alla potenza espressiva delle <code>{{...}}</code> , però c’è un caso speciale che magari <code>ng-bind</code> può essere d’aiuto: al caricamento della prima pagina della nostra webapp.</p>
 
 <p>Quando apriamo la nostra bellissima webapp per la prima volta, il browser inizia a caricare subito il DOM, e poi inizia a scaricare e a eseguire i file javascript. Questo significa che, finchè non verrà scaricato il js di Angular, per pochi istanti vedremo le antipaticissime parentesi graffe.</p>
 
@@ -257,6 +258,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

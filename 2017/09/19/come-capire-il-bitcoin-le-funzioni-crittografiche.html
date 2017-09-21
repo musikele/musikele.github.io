@@ -78,6 +78,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -110,31 +111,29 @@
 
 <p>Hash in italiano significa <em>carne tritata</em>, ma onestamente non ho mai visto un inglese fare le polpette quindi dobbiamo fidarci di google. Tuttavia carne tritata gli si addice: in effetti quello che fa una funzione hash è proprio di prendere un messaggio (pensate a una stringa, ma in realtà può essere qualunque oggetto), e calcolarne un valore di lunghezza fissa. Vediamone un esempio, mi appoggio a NodeJS per comodità e perchè è uno dei più immediati, ma volendo potete giocare con qualsiasi linguaggio perchè le funzioni di crittografia sono native in ogni ambiente.</p>
 
-<p>Creiamo una directory di esempio e installiamo il modulo <code class="highlighter-rouge">crypto-js</code>:</p>
+<p>Creiamo una directory di esempio e installiamo il modulo <code>crypto-js</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir esempi-crypto
+<pre><code>$ mkdir esempi-crypto
 $ cd esempi-crypto
 $ npm i -S crypto-js 
 
 </code></pre>
-</div>
 
-<p>Forse l’environment vi darà degli errori che manca il file <code class="highlighter-rouge">package.json</code>, ma noi freghiamocene.</p>
+<p>Forse l’environment vi darà degli errori che manca il file <code>package.json</code>, ma noi freghiamocene.</p>
 
-<p>Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando <code class="highlighter-rouge">node</code>:</p>
+<p>Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando <code>node</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ node 
+<pre><code>$ node 
 &gt; let CryptoJS = require('crypto-js')
 undefined
 
 </code></pre>
-</div>
 
 <p>Abbiamo appena importato la libreria che contiene le funzioni crittografiche più diffuse. Non preoccupatevi per quell’undefined.</p>
 
 <p>E’ il momento di provare a fare l’hash di un messaggio. L’algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt; let message = "This is my password" 
+<pre><code>&gt; let message = "This is my password" 
 &gt; let sha = CryptoJS.SHA256(message)
 
 &gt; console.log(sha)
@@ -154,11 +153,10 @@ undefined
 ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 </code></pre>
-</div>
 
-<p>Cosa è accaduto nel primo caso? <code class="highlighter-rouge">sha</code> è un oggetto contenente dei byte (tutta sta roba, a livello crittografico, opera su byte e non vorrei sconvolgervi ma SI, si può fare anche in nodejs e javascript in generale)</p>
+<p>Cosa è accaduto nel primo caso? <code>sha</code> è un oggetto contenente dei byte (tutta sta roba, a livello crittografico, opera su byte e non vorrei sconvolgervi ma SI, si può fare anche in nodejs e javascript in generale)</p>
 
-<p>Però dei byte non ce ne facciamo niente, siamo pur sempre esseri umani e se vogliamo vedere <code class="highlighter-rouge">sha</code> come stringa basta chiamare il metodo <code class="highlighter-rouge">toString()</code> che ci restituisce lo stringone che vedete in fondo.</p>
+<p>Però dei byte non ce ne facciamo niente, siamo pur sempre esseri umani e se vogliamo vedere <code>sha</code> come stringa basta chiamare il metodo <code>toString()</code> che ci restituisce lo stringone che vedete in fondo.</p>
 
 <h3 id="a-me-sembra-solo-una-stringa-randomica">“A me sembra solo una stringa randomica…”</h3>
 
@@ -172,7 +170,7 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
     <p>la funzione deve essere computata efficientemente: nell’esempio precedente accade tutto in pochissimi microsecondi.</p>
   </li>
   <li>
-    <p>la funzione è <a href="https://en.wikipedia.org/wiki/Collision_resistance">collision-resistant</a>: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse <code class="highlighter-rouge">x</code>e <code class="highlighter-rouge">y</code> che restituiscano lo stesso hash (matematicamente: <code class="highlighter-rouge">H(x) = H(y)</code>).</p>
+    <p>la funzione è <a href="https://en.wikipedia.org/wiki/Collision_resistance">collision-resistant</a>: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse <code>x</code>e <code>y</code> che restituiscano lo stesso hash (matematicamente: <code>H(x) = H(y)</code>).</p>
   </li>
   <li>
     <p>la funzione hash <em>nasconde</em> il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata <em>salt</em>), che noi potremmo definire come una “chiave” , per intenderci.</p>
@@ -184,11 +182,11 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 <p>Bel casino! Scommetto che la terza proprietà vi ha complicato la comprensione.</p>
 
-<p>Ma internet è pieno di risorse e ho trovato questa immagine che spiega molte cose. Il bitcoin si affida proprio a questo genere di puzzle per il mining. Nel primo esempio, data una chiave <code class="highlighter-rouge">Cheescake</code>, trovare un hash che inizi con la lettera <code class="highlighter-rouge">A</code>.</p>
+<p>Ma internet è pieno di risorse e ho trovato questa immagine che spiega molte cose. Il bitcoin si affida proprio a questo genere di puzzle per il mining. Nel primo esempio, data una chiave <code>Cheescake</code>, trovare un hash che inizi con la lettera <code>A</code>.</p>
 
-<p>Nel secondo esempio, si parte con la stringa <code class="highlighter-rouge">Ice ice baby - too cold!</code>​ e bisogna trovare un hash che inizi con <code class="highlighter-rouge">Hi</code>.</p>
+<p>Nel secondo esempio, si parte con la stringa <code>Ice ice baby - too cold!</code>​ e bisogna trovare un hash che inizi con <code>Hi</code>.</p>
 
-<p>Nel terzo esempio, si parte con la stringa <code class="highlighter-rouge">Who let them out?</code>​ e si cerca un hash che inizi con <code class="highlighter-rouge">Dog</code>​.</p>
+<p>Nel terzo esempio, si parte con la stringa <code>Who let them out?</code>​ e si cerca un hash che inizi con <code>Dog</code>​.</p>
 
 <p><img src="/images/solvingahashpuzzle.png" alt="" class="" /></p>
 
@@ -198,11 +196,10 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 <p>Questo gioco non è altro che il <strong>mining</strong>: a partire dall’hash del blocco precedente, trovare un numero che restituisca un hash che inizia con … qualcosa, poi vedremo cosa. Questo problema non è facile e richiede milioni di milioni di calcoli, motivo per cui si ricevono dei bitcoin come premio.</p>
 
-<p>Non mi resta  che salutarvi con l’hash di <code class="highlighter-rouge">Buona giornata</code>:</p>
+<p>Non mi resta  che salutarvi con l’hash di <code>Buona giornata</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
+<pre><code>9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
 </code></pre>
-</div>
 
 <p>Alla prossima!</p>
  
@@ -263,6 +260,23 @@ s.setAttribute('data-timestamp', +new Date());
 					</footer>
 				</article>
 				 
+
+				<article class="6u$ 12u(small) excerpt f-right">
+					<header>
+						<h2><a href="/2017/09/21/a-clear-explanation-of-jwt.html">JWT: what is it? How does it work? Why we should use it?</a></h2>
+					</header>
+					<section>
+						<p>In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.</p>
+
+
+					</section>
+					<footer>
+						<ul class="actions">
+							<li><a href="//2017/09/21/a-clear-explanation-of-jwt.html" class="button">Read More</a></li>
+						</ul>
+					</footer>
+				</article>
+				
 			</div>
 		</footer>
 
@@ -316,6 +330,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

@@ -82,6 +82,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -104,23 +105,23 @@
 
 			<p>Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra <em>developer experience</em>.</p>
 
-<h3 id="mac-command-line"><code class="highlighter-rouge">mac</code> command line</h3>
+<h3 id="mac-command-line"><code>mac</code> command line</h3>
 
-<p>Si <a href="https://github.com/guarinogabriel/Mac-CLI">installa da linea di comando</a> e crea un eseguibile, <code class="highlighter-rouge">mac</code>, che permette di svolgere molte operazioni comuni con pochi click.</p>
+<p>Si <a href="https://github.com/guarinogabriel/Mac-CLI">installa da linea di comando</a> e crea un eseguibile, <code>mac</code>, che permette di svolgere molte operazioni comuni con pochi click.</p>
 
 <p><img src="/images/demo-mac-cli.gif" alt="" /></p>
 
 <p>Un esempio?</p>
 
 <ul>
-  <li><code class="highlighter-rouge">mac ip:public</code> vi restituisce il vostro ip pubblico</li>
-  <li><code class="highlighter-rouge">mac speedtest</code> esegue uno speed test da linea di comando</li>
-  <li><code class="highlighter-rouge">mac memory</code> vi dice quale app sta consumando la vostra preziosa RAM</li>
+  <li><code>mac ip:public</code> vi restituisce il vostro ip pubblico</li>
+  <li><code>mac speedtest</code> esegue uno speed test da linea di comando</li>
+  <li><code>mac memory</code> vi dice quale app sta consumando la vostra preziosa RAM</li>
 </ul>
 
 <p>e tanti altri. Sono circa una cinquantina!</p>
 
-<h3 id="oh-my-zsh-per-un-terminale-più-combattivo"><code class="highlighter-rouge">Oh-my-zsh</code> per un terminale più combattivo</h3>
+<h3 id="oh-my-zsh-per-un-terminale-più-combattivo"><code>Oh-my-zsh</code> per un terminale più combattivo</h3>
 
 <p><a href="https://github.com/robbyrussell/oh-my-zsh">Oh-my-zsh</a> è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di zsh. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:</p>
 
@@ -128,7 +129,7 @@
 
 <p>Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!</p>
 
-<h3 id="ngrok-per-testare-chiamate-api-dallesterno"><code class="highlighter-rouge">ngrok</code>, per testare chiamate API dall’esterno</h3>
+<h3 id="ngrok-per-testare-chiamate-api-dallesterno"><code>ngrok</code>, per testare chiamate API dall’esterno</h3>
 
 <p>Dovete testare le chiamate di un sistema esterno verso il vostro software? Ad esempio, io ho avuto questa esigenza con le API di Paypal e Gestpay: a un certo punto questi sistemi dovevano notificarmi che i pagamenti erano andati a buon fine e mi avrebbero contattato agli indirizzi configurati.</p>
 
@@ -136,7 +137,7 @@
 
 <p><img src="/images/ngrok.png" alt="" /></p>
 
-<p>Per farla facile, voi lanciate <code class="highlighter-rouge">ngrok http 8000</code> e ngrok creerà un indirizzo tipo <code class="highlighter-rouge">http://abc33344422.ngrok.io</code>. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a<code class="highlighter-rouge">localhost:8000</code>. Tutto ciò che passa per ngrok viene loggato e mostrato!</p>
+<p>Per farla facile, voi lanciate <code>ngrok http 8000</code> e ngrok creerà un indirizzo tipo <code>http://abc33344422.ngrok.io</code>. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a<code>localhost:8000</code>. Tutto ciò che passa per ngrok viene loggato e mostrato!</p>
 
 <h3 id="git-flow-una-metodologia-per-semplificare-e-standardizzare-git-nel-team">Git Flow, una metodologia per semplificare e standardizzare git nel team</h3>
 
@@ -147,16 +148,16 @@
 <p>Con git flow organizziamo il lavoro in due <em>meta-filoni</em>:</p>
 
 <ul>
-  <li>branch <code class="highlighter-rouge">master</code>, che corrisponde alle versioni rilasciate</li>
-  <li>branch <code class="highlighter-rouge">develop</code>, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.</li>
+  <li>branch <code>master</code>, che corrisponde alle versioni rilasciate</li>
+  <li>branch <code>develop</code>, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.</li>
 </ul>
 
 <p>Oltre a questi due branch “generali”, ogni azione degli sviluppatori è realizzata creando nuovi branch:</p>
 
 <ul>
-  <li>Gli sviluppi delle singole feature sui branch <code class="highlighter-rouge">feature/*tua_feature*</code></li>
-  <li>I rilasci (da develop a master) su branch chiamati <code class="highlighter-rouge">release/*nome_release*</code></li>
-  <li>le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch <code class="highlighter-rouge">hotfix/*nome_fix*</code>.</li>
+  <li>Gli sviluppi delle singole feature sui branch <code>feature/*tua_feature*</code></li>
+  <li>I rilasci (da develop a master) su branch chiamati <code>release/*nome_release*</code></li>
+  <li>le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch <code>hotfix/*nome_fix*</code>.</li>
 </ul>
 
 <p>Non ci avete capito niente? <a href="https://danielkummer.github.io/git-flow-cheatsheet/">Qui un grafico che prova a spiegare comandi e funzioni</a>.</p>
@@ -301,6 +302,7 @@ Più o meno il copione è sempre lo stesso:</p>
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

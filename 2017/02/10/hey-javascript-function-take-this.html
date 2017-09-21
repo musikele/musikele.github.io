@@ -72,6 +72,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -92,7 +93,7 @@
 
 		<section>
 
-			<p>In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to <code class="highlighter-rouge">this</code>.</p>
+			<p>In this article I’m going to do a quick recap of ES5 and ES6 functions, explaining what happens to <code>this</code>.</p>
 
 <p><img src="/images/this.jpg" alt="" />\</p>
 
@@ -100,108 +101,102 @@
 
 <p>As you know, in javascript you can define a function in many ways. The standard, 20-years-old way of declaring a function is this:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hello!"</span><span class="p">)</span> 
-<span class="p">}</span>
+<pre><code class="language-javascript">function sayHello() {
+   console.log("hello!") 
+}
 </code></pre>
-</div>
 
 <p>This kind of functions will be “hoisted”, this means that the function will be read before any other code, and used when called. So you can also write this with no error:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// no error: this is executed later</span>
-<span class="nx">sayHello</span><span class="p">();</span> 
+<pre><code class="language-javascript">// no error: this is executed later
+sayHello(); 
 
-<span class="c1">//this is read and hoisted first </span>
-<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hello!"</span><span class="p">)</span> 
-<span class="p">}</span>
+//this is read and hoisted first 
+function sayHello() {
+   console.log("hello!") 
+}
 </code></pre>
-</div>
 
 <p>If you find this behaviour too strange (at first glance, it is!), you can <strong>assign a function to a variable</strong>. In this case the function will be read and executed only when used:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//sayHello();  if called here, like before, ERROR! </span>
+<pre><code class="language-javascript">//sayHello();  if called here, like before, ERROR! 
 
-<span class="kd">var</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello!"</span><span class="p">)</span> 
-<span class="p">}</span>
+var sayHello = function () {
+   console.log("Hello!") 
+}
 
-<span class="nx">sayHello</span><span class="p">();</span> <span class="c1">// no error because it is used after the definition</span>
+sayHello(); // no error because it is used after the definition
 </code></pre>
-</div>
 
 <h2 id="functions-in-es6">Functions in ES6</h2>
 
 <p>Now we can have a quick look to new kind of functions introduced in ES6. Here is the first example:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
-<span class="p">}</span>
+<pre><code class="language-javascript">var sayHello = (name) =&gt; { 
+   console.log("Hello, " + name);
+}
 
-<span class="nx">sayHello</span><span class="p">(</span><span class="s1">'Michele'</span><span class="p">);</span>
+sayHello('Michele');
 </code></pre>
-</div>
 
-<p>what happened? we have stripped out the <code class="highlighter-rouge">function</code> keyword, put an arrow (<code class="highlighter-rouge">=&gt;</code>) between the arguments and the body of the function, and that’s it! More expressive and fun to use.</p>
+<p>what happened? we have stripped out the <code>function</code> keyword, put an arrow (<code>=&gt;</code>) between the arguments and the body of the function, and that’s it! More expressive and fun to use.</p>
 
 <h2 id="functions-in-es6-in-js-objects">Functions, in ES6, in JS Objects</h2>
 
-<p>There is just one thing to note: <strong>the ES6 version of the function does not bind <code class="highlighter-rouge">this</code></strong>. What the heck does this mean?!</p>
+<p>There is just one thing to note: <strong>the ES6 version of the function does not bind <code>this</code></strong>. What the heck does this mean?!</p>
 
 <p>Have a look at this:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'Michele'</span><span class="p">,</span>
-  <span class="na">sayHi</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Hi</span><span class="p">.</span> <span class="nx">I</span><span class="s1">'m ${this.name}`);
+<pre><code class="language-javascript">var user = {
+  name: 'Michele',
+  sayHi: () =&gt; {
+    console.log(`Hi. I'm ${this.name}`);
   },
   sayHiAlt () {
-    console.log(`Hi. I'</span><span class="nx">m</span> <span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+    console.log(`Hi. I'm ${this.name}`);
+  }
+}
 
-<span class="nx">user</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span> <span class="c1">// "Hi. I'm undefined"</span>
-<span class="nx">user</span><span class="p">.</span><span class="nx">sayHiAlt</span><span class="p">();</span> <span class="c1">// "Hi. I'm Michele"</span>
+user.sayHi(); // "Hi. I'm undefined"
+user.sayHiAlt(); // "Hi. I'm Michele"
 </code></pre>
-</div>
 
 <p>What’s happening? Let’s dip in.</p>
 
-<h3 id="what-is-hi-im-thisname">what is <code class="highlighter-rouge">Hi. I'm ${this.name}</code>?</h3>
+<h3 id="what-is-hi-im-thisname">what is <code>Hi. I'm ${this.name}</code>?</h3>
 
-<p>This is a template string in Javascript. this translates in <code class="highlighter-rouge">"Hi. I\'m " + this.name</code>.</p>
+<p>This is a template string in Javascript. this translates in <code>"Hi. I\'m " + this.name</code>.</p>
 
-<h3 id="why-the-first-sayhi-returns-undefined">Why the first <code class="highlighter-rouge">sayHi</code> returns undefined?</h3>
+<h3 id="why-the-first-sayhi-returns-undefined">Why the first <code>sayHi</code> returns undefined?</h3>
 
-<p>because <code class="highlighter-rouge">this</code> is not bound to the context!</p>
+<p>because <code>this</code> is not bound to the context!</p>
 
-<h3 id="what-is-happening-at-the-last-function-sayhialt-">What is happening at the last function, <code class="highlighter-rouge">sayHiAlt</code> ?!</h3>
+<h3 id="what-is-happening-at-the-last-function-sayhialt-">What is happening at the last function, <code>sayHiAlt</code> ?!</h3>
 
 <p>This is ES6 at all of it’s power. First, we are assigning a function to a variable, like we saw in the third example of this article; then, we are using another ES6 to assign the function to a property with the same name.</p>
 
 <p>Thanks to <a href="https://babeljs.io/repl/">babel online REPL</a> (a place where you can past ES6 code and see it in ES5), the previous snippet becomes this:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<pre><code class="language-javascript">'use strict';
 
-<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s1">'Michele'</span><span class="p">,</span>
-    <span class="na">sayHi</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hi. I\'m '</span> <span class="o">+</span> <span class="kc">undefined</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="na">sayHiAlt</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">sayHiAlt</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hi. I\'m '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+var user = {
+    name: 'Michele',
+    sayHi: function sayHi() {
+        console.log('Hi. I\'m ' + undefined.name);
+    },
+    sayHiAlt: function sayHiAlt() {
+        console.log('Hi. I\'m ' + this.name);
+    }
+};
 </code></pre>
-</div>
 
 <h2 id="what-should-i-use">What should I use?</h2>
 
-<p>Use <code class="highlighter-rouge">() =&gt; {}</code> always, because it’s simpler; usually you don’t need <code class="highlighter-rouge">this</code> to work.</p>
+<p>Use <code>() =&gt; {}</code> always, because it’s simpler; usually you don’t need <code>this</code> to work.</p>
 
-<p>But if you need <code class="highlighter-rouge">this</code>, … you know what to do.</p>
+<p>But if you need <code>this</code>, … you know what to do.</p>
 
-<p>After writing <code class="highlighter-rouge">this</code> article, I can finally say: ES6 doesn’t care about <code class="highlighter-rouge">this</code>, but you should.</p>
+<p>After writing <code>this</code> article, I can finally say: ES6 doesn’t care about <code>this</code>, but you should.</p>
  
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/02/10/hey-javascript-function-take-this.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
@@ -249,7 +244,7 @@ s.setAttribute('data-timestamp', +new Date());
 						<h2><a href="/2017/02/08/debug-a-nodejs-application-from-command-line-it-s-super-easy.html">Debug a NodeJS application from command line - it's super easy!</a></h2>
 					</header>
 					<section>
-						<p>If you want to seriously develop a nodejs application, you can’t continue to put <code class="highlighter-rouge">console.log()</code> statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.</p>
+						<p>If you want to seriously develop a nodejs application, you can’t continue to put <code>console.log()</code> statements everywhere. It’s just a pain! That’s why every modern language has debug support via various tools.</p>
 
 
 					</section>
@@ -330,6 +325,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>

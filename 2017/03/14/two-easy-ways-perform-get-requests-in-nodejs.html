@@ -80,6 +80,7 @@
   ga('send', 'pageview');
 
 </script>
+	<link rel="stylesheet" href="/css/prism.css" />
 </head>
 
 <body id="top">
@@ -110,24 +111,22 @@
 
 <h2 id="a-simple-use-case-google-maps-api">a simple use case: Google maps API</h2>
 
-<p>Just as an example, we will write a simple program that takes a textual address (for example<code class="highlighter-rouge">Piazza della Concordia, Salerno</code>) and return latitude and longitude.</p>
+<p>Just as an example, we will write a simple program that takes a textual address (for example<code>Piazza della Concordia, Salerno</code>) and return latitude and longitude.</p>
 
 <p>The URL is this: <a href="https://maps.googleapis.com/maps/api/geocode/json?address=piazza della concordia, salerno">https://maps.googleapis.com/maps/api/geocode/json?address=piazza della concordia, salerno</a>.  Clicking on this link you can see the response in json format.</p>
 
 <p>Our mission is to retrive latitude and longitude, so</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>results[0].geometry.location.lat
+<pre><code>results[0].geometry.location.lat
 results[0].geometry.location.lng
 </code></pre>
-</div>
 
 <h2 id="request-the-name-says-it-all">Request: the name says it all</h2>
 
-<p>The first library I’m going to talk is simply called <a href="https://www.npmjs.com/package/request"><code class="highlighter-rouge">request</code></a>. Install as always:</p>
+<p>The first library I’m going to talk is simply called <a href="https://www.npmjs.com/package/request"><code>request</code></a>. Install as always:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> install request --save
-</span></code></pre>
-</div>
+<pre><code class="language-console">$ npm install request --save
+</code></pre>
 
 <p>From the NPM description:</p>
 
@@ -135,46 +134,45 @@ results[0].geometry.location.lng
   <p>Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.</p>
 </blockquote>
 
-<p>Here is a NodeJS function that uses <code class="highlighter-rouge">request</code> to perform the call</p>
+<p>Here is a NodeJS function that uses <code>request</code> to perform the call</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">encodedAddress</span> <span class="o">=</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+<pre><code class="language-javascript">let encodedAddress = encodeURIComponent(address);
 
-  <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="err">`</span><span class="na">https</span><span class="p">:</span><span class="c1">//maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,</span>
-    <span class="na">json</span><span class="p">:</span> <span class="kc">true</span>
-  <span class="p">},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  request({
+    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,
+    json: true
+  }, (error, response, body) =&gt; {
 
-    <span class="c1">//server unreachable</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span> 
-      <span class="nx">callback</span><span class="p">(</span><span class="s1">'Unable to connect to Google Servers'</span><span class="p">);</span>
-    <span class="p">}</span>
+    //server unreachable
+    if (error) { 
+      callback('Unable to connect to Google Servers');
+    }
 
-    <span class="c1">// no results </span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">'ZERO_RESULTS'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">callback</span><span class="p">(</span><span class="s1">'Unable to find that address'</span><span class="p">);</span>
-    <span class="p">}</span>
+    // no results 
+    else if (body.status === 'ZERO_RESULTS') {
+      callback('Unable to find that address');
+    }
 
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">'OK'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">callback</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">address</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">formatted_address</span><span class="p">,</span>
-        <span class="na">latitude</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span>
-        <span class="na">longitude</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lng</span>
-      <span class="p">});</span>
-    <span class="p">}</span>
+    else if (body.status === 'OK') {
+      callback(undefined, {
+        address: body.results[0].formatted_address,
+        latitude: body.results[0].geometry.location.lat,
+        longitude: body.results[0].geometry.location.lng
+      });
+    }
 
-  <span class="p">});</span>
+  });
 </code></pre>
-</div>
 
-<p><code class="highlighter-rouge">encodeURIComponent()</code> is a function that converts strings with special characters (like spaces, or quotes..) to a string that can be passed over a URI.</p>
+<p><code>encodeURIComponent()</code> is a function that converts strings with special characters (like spaces, or quotes..) to a string that can be passed over a URI.</p>
 
-<p><code class="highlighter-rouge">request</code> is just a function that takes an URI, some options, and will give the result in a <strong>callback</strong>. Since we are following Node standard approach to callbacks, where the first argument is the error object, the return callback contains a <code class="highlighter-rouge">undefined</code> as first argument.</p>
+<p><code>request</code> is just a function that takes an URI, some options, and will give the result in a <strong>callback</strong>. Since we are following Node standard approach to callbacks, where the first argument is the error object, the return callback contains a <code>undefined</code> as first argument.</p>
 
 <h2 id="axios-a-promise-based-equivalent">Axios: a Promise based equivalent</h2>
 
-<p><a href="https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">In my last article we talked about promises</a>, so we would like to see these in action, right? We have two options, the first is to wrap <code class="highlighter-rouge">request</code> in a promise (easy, but more code); the second is to <strong>use a library already built with promises in mind</strong>.</p>
+<p><a href="https://michelenasti.com/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">In my last article we talked about promises</a>, so we would like to see these in action, right? We have two options, the first is to wrap <code>request</code> in a promise (easy, but more code); the second is to <strong>use a library already built with promises in mind</strong>.</p>
 
-<p>The one I use, and that is super popular, is called <strong><a href="https://www.npmjs.com/package/axios"><code class="highlighter-rouge">Axios</code></a></strong>: Here’s the description</p>
+<p>The one I use, and that is super popular, is called <strong><a href="https://www.npmjs.com/package/axios"><code>Axios</code></a></strong>: Here’s the description</p>
 
 <blockquote>
   <p>Promise based HTTP client for the browser and node.js</p>
@@ -182,54 +180,52 @@ results[0].geometry.location.lng
 
 <p>To install:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">npm</span><span class="kv"> install axios
-</span></code></pre>
-</div>
+<pre><code class="language-console">$ npm install axios
+</code></pre>
 
 <p>Here is the snippet for the axios request:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">encodedAddress</span> <span class="o">=</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+<pre><code class="language-javascript">let encodedAddress = encodeURIComponent(address);
 
-<span class="kd">let</span> <span class="nx">geocodeUrl</span> <span class="o">=</span> <span class="err">`</span><span class="nx">https</span><span class="err">:</span><span class="c1">//maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;</span>
+let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;
 
-<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">geocodeUrl</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// throw error on no results</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">'ZERO_RESULTS'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Unable to find that address'</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="c1">// return new promise with data (for chaining)</span>
-  <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">({</span>
-    <span class="na">latitude</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span>
-    <span class="na">longitude</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span>
-    <span class="na">formatted_address</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">formatted_address</span>
-  <span class="p">});</span>
+axios.get(geocodeUrl).then((response) =&gt; {
+  // throw error on no results
+  if (response.data.status === 'ZERO_RESULTS') {
+    throw new Error('Unable to find that address');
+  }
+  // return new promise with data (for chaining)
+  return Promise.resolve({
+    latitude: response.data.results[0].geometry.location.lat,
+    longitude: response.data.results[0].geometry.location.lng,
+    formatted_address: response.data.results[0].formatted_address
+  });
 
-  <span class="c1">// show data</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">latitude</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">response</span><span class="p">.</span><span class="nx">formatted_address</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">latitude</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">response</span><span class="p">.</span><span class="nx">latitude</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">latitude</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">response</span><span class="p">.</span><span class="nx">longitude</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+  // show data
+}).then((response) =&gt; {
+  console.log(`latitude: ${response.formatted_address}`);
+  console.log(`latitude: ${response.latitude}`);
+  console.log(`latitude: ${response.longitude}`);
 
-  <span class="c1">//error handling </span>
-<span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-<span class="p">});</span> 
+  //error handling 
+}).catch((e) =&gt; {
+  console.error(e);
+}); 
 </code></pre>
-</div>
 
-<p>The approach here is different. <code class="highlighter-rouge">axios.get()</code> returns a Promise, that we chain with a call to the <code class="highlighter-rouge">then()</code> method.</p>
+<p>The approach here is different. <code>axios.get()</code> returns a Promise, that we chain with a call to the <code>then()</code> method.</p>
 
-<p>Once we have the data, in the form of <code class="highlighter-rouge">response.data</code>, we can extrapolate the fields we need.</p>
+<p>Once we have the data, in the form of <code>response.data</code>, we can extrapolate the fields we need.</p>
 
-<p>I could just print the data in the first <code class="highlighter-rouge">then()</code> block, but to be more coherent with my design guidelines (<em>every function does just one thing</em>) I wanted to separate the two operations so the first block will just retrieve the data, then returns another Promise (<code class="highlighter-rouge">return Promise.resolve({..})</code>).</p>
+<p>I could just print the data in the first <code>then()</code> block, but to be more coherent with my design guidelines (<em>every function does just one thing</em>) I wanted to separate the two operations so the first block will just retrieve the data, then returns another Promise (<code>return Promise.resolve({..})</code>).</p>
 
-<p>The next <code class="highlighter-rouge">then()</code> block will only display the data retrieved.</p>
+<p>The next <code>then()</code> block will only display the data retrieved.</p>
 
 <h2 id="which-approach-do-you-prefer">Which approach do you prefer?</h2>
 
 <p>This depends on you! <strong>I prefer promises</strong>, because I find them more natural, but being a Node coder means you can choose and decide what’s best for you. Both are well tested libraries with well known patterns, so you only have to choose the one you love.</p>
 
-<p>Cheers from <code class="highlighter-rouge">40.7802306</code>, <code class="highlighter-rouge">14.7010686</code> !</p>
+<p>Cheers from <code>40.7802306</code>, <code>14.7010686</code> !</p>
  
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/03/14/two-easy-ways-perform-get-requests-in-nodejs.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/03/14/two-easy-ways-perform-get-requests-in-nodejs.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
@@ -358,6 +354,7 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/jquery.poptrox.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
 </body>
 
 </html>
