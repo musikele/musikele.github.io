@@ -132,7 +132,7 @@ With this package we get two functions: one to **create** the token (`sign`), an
 So let's create a new file (we are not going to need the previous stuff anymore) and start over.
 
 ```javascript
-const jwt = require('jonwebtoken')
+const jwt = require('jsonwebtoken')
 
 let data = {
     id: 10
