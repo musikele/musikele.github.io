@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: "JWT: what is it? How does it work? Why we should use it?"
+title: "JWT: what is it? How does it work? Why should we use it?"
 category: English
 layout: post
 tags:
