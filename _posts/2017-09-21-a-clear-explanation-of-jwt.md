@@ -243,6 +243,4 @@ With JWT the database is not needed anymore (at every request), because we can s
 
 Now you can handle as many users you can, thanks to hash functions and JWT!
 
-<hr>
-
-This post would have never existed without the brilliant course by [Andrew Mead about NodeJs](https://www.udemy.com/the-complete-nodejs-developer-course-2/). Check it out.
+*This post would have never existed without the brilliant course by [Andrew Mead about NodeJs](https://www.udemy.com/the-complete-nodejs-developer-course-2/). Check it out.*
