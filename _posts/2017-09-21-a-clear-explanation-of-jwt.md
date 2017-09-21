@@ -66,7 +66,7 @@ Curious? I won't lie to you, security is one of the hottest themes in computer s
 
 ## When to use a hash
 
-You might use Hashes in a lot of different situations; we will use them in **authentication**, but another famous use case is to store passwords in your database. [Bitcoin also uses hashes to mine new bitcoins (italian)](%7B%7Bsite.baseurl%7D%7D/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html).
+You might use Hashes in a lot of different situations; we will use them in **authentication**, but another famous use case is to store passwords in your database. [Bitcoin also uses hashes to mine new bitcoins (italian)]({{site.baseurl}}/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html).
 
 Passwords should never be stored as plaintext, because users have this bad habit to use the same password everywhere (I guess you don't, do you?).
 
@@ -170,7 +170,7 @@ Let's copy this string and go over [jwt.io](http://jwt.io), where you'll see a c
 
 * and finally we see the **verify signature** that will allow us to inser the secret and verify that the token is right. Try to insert our `secret` (`123abc`) and the verification box will change to *Signature Verified* ;)
 
-![screenshot of JWT website](%7B%7Bsite.baseurl%7D%7D/images/jwt.PNG)
+![screenshot of JWT website]({{site.baseurl}}/images/jwt.PNG)
 
 ### Verify that the token is valid
 
