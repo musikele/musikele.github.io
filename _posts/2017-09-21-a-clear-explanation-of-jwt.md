@@ -22,14 +22,13 @@ JWT is universal, it will be easy to grasp the concepts in any language you like
 
 Create a new Node project anywhere you like. We will use this project to do our experiments. In order to use hashing functions in Node, create and enter a new directory, and install `crypto-js`:
 
-```
+```bash
 $ npm i --save crypto-js
-
 ```
 
 Now, let's create a new file, `hashing.js` and fill it with this:
 
-```
+```javascript
 const {SHA256} = require('crypto-js')
 
 let message = 'I am user number 3'
@@ -38,16 +37,14 @@ let hash = SHA256(message).toString();
 
 console.log(`Message: ${message}`)
 console.log(`Hash: ${hash}`)
-
 ```
 
 Let's run this file. What will we get?
 
-```
+```bash
 $ node hashing.js 
 Message: I am user number 3
 Hash: 9da4d19e100809d42da806c2b7df5cf37e72623d42f1669eb112e23f5c9d45a3
-
 ```
 
 What's happening here? We are importing the function `SHA256`, that is one of the strongest hash functions we know for the moment, with mathematical proofs, etc. 256 is the number of bits of the hashed message.
@@ -84,16 +81,15 @@ The safest way is to provide them with a **token**. A token is a piece of data (
 
 So let's create a json object with the user' ID:
 
-```
+```javascript
 let data = {
     id: 4
 }
-
 ```
 
 We obviously don't want that the user can change their ID with some other ID, for example the admin ID. So we can create a new object called `token` that contains the data and the hash of the data:
 
-```
+```javascript
 let data = {
     id: 4
 };
@@ -102,7 +98,6 @@ let token = {
     data, 
     hash: SHA256(JSON.stringify(data)).toString()
 }
-
 ```
 
 We now have a token, but ... if the user tamper the data, he can just recalculate the hash and he won.
@@ -113,12 +108,11 @@ How can we prevent that the user won't tamper the data? The most used technique 
 
 So the previous example would be something like this:
 
-```
+```javascript
 let token = {
     data, 
     hash: SHA256(JSON.stringify(data) + 'somesecret').toString()
 }
-
 ```
 
 Wait, but what if the user knows the salt? **They shouldn't!** Once they're logged in, you send them this *token* signed with the *server's salt* and you can be sure that the client cannot recreate the hash back again.
@@ -129,16 +123,15 @@ We could write all the edge cases, but that would be a lot of work. Instead, the
 
 Let's install it:
 
-```
+```bash
 $ npm i --save jsonwebtoken 
-
 ```
 
 With this package we get two functions: one to **create** the token (`sign`), and another to **verify** (`verify`).
 
 So let's create a new file (we are not going to need the previous stuff anymore) and start over.
 
-```
+```javascript
 const jwt = require('jonwebtoken')
 
 let data = {
@@ -148,16 +141,14 @@ let data = {
 let secret = '123abc'
 let token = jwt.sign(data, secret)
 console.log(token)
-
 ```
 
 And this becomes:
 
-```
+```bash
 $ node jwtExample.js 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
 DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
-
 ```
 
 this is different from the hash we presented before: it is divided in three blocks, and it's clearly bigger. What's going on?
@@ -176,7 +167,7 @@ Let's copy this string and go over [jwt.io](http://jwt.io), where you'll see a c
 
 Very very easy:
 
-```
+```javascript
 //add this to the preceeding script 
 
 let decoded = jwt.verify(token, secret)
@@ -186,7 +177,7 @@ console.log('decoded', decoded)
 
 output:
 
-```
+```bash
 $ node jwtExample.js 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
 DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
@@ -196,7 +187,7 @@ decoded { id: 10, iat: 1505982519 }
 
 And if we try to change anything in the token, or in the secret, we get a javascript Error back:
 
-```
+```javascript
 //change the secret to fail the validation  
 
 let decoded = jwt.verify(token, secret+'blah')
@@ -206,7 +197,7 @@ console.log('decoded', decoded)
 
 output:
 
-```
+```bash
 $ node jwtExample.js 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
 DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
