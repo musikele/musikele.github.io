@@ -28,7 +28,7 @@ Alcuni scienziati hanno recentemente realizzato uno studio su un esperimento non
 
 A metterlo nero su bianco sono due scienziati, [Zohar Ringel e Dmitry Kovrizhi](https://cosmosmagazine.com/physics/physicists-find-we-re-not-living-in-a-computer-simulation), che hanno provato a simulare un particolare effetto elettrico chiamato *Quantum Hall* che rileva anomalie nello spazio-tempo, tramite un metodo analitico chiamato *Quantum Monte Carlo*.
 
-Senza scendere nei dettagli, che richiedono più di un dottorato in fisica quantistica, l'idea è basicamente questa: se esiste un fenomeno in natura che obbedisce a delle leggi, che noi abbiamo "più o meno" capito, potremmo inserire queste leggi in un computer e simularlo. E' come programmare al pc le leggi che governano il moto di un'auto, o il calcio di un giocatore di PES a un pallone. 
+Senza scendere nei dettagli, che richiedono più di un dottorato in fisica quantistica, l'idea è questa: se esiste un fenomeno in natura che obbedisce a delle leggi, che noi abbiamo "più o meno" capito, potremmo inserire queste leggi in un computer e simularlo. E' come programmare al pc le leggi che governano il moto di un'auto, o il calcio di un giocatore di PES a un pallone. 
 
 La "scoperta", per questi scienziati, è che questo particolare fenomeno sembra essere irrealizzabile all'interno di un computer. In particolare, se ne riescono a calcolare gli effetti finchè gli elettroni (e gli atomi) in gioco sono pochissimi, ma non appena diventano qualcosa come 2-300 (stiamo parlando di elettroni!) un computer richiederebbe tempo esponenziale per calcolare un risultato. E come disse una volta un mio prof, 2^300 (_due alla duecento_) è più o meno il numero di atomi presenti nell'universo! 
 
@@ -36,9 +36,9 @@ La "scoperta", per questi scienziati, è che questo particolare fenomeno sembra 
 
 Ci sono ancora troppe variabili in gioco per poter dire che la questione sia conclusa. Alcune delle domande a cui onestamente non sappiamo dare una risposta: 
 
-- E se gli scienziati avessero sbagliato? 
-- E se la simulazione non fosse possibile con le tecnologie attuali, ma lo è con quelle del futuro? 
+- E se gli scienziati avessero sbagliato l'algoritmo, o i calcoli? 
+- E se la simulazione non fosse possibile con le tecnologie attuali, ma lo sarà con quelle del futuro? 
 - E se gli alieni che hanno programmato la nostra simulazione avessero deliberatamente inserito dei "glitch" all'interno del nostro universo per non farci andare troppo oltre? 
 - Che senso ha vivere (e morire) se siamo in una simulazione che dura da 13.82 miliardi di anni? 
 - Gli universi paralleli sono altre simulazioni lanciate in contemporanea alla nostra, ma con dati iniziali diversi? 
-- Le bollette, le rate del finanziamento e il mutuo sono reali? 
+- **Le bollette, le rate del finanziamento e il mutuo sono reali?**
