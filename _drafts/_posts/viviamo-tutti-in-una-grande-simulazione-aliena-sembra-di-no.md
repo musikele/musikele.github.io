@@ -21,4 +21,6 @@ non esistono prove, ma supposizioni e indizi. Ad esempio, il fatto che l'univers
   
 ## Un nuovo studio getta ombre su questa ipotesi
 
-Alcuni scienziati hanno recentemente fatto uno studio, non riuscito, e un interessante corollario di questo fallimento sembra proprio essere che l'universo non é una simulazione.
+Alcuni scienziati hanno recentemente fatto uno studio, non riuscito, e un interessante corollario di questo fallimento sembra proprio essere che **l'universo non é una simulazione.**
+
+A metterlo nero su bianco sono due scienziati, [Zohar Ringel e Dmitry Kovrizhi](https://cosmosmagazine.com/physics/physicists-find-we-re-not-living-in-a-computer-simulation), che hanno provato a simulare un particolare effetto elettrico 
