@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-03T19:18:34+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">JWT: what is it? How does it work? Why should we use it?</title><link href="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" rel="alternate" type="text/html" title="JWT: what is it? How does it work? Why should we use it?" /><published>2017-09-21T02:00:00+02:00</published><updated>2017-09-21T19:05:19+02:00</updated><id>https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt</id><content type="html" xml:base="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html">&lt;p&gt;In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-03T19:52:15+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Viviamo tutti in una grande simulazione aliena? Sembra di no</title><link href="https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html" rel="alternate" type="text/html" title="Viviamo tutti in una grande simulazione aliena? Sembra di no" /><published>2017-10-03T02:00:00+02:00</published><updated>2017-10-03T19:42:57+02:00</updated><id>https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no</id><content type="html" xml:base="https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">&lt;p&gt;Esitono persone che ritengono che &lt;a href=&quot;http://www.lescienze.it/news/2016/04/16/news/universo_simulazione_computer-3054787/&quot;&gt;viviamo in una grande, enorme simulazione al computer&lt;/a&gt;, magari realizzata da una civiltà aliena che ci sfrutta o ci osserva, manco fossimo al Grande Fratello.&lt;/p&gt;
+
+&lt;p&gt;Se non avete ancora chiuso il browser, sappiate che tra i sostenitori di questa teoria ci sono principalmente scienziati e tecnologhi di tutti rispetto, come &lt;a href=&quot;https://www.theguardian.com/technology/2017/apr/22/what-if-were-living-in-a-computer-simulation-the-matrix-elon-musk&quot;&gt;Stephen Hawking e Elon Musk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;perché-credere-alla-simulazione&quot;&gt;Perché credere alla simulazione…&lt;/h3&gt;
+
+&lt;p&gt;non esistono prove, ma supposizioni e indizi. Ad esempio, il fatto che l’universo sembra avere un inizio temporale e dei confini fisici ben precisi. Il fatto che gli atomi si possano dividere in  Quark, ma fino a un certo punto: poi sono indivisibili. Quindi, questo fatto che il mondo analogico avesse dei limiti discreti era la prima causa di sospetto per la frangia più &lt;em&gt;sci-fi&lt;/em&gt; della scienza.&lt;/p&gt;
+
+&lt;h3 id=&quot;ma-esistono-prove-che-non-siamo-in-una-simulazione&quot;&gt;…Ma esistono prove che NON siamo in una simulazione&lt;/h3&gt;
+
+&lt;p&gt;Alcuni scienziati hanno recentemente realizzato uno studio su un esperimento non riuscito, e un interessante corollario di questo fallimento sembra proprio essere che &lt;strong&gt;l’universo non é una simulazione.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A metterlo nero su bianco sono due scienziati, &lt;a href=&quot;https://cosmosmagazine.com/physics/physicists-find-we-re-not-living-in-a-computer-simulation&quot;&gt;Zohar Ringel e Dmitry Kovrizhi&lt;/a&gt;, che hanno provato a simulare un particolare effetto elettrico chiamato &lt;em&gt;Quantum Hall&lt;/em&gt; che rileva anomalie nello spazio-tempo, tramite un metodo analitico chiamato &lt;em&gt;Quantum Monte Carlo&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Senza scendere nei dettagli, che richiedono più di un dottorato in fisica quantistica, l’idea è basicamente questa: se esiste un fenomeno in natura che obbedisce a delle leggi, che noi abbiamo “più o meno” capito, potremmo inserire queste leggi in un computer e simularlo. E’ come programmare al pc le leggi che governano il moto di un’auto, o il calcio di un giocatore di PES a un pallone.&lt;/p&gt;
+
+&lt;p&gt;La “scoperta”, per questi scienziati, è che questo particolare fenomeno sembra essere irrealizzabile all’interno di un computer. In particolare, se ne riescono a calcolare gli effetti finchè gli elettroni (e gli atomi) in gioco sono pochissimi, ma non appena diventano qualcosa come 2-300 (stiamo parlando di elettroni!) un computer richiederebbe tempo esponenziale per calcolare un risultato. E come disse una volta un mio prof, 2^300 (&lt;em&gt;due alla duecento&lt;/em&gt;) è più o meno il numero di atomi presenti nell’universo!&lt;/p&gt;
+
+&lt;h2 id=&quot;e-se-si-sono-sbagliati&quot;&gt;E se si sono sbagliati?&lt;/h2&gt;
+
+&lt;p&gt;Ci sono ancora troppe variabili in gioco per poter dire che la questione sia conclusa. Alcune delle domande a cui onestamente non sappiamo dare una risposta:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;E se gli scienziati avessero sbagliato?&lt;/li&gt;
+  &lt;li&gt;E se la simulazione non fosse possibile con le tecnologie attuali, ma lo è con quelle del futuro?&lt;/li&gt;
+  &lt;li&gt;E se gli alieni che hanno programmato la nostra simulazione avessero deliberatamente inserito dei “glitch” all’interno del nostro universo per non farci andare troppo oltre?&lt;/li&gt;
+  &lt;li&gt;Che senso ha vivere (e morire) se siamo in una simulazione che dura da 13.82 miliardi di anni?&lt;/li&gt;
+  &lt;li&gt;Gli universi paralleli sono altre simulazioni lanciate in contemporanea alla nostra, ma con dati iniziali diversi?&lt;/li&gt;
+  &lt;li&gt;Le bollette, le rate del finanziamento e il mutuo sono reali?&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="Simulazione" /><category term="Aliena" /><category term="Elon musk" /><category term="Scifi" /><summary type="html">Esitono persone che ritengono che viviamo in una grande, enorme simulazione al computer, magari realizzata da una civiltà aliena che ci sfrutta o ci osserva, manco fossimo al Grande Fratello.</summary></entry><entry><title type="html">JWT: what is it? How does it work? Why should we use it?</title><link href="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" rel="alternate" type="text/html" title="JWT: what is it? How does it work? Why should we use it?" /><published>2017-09-21T02:00:00+02:00</published><updated>2017-09-21T19:05:19+02:00</updated><id>https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt</id><content type="html" xml:base="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html">&lt;p&gt;In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.&lt;/p&gt;
 
 &lt;p&gt;However, to understand JWT, we must step back and talk about hashing functions.&lt;/p&gt;
 
@@ -661,73 +690,4 @@ Più o meno il copione è sempre lo stesso:&lt;/p&gt;
 
 &lt;h2 id=&quot;e-possibile-superare-questi-problemi-troverò-sviluppatori-per-la-mia-idea&quot;&gt;E’ possibile superare questi problemi? Troverò sviluppatori per la mia idea?&lt;/h2&gt;
 
-&lt;p&gt;Ho dei consigli a riguardo, non posso garantire nulla, ma certe cose funzionano meglio di altre. Ne parlerò in futuro. Intanto, se avete critiche, suggerimenti o impressioni, i commenti sono qui sotto.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="startup" /><category term="lavoro" /><summary type="html">Ricevo almeno due richieste al mese per collaborare con startup. Più o meno il copione è sempre lo stesso:</summary></entry><entry><title type="html">Cinque tool per migliorare la vostra developer experience</title><link href="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html" rel="alternate" type="text/html" title="Cinque tool per migliorare la vostra developer experience" /><published>2017-05-30T14:07:50+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience</id><content type="html" xml:base="https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html">&lt;p&gt;Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra &lt;em&gt;developer experience&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;mac-command-line&quot;&gt;&lt;code&gt;mac&lt;/code&gt; command line&lt;/h3&gt;
-
-&lt;p&gt;Si &lt;a href=&quot;https://github.com/guarinogabriel/Mac-CLI&quot;&gt;installa da linea di comando&lt;/a&gt; e crea un eseguibile, &lt;code&gt;mac&lt;/code&gt;, che permette di svolgere molte operazioni comuni con pochi click.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/demo-mac-cli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Un esempio?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;mac ip:public&lt;/code&gt; vi restituisce il vostro ip pubblico&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;mac speedtest&lt;/code&gt; esegue uno speed test da linea di comando&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;mac memory&lt;/code&gt; vi dice quale app sta consumando la vostra preziosa RAM&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;e tanti altri. Sono circa una cinquantina!&lt;/p&gt;
-
-&lt;h3 id=&quot;oh-my-zsh-per-un-terminale-più-combattivo&quot;&gt;&lt;code&gt;Oh-my-zsh&lt;/code&gt; per un terminale più combattivo&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;Oh-my-zsh&lt;/a&gt; è un tool che va a sovrascrivere un po’ di cose nei vostri file di configurazione di zsh. In particolare, modifica il funzionamento del prompt di comando mostrandovi le informazioni di cui più avete bisogno:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/oh-my-zsh.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Insomma, avrete sott’occhio user, cartella in cui vi trovate, repository e branch, senza impazzire. E poi migliora anche l’utilizzo dell’autocompletamento (il TAB). Ci sono anche i plugin. Oh my!&lt;/p&gt;
-
-&lt;h3 id=&quot;ngrok-per-testare-chiamate-api-dallesterno&quot;&gt;&lt;code&gt;ngrok&lt;/code&gt;, per testare chiamate API dall’esterno&lt;/h3&gt;
-
-&lt;p&gt;Dovete testare le chiamate di un sistema esterno verso il vostro software? Ad esempio, io ho avuto questa esigenza con le API di Paypal e Gestpay: a un certo punto questi sistemi dovevano notificarmi che i pagamenti erano andati a buon fine e mi avrebbero contattato agli indirizzi configurati.&lt;/p&gt;
-
-&lt;p&gt;Come testare e come verificare il contenuto di queste chiamate? Facile, con &lt;a href=&quot;https://ngrok.com/&quot;&gt;ngrok&lt;/a&gt;: un tool che permette di creare un tunnel privato da un indirizzo http esterno.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ngrok.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Per farla facile, voi lanciate &lt;code&gt;ngrok http 8000&lt;/code&gt; e ngrok creerà un indirizzo tipo &lt;code&gt;http://abc33344422.ngrok.io&lt;/code&gt;. Visitando questo indirizzo (anche dall’esterno della vostra rete privata!) ngrok redirige il traffico a&lt;code&gt;localhost:8000&lt;/code&gt;. Tutto ciò che passa per ngrok viene loggato e mostrato!&lt;/p&gt;
-
-&lt;h3 id=&quot;git-flow-una-metodologia-per-semplificare-e-standardizzare-git-nel-team&quot;&gt;Git Flow, una metodologia per semplificare e standardizzare git nel team&lt;/h3&gt;
-
-&lt;p&gt;Git flow è sia &lt;a href=&quot;https://github.com/nvie/gitflow&quot;&gt;un tool installabile da linea di comando&lt;/a&gt;, sia un approccio filosofico alla domanda “come lavorare in gruppo”.&lt;/p&gt;
-
-&lt;p&gt;Git è un potentissimo sistema di versioning e branching; spero per voi che lo stiate già utilizzando altrimenti brrrr.&lt;/p&gt;
-
-&lt;p&gt;Con git flow organizziamo il lavoro in due &lt;em&gt;meta-filoni&lt;/em&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;branch &lt;code&gt;master&lt;/code&gt;, che corrisponde alle versioni rilasciate&lt;/li&gt;
-  &lt;li&gt;branch &lt;code&gt;develop&lt;/code&gt;, ossia dove gli sviluppatori committano le feature sviluppate, in attesa di rilascio.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Oltre a questi due branch “generali”, ogni azione degli sviluppatori è realizzata creando nuovi branch:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gli sviluppi delle singole feature sui branch &lt;code&gt;feature/*tua_feature*&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;I rilasci (da develop a master) su branch chiamati &lt;code&gt;release/*nome_release*&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;le hotfix (fix, correzioni a bug, di versioni già rilasciate) su branch &lt;code&gt;hotfix/*nome_fix*&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Non ci avete capito niente? &lt;a href=&quot;https://danielkummer.github.io/git-flow-cheatsheet/&quot;&gt;Qui un grafico che prova a spiegare comandi e funzioni&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;bonus-postman-per-testare-le-interfacce-rest&quot;&gt;Bonus: Postman per testare le interfacce Rest&lt;/h3&gt;
-
-&lt;p&gt;Ho iniziato a lavorare che c’era SOAP e si stava appena iniziando a parlare di REST. Qualche anno dopo, SOAP è diventato &lt;em&gt;legacy&lt;/em&gt; e tutti si dichiarano REST, chi bene e chi male.&lt;/p&gt;
-
-&lt;p&gt;Ad ogni modo, è sorta l’esigenza di testare le interfacce REST e come testarle se non con &lt;a href=&quot;https://www.getpostman.com/&quot;&gt;Postman&lt;/a&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://www.getpostman.com/img/v2/logo-big.svg&quot; alt=&quot;Postman&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Questa è  una vera e propria applicazione &lt;em&gt;standalone&lt;/em&gt; che permette di effettuare ogni tipo di chiamata desideriate, GET - PUT - POST - HEAD etc. C’è la possibilità di salvare le chiamate, passare header aggiuntivi, visualizzare i dati in molti modi (ad esempio JSON), etc etc.&lt;/p&gt;
-
-&lt;p&gt;Come dite? non è un tool da linea di comando? Avete ragione, ma questo è il mio blog e qui comando io 😂&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="git flow" /><category term="mac-cli" /><category term="oh-my-zsh" /><category term="postman" /><category term="ngrok" /><summary type="html">Riuscireste a svolgere il vostro lavoro senza la linea di comando? Se siete come me, ossia amanti di bash, ecco alcuni tool che vi permetteranno di migliorare la vostra developer experience.</summary></entry></feed>
+&lt;p&gt;Ho dei consigli a riguardo, non posso garantire nulla, ma certe cose funzionano meglio di altre. Ne parlerò in futuro. Intanto, se avete critiche, suggerimenti o impressioni, i commenti sono qui sotto.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="startup" /><category term="lavoro" /><summary type="html">Ricevo almeno due richieste al mese per collaborare con startup. Più o meno il copione è sempre lo stesso:</summary></entry></feed>
