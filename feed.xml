@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-05T09:59:24+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Viviamo tutti in una grande simulazione aliena? Sembra di no</title><link href="https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html" rel="alternate" type="text/html" title="Viviamo tutti in una grande simulazione aliena? Sembra di no" /><published>2017-10-03T02:00:00+02:00</published><updated>2017-10-03T19:55:06+02:00</updated><id>https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no</id><content type="html" xml:base="https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">&lt;p&gt;Esitono persone che ritengono che &lt;a href=&quot;http://www.lescienze.it/news/2016/04/16/news/universo_simulazione_computer-3054787/&quot;&gt;viviamo in una grande, enorme simulazione al computer&lt;/a&gt;, magari realizzata da una civiltà aliena che ci sfrutta o ci osserva, manco fossimo al Grande Fratello.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-05T15:51:20+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Windows non fa più così schifo: recensione Dell XPS 15” 9560 (2017)</title><link href="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html" rel="alternate" type="text/html" title="Windows non fa più così schifo: recensione Dell XPS 15&quot; 9560 (2017)" /><published>2017-10-03T02:00:00+02:00</published><updated>2017-10-05T15:49:32+02:00</updated><id>https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017</id><content type="html" xml:base="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html">&lt;p&gt;Appena ho finito l’università ho acquistato un Macbook Air, che è durato ben 5 anni (!). All’epoca lo presi perchè, da neolaureato, non volevo chiudermi l’opzione di realizzare app per iOS, cosa che poi non è mai avvenuta. Quindi per il  lavoro di tutti i giorni ho deciso di uscire dalla comfort zone e prendere un nuovo pc: un &lt;strong&gt;&lt;a href=&quot;http://www.dell.com/it/p/xps-15-9560-laptop/pd?oc=cnx95604&amp;amp;model_id=xps-15-9560-laptop&quot;&gt;Dell XPS 9560&lt;/a&gt;, con schermo da 15”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;i-mac-non-sono-meglio&quot;&gt;I mac non sono meglio?&lt;/h2&gt;
+&lt;p&gt;Per una grande parte degli utenti, probabilmente si. Un mac ha:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;un ottimo sistema operativo&lt;/li&gt;
+  &lt;li&gt;un ottimo hardware&lt;/li&gt;
+  &lt;li&gt;un’eccellente simbiosi hardware/software, che fa davvero la differenza&lt;/li&gt;
+  &lt;li&gt;è facile da usare, se appartenete alla fascia di utenti normali (io no)&lt;/li&gt;
+  &lt;li&gt;non viene colpito da virus (&lt;em&gt;chiarimento per i secur-nazi: i mac hanno lo 0,1% dei virus di Windows e a meno che tu non sia proprio un imbecille, è difficile che un virus possa fare troppi danni&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;ha tanti software e applicativi multimediali, alcuni eccellenti e addirittura gratuiti!&lt;/li&gt;
+  &lt;li&gt;Hanno un terminale unix-like quindi non bisogna imparare nuovvi comandi.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mac-anche-no&quot;&gt;Mac anche no!&lt;/h3&gt;
+&lt;p&gt;I Mac tuttavia hanno una serie di problemi:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Costano. Almeno 1000€ in più di un equivalente Windows, o Linux.&lt;/li&gt;
+  &lt;li&gt;Ti fanno credere di vivere in un mondo fantastico dove tutto è bello e perfetto, in cui c’è sempre una &lt;em&gt;i&lt;/em&gt; davanti a tutto (_i_Tutto) e non esiste nient’altro.&lt;/li&gt;
+  &lt;li&gt;E’ compatibile solo con roba certificata per Apple, generalmente venduta da Apple, al doppio-triplo del prezzo equivalente. (Adattatori hdmi, sto parlando di voi!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Se avete i soldi, e siete consapevoli che potreste entrare in una bolla da cui sarà problematico uscire, prendete un mac e non pensateci due volte.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosa-ho-scelto-dell-xps&quot;&gt;Cosa ho scelto: Dell XPS&lt;/h2&gt;
+&lt;p&gt;Alla fine ho preso un Dell XPS con un monitor da 15”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/dell-xps-15-2017-nw-g01.jpg&quot; alt=&quot;Dell XPS 15&amp;quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L’ho pagato &lt;strong&gt;2190€&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Alla faccia Miche’, e hai detto che il Mac costa!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;L’equivalnte Mac dello stesso computer costa &lt;em&gt;3.399€&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Torniamo al Dell. La versione che ho deciso di prendere ha queste caratteristiche:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ha un processore &lt;strong&gt;Intel i7 di settima generazione&lt;/strong&gt;, l’ultima al momento dell’acquisto.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;16 GB di RAM&lt;/strong&gt;, espandibili&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;hard disk da 512 GB&lt;/strong&gt;, espandibili&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;monitor da 15,6”&lt;/strong&gt;, che per un web developer fa la differenza&lt;/li&gt;
+  &lt;li&gt;schermo &lt;strong&gt;touch&lt;/strong&gt; in &lt;strong&gt;4k&lt;/strong&gt;: mi sono lasciato convincere da una cosa che non mi serviva; senza questo spendereste addirittura meno.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Non entro in altri dettagli perché sarebbe per gamers, e io non sono un gamer, sono un programmatore.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-caratteristica-che-non-ti-aspetti-bash-su-windows&quot;&gt;La caratteristica che non ti aspetti: Bash su Windows&lt;/h2&gt;
+
+&lt;p&gt;Io faccio un &lt;strong&gt;abuso della shell&lt;/strong&gt; e dei suoi script, e questa storia di Bash su Windows è stato uno dei motivi per cui ho deciso di passare a Win: Non è una macchina virtuale, non è un’emulazione, ma è un vero e proprio sottosistema Ubuntu che gira sul computer windows. Le chiamate unix vengono “intercettate” da Windows che le traduce in chiamate native. Questo significa che all’interno del sottosistema linux si pul accedere a tutti i file del mondo windows (è sconsigliato fare il contrario!), oltre che lanciare comandi, eseguire script, &lt;code&gt;sudo apt-get install git&lt;/code&gt; e via di seguito.&lt;/p&gt;
+
+&lt;p&gt;Una delle prime cose che ho fatto infatti è stato di scaricare &lt;a href=&quot;https://hyper.is/&quot;&gt;Hyper.js&lt;/a&gt; (un terminale moderno scritto in NodeJS) e &lt;a href=&quot;https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html&quot;&gt;oh-my-zsh&lt;/a&gt;, un’estensione di zsh che permette di lavorare con più facilità.&lt;/p&gt;
+
+&lt;p&gt;Su internet ci sono &lt;a href=&quot;https://msdn.microsoft.com/it-it/commandline/wsl/install_guide&quot;&gt;guide ovunque&lt;/a&gt; per settare la shell di bash anche in &lt;a href=&quot;https://code.visualstudio.com/docs/editor/integrated-terminal&quot;&gt;Visual Studio Code&lt;/a&gt;, Intellij, etc.&lt;/p&gt;
+
+&lt;p&gt;Microsoft, stavolta hai fatto una cosa davvero decente: &lt;strong&gt;esperimento riuscito&lt;/strong&gt; 👍&lt;/p&gt;
+
+&lt;h2 id=&quot;il-monitor-touch-4k-e-15&quot;&gt;Il monitor touch, 4k e 15”&lt;/h2&gt;
+
+&lt;p&gt;Il monitor ha un bordo sottilissimo per cui il computer è uno dei più piccoli per la sua fascia. Il fatto che sia lucido non mi fa impazzire, un po’ li odio i monitor così.  Sono felice di averlo preso 15”, con più pixel posso mettere più cose sullo schermo (non sono mai stato il tipo da usare più desktop).&lt;/p&gt;
+
+&lt;p&gt;I video in 4k si fanno apprezzare, anche se per ora solo su youtube si trova roba decente.&lt;/p&gt;
+
+&lt;p&gt;Toccare lo schermo cambia proprio il modo di interagire col pc. Il touch è molto comodo in aereo, o in treno, o comunque nei posti dove non puoi usare nè mouse nè tastiera agilmente. Tuttavia non sono un grande utente di questa feature, almeno non quanto mia figlia che si diverte a toccarmi lo schermo mentre lavoro (chiude programmi, manda mail, tutto senza saper neanche camminare!).&lt;/p&gt;
+
+&lt;h2 id=&quot;la-batteria&quot;&gt;La batteria&lt;/h2&gt;
+
+&lt;p&gt;La batteria non mi ha sorpreso: dura 6 ore. Aumentando la luminosità del monitor anche meno.&lt;/p&gt;
+
+&lt;h2 id=&quot;connettività&quot;&gt;Connettività&lt;/h2&gt;
+
+&lt;p&gt;In un mondo dominato da porte USB tradizionali, abbandonare tutto per le sole USB-C mi sembrava un passo troppo estremo. Un mouse da 9,90€ non lo avrei più potuto collegare! Invece il Dell è dotato di due porte USB tradizionali, una USB-C, una porta HDMI, alimentatore e slot per SD. Niente più adattatori…&lt;/p&gt;
+
+&lt;p&gt;(In realtà uno l’ho dovuto comprare, quello per i monitor VGA. Ogni tanto vado a fare delle presentazioni e voglio assicurarmi di essere compatibile con qualsiasi proiettore incontri).&lt;/p&gt;
+
+&lt;h2 id=&quot;prestazioni&quot;&gt;Prestazioni&lt;/h2&gt;
+
+&lt;p&gt;E’ una bomba, non c’è niente da dire. Forse potevo spendere per avere più RAM, ma come ho scritto sopra è estendibile quindi non appena saranno pochi ne acquisterò un altro po’. Forse potevo prendere più hard disk, ma da quando esistono Google Photos, Dropbox e ho il NAS a casa non conservo più nulla sul disco del pc, a parte i programmi e i workspace di lavoro.&lt;/p&gt;
+
+&lt;p&gt;Nonostante sia così potente, &lt;strong&gt;c’è una cosa che va lenta ed è proprio la feature che amo di più: il terminale bash&lt;/strong&gt;. Purtroppo, essendo emulato, noto che alcuni comandi richiedono più del consentito - un semplice &lt;code&gt;ls&lt;/code&gt; o un &lt;code&gt;git pull&lt;/code&gt; possono durare dei secondi, e lo si accetta come un compromesso che comunque non impatta troppo.&lt;/p&gt;
+
+&lt;h2 id=&quot;il-sistema-operativo-windows&quot;&gt;il sistema operativo: Windows&lt;/h2&gt;
+
+&lt;p&gt;Windows 10 è migliorato tantissimo. Non uso tutte le sciccherie che sicuramente ha, ad esempio Cortana la uso solo quando voglio divertirmi, però mi piace molto com’è strutturato ora il menu (in verità preferivo quello di Windows 8) e la barra delle applicazioni.&lt;/p&gt;
+
+&lt;p&gt;Ci sono tante cose su cui bisogna ancora lavorare:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;coesistono applicazioni dalla grafica moderna con altre che risalgono a Win98&lt;/li&gt;
+  &lt;li&gt;ci vogliono ancora 715 click per conoscere il proprio indirizzo IP&lt;/li&gt;
+  &lt;li&gt;serve sempre un antivirus in funzione, e Dell mi ha regalato un anno di McAfee.&lt;/li&gt;
+  &lt;li&gt;Trovo preinstallato OneDrive che non uso, perchè ho già Google Drive e Dropbox. Non è possibile disinstallare e neanche disabilitare completamente.&lt;/li&gt;
+  &lt;li&gt;Inserire i caratteri ``` e &lt;code&gt;~&lt;/code&gt; su questa tastiera è stato un dramma. Ho risolto con AutoHotkey.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusioni&quot;&gt;Conclusioni&lt;/h2&gt;
+
+&lt;p&gt;Potrei parlare e scrivere ancora per un paio d’ore, ma mi fermo qui perchè spero siano trasparite alcune cose: &lt;strong&gt;non sono un fanboy di nessuna azienda&lt;/strong&gt; e questa la considero una virtù, infatti valuto in maniera analitica, senza sentimenti. Inoltre &lt;strong&gt;valuto uno strumento in relazione all’uso che ne faccio&lt;/strong&gt;, e infatti io sono un programmatore, scrivo di programmazione e i problemi che ho io con i computer sono profondamente diversi da quelli di ogni altra categoria lavorativa; dove possibile (come in questo caso) cerco di comprare la miglior macchina che costa meno e che mi permetterà di lavorare al 100%, senza sconti.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="Dell" /><category term="XPS" /><category term="recensione" /><category term="computer" /><category term="laptop" /><category term="mac" /><category term="windows" /><summary type="html">Appena ho finito l’università ho acquistato un Macbook Air, che è durato ben 5 anni (!). All’epoca lo presi perchè, da neolaureato, non volevo chiudermi l’opzione di realizzare app per iOS, cosa che poi non è mai avvenuta. Quindi per il lavoro di tutti i giorni ho deciso di uscire dalla comfort zone e prendere un nuovo pc: un Dell XPS 9560, con schermo da 15”.</summary></entry><entry><title type="html">Viviamo tutti in una grande simulazione aliena? Sembra di no</title><link href="https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html" rel="alternate" type="text/html" title="Viviamo tutti in una grande simulazione aliena? Sembra di no" /><published>2017-10-03T02:00:00+02:00</published><updated>2017-10-03T19:55:06+02:00</updated><id>https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no</id><content type="html" xml:base="https://michelenasti.com/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">&lt;p&gt;Esitono persone che ritengono che &lt;a href=&quot;http://www.lescienze.it/news/2016/04/16/news/universo_simulazione_computer-3054787/&quot;&gt;viviamo in una grande, enorme simulazione al computer&lt;/a&gt;, magari realizzata da una civiltà aliena che ci sfrutta o ci osserva, manco fossimo al Grande Fratello.&lt;/p&gt;
 
 &lt;p&gt;Se non avete ancora chiuso il browser, sappiate che tra i sostenitori di questa teoria ci sono principalmente scienziati e tecnologhi di tutti rispetto, come &lt;a href=&quot;https://www.theguardian.com/technology/2017/apr/22/what-if-were-living-in-a-computer-simulation-the-matrix-elon-musk&quot;&gt;Stephen Hawking e Elon Musk&lt;/a&gt;.&lt;/p&gt;
 
@@ -613,81 +710,4 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
   &lt;li&gt;Aveva meno di 30 anni ed era già multimilionario.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Musk ha davvero stravolto le idee che avevamo sulla genialità: in futuro lo paragoneremo a un Leonardo Da Vinci, o a un Einstein? Chissà.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="elon musk" /><summary type="html">Stamattina ho “audioascoltato” un libro su Elon Musk, che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.</summary></entry><entry><title type="html">We’ waglio’, vuoi venire a lavorare nella mia startup?</title><link href="https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html" rel="alternate" type="text/html" title="We' waglio', vuoi venire a lavorare nella mia startup?" /><published>2017-06-09T11:20:50+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup</id><content type="html" xml:base="https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html">&lt;p&gt;Ricevo almeno &lt;strong&gt;due richieste al mese&lt;/strong&gt; per collaborare con startup. 
-Più o meno il copione è sempre lo stesso:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;“Ciao Michele, non ci conosciamo, ma ti ho trovato on line e ho pensato di parlarti della mia startup…“&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;“Dimmi!”&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;“Abbiamo questa idea rivoluzionaria, sorprenderemo il mondo, &lt;strong&gt;non abbiamo competitor&lt;/strong&gt;, etc etc”&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;“Fantastico! Dove posso vedere una demo?”&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;“No, per ora non abbiamo ancora nulla. Anzi, stavamo proprio cercando qualcuno che voglia collaborare con noi per realizzarla… Per caso sei interessato?”&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;“Quindi non c’è nulla? solo un’idea nella tua testa?”&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;“C’è molto più dell’idea! Ho quasi fatto tutto, manca solo il prodotto!”&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;“…”&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;“Ti darò una quota importante della società, il 30%”&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;“…”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;michele-sei-troppo-spocchioso&quot;&gt;Michele, sei troppo spocchioso&lt;/h2&gt;
-
-&lt;p&gt;Cari amici startupper, E’ dal 2012 che è esplosa la moda in Italia. Non so se ve ne ho mai parlato ma il mio rimpianto più grande è quello di &lt;strong&gt;non&lt;/strong&gt; aver lavorato in una startup, da neolaureato; ma questa è un’altra storia che approfondirò successivamente.&lt;/p&gt;
-
-&lt;p&gt;Ciò che sbagliano tutte le persone che mi contattano (e giuro che sono &lt;em&gt;almeno&lt;/em&gt; due al mese) è che pretendono che io debba rimanere affascinato dal loro racconto e quasi quasi debba chiedere io di lavorare per loro. Non funziona così.&lt;/p&gt;
-
-&lt;p&gt;Innanzitutto, &lt;strong&gt;la mia tolleranza al rischio si è abbassata di molto&lt;/strong&gt;. Ora che ho una figlia ci penso 10 volte prima di prendere qualsiasi scelta che possa compromettere non la mia vita, ma la sua. Per questo motivo &lt;em&gt;il momento migliore in cui si deve lanciare (o lavorare per) una startup è subito dopo l’università&lt;/em&gt;, quando si è ancora ragazzini e c’è un fantastico paracadute, ossia mamma &amp;amp; papà.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lavorare per una startup implica un periodo più o meno lungo di lavoro senza un’entrata fissa&lt;/strong&gt;, che in genere arriva quando si realizza una delle seguenti condizioni:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Un investitore ci mette i soldi&lt;/li&gt;
-  &lt;li&gt;La startup trova dei clienti paganti&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Trovare un investitore è difficile:  in Italia i fondi di investimento disposti a finanziare qualcosa si contano sulle dita di una mano. E se ti danno il cash, te lo danno quando hai almeno un MVP o una demo da mostrare.&lt;/p&gt;
-
-&lt;p&gt;Per questo penso che in Italia convenga partire con l’idea di fatturare prima possibile, per quanto difficile questo possa sembrare.&lt;/p&gt;
-
-&lt;p&gt;Motivo per cui scarto tutte le startup che non sanno rispondere alla domanda &lt;strong&gt;“come intendi fare soldi?”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;tra-ceo-e-cto-deve-esserci-qualcosa-di-più-forte-di-un-matrimonio&quot;&gt;Tra CEO e CTO deve esserci qualcosa di più forte di un matrimonio&lt;/h2&gt;
-
-&lt;p&gt;Leggevo un interessante articolo in cui si diceva che il 65% delle startup non falliscono perchè non trovano clienti o investitori, bensì perchè &lt;a href=&quot;http://money.cnn.com/2014/02/24/smallbusiness/startups-entrepreneur-cofounder/index.html&quot;&gt;i fondatori litigano&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Mettiamoci nei panni dell’aspirante startupper che ho citato prima: contatta persone a caso su facebook chiedendogli di lavorare alla sua idea.&lt;/p&gt;
-
-&lt;p&gt;Troverà mai qualcuno? Gli auguro di si, ma non penso proprio che succederà in maniera così scontata. Ma chi?&lt;/p&gt;
-
-&lt;p&gt;Dovendo lavorare con qualcuno per lanciare un’azienda, con l’ansia costante di finire i soldi, le persone che fanno nascere una startup dovrebbero essere:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;affiatate tra di loro&lt;/li&gt;
-  &lt;li&gt;avere lo stesso obiettivo&lt;/li&gt;
-  &lt;li&gt;persone che si fanno guidare dai “numeri” e non dai sentimenti.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Una coppia di sposi &lt;a href=&quot;http://fundersandfounders.com/startup-dirty-laundry-conflicts-that-kill-partnerships/&quot;&gt;litiga in media 321 volte in un anno&lt;/a&gt; (Statistiche USA eh, io e mia moglie litighiamo molto meno 😂) eppure nel migliore dei casi restano insieme per tutta la vita; Tra fondatori di una startup deve esserci un grado di alchimia più forte, visto che in questo caso non c’è amore ma ambizione.&lt;/p&gt;
-
-&lt;p&gt;E qui andiamo a finire su un’altra fissa dei founder: &lt;strong&gt;sono così convinto che debba funzionare, che funzionerà&lt;/strong&gt;. Purtroppo non funziona così. Lo startupper eccellente fa esperimenti continui, verifica con i numeri che le sue ipotesi erano corrette, e se sono sbagliate, cambia modello di business.&lt;/p&gt;
-
-&lt;h2 id=&quot;perchè-non-riesco-a-trovare-sviluppatori-per-la-mia-startup&quot;&gt;Perchè non riesco a trovare sviluppatori per la mia startup?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Tutti quelli che contatto mi dicono che sono impegnati o che non stanno valutando di cambiare lavoro. Io però offro di diventare capi in un’azienda che sarà anche loro. Perchè non accettano?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I motivi possono essere tanti e diversi. Ad esempio:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Il rischio&lt;/strong&gt;. Lo sviluppatore non vede prospettive nell’idea proposta e teme di rimanere con nulla in mano nel giro di poco.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;La sensazione di inadeguatezza.&lt;/strong&gt; Chi sono io per mettermi a fare il “capo” in una startup?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;La mancanza di risparmi accantonati&lt;/strong&gt;. Senza soldi, è impossibile lavorare per un lungo periodo senza entrate.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Quando si propone uno stipendio, questo è molto basso&lt;/strong&gt;. Un altro motivo per cui bisogna cercare tra i neolaureati.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Quando lo stipendio è basso, si propongono le equity&lt;/strong&gt;. Per me le equity di un progetto in cui non credo valgono zero.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Perché sembra che il grosso del lavoro lo debba fare proprio io&lt;/strong&gt;. Se il mio fantomatico CEO dice di aver fatto “tutto”, tranne il prodotto, mentre io svilupperò lui che fa?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Perchè io a questo CEO non lo conosco e non so se mi sta antipatico&lt;/strong&gt;. Come fai a &lt;em&gt;fidanzarti&lt;/em&gt; con uno che non conosci?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;e-possibile-superare-questi-problemi-troverò-sviluppatori-per-la-mia-idea&quot;&gt;E’ possibile superare questi problemi? Troverò sviluppatori per la mia idea?&lt;/h2&gt;
-
-&lt;p&gt;Ho dei consigli a riguardo, non posso garantire nulla, ma certe cose funzionano meglio di altre. Ne parlerò in futuro. Intanto, se avete critiche, suggerimenti o impressioni, i commenti sono qui sotto.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="startup" /><category term="lavoro" /><summary type="html">Ricevo almeno due richieste al mese per collaborare con startup. Più o meno il copione è sempre lo stesso:</summary></entry></feed>
+&lt;p&gt;Musk ha davvero stravolto le idee che avevamo sulla genialità: in futuro lo paragoneremo a un Leonardo Da Vinci, o a un Einstein? Chissà.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="elon musk" /><summary type="html">Stamattina ho “audioascoltato” un libro su Elon Musk, che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.</summary></entry></feed>
