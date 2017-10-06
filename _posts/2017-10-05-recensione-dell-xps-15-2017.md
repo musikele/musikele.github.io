@@ -99,7 +99,7 @@ Ci sono tante cose su cui bisogna ancora lavorare:
 - ci vogliono ancora 715 click per conoscere il proprio indirizzo IP
 - serve sempre un antivirus in funzione, e Dell mi ha regalato un anno di McAfee. 
 - Trovo preinstallato OneDrive che non uso, perchè ho già Google Drive e Dropbox. Non è possibile disinstallare e neanche disabilitare completamente. 
-- Inserire i caratteri ``` e `~` su questa tastiera è stato un dramma. Ho risolto con AutoHotkey.
+- Inserire i caratteri `` ` `` e `~` su questa tastiera è stato un dramma. Ho risolto con AutoHotkey.
 
 ## Conclusioni 
 

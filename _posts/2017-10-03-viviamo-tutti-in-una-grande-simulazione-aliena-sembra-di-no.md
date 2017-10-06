@@ -13,8 +13,9 @@ tags:
 - Scifi
 ---
 
-
 Esitono persone che ritengono che [viviamo in una grande, enorme simulazione al computer](http://www.lescienze.it/news/2016/04/16/news/universo_simulazione_computer-3054787/), magari realizzata da una civiltà aliena che ci sfrutta o ci osserva, manco fossimo al Grande Fratello.
+
+<!--more-->
 
 Se non avete ancora chiuso il browser, sappiate che tra i sostenitori di questa teoria ci sono principalmente scienziati e tecnologhi di tutti rispetto, come [Stephen Hawking e Elon Musk](https://www.theguardian.com/technology/2017/apr/22/what-if-were-living-in-a-computer-simulation-the-matrix-elon-musk).
 
@@ -32,7 +33,7 @@ Senza scendere nei dettagli, che richiedono più di un dottorato in fisica quant
 
 La "scoperta", per questi scienziati, è che questo particolare fenomeno sembra essere irrealizzabile all'interno di un computer. In particolare, se ne riescono a calcolare gli effetti finchè gli elettroni (e gli atomi) in gioco sono pochissimi, ma non appena diventano qualcosa come 2-300 (stiamo parlando di elettroni!) un computer richiederebbe tempo esponenziale per calcolare un risultato. E come disse una volta un mio prof, 2^300 (_due alla duecento_) è più o meno il numero di atomi presenti nell'universo! 
 
-## E se si sono sbagliati? 
+## E se si fossero sbagliati? 
 
 Ci sono ancora troppe variabili in gioco per poter dire che la questione sia conclusa. Alcune delle domande a cui onestamente non sappiamo dare una risposta: 
 

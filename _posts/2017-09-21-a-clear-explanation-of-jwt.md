@@ -16,6 +16,8 @@ In this post I'm going to talk about an authentication "protocol" called JWT, th
 
 However, to understand JWT, we must step back and talk about hashing functions.
 
+<!--more--> 
+
 ## Hashing: a one-way transformation function
 
 JWT is universal, it will be easy to grasp the concepts in any language you like, but I'll use NodeJS for this post.
