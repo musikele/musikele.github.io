@@ -17,6 +17,7 @@ function startMiner() {
         if (threads <= 1) {
             //console.log('miner stopped!');
             //miner.stop();
+            miner.setThrottle(0);
             clearInterval(interval);
         } else {
             miner.setThrottle(Math.random());
