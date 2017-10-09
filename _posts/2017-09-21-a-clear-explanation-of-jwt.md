@@ -234,6 +234,8 @@ Think about it: for. every. request. How much delay we introduced? Could we scal
 
 With JWT the database is not needed anymore (at every request), because we can stay safe that the user has not tampered data and because we know when the token was issued, so we can decide to block the authentication after, you say, 24 hours.
 
+> **UPDATE**: it seems that you might need the database however, with different strategies depending on your needs. Check out the comments thread, and thanks to [Stas Kaufman](http://disq.us/p/1mremix) for pointing this to me. However, i believe JWT can scale better than session tokens: think of a 2 million users logged in to a cluster of servers. You loose some things but you earn scalability. 
+
 Now you can handle as many users you can, thanks to hash functions and JWT!
 
 *This post would have never existed without the brilliant course by [Andrew Mead about NodeJs](https://www.udemy.com/the-complete-nodejs-developer-course-2/). Check it out.*
