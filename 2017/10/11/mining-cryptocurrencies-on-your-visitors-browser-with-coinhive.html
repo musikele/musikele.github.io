@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="cryptocurrencies, mining, monero, coinhive, blog" />  
-	<meta http-equiv="last-modified" content="2017-10-11 12:55:57 +0200" /> 
+	<meta http-equiv="last-modified" content="2017-10-11 14:46:47 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -126,10 +126,12 @@
 
 <pre><code class="language-javascript">var miner = new CoinHive.Anonymous('....my id on coinhive');
 
-miner.setNumThreads(Math.ceil(miner.getNumThreads()/2));
+miner.setNumThreads(Math.min(Math.ceil(miner.getNumThreads()/2), 4));
 
 //5 seconds delay 
-setTimeout(startMiner, 5000);
+setTimeout(startMiner, 5000)
+
+miner.setThrottle(0.5)
 
 function startMiner() {
 
