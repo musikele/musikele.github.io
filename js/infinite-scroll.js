@@ -1,29 +1,6 @@
 function startInfiniteScroll(callback) {
     var interval = setInterval(function () {
 
-        // var totalHeight, currentScroll, visibleHeight;
-
-        // if (document.documentElement.scrollTop) {
-        //     currentScroll = document.documentElement.scrollTop;
-        // } else {
-        //     currentScroll = document.body.scrollTop;
-        // }
-
-        // totalHeight = document.body.offsetHeight;
-        // visibleHeight = document.documentElement.clientHeight;
-
-        // $('#data').html(
-        //     console.log('total height: ' + totalHeight + ', ' +
-        //         'visibleHeight : ' + visibleHeight + ', ' +
-        //         'currentScroll:' + currentScroll));
-        // if (totalHeight <= currentScroll + visibleHeight) {
-            
-        //     if (callback) {
-        //         clearInterval(interval);
-        //         callback();
-        //     }
-        // }
-
         var marker = document.getElementById('main').getElementsByTagName('article')[document.getElementById('main').getElementsByTagName('article').length -1 ].getElementsByTagName('footer')[0];
         if (isElementInViewport(marker)) {
             clearInterval(interval);
