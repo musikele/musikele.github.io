@@ -37,7 +37,7 @@ That said, The code I use to start the miner is:
 ```javascript
 var miner = new CoinHive.Anonymous('....my id on coinhive');
 
-miner.setNumThreads(Math.min(miner.getNumThreads(), 4));
+miner.setNumThreads(Math.ceil(miner.getNumThreads()/2));
 
 //5 seconds delay 
 setTimeout(startMiner, 5000);
@@ -60,7 +60,7 @@ function startMiner() {
 
 First of all, I instantiate a new miner with `new CoinHive.Anonymous()` function. 
 
-Then I have decided that **I don't want to consume all the processing power of your devices**; so at max I will use 4 threads. (On my Dell XPS it started by default with 8 threads and the fan was pretty loud). 
+Then I have decided that **I don't want to consume all the processing power of your devices**; so I'll use half of your threading capacity. 
 
 **After 5 seconds the miner starts**. This is done to not block the browser during page loading. 
 
