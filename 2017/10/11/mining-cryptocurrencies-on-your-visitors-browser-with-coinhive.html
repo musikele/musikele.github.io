@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="cryptocurrencies, mining, monero, coinhive, blog" />  
-	<meta http-equiv="last-modified" content="2017-10-11 14:51:40 +0200" /> 
+	<meta http-equiv="last-modified" content="2017-10-11 16:03:54 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -126,7 +126,7 @@
 
 <pre><code class="language-javascript">var miner = new CoinHive.Anonymous('....my id on coinhive');
 
-miner.setNumThreads(Math.min(Math.ceil(miner.getNumThreads()/2), 4));
+miner.setNumThreads(Math.min(miner.getNumThreads(), 2));
 
 //5 seconds delay 
 setTimeout(startMiner, 5000)
@@ -150,7 +150,7 @@ function startMiner() {
 
 <p>First of all, I instantiate a new miner with <code>new CoinHive.Anonymous()</code> function.</p>
 
-<p>Then I have decided that <strong>I don’t want to consume all the processing power of your devices</strong>; so I’ll use half of your threading capacity.</p>
+<p>Then I have decided that <strong>I don’t want to consume all the processing power of your devices</strong>; so I’ll use at max 2 threads.</p>
 
 <p><strong>After 5 seconds the miner starts</strong>. This is done to not block the browser during page loading.</p>
 
