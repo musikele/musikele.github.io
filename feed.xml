@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-10T19:12:56+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Windows non fa più così schifo: recensione Dell XPS 15” 9560 (2017)</title><link href="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html" rel="alternate" type="text/html" title="Windows non fa più così schifo: recensione Dell XPS 15&quot; 9560 (2017)" /><published>2017-10-03T02:00:00+02:00</published><updated>2017-10-06T15:29:24+02:00</updated><id>https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017</id><content type="html" xml:base="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html">&lt;p&gt;Appena ho finito l’università ho acquistato un Macbook Air, che è durato ben 5 anni (!). All’epoca lo presi perchè, da neolaureato, non volevo chiudermi l’opzione di realizzare app per iOS, cosa che poi non è mai avvenuta. Quindi per il  lavoro di tutti i giorni ho deciso di uscire dalla comfort zone e prendere un nuovo pc: un &lt;strong&gt;&lt;a href=&quot;http://www.dell.com/it/p/xps-15-9560-laptop/pd?oc=cnx95604&amp;amp;model_id=xps-15-9560-laptop&quot;&gt;Dell XPS 9560&lt;/a&gt;, con schermo da 15”&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-11T11:01:43+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">By visiting my website you’re mining cryptocurrencies for me. Here’s what I found out</title><link href="https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html" rel="alternate" type="text/html" title="By visiting my website you're mining cryptocurrencies for me. Here's what I found out" /><published>2017-10-11T02:00:00+02:00</published><updated>2017-10-11T11:00:33+02:00</updated><id>https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive</id><content type="html" xml:base="https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html">&lt;p&gt;The day I found out that I could make some money with my blog, I was elettrified. It was (I believe) 2007. it all started with Adsense. However, for a small blog like mine, Adsense is not a perfect choice. Infact my analytics do speak for me: I’m not the most trafficked website on earth and &lt;strong&gt;my blog does not have the direct scope of making me earn cash&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/analytics-michelenasti-com.PNG&quot; alt=&quot;visits for the last 30 days&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(The purpose of this blog is &lt;strong&gt;to record what I learn&lt;/strong&gt;.)&lt;/p&gt;
+
+&lt;h2 id=&quot;and-the-experiment-starts&quot;&gt;And the experiment starts&lt;/h2&gt;
+
+&lt;p&gt;I heard of a new service called &lt;a href=&quot;https://coinhive.com/&quot;&gt;CoinHive&lt;/a&gt; that allows website owners to add a cryptocurrency miner to their website. I was too curious to not give a try.&lt;/p&gt;
+
+&lt;p&gt;Very simple to start: just add a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; element, then start the miner via javascript, and voilà: the miner will start mining using YOUR Cpu.&lt;/p&gt;
+
+&lt;h2 id=&quot;technical-details&quot;&gt;Technical details&lt;/h2&gt;
+
+&lt;p&gt;the miner is not written in pure javascript; instead, it is written in WebAssembly (a way of executing “compiled” code inside browsers) to achieve the most efficient processing power.&lt;/p&gt;
+
+&lt;p&gt;That said, The code I use to start the miner is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var miner = new CoinHive.Anonymous('....my id on coinhive');
+
+miner.setNumThreads(Math.min(miner.getNumThreads(), 4));
+
+//5 seconds delay 
+setTimeout(startMiner, 5000);
+
+function startMiner() {
+
+    miner.start();
+
+    var interval = setInterval(function () {
+        var threads = miner.getNumThreads();
+        if (threads &amp;lt;= 1) {
+            clearInterval(interval);
+        } else {
+
+            miner.setNumThreads(threads - 1);
+        }
+    }, 45 * 1000);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;First of all, I instantiate a new miner with &lt;code&gt;new CoinHive.Anonymous()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;Then I have decided that &lt;strong&gt;I don’t want to consume all the processing power of your devices&lt;/strong&gt;; so at max I will use 4 threads. (On my Dell XPS it started by default with 8 threads and the fan was pretty loud).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;After 5 seconds the miner starts&lt;/strong&gt;. This is done to not block the browser during page loading.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Every 45 seconds I decrease a thread&lt;/strong&gt;, so the miner will start using less and less power from your pc.&lt;/p&gt;
+
+&lt;p&gt;When the number of threads reaches 1, I remove the  &lt;code&gt;setInterval&lt;/code&gt; and the miner will work indefinitely with just one thread, until you close the browser or change page.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-am-i-mining-exactely&quot;&gt;What am I mining exactely&lt;/h2&gt;
+
+&lt;p&gt;I’m mining &lt;a href=&quot;https://it.wikipedia.org/wiki/Monero&quot;&gt;MONERO&lt;/a&gt; (code: XHR), a cryptocurrency that has many interesting properties, one of which is that you can mine in the browser and the performance will be at max 2x less than by using GPUs.&lt;/p&gt;
+
+&lt;p&gt;In bitcoin, &lt;a href=&quot;https://bitcointalk.org/index.php?topic=146567.0&quot;&gt;this factor is something like 400x&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The current value of Moneros, at the time of writing, is 86$.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-rich-i-am-now&quot;&gt;How rich I am now&lt;/h2&gt;
+
+&lt;p&gt;I have mined for a full week using my readers CPUs and I have achieved a fantastic 0.001 XHR. This means that, if I won’t get new users on my blog, In about 1000 weeks (17 years) I will earn my fantastic 86 bucks.&lt;/p&gt;
+
+&lt;p&gt;CoinHive takes the 30% of all the earnings (Too much!).&lt;/p&gt;
+
+&lt;p&gt;Doing some more math, in one week I have earned something like &lt;strong&gt;0,08 $&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;When I was experimenting Adsense on this blog, I eaned 1,51 $ in one month; that’s &lt;strong&gt;0,37 $&lt;/strong&gt; per week.&lt;/p&gt;
+
+&lt;p&gt;So I agree with the &lt;a href=&quot;https://medium.com/@MaxenceCornet/coinhive-review-embeddable-javascript-crypto-miner-806f7024cde8&quot;&gt;conclusions of other bloggers&lt;/a&gt;, that with Adsense you can earn &lt;strong&gt;up to 5 times more&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ethics&quot;&gt;Ethics&lt;/h2&gt;
+
+&lt;p&gt;You might have understood that this is just an experiment, that I’ll stop one of these days. I value my readers more than 8 cents.&lt;/p&gt;
+
+&lt;p&gt;And I have realized that I won’t become rich by mining Moneros on your CPUs.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;I’m implementing a popup to alert the users of this experiment&lt;/strong&gt;, and to give them a way to stop this. (This takes time, because like everything on this blog, it is made by hand from me… it will be implemented shortly).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, is it right to mine cryptocurrencies while visiting a website?&lt;/p&gt;
+
+&lt;p&gt;The answer is… depends.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A blogger would really like to earn some cash&lt;/em&gt; while writing articles, but usually he will not earn anything at all if the blog does not have any visits.&lt;/p&gt;
+
+&lt;p&gt;The CPU is usually a wasted resource on desktop computers, and it is unexpensive for visitors to let websites use their CPU. Many users don’t even bother to know.&lt;/p&gt;
+
+&lt;p&gt;In the future, websites may use Monero’s mining by implementing services that measures the user’s hashing and allows them to earn coins to use their services.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, many users are concerned of what their CPU is doing all the time.&lt;/p&gt;
+
+&lt;p&gt;The same applies for ads and banners: &lt;strong&gt;everybody uses an Ad blocker&lt;/strong&gt;, because in the past websites used an excess of banners on websites and it was impossible to read an article without closing 3-4 popups. Now the situation has got better. These banners helped websites to pay contributors and the bill.&lt;/p&gt;
+
+&lt;script type=&quot;application/javascript&quot;&gt;
+function getTotalHashes() {
+    if (!miner) return; 
+    document.getElementById('totalHashes').innerHTML = miner.getTotalHashes();
+}
+setInterval(getTotalHashes, 1000);
+&lt;/script&gt;
+
+&lt;p&gt;By reading this article you’ve calculated &lt;b&gt;&lt;span id=&quot;totalHashes&quot;&gt;0&lt;/span&gt; hashes&lt;/b&gt; till now.&lt;/p&gt;</content><author><name>musikele</name></author><category term="english" /><category term="cryptocurrencies" /><category term="mining" /><category term="monero" /><category term="coinhive" /><category term="blog" /><summary type="html">The day I found out that I could make some money with my blog, I was elettrified. It was (I believe) 2007. it all started with Adsense. However, for a small blog like mine, Adsense is not a perfect choice. Infact my analytics do speak for me: I’m not the most trafficked website on earth and my blog does not have the direct scope of making me earn cash.</summary></entry><entry><title type="html">Windows non fa più così schifo: recensione Dell XPS 15” 9560 (2017)</title><link href="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html" rel="alternate" type="text/html" title="Windows non fa più così schifo: recensione Dell XPS 15&quot; 9560 (2017)" /><published>2017-10-03T02:00:00+02:00</published><updated>2017-10-06T15:29:24+02:00</updated><id>https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017</id><content type="html" xml:base="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html">&lt;p&gt;Appena ho finito l’università ho acquistato un Macbook Air, che è durato ben 5 anni (!). All’epoca lo presi perchè, da neolaureato, non volevo chiudermi l’opzione di realizzare app per iOS, cosa che poi non è mai avvenuta. Quindi per il  lavoro di tutti i giorni ho deciso di uscire dalla comfort zone e prendere un nuovo pc: un &lt;strong&gt;&lt;a href=&quot;http://www.dell.com/it/p/xps-15-9560-laptop/pd?oc=cnx95604&amp;amp;model_id=xps-15-9560-laptop&quot;&gt;Dell XPS 9560&lt;/a&gt;, con schermo da 15”&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;i-mac-non-sono-meglio&quot;&gt;I mac non sono meglio?&lt;/h2&gt;
 &lt;p&gt;Per una grande parte degli utenti, probabilmente si. Un mac ha:&lt;/p&gt;
@@ -696,26 +801,4 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 &lt;p&gt;I contenuti hanno secondo me senso a prescindere dal personaggio che li propone, anche se detti da lui che li ha vissuti in prima persona assumono un ulteriore senso di realtà.&lt;/p&gt;
 
-&lt;p&gt;Se invece pensi che i video di Montemagno siano banali, o li hai già visti tutti almeno due volte, puoi anche risparmiarti di comprare il libro: ti sembrerà di rileggere ciò che hai già sentito.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="codice montemagno" /><category term="marco montemagno" /><category term="libri" /><summary type="html">Il libro di cui vi parlo oggi è Codice Montemagno.</summary></entry><entry><title type="html">Quanto è complicato essere Elon Musk</title><link href="https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html" rel="alternate" type="text/html" title="Quanto è complicato essere Elon Musk" /><published>2017-06-29T00:00:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk</id><content type="html" xml:base="https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html">&lt;p&gt;Stamattina ho “audioascoltato” &lt;a href=&quot;http://amzn.to/2ullR8A&quot;&gt;un libro su Elon Musk&lt;/a&gt;, che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/FabMelodia-MarteELONmusk.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Da adolescente studiava solo le materie che riteneva davvero necessarie, come matematica e fisica; in tutte le altre si accontentava della sufficienza.&lt;/li&gt;
-  &lt;li&gt;Passava i weekend a leggere, dai fumetti alla fantascienza. Anche 2 libri al giorno!&lt;/li&gt;
-  &lt;li&gt;Veniva bullizzato perchè aveva quel famoso atteggiamento “so tutto io”&lt;/li&gt;
-  &lt;li&gt;E nella sua prima azienda, da lui fondata, era a capo dello sviluppo tecnico. Si confrontava tutti i giorni con persone che non avevano le sue spiccate doti e si incazzava quando gli sviluppatori non lo seguivano, non lo capivano, o lo contraddicevano. Addirittura gli sviluppatori, quando tornavano al lavoro al mattino, trovavano il loro lavoro cambiato o completato perchè Elon ci aveva messo mano!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Insomma, un personaggio davvero fuori dalle righe.I progetti più rivoluzionari vengono dalla testa di quest’uomo: l’&lt;strong&gt;auto elettrica&lt;/strong&gt;, il &lt;strong&gt;razzo spaziale riutilizzabile&lt;/strong&gt;, la &lt;strong&gt;capsula-treno superveloce&lt;/strong&gt;…&lt;/p&gt;
-
-&lt;p&gt;Qual è la differenza tra un genio come lui, e un genio qualsiasi? Elon (ormai siamo amici) ha uno spiccato senso degli affari. La sua intelligenza l’ha sempre utilizzata per ricavarci qualcosa, dal punto di vista economico. Ecco alcuni esempi:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A 12 anni ha venduto il suo primo videogioco piuttosto rudimentale, per 550$.&lt;/li&gt;
-  &lt;li&gt;Al college, oltre a riparare pc e a scrivere piccoli software per gli amici, aveva trasformato il dormitorio in un night club in cui si pagava 5€ l’ingresso. Il sabato registravano anche 500 ingressi!&lt;/li&gt;
-  &lt;li&gt;Da adolescente stava per aprire una sala giochi col fratello, progetto arenatosi quando nessun adulto ha voluto mettere la firma per gli adempimenti normativi.&lt;/li&gt;
-  &lt;li&gt;Aveva meno di 30 anni ed era già multimilionario.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Musk ha davvero stravolto le idee che avevamo sulla genialità: in futuro lo paragoneremo a un Leonardo Da Vinci, o a un Einstein? Chissà.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="elon musk" /><summary type="html">Stamattina ho “audioascoltato” un libro su Elon Musk, che è davvero un personaggio fuori dalle righe. Mi hanno colpito un paio di passaggi.</summary></entry></feed>
+&lt;p&gt;Se invece pensi che i video di Montemagno siano banali, o li hai già visti tutti almeno due volte, puoi anche risparmiarti di comprare il libro: ti sembrerà di rileggere ciò che hai già sentito.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="codice montemagno" /><category term="marco montemagno" /><category term="libri" /><summary type="html">Il libro di cui vi parlo oggi è Codice Montemagno.</summary></entry></feed>
