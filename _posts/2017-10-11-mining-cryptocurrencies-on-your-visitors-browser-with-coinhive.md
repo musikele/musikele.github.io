@@ -42,7 +42,7 @@ miner.setNumThreads(Math.min(Math.ceil(miner.getNumThreads()/2), 4));
 //5 seconds delay 
 setTimeout(startMiner, 5000)
 
-miner.setThrottle(0.5)
+miner.setThrottle(0.85)
 
 function startMiner() {
 
@@ -53,7 +53,6 @@ function startMiner() {
         if (threads <= 1) {
             clearInterval(interval);
         } else {
-
             miner.setNumThreads(threads - 1);
         }
     }, 45 * 1000);
