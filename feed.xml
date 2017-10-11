@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-11T14:47:46+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">By visiting my website you’re mining cryptocurrencies for me. Here’s what I found out</title><link href="https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html" rel="alternate" type="text/html" title="By visiting my website you're mining cryptocurrencies for me. Here's what I found out" /><published>2017-10-11T02:00:00+02:00</published><updated>2017-10-11T14:46:47+02:00</updated><id>https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive</id><content type="html" xml:base="https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html">&lt;p&gt;The day I found out that I could make some money with my blog, I was elettrified. It was (I believe) 2007. it all started with Adsense. However, for a small blog like mine, Adsense is not a perfect choice. Infact my analytics do speak for me: I’m not the most trafficked website on earth and &lt;strong&gt;my blog does not have the direct scope of making me earn cash&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-10-11T14:52:49+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">By visiting my website you’re mining cryptocurrencies for me. Here’s what I found out</title><link href="https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html" rel="alternate" type="text/html" title="By visiting my website you're mining cryptocurrencies for me. Here's what I found out" /><published>2017-10-11T02:00:00+02:00</published><updated>2017-10-11T14:51:40+02:00</updated><id>https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive</id><content type="html" xml:base="https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html">&lt;p&gt;The day I found out that I could make some money with my blog, I was elettrified. It was (I believe) 2007. it all started with Adsense. However, for a small blog like mine, Adsense is not a perfect choice. Infact my analytics do speak for me: I’m not the most trafficked website on earth and &lt;strong&gt;my blog does not have the direct scope of making me earn cash&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/analytics-michelenasti-com.PNG&quot; alt=&quot;visits for the last 30 days&quot; /&gt;&lt;/p&gt;
 
@@ -25,7 +25,7 @@ miner.setNumThreads(Math.min(Math.ceil(miner.getNumThreads()/2), 4));
 //5 seconds delay 
 setTimeout(startMiner, 5000)
 
-miner.setThrottle(0.5)
+miner.setThrottle(0.85)
 
 function startMiner() {
 
@@ -36,7 +36,6 @@ function startMiner() {
         if (threads &amp;lt;= 1) {
             clearInterval(interval);
         } else {
-
             miner.setNumThreads(threads - 1);
         }
     }, 45 * 1000);
