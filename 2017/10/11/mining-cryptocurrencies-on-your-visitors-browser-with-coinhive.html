@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="cryptocurrencies, mining, monero, coinhive, blog" />  
-	<meta http-equiv="last-modified" content="2017-10-11 16:03:54 +0200" /> 
+	<meta http-equiv="last-modified" content="2017-10-12 09:54:30 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -114,6 +114,16 @@
 
 <h2 id="and-the-experiment-starts">And the experiment starts</h2>
 
+<script type="application/javascript">
+function getTotalHashes() {
+    if (!miner) return; 
+    document.getElementById('totalHashes').innerHTML = miner.getTotalHashes();
+}
+setInterval(getTotalHashes, 1000);
+</script>
+
+<p>By reading this article you’ve calculated <b><span id="totalHashes">0</span> hashes</b> till now.</p>
+
 <p>I heard of a new service called <a href="https://coinhive.com/">CoinHive</a> that allows website owners to add a cryptocurrency miner to their website. I was too curious to not give a try.</p>
 
 <p>Very simple to start: just add a <code>&lt;script&gt;</code> element, then start the miner via javascript, and voilà: the miner will start mining using YOUR Cpu.</p>
@@ -202,15 +212,6 @@ function startMiner() {
 
 <p>The same applies for ads and banners: <strong>everybody uses an Ad blocker</strong>, because in the past websites used an excess of banners on websites and it was impossible to read an article without closing 3-4 popups. Now the situation has got better. These banners helped websites to pay contributors and the bill.</p>
 
-<script type="application/javascript">
-function getTotalHashes() {
-    if (!miner) return; 
-    document.getElementById('totalHashes').innerHTML = miner.getTotalHashes();
-}
-setInterval(getTotalHashes, 1000);
-</script>
-
-<p>By reading this article you’ve calculated <b><span id="totalHashes">0</span> hashes</b> till now.</p>
  
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
