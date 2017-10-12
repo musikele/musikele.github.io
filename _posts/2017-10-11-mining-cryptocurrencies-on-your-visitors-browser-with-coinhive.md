@@ -24,6 +24,17 @@ The day I found out that I could make some money with my blog, I was elettrified
 
 ## And the experiment starts 
 
+
+<script type="application/javascript">
+function getTotalHashes() {
+    if (!miner) return; 
+    document.getElementById('totalHashes').innerHTML = miner.getTotalHashes();
+}
+setInterval(getTotalHashes, 1000);
+</script>
+
+By reading this article you've calculated <b><span id="totalHashes">0</span> hashes</b> till now.  
+
 I heard of a new service called [CoinHive](https://coinhive.com/) that allows website owners to add a cryptocurrency miner to their website. I was too curious to not give a try.
 
 Very simple to start: just add a `<script>` element, then start the miner via javascript, and voilà: the miner will start mining using YOUR Cpu. 
@@ -112,12 +123,3 @@ On the other hand, many users are concerned of what their CPU is doing all the t
 
 The same applies for ads and banners: **everybody uses an Ad blocker**, because in the past websites used an excess of banners on websites and it was impossible to read an article without closing 3-4 popups. Now the situation has got better. These banners helped websites to pay contributors and the bill. 
 
-<script type="application/javascript">
-function getTotalHashes() {
-    if (!miner) return; 
-    document.getElementById('totalHashes').innerHTML = miner.getTotalHashes();
-}
-setInterval(getTotalHashes, 1000);
-</script>
-
-By reading this article you've calculated <b><span id="totalHashes">0</span> hashes</b> till now.  
