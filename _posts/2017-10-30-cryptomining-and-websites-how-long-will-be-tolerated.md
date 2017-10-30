@@ -6,7 +6,7 @@ title: 'Cryptomining and websites: how long will be tolerated? '
 category: English
 layout: post
 date: 2017-10-24 00:00:00 +0000
-tags: []
+tags: [coinhive, cryptoloot, authedmine, search engines, google]
 categories: Italiano
 ---
 A lot of stuff has happenend in the crypto-mining world: antiviruses, search engines, private miners, and more. 
