@@ -23,11 +23,15 @@
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 {% endif %}
-{% if page.image %}
-  <meta content="/img/posts/{{ page.image }}" property="og:image">
-{% else %}
-  <meta content="/img/logo-high-resolution.png" property="og:image">
-{% endif %}
+
+{% capture post_first_image %}
+{% assign hero_image = page.content | match_regex: '<img .*?src="([^"]+)"' %}
+  {% if hero_image == nil %}
+    {% assign hero_image = page.image %}
+  {% endif %}
+{% endcapture %}
+<meta content="https://michelenasti.com/{{site.baseurl}}/{{ hero_image }}" property="og:image">
+
 {% if page.tags %}
   {% for tag in page.tags %}
   <meta content="{{ tag }}" property="article:tag">
