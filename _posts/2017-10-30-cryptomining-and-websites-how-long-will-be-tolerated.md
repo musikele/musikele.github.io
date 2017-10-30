@@ -9,7 +9,9 @@ date: 2017-10-24 00:00:00 +0000
 tags: []
 categories: Italiano
 ---
-After some weeks of experimenting, I have several new interesting facts about in-browser cryptomining.
+A lot of stuff has happenend in the crypto-mining world: antiviruses, search engines, private miners, and more. 
+
+<!-- more -->
 
 ## There are private miners out there
 
