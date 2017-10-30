@@ -61,4 +61,4 @@ However, it doesn't seem that they're doing this now.
 
 > I tried to open the page, and **my macbook started screaming with pain**. I have marked the url, and I have promised not myself to never visit again. These things should not be done for morality issues, you're literally ruining your users' hardware. I did not even read the whole article, I closed it all immediately. For me, a big NO.
 
-:-) 
+By deciding to use a cryptominer in your website, you should also think of users like him. 
