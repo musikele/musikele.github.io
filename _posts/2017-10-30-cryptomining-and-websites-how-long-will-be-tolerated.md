@@ -14,7 +14,9 @@ tags:
 categories: English
 category: Italiano
 ---
-A lot of stuff has happenend in the crypto-mining world: antiviruses, search engines, private miners, and more. 
+A lot of stuff has happenend in the crypto-mining world: antiviruses, search engines, private miners, and more.
+
+![]({{site.baseurl}}/images/miners.jpeg)
 
 <!--more-->
 
@@ -64,8 +66,8 @@ However, it doesn't seem that they're doing this now.
 
 ### The best comment found about my experiment
 
-![]({{site.baseurl}}/images/mining-best-comment.PNG)
+![](%7B%7Bsite.baseurl%7D%7D/images/mining-best-comment.PNG)
 
 > I tried to open the page, and **my macbook started screaming with pain**. I have marked the url, and I have promised not myself to never visit again. These things should not be done for morality issues, you're literally ruining your users' hardware. I did not even read the whole article, I closed it all immediately. For me, a big NO.
 
-By deciding to use a cryptominer in your website, you should also think of users like him. 
+By deciding to use a cryptominer in your website, you should also think of users like him.
