@@ -16,7 +16,7 @@ category: Italiano
 ---
 A lot of stuff has happenend in the crypto-mining world: antiviruses, search engines, private miners, and more.
 
-![]({{Bsite.baseurl}}/images/miners.jpeg)
+![]({{site.baseurl}}/images/miners.jpeg)
 
 <!--more-->
 
