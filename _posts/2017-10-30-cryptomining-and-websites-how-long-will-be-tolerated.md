@@ -2,12 +2,17 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Cryptomining and websites: how long will be tolerated? '
-category: English
+title: 'Cryptomining and websites: how long will it be tolerated? '
 layout: post
 date: 2017-10-24 00:00:00 +0000
-tags: [coinhive, cryptoloot, authedmine, search engines, google]
-categories: Italiano
+tags:
+- coinhive
+- cryptoloot
+- authedmine
+- search engines
+- google
+categories: English
+category: Italiano
 ---
 A lot of stuff has happenend in the crypto-mining world: antiviruses, search engines, private miners, and more. 
 
