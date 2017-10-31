@@ -29,8 +29,8 @@
   {% if hero_image == nil %}
     {% assign hero_image = page.image %}
   {% endif %}
-{% endcapture %}
-<meta content="https://michelenasti.com/{{site.baseurl}}/{{ hero_image }}" property="og:image">
+  <meta content="https://michelenasti.com/{{site.baseurl}}/{{ hero_image }}" property="og:image">
+  {% endcapture %}
 
 {% if page.tags %}
   {% for tag in page.tags %}
