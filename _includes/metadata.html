@@ -1,36 +1,39 @@
 <!-- facebook Open Graph Metadatas -->
 <meta content="your_facebook_app_id" property="fb:app_id">
 <meta content="{{ site.title }}" property="og:site_name">
+
 {% if page.title %}
   <meta content="{{ page.title }}" property="og:title">
 {% else %}
   <meta content="{{ site.title }}" property="og:title">
 {% endif %}
+
 {% if page.title %}
   <meta content="article" property="og:type">
 {% else %}
   <meta content="website" property="og:type">
 {% endif %}
+
 {% if page.description %}
   <meta content="{{ page.description }}" property="og:description">
 {% else %}
   <meta content="{{ site.description }}" property="og:description">
 {% endif %}
+
 {% if page.url %}
   <meta content="{{ site.url }}{{ page.url }}" property="og:url">
 {% endif %}
+
 {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 {% endif %}
 
-{% capture post_first_image %}
-{% assign hero_image = page.content | match_regex: '<img .*?src="([^"]+)"' %}
-  {% if hero_image == nil %}
-    {% assign hero_image = page.image %}
-  {% endif %}
-  <meta content="https://michelenasti.com/{{site.baseurl}}/{{ hero_image }}" property="og:image">
-  {% endcapture %}
+{% if page.header-img %}
+<meta content="{{site.url}}/{{site.baseurl}}/{{ page.header-img }}" property="og:image">
+{% else %}
+<meta content="/img/logo-high-resolution.png" property="og:image">
+{% endif %}
 
 {% if page.tags %}
   {% for tag in page.tags %}
@@ -50,11 +53,13 @@
 {% if page.url %}
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 {% endif %}
+
 {% if page.description %}
   <meta name="twitter:description" content="{{ page.description }}">
 {% else %}
   <meta name="twitter:description" content="{{ site.description }}">
 {% endif %}
+
 {% if page.header-img %}
   <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
 {% endif %}

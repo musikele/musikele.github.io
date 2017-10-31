@@ -5,7 +5,6 @@ plugins:
   - jekyll-last-modified-at
   - jekyll-paginate
   - jekyll-feed
-  - match_regex
 
 permalink: /:year/:month/:day/:title.html
 
