@@ -37,3 +37,7 @@ In the last year i have been involved in many of their works; one of my first jo
 So, what's new about website design in 2017? 
 
 ## Working with designers is great
+
+## Only small subset of prerequisites 
+
+## Technically speaking 
