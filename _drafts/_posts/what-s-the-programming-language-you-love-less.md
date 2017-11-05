@@ -43,4 +43,6 @@ Lastly, I feel C is the language with the least number of features: no advanced 
 
 ## Php 
 
-Php was a revolution, in 2005 when you 
+Php was a revolution, in 2005.
+
+At University we studied jsp in my course for web applications, but I was envy for other courses that used php for this. 
