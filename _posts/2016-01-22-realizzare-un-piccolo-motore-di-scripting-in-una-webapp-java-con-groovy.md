@@ -52,20 +52,22 @@ La possibilità di _Autowirizzare_ i bean Groovy e di utilizzare i bean Spring �
 
 Come prima cosa ho creato un'interfaccia <span class="lang:default decode:true crayon-inline">GroovyScripterInterface</span> in JAVA:
 
-<pre class="lang:default decode:true" title="GroovyScripterInterface">/**
+```java
+/**
  * Created by Michele on 20/01/2016.
  */
 public interface GroovyScripterInterface {
 
     public void sayHello();
 }
-</pre>
+```
 
 e una classe Groovy che la implementa:
 
-<pre class="lang:java decode:true" title="GroovyScripter">import groovy.sql.Sql
+import groovy.sql.Sql
 import org.springframework.beans.factory.annotation.Autowired
 
+```java
 /**
  * Created by Michele on 20/01/2016.
  */
@@ -80,18 +82,20 @@ class GroovyScripter implements GroovyScripterInterface {
         servizioFarlocco.mangia()
         return
     }
-}</pre>
+}
+```
 
 Groovy tradurrà questo codice groovy in una classe Java, e su queste classi si potrà utilizzare AOP, annotazioni, transazioni, etc.
 
-<span class="lang:default decode:true crayon-inline ">ServizioFarlocco</span>  invece è una classe Java che non fa nulla di chè.
+`ServizioFarlocco` invece è una classe Java che non fa nulla di chè.
 
 L'oggetto SQL invece è definito nella configurazione di Hibernate, andate a vedere il primo articolo linkato (quello sulle transazioni in groovy).
 
 E infine ecco l'XML in cui sono definiti i due bean (Java e Groovy):
 
-<pre class="lang:xhtml decode:true " title="beans.xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;beans xmlns="http://www.springframework.org/schema/beans"
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:lang="http://www.springframework.org/schema/lang"
@@ -101,28 +105,30 @@ E infine ecco l'XML in cui sono definiti i due bean (Java e Groovy):
         http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/lang 
         http://www.springframework.org/schema/lang/spring-lang.xsd"
-&gt;
+>
 
 
-&lt;context:annotation-config /&gt;
+<context:annotation-config />
 
-&lt;bean id="servizioFarlocco" 
-    class="it.eng.areas.eliot.interoperability.ServizioFarlocco"&gt;
-&lt;/bean&gt;
+<bean id="servizioFarlocco" 
+    class="it.eng.areas.eliot.interoperability.ServizioFarlocco">
+</bean>
 
-&lt;lang:groovy 
+<lang:groovy 
     id="groovyScript" 
     script-source="path/to/GroovyScript.groovy" 
     refresh-check-delay="5000"
-/&gt;
+/>
 
-&lt;/beans&gt;</pre>
+</beans>
+```
 
 Da notare che il parametro <span class="lang:default decode:true crayon-inline ">refresh-check-delay</span>  serve a Spring per verificare se il file è stato aggiornato. il valore 5000, espresso in millisecondi, significa &#8220;verifica ogni 5 secondi se il file è stato aggiornato&#8221;. script-source invece è il path (non il package, per questo ci vogliono gli slash).
 
 Per concludere un bel test JUnit, quindi da Java chiamiamo il bean Groovy (che chiama un altro bean Java) :
 
-<pre class="lang:default decode:true " title="GroobyBeanTest">@ContextConfiguration(locations = {"file:context/application-context-junit.xml"})
+```java
+@ContextConfiguration(locations = {"file:context/application-context-junit.xml"})
 @TransactionConfiguration(defaultRollback = false)
 @Transactional
 public class GroobyBeanTest extends AbstractTransactionalJUnit4SpringContextTests {
@@ -136,8 +142,8 @@ public class GroobyBeanTest extends AbstractTransactionalJUnit4SpringContextTest
     }
 
 }
-</pre>
+```
 
-#### Conclusioni
+## Conclusioni
 
-sembra di aver imboccato la strada giusta. Agli &#8220;specialisti&#8221; del prodotto darò in dote un fantastico linguaggio di scripting con cui potranno fare quello che vogliono. Nel frattempo vi chiedo: avrei potuto seguire altre strade, conoscete altri strumenti per questo compito?
+sembra di aver imboccato la strada giusta. Agli "specialisti" del prodotto darò in dote un fantastico linguaggio di scripting con cui potranno fare quello che vogliono. Nel frattempo vi chiedo: avrei potuto seguire altre strade, conoscete altri strumenti per questo compito?
