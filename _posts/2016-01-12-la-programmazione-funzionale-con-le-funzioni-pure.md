@@ -16,7 +16,7 @@ tags:
   - programmazione funzionale
   - pure function
 ---
-Le **Funzioni Pure** sono uno dei pilastri fondamentali della programmazione funzionale. La definizione vera è qualcosa di astruso e non la scriverò perchè la capirebbero in pochi; invece  _in parole povere_ è addirittura un concetto semplice.
+Le **Funzioni Pure** sono uno dei pilastri fondamentali della programmazione funzionale. La definizione vera è qualcosa di astruso e non la scriverò perchè la capirebbero in pochi; invece _in parole povere_ è addirittura un concetto semplice.
 
 Una **funzione** si dice **pura** quando il suo **output** **dipende esclusivamente dal suo input.**
 
@@ -24,18 +24,20 @@ Sembra una cretinata, ma il 99% del codice scritto ogni giorno nel mondo non ris
 
 Vediamo un esempio di funzione impura e di funzione pura:
 
-<pre class="lang:js decode:true" title="funzioni impure e funzioni pure">var etaMinima = 30; 
+```javascript
+var etaMinima = 30; 
 
 //impura
 function checkEta(var eta) {
-    return eta &gt;= etaMinima; 
+    return eta >= etaMinima; 
 }
 
 //pura
 function checkEta(var eta) {
     var etaMinima = 30; 
-    return eta &gt;= etaMinima; 
-}</pre>
+    return eta >= etaMinima; 
+}
+```
 
 Riuscite a vedere il problema? la prima checkEta dipende da una variabile esterna, che può cambiare in qualunque momento e dunque può influenzare il modo in cui viene eseguito e valutato il codice.
 
@@ -48,7 +50,8 @@ Vediamo alcuni _effetti collaterali_ (in matematica diremmo _corollari_) delle _
   * Una Pure Function **può chiamare altre Pure Function**. (In object-oriented li chiameremmo metodi statici, ma non tutti, solo quelli che non dipendono da nessun'altro).
   * Possiamo sfruttare l'ultima proprietà per _cacheare_ il risultato delle pure function tramite una tecnica che si chiama &#8220;**memoization**&#8221; :
 
-<pre class="lang:js decode:true" title="Memoization ">var memoize = function(f) {
+```javascript
+var memoize = function(f) {
   var cache = {};
 
   return function() {
@@ -56,15 +59,18 @@ Vediamo alcuni _effetti collaterali_ (in matematica diremmo _corollari_) delle _
     cache[arg_str] = cache[arg_str] || f.apply(f, arguments);
     return cache[arg_str];
   };
-};</pre>
+};
+```
 
 e se abbiamo una chiamata Http che è anch'essa idempotente potremmo cachearla con questa tecnica:
 
-<pre class="lang:default decode:true">var pureHttpCall = memoize(function(url, params){
+```javascript
+var pureHttpCall = memoize(function(url, params){
   return function() { 
     return $.getJSON(url, params); 
   }
-});</pre>
+});
+```
 
 Dalla seconda volta in cui verrà chiamata <span class="lang:default decode:true  crayon-inline ">pureHttpCall</span>  , il risultato non sarà preso dalla rete ma dalla cache. Ingegnoso, no?
 
