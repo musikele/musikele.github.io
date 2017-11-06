@@ -71,7 +71,7 @@ Come vedete, sono bastate poche righe di codice per ottenere un risultato sballa
 
 Uno dei problemi che affligge questo codice è che va a mutare lo stato interno dell'oggetto; se i metodi `unisci` e `riproduci` avessero restituito copie e lasciato immutato la classe stessa, ora non saremmo qui a parlarne.
 
-### EDIT:
+### EDIT:
 
 Amici suggeriscono di mostrare cosa si dovrebbe cambiare affinchè il codice funzioni.
 
