@@ -1,0 +1,46 @@
+url: https://michelenasti.com
+siteurl: https://michelenasti.com
+
+plugins:
+#  - jekyll-last-modified-at
+  - jekyll-paginate
+  - jekyll-feed
+
+permalink: /:year/:month/:day/:title.html
+
+highlighter: none
+
+paginate: 10
+paginate_path: "archives/page:num"
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      paginate: true
+      comments: true
+      author: musikele
+
+name: Michele Nasti's blog
+
+description: I'm a full stack Developer with an eye for the web.
+
+github_username: musikele
+twitter_username: micnasti
+linkedin_username: michelenasti
+google_plus_username: MicheleNasti
+facebook_username: musikele
+avatar: michele_nasti.jpg
+
+exclude: 
+- .travis.yml 
+- deploy_key*
+- Gemfile
+- Gemfile.lock
+- deploy.sh
+- compile.sh
+- start.sh
+
+sass:
+    sass_dir: _scss
