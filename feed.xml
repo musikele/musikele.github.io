@@ -1,4 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-11-14T13:13:03+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Gestpay new website is online!</title><link href="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html" rel="alternate" type="text/html" title="Gestpay new website is online!" /><published>2017-11-02T01:00:00+01:00</published><updated>2017-11-10T10:52:22+01:00</updated><id>https://michelenasti.com/2017/11/02/gestpay-new-website-is-online</id><content type="html" xml:base="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html">&lt;p&gt;I’m really excited to write about one of my latest works: &lt;strong&gt;the redesign of Gestpay’s website.&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-11-14T13:14:00+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Not-A-Number: when javascript gets crazy</title><link href="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html" rel="alternate" type="text/html" title="Not-A-Number: when javascript gets crazy" /><published>2017-11-14T01:00:00+01:00</published><updated>2017-11-14T13:13:06+01:00</updated><id>https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy</id><content type="html" xml:base="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html">&lt;p&gt;Yesterday I was doing some maintenance on a corporate website when I found out that &lt;code&gt;parseInt()&lt;/code&gt; returns &lt;code&gt;NaN&lt;/code&gt; if the argument is, well, not a number.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/not-a-number.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; let pippo = parseInt('a')
+NaN
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;NaN&lt;/code&gt; is a constant and stands for &lt;code&gt;Not a Number&lt;/code&gt;. Javascript uses this for some very default cases, for example if you divide a number by a string, etc.&lt;/p&gt;
+
+&lt;p&gt;That’s fair. What comes next is funny :)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; pippo == NaN
+false
+&amp;gt; pippo === NaN
+false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Even if a variable is &lt;code&gt;NaN&lt;/code&gt;, you cannot check with the usual operators that it is &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; pippo == pippo
+false
+&amp;gt; pippo === pippo
+false
+&amp;gt; NaN == NaN
+false
+&amp;gt; NaN === NaN
+false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Things start to get crazy. As you can see, &lt;code&gt;NaN&lt;/code&gt; is not even equal to itself. You cannott compare anything to &lt;code&gt;NaN&lt;/code&gt;, because &lt;code&gt;NaN&lt;/code&gt; is not equal to anything.&lt;/p&gt;
+
+&lt;h2 id=&quot;sooooo-isnan-&quot;&gt;sooooo… isNaN() ?&lt;/h2&gt;
+
+&lt;p&gt;There is a function called &lt;code&gt;isNaN()&lt;/code&gt; and it’s the only way to detect a &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; isNaN(pippo)
+true
+&amp;gt; isNaN(3)
+false
+&amp;gt; isNaN('bau bau micio micio')
+true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This function seems to resolve our problems: it detects &lt;em&gt;not&lt;/em&gt;-numbers, and infact a string is considered &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; isNaN(undefined)
+true
+&amp;gt; isNaN(null)
+false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I see your face 😆 Where is the logic?&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;isNaN&lt;/code&gt; tries to convert the argument to a number, using the constructor &lt;code&gt;Number()&lt;/code&gt;; if the argument cannot be converted, &lt;code&gt;NaN&lt;/code&gt; is returned.&lt;/p&gt;
+
+&lt;p&gt;In the case of &lt;code&gt;isNaN(null)&lt;/code&gt;, this is what happens:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;isNaN(null) // Number(null) ==&amp;gt; 0 
+&amp;gt; false 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ha ha, &lt;code&gt;Number(null)&lt;/code&gt; returns zero??? Welcome to javascript 😎 This would require a bigger explanation, however JS does a type cohercion trying to compare things. It is described &lt;a href=&quot;http://www.ecma-international.org/ecma-262/5.1/#sec-9.3&quot;&gt;here&lt;/a&gt; (warning: it’s a spec, the first 10 lines are understandable, then it’s a mess).&lt;/p&gt;
+
+&lt;p&gt;Of course,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;null == 0
+&amp;gt; false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;🙂&lt;/p&gt;
+
+&lt;p&gt;Just to add the last bit of discoveries around &lt;code&gt;NaN&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Number(null)
+&amp;gt; 0
+parseInt(null) 
+&amp;gt; NaN
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;there-is-another-isnan-around&quot;&gt;There is another isNaN() around&lt;/h2&gt;
+
+&lt;p&gt;The Javascript &lt;code&gt;Number&lt;/code&gt; object also has a &lt;code&gt;isNaN&lt;/code&gt; method, that is way more conservative:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; Number.isNaN(3)
+false
+&amp;gt; Number.isNaN('3a')
+false
+&amp;gt; Number.isNaN('abc')
+false
+&amp;gt; Number.isNaN(undefined)
+false
+&amp;gt; Number.isNaN(null)
+false
+&amp;gt; Number.isNaN(NaN)
+true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It will return &lt;code&gt;isNaN&lt;/code&gt; only for &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;stop-this-its-a-mess&quot;&gt;Stop this! It’s a mess!&lt;/h2&gt;
+
+&lt;p&gt;Ok, let’s end with a song:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a  Batman!`)
+```![](/images/not-a-number.jpg)
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Yesterday I was doing some maintenance on a corporate website when I found out that parseInt() returns NaN if the argument is, well, not a number.</summary></entry><entry><title type="html">Gestpay new website is online!</title><link href="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html" rel="alternate" type="text/html" title="Gestpay new website is online!" /><published>2017-11-02T01:00:00+01:00</published><updated>2017-11-10T10:52:22+01:00</updated><id>https://michelenasti.com/2017/11/02/gestpay-new-website-is-online</id><content type="html" xml:base="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html">&lt;p&gt;I’m really excited to write about one of my latest works: &lt;strong&gt;the redesign of Gestpay’s website.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Screenshot-2017-11-6 Gestpay.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -871,57 +977,4 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 
 &lt;p&gt;7 giorni qui e vi ricaricate per un anno intero… almeno per me funziona così.&lt;/p&gt;
 
-&lt;p&gt;Buone vacanze!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="vacanze" /><category term="valledaosta" /><category term="cogne" /><category term="arpy" /><category term="lillaz" /><category term="bionaz" /><category term="prarayer" /><category term="vda" /><summary type="html">Questo post vuole provare ad essere sintetico, e contemporaneamente raccontare 7 giorni di vacanza in Val D’Aosta con una neonata (mia figlia aveva 8 mesi quando abbiamo fatto questo viaggio).</summary></entry><entry><title type="html">L’innovazione non copia</title><link href="https://michelenasti.com/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html" rel="alternate" type="text/html" title="L'innovazione non copia" /><published>2017-07-27T09:39:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one</id><content type="html" xml:base="https://michelenasti.com/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html">&lt;p&gt;Negli ultimi (in realtà anche &lt;em&gt;primi&lt;/em&gt;) 5 anni di carriera lavorativa, quante volte avrò detto “&lt;strong&gt;dai ragazzi, ci basta pensare a una bella idea e faremo soldi a palate&lt;/strong&gt;”? Ecco, se siamo ancora tutti &lt;em&gt;povery&lt;/em&gt; ci sarà un motivo. E il libro &lt;a href=&quot;https://www.amazon.it/segreti-startup-ovvero-costruisce-futuro/dp/8817080462/ref=as_li_ss_tl?ie=UTF8&amp;amp;qid=1501144633&amp;amp;sr=8-1&amp;amp;keywords=da+zero+a+uno&amp;amp;linkCode=ll1&amp;amp;tag=ilblodimicnas-21&amp;amp;linkId=7e1eada6bd03b1ae3cd088013adf3372&quot;&gt;From Zero to One&lt;/a&gt; (da me linkato nella versione italiana, &lt;em&gt;Da Zero a Uno&lt;/em&gt;) prova a spiegarci qual è.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/da-zero-a-uno.jpg&quot; class=&quot; forestry--none forestry--none&quot; style=&quot;float: none;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;chi-è-peter-thiel&quot;&gt;Chi è Peter Thiel&lt;/h2&gt;
-
-&lt;p&gt;Peter Thiel, autore del libro, è uno dei &lt;strong&gt;fondatori di Paypal&lt;/strong&gt;. Quella cricca di personaggi che all’epoca l’ha venduto a Ebay è oggi una delle &lt;em&gt;gang&lt;/em&gt; di miliardari più potenti del mondo. E il bello è che sono tutti &lt;em&gt;imprenditori seriali&lt;/em&gt;, quindi tutti si sono lanciati in altre aziende, chi come CEO chi come investitore.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Peter_Thiel_flag.jpeg.jpeg&quot; class=&quot; forestry--none forestry--none&quot; style=&quot;float: none;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;La fortuna di noi informatici e non solo è che possiamo apprendere tanto da loro, visto che hanno scritto libri interessantissimi e di forte impatto: sul mio blog ho già parlato dei &lt;a href=&quot;https://michelenasti.com/2015/11/i-tre-pilastri-per-migliorare-la-propria-carriera/&quot;&gt;libri di Reid Hoffman&lt;/a&gt; e della &lt;a href=&quot;https://michelenasti.com/2017/06/29/caspiterina-quanto-e-complicato-essere-elon-musk.html&quot;&gt;vita di Elon Musk&lt;/a&gt;, altri membri della gang.&lt;/p&gt;
-
-&lt;p&gt;Dopo aver venduto Paypal, Thiel ha lanciato un suo fondo di investimento e tra le aziende che ha direttamente finanziato ce ne sono due che fruttano svariati milardi: una di queste è una piccola startup californiana di nome &lt;strong&gt;Facebook&lt;/strong&gt;, e un’altra è meno nota (opera nel settore dei big data) chiamata &lt;strong&gt;Palantir&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Insomma, Thiel è uno che di business se ne intende.&lt;/p&gt;
-
-&lt;h2 id=&quot;cosa-mi-ha-colpito-del-libro&quot;&gt;Cosa mi ha colpito del libro&lt;/h2&gt;
-
-&lt;p&gt;Ci sono tantissimi spunti interessanti. Non voglio ripeterveli capitolo per capitolo, ma alcune cose sono da insegnare nelle facoltà di economia &amp;amp; informatica di tutto il mondo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Una startup che inventa qualcosa di nuovo, che rivoluziona un mercato, va &lt;strong&gt;da zero a uno&lt;/strong&gt;: crea un nuovo business dove prima non c’era nulla. Chi invece migliora un prodotto già esistente va &lt;strong&gt;da uno a n&lt;/strong&gt;, e nell’opinione di Thiel così non farai mai il botto.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Thiel ci tiene a precisare che andando da zero a uno creerai un monopolio, e nella sua visione i monopoli non sono un male: anzi, sono l’unico modo per fare soldi veri. Teniamo presente che comunque i migliori monopoli non dureranno all’infinito (10 anni?).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Uno dei criteri che usa Thiel nello scegliere le startup da finanziare è: &lt;strong&gt;il prodotto che mi si sta proponendo migliora di dieci volte altre soluzioni sul mercato?&lt;/strong&gt; Infatti secondo Thiel se non stiamo migliorando di almeno &lt;strong&gt;10x&lt;/strong&gt;, è inutile perderci tempo (e cita il caso delle startup che trattavano pannelli solari, che miglioravano le soluzioni esistenti di 1.5-2x. ).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;E’ una soluzione a un problema reale?&lt;/strong&gt; Nessuno vuole pagare per un prodotto che non serve, o in cui non vede alcun valore.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Come fare molti utenti in fretta?&lt;/strong&gt; Adesso risponderemmo in coro “Growth Hacking!” (recensione in arrivo!), ma questo è un problema da risolvere subito, addirittura quando la startup viene fondata. Thiel suggerisce di &lt;strong&gt;partire da una nicchia&lt;/strong&gt; e poi espandersi.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;L’importanza del cofounder.&lt;/strong&gt; Nel libro c’è un capitolo bellissimo sul momento in cui le startup nascono, che Thiel giudica un momento &lt;em&gt;magico&lt;/em&gt;. E ribadisce che &lt;a href=&quot;https://michelenasti.com/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html&quot;&gt;tra i cofounder ci dev’essere un patto di sangue&lt;/a&gt;. A quest’affermazione segue il corollario:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Se hai un’idea, e all’atto della creazione dell’impresa non hai TUTTE le competenze per poterla sviluppare indipendentemente, &lt;strong&gt;LASCIA PERDERE&lt;/strong&gt;. Eviterai di farti male.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;ma-quando-la-fondi-la-tua-startup&quot;&gt;Ma quando la fondi la tua startup?&lt;/h2&gt;
-
-&lt;p&gt;E’ ancora presto: non so ancora qual è il problema che vorrei risolvere, come farci i soldi, ma almeno nel frattempo mi sto facendo una cultura ;)&lt;/p&gt;
-
-&lt;p&gt;C’è un’opinione diffusa che tutti gli informatici dovrebbero diventare miliardari perchè basta una buona idea e il gioco è fatto, ma tanti informatici poveri dimostrano che non è così.&lt;/p&gt;
-
-&lt;p&gt;Una volta ho letto un libro sull’&lt;em&gt;arte moderna&lt;/em&gt;, &lt;a href=&quot;https://www.amazon.it/potevo-anchio-Perch%C3%A9-contemporanea-davvero/dp/8804585579/ref=as_li_ss_tl?ie=UTF8&amp;amp;linkCode=ll1&amp;amp;tag=ilblodimicnas-21&amp;amp;linkId=87fce620f2dee7dd9857097b25f37a86&quot;&gt;“Lo potevo fare anch’io”&lt;/a&gt;. Ditemi la verità, quante volte l’avrete pensato guardando i quadri moderni? Il punto però è che non l’avete fatto. Non avete mai neanche provato a realizzare un quadro, e vi scandalizzate se ora valgono milioni. Ecco, &lt;strong&gt;con l’IT succede più o meno la stessa cosa&lt;/strong&gt;: ricordo quando da studente universitario mi lanciavo in dissertazioni coi colleghi, suggerendo che avremmo dovuto copiare questo &amp;amp; quello perchè ci voleva poco - la classica sindrome del “lo potevo fare anch’io”. Ma poi non l’abbiamo fatto.&lt;/p&gt;
-
-&lt;p&gt;Dopo aver letto alcuni libri sull’argomento ho francamente capito che, oltre ad avere un prodotto che spicca, una startup deve anche investire molto sul marketing e deve essere capace di trovare subito il modo di incamerare utenti &amp;amp; soldi, altrimenti… la fine è più vicina del previsto.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="peter thiel" /><category term="startup" /><category term="da zero a uno" /><category term="from zero to one" /><category term="paypal" /><category term="reid hoffman" /><category term="elon musk" /><category term="lo potevo fare anch'io" /><summary type="html">Negli ultimi (in realtà anche primi) 5 anni di carriera lavorativa, quante volte avrò detto “dai ragazzi, ci basta pensare a una bella idea e faremo soldi a palate”? Ecco, se siamo ancora tutti povery ci sarà un motivo. E il libro From Zero to One (da me linkato nella versione italiana, Da Zero a Uno) prova a spiegarci qual è.</summary></entry></feed>
+&lt;p&gt;Buone vacanze!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="vacanze" /><category term="valledaosta" /><category term="cogne" /><category term="arpy" /><category term="lillaz" /><category term="bionaz" /><category term="prarayer" /><category term="vda" /><summary type="html">Questo post vuole provare ad essere sintetico, e contemporaneamente raccontare 7 giorni di vacanza in Val D’Aosta con una neonata (mia figlia aveva 8 mesi quando abbiamo fatto questo viaggio).</summary></entry></feed>
