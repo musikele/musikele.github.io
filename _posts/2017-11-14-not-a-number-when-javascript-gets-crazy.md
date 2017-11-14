@@ -123,6 +123,6 @@ It will return `true` only for `NaN`.
 Ok, let's end with a song:
 
 ```javascript
-console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a  Batman!`)
-```![]({{ site.baseurl }}/images/not-a-number.jpg)
+console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a Batman!`)
+//NaNaNaNaNaNaNaNa NaNaNaNaNaNaNaNa Batman!
 ```
