@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-11-14T13:14:48+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Not-A-Number: when javascript gets crazy</title><link href="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html" rel="alternate" type="text/html" title="Not-A-Number: when javascript gets crazy" /><published>2017-11-14T01:00:00+01:00</published><updated>2017-11-14T13:13:06+01:00</updated><id>https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy</id><content type="html" xml:base="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html">&lt;p&gt;Yesterday I was doing some maintenance on a corporate website when I found out that &lt;code&gt;parseInt()&lt;/code&gt; returns &lt;code&gt;NaN&lt;/code&gt; if the argument is, well, not a number.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-11-14T13:21:48+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Not-A-Number: when javascript gets crazy</title><link href="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html" rel="alternate" type="text/html" title="Not-A-Number: when javascript gets crazy" /><published>2017-11-14T01:00:00+01:00</published><updated>2017-11-14T13:20:42+01:00</updated><id>https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy</id><content type="html" xml:base="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html">&lt;p&gt;Yesterday I was doing some maintenance on a corporate website when I found out that &lt;code&gt;parseInt()&lt;/code&gt; returns &lt;code&gt;NaN&lt;/code&gt; if the argument is, well, not a number.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/not-a-number.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -28,7 +28,7 @@ false
 false
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Things start to get crazy. As you can see, &lt;code&gt;NaN&lt;/code&gt; is not even equal to itself. You cannott compare anything to &lt;code&gt;NaN&lt;/code&gt;, because &lt;code&gt;NaN&lt;/code&gt; is not equal to anything.&lt;/p&gt;
+&lt;p&gt;Things start to get crazy. As you can see, &lt;code&gt;NaN&lt;/code&gt; is not even equal to itself. You cannot compare anything to &lt;code&gt;NaN&lt;/code&gt;, because &lt;code&gt;NaN&lt;/code&gt; is not equal to anything.&lt;/p&gt;
 
 &lt;h2 id=&quot;sooooo-isnan-&quot;&gt;sooooo… isNaN() ?&lt;/h2&gt;
 
@@ -96,14 +96,14 @@ false
 true
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;It will return &lt;code&gt;isNaN&lt;/code&gt; only for &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It will return &lt;code&gt;true&lt;/code&gt; only for &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;stop-this-its-a-mess&quot;&gt;Stop this! It’s a mess!&lt;/h2&gt;
 
 &lt;p&gt;Ok, let’s end with a song:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a  Batman!`)
-```![](/images/not-a-number.jpg)
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a Batman!`)
+//NaNaNaNaNaNaNaNa NaNaNaNaNaNaNaNa Batman!
 &lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Yesterday I was doing some maintenance on a corporate website when I found out that parseInt() returns NaN if the argument is, well, not a number.</summary></entry><entry><title type="html">Gestpay new website is online!</title><link href="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html" rel="alternate" type="text/html" title="Gestpay new website is online!" /><published>2017-11-02T01:00:00+01:00</published><updated>2017-11-10T10:52:22+01:00</updated><id>https://michelenasti.com/2017/11/02/gestpay-new-website-is-online</id><content type="html" xml:base="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html">&lt;p&gt;I’m really excited to write about one of my latest works: &lt;strong&gt;the redesign of Gestpay’s website.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Screenshot-2017-11-6 Gestpay.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;

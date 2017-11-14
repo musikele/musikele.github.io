@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="" />  
-	<meta http-equiv="last-modified" content="2017-11-14 13:13:06 +0100" /> 
+	<meta http-equiv="last-modified" content="2017-11-14 13:20:42 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -136,7 +136,7 @@ false
 false
 </code></pre>
 
-<p>Things start to get crazy. As you can see, <code>NaN</code> is not even equal to itself. You cannott compare anything to <code>NaN</code>, because <code>NaN</code> is not equal to anything.</p>
+<p>Things start to get crazy. As you can see, <code>NaN</code> is not even equal to itself. You cannot compare anything to <code>NaN</code>, because <code>NaN</code> is not equal to anything.</p>
 
 <h2 id="sooooo-isnan-">sooooo… isNaN() ?</h2>
 
@@ -204,14 +204,14 @@ false
 true
 </code></pre>
 
-<p>It will return <code>isNaN</code> only for <code>NaN</code>.</p>
+<p>It will return <code>true</code> only for <code>NaN</code>.</p>
 
 <h2 id="stop-this-its-a-mess">Stop this! It’s a mess!</h2>
 
 <p>Ok, let’s end with a song:</p>
 
-<pre><code class="language-javascript">console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a  Batman!`)
-```![](/images/not-a-number.jpg)
+<pre><code class="language-javascript">console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a Batman!`)
+//NaNaNaNaNaNaNaNa NaNaNaNaNaNaNaNa Batman!
 </code></pre>
  
 <ul class="share-buttons">
