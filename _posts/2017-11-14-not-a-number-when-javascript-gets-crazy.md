@@ -42,7 +42,7 @@ false
 false
 ```
 
-Things start to get crazy. As you can see, `NaN` is not even equal to itself. You cannott compare anything to `NaN`, because `NaN` is not equal to anything.
+Things start to get crazy. As you can see, `NaN` is not even equal to itself. You cannot compare anything to `NaN`, because `NaN` is not equal to anything.
 
 ## sooooo... isNaN() ?
 
@@ -116,7 +116,7 @@ false
 true
 ```
 
-It will return `isNaN` only for `NaN`.
+It will return `true` only for `NaN`.
 
 ## Stop this! It's a mess!
 
