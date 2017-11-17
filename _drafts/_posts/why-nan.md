@@ -7,9 +7,9 @@ category: Italiano
 layout: post
 date: 2017-11-16 00:00:00 +0000
 tags: []
-header-img: ''
+header-img: "/images/not-a-number.jpg"
 ---
-When I posted the [NaN article](https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html "Not-a-Number: when Javascript gets crazy") on facebook, in a programmers group, I received some very bad reviews. Let's analyze them.
+When I posted the [NaN article](https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html "Not-a-Number: when Javascript gets crazy") on facebook in a programmers group, I received some very bad reviews. Let's analyze them.
 
 ## "It is obvious!"
 
@@ -61,10 +61,10 @@ Of course, if I'm interviewing for a position that has to deal with financial or
 
 In my opinion, no. It's just fun, and a new way to learn something. 
 
+In some very bad comments (ones that started with "you are idiot") there were some insightful hints that made me follow links, read articles, study more - and write this. 
+
 But on the web I have received some critics like "buy a book and read it", and the first thing I thought is ... _haters' gonna hate_. 
 
-Others have accused me of "plagiarism" :D 
+Others have also accused me of "plagiarism" :D 
 
 Honestly, this happens in every group that has more than 1-2 thousand members; people will comment out just to say that you're dumb and they're better. 
-
-[Umberto Eco was right](http://www.azquotes.com/quote/1348396 "Umberto Eco was right")... 
