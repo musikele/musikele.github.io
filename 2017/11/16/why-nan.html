@@ -13,7 +13,7 @@
 
 " />
 	<meta name="keywords" content="nan, javascript, not-a-number" />  
-	<meta http-equiv="last-modified" content="2017-11-17 10:13:26 +0100" /> 
+	<meta http-equiv="last-modified" content="2017-11-17 10:18:47 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -123,6 +123,8 @@
 <p>The fact that <code>NaN !== NaN</code> is true is obvious, after you reason about it.</p>
 
 <p>When I thought of this the first time, I thought it’s absurd, but after a while I realized that this is the only possible logic behaviour. As some have said, if I divide a number by a string I get <code>NaN</code>, and if I divide another number by another string I get another <code>NaN</code>. Are these two<code>NaN</code> equal? no. <code>NaN</code> is not even a measurable property.<code>NaN</code> is a state, and as such it cannot be compared to other<code>NaN</code>s.</p>
+
+<p>More on this: <a href="https://stackoverflow.com/questions/1565164/what-is-the-rationale-for-all-comparisons-returning-false-for-ieee754-nan-values">What is the rationale for all comparisons returning false for IEEE754 NaN values?</a></p>
 
 <h2 id="why-this-is-not-a-js-only-matter">Why this is not a JS-only matter</h2>
 
