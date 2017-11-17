@@ -6,7 +6,10 @@ title: 'Other thoughts about NaN (then, stop) '
 category: Italiano
 layout: post
 date: 2017-11-16 00:00:00 +0000
-tags: []
+tags:
+- nan
+- javascript
+- not-a-number
 header-img: "/images/not-a-number.jpg"
 ---
 When I posted the [NaN article](https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html "Not-a-Number: when Javascript gets crazy") on facebook in a programmers group, I received some very bad reviews. Let's analyze them.
