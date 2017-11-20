@@ -7,9 +7,11 @@ category: Italiano
 layout: post
 date: 2017-11-18 00:00:00 +0000
 tags: []
-header-img: ''
+header-img: "/images/growth-hacker-libro-cover-3d-medium.png"
 ---
 Conosco Raffaele Gaito dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il **Growth Hacking**.
+
+[![Growth Hacker - il libro]({{ site.baseurl }}/images/growth-hacker-libro-cover-3d-medium.png)](https://www.raffaelegaito.com/growth-hacker-libro/)
 
 Raffaele ha pubblicato il suo primo libro ([Growth Hacker, mindset e strumenti per far crescere il tuo business](https://www.raffaelegaito.com/growth-hacker-libro/) - c'è un'anteprima gratuita!) e ho colto l'occasione per fargli qualche domanda.
 
