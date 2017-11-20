@@ -122,6 +122,6 @@ Occhio che però per crescere questo non basta. Raccogliere i dati è importante
 
 E per questo non c'è tool al mondo. Tocca mettersi a studiare ;)
 
-**Grazie Raf per il tuo tempo. Vi lascio con il libro su Amazon. alla prossima!**
+**Grazie Raf per il tuo tempo. Vi lascio con il link al libro su Amazon. alla prossima!**
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ilblodimicnas-21&o=29&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=8891753599&linkId=dd1ec7fe43ae164ba0973ac1baf12188"></iframe>
