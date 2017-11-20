@@ -29,20 +29,6 @@ Ne sono rimasto folgorato perché è la perfetta intersezione di mondi diversi a
 
 Una volta che scopri sta cosa non puoi più tornare indietro.
 
-**(M) In Mangatar hai fatto GH, più o meno consapevolmente? Ci puoi raccontare qualche hack che ha funzionato?**
-
-\(R) Si. Da molto prima in realtà, con due grosse differenze: all'inizio non sapevo cosa fosse il Growth Hacking, ma lavoravo già con un approccio molto simile e in un secondo momento (quando stavo già mettendoci le mani) lo facevo in maniera saltuaria, non con un processo ben preciso, come insegna il Growth Hacking stesso.
-
-Ce ne sono tanti di episodi interessanti da raccontare. L'hack non è mai il punto interessante, è la strategia... e quella sicuramente non si può esaurire in una risposta breve.
-
-Se volessimo fare riferimento ai [canali di Traction](http://amzn.to/2hNACk2) direi che noi abbiamo sempre usato con grande abilità e sicuramente fuori dagli schemi: PR e Unconventional PR; Existing platforms; Targeting blogs; Guest posts; Community Building, ecc.
-
-Abbiamo sempre fatto un utilizzo massiccio degli analytics e la raccolta dati (sia qualitativi che quantitativi) era fondamentale a ogni livello.
-
-Poi c'era tanto hacking anche sul prodotto, ma ancora una volta, sarebbe impossibile descrivere il tutto in una risposta e quindi ti cito giusto esempio al volo: integrazione di meccaniche di gamification; personalizzazione del funnel; leva sui principi di persuasione; e tanto altro.
-
-L'aspetto che deve passare (e che mi sforzo sempre di sottolineare) è che _la parte importante non è l'hack in se, ma la strategia_. Senza di essa non si va da nessuna parte!
-
 **(M) Questo è un blog di sviluppatori, gente che di marketing generalmente ne capisce (volontariamente) poco. Puoi spiegaci il GH "orientato ai developer"?**
 
 \(R) La cosa bella è che il Growth Hacking è perfetto per i programmatori e te lo dico proprio da programmatore! Per chi non lo sapesse io infatti sono laureato in informatica e per una vita ho fatto lo sviluppatore. Qualsiasi linguaggio, qualsiasi piattaforma.
@@ -57,7 +43,7 @@ E il prodotto è programmazione, c'è poco da fare!
 
 **(M) Possiamo dire che gli sviluppatori partono avvantaggiati se vogliono diventare Growth Hacking?**
 
-E' vero che il programmatore può avvicinarsi molto facilmente, perchè ci sono degli aspetti tecnici del Growth Hacking che già padroneggia, ma non possiamo dire che è la categoria ideale perchè può avvicinarsi chiunque: chi arriva dal marketing, chi dal prodotto ...
+E' vero che il programmatore può avvicinarsi molto facilmente, perchè ci sono degli aspetti tecnici del Growth Hacking che già padroneggia, ma non possiamo dire che è la categoria ideale perchè può avvicinarsi chiunque: ho colleghi che arrivano dal marketing, o dal prodotto ...
 
 **(M) E' in uscita** [**il tuo libro**](https://www.raffaelegaito.com/growth-hacker-libro/)**, immagino sia fantastico potersi definire anche "autore di libri". In giro ce n'erano già altri (pochi in verità) sul GH, io ne ho addirittura recensito uno. Perchè dovremmo leggere il tuo? (Ovviamente lo faremo 😉)**
 
@@ -87,7 +73,7 @@ Io ho sempre usato un approccio concreto fatto di tanti esempi, tanti numeri e t
 
 \(R) Direi che è una domanda che lascia il tempo che trova. E come se ti chiedessi "quanto guadagna un programmatore?". Non esiste una risposta unica perché dovrei specificare in che nazione lavora, in che linguaggio programma, in che azienda lavora e così via.
 
-Allo stesso modo non esiste un modo unico di rispondere alla domanda del Growth Hacker. Per darti un'idea dell'importanza che questa figura ha attualmente sul mercato, ti posso dire che da una chiacchierata fatta ultimamente con una grossa startup americana è uscito fuori che in Silicon Valley ormai tutti vogliono solo due figure: il growth hacker e il data scientist e sono disposti a pagarli a peso d'oro. Si parlava di cifre sui 200k l'anno.
+Allo stesso modo non esiste un modo unico di rispondere alla domanda del Growth Hacker. Per darti un'idea dell'importanza che questa figura ha attualmente sul mercato, ti posso dire che da una chiacchierata fatta ultimamente con una grossa startup americana è uscito fuori che in Silicon Valley ormai tutti vogliono solo due figure: il growth hacker e il data scientist e sono disposti a pagarli a peso d'oro. Si parlava di cifre sui **200k l'anno**.
 
 Qui in Inghilterra dove vivo io le offerte per questa figura si aggirano sui 60-80k l'anno e se guardi sui siti specializzati vedrai che in america uno stipendio medio per una figura del genere varia dai 120k ai 160k l'anno.
 
