@@ -10,7 +10,7 @@ tags: []
 header-img: "/images/growth-hacker-libro-cover-3d-medium.png"
 categories: Italiano
 ---
-Conosco Raffaele Gaito dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il **Growth Hacking**.
+Conosco [Raffaele Gaito](https://www.raffaelegaito.com/ "Raffaele Gaito, il blog") dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il **Growth Hacking**.
 
 Raffaele ha pubblicato il suo primo libro ([Growth Hacker, mindset e strumenti per far crescere il tuo business](https://www.raffaelegaito.com/growth-hacker-libro/) - c'è un'anteprima gratuita!) e ho colto l'occasione per fargli qualche domanda.
 
@@ -122,6 +122,4 @@ Occhio che però per crescere questo non basta. Raccogliere i dati è importante
 
 E per questo non c'è tool al mondo. Tocca mettersi a studiare ;)
 
-**Grazie Raf per il tuo tempo. Vi lascio con il link al libro su Amazon. alla prossima!**
-
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ilblodimicnas-21&o=29&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=8891753599&linkId=dd1ec7fe43ae164ba0973ac1baf12188"></iframe>
+**Grazie Raf per il tuo tempo. Vi lascio con il** [**link al libro su Amazon**](http://amzn.to/2hOoizV)**. alla prossima!**
