@@ -1,4 +1,124 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-11-20T10:49:03+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Other thoughts about NaN (then, stop)</title><link href="https://michelenasti.com/2017/11/16/why-nan.html" rel="alternate" type="text/html" title="Other thoughts about NaN (then, stop)" /><published>2017-11-16T01:00:00+01:00</published><updated>2017-11-17T10:18:47+01:00</updated><id>https://michelenasti.com/2017/11/16/why-nan</id><content type="html" xml:base="https://michelenasti.com/2017/11/16/why-nan.html">&lt;p&gt;When I posted the &lt;a href=&quot;https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html&quot; title=&quot;Not-a-Number: when Javascript gets crazy&quot;&gt;NaN article&lt;/a&gt; on facebook in a programmers group, I received some very bad reviews. Let’s analyze them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-11-20T19:37:36+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Growth Hacker: cos’è? Intervista a Raffaele Gaito</title><link href="https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html" rel="alternate" type="text/html" title="Growth Hacker: cos'è? Intervista a Raffaele Gaito" /><published>2017-11-18T01:00:00+01:00</published><updated>2017-11-20T19:36:08+01:00</updated><id>https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito</id><content type="html" xml:base="https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html">&lt;p&gt;Conosco &lt;a href=&quot;https://www.raffaelegaito.com/&quot; title=&quot;Raffaele Gaito, il blog&quot;&gt;Raffaele Gaito&lt;/a&gt; dai tempi dell’università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo &lt;em&gt;fare finta&lt;/em&gt; che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il &lt;strong&gt;Growth Hacking&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Raffaele ha pubblicato il suo primo libro (&lt;a href=&quot;https://www.raffaelegaito.com/growth-hacker-libro/&quot;&gt;Growth Hacker, mindset e strumenti per far crescere il tuo business&lt;/a&gt; - c’è un’anteprima gratuita!) e ho colto l’occasione per fargli qualche domanda.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.raffaelegaito.com/growth-hacker-libro/&quot;&gt;&lt;img src=&quot;/images/growth-hacker-libro-cover-3d-medium.png&quot; alt=&quot;Growth Hacker - il libro&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ma questo Growth Hacking… cos’è? E soprattutto, interessa anche ai developer? Facciamocelo raccontare dal diretto interessato!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) E’ utile iniziare l’intervista parlando del perchè esiste il marketing: rivolgiamoci agli sviluppatori. “Non è il linguaggio di programmazione, o i framework, a decretare il successo di un prodotto, ma il marketing che ne consegue”. Se il prodotto è utile, e la gente ne ha bisogno e soprattutto lo viene a sapere, allora avrà successo. E’ un’affermazione vera?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) Si! Assolutamente! Non conta il linguaggio, quelle sono pippe da tecnici. Hai detto una cosa chiave: la gente deve venirlo a sapere. &lt;em&gt;Se fai il miglior programma del mondo, col codice più ottimizzato e col linguaggio più moderno, però lo sai solo tu e tuo cugino, quante copie ti aspetti di vendere?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(Michele) Partiamo dall’inizio. Hai cofondato Mangatar, una startup che si occupava di videogames, e a un certo punto hai lasciato. I motivi sono descritti&lt;/strong&gt; &lt;a href=&quot;https://www.raffaelegaito.com/2016-lascio-mangatar-zona-di-comfort-crescita/&quot;&gt;&lt;strong&gt;in un tuo post&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, ma il TL;DR è che sentivi la necessità di passare ad altro. Già in quel post (gennaio 2016) parlavi di Growth Hacking, parola che all’epoca era sconosciuta ai più. Come hai preso la strada del GH? Quand’è che l’hai conosciuto, e ne sei stato “folgorato”?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(Raffaele): Ho iniziato ad interessarmi al Growth Hacking più o meno 4-5 anni fa. Non ricordo esattamente quando, ma già leggevo cose in giro con molto interesse, cercando di capire se fosse la solita fuffa americana o meno.&lt;/p&gt;
+
+&lt;p&gt;Ho iniziato fin da subito a fare qualche esperimento su cose più piccole, anche perché non avevo colto in pieno il potenziale della cosa, e avevo il classico approccio di chi scopre il Growth Hacking per la prima volta: pensare che si tratti di una scorciatoia e di qualche trucchetto per il successo.&lt;/p&gt;
+
+&lt;p&gt;Ne sono rimasto folgorato perché è la perfetta intersezione di mondi diversi ai quali però ero molto legato. Riusciva a mettere nello stesso contesto le mie competenze tecniche, la mia passione per il marketing e il mio essere un uomo di business, un imprenditore.&lt;/p&gt;
+
+&lt;p&gt;Una volta che scopri sta cosa non puoi più tornare indietro.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/raf_gaito.jpg&quot; alt=&quot;Raffaele Gaito&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) Questo è un blog di sviluppatori, gente che di marketing generalmente ne capisce (volontariamente) poco. Puoi spiegaci il GH “orientato ai developer”?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) La cosa bella è che il Growth Hacking è perfetto per i programmatori e te lo dico proprio da programmatore! Per chi non lo sapesse io infatti sono laureato in informatica e per una vita ho fatto lo sviluppatore. Qualsiasi linguaggio, qualsiasi piattaforma.&lt;/p&gt;
+
+&lt;p&gt;Come dicevo all’inizio io sono rimasto folgorato dal Growth Hacking proprio perché era molto concreto, molto vicino al mindset e all’approccio di un programmatore.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Lo so bene cosa pensano i programmatori del marketing ed è quello che pensavo anche io. Tutto troppo fumoso, tutto troppo generico, il rischio fuffa è dietro l’angolo.&lt;/em&gt; Invece il Growth Hacking arriva li con una metodologia precisa, i suoi framework, i suoi tool e i suoi modelli e tu capisci che è molto di più di “semplice marketing”.&lt;/p&gt;
+
+&lt;p&gt;Uno degli aspetti fondamentali del Growth Hacking è la parte di prodotto che non viene mai sottolineata abbastanza. Molte attività di Growth Hacking si fanno quindi mettendo mano al codice e modificando il proprio prodotto per sperimentare nuove soluzioni, per adattarlo dopo la raccolta dati, per integrare modifiche suggerite dagli utenti, per fare A/B testing e così via.&lt;/p&gt;
+
+&lt;p&gt;E il prodotto è programmazione, c’è poco da fare!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) Possiamo dire che gli sviluppatori partono avvantaggiati se vogliono diventare Growth Hacking?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;E’ vero che il programmatore può avvicinarsi molto facilmente, perchè ci sono degli aspetti tecnici del Growth Hacking che già padroneggia, ma non possiamo dire che è la categoria ideale perchè può avvicinarsi chiunque: ho colleghi che arrivano dal marketing, o dal prodotto …&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) E’ in uscita&lt;/strong&gt; &lt;a href=&quot;https://www.raffaelegaito.com/growth-hacker-libro/&quot;&gt;&lt;strong&gt;il tuo libro&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, immagino sia fantastico potersi definire anche “autore di libri”. In giro ce n’erano già altri (pochi in verità) sul GH, io ne ho addirittura recensito uno. Perchè dovremmo leggere il tuo? (Ovviamente lo faremo 😉)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) Si ho visto che hai recensito “Growth Hacking” di Luca Barboni e Federico Simonetti. Luca è un grande amico e collega. Siamo stai i primi a portare questa disciplina in Italia e collaboriamo insieme su parecchie iniziative.&lt;/p&gt;
+
+&lt;p&gt;Detto questo, perché leggere il mio libro? Provo a darti risposte diverse in base a scenari diversi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Se è la prima cosa che leggi sul Growth Hacking, è un libro perfetto con una piccola parte teorica (molto piccola) e poi tanta ciccia. Ti consentirà di capire velocemente di cosa si tratta, ma essere anche in grado di metterlo in pratica.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Se hai già letto altre cose sul Growth Hacking (tipo il libro di Luca), allora meglio ancora perché il taglio del libro è quello di essere strategico/operativo per la quotidianità. Se ti interessa applicare questa metodologia sul tuo progetto o vuoi farne un lavoro questo è il libro perfetto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Se se già un po’ più avanti e magari hai fatto anche qualche corso (uno dei miei, ad esempio), il libro è il perfetto completamento a tutto quello che hai studiato fino ad oggi. È un manualetto da tenere sulla scrivania in ufficio e tirare fuori quando ti serve!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il libro è perfetto per le agenzie, per i freelance, per i marketer, per i growth hacker, per i product manager, per i project manager e per chiunque in azienda (la propria o quella di altri) abbia la necessità crescere.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) In questi anni avrai avuto a che fare con tante realtà; come è stato recepito il GH dal management delle aziende per cui hai lavorato? E dagli altri reparti? (marketing… sviluppo…)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) Lo scenario è cambiato molto negli anni. Se nelle primissime fasi la cosa veniva guardata con sospetto, ora invece è tutto molto più facile. Sono anni che spingo tantissimo sull’evangelizzazione, l’informazione e la sensibilizzazione verso questa tematica e i risultati oggi si vedono.&lt;/p&gt;
+
+&lt;p&gt;Faccio corsi nelle università, vado a parlare nelle multinazionali, ho studenti in tutta Italia, il libro è finito bestseller. Diciamo che tutte queste cose sarebbero state impossibili senza aver “seminato” a lungo negli anni precedenti.&lt;/p&gt;
+
+&lt;p&gt;Ovviamente la risposta cambia da reparto a reparto, ma l’importante è essere concreti e non esagerare mai. È chiaro che &lt;em&gt;se vado nel reparto marketing e gli dico “il marketing è morto”&lt;/em&gt; difficilmente otterrò la loro fiducia e la loro attenzione. Anche perché è falso e il Growth Hacking è uno strumento in più nella loro cassetta degli attrezzi.&lt;/p&gt;
+
+&lt;p&gt;Io ho sempre usato un approccio concreto fatto di tanti esempi, tanti numeri e tanto sporcarsi le mani. E dopo un po’ si convincono tutti: dal manager al marketer, passando anche per i programmatori più scettici.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) Una domanda che mi è arrivata dalla community di DevDay Salerno: quanto guadagna un GH?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) Direi che è una domanda che lascia il tempo che trova. E come se ti chiedessi “quanto guadagna un programmatore?”. Non esiste una risposta unica perché dovrei specificare in che nazione lavora, in che linguaggio programma, in che azienda lavora e così via.&lt;/p&gt;
+
+&lt;p&gt;Allo stesso modo non esiste un modo unico di rispondere alla domanda del Growth Hacker. Per darti un’idea dell’importanza che questa figura ha attualmente sul mercato, ti posso dire che da una chiacchierata fatta ultimamente con una grossa startup americana è uscito fuori che in Silicon Valley ormai tutti vogliono solo due figure: il growth hacker e il data scientist e sono disposti a pagarli a peso d’oro. Si parlava di cifre sui &lt;strong&gt;200k l’anno&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Qui in Inghilterra dove vivo io le offerte per questa figura si aggirano sui 60-80k l’anno e se guardi sui siti specializzati vedrai che in america uno stipendio medio per una figura del genere varia dai 120k ai 160k l’anno.&lt;/p&gt;
+
+&lt;p&gt;Però, ripeto, sono numeri campati in aria che hanno poco senso estrapolati dal loro contesto. Dipende se sei freelance, se sei assunto, se lavori in agenzia e così via.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) Cosa fa durante una “giornata lavorativa”?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) Dipende molto dal tipo di progetto su cui sta lavorando e dalla fase in cui si trova (ricordo che il Growth Hacking è un processo). Generalmente passi un sacco di tempo sui numeri e sulla strategia, che significa molto excel, molto analytics e molto trello (o asana o altro).&lt;/p&gt;
+
+&lt;p&gt;Molto dipende anche dal fatto se lavori con un team di Growth Hacking (e allora hai un ruolo più ad alto livello) oppure se sei da solo (e gestisci sia la parte strategica che operativa). Per farti qualche esempio concreto: ci sono una serie di attività legate agli esperimenti dove si va di brainstorming e prioritizzazione; tutta una serie di attività legate alla raccolta dati dove vai dallo svolgere customer interview a raccogliere gli hard data; tantissime attività sul prodotto che, come dicevo prima, coinvolgono il team di sviluppo e così via.&lt;/p&gt;
+
+&lt;p&gt;Poi ancora, in base allo step del funnel in cui ti trovi e ai canali sui quali sei attivo potresti dover gestire campagne di advertising, realizzare landing page, produrre contenuti, sviluppare nuove feature, e chi più ne ha più ne metta.&lt;/p&gt;
+
+&lt;p&gt;Come avrai capito il Growth Hacking è un mondo vastissimo dove dentro rientrano attività appartenenti a settori molto diversi tra di loro.&lt;/p&gt;
+
+&lt;p&gt;Il cuore di tutto questo è una metodologia basata sugli esperimenti, quindi indipendentemente dal cosa fai il concetto base è: &lt;em&gt;il Growth Hacker nella quotidianità fa test. Un sacco di test&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) Come si diventa Growth Hacker?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) Fino a qualche anno fa la situazione era tragica perché i contenuti in italiano erano pochi e anche di pessima qualità. Quindi bisognava per forza studiare dal materiale americano e poi andare per tentativi, cosa che ho fatto io e tutti quelli che come me hanno iniziato diversi anni fa.&lt;/p&gt;
+
+&lt;p&gt;Oggi lo scenario è ben diverso, ci sono libri in italiano che parlano di questo argomento, sia libri scritti da autori italiani (come il mio) che libri americani tradotti in italiano. Ci sono tanti corsi, sia online che in aula e io, ad esempio, ho realizzato il &lt;a href=&quot;http://raffaele.link/growth-hacking-masterclass&quot;&gt;primo corso online sul Growth Hacking&lt;/a&gt;, proprio insieme a Luca, dove trattiamo l’argomento dalla A alla Z.&lt;/p&gt;
+
+&lt;p&gt;A questo aggiungi il fatto che anche le università si sono svegliate e ne hanno capito l’importanza. Oggi ci sono sia percorsi completamente dedicati al Growth Hacking che moduli o lezioni su questo tema nei “classici” corsi dedicati al marketing o al business.&lt;/p&gt;
+
+&lt;p&gt;Quindi il materiale per studiare c’è ed è pure tanto. Ovviamente questo da solo non basta, visto che è una materia molto pratica. Come ho scritto sul mio blog io credo nel metodo “studia-sperimenta-aspetta”. Quindi dopo una bella infarinatura teorica non c’è modo migliore di imparare qualcosa di nuovo se non sporcandosi le mani e smanettando su progetti veri!&lt;/p&gt;
+
+&lt;p&gt;In generale considera che la figura del Growth Hacker è quella che nel mondo delle risorse umane viene chiamata “profilo a T” e quindi è una persona con un bagaglio di competenze incredibili, proprio perché spazia da aspetti tecnici alle vendite, dal saper scrivere al saper fare advertising, dal marketing all’analytics e chi più ne ha più ne metta!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(M) Come ultima domanda ti chiedo: mettiamoci nei panni di una startup neonata che ha zero euro, un prodotto in fase di realizzazione e bisogno di crescere: quali tool consiglieresti, i più economici possibili, per iniziare a monitorare le proprie metriche? Si può fare con zero euro?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(R) Il Growth Hacking non si può fare con zero euro, togliamocelo dalla testa. E allo stesso modo &lt;em&gt;non si può fare startup con zero euro&lt;/em&gt;. È una stupidaggine che dobbiamo smettere di ripetere. Se hai zero euro vai a fare il dipendente, non ti metti a fare la cosa più rischiosa al mondo: l’imprenditore.&lt;/p&gt;
+
+&lt;p&gt;Detto questo i soldi li devi trovare, che siano i tuoi risparmi o che siano quelli di un secondo lavoro che fai per mantenerti, un piccolo budget è necessario.&lt;/p&gt;
+
+&lt;p&gt;La grossa differenza del Growth Hacking è che ti permette di ottenere risultati tangibili e fin da subito anche con budget molto piccoli perché ti permette di usare il budget in maniera più intelligente. La chiave è tutta qui.&lt;/p&gt;
+
+&lt;p&gt;E non è mai questione di tool, ma ancora una volta, è questione di processo e di strategia.&lt;/p&gt;
+
+&lt;p&gt;Se proprio però vuoi una risposta con qualche nome, e so che la vuoi, ti dico che allora si possono fare grandi cose anche con tool di analytics gratuiti come &lt;a href=&quot;https://analytics.google.com/&quot;&gt;Google Analytics&lt;/a&gt; o con tool professionali ma che offrono piani free come &lt;a href=&quot;https://count.ly/&quot;&gt;Countly&lt;/a&gt; e &lt;a href=&quot;https://amplitude.com/&quot;&gt;Amplitude&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Occhio che però per crescere questo non basta. Raccogliere i dati è importante, ma è solo l’inizio. Devi sapere quali dati raccogliere, come leggerli e, soprattutto, quali decisioni prendere da essi.&lt;/p&gt;
+
+&lt;p&gt;E per questo non c’è tool al mondo. Tocca mettersi a studiare ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Grazie Raf per il tuo tempo. Vi lascio con il&lt;/strong&gt; &lt;a href=&quot;http://amzn.to/2hOoizV&quot;&gt;&lt;strong&gt;link al libro su Amazon&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;. alla prossima!&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Conosco Raffaele Gaito dai tempi dell’università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo fare finta che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il Growth Hacking.</summary></entry><entry><title type="html">Other thoughts about NaN (then, stop)</title><link href="https://michelenasti.com/2017/11/16/why-nan.html" rel="alternate" type="text/html" title="Other thoughts about NaN (then, stop)" /><published>2017-11-16T01:00:00+01:00</published><updated>2017-11-17T10:18:47+01:00</updated><id>https://michelenasti.com/2017/11/16/why-nan</id><content type="html" xml:base="https://michelenasti.com/2017/11/16/why-nan.html">&lt;p&gt;When I posted the &lt;a href=&quot;https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html&quot; title=&quot;Not-a-Number: when Javascript gets crazy&quot;&gt;NaN article&lt;/a&gt; on facebook in a programmers group, I received some very bad reviews. Let’s analyze them.&lt;/p&gt;
 
 &lt;h2 id=&quot;it-is-obvious&quot;&gt;“It is obvious!”&lt;/h2&gt;
 
@@ -891,51 +1011,4 @@ ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
 &lt;pre&gt;&lt;code&gt;9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Alla prossima!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="bitcoin" /><category term="crittografia" /><category term="hash" /><summary type="html">Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…</summary></entry><entry><title type="html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</title><link href="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html" rel="alternate" type="text/html" title="Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing" /><published>2017-08-18T00:00:00+02:00</published><updated>2017-09-19T10:17:10+02:00</updated><id>https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing</id><content type="html" xml:base="https://michelenasti.com/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">&lt;p&gt;Growth Hacking. &lt;strong&gt;Growth Hacking ovunque.&lt;/strong&gt; Pure nei bagni dell’autogrill.&lt;/p&gt;
-
-&lt;p&gt;E’ la buzzword del momento: un fenomeno che sta riguardando l’universo del marketing e delle startup, che si propone come la Metodologia Unica™ di accrescimento della vostra società, budget permettendo.&lt;/p&gt;
-
-&lt;p&gt;Andiamo al sodo; ecco come è nato questo post: dal libro sul &lt;a href=&quot;http://amzn.to/2wfS2LO&quot;&gt;Growth Hacking di Luca Barboni&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://amzn.to/2wfS2LO&quot;&gt;&lt;img src=&quot;/images/growth_hacking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;il-libro&quot;&gt;Il libro&lt;/h2&gt;
-
-&lt;p&gt;Sono rimasto molto soddisfatto da questo libro: io sono un programmatore e non conosco nulla di marketing. Per me il marketing era tutto quello che si faceva per sponsorizzare il prodotto sui vari canali: pubblicità, testi, immagni, grafiche, video, etc. In genere c’è un “budget” e un “reparto” della tua società che deve stare attento a come lo si spende. E’ questo, no?&lt;/p&gt;
-
-&lt;p&gt;Se la pensi così ti sarai accorto che c’è un problema enorme alla base: non saprai mai quale azione ha portato a un aumento del fatturato. I miei clienti hanno visto la pubblicità su facebook? Oppure quella in tv? O forse il cartellone sull’A4? Non c’è nessun modo per saperlo.&lt;/p&gt;
-
-&lt;p&gt;Il Growth Hacking invece è una disciplina empirica (col nome impronunciabile per un italiano) che permette di &lt;strong&gt;misurare,&lt;/strong&gt; tramite &lt;strong&gt;esperimenti controllati&lt;/strong&gt;, l’impatto di ogni tua azione sui tuoi clienti.&lt;/p&gt;
-
-&lt;p&gt;Il libro è piuttosto operativo, infatti superati i primi capitoli introduttivi troverete un’intera sezione su come mettere in pratica tutte le fasi che compongono la crescita di un prodotto: dal momento in cui un cliente vi scopre, al momento in cui acquista qualcosa da voi, fino al momento in cui vi consiglia a un amico.&lt;/p&gt;
-
-&lt;h2 id=&quot;cosa-mi-ha-colpito&quot;&gt;Cosa mi ha colpito&lt;/h2&gt;
-
-&lt;p&gt;Ci sono cose che ho annotato e che mi hanno colpito maggiormente:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;GH non è un insieme di tips n’ tricks. E’ una metodologia. Se trovate siti che vi propongono &lt;em&gt;cinquanta azioni di Growth Hacking che potete mettere in pratica sul vostro sito&lt;/em&gt;, beh, scappate perchè non sanno nenache di che stanno parlando.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;NON iniziare il GH senza avere un sistema per misurare ogni possibile azione che ti interessa&lt;/strong&gt;. Ad esempio, se vuoi sapere quanti clienti vengono sul tuo sito da facebook, devi avere modo di poterlo tracciare (landing page dedicata, etc). Se vuoi tracciare il numero di clienti che si iscrivono tramite altri clienti, DEVI avere una piattaforma che ti permette di tracciare tutto.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Esistono &lt;strong&gt;due momenti&lt;/strong&gt; per un’azienda che sta lanciando un prodotto: la fase &lt;strong&gt;pre-market fit&lt;/strong&gt; e la fase &lt;strong&gt;post-market fit&lt;/strong&gt;. In pratica, nella prima fase state realizzando un prodotto e state cercando di fare in modo che sia ciò di cui il cliente ha bisogno. In questa prima fase vi focalizzate sulle funzionalità più che sulla sua crescita. La seconda fase invece corrisponde a quando avrete creato un prodotto “valido”, e potete finalmente dare fuoco al budget per pubblicizzarlo.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Il marketing non è qualcosa di esterno all’azienda, non è un ufficio a parte: &lt;strong&gt;il primo growth hacker è il CEO&lt;/strong&gt;. Tutti dovrebbero sapere che esperimenti stiamo facendo, cosa ha funzionato, e cosa no.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ma-la-cosa-che-più-mi-ha-sorpreso-è-che-&quot;&gt;Ma la cosa che più mi ha sorpreso è che …&lt;/h2&gt;
-
-&lt;p&gt;Non essendo un marketer non posso confermare nè smentire: &lt;strong&gt;davvero nel marketing “classico” i soldi vengono spesi “alla cieca” senza nessun controllo sul risultato ottenuto?&lt;/strong&gt; Davvero non si misura nulla, se non il fatturato o il numero di clienti, in termini piuttosto generici? Su questo sono sconvolto: sarà che vengo dall’informatica, ma penso che se non ti poni obiettivi misurabili puoi dire tutto e il contrario di tutto, senza avere mai ragione.&lt;/p&gt;
-
-&lt;p&gt;Infine, mi sono posto una domanda che - sono sicuro - si saranno posti tutti: &lt;strong&gt;si può fare Growth Hacking per aziende tradizionali?&lt;/strong&gt; Io intendo per aziende che hanno un business decisamente offline, non so, pensate a una pizzeria o a un negozio di vestiti.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;La risposta del Growth Hacking “classico&lt;/strong&gt;”: “si può fare, basta che la parte di promozione la fai online e continui a misurare tutte le azioni e reazioni”.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;La risposta di Michele Nasti™&lt;/strong&gt;: Si può fare anche se non si ha un sito internet, nè una presenza online consolidata: la metodologia è applicabile anche “fuori da internet” (è una metodologia!) e la parte di metriche può essere raccolta offline… e i calcoli si possono fare “a mano”… etc etc insomma è chiaro che diventa più complicato e, presumibilmente, impreciso, ma si può fare. Forse a questo step non ci siamo ancora arrivati, e servono ulteriori semplificazioni per migliorare il processo. Ma in cuor mio penso che si possa fare. L’unico vero problema è che &lt;strong&gt;non è scalabile&lt;/strong&gt;: se il negozio è grande, o è molto trafficato, diventa difficile tracciare gli eventi che ci interessano.&lt;/p&gt;
-
-&lt;p&gt;Bene, dopo tutto sto casino non mi resta che augurarvi un &lt;strong&gt;crescita iperbolica&lt;/strong&gt;! Se diventate ricchi, ricordatevi di me.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="growth hacking" /><category term="marketing" /><category term="libro" /><category term="luca barboni" /><summary type="html">Growth Hacking. Growth Hacking ovunque. Pure nei bagni dell’autogrill.</summary></entry></feed>
+&lt;p&gt;Alla prossima!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="bitcoin" /><category term="crittografia" /><category term="hash" /><summary type="html">Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…</summary></entry></feed>
