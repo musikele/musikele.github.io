@@ -12,7 +12,7 @@ categories: Italiano
 ---
 Conosco [Raffaele Gaito](https://www.raffaelegaito.com/ "Raffaele Gaito, il blog") dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il **Growth Hacking**.
 
-Raffaele ha pubblicato il suo primo libro ([Growth Hacker, mindset e strumenti per far crescere il tuo business](https://www.raffaelegaito.com/growth-hacker-libro/) - c'è un'anteprima gratuita!) e ho colto l'occasione per fargli qualche domanda.
+Raffaele ha pubblicato il suo primo libro ([Growth Hacker, mindset e strumenti per far crescere il tuo business](https://www.raffaelegaito.com/growth-hacker-libro/) - c'è un'anteprima gratuita!) e ho colto l'occasione per fargli qualche domanda. 
 
 [![Growth Hacker - il libro]({{ site.baseurl }}/images/growth-hacker-libro-cover-3d-medium.png)](https://www.raffaelegaito.com/growth-hacker-libro/)
 
@@ -31,6 +31,8 @@ Ho iniziato fin da subito a fare qualche esperimento su cose più piccole, anche
 Ne sono rimasto folgorato perché è la perfetta intersezione di mondi diversi ai quali però ero molto legato. Riusciva a mettere nello stesso contesto le mie competenze tecniche, la mia passione per il marketing e il mio essere un uomo di business, un imprenditore.
 
 Una volta che scopri sta cosa non puoi più tornare indietro.
+
+![Raffaele Gaito]({{ site.baseurl }}/images/raf_gaito.jpg)
 
 **(M) Questo è un blog di sviluppatori, gente che di marketing generalmente ne capisce (volontariamente) poco. Puoi spiegaci il GH "orientato ai developer"?**
 
