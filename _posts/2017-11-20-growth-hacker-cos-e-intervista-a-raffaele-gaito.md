@@ -9,6 +9,7 @@ date: 2017-11-18 00:00:00 +0000
 tags: []
 header-img: "/images/growth-hacker-libro-cover-3d-medium.png"
 categories: Italiano
+description: "In quest'intervista Raffale ci parla del Growth Hacking e delle sue connessioni con il mondo degli sviluppatori"
 ---
 Conosco [Raffaele Gaito](https://www.raffaelegaito.com/ "Raffaele Gaito, il blog") dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il **Growth Hacking**.
 
