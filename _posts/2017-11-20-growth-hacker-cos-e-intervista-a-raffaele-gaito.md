@@ -7,15 +7,14 @@ category: Italiano
 layout: post
 date: 2017-11-18 00:00:00 +0000
 tags: []
-header-img: "/images/raf_gaito.jpg"
+header-img: "/images/growth-hacker-libro-cover-3d-medium.png"
 categories: Italiano
-description: "In quest'intervista Raffale ci parla del Growth Hacking e delle sue connessioni con il mondo degli sviluppatori. "
+description: 'In quest''intervista Raffale ci parla del Growth Hacking e delle sue
+  connessioni con il mondo degli sviluppatori. '
 ---
 Conosco [Raffaele Gaito](https://www.raffaelegaito.com/ "Raffaele Gaito, il blog") dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il **Growth Hacking**.
 
-<!--more-->
-
-Raffaele ha pubblicato il suo primo libro ([Growth Hacker, mindset e strumenti per far crescere il tuo business](https://www.raffaelegaito.com/growth-hacker-libro/) - c'è un'anteprima gratuita!) e ho colto l'occasione per fargli qualche domanda. 
+Raffaele ha pubblicato il suo primo libro ([Growth Hacker, mindset e strumenti per far crescere il tuo business](https://www.raffaelegaito.com/growth-hacker-libro/) - c'è un'anteprima gratuita!) e ho colto l'occasione per fargli qualche domanda.
 
 [![Growth Hacker - il libro]({{ site.baseurl }}/images/growth-hacker-libro-cover-3d-medium.png)](https://www.raffaelegaito.com/growth-hacker-libro/)
 
@@ -49,7 +48,7 @@ Uno degli aspetti fondamentali del Growth Hacking è la parte di prodotto che no
 
 E il prodotto è programmazione, c'è poco da fare!
 
-**(M) Possiamo dire che gli sviluppatori partono avvantaggiati se vogliono diventare Growth Hacking?**
+**(M) Possiamo dire che gli sviluppatori partono avvantaggiati se vogliono diventare Growth Hackers?**
 
 E' vero che il programmatore può avvicinarsi molto facilmente, perchè ci sono degli aspetti tecnici del Growth Hacking che già padroneggia, ma non possiamo dire che è la categoria ideale perchè può avvicinarsi chiunque: ho colleghi che arrivano dal marketing, o dal prodotto ...
 
