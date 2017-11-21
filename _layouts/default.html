@@ -10,7 +10,9 @@
 	</script>
 	{% if page.title %}
 	<title>{{ page.title }} - {{ site.name }}</title>
+	{% comment %} 
 	<meta name="description" content="{{page.excerpt | strip_html }}" />
+	{% endcomment %} 
 	<meta name="keywords" content="{{page.tags | join: ', '}}" /> {% else %}
 	<title>{{ site.name }} - {{ site.description }}</title>
 	<meta name="description" content="Michele Nasti's personal blog'" />
