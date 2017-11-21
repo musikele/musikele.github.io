@@ -52,7 +52,7 @@ E il prodotto è programmazione, c'è poco da fare!
 
 E' vero che il programmatore può avvicinarsi molto facilmente, perchè ci sono degli aspetti tecnici del Growth Hacking che già padroneggia, ma non possiamo dire che è la categoria ideale perchè può avvicinarsi chiunque: ho colleghi che arrivano dal marketing, o dal prodotto ...
 
-**(M) E' in uscita** [**il tuo libro**](https://www.raffaelegaito.com/growth-hacker-libro/)**, immagino sia fantastico potersi definire anche "autore di libri". In giro ce n'erano già altri (pochi in verità) sul GH, io ne ho addirittura recensito uno. Perchè dovremmo leggere il tuo? (Ovviamente lo faremo 😉)**
+**(M) E' in uscita** [**il tuo libro**](https://www.raffaelegaito.com/growth-hacker-libro/)**, immagino sia fantastico potersi definire anche "autore". In giro ce n'erano già altri (pochi in verità) sul GH, io ne ho addirittura recensito uno. Perchè dovremmo leggere il tuo? (Ovviamente lo faremo 😉)**
 
 \(R) Si ho visto che hai recensito "Growth Hacking" di Luca Barboni e Federico Simonetti. Luca è un grande amico e collega. Siamo stai i primi a portare questa disciplina in Italia e collaboriamo insieme su parecchie iniziative.
 
