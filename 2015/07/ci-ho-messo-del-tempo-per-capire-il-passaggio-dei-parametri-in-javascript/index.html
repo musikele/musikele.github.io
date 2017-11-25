@@ -110,7 +110,14 @@
 		</header>
 
 		<section>
-
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&text=Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript:%20https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&title=Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript&summary=&source=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
 			<p>Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “<em>arguments</em>” mi si è aperto un mondo!</p>
 
 <p>Anni fa infatti mi chiedevo com’è possibile che in JS si possa passare un numero arbitrario di parametri alle funzioni, per di più senza specificare il tipo degli argomenti. All’epoca (circa 10 anni fa) Java era il mio linguaggio preferito, e avrei voltuo che tutto somigliasse a Java. Per fortuna così non è!</p>
@@ -164,12 +171,322 @@ var result = aggiungiUnNumero(100) //300
 
 <p>Ci sono tante parti di JS che ho capito tardi, altre che non ho ancora capito. Una cosa che mi ha fatto intuire la potenza di JS è il fatto che una funzione può prendere in input altre funzioni, e restituirne una come output. Di questo parlerò in futuro. Adios!</p>
  
+			
+			
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
   <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&text=Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript:%20https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
   <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
   <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/&title=Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript&summary=&source=https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/11/16/why-nan.html">Other thoughts about NaN (then, stop) <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/14/javascript-filter-map-reduce.html">Diventare Senior™ con Javascript: le funzioni filter, map, reduce <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">All my articles about Testing in Javascript in one post <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">JS Promises: description, pros, cons of this ES6 construct <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
 
 		</section>
 
@@ -199,46 +516,44 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
 		</section>
 
-		<footer>
-			<br> Altri articoli:
-			<br>
-			<div class="row">
-				
+		<footer>			
+			<div>
+    
 
-				<div class="6u 12u(small) excerpt" id="previousArticle">
-					<header>
-						<h2><a href="/2015/07/instantiate-beans-with-spring-without-autowired/">Instantiate beans with Spring without @Autowired</a></h2>
-					</header>
-					<section>
-						<p>Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.</p>
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2015/07/instantiate-beans-with-spring-without-autowired/">Instantiate beans with Spring without @Autowired</a></h2>
+        </header>
+        <section>
+            <p>Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.</p>
 
 
-					</section>
-					<div>
-						<ul class="actions">
-							<li><a href="/2015/07/instantiate-beans-with-spring-without-autowired/" class="button">Read More</a></li>
-						</ul>
-					</div>
-				</div>
-				 
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2015/07/instantiate-beans-with-spring-without-autowired/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
 
-				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-					<header>
-						<h2><a href="/2015/07/informatica-antincendio/">Informatica Antincendio</a></h2>
-					</header>
-					<section>
-						<p>Si: l’articolo che sto per scrivere parla proprio di questo: <strong>Informatica Antincendio</strong>.</p>
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2015/07/informatica-antincendio/">Informatica Antincendio</a></h2>
+        </header>
+        <section>
+            <p>Si: l’articolo che sto per scrivere parla proprio di questo: <strong>Informatica Antincendio</strong>.</p>
 
 
-					</section>
-					<div>
-						<ul class="actions">
-							<li><a href="//2015/07/informatica-antincendio/" class="button">Read More</a></li>
-						</ul>
-					</div>
-				</div>
-				
-			</div>
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2015/07/informatica-antincendio/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
 		</footer>
 
 	</article>

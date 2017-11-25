@@ -1153,3 +1153,34 @@ section img {
   justify-content: center;
   align-items: center;
   color: #F7F7F5; }
+
+.articles-row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey; }
+  .articles-row .col-4 {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    @media screen and (min-width: 48em) {
+      .articles-row .col-4 {
+        width: 50%; } }
+    @media screen and (min-width: 60em) {
+      .articles-row .col-4 {
+        width: 25%; } }
+  .articles-row .label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em; }
+    .articles-row .label.label-default {
+      background-color: #777; }

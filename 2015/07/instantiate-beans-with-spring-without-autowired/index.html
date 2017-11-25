@@ -112,7 +112,14 @@
 		</header>
 
 		<section>
-
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&text=Instantiate beans with Spring without @Autowired:%20https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Instantiate beans with Spring without @Autowired) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&title=Instantiate beans with Spring without @Autowired&summary=&source=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
 			<p>Are you in a situation where @Autowired will not work? for example, in a static class or a class that is istantiated by another framework (hibernate) and so on. The latter case is my case: I had to autowire a bean in a Sequence Generator (to create ID for my classes), but since the class was instantiated by Hibernate, Spring could not access and autowire it, even if it was declared as a bean.</p>
 
 <p>However, there is a chance to get what you want. In my example we will try to autowire “myBean” object. Please ensure that your bean is declared somewhere in your applicationContext.xml 😉</p>
@@ -151,12 +158,790 @@ public void setApplicationContext(ApplicationContext applicationContext) throws 
 
 <p>That’s it! This method is not standard but it’s very useful. Every time I needed it I had to go searching the web. Now this useful piece of info is my website 🙂</p>
  
+			
+			
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
   <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&text=Instantiate beans with Spring without @Autowired:%20https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Instantiate beans with Spring without @Autowired) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
   <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
   <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/&title=Instantiate beans with Spring without @Autowired&summary=&source=https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/07/instantiate-beans-with-spring-without-autowired/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/10/develop-a-microservice-with-ratpack/">Develop a microservice with Ratpack <span class="label label-default">java</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/01/why-groovy-is-not-that-famous/">Why Groovy is not that famous? <span class="label label-default">java</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/01/creare-dinamicamente-groovy-beans-in-spring/">Creare dinamicamente Groovy beans in Spring <span class="label label-default">autowired</span>  <span class="label label-default">spring</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/01/realizzare-un-piccolo-motore-di-scripting-in-una-webapp-java-con-groovy/">Realizzare un piccolo motore di Scripting in una webapp Java con Groovy <span class="label label-default">java</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
 
 		</section>
 
@@ -186,48 +971,46 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
 		</section>
 
-		<footer>
-			<br> Altri articoli:
-			<br>
-			<div class="row">
-				
+		<footer>			
+			<div>
+    
 
-				<div class="6u 12u(small) excerpt" id="previousArticle">
-					<header>
-						<h2><a href="/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/">Alcune Best Practices per non impazzire con i DB relazionali</a></h2>
-					</header>
-					<section>
-						<div>
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/">Alcune Best Practices per non impazzire con i DB relazionali</a></h2>
+        </header>
+        <section>
+            <div>
   Cerchiamo di avere poche ma semplici regole di gestione del DB che servono a non impazzire in futuro, fin'ora quelle più semplici che ho usato e che hanno portato alla miglior comprensione possibile (parlo di un team di 30 devs) è:
 </div>
 
 
-					</section>
-					<div>
-						<ul class="actions">
-							<li><a href="/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/" class="button">Read More</a></li>
-						</ul>
-					</div>
-				</div>
-				 
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
 
-				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-					<header>
-						<h2><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h2>
-					</header>
-					<section>
-						<p>Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “<em>arguments</em>” mi si è aperto un mondo!</p>
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h2>
+        </header>
+        <section>
+            <p>Oggi vi parlo di qualcosa che sin dall’inizio non avevo compreso a fondo: gli argumenti delle funzioni in Javascript (o ECMAScript, che sarebbe il nome completo). Quando un anno fa ho compreso questa storia degli “<em>arguments</em>” mi si è aperto un mondo!</p>
 
 
-					</section>
-					<div>
-						<ul class="actions">
-							<li><a href="//2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" class="button">Read More</a></li>
-						</ul>
-					</div>
-				</div>
-				
-			</div>
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
 		</footer>
 
 	</article>

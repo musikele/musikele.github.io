@@ -108,7 +108,14 @@
 		</header>
 
 		<section>
-
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&text=loggare il tempo di esecuzione di un JS : console.time e console.timeEnd:%20https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(loggare il tempo di esecuzione di un JS : console.time e console.timeEnd) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&title=loggare il tempo di esecuzione di un JS : console.time e console.timeEnd&summary=&source=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
 			<p>Ogni browser moderno dispone di avanzatissimi strumenti di sviluppo, Firefox è stato il primo con Firebug (ora integra un suo strumento interno) mentre Chrome ha dettato lo standard con Chrome Developer Tools. A seguire tutti i browser che volevano definirsi moderni hanno dovuto creare delle conosole di sviluppo “serie”, e supportare tutta una serie di costrutti Javascript per facilitare lo sviluppo e il debugging di queste applicazioni.</p>
 
 <p>Se leggete questo blog significa che sapete aprire una di queste console e probabilmente lo fate ogni giorno per lavoro. Ma come misurare che il codice JS che stiamo scrivendo sia effettivamente veloce? O meglio, come valutarlo in relazione ad altre soluzioni alternative?</p>
@@ -149,12 +156,322 @@ console.timeEnd("test del for");</pre>
 
 <p>.<strong>innerHtml()  </strong>? A voi la scoperta !</p>
  
+			
+			
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
   <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&text=loggare il tempo di esecuzione di un JS : console.time e console.timeEnd:%20https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(loggare il tempo di esecuzione di un JS : console.time e console.timeEnd) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
   <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
   <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/&title=loggare il tempo di esecuzione di un JS : console.time e console.timeEnd&summary=&source=https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/11/16/why-nan.html">Other thoughts about NaN (then, stop) <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/14/javascript-filter-map-reduce.html">Diventare Senior™ con Javascript: le funzioni filter, map, reduce <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">All my articles about Testing in Javascript in one post <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">JS Promises: description, pros, cons of this ES6 construct <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
 
 		</section>
 
@@ -184,46 +501,44 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
 		</section>
 
-		<footer>
-			<br> Altri articoli:
-			<br>
-			<div class="row">
-				
+		<footer>			
+			<div>
+    
 
-				<div class="6u 12u(small) excerpt" id="previousArticle">
-					<header>
-						<h2><a href="/2015/07/css-position/">Css Position</a></h2>
-					</header>
-					<section>
-						<p>Facciamo una breve deviazione sul CSS.</p>
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2015/07/css-position/">Css Position</a></h2>
+        </header>
+        <section>
+            <p>Facciamo una breve deviazione sul CSS.</p>
 
 
-					</section>
-					<div>
-						<ul class="actions">
-							<li><a href="/2015/07/css-position/" class="button">Read More</a></li>
-						</ul>
-					</div>
-				</div>
-				 
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2015/07/css-position/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
 
-				<div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-					<header>
-						<h2><a href="/2015/09/the-story-of-a-programmer-me-that-failed-in-php/">the story of a programmer (me) that failed in PHP</a></h2>
-					</header>
-					<section>
-						<p>Some time ago a friend of mine called and said: “<em>Hey! I just coded the app I was thinking about three years ago</em>, <strong>would you want to join me</strong>?”</p>
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2015/09/the-story-of-a-programmer-me-that-failed-in-php/">the story of a programmer (me) that failed in PHP</a></h2>
+        </header>
+        <section>
+            <p>Some time ago a friend of mine called and said: “<em>Hey! I just coded the app I was thinking about three years ago</em>, <strong>would you want to join me</strong>?”</p>
 
 
-					</section>
-					<div>
-						<ul class="actions">
-							<li><a href="//2015/09/the-story-of-a-programmer-me-that-failed-in-php/" class="button">Read More</a></li>
-						</ul>
-					</div>
-				</div>
-				
-			</div>
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2015/09/the-story-of-a-programmer-me-that-failed-in-php/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
 		</footer>
 
 	</article>
