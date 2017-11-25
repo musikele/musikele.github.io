@@ -13,6 +13,7 @@ categories:
 tags:
   - comfort zone
   - ispirazione
+  - lavoro
 ---
 [<img class=" full-width alignnone wp-image-45 size-full" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/ribot-divano-in-pelle-berto-salotti.jpg?fit=600%2C428" alt="ribot-divano-in-pelle-berto-salotti" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/ribot-divano-in-pelle-berto-salotti.jpg?w=600 600w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/ribot-divano-in-pelle-berto-salotti.jpg?resize=300%2C214 300w" sizes="(max-width: 600px) 100vw, 600px" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/01/ribot-divano-in-pelle-berto-salotti.jpg)
 

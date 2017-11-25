@@ -20,7 +20,6 @@ tags:
   - junkers
   - netatmo
   - smart
-  - Uncategorized
 ---
 [<img class=" full-width alignnone wp-image-54 size-full" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg?fit=640%2C437" alt="netatmo-640x0" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg?w=640 640w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg?resize=300%2C205 300w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" />](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg)
 

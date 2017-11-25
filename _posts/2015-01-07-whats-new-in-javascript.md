@@ -13,6 +13,7 @@ categories:
   - Italiano
 tags:
   - javascript
+  - storia
 ---
 
 Javascript esiste praticamente da sempre, per me che ho conosciuto i computer quando Netscape Navigator era alla versione 3. E da sempre ce l’hanno raccontato male: ci hanno parlato delle sue limitazioni, del linguaggio che non si capisce, del codice interpretato, la sicurezza, i cookies etc…
