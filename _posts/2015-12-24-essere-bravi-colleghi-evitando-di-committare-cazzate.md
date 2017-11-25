@@ -10,6 +10,12 @@ dsq_thread_id:
   - "4424679020"
 categories:
   - Italiano
+tags: 
+  - lavoro
+  - programmazione 
+  - commit 
+  - git 
+  - svn
 ---
  
 
@@ -31,7 +37,7 @@ La colpa è quasi sempre di chi ha committato senza seguire <del>elevatissimi</d
 
 Che ci vuole?
 
-Questi tre semplici passi non ci mettono al riparo da problemi di runtime, ossia quando l'app non parte per problemi di configurazione. Inoltre non funziona con i linguaggi interpretati. Si potrebbe dunque inserire un passo 2.5: &#8220;far partire il server&#8221;.
+Questi tre semplici passi non ci mettono al riparo da problemi di runtime, ossia quando l'app non parte per problemi di configurazione. Inoltre non funziona con i linguaggi interpretati. Si potrebbe dunque inserire un passo 2.5: _far partire il server_.
 
 Sventolate questo post in faccia ai vostri colleghi scapestrati e buffoniatevi un po'.
 
