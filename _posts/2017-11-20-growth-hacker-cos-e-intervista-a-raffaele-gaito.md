@@ -6,14 +6,14 @@ title: 'Growth Hacker: cos''è? Intervista a Raffaele Gaito'
 category: Italiano
 layout: post
 date: 2017-11-18 00:00:00 +0000
-tags: []
+tags: [growth hacking, raffaele gaito, marketing,libro]
 header-img: "/images/raf_gaito.jpg"
 categories: Italiano
 description: "In quest'intervista Raffale ci parla del Growth Hacking e delle sue connessioni con il mondo degli sviluppatori. "
 ---
-Conosco [Raffaele Gaito](https://www.raffaelegaito.com/ "Raffaele Gaito, il blog") dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: il **Growth Hacking**.
+Conosco [Raffaele Gaito](https://www.raffaelegaito.com/ "Raffaele Gaito, il blog") dai tempi dell'università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo _fare finta_ che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene: 
 
-<!--more-->
+## il Growth Hacking
 
 Raffaele ha pubblicato il suo primo libro ([Growth Hacker, mindset e strumenti per far crescere il tuo business](https://www.raffaelegaito.com/growth-hacker-libro/) - c'è un'anteprima gratuita!) e ho colto l'occasione per fargli qualche domanda. 
 

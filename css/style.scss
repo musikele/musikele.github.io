@@ -3,5 +3,7 @@
 # only Main files contain this front matter, not partials.
 ---
 
+@import "settings";
 @import "styles";
 @import "badge";
+@import "articles_row";
