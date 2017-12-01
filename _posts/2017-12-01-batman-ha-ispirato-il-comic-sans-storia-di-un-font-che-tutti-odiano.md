@@ -19,7 +19,7 @@ description: 'La storia che sto per raccontarvi riguarda uno degli aspetti più 
   dell''informatica intera: il Comic Sans, il carattere più odiato in assoluto, ma
   allo stesso tempo uno dei più usati al mondo.'
 ---
-La storia che sto per raccontarvi riguarda uno degli aspetti più _mitologici_ dell'informatica intera: il **Comic Sans**, il carattere più odiato in assoluto, ma allo stesso tempo uno dei più usati al mondo.
+La storia che sto per raccontare riguarda uno degli aspetti più _mitologici_ dell'informatica intera: il **Comic Sans**, il carattere più odiato in assoluto, ma allo stesso tempo uno dei più usati al mondo.
 
 ## L'inizio: Microsoft Bob
 
@@ -33,7 +33,7 @@ Si navigava all'interno di questo salone di casa, e per leggere un libro si clic
 
 In fin dei conti l'idea era carina, ma aveva un grande problema: dietro un'interfaccia così giocosa il font utilizzato è un vetusto Times New Roman. brutto eh?
 
-_(siamo segretamente convinti che sia stato questo il vero motivo dell'insuccesso commerciale.)_
+_(sono segretamente convinto che sia stato questo il vero motivo dell'insuccesso commerciale.)_
 
 ## Vincent Connaire: l'uomo che progettò Comic Sans
 
@@ -43,18 +43,18 @@ Connaire entrò subito in contatto col team di Microsoft Bob e fece notare che u
 
 L'idea fu inizialmente accettata e Connaire si ispirò ai fumetti che amava di più, tra cui un [Batman - The dark knight returns](https://en.wikipedia.org/wiki/The_Dark_Knight_Returns "Batman - The dark knight returns") del 1986 che aveva sulla sua scrivania. I caratteri dei fumetti generalmente vengono disegnati a mano, e fanno parte del processo di creazione. Il processo artigianale che c'è dietro a ogni dialogo di un fumetto fa sì che nessuno, fino ad oggi, si sia mai lamentato dei font dei fumetti.
 
-Qui sotto riportiamo una tavola di Batman, per farvi capire da dove nasce l'ispirazione.  
+Qui sotto riporto una tavola di Batman, per farvi capire da dove nasce l'ispirazione.  
 ![]({{ site.baseurl }}/images/batman-begins-1986.jpg)
 
-\(Vi ricordo che all'epoca Internet non c'era, o meglio esisteva da 1 anno: molto difficile trovare ispirazione on line. Io ricordo che dovetti installare non solo Netscape ma anche i driver TCP/IP a mano, coi floppy, su Windows 3.1).
+\(Ti ricordo che all'epoca Internet non c'era, o meglio esisteva da 1 anno: molto difficile trovare ispirazione on line. Io ricordo che dovetti installare non solo Netscape ma anche i driver TCP/IP a mano, coi floppy, su Windows 3.1).
 
 ## Il Comic Sans
 
-Fu così che nacque il Comic Sans, un carattere fortemente ispirato ai fumetti, che però non dovete MAI utilizzare se volete disegnare fumetti per professione, pena il licenziamento.
+Fu così che nacque il Comic Sans, un carattere fortemente ispirato ai fumetti, che però non devi MAI utilizzare se vuoi disegnare fumetti per professione, pena il licenziamento.
 
 ![]({{ site.baseurl }}/images/ComicSans.gif)
 
-Tuttavia, quando il font era ormai pronto, **il team di Microsoft Bob lo scartò**: non perchè fosse brutto, bensì perchè il progetto era ormai quasi completato e **tutte le textbox erano state ottimizzate per il Times New Roman**. Modificare il font significava entrare in ogni possibile textbox e aggiustarle per rendere il testo visualizzabile correttamente, cosa non proprio praticabile (all'epoca non esistevano reponsive design -- la risoluzione "normale" era 800x600, credo...).
+Tuttavia, quando il font era ormai pronto, **il team di Microsoft Bob lo scartò**: non perchè fosse brutto, bensì perchè il progetto era ormai completato e **tutte le textbox erano state ottimizzate per il Times New Roman**. Modificare il font significava entrare in ogni possibile textbox e aggiustarle per rendere il testo visualizzabile correttamente, cosa non proprio praticabile (all'epoca non esistevano reponsive design -- la risoluzione "normale" era 800x600, credo...).
 
 Quindi, se il Comic Sans non venne al mondo tramite Microsoft Bob, come si è diffuso?
 
@@ -70,16 +70,16 @@ Da quel momento in poi, l'ascesa di Comic Sans fu inarrestabile: fu inserito in 
 
 Il Comic Sans è stato usato in molte situazioni sconvenienti. Ad esempio, il font stato usato per il testo di un memoriale di guerra, ai lati delle ambulanze, nei CV. In rete esistono centinaia di pagine sull'uso sconveniente del font, ad esempio su [BuzzFeed](https://www.buzzfeed.com/sophiegadd/absolutely-beautiful-examples-of-comic-sans-in-the-wild?utm_term=.brjVv42rMK#.pmnvYMPbkN).
 
-Io personalmente posso dirvi di aver sostenuto **esami all'università** la cui traccia era scritta in Comic Sans.
+Io personalmente posso dire di aver sostenuto **esami all'università** la cui traccia era scritta in Comic Sans.
 
 ## E ora?
 
-Beh, dovrebbe esservi chiaro, **non dovete usarlo**. Per. nessun. motivo. al. mondo.
+Beh, dovrebbe essere chiaro, **non devi usarlo**. Per. nessun. motivo. al. mondo.
 
-Ci sono pochissimi motivi per cui dovreste usare il comic sans, e ve li elenco qui:
+Ci sono pochissimi motivi per cui dovresti usare il comic sans, e te li elenco qui:
 
-* Se la vostra audience ha meno di 2 anni.
-* **Se la vostra audience è composta da dislessici**. E' infatti stato studiato che i dislessici trovano più facile leggere il comic sans rispetto agli altri font.
+* Se la tua audience ha meno di 2 anni.
+* **Se la tua audience è composta da dislessici**. E' infatti noto che i dislessici trovano più facile leggere il comic sans rispetto agli altri font.
 
 ---
 
@@ -87,4 +87,4 @@ Questo articolo non sarebbe mai nato senza il primo capitolo di un libro che pur
 
 [![]({{ site.baseurl }}/images/seproprioilmiotypo.jpg)](http://amzn.to/2zDrYID)
 
-Per altre storie bizzarre sui font, questo è il libro che fa per voi ;)
+Per altre storie bizzarre sui font, questo è il libro che fa per te;)
