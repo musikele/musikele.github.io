@@ -51,7 +51,7 @@ Fu così che nacque il Comic Sans, un carattere fortemente ispirato ai fumetti, 
 
 ![]({{ site.baseurl }}/images/ComicSans.gif)
 
-Tuttavia, quando il font era ormai pronto, **il team di Microsoft Bob lo scartò**: non perchè fosse brutto, bensì perchè il progetto era ormai quasi completato e **tutte le textbox erano state ottimizzate per il Times New Roman**. Modificare il font significava entrare in ogni possibile textbox e aggiustarle per rendere il testo visualizzabile correttamente, cosa non proprio praticabile (all'epoca non esistevano reponsive design e cose così -- la risoluzione "normale" era 800x600, credo...).
+Tuttavia, quando il font era ormai pronto, **il team di Microsoft Bob lo scartò**: non perchè fosse brutto, bensì perchè il progetto era ormai quasi completato e **tutte le textbox erano state ottimizzate per il Times New Roman**. Modificare il font significava entrare in ogni possibile textbox e aggiustarle per rendere il testo visualizzabile correttamente, cosa non proprio praticabile (all'epoca non esistevano reponsive design -- la risoluzione "normale" era 800x600, credo...).
 
 Quindi, se il Comic Sans non venne al mondo tramite Microsoft Bob, come si è diffuso?
 
