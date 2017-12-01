@@ -38,9 +38,9 @@ _(siamo segretamente convinti che sia stato questo il vero motivo dell'insuccess
 
 Connaire entrò subito in contatto col team di Microsoft Bob e fece notare che un'interfaccia così giocosa non poteva avere un font tanto serio, quindi propose di ideare un font più uniforme allo stile comunicativo di Bob.
 
-L'idea fu inizialmente accettata e Connaire si ispirò ai fumetti che amava di più, tra cui un [Batman - The dark knight returns](https://en.wikipedia.org/wiki/The_Dark_Knight_Returns "Batman - The dark knight returns") del 1986 che aveva sulla sua scrivania. I caratteri dei fumetti generalmente vengono disegnati a mano, e fanno parte del processo di creazione. Il processo artigianale che c'è dietro a ogni dialogo di un fumetto fa sì che nessuno, fino ad oggi, si fosse mai lamentato dei font dei fumetti.
+L'idea fu inizialmente accettata e Connaire si ispirò ai fumetti che amava di più, tra cui un [Batman - The dark knight returns](https://en.wikipedia.org/wiki/The_Dark_Knight_Returns "Batman - The dark knight returns") del 1986 che aveva sulla sua scrivania. I caratteri dei fumetti generalmente vengono disegnati a mano, e fanno parte del processo di creazione. Il processo artigianale che c'è dietro a ogni dialogo di un fumetto fa sì che nessuno, fino ad oggi, si sia mai lamentato dei font dei fumetti.
 
-Qui sotto riportiamo una tavola di tale fumetto, per farvi capire da dove nasce l'ispirazione.  
+Qui sotto riportiamo una tavola di Batman, per farvi capire da dove nasce l'ispirazione.  
 ![]({{ site.baseurl }}/images/batman-begins-1986.jpg)
 
 \(Vi ricordo che all'epoca Internet non c'era, o meglio esisteva da 1 anno: molto difficile trovare ispirazione on line. Io stesso ricordo che dovetti installare non solo Netscape ma anche i driver TCP/IP a mano, coi floppy, su Windows 3.1).
