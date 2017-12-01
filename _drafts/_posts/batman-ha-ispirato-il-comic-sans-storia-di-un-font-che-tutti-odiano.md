@@ -71,12 +71,14 @@ Io personalmente posso dirvi di aver sostenuto **esami all'università** la cui 
 
 ## E ora?
 
-Beh, dovrebbe esservi chiaro, non dovete usarlo. Per. nessun. motivo. al. mondo.
+Beh, dovrebbe esservi chiaro, **non dovete usarlo**. Per. nessun. motivo. al. mondo.
 
 Ci sono pochissimi motivi per cui dovreste usare il comic sans, e ve li elenco qui:
 
-* Se la vostra audience ha meno di 2 anni
-* Se la vostra audience è composta da **dislessici**. E' infatti stato studiato che i dislessici trovano più facile leggere il comic sans rispetto agli altri font.
+* Se la vostra audience ha meno di 2 anni.
+* **Se la vostra audience è composta da dislessici**. E' infatti stato studiato che i dislessici trovano più facile leggere il comic sans rispetto agli altri font.
+
+---
 
 Questo articolo non sarebbe mai nato senza il primo capitolo di un libro che purtroppo ho perso in aereo: [Sei proprio il mio Typo, di Simon Garfield](http://amzn.to/2zDrYID "Sei proprio il mio Typo ").
 
