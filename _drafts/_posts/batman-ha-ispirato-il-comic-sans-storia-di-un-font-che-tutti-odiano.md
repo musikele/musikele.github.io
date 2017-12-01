@@ -57,7 +57,7 @@ Quindi, se il Comic Sans non venne al mondo tramite Microsoft Bob, come si è di
 
 ## Come è diventato il font più conosciuto al mondo: 3D Movie Maker
 
-In un'epoca in cui Microsoft aveva il monopolio totale di ogni cosa fosse installata sui vostri pc, i programmatori di un altro progetto Microsoft decisero di usare il Comic Sans per le vignette di aiuto di un software chiamato 3D Movie Maker, un applicativo per bambini che permetteva di inserire personaggi in un ambiente virtuale (nel 1995, eh!).
+In un'epoca in cui Microsoft aveva il monopolio totale di ogni cosa fosse installata sui vostri pc, i programmatori di un altro progetto Microsoft decisero di usare il Comic Sans per le vignette di aiuto di un software chiamato **3D Movie Maker**, un applicativo per bambini che permetteva di inserire personaggi in un ambiente virtuale (nel 1995, eh!).
 
 ![]({{ site.baseurl }}/images/3dmoviemaker.jpg)
 
