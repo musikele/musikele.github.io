@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-12-01T10:05:31+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Growth Hacker: cos’è? Intervista a Raffaele Gaito</title><link href="https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html" rel="alternate" type="text/html" title="Growth Hacker: cos'è? Intervista a Raffaele Gaito" /><published>2017-11-18T01:00:00+01:00</published><updated>2017-11-25T18:27:35+01:00</updated><id>https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito</id><content type="html" xml:base="https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html">&lt;p&gt;Conosco &lt;a href=&quot;https://www.raffaelegaito.com/&quot; title=&quot;Raffaele Gaito, il blog&quot;&gt;Raffaele Gaito&lt;/a&gt; dai tempi dell’università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo &lt;em&gt;fare finta&lt;/em&gt; che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-12-01T10:07:25+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Batman ha ispirato il … Comic Sans: storia di un Font che tutti odiano</title><link href="https://michelenasti.com/2017/12/01/batman-ha-ispirato-il-comic-sans-storia-di-un-font-che-tutti-odiano.html" rel="alternate" type="text/html" title="Batman ha ispirato il ... Comic Sans: storia di un Font che tutti odiano" /><published>2017-12-01T01:00:00+01:00</published><updated>2017-12-01T10:06:06+01:00</updated><id>https://michelenasti.com/2017/12/01/batman-ha-ispirato-il-comic-sans-storia-di-un-font-che-tutti-odiano</id><content type="html" xml:base="https://michelenasti.com/2017/12/01/batman-ha-ispirato-il-comic-sans-storia-di-un-font-che-tutti-odiano.html">&lt;p&gt;La storia che sto per raccontarvi riguarda uno degli aspetti più &lt;em&gt;mitologici&lt;/em&gt; dell’informatica intera: il &lt;strong&gt;Comic Sans&lt;/strong&gt;, il carattere più odiato in assoluto, ma allo stesso tempo uno dei più usati al mondo.&lt;/p&gt;
+
+&lt;h2 id=&quot;linizio-microsoft-bob&quot;&gt;L’inizio: Microsoft Bob&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://it.wikipedia.org/wiki/Microsoft_Bob&quot; title=&quot;Microsoft Bob&quot;&gt;Microsoft Bob&lt;/a&gt; meriterebbe un articolo a parte, in quanto fu uno dei primi progetti di Microsoft gestiti direttamente da Melinda Gates (la moglie di Bill) e, contemporaneamente, uno dei progetti più fallimentari.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/bobhome1p.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L’idea dietro a Bob era di creare un’interfaccia alternativa a Windows 3.1 e Windows 95, un’interfaccia che fosse giocosa, facile da usare per gli utenti che non avevano dimestichezza coi computer, come gli anziani.&lt;/p&gt;
+
+&lt;p&gt;Si navigava all’interno di questo salone di casa, e per leggere un libro si cliccava sul libro, così come per aprire il calendario, etc.&lt;/p&gt;
+
+&lt;p&gt;In fin dei conti l’idea era carina, ma aveva un grande problema: dietro un’interfaccia così giocosa il font utilizzato è un vetusto Times New Roman. brutto eh?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(siamo segretamente convinti che sia stato questo il vero motivo dell’insuccesso commerciale.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;vincent-connaire-luomo-che-progettò-comic-sans&quot;&gt;Vincent Connaire: l’uomo che progettò Comic Sans&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Vincent_Connare&quot; title=&quot;Vincent Connaire&quot;&gt;Vincent Connaire&lt;/a&gt; è un designer che nel 1993 iniziò a lavorare per Microsoft.&lt;/p&gt;
+
+&lt;p&gt;Connaire entrò subito in contatto col team di Microsoft Bob e fece notare che un’interfaccia così giocosa non poteva avere un font tanto serio, quindi propose di ideare un font più uniforme allo stile comunicativo di Bob.&lt;/p&gt;
+
+&lt;p&gt;L’idea fu inizialmente accettata e Connaire si ispirò ai fumetti che amava di più, tra cui un &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Dark_Knight_Returns&quot; title=&quot;Batman - The dark knight returns&quot;&gt;Batman - The dark knight returns&lt;/a&gt; del 1986 che aveva sulla sua scrivania. I caratteri dei fumetti generalmente vengono disegnati a mano, e fanno parte del processo di creazione. Il processo artigianale che c’è dietro a ogni dialogo di un fumetto fa sì che nessuno, fino ad oggi, si sia mai lamentato dei font dei fumetti.&lt;/p&gt;
+
+&lt;p&gt;Qui sotto riportiamo una tavola di Batman, per farvi capire da dove nasce l’ispirazione.&lt;br /&gt;
+&lt;img src=&quot;/images/batman-begins-1986.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(Vi ricordo che all’epoca Internet non c’era, o meglio esisteva da 1 anno: molto difficile trovare ispirazione on line. Io ricordo che dovetti installare non solo Netscape ma anche i driver TCP/IP a mano, coi floppy, su Windows 3.1).&lt;/p&gt;
+
+&lt;h2 id=&quot;il-comic-sans&quot;&gt;Il Comic Sans&lt;/h2&gt;
+
+&lt;p&gt;Fu così che nacque il Comic Sans, un carattere fortemente ispirato ai fumetti, che però non dovete MAI utilizzare se volete disegnare fumetti per professione, pena il licenziamento.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ComicSans.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tuttavia, quando il font era ormai pronto, &lt;strong&gt;il team di Microsoft Bob lo scartò&lt;/strong&gt;: non perchè fosse brutto, bensì perchè il progetto era ormai quasi completato e &lt;strong&gt;tutte le textbox erano state ottimizzate per il Times New Roman&lt;/strong&gt;. Modificare il font significava entrare in ogni possibile textbox e aggiustarle per rendere il testo visualizzabile correttamente, cosa non proprio praticabile (all’epoca non esistevano reponsive design – la risoluzione “normale” era 800x600, credo…).&lt;/p&gt;
+
+&lt;p&gt;Quindi, se il Comic Sans non venne al mondo tramite Microsoft Bob, come si è diffuso?&lt;/p&gt;
+
+&lt;h2 id=&quot;come-è-diventato-il-font-più-conosciuto-al-mondo-3d-movie-maker&quot;&gt;Come è diventato il font più conosciuto al mondo: 3D Movie Maker&lt;/h2&gt;
+
+&lt;p&gt;In un’epoca in cui Microsoft aveva il monopolio totale di ogni cosa fosse installata sui vostri pc, i programmatori di un altro progetto Microsoft decisero di usare il Comic Sans per le vignette di aiuto di un software chiamato &lt;strong&gt;3D Movie Maker&lt;/strong&gt;, un applicativo per bambini che permetteva di inserire personaggi in un ambiente virtuale (nel 1995, eh!).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/3dmoviemaker.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Su youtube esistono dei filmati che mostrano &lt;a href=&quot;&quot;&gt;3D Movie Maker in azione&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Da quel momento in poi, l’ascesa di Comic Sans fu inarrestabile: fu inserito in &lt;strong&gt;Windows 95&lt;/strong&gt;, fu uno dei caratteri di default di &lt;strong&gt;Microsoft Publisher&lt;/strong&gt; e del neonato &lt;strong&gt;Internet Explorer 3.0&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Il Comic Sans è stato usato in molte situazioni sconvenienti. Ad esempio, il font stato usato per il testo di un memoriale di guerra, ai lati delle ambulanze, nei CV. In rete esistono centinaia di pagine sull’uso sconveniente del font, ad esempio su &lt;a href=&quot;https://www.buzzfeed.com/sophiegadd/absolutely-beautiful-examples-of-comic-sans-in-the-wild?utm_term=.brjVv42rMK#.pmnvYMPbkN&quot;&gt;BuzzFeed&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Io personalmente posso dirvi di aver sostenuto &lt;strong&gt;esami all’università&lt;/strong&gt; la cui traccia era scritta in Comic Sans.&lt;/p&gt;
+
+&lt;h2 id=&quot;e-ora&quot;&gt;E ora?&lt;/h2&gt;
+
+&lt;p&gt;Beh, dovrebbe esservi chiaro, &lt;strong&gt;non dovete usarlo&lt;/strong&gt;. Per. nessun. motivo. al. mondo.&lt;/p&gt;
+
+&lt;p&gt;Ci sono pochissimi motivi per cui dovreste usare il comic sans, e ve li elenco qui:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Se la vostra audience ha meno di 2 anni.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Se la vostra audience è composta da dislessici&lt;/strong&gt;. E’ infatti stato studiato che i dislessici trovano più facile leggere il comic sans rispetto agli altri font.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Questo articolo non sarebbe mai nato senza il primo capitolo di un libro che purtroppo ho perso in aereo: &lt;a href=&quot;http://amzn.to/2zDrYID&quot; title=&quot;Sei proprio il mio Typo &quot;&gt;Sei proprio il mio Typo, di Simon Garfield&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://amzn.to/2zDrYID&quot;&gt;&lt;img src=&quot;/images/seproprioilmiotypo.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Per altre storie bizzarre sui font, questo è il libro che fa per voi ;)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="comic sans" /><category term="font" /><category term="storia" /><category term="vincent connaire" /><category term="microsoft" /><category term="microsoft bob" /><category term="design" /><summary type="html">La storia che sto per raccontarvi riguarda uno degli aspetti più mitologici dell’informatica intera: il Comic Sans, il carattere più odiato in assoluto, ma allo stesso tempo uno dei più usati al mondo.</summary></entry><entry><title type="html">Growth Hacker: cos’è? Intervista a Raffaele Gaito</title><link href="https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html" rel="alternate" type="text/html" title="Growth Hacker: cos'è? Intervista a Raffaele Gaito" /><published>2017-11-18T01:00:00+01:00</published><updated>2017-11-25T18:27:35+01:00</updated><id>https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito</id><content type="html" xml:base="https://michelenasti.com/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html">&lt;p&gt;Conosco &lt;a href=&quot;https://www.raffaelegaito.com/&quot; title=&quot;Raffaele Gaito, il blog&quot;&gt;Raffaele Gaito&lt;/a&gt; dai tempi dell’università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo &lt;em&gt;fare finta&lt;/em&gt; che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene:&lt;/p&gt;
 
 &lt;h2 id=&quot;il-growth-hacking&quot;&gt;il Growth Hacking&lt;/h2&gt;
 
@@ -911,106 +981,4 @@ de-todo-api/playground/hashingJWT.js:11:19)
 
 &lt;p&gt;Now you can handle as many users you can, thanks to hash functions and JWT!&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;This post would have never existed without the brilliant course by &lt;a href=&quot;https://www.udemy.com/the-complete-nodejs-developer-course-2/&quot;&gt;Andrew Mead about NodeJs&lt;/a&gt;. Check it out.&lt;/em&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="authentication" /><category term="jwt" /><summary type="html">In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.</summary></entry><entry><title type="html">Come capire il bitcoin: le funzioni crittografiche</title><link href="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" rel="alternate" type="text/html" title="Come capire il bitcoin: le funzioni crittografiche" /><published>2017-09-19T02:00:00+02:00</published><updated>2017-09-20T09:55:31+02:00</updated><id>https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche</id><content type="html" xml:base="https://michelenasti.com/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">&lt;p&gt;Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…&lt;/p&gt;
-
-&lt;p&gt;Finchè si trattava di scimmiottare gli agenti di borsa era anche divertente, ma da quando abbiamo tenuto il &lt;a href=&quot;https://www.meetup.com/it-IT/preview/devday-salerno/events/242583299&quot;&gt;primo meetup a Salerno sul Bitcoin&lt;/a&gt; ho capito che bisognava assolutamente provare a capirne di più.&lt;/p&gt;
-
-&lt;p&gt;E allora mi sono iscritto a &lt;a href=&quot;https://www.coursera.org/learn/cryptocurrency/&quot;&gt;questo corso on line&lt;/a&gt; che frequento al mattino presto e che sta rispolverando concetti che avevo “quasi” dimenticato - anni fa ho sostenuto l’esame di sicurezza su reti e da allora ho promesso a me stesso che non avrei mai più fatto sicurezza, com’è bello quando la vita ti contraddice (e mi è capitato già un’altra decina di volte, pensate voi…)&lt;/p&gt;
-
-&lt;p&gt;In questo articolo vi parlo di un concetto chiave alla base di bitcoin, blockchain e tutto il resto appresso: le funzioni Hash.&lt;/p&gt;
-
-&lt;h3 id=&quot;le-funzioni-hash&quot;&gt;le funzioni Hash&lt;/h3&gt;
-
-&lt;p&gt;Hash in italiano significa &lt;em&gt;carne tritata&lt;/em&gt;, ma onestamente non ho mai visto un inglese fare le polpette quindi dobbiamo fidarci di google. Tuttavia carne tritata gli si addice: in effetti quello che fa una funzione hash è proprio di prendere un messaggio (pensate a una stringa, ma in realtà può essere qualunque oggetto), e calcolarne un valore di lunghezza fissa. Vediamone un esempio, mi appoggio a NodeJS per comodità e perchè è uno dei più immediati, ma volendo potete giocare con qualsiasi linguaggio perchè le funzioni di crittografia sono native in ogni ambiente.&lt;/p&gt;
-
-&lt;p&gt;Creiamo una directory di esempio e installiamo il modulo &lt;code&gt;crypto-js&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ mkdir esempi-crypto
-$ cd esempi-crypto
-$ npm i -S crypto-js 
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Forse l’environment vi darà degli errori che manca il file &lt;code&gt;package.json&lt;/code&gt;, ma noi freghiamocene.&lt;/p&gt;
-
-&lt;p&gt;Ora siamo pronti a sbizzarrirci. Da console apriamo l’environment invocando il comando &lt;code&gt;node&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ node 
-&amp;gt; let CryptoJS = require('crypto-js')
-undefined
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Abbiamo appena importato la libreria che contiene le funzioni crittografiche più diffuse. Non preoccupatevi per quell’undefined.&lt;/p&gt;
-
-&lt;p&gt;E’ il momento di provare a fare l’hash di un messaggio. L’algoritmo più usato e considerato più sicuro è SHA256, ossia prende qualunque messaggio e lo trasforma in una stringa di 256 bits. Proviamolo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; let message = &quot;This is my password&quot; 
-&amp;gt; let sha = CryptoJS.SHA256(message)
-
-&amp;gt; console.log(sha)
-{ words:
-   [ -355107296,
-     1827616648,
-     440617958,
-     157501257,
-     219431749,
-     -1604612205,
-     -2070175323,
-     1954178935 ],
-  sigBytes: 32 }
-undefined
-
-&amp;gt; console.log(sha.toString())
-ead57e206cef37881a434be6096347490d144345a05b8f93849ba1a5747a6777
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Cosa è accaduto nel primo caso? &lt;code&gt;sha&lt;/code&gt; è un oggetto contenente dei byte (tutta sta roba, a livello crittografico, opera su byte e non vorrei sconvolgervi ma SI, si può fare anche in nodejs e javascript in generale)&lt;/p&gt;
-
-&lt;p&gt;Però dei byte non ce ne facciamo niente, siamo pur sempre esseri umani e se vogliamo vedere &lt;code&gt;sha&lt;/code&gt; come stringa basta chiamare il metodo &lt;code&gt;toString()&lt;/code&gt; che ci restituisce lo stringone che vedete in fondo.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-me-sembra-solo-una-stringa-randomica&quot;&gt;“A me sembra solo una stringa randomica…”&lt;/h3&gt;
-
-&lt;p&gt;Hai ragione a pensarlo, caro lettore, però non è così. Le funzioni hash (e quindi anche SHA256 che abbiamo usato, che è una delle tante funzioni hash) garantiscono le seguenti proprietà:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Una funzione hash prende ogni possibile stringa come input, e restituisce una stringa di dimensioni fisse.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;la funzione deve essere computata efficientemente: nell’esempio precedente accade tutto in pochissimi microsecondi.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;la funzione è &lt;a href=&quot;https://en.wikipedia.org/wiki/Collision_resistance&quot;&gt;collision-resistant&lt;/a&gt;: è impossibile (per essere precisi, è difficile farlo in tempi ragionevoli) per chiunque trovare due stringhe diverse &lt;code&gt;x&lt;/code&gt;e &lt;code&gt;y&lt;/code&gt; che restituiscano lo stesso hash (matematicamente: &lt;code&gt;H(x) = H(y)&lt;/code&gt;).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;la funzione hash &lt;em&gt;nasconde&lt;/em&gt; il messaggio originario: se vi do l’hash di un messaggio H(x), è impossibile risalire al messaggio. Ciò è particolarmente vero se concateniamo una stringa casuale prima del messaggio (chiamata &lt;em&gt;salt&lt;/em&gt;), che noi potremmo definire come una “chiave” , per intenderci.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;la funzione hash è &lt;em&gt;puzzle-friendly&lt;/em&gt;: per ogni possibile hash, se il salt è scelto davvero a caso, è infattibile risalire al messaggio se non cercando nell’insieme di tutte le chiavi possibili. L’idea quindi è di fornire un &lt;em&gt;puzzle&lt;/em&gt; di questo tipo: dato un salt (casuale) e un insieme finito di soluzioni Y, trovare un messaggio tale che la chiave, concatenata al messaggio, appartenga all’insieme delle soluzioni. Per risolvere questo puzzle bisognerà scorrere tutti i possibili messaggi.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Bel casino! Scommetto che la terza proprietà vi ha complicato la comprensione.&lt;/p&gt;
-
-&lt;p&gt;Ma internet è pieno di risorse e ho trovato questa immagine che spiega molte cose. Il bitcoin si affida proprio a questo genere di puzzle per il mining. Nel primo esempio, data una chiave &lt;code&gt;Cheescake&lt;/code&gt;, trovare un hash che inizi con la lettera &lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Nel secondo esempio, si parte con la stringa &lt;code&gt;Ice ice baby - too cold!&lt;/code&gt;​ e bisogna trovare un hash che inizi con &lt;code&gt;Hi&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Nel terzo esempio, si parte con la stringa &lt;code&gt;Who let them out?&lt;/code&gt;​ e si cerca un hash che inizi con &lt;code&gt;Dog&lt;/code&gt;​.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/solvingahashpuzzle.png&quot; alt=&quot;&quot; class=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Questa immagine l’ho presa dal sito &lt;a href=&quot;https://3583bytesready.net/2016/09/06/hash-puzzes-proofs-work-bitcoin/&quot;&gt;3583 bytes free, ready?&lt;/a&gt; che ha fatto il lavoro sporco per me.&lt;/p&gt;
-
-&lt;p&gt;Come possiamo vedere, per risolvere il primo puzzle ci sono voluti 15 tentativi, per il secondo 1797 e per risovlere il terzo ben 773177.&lt;/p&gt;
-
-&lt;p&gt;Questo gioco non è altro che il &lt;strong&gt;mining&lt;/strong&gt;: a partire dall’hash del blocco precedente, trovare un numero che restituisca un hash che inizia con … qualcosa, poi vedremo cosa. Questo problema non è facile e richiede milioni di milioni di calcoli, motivo per cui si ricevono dei bitcoin come premio.&lt;/p&gt;
-
-&lt;p&gt;Non mi resta  che salutarvi con l’hash di &lt;code&gt;Buona giornata&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;9b1ec4ffe99ed6f9c898e91d79d197a7399519c53b3b0671d4e34664d6dcae21
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Alla prossima!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="bitcoin" /><category term="crittografia" /><category term="hash" /><summary type="html">Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…</summary></entry></feed>
+&lt;p&gt;&lt;em&gt;This post would have never existed without the brilliant course by &lt;a href=&quot;https://www.udemy.com/the-complete-nodejs-developer-course-2/&quot;&gt;Andrew Mead about NodeJs&lt;/a&gt;. Check it out.&lt;/em&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="authentication" /><category term="jwt" /><summary type="html">In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.</summary></entry></feed>
