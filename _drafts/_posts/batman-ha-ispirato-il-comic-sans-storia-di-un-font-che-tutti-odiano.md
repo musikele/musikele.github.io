@@ -43,7 +43,7 @@ L'idea fu inizialmente accettata e Connaire si ispirò ai fumetti che amava di p
 Qui sotto riportiamo una tavola di Batman, per farvi capire da dove nasce l'ispirazione.  
 ![]({{ site.baseurl }}/images/batman-begins-1986.jpg)
 
-\(Vi ricordo che all'epoca Internet non c'era, o meglio esisteva da 1 anno: molto difficile trovare ispirazione on line. Io stesso ricordo che dovetti installare non solo Netscape ma anche i driver TCP/IP a mano, coi floppy, su Windows 3.1).
+\(Vi ricordo che all'epoca Internet non c'era, o meglio esisteva da 1 anno: molto difficile trovare ispirazione on line. Io ricordo che dovetti installare non solo Netscape ma anche i driver TCP/IP a mano, coi floppy, su Windows 3.1).
 
 ## Il Comic Sans
 
