@@ -65,7 +65,7 @@ Su youtube esistono dei filmati che mostrano [3D Movie Maker in azione]().
 
 Da quel momento in poi, l'ascesa di Comic Sans fu inarrestabile: fu inserito in **Windows 95**, fu uno dei caratteri di default di **Microsoft Publisher** e del neonato **Internet Explorer 3.0**.
 
-Il Comic Sans è stato usato in molte situazioni sconvenienti. Ad esempio, il font stato usato per il testo di un memoriale di guerra olandese, oppure ai lati delle ambulanze, nei post di un blog di legge, e nei CV. In rete esistono centinaia di pagine sull'uso sconveniente del font, ad esempio su [BuzzFeed](https://www.buzzfeed.com/sophiegadd/absolutely-beautiful-examples-of-comic-sans-in-the-wild?utm_term=.brjVv42rMK#.pmnvYMPbkN).
+Il Comic Sans è stato usato in molte situazioni sconvenienti. Ad esempio, il font stato usato per il testo di un memoriale di guerra, ai lati delle ambulanze, nei CV. In rete esistono centinaia di pagine sull'uso sconveniente del font, ad esempio su [BuzzFeed](https://www.buzzfeed.com/sophiegadd/absolutely-beautiful-examples-of-comic-sans-in-the-wild?utm_term=.brjVv42rMK#.pmnvYMPbkN).
 
 Io personalmente posso dirvi di aver sostenuto **esami all'università** la cui traccia era scritta in Comic Sans.
 
