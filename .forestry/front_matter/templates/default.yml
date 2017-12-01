@@ -82,3 +82,9 @@ fields:
   name: header-img
   label: header image
   description: Header Image
+- type: textarea
+  name: description
+  label: Description
+  description: A description for social networks
+  config:
+    required: true
