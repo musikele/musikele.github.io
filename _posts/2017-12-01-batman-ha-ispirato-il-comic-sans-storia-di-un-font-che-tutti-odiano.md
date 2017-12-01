@@ -64,7 +64,7 @@ In un'epoca in cui Microsoft aveva il monopolio totale di ogni cosa fosse instal
 
 ![]({{ site.baseurl }}/images/3dmoviemaker.jpg)
 
-Su youtube esistono dei filmati che mostrano [3D Movie Maker in azione]().
+Su youtube esistono dei filmati che mostrano [3D Movie Maker in azione](https://www.youtube.com/watch?v=LNBCoaZn8FU).
 
 Da quel momento in poi, l'ascesa di Comic Sans fu inarrestabile: fu inserito in **Windows 95**, fu uno dei caratteri di default di **Microsoft Publisher** e del neonato **Internet Explorer 3.0**.
 
