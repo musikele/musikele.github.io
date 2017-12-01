@@ -26,7 +26,7 @@ La storia che sto per raccontarvi riguarda uno degli aspetti più _mitologici_ d
 
 L'idea dietro a Bob era di creare un'interfaccia alternativa a Windows 3.1 e Windows 95, un'interfaccia che fosse giocosa, facile da usare per gli utenti che non avevano dimestichezza coi computer, come gli anziani.
 
-Si navigava all'interno di questa interfaccia come se fosse il salone di casa, e per esempio per leggere un libro si cliccava su un libro, per aprire il calendario si cliccava su di esso, etc.
+Si navigava all'interno di questo salone di casa, e per leggere un libro si cliccava sul libro, così come per aprire il calendario, etc.
 
 In fin dei conti l'idea era carina, ma aveva un grande problema: dietro un'interfaccia così giocosa il font utilizzato è un vetusto Times New Roman. brutto eh?
 
