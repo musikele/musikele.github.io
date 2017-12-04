@@ -24,7 +24,9 @@ Se non avete ancora chiuso il browser, sappiate che tra i sostenitori di questa 
 
 ### Perché credere alla simulazione...
 
-non esistono prove, ma supposizioni e indizi. Ad esempio, il fatto che l'universo sembra avere un inizio temporale e dei confini fisici ben precisi. Il fatto che gli atomi si possano dividere in  Quark, ma fino a un certo punto: poi sono indivisibili. Quindi, questo fatto che il mondo analogico avesse dei limiti discreti era la prima causa di sospetto per la frangia più _sci-fi_ della scienza.
+non esistono prove, ma supposizioni e indizi. Ad esempio, il fatto che l'universo sembra avere un inizio temporale e dei confini fisici ben precisi. Il fatto che gli atomi si possano dividere in  Quark, ma fino a un certo punto: poi sono indivisibili. Quindi, questo fatto che il mondo analogico avesse dei limiti discreti era la prima causa di sospetto per la frangia più _sci-fi_ della scienza. 
+
+![]({{ site.baseurl }}/images/Rick-And-Morty-Stagione-3.jpg)
 
 ### ...Ma esistono prove che NON viviamo in una simulazione
 
