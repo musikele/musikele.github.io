@@ -25,9 +25,9 @@ E' domenica, il Napoli non gioca, che fare? Dopo aver acceso il camino ho inizia
 
 In questo mondo dominato da Angular e React, c'è ancora spazio per altri framework frontend?
 
-Vi faccio un'altra domanda: quando ai suoi tempi c'era _solo_ JQuery, riuscivate a pensare che sarebbe mai nata un'altra libreria per il frontend?
+Ti faccio un'altra domanda: quando ai suoi tempi c'era _solo_ JQuery, riuscivi a pensare che sarebbe mai nata un'altra libreria per il frontend?
 
-Penso di aver sentito parlare la prima volta di Vue che c'era _solo_ Angular 1 in giro, e tutti gli altri framework sgomitavano per diventare famosi. C'è chi ce l'ha fatta, tipo React, e chi invece ci prova ancora e non ci riesce, tipo Meteor.
+Penso di aver sentito parlare la prima volta di Vue che c'era _solo_ Angular 1 in giro, e tutti gli altri framework sgomitavano per diventare famosi. C'è chi ce l'ha fatta, tipo React, e chi invece ci prova ancora e non ci riesce, tipo Ember.
 
 **La differenza, molto spesso, la fa l'azienda che sponsorizza**: Google per Angular, e Facebook per React.
 
@@ -54,8 +54,8 @@ Il team di Vue ha scritto un'analisi tecnica molto profonda di Vue vs ogni-altra
 
 Questo vuol dire che si, **Vue è una libreria frontend che si occupa solo della view**, lasciando ad altre librerie il compito del routing o di altre cose belle (autenticazione, autorizzazione, chiamate http...). 
 
-## Siamo appena all'inizio
+## Sono solo all'inizio
 
-A parte il primo tutorial, che mi ha lasciato un'ottima impressione, c'è ancora tanto da guardare. Vorrei provare a sviluppare qualcosa di semplice così da farmi un'idea di come funziona quando le linee di codice aumentano. Resisterà VueJS alla prova della complessità? 
+A parte il primo tutorial, che mi ha lasciato un'ottima impressione, c'è ancora tanto da guardare. Vorrei provare a sviluppare qualcosa di meno semplice così da farmi un'idea di come funziona quando le linee di codice aumentano. Resisterà VueJS alla prova della complessità? 
 
 Nei prossimi articoli proverò ad entrare più nel dettaglio di come funziona Vue. Keep reading! 
