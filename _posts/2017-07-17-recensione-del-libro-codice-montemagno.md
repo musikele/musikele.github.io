@@ -1,6 +1,5 @@
 ---
 author: musikele
-category: Italiano
 comments: true
 layout: post
 paginate: true
@@ -9,6 +8,12 @@ tags:
 - marco montemagno
 - libri
 title: 'Recensione del libro: Codice Montemagno'
+categories: Italiano
+date: 2017-07-17 00:00:00 +0000
+header-img: "/images/codice_montemagno.jpg"
+description: 'Codice Montemagno, un libro di Marco Monty Montemagno, ci parla di come
+  è cambiato il mondo della comunicazione e come sopravvivere al cambiamento. '
+category: Italiano
 ---
 
 
