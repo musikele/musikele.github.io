@@ -1,6 +1,5 @@
 ---
 author: musikele
-category: Italiano
 comments: true
 date: 2017-08-06 15:11:47 +0000
 layout: post
@@ -15,22 +14,25 @@ tags:
 - prarayer
 - vda
 title: Guida alla Val d'Aosta con un neonato
+categories: Italiano
+header-img: "/images/cogne.JPG"
+description: 'Il racconto di una bellissima vacanza in Val D''Aosta con una neonata:
+  non è una vacanza per pigroni'
+category: Italiano
 ---
-
-
 Questo post vuole provare ad essere sintetico, e contemporaneamente raccontare 7 giorni di vacanza in Val D'Aosta con una neonata (mia figlia aveva 8 mesi quando abbiamo fatto questo viaggio).
 
-## Premessa: perchè Val D'Aosta...
+## Premessa: perchè Val D'Aosta
 
 Se come me odiate gli ombrelloni, la sabbia, la spiaggia, la crema solare etc etc, l'Italia è piena di posti fantastici in montagna: dal Trentino agli Appennini, ci sono tanti posti a quota almeno 1000 metri che meritano una visita. Sia perchè fa più fresco (abbiamo fatto questo viaggio quando l'Italia è stata attraversata da uno dei peggiori caldi di sempre) sia per godere dei bei panorami che solo la montagna sa offrire.
 
-## ...con una neonata
+## I neonati possono superare i 1000 metri?
 
 Considerato che, essendo campani, una settimana al mare la dobbiamo fare per forza (altrimenti i nonni ci cancellano dall'eredità), un'altra settimana ce la siamo concessa per noi. I motivi che ci hanno spinto fino a qui:
 
 * anche se la piccola è davvero molto piccola, e sta mangiando ancora pappette e omogeneizzati, mia moglie ha pensato che a 8 mesi il viaggio era "fattibile". Senza di lei non avrei saputo come muovermi. C'è tutto quell'universo fatto di pannolini e pastine in cui non mi sento completamente a mio agio. Se vostra moglie non è d'accordo, non organizzate nulla :)
-
 * 8 mesi credo sia stata l'età minima per venire fin qui: se avete un bimbo più piccolo, non è cosa. La bimba a 8 mesi è sufficientemente sveglia da godersi le passeggiate (cascate, boschi, montagne, laghi...) e da stare seduta senza problemi nello zaino porta neonati.
+* Abbiamo consultato la pediatra prima di partire. La domanda che ci siamo fatti è stata proprio questa: i neonati fino a che quota possono arrivare? On line abbiamo letto di non superare i 2000, e la nostra pediatra ce l'ha confermato. Anzi in realtà lei era anche più restrittiva, nel senso di non andare oltre i 1500-1600. Il problema non è neanche la quota (finchè si sta sotto i 2000 non si dovrebbe rischiare molto, ma ogni bambino è una storia a se) quanto il dislivello. Vivere a 1600 e poi arrivare a 1800 non è un dramma, mentre vivere sul livello del mare e trovare all'improvviso a 2000 potrebbe portare a difficoltà respiratorie. **Consigliate anche voi un pediatra prima di fare questo tipo di passeggiate.** Nel nostro caso, non abbiamo mai superato i 2000 metri. 
 
 ## Come siamo arrivati fin qui
 
@@ -53,7 +55,6 @@ Ho preso un **appartamentino su AirBnb a Morgex**, vicino Courmayeur. L'ho scelt
 Se dovessi tornare probabilmente sceglierei altri due posti:
 
 * **Cogne**, con i suoi prati sconfinati
-
 * **Aosta**, per essere al centro della Valle, poter andare in giro ovunque, e godersi anche la vita serale di una città.
 
 In ogni caso la valle è "abbastanza" piccola, e i punti più remoti si raggiungono in max 1h di macchina.
@@ -64,7 +65,7 @@ In ogni caso la valle è "abbastanza" piccola, e i punti più remoti si raggiung
 
 Essendo vicini a Courmayeur ho letto molte recensioni fantastiche su questa valle, soprattutto perchè è ancora selvaggia e ben preservata. La Val Ferret è una valle, appunto, tra catene montuose che raggiungono i 3-4000 metri. Il comune non permette alle auto di arrivare fino in fondo: potete parcheggiare nel punto più lontano possibile e poi potrete prendere l'autobus per la località Arpnuova (costo del bus 1€, passa ogni mezz'ora). Da lì potete imboccare i due sentieri per il rifugio Elena, uno sale per la strada sterrata e l'altro è più selvaggio; fatene uno all'andata e l'altro al ritorno.
 
-![]({{ site.baseurl }}/images/val_ferret.jpg)
+![Val Ferret ]({{ site.baseurl }}/images/val_ferret.jpg "Val Ferret ")
 
 **Perchè vederlo:** il panorama dal rifugio è fantastico, si vede tutto il ghiacciaio del Monte Bianco.
 
@@ -121,4 +122,3 @@ Spezzate le escursioni con una visita a Courmayeur, Cogne, Aosta o comunque visi
 7 giorni qui e vi ricaricate per un anno intero... almeno per me funziona così.
 
 Buone vacanze!
-
