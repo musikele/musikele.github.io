@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Alla scoperta di VueJS - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="vuejs, javascript, frontend, angular, react, vue" />  
+	<meta http-equiv="last-modified" content="2017-12-04 23:23:10 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Alla scoperta di VueJS" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="VueJS è uno dei front-end framework che sta provando a guadagnarsi uno po' di spazio: dalla sua ha la velocità e la semplicità. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html" property="og:url">
+
+
+
+  <meta content="2017-12-03T01:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/vuejs.png" property="og:image">
+
+
+
+  
+  <meta content="vuejs" property="article:tag">
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="frontend" property="article:tag">
+  
+  <meta content="angular" property="article:tag">
+  
+  <meta content="react" property="article:tag">
+  
+  <meta content="vue" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Alla scoperta di VueJS">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html">
+
+
+
+  <meta name="twitter:description" content="VueJS è uno dei front-end framework che sta provando a guadagnarsi uno po' di spazio: dalla sua ha la velocità e la semplicità. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/vuejs.png">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS</a></h1>
+			<p class="post-meta">Dec 3, 2017 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&text=Alla scoperta di VueJS:%20https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Alla scoperta di VueJS) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&title=Alla scoperta di VueJS&summary=&source=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>E’ domenica, il Napoli non gioca, che fare? Dopo aver acceso il camino ho iniziato a guardarmi un po’ di VueJS.</p>
+
+<p><img src="/images/vuejs.png" alt="" /></p>
+
+<h2 id="vuejs-un-framework-minore">VueJS, Un framework minore?</h2>
+
+<p>In questo mondo dominato da Angular e React, c’è ancora spazio per altri framework frontend?</p>
+
+<p>Vi faccio un’altra domanda: quando ai suoi tempi c’era <em>solo</em> JQuery, riuscivate a pensare che sarebbe mai nata un’altra libreria per il frontend?</p>
+
+<p>Penso di aver sentito parlare la prima volta di Vue che c’era <em>solo</em> Angular 1 in giro, e tutti gli altri framework sgomitavano per diventare famosi. C’è chi ce l’ha fatta, tipo React, e chi invece ci prova ancora e non ci riesce, tipo Meteor.</p>
+
+<p><strong>La differenza, molto spesso, la fa l’azienda che sponsorizza</strong>: Google per Angular, e Facebook per React.</p>
+
+<p>Nel caso di Vue, le aziende sponsorizzatrici non sono proprio dei nomi di primo piano: <a href="https://stdlib.com/" title="StdLib">StLib</a>, un’azienda che realizza un framework per codice serverless, <strong>non la conoscevo prima di oggi</strong>. Quindi, già su questo, partiamo svantaggiati.</p>
+
+<h2 id="cosa-mi-ha-colpito-di-vuejs">Cosa mi ha colpito di VueJS</h2>
+
+<p>L’approccio di VueJS è molto semplice, e questo è uno dei principali punti di forza:</p>
+
+<ul>
+  <li><strong>non c’è bisogno di partire da un boilerplate</strong>, ma basta un file html linkato a uno script js;</li>
+  <li><strong>non c’è bisogno di conoscere la programmazione super avanzata</strong>, ma bastano le conoscenze di un normale programmatore;</li>
+  <li><strong>Somiglia in tutto e per tutto al primo angular</strong>, quello che ho imparato a conoscere dannatamente e bene, e che funzionava alla grande;</li>
+  <li><strong>la documentazione è chiarissima</strong> e sin dall’inizio si entra nel vivo di VueJS.</li>
+</ul>
+
+<p>Non mi sono ancora addentrato molto, ma ho notato che il sistema dei componenti è semplicissimo e soprattutto <strong>si può iniziare a lavorare senza mettere in mezzo i vari webpack</strong>, systemjs, browserify e compagnia cantando.</p>
+
+<p>A questo punto una domanda me la sono fatta anch’io:</p>
+
+<h2 id="vuejs-è-un-framework-moderno">VueJS è un framework moderno?</h2>
+
+<p>Nel senso, ha quelle caratteristiche di un <strong>framework post-angular1</strong> (utilizzo di un virtual dom, utilizzo di paradigmi reactive, server-side rendering…)  ?</p>
+
+<p>Il team di Vue ha scritto un’analisi tecnica molto profonda di Vue vs ogni-altra libreria-frontend sul mercato, soffermandosi specialmente su React perchè è quella cui somiglia di più. La velocità non deve essere presa in considerazione come fattore determinante, perchè Vue e React hanno numeri molto simili; quello che cambia è in dettagli come la curva di apprendimento, cosa accade all’intera applicazione un componente si aggiorna, etc.</p>
+
+<p>Questo vuol dire che si, <strong>Vue è una libreria frontend che si occupa solo della view</strong>, lasciando ad altre librerie il compito del routing o di altre cose belle (autenticazione, autorizzazione, chiamate http…).</p>
+
+<h2 id="siamo-appena-allinizio">Siamo appena all’inizio</h2>
+
+<p>A parte il primo tutorial, che mi ha lasciato un’ottima impressione, c’è ancora tanto da guardare. Vorrei provare a sviluppare qualcosa di semplice così da farmi un’idea di come funziona quando le linee di codice aumentano. Resisterà VueJS alla prova della complessità?</p>
+
+<p>Nei prossimi articoli proverò ad entrare più nel dettaglio di come funziona Vue. Keep reading!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&text=Alla scoperta di VueJS:%20https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Alla scoperta di VueJS) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html&title=Alla scoperta di VueJS&summary=&source=https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/11/16/why-nan.html">Other thoughts about NaN (then, stop) <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/14/javascript-filter-map-reduce.html">Diventare Senior™ con Javascript: le funzioni filter, map, reduce <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">All my articles about Testing in Javascript in one post <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/12/js-promises-description-pros-cons-of-this-es6-construct.html">JS Promises: description, pros, cons of this ES6 construct <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html';
+			var disqus_identifier = 'https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2017/12/01/batman-ha-ispirato-il-comic-sans-storia-di-un-font-che-tutti-odiano.html">Batman ha ispirato il ... Comic Sans: storia di un Font che tutti odiano</a></h2>
+        </header>
+        <section>
+            <p>La storia che sto per raccontare riguarda uno degli aspetti più <em>mitologici</em> dell’informatica intera: il <strong>Comic Sans</strong>, il carattere più odiato in assoluto, ma allo stesso tempo uno dei più usati al mondo.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2017/12/01/batman-ha-ispirato-il-comic-sans-storia-di-un-font-che-tutti-odiano.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2017/12/04/dovrei-partecipare-al-programma-erasmus.html">Dovrei partecipare al programma Erasmus?</a></h2>
+        </header>
+        <section>
+            <p><strong>Anche io ho partecpato al programma Erasmus</strong>, era il 2006, l’anno dei mondiali e io ero a Siviglia. <em>Non avete idea di quanto sia appagante vincere un mondiale all’estero</em>.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2017/12/04/dovrei-partecipare-al-programma-erasmus.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
