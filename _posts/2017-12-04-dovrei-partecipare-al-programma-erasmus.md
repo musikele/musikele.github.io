@@ -9,6 +9,8 @@ date: 2017-12-04 00:00:00 +0000
 tags:
 - erasmus
 - studio
+- life
+- università
 description: Chiunque dovrebbe fare l'Erasmus. Anche chi non va all'università. Specialmente
   chi è fidanzato/a. Specialmente chi ha paura. Tutti
 header-img: ''
@@ -25,4 +27,10 @@ E in  tutto questo c'è che ti lasci con la ragazza o ne trovi una nuova, si con
 
 Dal  punto di vista accademico ho avuto un problemaccio con lo spagnolo andaluso, In pratica i primi tre mesi di corso non ho capito nulla. Io, mai bocciato, in Spagna feci un solo esame su tre preventivati, ma quando tornai in Italia superai quei due esami con 30&lode.
 
-**Chiunque dovrebbe fare l'Erasmus. Anche chi non va all'università. Specialmente chi è fidanzato/a. Specialmente chi ha paura. Tutti**
+**Chiunque dovrebbe fare l'Erasmus. Anche chi non va all'università. Specialmente chi è fidanzato/a. Specialmente chi ha paura.** 
+
+**Tutti.**
+
+---
+
+_Quest'articolo era, in principio, un commento a un post su facebook. In bocca al lupo a tutti quelli che parteciperanno al programma._ 
