@@ -28,8 +28,10 @@ This is a basic html containing some VueJS markup:
   <body>
   	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
   	<div id="app">
+    {% raw %}
   	  <h2>{{ message }}</h2>
       <p>{{ sayHelloTo(name) }}</p>
+      {% endraw %}
   	</div>
   </body>
 </html>
