@@ -31,7 +31,7 @@ This is a basic html containing some VueJS markup:
     {% raw %}
   	  <h2>{{ message }}</h2>
       <p>{{ sayHelloTo(name) }}</p>
-      {% endraw %}
+    {% endraw %}
   	</div>
   </body>
 </html>
