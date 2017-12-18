@@ -1,4 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-12-18T12:25:35+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Dovrei partecipare al programma Erasmus?</title><link href="https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus.html" rel="alternate" type="text/html" title="Dovrei partecipare al programma Erasmus?" /><published>2017-12-04T01:00:00+01:00</published><updated>2017-12-04T17:09:42+01:00</updated><id>https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus</id><content type="html" xml:base="https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus.html">&lt;p&gt;&lt;strong&gt;Anche io ho partecpato al programma Erasmus&lt;/strong&gt;, era il 2006, l’anno dei mondiali e io ero a Siviglia. &lt;em&gt;Non avete idea di quanto sia appagante vincere un mondiale all’estero&lt;/em&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2017-12-18T12:29:29+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">VueJS basics</title><link href="https://michelenasti.com/2017/12/17/vuejs-basics.html" rel="alternate" type="text/html" title="VueJS basics" /><published>2017-12-17T01:00:00+01:00</published><updated>2017-12-18T12:27:54+01:00</updated><id>https://michelenasti.com/2017/12/17/vuejs-basics</id><content type="html" xml:base="https://michelenasti.com/2017/12/17/vuejs-basics.html">&lt;p&gt;It has been a long week for me, I’m studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vuejs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;separation-of-data-and-methods&quot;&gt;Separation of data and methods&lt;/h2&gt;
+
+&lt;p&gt;This is a basic html containing some VueJS markup:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;html&amp;gt;
+  ...
+  &amp;lt;body&amp;gt;
+  	&amp;lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&amp;gt;&amp;lt;/script&amp;gt;
+  	&amp;lt;div id=&quot;app&quot;&amp;gt;
+  	  &amp;lt;h2&amp;gt;&amp;lt;/h2&amp;gt;
+      &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+  	&amp;lt;/div&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a basic VueJS element:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello from Vue!',
+    name: 'Michele'
+  },
+  methods: {
+    sayHelloTo: function(name) {
+      return `Hello, ${this.name}!`
+    }
+  }
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s describe this snippet:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;code&gt;el&lt;/code&gt; references the DOM element with the &lt;code&gt;#app&lt;/code&gt; id. This element will be _Vue_zed.&lt;/li&gt;
+  &lt;li&gt;the &lt;code&gt;data&lt;/code&gt; object contains the data that can be used inside the HTML: for example, we used the &lt;code&gt;message&lt;/code&gt; property in the Html.&lt;/li&gt;
+  &lt;li&gt;the &lt;code&gt;methods&lt;/code&gt; property contains the methods you can use in your html. These are useful for calculations or for actions, like clicking on a button.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I acutally like a lot: a clear separations of data and methods.&lt;/p&gt;
+
+&lt;p&gt;This is a concept that comes from the &lt;strong&gt;functional programming world&lt;/strong&gt;, that is, separate the data from the functions that interact with this data.&lt;/p&gt;
+
+&lt;p&gt;However, Vue is not &lt;em&gt;functional&lt;/em&gt; in the classic sense of the definition, because you use the &lt;code&gt;this&lt;/code&gt; keyword to access data &amp;amp; you’re not forced to write pure functions, etc etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-word-on-this&quot;&gt;A word on this&lt;/h2&gt;
+
+&lt;p&gt;Have you noticed that from the &lt;code&gt;methods&lt;/code&gt; section,  if you want to access &lt;code&gt;data&lt;/code&gt; properties, you use &lt;code&gt;this&lt;/code&gt; ?&lt;/p&gt;
+
+&lt;p&gt;In fact, Vue proxies the &lt;code&gt;this&lt;/code&gt; keyword so that you can access to data without writing &lt;code&gt;this.data.message&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;However, for &lt;code&gt;this&lt;/code&gt; to work you must write 90% of the time the old ES5 &lt;code&gt;function()&lt;/code&gt; declaration: this is expecially clear in VueJS components, an argouments we’ll talk in another post.&lt;/p&gt;</content><author><name>musikele</name></author><category term="vuejs" /><category term="javascript" /><category term="frontend" /><summary type="html">It has been a long week for me, I’m studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.</summary></entry><entry><title type="html">Dovrei partecipare al programma Erasmus?</title><link href="https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus.html" rel="alternate" type="text/html" title="Dovrei partecipare al programma Erasmus?" /><published>2017-12-04T01:00:00+01:00</published><updated>2017-12-04T17:09:42+01:00</updated><id>https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus</id><content type="html" xml:base="https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus.html">&lt;p&gt;&lt;strong&gt;Anche io ho partecpato al programma Erasmus&lt;/strong&gt;, era il 2006, l’anno dei mondiali e io ero a Siviglia. &lt;em&gt;Non avete idea di quanto sia appagante vincere un mondiale all’estero&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Basandomi sui miei ricordi: prima di partire &lt;strong&gt;hai paura&lt;/strong&gt;, il primo mese che stai lì ti chiedi &lt;strong&gt;ma chi te l’ha fatto fare&lt;/strong&gt; mentre cerchi casa, fai la spesa, ti iscrivi ai corsi; il secondo mese è insieme al primo il più duro, &lt;strong&gt;pensi di aver fatto la cazzata più grande della tua vita&lt;/strong&gt;, non capisci la gente quando parla, non sai cosa fare e dove andare, un po’ ti senti solo se non hai nessuno (e io partii da solo)…&lt;/p&gt;
 
@@ -686,101 +742,4 @@ function startMiner() {
 
 &lt;p&gt;On the other hand, many users are concerned of what their CPU is doing all the time.&lt;/p&gt;
 
-&lt;p&gt;The same applies for ads and banners: &lt;strong&gt;everybody uses an Ad blocker&lt;/strong&gt;, because in the past websites used an excess of banners on websites and it was impossible to read an article without closing 3-4 popups. Now the situation has got better. These banners helped websites to pay contributors and the bill.&lt;/p&gt;</content><author><name>musikele</name></author><category term="english" /><category term="cryptocurrencies" /><category term="mining" /><category term="monero" /><category term="coinhive" /><category term="blog" /><summary type="html">The day I found out that I could make some money with my blog, I was elettrified. It was (I believe) 2007. it all started with Adsense. However, for a small blog like mine, Adsense is not a perfect choice. Infact my analytics do speak for me: I’m not the most trafficked website on earth and my blog does not have the direct scope of making me earn cash.</summary></entry><entry><title type="html">Windows non fa più così schifo: recensione Dell XPS 15” 9560 (2017)</title><link href="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html" rel="alternate" type="text/html" title="Windows non fa più così schifo: recensione Dell XPS 15&quot; 9560 (2017)" /><published>2017-10-03T02:00:00+02:00</published><updated>2017-10-06T15:29:24+02:00</updated><id>https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017</id><content type="html" xml:base="https://michelenasti.com/2017/10/03/recensione-dell-xps-15-2017.html">&lt;p&gt;Appena ho finito l’università ho acquistato un Macbook Air, che è durato ben 5 anni (!). All’epoca lo presi perchè, da neolaureato, non volevo chiudermi l’opzione di realizzare app per iOS, cosa che poi non è mai avvenuta. Quindi per il  lavoro di tutti i giorni ho deciso di uscire dalla comfort zone e prendere un nuovo pc: un &lt;strong&gt;&lt;a href=&quot;http://www.dell.com/it/p/xps-15-9560-laptop/pd?oc=cnx95604&amp;amp;model_id=xps-15-9560-laptop&quot;&gt;Dell XPS 9560&lt;/a&gt;, con schermo da 15”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;i-mac-non-sono-meglio&quot;&gt;I mac non sono meglio?&lt;/h2&gt;
-&lt;p&gt;Per una grande parte degli utenti, probabilmente si. Un mac ha:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;un ottimo sistema operativo&lt;/li&gt;
-  &lt;li&gt;un ottimo hardware&lt;/li&gt;
-  &lt;li&gt;un’eccellente simbiosi hardware/software, che fa davvero la differenza&lt;/li&gt;
-  &lt;li&gt;è facile da usare, se appartenete alla fascia di utenti normali (io no)&lt;/li&gt;
-  &lt;li&gt;non viene colpito da virus (&lt;em&gt;chiarimento per i secur-nazi: i mac hanno lo 0,1% dei virus di Windows e a meno che tu non sia proprio un imbecille, è difficile che un virus possa fare troppi danni&lt;/em&gt;)&lt;/li&gt;
-  &lt;li&gt;ha tanti software e applicativi multimediali, alcuni eccellenti e addirittura gratuiti!&lt;/li&gt;
-  &lt;li&gt;Hanno un terminale unix-like quindi non bisogna imparare nuovvi comandi.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;mac-anche-no&quot;&gt;Mac anche no!&lt;/h3&gt;
-&lt;p&gt;I Mac tuttavia hanno una serie di problemi:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Costano. Almeno 1000€ in più di un equivalente Windows, o Linux.&lt;/li&gt;
-  &lt;li&gt;Ti fanno credere di vivere in un mondo fantastico dove tutto è bello e perfetto, in cui c’è sempre una &lt;em&gt;i&lt;/em&gt; davanti a tutto (_i_Tutto) e non esiste nient’altro.&lt;/li&gt;
-  &lt;li&gt;E’ compatibile solo con roba certificata per Apple, generalmente venduta da Apple, al doppio-triplo del prezzo equivalente. (Adattatori hdmi, sto parlando di voi!)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Se avete i soldi, e siete consapevoli che potreste entrare in una bolla da cui sarà problematico uscire, prendete un mac e non pensateci due volte.&lt;/p&gt;
-
-&lt;h2 id=&quot;cosa-ho-scelto-dell-xps&quot;&gt;Cosa ho scelto: Dell XPS&lt;/h2&gt;
-&lt;p&gt;Alla fine ho preso un Dell XPS con un monitor da 15”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/dell-xps-15-2017-nw-g01.jpg&quot; alt=&quot;Dell XPS 15&amp;quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;L’ho pagato &lt;strong&gt;2190€&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Alla faccia Miche’, e hai detto che il Mac costa!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;L’equivalnte Mac dello stesso computer costa &lt;em&gt;3.399€&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Torniamo al Dell. La versione che ho deciso di prendere ha queste caratteristiche:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Ha un processore &lt;strong&gt;Intel i7 di settima generazione&lt;/strong&gt;, l’ultima al momento dell’acquisto.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;16 GB di RAM&lt;/strong&gt;, espandibili&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;hard disk da 512 GB&lt;/strong&gt;, espandibili&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;monitor da 15,6”&lt;/strong&gt;, che per un web developer fa la differenza&lt;/li&gt;
-  &lt;li&gt;schermo &lt;strong&gt;touch&lt;/strong&gt; in &lt;strong&gt;4k&lt;/strong&gt;: mi sono lasciato convincere da una cosa che non mi serviva; senza questo spendereste addirittura meno.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Non entro in altri dettagli perché sarebbe per gamers, e io non sono un gamer, sono un programmatore.&lt;/p&gt;
-
-&lt;h2 id=&quot;la-caratteristica-che-non-ti-aspetti-bash-su-windows&quot;&gt;La caratteristica che non ti aspetti: Bash su Windows&lt;/h2&gt;
-
-&lt;p&gt;Io faccio un &lt;strong&gt;abuso della shell&lt;/strong&gt; e dei suoi script, e questa storia di Bash su Windows è stato uno dei motivi per cui ho deciso di passare a Win: Non è una macchina virtuale, non è un’emulazione, ma è un vero e proprio sottosistema Ubuntu che gira sul computer windows. Le chiamate unix vengono “intercettate” da Windows che le traduce in chiamate native. Questo significa che all’interno del sottosistema linux si pul accedere a tutti i file del mondo windows (è sconsigliato fare il contrario!), oltre che lanciare comandi, eseguire script, &lt;code&gt;sudo apt-get install git&lt;/code&gt; e via di seguito.&lt;/p&gt;
-
-&lt;p&gt;Una delle prime cose che ho fatto infatti è stato di scaricare &lt;a href=&quot;https://hyper.is/&quot;&gt;Hyper.js&lt;/a&gt; (un terminale moderno scritto in NodeJS) e &lt;a href=&quot;https://michelenasti.com/2017/05/30/cinque-tool-per-migliorare-la-vostra-developer-experience.html&quot;&gt;oh-my-zsh&lt;/a&gt;, un’estensione di zsh che permette di lavorare con più facilità.&lt;/p&gt;
-
-&lt;p&gt;Su internet ci sono &lt;a href=&quot;https://msdn.microsoft.com/it-it/commandline/wsl/install_guide&quot;&gt;guide ovunque&lt;/a&gt; per settare la shell di bash anche in &lt;a href=&quot;https://code.visualstudio.com/docs/editor/integrated-terminal&quot;&gt;Visual Studio Code&lt;/a&gt;, Intellij, etc.&lt;/p&gt;
-
-&lt;p&gt;Microsoft, stavolta hai fatto una cosa davvero decente: &lt;strong&gt;esperimento riuscito&lt;/strong&gt; 👍&lt;/p&gt;
-
-&lt;h2 id=&quot;il-monitor-touch-4k-e-15&quot;&gt;Il monitor touch, 4k e 15”&lt;/h2&gt;
-
-&lt;p&gt;Il monitor ha un bordo sottilissimo per cui il computer è uno dei più piccoli per la sua fascia. Il fatto che sia lucido non mi fa impazzire, un po’ li odio i monitor così.  Sono felice di averlo preso 15”, con più pixel posso mettere più cose sullo schermo (non sono mai stato il tipo da usare più desktop).&lt;/p&gt;
-
-&lt;p&gt;I video in 4k si fanno apprezzare, anche se per ora solo su youtube si trova roba decente.&lt;/p&gt;
-
-&lt;p&gt;Toccare lo schermo cambia proprio il modo di interagire col pc. Il touch è molto comodo in aereo, o in treno, o comunque nei posti dove non puoi usare nè mouse nè tastiera agilmente. Tuttavia non sono un grande utente di questa feature, almeno non quanto mia figlia che si diverte a toccarmi lo schermo mentre lavoro (chiude programmi, manda mail, tutto senza saper neanche camminare!).&lt;/p&gt;
-
-&lt;h2 id=&quot;la-batteria&quot;&gt;La batteria&lt;/h2&gt;
-
-&lt;p&gt;La batteria non mi ha sorpreso: dura 6 ore. Aumentando la luminosità del monitor anche meno.&lt;/p&gt;
-
-&lt;h2 id=&quot;connettività&quot;&gt;Connettività&lt;/h2&gt;
-
-&lt;p&gt;In un mondo dominato da porte USB tradizionali, abbandonare tutto per le sole USB-C mi sembrava un passo troppo estremo. Un mouse da 9,90€ non lo avrei più potuto collegare! Invece il Dell è dotato di due porte USB tradizionali, una USB-C, una porta HDMI, alimentatore e slot per SD. Niente più adattatori…&lt;/p&gt;
-
-&lt;p&gt;(In realtà uno l’ho dovuto comprare, quello per i monitor VGA. Ogni tanto vado a fare delle presentazioni e voglio assicurarmi di essere compatibile con qualsiasi proiettore incontri).&lt;/p&gt;
-
-&lt;h2 id=&quot;prestazioni&quot;&gt;Prestazioni&lt;/h2&gt;
-
-&lt;p&gt;E’ una bomba, non c’è niente da dire. Forse potevo spendere per avere più RAM, ma come ho scritto sopra è estendibile quindi non appena saranno pochi ne acquisterò un altro po’. Forse potevo prendere più hard disk, ma da quando esistono Google Photos, Dropbox e ho il NAS a casa non conservo più nulla sul disco del pc, a parte i programmi e i workspace di lavoro.&lt;/p&gt;
-
-&lt;p&gt;Nonostante sia così potente, &lt;strong&gt;c’è una cosa che va lenta ed è proprio la feature che amo di più: il terminale bash&lt;/strong&gt;. Purtroppo, essendo emulato, noto che alcuni comandi richiedono più del consentito - un semplice &lt;code&gt;ls&lt;/code&gt; o un &lt;code&gt;git pull&lt;/code&gt; possono durare dei secondi, e lo si accetta come un compromesso che comunque non impatta troppo.&lt;/p&gt;
-
-&lt;h2 id=&quot;il-sistema-operativo-windows&quot;&gt;il sistema operativo: Windows&lt;/h2&gt;
-
-&lt;p&gt;Windows 10 è migliorato tantissimo. Non uso tutte le sciccherie che sicuramente ha, ad esempio Cortana la uso solo quando voglio divertirmi, però mi piace molto com’è strutturato ora il menu (in verità preferivo quello di Windows 8) e la barra delle applicazioni.&lt;/p&gt;
-
-&lt;p&gt;Ci sono tante cose su cui bisogna ancora lavorare:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;coesistono applicazioni dalla grafica moderna con altre che risalgono a Win98&lt;/li&gt;
-  &lt;li&gt;ci vogliono ancora 715 click per conoscere il proprio indirizzo IP&lt;/li&gt;
-  &lt;li&gt;serve sempre un antivirus in funzione, e Dell mi ha regalato un anno di McAfee.&lt;/li&gt;
-  &lt;li&gt;Trovo preinstallato OneDrive che non uso, perchè ho già Google Drive e Dropbox. Non è possibile disinstallare e neanche disabilitare completamente.&lt;/li&gt;
-  &lt;li&gt;Inserire i caratteri &lt;code&gt;`&lt;/code&gt; e &lt;code&gt;~&lt;/code&gt; su questa tastiera è stato un dramma. Ho risolto con AutoHotkey.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;conclusioni&quot;&gt;Conclusioni&lt;/h2&gt;
-
-&lt;p&gt;Potrei parlare e scrivere ancora per un paio d’ore, ma mi fermo qui perchè spero siano trasparite alcune cose: &lt;strong&gt;non sono un fanboy di nessuna azienda&lt;/strong&gt; e questa la considero una virtù, infatti valuto in maniera analitica, senza sentimenti. Inoltre &lt;strong&gt;valuto uno strumento in relazione all’uso che ne faccio&lt;/strong&gt;, e infatti io sono un programmatore, scrivo di programmazione e i problemi che ho io con i computer sono profondamente diversi da quelli di ogni altra categoria lavorativa; dove possibile (come in questo caso) cerco di comprare la miglior macchina che costa meno e che mi permetterà di lavorare al 100%, senza sconti.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="Dell" /><category term="XPS" /><category term="recensione" /><category term="computer" /><category term="laptop" /><category term="mac" /><category term="windows" /><summary type="html">Appena ho finito l’università ho acquistato un Macbook Air, che è durato ben 5 anni (!). All’epoca lo presi perchè, da neolaureato, non volevo chiudermi l’opzione di realizzare app per iOS, cosa che poi non è mai avvenuta. Quindi per il lavoro di tutti i giorni ho deciso di uscire dalla comfort zone e prendere un nuovo pc: un Dell XPS 9560, con schermo da 15”.</summary></entry></feed>
+&lt;p&gt;The same applies for ads and banners: &lt;strong&gt;everybody uses an Ad blocker&lt;/strong&gt;, because in the past websites used an excess of banners on websites and it was impossible to read an article without closing 3-4 popups. Now the situation has got better. These banners helped websites to pay contributors and the bill.&lt;/p&gt;</content><author><name>musikele</name></author><category term="english" /><category term="cryptocurrencies" /><category term="mining" /><category term="monero" /><category term="coinhive" /><category term="blog" /><summary type="html">The day I found out that I could make some money with my blog, I was elettrified. It was (I believe) 2007. it all started with Adsense. However, for a small blog like mine, Adsense is not a perfect choice. Infact my analytics do speak for me: I’m not the most trafficked website on earth and my blog does not have the direct scope of making me earn cash.</summary></entry></feed>
