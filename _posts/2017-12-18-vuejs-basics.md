@@ -3,9 +3,8 @@ paginate: true
 comments: true
 author: musikele
 title: VueJS basics
-category: Italiano
 layout: post
-date: 2017-12-17 00:00:00 +0000
+date: 2017-12-17 01:00:00 +0100
 tags:
 - vuejs
 - javascript
@@ -13,6 +12,7 @@ tags:
 header-img: "/images/vuejs.png"
 description: 'A super brief description of what is VueJS, and how easy it is to get
   in. '
+categories: Italiano
 ---
 It has been a long week for me, I'm studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.
 
