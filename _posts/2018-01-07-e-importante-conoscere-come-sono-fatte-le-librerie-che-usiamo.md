@@ -9,6 +9,9 @@ date: 2018-01-07 00:00:00 +0000
 tags:
 - michele risponde
 - programmazione
+- elon musk
+- tesla
+- spacex
 description: Rispondo alla domanda di uno studente, preoccupato perchè usa librerie
   di cui non conosce come sono fatte internamente. Dobbiamo reinventare la ruota ogni
   volta? O fare come Elon Musk?
