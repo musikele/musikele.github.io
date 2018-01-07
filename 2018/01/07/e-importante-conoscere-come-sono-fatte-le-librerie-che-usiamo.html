@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>E' importante conoscere come sono fatte le librerie che usiamo? - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="michele risponde, programmazione" />  
+	<meta http-equiv="last-modified" content="2018-01-07 17:55:37 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="E' importante conoscere come sono fatte le librerie che usiamo?" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Rispondo alla domanda di uno studente, preoccupato perchè usa librerie di cui non conosce come sono fatte internamente. Dobbiamo reinventare la ruota ogni volta? O fare come Elon Musk?" property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html" property="og:url">
+
+
+
+  <meta content="2018-01-07T01:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/rinventare-la-ruota.jpg" property="og:image">
+
+
+
+  
+  <meta content="michele risponde" property="article:tag">
+  
+  <meta content="programmazione" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="E' importante conoscere come sono fatte le librerie che usiamo?">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html">
+
+
+
+  <meta name="twitter:description" content="Rispondo alla domanda di uno studente, preoccupato perchè usa librerie di cui non conosce come sono fatte internamente. Dobbiamo reinventare la ruota ogni volta? O fare come Elon Musk?">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/rinventare-la-ruota.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html">E' importante conoscere come sono fatte le librerie che usiamo?</a></h1>
+			<p class="post-meta">Jan 7, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&text=E' importante conoscere come sono fatte le librerie che usiamo?:%20https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(E' importante conoscere come sono fatte le librerie che usiamo?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&title=E' importante conoscere come sono fatte le librerie che usiamo?&summary=&source=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Domanda:</p>
+
+<blockquote>
+  <p>fin dal primo giorno, alla facoltà di Ingegneria Informatica mi è stata inculcata un’idea che tutt’ora fatico ad accettare. Visto che ci sono infinite librerie che ti rendono disponibili delle funzioni avanzate, il tuo lavoro principale non è riscrivere quelle funzioni, ma saperle  usare e adattare per i tuoi scopi. Faccio un esempio stupido: una  libreria python per l’elaborazione di file pdf. Due righe e posso copiare, fondere, togliere pagine. <strong>Però non saprò mai come funziona.</strong> <strong>E  questa cosa mi angoscia tantissimo.</strong> Nel senso, posso aprire la libreria e  andarmele a leggere, ovviamente. Ma passerei probabilmente ore a capire il loro funzionamento. Sono l’unico che è turbato da questa cosa? Chiaramente mi riferisco a chi sta ancora studiando, come me.</p>
+</blockquote>
+
+<p>Risposta:</p>
+
+<p>Nel thread originale, su facebook, ho risposto che <strong>da studente non c’è niente di meglio che provare a rifare quelle librerie proprio per capire come sono state fatte.</strong> All’università sono felice di aver reimplementato tutte le strutture dati, perchè ora le uso con cognizione di causa.</p>
+
+<p>Un altro esempio: quando ho iniziato a studiare NodeJS, sentivo la mancanza di una libreria di logging come Log4J in Java. Una delle prime cose che ho fatto è stata di scrivermene una mia, che ovviamente faceva schifo ed era pure piena di bug, ma che mi ha aiutato a imparare meglio proprio NodeJS.</p>
+
+<p><img src="/images/rinventare-la-ruota.jpg" alt="" /><strong>Nel mondo del lavoro vero c’è una discriminante: il tempo.</strong> Gli studenti scopriranno prima o poi che ogni giorno di lavoro in più equivale a molti soldi spesi dall’azienda, quindi meno tempo si impiega meglio è. E questo impone che <strong>non si può reinventare la ruota,</strong> non si può riscrivere ogni possibile funzione che abbiamo già disponibile da qualche parte on line. <strong>E’ anche il motivo per cui delle persone si sono inventate i framework</strong>: <strong>risolvono problemi che altri già hanno avuto</strong>, risparmiando tutto il tempo necessario a tirare su un progetto.</p>
+
+<h3 id="leccezione-che-conferma-la-regola-cosa-ci-insegna-elon-musk">L’eccezione che conferma la regola: cosa ci insegna Elon Musk</h3>
+
+<p><img src="/images/Elon_Musk_2015.jpg" alt="" /></p>
+
+<p>Ho tirato in ballo un <em>pezzo da 90</em> e l’ho fatto per un motivo ben preciso. Tesla è un’azienda che produce auto elettriche. Era da una settantina d’anni che non si fondavano nuove case automobilistiche <em>consumer,</em> e infatti ciò che ha realizzato, rivisto con gli occhi di oggi, sembra comunque una pazzia. Per creare un’auto dal nulla non ha seguito il solito processo che impiegano gli altri costruttori: <strong>ogni singolo pezzo delle Tesla viene prodotto da loro stessi.</strong></p>
+
+<p>E ancora: quando ha fondato SpaceX si stava buttando in un settore dominato da poche grandi aziende che avevano formato un oligopolio. Era difficile e dispendioso trovare, tra le tante cose, una base di lancio per poter sperimentare i propri razzi costruiti <em>in-house</em>, <strong>senza subappaltare nulla</strong>. Quindi che fa Musk? <strong>Compra un atollo nel Pacifico da cui farà partire tutti i suoi razzi.</strong> In questo modo non ha dovuto più chiedere nulla a nessuno, e ha velocizzato di molto il processo di realizzazione e sperimentazione.</p>
+
+<p><em>Musk ha provato a “usare quanto c’era di già fatto”</em>, sia nel caso di Tesla che di SpaceX, ma a un certo punto si è trovato nella condizione di dipendere troppo da altro e di dover riciclare soluzioni non ottime per il suo contesto. Per Tesla, i motori erano sviluppati per altri tipi di carburanti, le batterie erano pensate per altri sistemi etc. <strong>Riprogettare tutto da zero era l’unica strada percorribile per ottenere il miglior progetto, e soprattutto la miglior execution possibile.</strong></p>
+
+<p>La lezione che possiamo trarne è che <strong>se dipendiamo in maniera decisa da qualcosa, e questa non ci soddisfa, è il caso che ce la riscriviamo da noi</strong>.</p>
+
+<p>Se il <em>core</em> della tua azienda è, ad esempio, processare pagamenti con le carte di credito, e le attuali soluzioni presenti sul mercato costano troppo o sono lente, è il caso che tu ti scriva il tuo payment processor.</p>
+
+<p>Sarà lungo e non sarà una passeggiata, ma dopo avrai la miglior soluzione possibile.</p>
+
+<p>Poi la devi vendere, ma questa è un’altra storia :)</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&text=E' importante conoscere come sono fatte le librerie che usiamo?:%20https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(E' importante conoscere come sono fatte le librerie che usiamo?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html&title=E' importante conoscere come sono fatte le librerie che usiamo?&summary=&source=https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri.html">Essere programmatori e vivere di progetti propri <span class="label label-default">michele risponde</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/12/essere-bravi-colleghi-evitando-di-committare-cazzate/">Essere bravi colleghi evitando di committare cazzate <span class="label label-default">programmazione</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/02/quando-assumere-generalisti-vs-specialisti/">Quando assumere Generalisti vs Specialisti</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/05/basta-ai-powerpoint-fatti-male/">BASTA! ai powerpoint fatti male</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri.html">Essere programmatori e vivere di progetti propri</a></h2>
+        </header>
+        <section>
+            <p>Inauguriamo una nuova sezione, ossia “Michele risponde” :)</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
