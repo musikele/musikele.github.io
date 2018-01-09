@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-09T12:26:26+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">E’ importante conoscere come sono fatte le librerie che usiamo?</title><link href="https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html" rel="alternate" type="text/html" title="E' importante conoscere come sono fatte le librerie che usiamo?" /><published>2018-01-07T01:00:00+01:00</published><updated>2018-01-07T17:55:56+01:00</updated><id>https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo</id><content type="html" xml:base="https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html">&lt;p&gt;Domanda:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-09T12:29:11+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">I trend Javascript del 2018</title><link href="https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018.html" rel="alternate" type="text/html" title="I trend Javascript del 2018" /><published>2018-01-09T01:00:00+01:00</published><updated>2018-01-09T12:28:32+01:00</updated><id>https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018</id><content type="html" xml:base="https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018.html">&lt;p&gt;&lt;strong&gt;Quali sono le “cose” da tenere maggiormente d’occhio nello sviluppo JavaScript nel 2018?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ci sono alcuni trend che si sono sviluppati verso la fine del 2017 e che dovranno necessariamente essere inseguiti.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/trends.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Async/await&lt;/strong&gt;:  praticamente l’aggiunta più utile al linguaggio da qualche anno a questa parte; ora è possibile programmare in asincrono con estrema  facilità. Da studiare obbligatoriamente&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Webpack&lt;/strong&gt;, &lt;strong&gt;rollup, parcel, etc.&lt;/strong&gt;:  i bundler stanno diventando il nuovo terreno di sfida, specialmente nel frontend. Capire come funzionano, come estenderli e come usarli per le  proprie esigenze darà sicuramente un vantaggio competitivo.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Typescript&lt;/strong&gt;:  i tipi statici sono una manna dal cielo, permettono di fare refactoring  molto più rapidamente. Impararlo è molto semplice e la sfida sarà  usarlo su NodeJS e sugli altri framework (react, vue…)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Testing&lt;/strong&gt; &lt;strong&gt;(frontend, backend)&lt;/strong&gt;:  c’è troppo poco testing js in giro. Manca il test del frontend, manca  il test del backend. Inoltre esistono decine di framework di testing  differenti che si danno battaglia. Di sicuro, per un linguaggio  dinamico, il testing diventa essenziale se vuoi costruire applicazioni  grosse.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Modularizzazione (Frontend) /Microservizi&lt;/strong&gt; &lt;strong&gt;(backend)&lt;/strong&gt;:  questo vale per tutti i linguaggi: il trend del momento è realizzare  microservizi che lavorano insieme. Capire come strutturare applicazioni  di questo tipo diventa fondamentale per uno stack moderno.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;VueJS (frontend)&lt;/strong&gt;:  in un mondo dominato da Angular e React, Vue si propone come una delle  tante alternative, di sicuro quella che ha attirato più consensi. Io  personalmente lo conosco e lo uso con piacere.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;GraphQL&lt;/strong&gt;: è  un’alternativa a REST che permette di semplificare il modo di  richiedere i dati a un server. I big l’hanno già scelto, per  l’enterprise invece c’è ancora tanto da fare.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Buono studio!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Quali sono le “cose” da tenere maggiormente d’occhio nello sviluppo JavaScript nel 2018?</summary></entry><entry><title type="html">E’ importante conoscere come sono fatte le librerie che usiamo?</title><link href="https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html" rel="alternate" type="text/html" title="E' importante conoscere come sono fatte le librerie che usiamo?" /><published>2018-01-07T01:00:00+01:00</published><updated>2018-01-07T17:55:56+01:00</updated><id>https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo</id><content type="html" xml:base="https://michelenasti.com/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html">&lt;p&gt;Domanda:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;fin dal primo giorno, alla facoltà di Ingegneria Informatica mi è stata inculcata un’idea che tutt’ora fatico ad accettare. Visto che ci sono infinite librerie che ti rendono disponibili delle funzioni avanzate, il tuo lavoro principale non è riscrivere quelle funzioni, ma saperle  usare e adattare per i tuoi scopi. Faccio un esempio stupido: una  libreria python per l’elaborazione di file pdf. Due righe e posso copiare, fondere, togliere pagine. &lt;strong&gt;Però non saprò mai come funziona.&lt;/strong&gt; &lt;strong&gt;E  questa cosa mi angoscia tantissimo.&lt;/strong&gt; Nel senso, posso aprire la libreria e  andarmele a leggere, ovviamente. Ma passerei probabilmente ore a capire il loro funzionamento. Sono l’unico che è turbato da questa cosa? Chiaramente mi riferisco a chi sta ancora studiando, come me.&lt;/p&gt;
@@ -550,94 +566,4 @@ true
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a Batman!`)
 //NaNaNaNaNaNaNaNa NaNaNaNaNaNaNaNa Batman!
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Yesterday I was doing some maintenance on a corporate website when I found out that parseInt() returns NaN if the argument is, well, not a number.</summary></entry><entry><title type="html">Gestpay new website is online!</title><link href="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html" rel="alternate" type="text/html" title="Gestpay new website is online!" /><published>2017-11-02T01:00:00+01:00</published><updated>2017-11-10T10:52:22+01:00</updated><id>https://michelenasti.com/2017/11/02/gestpay-new-website-is-online</id><content type="html" xml:base="https://michelenasti.com/2017/11/02/gestpay-new-website-is-online.html">&lt;p&gt;I’m really excited to write about one of my latest works: &lt;strong&gt;the redesign of Gestpay’s website.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Screenshot-2017-11-6 Gestpay.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-gestpay&quot;&gt;What is Gestpay&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.gestpay.it/&quot;&gt;Gestpay&lt;/a&gt; is the most famous Italian payment processor, owned by Gruppo Banca Sella. It allows websites to accept payments on your ecommerce and your online activities. The main features are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Accept credit cards&lt;/strong&gt; from all over the world&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Integrates with 80+ &lt;strong&gt;alternative payment systems&lt;/strong&gt;, like PayPal, Apple Pay, Alipay, Qiwi, Sofort, Klarna… And more!&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Allows to &lt;strong&gt;customize the payment form&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;multiple layers of &lt;strong&gt;security&lt;/strong&gt; (3d secure, Gestpay Guaranteed Payment…)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It is suitable for &lt;strong&gt;small, medium and giant businesses&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Still on track after 20 years&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;One of my first jobs was to design a &lt;a href=&quot;Http://docs.gestpay.it&quot;&gt;documentation website&lt;/a&gt;, with the goal to be as clear and simple as possible, for developers. We did it!&lt;/p&gt;
-
-&lt;p&gt;So, what’s great about this?&lt;/p&gt;
-
-&lt;h2 id=&quot;working-with-designers-is-great&quot;&gt;Working with designers is great&lt;/h2&gt;
-
-&lt;p&gt;This is the first thing that comes to mind. For the first time in my life ever, I had to implement the work of a professional designer. Behind many choices (like, how many pixels here and there) there was a long discussion that could be going. I want to say this in bold: &lt;strong&gt;every frontend developer should work with a designer.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;His job started before mine: based on feedbacks received from Facebook contacts, we had a sense of what of the old site was clear and what not.&lt;/p&gt;
-
-&lt;p&gt;Then, we performed &lt;strong&gt;usability tests&lt;/strong&gt; that confirmed our hypothesis, thus giving us a clear direction on how to setup the navigation.&lt;/p&gt;
-
-&lt;p&gt;He realized the layout and thanks to a product called &lt;a href=&quot;&quot;&gt;invision&lt;/a&gt; I could check all the relevant data for me, like colors, spaces, grab the images, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/gestpay-invision.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;only-small-subset-of-prerequisites&quot;&gt;Only small subset of prerequisites&lt;/h2&gt;
-
-&lt;p&gt;When we started, it wanted to be a minor redesign of our website. So we decided to approach it lightly.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Reuse components&lt;/strong&gt; of the previous website, as much as we could&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Reuse existing css&lt;/strong&gt; if possible&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Internationalization&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Mobile and tablet friendly&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;However, the old website was using a structure doomed with old plugins that were not supported anymore. I decided to rewrite a big part of the website structure from zero, reusing only the SCSS (that was indeed very well organized).&lt;/p&gt;
-
-&lt;h2 id=&quot;technically-speaking&quot;&gt;Technically speaking…&lt;/h2&gt;
-
-&lt;p&gt;Gestpay is made with &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, a static website generator. It is written in ruby but you don’t have to understand a line of ruby to get it working.&lt;/p&gt;
-
-&lt;p&gt;For the styling part we used &lt;a href=&quot;http://sass-lang.com/&quot;&gt;SCSS&lt;/a&gt;, a CSS extension that allows to split styling in many files. This doesn’t solve all styling problems, but by using two guiding principles like &lt;a href=&quot;https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/&quot;&gt;ITCSS &lt;/a&gt;and &lt;a href=&quot;http://getbem.com/introduction/&quot;&gt;BEM&lt;/a&gt;, we wrote clearer class names and organized stuff logically.&lt;/p&gt;
-
-&lt;p&gt;Combining this with &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries&quot;&gt;responsive classes&lt;/a&gt;, like &lt;code&gt;media @screen and (max-width: 650px)&lt;/code&gt;, we have developed a website that is also mobile friendly, from the first line of code.&lt;/p&gt;
-
-&lt;p&gt;I can’t say how much Flexbox I have used. &lt;a href=&quot;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&quot;&gt;Flexbox&lt;/a&gt; is so cool I rarely had to use other display properties. Give it a try!&lt;/p&gt;
-
-&lt;h3 id=&quot;a-word-on-internet-explorer&quot;&gt;A word on Internet Explorer&lt;/h3&gt;
-
-&lt;p&gt;Internet explorer is still used out there; it’s about 3-7% of the total traffic received on our website. For some complex styling options I had to write some rules for IE only. Edge, on the other side, is great and supports every new standard. We think IE will be less and less important, so this technique (add a discriminant class if the browser is IE) should be future proof.&lt;/p&gt;
-
-&lt;p&gt;Stop using IE! It has been deprecated!&lt;/p&gt;
-
-&lt;h3 id=&quot;a-word-on-safari&quot;&gt;A word on Safari&lt;/h3&gt;
-
-&lt;p&gt;Developing for mobile (iOS) is impossible if you don’t have an iPhone with you.&lt;/p&gt;
-
-&lt;p&gt;For some reasons Safari is not that cool. For example, when you scroll down a page on iPhone the viewport gets bigger, while If you scroll up, weird effects apply. This happens because the button bar hides at the bottom. From a user experience point of view, this is not optimal.&lt;/p&gt;
-
-&lt;h2 id=&quot;thats-all-folks&quot;&gt;That’s all folks!&lt;/h2&gt;
-
-&lt;p&gt;Now we are checking the stats to see if every user can achieve the promised UX. We are also monitoring new bugs and eventually 404s. We believe to have done a great work in simplifying the user experience; check it out and give us your thoughts!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Gestpay" /><category term="Website" /><category term="Design" /><category term="Work" /><summary type="html">I’m really excited to write about one of my latest works: the redesign of Gestpay’s website. What is Gestpay Gestpay is the most famous Italian payment processor, owned by Gruppo Banca Sella. It allows websites to accept payments on your ecommerce and your online activities. The main features are: Accept credit cards from all over the world Integrates with 80+ alternative payment systems, like PayPal, Apple Pay, Alipay, Qiwi, Sofort, Klarna… And more! Allows to customize the payment form multiple layers of security (3d secure, Gestpay Guaranteed Payment…) It is suitable for small, medium and giant businesses Still on track after 20 years One of my first jobs was to design a documentation website, with the goal to be as clear and simple as possible, for developers. We did it! So, what’s great about this? Working with designers is great This is the first thing that comes to mind. For the first time in my life ever, I had to implement the work of a professional designer. Behind many choices (like, how many pixels here and there) there was a long discussion that could be going. I want to say this in bold: every frontend developer should work with a designer. His job started before mine: based on feedbacks received from Facebook contacts, we had a sense of what of the old site was clear and what not. Then, we performed usability tests that confirmed our hypothesis, thus giving us a clear direction on how to setup the navigation. He realized the layout and thanks to a product called invision I could check all the relevant data for me, like colors, spaces, grab the images, etc. Only small subset of prerequisites When we started, it wanted to be a minor redesign of our website. So we decided to approach it lightly. Reuse components of the previous website, as much as we could Reuse existing css if possible Internationalization Mobile and tablet friendly However, the old website was using a structure doomed with old plugins that were not supported anymore. I decided to rewrite a big part of the website structure from zero, reusing only the SCSS (that was indeed very well organized). Technically speaking… Gestpay is made with Jekyll, a static website generator. It is written in ruby but you don’t have to understand a line of ruby to get it working. For the styling part we used SCSS, a CSS extension that allows to split styling in many files. This doesn’t solve all styling problems, but by using two guiding principles like ITCSS and BEM, we wrote clearer class names and organized stuff logically. Combining this with responsive classes, like media @screen and (max-width: 650px), we have developed a website that is also mobile friendly, from the first line of code. I can’t say how much Flexbox I have used. Flexbox is so cool I rarely had to use other display properties. Give it a try! A word on Internet Explorer Internet explorer is still used out there; it’s about 3-7% of the total traffic received on our website. For some complex styling options I had to write some rules for IE only. Edge, on the other side, is great and supports every new standard. We think IE will be less and less important, so this technique (add a discriminant class if the browser is IE) should be future proof. Stop using IE! It has been deprecated! A word on Safari Developing for mobile (iOS) is impossible if you don’t have an iPhone with you. For some reasons Safari is not that cool. For example, when you scroll down a page on iPhone the viewport gets bigger, while If you scroll up, weird effects apply. This happens because the button bar hides at the bottom. From a user experience point of view, this is not optimal. That’s all folks! Now we are checking the stats to see if every user can achieve the promised UX. We are also monitoring new bugs and eventually 404s. We believe to have done a great work in simplifying the user experience; check it out and give us your thoughts!</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Yesterday I was doing some maintenance on a corporate website when I found out that parseInt() returns NaN if the argument is, well, not a number.</summary></entry></feed>
