@@ -9,7 +9,10 @@ date: 2018-01-09 00:00:00 +0000
 description: Quali saranno i prossimi trend JS del 2018? Ripartiamo dalle buzzword
   del 2017.
 header-img: "/images/trends.jpg"
-tags: []
+tags:
+- michele risponde
+- javascript
+- trends
 ---
 **Quali sono le "cose" da tenere maggiormente d'occhio nello sviluppo JavaScript nel 2018?**  
 
