@@ -13,6 +13,11 @@ tags:
 - michele risponde
 - javascript
 - trends
+- typescript
+- webpack
+- async await
+- vuejs
+- graphql
 ---
 **Quali sono le "cose" da tenere maggiormente d'occhio nello sviluppo JavaScript nel 2018?**  
 
