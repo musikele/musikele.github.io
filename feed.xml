@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-12T10:24:58+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">I trend Javascript del 2018</title><link href="https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018.html" rel="alternate" type="text/html" title="I trend Javascript del 2018" /><published>2018-01-09T01:00:00+01:00</published><updated>2018-01-10T18:49:50+01:00</updated><id>https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018</id><content type="html" xml:base="https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018.html">&lt;p&gt;&lt;strong&gt;Quali sono le “cose” da tenere maggiormente d’occhio nello sviluppo JavaScript nel 2018?&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-12T10:28:43+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">La mia esperienza col Test Driven Development</title><link href="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" rel="alternate" type="text/html" title="La mia esperienza col Test Driven Development" /><published>2018-01-12T01:00:00+01:00</published><updated>2018-01-12T10:27:37+01:00</updated><id>https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development</id><content type="html" xml:base="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html">&lt;p&gt;Il &lt;strong&gt;Test Driven Development&lt;/strong&gt; è una pratica &lt;em&gt;mistica&lt;/em&gt;: consiste nello &lt;strong&gt;scrivere prima i test e poi il vero e proprio codice che ti serve per realizzare quella funzionalità&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Testing_in_Progress.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Faccio un esempio: immaginiamo di dover realizzare una funzione &lt;code&gt;cercaSuCanale5()&lt;/code&gt; che, presa in input una data (es. &lt;code&gt;2018-12-31&lt;/code&gt; e una stringa (es. &lt;code&gt;concertone&lt;/code&gt;) ritorni tutti i programmi che su Canale  quel giorno 5 contengono quella stringa nel titolo o nella descrizione.&lt;/p&gt;
+
+&lt;p&gt;E’ un caso semplice, magari richiederà qualche ricerca per trovare le API da interrogare per tirare fuori i dati giusti, oppure se abbiamo questi dati disponibili nel db li andremo a prendere da lì, ma &lt;strong&gt;è un caso abbastanza interessante per discutere di testing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Se realizzo questa funzionalità col TDD, prima ancora di scrivere la vera e propria funzione &lt;code&gt;cercaSuCanale5()&lt;/code&gt; , scriverò questi casi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;un test che deve rispondere con un’eccezione quando chiamo la funzione con una data &lt;code&gt;null&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Un test che deve rispondere con &lt;em&gt;tutta la programmazione televisiva di quel giorno&lt;/em&gt;, se invio una data, ma la stringa è null o vuota.&lt;/li&gt;
+  &lt;li&gt;Un test che, data una data valida e una stringa (es. &lt;code&gt;concer&lt;/code&gt;) ritorna gli eventi che contengono questa stringa nel titolo o nella descrizione per quella data.&lt;/li&gt;
+  &lt;li&gt;Un test che, data una data valida e una stringa implausibile (es. &lt;code&gt;abcdefgh123&lt;/code&gt;) ritorna una lista vuota.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hai notato? &lt;strong&gt;Solo per scrivere questi test abbiamo in pratica definito come si comporta la nostra funzione.&lt;/strong&gt; Questo è un ottimo motivo per fare TDD: ha un funzione &lt;em&gt;documentativa&lt;/em&gt; del codice.&lt;/p&gt;
+
+&lt;p&gt;Tornando ai test, la cose si fanno difficili quando la nostra funzione accede a qualcosa di esterno per elaborare i dati. Ad esempio, se &lt;code&gt;cercaSuCanale5()&lt;/code&gt; chiama un’API esterna, chi ci garantisce che per la stessa data e la stessa stringa i dati saranno sempre gli stessi? Stesso dubbio per un’eventuale implementazione su DB: magari chi gestisce API o DB impone che dopo 1 anno (o un giorno!) quei dati vengano cancellati, per cui il test dopo 1 anno (o un giorno!) non funzionerà più.&lt;/p&gt;
+
+&lt;p&gt;Per evitare tutto questo, in genere nel test si &lt;em&gt;mocka&lt;/em&gt; la chiamata a tutto ciò che è esterno, ossia si dice al test che quella chiamata esterna deve essere sostituita da un &lt;strong&gt;mock&lt;/strong&gt; che risponderà sempre allo stesso modo.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Già qui i detrattori del TDD diranno che, nel momento in cui introduciamo i mock, stiamo sostituendo il mondo reale con una finzione e tanti casi reali non saranno più riscontrabili. Purtroppo è vero, un mock è una semplificazione, ma è l’unica opzione che abbiamo quando abbiamo a che fare con dati mutabili.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Ecco altre fantastiche “regole” del TDD:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;i test scritti devono fallire tutti prima di scrivere la vera e propria funzione&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;mai scrivere codice di produzione senza un test che fallisce&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;se accade un bug in produzione, scrivi prima un test che lo riproduce e poi correggi il bug (e il test)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;la-mia-esperienza-col-tdd&quot;&gt;La mia esperienza col TDD&lt;/h2&gt;
+
+&lt;p&gt;Alla mia prima esperienza lavorativa mi hanno iniziato al TDD: “&lt;strong&gt;scrivi prima il test e poi il  codice&lt;/strong&gt;. In questo modo avrai chiaro cosa il tuo codice deve fare, e come”.&lt;/p&gt;
+
+&lt;p&gt;Addirittura una delle pratiche era che &lt;strong&gt;quando scaricavamo un modulo da SVN dovevamo lanciare i test, se questi fallivano potevamo anche &lt;em&gt;richiamare&lt;/em&gt; l’ultimo collega che aveva committato senza correggere i test.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Bello.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Poi abbiamo iniziato a correre&lt;/strong&gt;, perché le scadenze non venivano rispettate, e  la prima cosa che succede quando corri è che butti a mare la qualità.  Di conseguenza i test iniziarono a scarseggiare.&lt;/p&gt;
+
+&lt;p&gt;Inoltre,  questo lo notano pochi, &lt;strong&gt;i test sono altro codice da manutenere&lt;/strong&gt;:  quando fai una modifica al codice dell’app (e il codice cambia, perchè cambiano i requisiti) devi inevitabilmente fare  modifiche anche al codice del test, e questo porta via fino al doppio del tempo. Quante aziende hanno schedule così &lt;em&gt;rilassate&lt;/em&gt; da poterselo permettere?&lt;/p&gt;
+
+&lt;p&gt;Alla fine faccio alcuni test unitari, molti test di integrazione in cui mocko db o chiamate esterne, e la priorità é di testare ciò che é difficile da testare a mano.&lt;/p&gt;
+
+&lt;p&gt;Tutto  questo discorso vale, nel mio caso, per il backend, perché &lt;strong&gt;per il frontend mi sono  ritrovato da solo a voler scrivere test - per gli altri non era nemmeno un’opzione!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Non mi arrendo però: ora che devo mettere mano a codice React e Vue, voglio assolutamente riprovare a scrivere codice di test per il frontend, e vedere a quali benefici porta.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="test driven development" /><category term="tdd" /><category term="testing" /><category term="mock" /><summary type="html">Il Test Driven Development è una pratica mistica: consiste nello scrivere prima i test e poi il vero e proprio codice che ti serve per realizzare quella funzionalità.</summary></entry><entry><title type="html">I trend Javascript del 2018</title><link href="https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018.html" rel="alternate" type="text/html" title="I trend Javascript del 2018" /><published>2018-01-09T01:00:00+01:00</published><updated>2018-01-10T18:49:50+01:00</updated><id>https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018</id><content type="html" xml:base="https://michelenasti.com/2018/01/09/i-trend-javascript-del-2018.html">&lt;p&gt;&lt;strong&gt;Quali sono le “cose” da tenere maggiormente d’occhio nello sviluppo JavaScript nel 2018?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Ci sono alcuni trend che si sono sviluppati verso la fine del 2017 e che dovranno necessariamente essere inseguiti.&lt;/p&gt;
 
@@ -460,110 +509,4 @@ La  cosa più semplice che mi viene da consigliarti é di creare software che ri
 
 &lt;p&gt;Others have also accused me of “plagiarism” :D&lt;/p&gt;
 
-&lt;p&gt;Honestly, this happens in every group that has more than 1-2 thousand members; people will comment out just to say that you’re dumb and they’re better.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="nan" /><category term="javascript" /><category term="not-a-number" /><summary type="html">When I posted the NaN article on facebook in a programmers group, I received some very bad reviews. Let’s analyze them.</summary></entry><entry><title type="html">Not-A-Number: when javascript gets crazy</title><link href="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html" rel="alternate" type="text/html" title="Not-A-Number: when javascript gets crazy" /><published>2017-11-14T01:00:00+01:00</published><updated>2017-11-14T13:20:42+01:00</updated><id>https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy</id><content type="html" xml:base="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html">&lt;p&gt;Yesterday I was doing some maintenance on a corporate website when I found out that &lt;code&gt;parseInt()&lt;/code&gt; returns &lt;code&gt;NaN&lt;/code&gt; if the argument is, well, not a number.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/not-a-number.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; let pippo = parseInt('a')
-NaN
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;NaN&lt;/code&gt; is a constant and stands for &lt;code&gt;Not a Number&lt;/code&gt;. Javascript uses this for some very default cases, for example if you divide a number by a string, etc.&lt;/p&gt;
-
-&lt;p&gt;That’s fair. What comes next is funny :)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; pippo == NaN
-false
-&amp;gt; pippo === NaN
-false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Even if a variable is &lt;code&gt;NaN&lt;/code&gt;, you cannot check with the usual operators that it is &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; pippo == pippo
-false
-&amp;gt; pippo === pippo
-false
-&amp;gt; NaN == NaN
-false
-&amp;gt; NaN === NaN
-false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Things start to get crazy. As you can see, &lt;code&gt;NaN&lt;/code&gt; is not even equal to itself. You cannot compare anything to &lt;code&gt;NaN&lt;/code&gt;, because &lt;code&gt;NaN&lt;/code&gt; is not equal to anything.&lt;/p&gt;
-
-&lt;h2 id=&quot;sooooo-isnan-&quot;&gt;sooooo… isNaN() ?&lt;/h2&gt;
-
-&lt;p&gt;There is a function called &lt;code&gt;isNaN()&lt;/code&gt; and it’s the only way to detect a &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; isNaN(pippo)
-true
-&amp;gt; isNaN(3)
-false
-&amp;gt; isNaN('bau bau micio micio')
-true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This function seems to resolve our problems: it detects &lt;em&gt;not&lt;/em&gt;-numbers, and infact a string is considered &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; isNaN(undefined)
-true
-&amp;gt; isNaN(null)
-false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I see your face 😆 Where is the logic?&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;isNaN&lt;/code&gt; tries to convert the argument to a number, using the constructor &lt;code&gt;Number()&lt;/code&gt;; if the argument cannot be converted, &lt;code&gt;NaN&lt;/code&gt; is returned.&lt;/p&gt;
-
-&lt;p&gt;In the case of &lt;code&gt;isNaN(null)&lt;/code&gt;, this is what happens:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;isNaN(null) // Number(null) ==&amp;gt; 0 
-&amp;gt; false 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ha ha, &lt;code&gt;Number(null)&lt;/code&gt; returns zero??? Welcome to javascript 😎 This would require a bigger explanation, however JS does a type cohercion trying to compare things. It is described &lt;a href=&quot;http://www.ecma-international.org/ecma-262/5.1/#sec-9.3&quot;&gt;here&lt;/a&gt; (warning: it’s a spec, the first 10 lines are understandable, then it’s a mess).&lt;/p&gt;
-
-&lt;p&gt;Of course,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;null == 0
-&amp;gt; false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;🙂&lt;/p&gt;
-
-&lt;p&gt;Just to add the last bit of discoveries around &lt;code&gt;NaN&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Number(null)
-&amp;gt; 0
-parseInt(null) 
-&amp;gt; NaN
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;there-is-another-isnan-around&quot;&gt;There is another isNaN() around&lt;/h2&gt;
-
-&lt;p&gt;The Javascript &lt;code&gt;Number&lt;/code&gt; object also has a &lt;code&gt;isNaN&lt;/code&gt; method, that is way more conservative:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; Number.isNaN(3)
-false
-&amp;gt; Number.isNaN('3a')
-false
-&amp;gt; Number.isNaN('abc')
-false
-&amp;gt; Number.isNaN(undefined)
-false
-&amp;gt; Number.isNaN(null)
-false
-&amp;gt; Number.isNaN(NaN)
-true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It will return &lt;code&gt;true&lt;/code&gt; only for &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;stop-this-its-a-mess&quot;&gt;Stop this! It’s a mess!&lt;/h2&gt;
-
-&lt;p&gt;Ok, let’s end with a song:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(`${10/'a'}a${ 10/'b'}a${ 10/'c'}a${10/'d'}a ${10/'e'}a${10/'f'}a${10/'g'}a${ 10/'h'}a Batman!`)
-//NaNaNaNaNaNaNaNa NaNaNaNaNaNaNaNa Batman!
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Yesterday I was doing some maintenance on a corporate website when I found out that parseInt() returns NaN if the argument is, well, not a number.</summary></entry></feed>
+&lt;p&gt;Honestly, this happens in every group that has more than 1-2 thousand members; people will comment out just to say that you’re dumb and they’re better.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="nan" /><category term="javascript" /><category term="not-a-number" /><summary type="html">When I posted the NaN article on facebook in a programmers group, I received some very bad reviews. Let’s analyze them.</summary></entry></feed>

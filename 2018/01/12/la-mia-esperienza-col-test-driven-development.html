@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>La mia esperienza col Test Driven Development - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="test driven development, tdd, testing, mock" />  
+	<meta http-equiv="last-modified" content="2018-01-12 10:27:37 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="La mia esperienza col Test Driven Development" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Il Test Driven Development porta a un aumento della qualità del codice scritto, ma nella vita reale aumenta i tempi di sviluppo e porta a qualche compromesso. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" property="og:url">
+
+
+
+  <meta content="2018-01-12T01:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/Testing_in_Progress.gif" property="og:image">
+
+
+
+  
+  <meta content="test driven development" property="article:tag">
+  
+  <meta content="tdd" property="article:tag">
+  
+  <meta content="testing" property="article:tag">
+  
+  <meta content="mock" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="La mia esperienza col Test Driven Development">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html">
+
+
+
+  <meta name="twitter:description" content="Il Test Driven Development porta a un aumento della qualità del codice scritto, ma nella vita reale aumenta i tempi di sviluppo e porta a qualche compromesso. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/Testing_in_Progress.gif">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/01/12/la-mia-esperienza-col-test-driven-development.html">La mia esperienza col Test Driven Development</a></h1>
+			<p class="post-meta">Jan 12, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&text=La mia esperienza col Test Driven Development:%20https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(La mia esperienza col Test Driven Development) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&title=La mia esperienza col Test Driven Development&summary=&source=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Il <strong>Test Driven Development</strong> è una pratica <em>mistica</em>: consiste nello <strong>scrivere prima i test e poi il vero e proprio codice che ti serve per realizzare quella funzionalità</strong>.</p>
+
+<p><img src="/images/Testing_in_Progress.gif" alt="" /></p>
+
+<p>Faccio un esempio: immaginiamo di dover realizzare una funzione <code>cercaSuCanale5()</code> che, presa in input una data (es. <code>2018-12-31</code> e una stringa (es. <code>concertone</code>) ritorni tutti i programmi che su Canale  quel giorno 5 contengono quella stringa nel titolo o nella descrizione.</p>
+
+<p>E’ un caso semplice, magari richiederà qualche ricerca per trovare le API da interrogare per tirare fuori i dati giusti, oppure se abbiamo questi dati disponibili nel db li andremo a prendere da lì, ma <strong>è un caso abbastanza interessante per discutere di testing</strong>.</p>
+
+<p>Se realizzo questa funzionalità col TDD, prima ancora di scrivere la vera e propria funzione <code>cercaSuCanale5()</code> , scriverò questi casi:</p>
+
+<ul>
+  <li>un test che deve rispondere con un’eccezione quando chiamo la funzione con una data <code>null</code>.</li>
+  <li>Un test che deve rispondere con <em>tutta la programmazione televisiva di quel giorno</em>, se invio una data, ma la stringa è null o vuota.</li>
+  <li>Un test che, data una data valida e una stringa (es. <code>concer</code>) ritorna gli eventi che contengono questa stringa nel titolo o nella descrizione per quella data.</li>
+  <li>Un test che, data una data valida e una stringa implausibile (es. <code>abcdefgh123</code>) ritorna una lista vuota.</li>
+</ul>
+
+<p>Hai notato? <strong>Solo per scrivere questi test abbiamo in pratica definito come si comporta la nostra funzione.</strong> Questo è un ottimo motivo per fare TDD: ha un funzione <em>documentativa</em> del codice.</p>
+
+<p>Tornando ai test, la cose si fanno difficili quando la nostra funzione accede a qualcosa di esterno per elaborare i dati. Ad esempio, se <code>cercaSuCanale5()</code> chiama un’API esterna, chi ci garantisce che per la stessa data e la stessa stringa i dati saranno sempre gli stessi? Stesso dubbio per un’eventuale implementazione su DB: magari chi gestisce API o DB impone che dopo 1 anno (o un giorno!) quei dati vengano cancellati, per cui il test dopo 1 anno (o un giorno!) non funzionerà più.</p>
+
+<p>Per evitare tutto questo, in genere nel test si <em>mocka</em> la chiamata a tutto ciò che è esterno, ossia si dice al test che quella chiamata esterna deve essere sostituita da un <strong>mock</strong> che risponderà sempre allo stesso modo.</p>
+
+<p><em>Già qui i detrattori del TDD diranno che, nel momento in cui introduciamo i mock, stiamo sostituendo il mondo reale con una finzione e tanti casi reali non saranno più riscontrabili. Purtroppo è vero, un mock è una semplificazione, ma è l’unica opzione che abbiamo quando abbiamo a che fare con dati mutabili.</em></p>
+
+<p>Ecco altre fantastiche “regole” del TDD:</p>
+
+<ul>
+  <li><strong>i test scritti devono fallire tutti prima di scrivere la vera e propria funzione</strong></li>
+  <li><strong>mai scrivere codice di produzione senza un test che fallisce</strong></li>
+  <li><strong>se accade un bug in produzione, scrivi prima un test che lo riproduce e poi correggi il bug (e il test)</strong></li>
+</ul>
+
+<h2 id="la-mia-esperienza-col-tdd">La mia esperienza col TDD</h2>
+
+<p>Alla mia prima esperienza lavorativa mi hanno iniziato al TDD: “<strong>scrivi prima il test e poi il  codice</strong>. In questo modo avrai chiaro cosa il tuo codice deve fare, e come”.</p>
+
+<p>Addirittura una delle pratiche era che <strong>quando scaricavamo un modulo da SVN dovevamo lanciare i test, se questi fallivano potevamo anche <em>richiamare</em> l’ultimo collega che aveva committato senza correggere i test.</strong></p>
+
+<p>Bello.</p>
+
+<p><strong>Poi abbiamo iniziato a correre</strong>, perché le scadenze non venivano rispettate, e  la prima cosa che succede quando corri è che butti a mare la qualità.  Di conseguenza i test iniziarono a scarseggiare.</p>
+
+<p>Inoltre,  questo lo notano pochi, <strong>i test sono altro codice da manutenere</strong>:  quando fai una modifica al codice dell’app (e il codice cambia, perchè cambiano i requisiti) devi inevitabilmente fare  modifiche anche al codice del test, e questo porta via fino al doppio del tempo. Quante aziende hanno schedule così <em>rilassate</em> da poterselo permettere?</p>
+
+<p>Alla fine faccio alcuni test unitari, molti test di integrazione in cui mocko db o chiamate esterne, e la priorità é di testare ciò che é difficile da testare a mano.</p>
+
+<p>Tutto  questo discorso vale, nel mio caso, per il backend, perché <strong>per il frontend mi sono  ritrovato da solo a voler scrivere test - per gli altri non era nemmeno un’opzione!</strong></p>
+
+<p>Non mi arrendo però: ora che devo mettere mano a codice React e Vue, voglio assolutamente riprovare a scrivere codice di test per il frontend, e vedere a quali benefici porta.</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&text=La mia esperienza col Test Driven Development:%20https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(La mia esperienza col Test Driven Development) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html&title=La mia esperienza col Test Driven Development&summary=&source=https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">All my articles about Testing in Javascript in one post <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/07/fantastic-unit-tests-in-javascript-with-mocks.html">Fantastic Unit Tests in Javascript with Mocks <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html">Become a test expert in NodeJS with these tricks <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/08/my-very-personal-javascript-fatigue/">My very personal Javascript Fatigue: the truth about JS testing <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018</a></h2>
+        </header>
+        <section>
+            <p><strong>Quali sono le “cose” da tenere maggiormente d’occhio nello sviluppo JavaScript nel 2018?</strong></p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/01/09/i-trend-javascript-del-2018.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
