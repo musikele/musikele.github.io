@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-18T10:44:31+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">La mia esperienza col Test Driven Development</title><link href="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" rel="alternate" type="text/html" title="La mia esperienza col Test Driven Development" /><published>2018-01-12T01:00:00+01:00</published><updated>2018-01-12T10:27:37+01:00</updated><id>https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development</id><content type="html" xml:base="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html">&lt;p&gt;Il &lt;strong&gt;Test Driven Development&lt;/strong&gt; è una pratica &lt;em&gt;mistica&lt;/em&gt;: consiste nello &lt;strong&gt;scrivere prima i test e poi il vero e proprio codice che ti serve per realizzare quella funzionalità&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-18T10:48:23+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Perchè la Green Card è una lotteria?</title><link href="https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html" rel="alternate" type="text/html" title="Perchè la Green Card è una lotteria?" /><published>2018-01-17T01:00:00+01:00</published><updated>2018-01-18T10:47:12+01:00</updated><id>https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria</id><content type="html" xml:base="https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html">&lt;p&gt;Ho beccato un post on line in cui si chiedeva se un lavoratore da remoto può lavorare dagli USA per clienti italiani. La risposta precisa ve la potrà dare solo un avvocato esperto (o il consolato USA); semplifichiamo dicendo che se si lavora dal territorio USA bisogna pagare le tasse americane. Per lavorare legalmente in USA ci sono &lt;a href=&quot;https://www.us-immigration.com/greencard/Green-Card-Lottery.html&quot;&gt;molte strade&lt;/a&gt;: la &lt;strong&gt;Green Card&lt;/strong&gt; è una di queste.&lt;/p&gt;
+
+&lt;p&gt;In questo articolo parleremo del &lt;strong&gt;perchè gli USA hanno scelto la lotteria come sistema di assegnazione&lt;/strong&gt; (e perchè secondo me hanno fatto bene).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/green_card_lottery.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cosè-la-green-card&quot;&gt;Cos’è la Green Card?&lt;/h2&gt;
+
+&lt;p&gt;La &lt;a href=&quot;http://america24.com/news/come-si-ottiene-la-green-card&quot;&gt;&lt;strong&gt;Green Card&lt;/strong&gt;&lt;/a&gt; è l’equivalente del &lt;em&gt;permesso di soggiorno italiano&lt;/em&gt;, ma permette di lavorare, a tempo indeterminato, negli USA. In pratica chi vince una Green Card può tranquillamente trasferirsi e creare reddito: non ci sono limiti di nessun tipo (ma evitate di violare la legge).&lt;/p&gt;
+
+&lt;h2 id=&quot;perchè-si-dice-che-è-una-lotteria&quot;&gt;Perchè si dice che è una lotteria?&lt;/h2&gt;
+
+&lt;p&gt;Perché lo è: il numero di posti messi a disposizione ogni anno è di circa 50.000, a fronte di un numero enorme di richiedenti. E’ una lotteria per promuovere la diversità, quindi si cerca di far arrivare negli States immigranti da qualsiasi area del mondo (tranne alcune nazioni che hanno in essere embarghi con gli Stati Uniti).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/lottery.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Per molti tutto ciò potrebbe sembrare un’&lt;strong&gt;americanata,&lt;/strong&gt; nel senso che magari c’erano altri modi per assegnare questa risorsa a quanti ne richiedevano. Il problema è che tutti gli altri sistemi hanno pro e contro, e la lotteria è semplicemente il metodo più equo, rapido, ed economico.&lt;/p&gt;
+
+&lt;p&gt;Sostanzialmente quando vuoi offrire una risorsa a qualcuno hai molti modi per farlo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;L’&lt;strong&gt;assegnazione diretta&lt;/strong&gt; è il metodo più clientelare che c’è: io titolare di una risorsa  (es. un appalto) decido il vincitore in maniera del tutto arbitraria.&lt;/li&gt;
+  &lt;li&gt;Il  &lt;strong&gt;bando di gara “beauty contest”&lt;/strong&gt; prevede che tu la commissione scelga il progetto migliore. Anche in questo caso la corruzione la fa da padrona.&lt;/li&gt;
+  &lt;li&gt;Le &lt;strong&gt;aste al ribasso o al rialzo&lt;/strong&gt; sono frequenti nel settore dei diritti televisivi o  per gli appalti: in questo caso, aziende con forti disponibilità vinceranno sicuramente, o comunque se sai chi altro partecipa e qual è la loro disponibilità economica (ad esempio corrompendo le persone giuste), ti basterà fare un’offerta leggermente maggiore. In questo caso chi ci perde è chi assegna il bene: non intasca il reale valore di quel bene, ma il valore appena necessario per ottenerlo.&lt;/li&gt;
+  &lt;li&gt;L’&lt;strong&gt;asta di secondo prezzo&lt;/strong&gt; è un meccanismo intelligente, anche eBay funziona così, e su questa cosa &lt;a href=&quot;https://it.wikipedia.org/wiki/William_Vickrey&quot;&gt;Vickrey ci ha vinto un premio nobel per l’economia&lt;/a&gt;. Lo spiego in parole povere: facciamo un’asta a busta chiusa, ognuno di noi offre quanto secondo lui quel bene “vale”, e vince ovviamente chi offre di più MA paga il secondo prezzo più alto. Tramite una serie di teoremi (che a suo tempo ho anche studiato) si può dimostrare che chi partecipa a questo tipo di asta è meno invogliato a offrire di meno rispetto al valore reale.&lt;/li&gt;
+  &lt;li&gt;il &lt;strong&gt;Click Day,&lt;/strong&gt; mi vergogno addirittura a metterlo in questa lista, è una di quelle cavolate all’italiana venute fuori dalla mente di chissà quale burocrate. Praticamente in un certo giorno e a una certa ora, si fa una gara di velocità: i più veloci a &lt;em&gt;cliccare&lt;/em&gt; si assegnano quel bene_._ Capirete che tutto dipende dall’affidabilità del sistema di rilevamento, dalla latenza della velocità internet, dalla dimestichezza che ha l’operatore con mouse e tastiera, e dalla fortuna.&lt;/li&gt;
+  &lt;li&gt;E veniamo infine alla &lt;strong&gt;lotteria&lt;/strong&gt;: è il meccanismo più equo ed economico quando hai un tot di posti disponibili (es. 50.000) e una quantità enorme di persone che partecipa (es. 10.000.000): semplicemente decide il caso. Costa poco, è di facile realizzazione, non richiede di revisionare tutte le domande per verificare titoli o altro (beauty contest), nè è accessibile solo ai ricchi (aste). Ah, e non vince il più veloce.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Se avete seguito uno dei primi link di questo articolo sappiate che vincere la lotteria per la Green Card è solo il primo passo: seguiranno un paio di anni di colloqui con l’ambasciata, e tanta burocrazia. &lt;strong&gt;La cosa più semplice é di trovare un’azienda USA che sponsorizzi la vostra candidatura per farvi lavorare lì&lt;/strong&gt;. In bocca al lupo!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="green card" /><category term="usa" /><category term="lotteria" /><category term="michele risponde" /><summary type="html">Ho beccato un post on line in cui si chiedeva se un lavoratore da remoto può lavorare dagli USA per clienti italiani. La risposta precisa ve la potrà dare solo un avvocato esperto (o il consolato USA); semplifichiamo dicendo che se si lavora dal territorio USA bisogna pagare le tasse americane. Per lavorare legalmente in USA ci sono molte strade: la Green Card è una di queste.</summary></entry><entry><title type="html">La mia esperienza col Test Driven Development</title><link href="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html" rel="alternate" type="text/html" title="La mia esperienza col Test Driven Development" /><published>2018-01-12T01:00:00+01:00</published><updated>2018-01-12T10:27:37+01:00</updated><id>https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development</id><content type="html" xml:base="https://michelenasti.com/2018/01/12/la-mia-esperienza-col-test-driven-development.html">&lt;p&gt;Il &lt;strong&gt;Test Driven Development&lt;/strong&gt; è una pratica &lt;em&gt;mistica&lt;/em&gt;: consiste nello &lt;strong&gt;scrivere prima i test e poi il vero e proprio codice che ti serve per realizzare quella funzionalità&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Testing_in_Progress.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -436,77 +465,4 @@ La  cosa più semplice che mi viene da consigliarti é di creare software che ri
 
 &lt;p&gt;E per questo non c’è tool al mondo. Tocca mettersi a studiare ;)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Grazie Raf per il tuo tempo. Vi lascio con il&lt;/strong&gt; &lt;a href=&quot;http://amzn.to/2hOoizV&quot;&gt;&lt;strong&gt;link al libro su Amazon&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;. alla prossima!&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="growth hacking" /><category term="raffaele gaito" /><category term="marketing" /><category term="libro" /><summary type="html">Conosco Raffaele Gaito dai tempi dell’università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo fare finta che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene:</summary></entry><entry><title type="html">Other thoughts about NaN (then, stop)</title><link href="https://michelenasti.com/2017/11/16/why-nan.html" rel="alternate" type="text/html" title="Other thoughts about NaN (then, stop)" /><published>2017-11-16T01:00:00+01:00</published><updated>2017-11-17T10:18:47+01:00</updated><id>https://michelenasti.com/2017/11/16/why-nan</id><content type="html" xml:base="https://michelenasti.com/2017/11/16/why-nan.html">&lt;p&gt;When I posted the &lt;a href=&quot;https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html&quot; title=&quot;Not-a-Number: when Javascript gets crazy&quot;&gt;NaN article&lt;/a&gt; on facebook in a programmers group, I received some very bad reviews. Let’s analyze them.&lt;/p&gt;
-
-&lt;h2 id=&quot;it-is-obvious&quot;&gt;“It is obvious!”&lt;/h2&gt;
-
-&lt;p&gt;It is obvious, but it’s not common. Partly because I am a developer with some years of experience and, altough I have studied and studying a lot of programming, I have never occourred in &lt;code&gt;NaN&lt;/code&gt;-at-work. You might think that this is impossible, but well, it isn’t because happened to me. Maybe because I rarely do maths without checking types? Maybe because I rarely do maths in Javascript (it’s a very bad idea)?&lt;/p&gt;
-
-&lt;h2 id=&quot;why-nan--nan-is-false&quot;&gt;Why NaN === NaN is false&lt;/h2&gt;
-
-&lt;p&gt;The fact that &lt;code&gt;NaN !== NaN&lt;/code&gt; is true is obvious, after you reason about it.&lt;/p&gt;
-
-&lt;p&gt;When I thought of this the first time, I thought it’s absurd, but after a while I realized that this is the only possible logic behaviour. As some have said, if I divide a number by a string I get &lt;code&gt;NaN&lt;/code&gt;, and if I divide another number by another string I get another &lt;code&gt;NaN&lt;/code&gt;. Are these two&lt;code&gt;NaN&lt;/code&gt; equal? no. &lt;code&gt;NaN&lt;/code&gt; is not even a measurable property.&lt;code&gt;NaN&lt;/code&gt; is a state, and as such it cannot be compared to other&lt;code&gt;NaN&lt;/code&gt;s.&lt;/p&gt;
-
-&lt;p&gt;More on this: &lt;a href=&quot;https://stackoverflow.com/questions/1565164/what-is-the-rationale-for-all-comparisons-returning-false-for-ieee754-nan-values&quot;&gt;What is the rationale for all comparisons returning false for IEEE754 NaN values?&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;why-this-is-not-a-js-only-matter&quot;&gt;Why this is not a JS-only matter&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;NaN&lt;/code&gt; has not been invented by Javascript, or by Java. It is here with us since the first processor, and it is used for a wide range of cases. Here are some:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Division of zero by zero&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Dividing an infinity by an infinity&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Multiplication of an infinity by a zero&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Any operation in which &lt;em&gt;NaN&lt;/em&gt; is an operand&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Converting a non-numeric string or &lt;em&gt;undefined&lt;/em&gt; into a number&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;It is described in standard IEEE 754, from 1985. In this standard you can read how integer and decimal numbers are stored inside a computer (&lt;em&gt;spoiler: decimal numbers in a computer are not real, continuous, neither infinite).&lt;/em&gt; You’ll read of many edge cases regarding decimal numbers, along with what should happen when you’re in one of the cases described before. So, &lt;code&gt;NaN&lt;/code&gt; &lt;strong&gt;is a convention followed by pretty much every programming language&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;javascript-quirks&quot;&gt;Javascript Quirks&lt;/h2&gt;
-
-&lt;p&gt;But JS does some &lt;em&gt;stranger things&lt;/em&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;It has two &lt;code&gt;isNaN()&lt;/code&gt; functions, and you must choose the one you need carefully.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;the standard &lt;code&gt;isNaN()&lt;/code&gt; function does type cohercion, that’s why &lt;code&gt;isNaN(null) == false&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;and-now&quot;&gt;And Now?&lt;/h2&gt;
-
-&lt;p&gt;Should every developer in the world know this? Yes, but chances are that you’ll never need to use this bit of information.&lt;/p&gt;
-
-&lt;p&gt;Is this a good question in a job interview? Well, I don’t think so.&lt;/p&gt;
-
-&lt;p&gt;Chances are that you’ll never need to do this, and even if you hit &lt;code&gt;NaN&lt;/code&gt;, that’s something you’ll learn in two hours wikipedia’s reading (or my blog, hehehe).&lt;/p&gt;
-
-&lt;p&gt;In a Job interview I would focus on what the candidate can actially do and his way of reasoning.&lt;/p&gt;
-
-&lt;p&gt;Of course, if I’m interviewing for a position that has to deal with financial or mathematical programming, knowing of &lt;code&gt;Infinity&lt;/code&gt; or &lt;code&gt;NaN&lt;/code&gt; (and how numbers are processed by the processor). But I wouldn’t do this in Javascript, because JS has no integers.&lt;/p&gt;
-
-&lt;h2 id=&quot;is-it-dumb-to-explore-these-areas-of-a-programming-language&quot;&gt;Is it dumb to explore these areas of a programming language?&lt;/h2&gt;
-
-&lt;p&gt;In my opinion, no. It’s just fun, and a new way to learn something.&lt;/p&gt;
-
-&lt;p&gt;In some very bad comments (ones that started with “you are idiot”) there were some insightful hints that made me follow links, read articles, study more - and write this.&lt;/p&gt;
-
-&lt;p&gt;But on the web I have received some critics like “buy a book and read it”, and the first thing I thought is … &lt;em&gt;haters’ gonna hate&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Others have also accused me of “plagiarism” :D&lt;/p&gt;
-
-&lt;p&gt;Honestly, this happens in every group that has more than 1-2 thousand members; people will comment out just to say that you’re dumb and they’re better.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="nan" /><category term="javascript" /><category term="not-a-number" /><summary type="html">When I posted the NaN article on facebook in a programmers group, I received some very bad reviews. Let’s analyze them.</summary></entry></feed>
+&lt;p&gt;&lt;strong&gt;Grazie Raf per il tuo tempo. Vi lascio con il&lt;/strong&gt; &lt;a href=&quot;http://amzn.to/2hOoizV&quot;&gt;&lt;strong&gt;link al libro su Amazon&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;. alla prossima!&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="growth hacking" /><category term="raffaele gaito" /><category term="marketing" /><category term="libro" /><summary type="html">Conosco Raffaele Gaito dai tempi dell’università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo fare finta che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene:</summary></entry></feed>
