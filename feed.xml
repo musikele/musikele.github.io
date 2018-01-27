@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-27T10:22:59+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Remap backtick, ñ and tilde characters on Windows computers</title><link href="https://michelenasti.com/2018/01/27/remap-backtick-tilde-on-windows.html" rel="alternate" type="text/html" title="Remap backtick, ñ and tilde characters on Windows computers" /><published>2018-01-27T01:00:00+01:00</published><updated>2018-01-27T10:21:26+01:00</updated><id>https://michelenasti.com/2018/01/27/remap-backtick-tilde-on-windows</id><content type="html" xml:base="https://michelenasti.com/2018/01/27/remap-backtick-tilde-on-windows.html">&lt;p&gt;Since the switch to Windows I had a problem to solve as soon as possible: find a way to write the backtick (`) and tilde (~) characters.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-01-27T10:24:58+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Remap backtick, ñ and tilde characters on Windows computers</title><link href="https://michelenasti.com/2018/01/27/remap-backtick-tilde-on-windows.html" rel="alternate" type="text/html" title="Remap backtick, ñ and tilde characters on Windows computers" /><published>2018-01-27T01:00:00+01:00</published><updated>2018-01-27T10:23:38+01:00</updated><id>https://michelenasti.com/2018/01/27/remap-backtick-tilde-on-windows</id><content type="html" xml:base="https://michelenasti.com/2018/01/27/remap-backtick-tilde-on-windows.html">&lt;p&gt;Since the switch to Windows I had a problem to solve as soon as possible: find a way to write the backtick (`) and tilde (~) characters.&lt;/p&gt;
 
-&lt;p&gt;Both the characters, on a mac, can be stroked by pressing &lt;code&gt;AltGr + \\\\\\\\&lt;/code&gt; (backtick) and  &lt;code&gt;AltGr + 6&lt;/code&gt; (tilde).&lt;/p&gt;
+&lt;p&gt;Both the characters, on a mac, can be stroked by pressing &lt;code&gt;AltGr + \&lt;/code&gt; (backtick) and  &lt;code&gt;AltGr + 6&lt;/code&gt; (tilde).&lt;/p&gt;
 
 &lt;p&gt;On Windows the actual combination is incredible and unmemorizable - and, on my Dell XPS laptop, I just can’tuse it. It requires me to use the numeric pad (that I don’t have) so I have to press the function key… well, it’s a lot of strokes only to gain a single character.&lt;/p&gt;
 
@@ -49,12 +49,12 @@ Return
   &lt;li&gt;&lt;code&gt;&amp;lt;^&amp;gt;!&lt;/code&gt; means &lt;strong&gt;AltGr&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;&amp;lt;^&amp;gt;!6&lt;/code&gt; means &lt;em&gt;AltGr + 6&lt;/em&gt;*, pressed together&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;::&lt;/code&gt; means that the input sequence has endend.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Send \~&lt;/code&gt;: that’s the AutoHotkey magic. It will send the &lt;code&gt;\~&lt;/code&gt; character upon receiving of this sequence.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Send ~&lt;/code&gt;: that’s the AutoHotkey magic. It will send the &lt;code&gt;~&lt;/code&gt; character upon receiving of this sequence.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;To send the backtick, I had to use the function &lt;code&gt;SendRaw&lt;/code&gt; because the backtick is a reserved character in AutoHotkey.&lt;/p&gt;
 
-&lt;p&gt;Finally, I have also mapped the &lt;em&gt;n with tilde&lt;/em&gt; (&lt;code&gt;ñ&lt;/code&gt;) useful if you write some spanish.&lt;/p&gt;
+&lt;p&gt;I have also mapped the &lt;em&gt;n with tilde&lt;/em&gt; (&lt;code&gt;ñ&lt;/code&gt;) useful if you write some spanish.&lt;/p&gt;
 
 &lt;h2 id=&quot;execute-the-script-at-startup&quot;&gt;Execute the script (at startup)&lt;/h2&gt;
 
@@ -65,7 +65,7 @@ Return
 &lt;pre&gt;&lt;code&gt;C:\Users\$USER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;remember to change &lt;code&gt;$USER&lt;/code&gt; with your username.&lt;/p&gt;
+&lt;p&gt;Remember to change &lt;code&gt;$USER&lt;/code&gt; with your username.&lt;/p&gt;
 
 &lt;p&gt;Now Markdown will not be a problem anymore!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="windows" /><category term="dell" /><category term="xps" /><category term="backtick" /><category term="keyboard" /><category term="mapping" /><category term="tilde" /><summary type="html">Since the switch to Windows I had a problem to solve as soon as possible: find a way to write the backtick (`) and tilde (~) characters.</summary></entry><entry><title type="html">Perchè la Green Card è una lotteria?</title><link href="https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html" rel="alternate" type="text/html" title="Perchè la Green Card è una lotteria?" /><published>2018-01-17T01:00:00+01:00</published><updated>2018-01-18T10:47:12+01:00</updated><id>https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria</id><content type="html" xml:base="https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html">&lt;p&gt;Ho beccato un post on line in cui si chiedeva se un lavoratore da remoto può lavorare dagli USA per clienti italiani. La risposta precisa ve la potrà dare solo un avvocato esperto (o il consolato USA); semplifichiamo dicendo che se si lavora dal territorio USA bisogna pagare le tasse americane. Per lavorare legalmente in USA ci sono &lt;a href=&quot;https://www.us-immigration.com/greencard/Green-Card-Lottery.html&quot;&gt;molte strade&lt;/a&gt;: la &lt;strong&gt;Green Card&lt;/strong&gt; è una di queste.&lt;/p&gt;
 
