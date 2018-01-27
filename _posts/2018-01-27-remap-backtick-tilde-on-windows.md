@@ -79,6 +79,6 @@ If you want to start the script automatically at every Windows start, just put t
 
     C:\Users\$USER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 
-remember to change `$USER` with your username.
+Remember to change `$USER` with your username.
 
 Now Markdown will not be a problem anymore!
