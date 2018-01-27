@@ -20,7 +20,7 @@ description: If you own a Windows PC and writing backticks, tildes and other spe
 ---
 Since the switch to Windows I had a problem to solve as soon as possible: find a way to write the backtick (\`) and tilde (\~) characters.
 
-Both the characters, on a mac, can be stroked by pressing `AltGr + \\\\\\\\` (backtick) and  `AltGr + 6` (tilde).
+Both the characters, on a mac, can be stroked by pressing `AltGr + \` (backtick) and  `AltGr + 6` (tilde).
 
 On Windows the actual combination is incredible and unmemorizable - and, on my Dell XPS laptop, I just can'tuse it. It requires me to use the numeric pad (that I don't have) so I have to press the function key... well, it's a lot of strokes only to gain a single character.
 
