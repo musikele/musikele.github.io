@@ -65,11 +65,11 @@ Explanation of the first block (the others are similar):
 * `<^>!` means **AltGr**
 * `<^>!6` means _AltGr + 6_\*, pressed together
 * `::` means that the input sequence has endend.
-* `Send \~`: that's the AutoHotkey magic. It will send the `\~` character upon receiving of this sequence.
+* `Send ~`: that's the AutoHotkey magic. It will send the `~` character upon receiving of this sequence.
 
 To send the backtick, I had to use the function `SendRaw` because the backtick is a reserved character in AutoHotkey.
 
-Finally, I have also mapped the _n with tilde_ (`ñ`) useful if you write some spanish.
+I have also mapped the _n with tilde_ (`ñ`) useful if you write some spanish.
 
 ## Execute the script (at startup)
 
