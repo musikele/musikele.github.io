@@ -54,7 +54,7 @@ new Vue({
 
 Let's describe this snippet:
 
-* the `el` references the DOM element with the `#app` id. This element will be _Vue_zed.
+* the `el` references the DOM element with the `#app` id. This element will be _Vuezed_.
 * the `data` object contains the data that can be used inside the HTML: for example, we used the `message` property in the Html.
 * the `methods` property contains the methods you can use in your html. These are useful for calculations or for actions, like clicking on a button.
 
