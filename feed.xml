@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-02-18T16:45:18+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">[Risultati Sondaggio] - I programmatori e i corsi di formazione</title><link href="https://michelenasti.com/2018/02/02/risultati-sondaggio-i-programmatori-e-i-corsi-di-formazione.html" rel="alternate" type="text/html" title="[Risultati Sondaggio] - I programmatori e i corsi di formazione" /><published>2018-02-02T01:00:00+01:00</published><updated>2018-02-02T10:44:52+01:00</updated><id>https://michelenasti.com/2018/02/02/risultati-sondaggio-i-programmatori-e-i-corsi-di-formazione</id><content type="html" xml:base="https://michelenasti.com/2018/02/02/risultati-sondaggio-i-programmatori-e-i-corsi-di-formazione.html">&lt;p&gt;Ciao ragazzi! Più o meno una settimana fa ho lanciato questo sondaggio nel gruppo di programmatori salernitani che ho il piacere di coordinare, &lt;a href=&quot;https://www.facebook.com/groups/DevDaySalerno/&quot; title=&quot;DevDay Salerno&quot;&gt;DevDay Salerno&lt;/a&gt;. Il sondaggio cercava di capire in che modo gli informatici professionisti si aggiornano, o comunque cercano di stare al passo con le nuove tecnologie lavorative.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-02-18T16:51:10+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Un giro nell’universo React</title><link href="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html" rel="alternate" type="text/html" title="Un giro nell'universo React" /><published>2018-02-18T01:00:00+01:00</published><updated>2018-02-18T16:49:41+01:00</updated><id>https://michelenasti.com/2018/02/18/un-giro-nell-universo-react</id><content type="html" xml:base="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html">&lt;p&gt;Da quando &lt;strong&gt;React&lt;/strong&gt; è stato rilasciato da Facebook è diventato rapidamente una delle librerie più usate per la realizzazione di interfacce web. Come mai?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/1024px-React-icon.svg.png&quot; alt=&quot;&quot; title=&quot;React Logo&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;perchè-react-piace-ai-millenials&quot;&gt;Perchè React piace ai millenials&lt;/h2&gt;
+
+&lt;p&gt;Abbiamo iniziato a sentir parlare di React in un momento storico in cui AngularJS 1.x era al massimo del suo hype, e si iniziava a progettare Angular2. Quei fantastici ragazzotti della Silicon Valley quando generano tanto hype in genere lo fanno perchè c’è un motivo, ossia ci vedono lungo e in effetti React è con noi da ormai tre anni, che è tantissimo per una libreria frontend.&lt;/p&gt;
+
+&lt;p&gt;I motivi per cui piace sono:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;E’ una libreria che si occupa solo della view&lt;/strong&gt;, quindi tutto il resto è lasciato nelle mani del programmatore. Penso a: comunicazione col server, traduzioni, o più semplicemente gestione dello stato. Per ognuna di queste cose si possono usare librerie esterne (fatte molto bene).&lt;/li&gt;
+  &lt;li&gt;A parte una curva d’apprendimento “media”, tutto sommato &lt;strong&gt;React è abbastanza semplice da imparare e usare&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Ma quali sono i vantaggi rispetto a Angular1? (Lo confronto con questo framework perchè, all’epoca in cui fu rilasciato React, c’era solo lui.) Quello che nessun programmatore ammette di amare, ma che invece è un gran vantaggio, è &lt;strong&gt;il &lt;em&gt;live preview&lt;/em&gt; dei cambiamenti&lt;/strong&gt;, sfruttando le magie di webpack e dell’hot module reloading, per cui i tempi di sviluppo si riducono enormemente.&lt;/li&gt;
+  &lt;li&gt;Inoltre &lt;strong&gt;React gestisce i cambiamenti di migliaia di componenti su una sola pagina senza appesantire il browser&lt;/strong&gt;, anzi è estremamente veloce nel capire cosa è cambiato e cosa deve ri-renderizzare.&lt;/li&gt;
+  &lt;li&gt;E’ &lt;strong&gt;sponsorizzato da FB, è utilizzato in produzione da tante startup di grande successo&lt;/strong&gt; (tra cui AirBnB) e questo ha contribuito all’hype.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La mia paura più grande era di dover imparare un mix di tecnologie che non  conoscevo:  jsx, webpack, es6… Da create-react-app in poi tutto questo è una bestia “addomesticabile”.&lt;/p&gt;
+
+&lt;h2 id=&quot;luso-di-es6&quot;&gt;L’uso di ES6&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;React può essere usato anche con ES5&lt;/strong&gt;, ossia la versione precedente di Javascript che non aveva tante feature, e a dirla tutta può addirittura essere usato senza JSX, che sarebbe un modo per scrivere HTML dentro JS. All’atto pratico tutto ciò è infattibile, &lt;strong&gt;i benefici di JSX (e di babel/webpack che compilano/trasformano) sono impagabili.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ma è con &lt;strong&gt;ES6&lt;/strong&gt; (la versione di js che contiene arrrow functions, destructuring, etc.) che React viene di solito scritto/usato, ed è quindi con ES6 che troverete codice, esempi e documentazione. Da convinto programmatore NodeJS, la sintassi che più detesto è &lt;code&gt;import Something from './something'&lt;/code&gt; e la  corrispettiva &lt;code&gt;export const&lt;/code&gt;.  Comunque, ci si abitua in fretta.&lt;/p&gt;
+
+&lt;h2 id=&quot;react-vs-vue&quot;&gt;React vs Vue&lt;/h2&gt;
+
+&lt;p&gt;Ci sarebbe tanto da dire, ma voglio concludere ripetendo che questo post viene da neanche un mese di React quindi le mie opinioni potrebbero cambiare.&lt;/p&gt;
+
+&lt;p&gt;Io conosco abbastanza bene anche VueJS, e sinceramente trovo anche questo framework fatto bene con tante feature e una logica di fondo molto chiara, per cui bisogna fare meno scelte rispetto a React (es. come gestire lo stato, come strutturare i componenti …) ma React ha uno sponsor più grande e questo garantisce, sulla carta, una vita più lunga.&lt;/p&gt;
+
+&lt;p&gt;E voi che esperienza avete? Se volete scrivete le vostre impressioni nei commenti, saranno sicuramente utili a chi passa per questo blog e cerca informazioni.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="react" /><category term="frontend" /><category term="javascript" /><summary type="html">Da quando React è stato rilasciato da Facebook è diventato rapidamente una delle librerie più usate per la realizzazione di interfacce web. Come mai?</summary></entry><entry><title type="html">[Risultati Sondaggio] - I programmatori e i corsi di formazione</title><link href="https://michelenasti.com/2018/02/02/risultati-sondaggio-i-programmatori-e-i-corsi-di-formazione.html" rel="alternate" type="text/html" title="[Risultati Sondaggio] - I programmatori e i corsi di formazione" /><published>2018-02-02T01:00:00+01:00</published><updated>2018-02-02T10:44:52+01:00</updated><id>https://michelenasti.com/2018/02/02/risultati-sondaggio-i-programmatori-e-i-corsi-di-formazione</id><content type="html" xml:base="https://michelenasti.com/2018/02/02/risultati-sondaggio-i-programmatori-e-i-corsi-di-formazione.html">&lt;p&gt;Ciao ragazzi! Più o meno una settimana fa ho lanciato questo sondaggio nel gruppo di programmatori salernitani che ho il piacere di coordinare, &lt;a href=&quot;https://www.facebook.com/groups/DevDaySalerno/&quot; title=&quot;DevDay Salerno&quot;&gt;DevDay Salerno&lt;/a&gt;. Il sondaggio cercava di capire in che modo gli informatici professionisti si aggiornano, o comunque cercano di stare al passo con le nuove tecnologie lavorative.&lt;/p&gt;
 
 &lt;p&gt;Hanno risposto &lt;strong&gt;40 persone&lt;/strong&gt;, che considero un buon numero che rappresenta la nostra community. Nel gruppo facebook ci sono circa 200 persone, su &lt;a href=&quot;https://www.meetup.com/it-IT/devday-salerno/&quot; title=&quot;DevDay Salerno&quot;&gt;Meetup&lt;/a&gt; (che è il nostro sito di riferimento, eh!) siamo 430 e passa.&lt;/p&gt;
 
@@ -389,47 +421,4 @@ La  cosa più semplice che mi viene da consigliarti é di creare software che ri
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;em&gt;Quest’articolo era, in principio, un commento a un post su facebook. In bocca al lupo a tutti quelli che parteciperanno al programma.&lt;/em&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="erasmus" /><category term="studio" /><category term="life" /><category term="università" /><summary type="html">Anche io ho partecpato al programma Erasmus, era il 2006, l’anno dei mondiali e io ero a Siviglia. Non avete idea di quanto sia appagante vincere un mondiale all’estero.</summary></entry><entry><title type="html">Alla scoperta di VueJS</title><link href="https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html" rel="alternate" type="text/html" title="Alla scoperta di VueJS" /><published>2017-12-03T01:00:00+01:00</published><updated>2017-12-04T23:24:55+01:00</updated><id>https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js</id><content type="html" xml:base="https://michelenasti.com/2017/12/03/alla-scoperta-di-vue-js.html">&lt;p&gt;E’ domenica, il Napoli non gioca, che fare? Dopo aver acceso il camino ho iniziato a guardarmi un po’ di VueJS.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/vuejs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;vuejs-un-framework-minore&quot;&gt;VueJS, Un framework minore?&lt;/h2&gt;
-
-&lt;p&gt;In questo mondo dominato da Angular e React, c’è ancora spazio per altri framework frontend?&lt;/p&gt;
-
-&lt;p&gt;Ti faccio un’altra domanda: quando ai suoi tempi c’era &lt;em&gt;solo&lt;/em&gt; JQuery, riuscivi a pensare che sarebbe mai nata un’altra libreria per il frontend?&lt;/p&gt;
-
-&lt;p&gt;Penso di aver sentito parlare la prima volta di Vue che c’era &lt;em&gt;solo&lt;/em&gt; Angular 1 in giro, e tutti gli altri framework sgomitavano per diventare famosi. C’è chi ce l’ha fatta, tipo React, e chi invece ci prova ancora e non ci riesce, tipo Ember.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;La differenza, molto spesso, la fa l’azienda che sponsorizza&lt;/strong&gt;: Google per Angular, e Facebook per React.&lt;/p&gt;
-
-&lt;p&gt;Nel caso di Vue, le aziende sponsorizzatrici non sono proprio dei nomi di primo piano: &lt;a href=&quot;https://stdlib.com/&quot; title=&quot;StdLib&quot;&gt;StLib&lt;/a&gt;, un’azienda che realizza un framework per codice serverless, &lt;strong&gt;non la conoscevo prima di oggi&lt;/strong&gt;. Quindi, già su questo, partiamo svantaggiati.&lt;/p&gt;
-
-&lt;h2 id=&quot;cosa-mi-ha-colpito-di-vuejs&quot;&gt;Cosa mi ha colpito di VueJS&lt;/h2&gt;
-
-&lt;p&gt;L’approccio di VueJS è molto semplice, e questo è uno dei principali punti di forza:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;non c’è bisogno di partire da un boilerplate&lt;/strong&gt;, ma basta un file html linkato a uno script js;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;non c’è bisogno di conoscere la programmazione super avanzata&lt;/strong&gt;, ma bastano le conoscenze di un normale programmatore;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Somiglia in tutto e per tutto al primo angular&lt;/strong&gt;, quello che ho imparato a conoscere dannatamente e bene, e che funzionava alla grande;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;la documentazione è chiarissima&lt;/strong&gt; e sin dall’inizio si entra nel vivo di VueJS.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Non mi sono ancora addentrato molto, ma ho notato che il sistema dei componenti è semplicissimo e soprattutto &lt;strong&gt;si può iniziare a lavorare senza mettere in mezzo i vari webpack&lt;/strong&gt;, systemjs, browserify e compagnia cantando.&lt;/p&gt;
-
-&lt;p&gt;A questo punto una domanda me la sono fatta anch’io:&lt;/p&gt;
-
-&lt;h2 id=&quot;vuejs-è-un-framework-moderno&quot;&gt;VueJS è un framework moderno?&lt;/h2&gt;
-
-&lt;p&gt;Nel senso, ha quelle caratteristiche di un &lt;strong&gt;framework post-angular1&lt;/strong&gt; (utilizzo di un virtual dom, utilizzo di paradigmi reactive, server-side rendering…)  ?&lt;/p&gt;
-
-&lt;p&gt;Il team di Vue ha scritto un’analisi tecnica molto profonda di Vue vs ogni-altra libreria-frontend sul mercato, soffermandosi specialmente su React perchè è quella cui somiglia di più. La velocità non deve essere presa in considerazione come fattore determinante, perchè Vue e React hanno numeri molto simili; quello che cambia è in dettagli come la curva di apprendimento, cosa accade all’intera applicazione un componente si aggiorna, etc.&lt;/p&gt;
-
-&lt;p&gt;Questo vuol dire che si, &lt;strong&gt;Vue è una libreria frontend che si occupa solo della view&lt;/strong&gt;, lasciando ad altre librerie il compito del routing o di altre cose belle (autenticazione, autorizzazione, chiamate http…).&lt;/p&gt;
-
-&lt;h2 id=&quot;sono-solo-allinizio&quot;&gt;Sono solo all’inizio&lt;/h2&gt;
-
-&lt;p&gt;A parte il primo tutorial, che mi ha lasciato un’ottima impressione, c’è ancora tanto da guardare. Vorrei provare a sviluppare qualcosa di meno semplice così da farmi un’idea di come funziona quando le linee di codice aumentano. Resisterà VueJS alla prova della complessità?&lt;/p&gt;
-
-&lt;p&gt;Nei prossimi articoli proverò ad entrare più nel dettaglio di come funziona Vue. Keep reading!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="vuejs" /><category term="javascript" /><category term="frontend" /><category term="angular" /><category term="react" /><category term="vue" /><summary type="html">E’ domenica, il Napoli non gioca, che fare? Dopo aver acceso il camino ho iniziato a guardarmi un po’ di VueJS.</summary></entry></feed>
+&lt;p&gt;&lt;em&gt;Quest’articolo era, in principio, un commento a un post su facebook. In bocca al lupo a tutti quelli che parteciperanno al programma.&lt;/em&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="erasmus" /><category term="studio" /><category term="life" /><category term="università" /><summary type="html">Anche io ho partecpato al programma Erasmus, era il 2006, l’anno dei mondiali e io ero a Siviglia. Non avete idea di quanto sia appagante vincere un mondiale all’estero.</summary></entry></feed>
