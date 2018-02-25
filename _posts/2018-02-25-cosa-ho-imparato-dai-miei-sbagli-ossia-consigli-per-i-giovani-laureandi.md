@@ -36,7 +36,7 @@ Come ho già scritto il CV era colorato, con addirittura il _simboletto di whats
 Alcune **eccezioni** a questa regola: 
 
 * **Un blog**. Se hai un blog con contenuti relativi alla tua professione, **il blog merita di essere in prima pagina proprio sotto al numero di telefono**. I recruiter infatti ti cercano sui social, e se gli rendi facile l'accesso al tuo sito è come se il colloquio partisse già in discesa. Il mio blog è in prima pagina ;) 
-* **Eventuali altri contatti e riferimenti social SOLO se richiesti.** Per posizioni di copywriting, o altre di cui non ne ho idea, potrebbe essere necessario fornire anche il proprio profilo social. In questi casi valutate voi se darli oppure no (ho visto alcune job descriptions in USA in cui cercavano dev con un [_Klout Score_](https://klout.com/#/micnasti) di un certo tipo).
+* **Eventuali altri contatti e riferimenti social SOLO se richiesti.** Per posizioni di copywriting, o altre di cui non ne ho idea, potrebbe essere necessario fornire anche il proprio profilo social. In questi casi valutate voi se darli oppure no (purtroppo ho visto job descriptions in USA in cui cercavano dev con un [_Klout Score_](https://klout.com/#/micnasti) di un certo tipo).
 
 **Prima tenevo molto alla privacy ma poi ho capito che i social potevano essere usati a mio favore**. La mia bacheca prima era chiusa ai più, poi ho cambiato completamente registro e **adesso condivido prevalentemente roba di lavoro**; chi mi trova sa cosa ha trovato. E il colloquio si semplifica parecchio, di nuovo. 
 
