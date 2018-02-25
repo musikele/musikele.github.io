@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: 'consigli per i junior e laureandi (ossia: evitate gli errori che ho fatto
+title: 'Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto
   io)'
 category: Italiano
 layout: post
