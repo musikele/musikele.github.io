@@ -10,7 +10,12 @@ date: 2018-02-25 00:00:00 +0000
 header-img: "/images/0402ae2.jpg"
 description: 'Consigli per i neolaureati: come redigere il CV, come trovare stage,
   evitando gli errori classici '
-tags: []
+tags:
+- lavoro
+- stage
+- devday
+- junior
+- neolaureati
 ---
 Ieri sera abbiamo tenuto un altro incontro del [DevDay Salerno](https://www.meetup.com/it-IT/devday-salerno/?chapter_analytics_code=UA-74462208-1), un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E' andato molto bene. 
 
