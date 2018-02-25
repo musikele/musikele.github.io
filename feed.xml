@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-02-25T18:17:09+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Un giro nell’universo React</title><link href="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html" rel="alternate" type="text/html" title="Un giro nell'universo React" /><published>2018-02-18T01:00:00+01:00</published><updated>2018-02-18T16:49:41+01:00</updated><id>https://michelenasti.com/2018/02/18/un-giro-nell-universo-react</id><content type="html" xml:base="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html">&lt;p&gt;Da quando &lt;strong&gt;React&lt;/strong&gt; è stato rilasciato da Facebook è diventato rapidamente una delle librerie più usate per la realizzazione di interfacce web. Come mai?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-02-25T18:30:08+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Cosa ho imparato dai miei sbagli (ossia: consigli per i giovani laureandi)</title><link href="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html" rel="alternate" type="text/html" title="Cosa ho imparato dai miei sbagli (ossia: consigli per i giovani laureandi)" /><published>2018-02-25T01:00:00+01:00</published><updated>2018-02-25T18:28:04+01:00</updated><id>https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi</id><content type="html" xml:base="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html">&lt;p&gt;Ieri sera abbiamo tenuto un altro incontro del &lt;a href=&quot;https://www.meetup.com/it-IT/devday-salerno/?chapter_analytics_code=UA-74462208-1&quot;&gt;DevDay Salerno&lt;/a&gt;, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.&lt;/p&gt;
+
+&lt;p&gt;All’incontro c’erano anche due studenti in cerca di uno stage e ciò mi ha fatto molto piacere: la community si è mostrata molto ricettiva con loro.&lt;/p&gt;
+
+&lt;p&gt;Prima dell’incontro &lt;strong&gt;uno dei due mi ha inviato il cv affinchè gli dessi uno sguardo&lt;/strong&gt;. Purtroppo la mia risposta non è stata quella che si aspettavano: “&lt;em&gt;fa schifo&lt;/em&gt;”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/0402ae2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;che-hanno-i-loro-cv-che-non-va&quot;&gt;Che hanno i loro CV che non va?&lt;/h2&gt;
+
+&lt;h3 id=&quot;regola-numero-1-realizza-il-cv-nel-formato-che-vogliono-le-aziende&quot;&gt;Regola numero 1: &lt;strong&gt;realizza il CV nel formato che vogliono le aziende.&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;In Italia vuol dire, al 99%, &lt;strong&gt;formato europeo&lt;/strong&gt; (potete dire che fa schifo, che è verboso, ma le aziende vogliono questo e questo dovete dargli). Il loro CV invece era colorato, sfondo verde, icone, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Se si cerca lavoro all’estero non basterà tradurre il cv&lt;/strong&gt;: gli stranieri sono abituati a un formato più snello accompagnato da cover letter, quindi dovrai realizzare un CV anche così.&lt;/p&gt;
+
+&lt;p&gt;Io ne ho due sempre pronti e sempre aggiornati, uno &lt;em&gt;formato Europeo&lt;/em&gt; (…che all’estero non usano) e uno in Inglese, per le aziende internazionali.&lt;/p&gt;
+
+&lt;h3 id=&quot;regola-numero-2-keep-it-professional&quot;&gt;Regola numero 2: &lt;strong&gt;Keep it professional&lt;/strong&gt;.&lt;/h3&gt;
+
+&lt;p&gt;Come ho già scritto il CV era colorato, con addirittura il &lt;em&gt;simboletto di whatsapp accanto al numero di telefono&lt;/em&gt;. &lt;strong&gt;Un CV del genere sarebbe appena valutato (…forse?) da un’agenzia di comunicazione&lt;/strong&gt;, ma io non lo consiglierei e infatti gli ho intimato di ritornare al bianco &amp;amp; nero. Ricordiamoci che il CV serve per trovare lavoro, quindi non dobbiamo mettere tutti i possibili modi per trovarci (twitter… facebook… msn?!).&lt;/p&gt;
+
+&lt;p&gt;Alcune &lt;strong&gt;eccezioni&lt;/strong&gt; a questa regola:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Un blog&lt;/strong&gt;. Se hai un blog con contenuti relativi alla tua professione, &lt;strong&gt;il blog merita di essere in prima pagina proprio sotto al numero di telefono&lt;/strong&gt;. I recruiter infatti ti cercano sui social, e se gli rendi facile l’accesso al tuo sito è come se il colloquio partisse già in discesa. Il mio blog è in prima pagina ;)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Eventuali altri contatti e riferimenti social SOLO se richiesti.&lt;/strong&gt; Per posizioni di copywriting, o altre di cui non ne ho idea, potrebbe essere necessario fornire anche il proprio profilo social. In questi casi valutate voi se darli oppure no (purtroppo ho visto job descriptions in USA in cui cercavano dev con un &lt;a href=&quot;https://klout.com/#/micnasti&quot;&gt;&lt;em&gt;Klout Score&lt;/em&gt;&lt;/a&gt; di un certo tipo).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Prima tenevo molto alla privacy ma poi ho capito che i social potevano essere usati a mio favore&lt;/strong&gt;. La mia bacheca prima era chiusa ai più, poi ho cambiato completamente registro e &lt;strong&gt;adesso condivido prevalentemente roba di lavoro&lt;/strong&gt;; chi mi trova sa cosa ha trovato. E il colloquio si semplifica parecchio, di nuovo.&lt;/p&gt;
+
+&lt;h3 id=&quot;regola-numero-3-non-mettere-la-lista-degli-esami&quot;&gt;Regola numero 3: &lt;strong&gt;non mettere la lista degli esami&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;Ovviamente, se te la chiedono (per alcuni lavori statali la lista degli esami è richiesta), puoi inserirla. Ma in generale non ha senso.&lt;/p&gt;
+
+&lt;p&gt;Il problema è che la lista degli esami è un’arma a doppio taglio: compare sicuramente anche quel voto di cui ti vergogni, o l’esame che hai &lt;em&gt;rubato&lt;/em&gt;, ma soprattutto la lista degli esami non fa capire a un selezionatore se davanti ha una persona che gioca di squadra, o una persona orientata alla ricerca, al project management, etc.&lt;/p&gt;
+
+&lt;p&gt;Questo è un errore che ho commesso anche io, e &lt;strong&gt;ricordo l’imbarazzo quando il selezionatore di IBM me lo fece notare&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Cosa mettere, dunque, in questo CV?&lt;/strong&gt; Chi si laurea, magari alla triennale, non ha idea di cosa scriverci.&lt;/p&gt;
+
+&lt;p&gt;Durante i tre anni di università si sviluppano tanti progetti: io ho addirittura sostenuto un esame come project manager, cosa che si è poi rivelata molto utile nel mondo del lavoro e come soft skill. Conviene parlare di questi progetti nel CV: racconta cosa hai fatto, il tuo ruolo, le tecnologie usate.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Se avete progetti extrauniversitari&lt;/strong&gt; (es. siti web, app, etc) che hanno un senso per chi vi intervista, &lt;strong&gt;inseriteli&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Se invece avete fatto i camerieri&lt;/strong&gt; (come me!), io l’ho scritto sotto una voce “altre esperienze”, ma è davvero scritto così: &lt;em&gt;altre esperienze: cameriere&lt;/em&gt;. Se ti stanno intervistando per il ruolo di front-end developer, a chi serve sapere che sai portare le pizze ai tavoli? Può però essere utile sapere che non sei stato con le mani in mano, ma questo dipende dalle opinioni dei selezionatori.&lt;/p&gt;
+
+&lt;h2 id=&quot;come-procurarsi-un-paio-di-colloqui-senza-inviare-nemmeno-un-cv&quot;&gt;Come procurarsi un paio di colloqui senza inviare nemmeno un CV&lt;/h2&gt;
+
+&lt;p&gt;Il trucco è davvero semplice e stupido: i due ragazzi di cui sopra sono venuti al nostro evento, si sono presentati (sotto mio consiglio) a decine di persone spiegando chiaramente che erano in cerca di stage.&lt;/p&gt;
+
+&lt;p&gt;Ovviamente &lt;strong&gt;ieri sera non c’erano i CEO&lt;/strong&gt; (…in verità qualcuno si), ma &lt;strong&gt;una sovrabbondanza di senior programmer e team leader che hanno fatto un colloquio “al volo” al termine dell’evento&lt;/strong&gt;, tra una pizzettina e una coca.&lt;/p&gt;
+
+&lt;p&gt;Un altro consiglio è di parlare con tutti, anche con quelli che non ti interessano  (specialmente ora che non hai nessun tipo di esperienza), e di accettare il lavoro che ti permette di imparare di più.&lt;/p&gt;
+
+&lt;p&gt;Ecco infatti un’altra cosa che ho imparato sulla mia pelle: &lt;strong&gt;rifiutare un lavoro non significa rifiutarlo per sempre&lt;/strong&gt;, dobbiamo infatti lavorare 35 anni (almeno) e chi sa che non ci si reincontra, in questo lavoro o nel prossimo.&lt;/p&gt;
+
+&lt;p&gt;Una cosa che infatti i laureandi sottovalutano è che fare una buona &lt;em&gt;prima esperienza&lt;/em&gt; è fondamentale: &lt;strong&gt;conosci delle persone che poi saranno mentor per tutta la tua vita&lt;/strong&gt;, che ti indirizzeranno anche in base alle tue inclinazioni. Non mento se vi dico che le persone che ora considero cruciali per la mia carriera professionale le ho trovate alla mia prima esperienza.&lt;/p&gt;
+
+&lt;h2 id=&quot;e-non-abbiamo-parlato-di-soldi&quot;&gt;E non abbiamo parlato di soldi&lt;/h2&gt;
+
+&lt;p&gt;Finchè siete junior, &lt;strong&gt;non proccupatevi dei soldi&lt;/strong&gt;. Non sto dicendo che dovete morire di fame, anzi dovete guadaganare il giusto per vivere (non sopravvivere), ma i soldi veri li farai quando ti riterrai senior e potrai far pesare le tue capacità all’azienda.&lt;/p&gt;
+
+&lt;h2 id=&quot;aiutiamo-i-junior&quot;&gt;Aiutiamo i junior!&lt;/h2&gt;
+
+&lt;p&gt;Mi piacerebbe leggere nei commenti il tuo consiglio per junior, laureandi e neolaureati. &lt;strong&gt;C’è un esercito di studenti che sta per terminare gli studi e vuole risposte a domande che non sa porre&lt;/strong&gt;. Aiutiamoli!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Ieri sera abbiamo tenuto un altro incontro del DevDay Salerno, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.</summary></entry><entry><title type="html">Un giro nell’universo React</title><link href="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html" rel="alternate" type="text/html" title="Un giro nell'universo React" /><published>2018-02-18T01:00:00+01:00</published><updated>2018-02-18T16:49:41+01:00</updated><id>https://michelenasti.com/2018/02/18/un-giro-nell-universo-react</id><content type="html" xml:base="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html">&lt;p&gt;Da quando &lt;strong&gt;React&lt;/strong&gt; è stato rilasciato da Facebook è diventato rapidamente una delle librerie più usate per la realizzazione di interfacce web. Come mai?&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/1024px-React-icon.svg.png&quot; alt=&quot;&quot; title=&quot;React Logo&quot; /&gt;&lt;/p&gt;
 
@@ -403,22 +468,4 @@ La  cosa più semplice che mi viene da consigliarti é di creare software che ri
 
 &lt;p&gt;In fact, Vue proxies the &lt;code&gt;this&lt;/code&gt; keyword so that you can access to data without writing &lt;code&gt;this.data.message&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;However, for &lt;code&gt;this&lt;/code&gt; to work you must write 90% of the time the old ES5 &lt;code&gt;function()&lt;/code&gt; declaration: this is expecially clear in VueJS components, an argouments we’ll talk in another post.&lt;/p&gt;</content><author><name>musikele</name></author><category term="vuejs" /><category term="javascript" /><category term="frontend" /><summary type="html">It has been a long week for me, I’m studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.</summary></entry><entry><title type="html">Dovrei partecipare al programma Erasmus?</title><link href="https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus.html" rel="alternate" type="text/html" title="Dovrei partecipare al programma Erasmus?" /><published>2017-12-04T01:00:00+01:00</published><updated>2017-12-04T17:09:42+01:00</updated><id>https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus</id><content type="html" xml:base="https://michelenasti.com/2017/12/04/dovrei-partecipare-al-programma-erasmus.html">&lt;p&gt;&lt;strong&gt;Anche io ho partecpato al programma Erasmus&lt;/strong&gt;, era il 2006, l’anno dei mondiali e io ero a Siviglia. &lt;em&gt;Non avete idea di quanto sia appagante vincere un mondiale all’estero&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Basandomi sui miei ricordi: prima di partire &lt;strong&gt;hai paura&lt;/strong&gt;, il primo mese che stai lì ti chiedi &lt;strong&gt;ma chi te l’ha fatto fare&lt;/strong&gt; mentre cerchi casa, fai la spesa, ti iscrivi ai corsi; il secondo mese è insieme al primo il più duro, &lt;strong&gt;pensi di aver fatto la cazzata più grande della tua vita&lt;/strong&gt;, non capisci la gente quando parla, non sai cosa fare e dove andare, un po’ ti senti solo se non hai nessuno (e io partii da solo)…&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Poi venne fuori la faccia di bronzo&lt;/strong&gt;. Un giorno sentii parlare in italiano in autobus e chiesi “hey, sei Erasmus? ma dove diavolo uscite la sera?”; un altro giorno incontrai degli studenti spagnoli che festeggiavano un’Italian Day con dolci italiani (disgustosi e mai mangiati prima) e in pratica finii a uscirci insieme e a correggergli i compiti, etc etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Il terzo mese inizi a pensare che l’Erasmus è una figata pazzesca&lt;/strong&gt;, il quarto il quinto e il sesto &lt;strong&gt;speri non finisca mai&lt;/strong&gt; e inizi a progettare fughe, rimpatriate, anche se già sai che tante cose dovranno necessariamente finire lì.&lt;/p&gt;
-
-&lt;p&gt;E in  tutto questo c’è che ti lasci con la ragazza o ne trovi una nuova, si conoscono persone di tutto il mondo, si imparano nuove lingue e si girano continenti. &lt;strong&gt;Anche i sentimenti si mettono a dura prova.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Dal  punto di vista accademico ho avuto un problemaccio con lo spagnolo andaluso, In pratica i primi tre mesi di corso non ho capito nulla. Io, mai bocciato, in Spagna feci un solo esame su tre preventivati, ma quando tornai in Italia superai quei due esami con 30&amp;amp;lode.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Chiunque dovrebbe fare l’Erasmus. Anche chi non va all’università. Specialmente chi è fidanzato/a. Specialmente chi ha paura.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tutti.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;Quest’articolo era, in principio, un commento a un post su facebook. In bocca al lupo a tutti quelli che parteciperanno al programma.&lt;/em&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="erasmus" /><category term="studio" /><category term="life" /><category term="università" /><summary type="html">Anche io ho partecpato al programma Erasmus, era il 2006, l’anno dei mondiali e io ero a Siviglia. Non avete idea di quanto sia appagante vincere un mondiale all’estero.</summary></entry></feed>
+&lt;p&gt;However, for &lt;code&gt;this&lt;/code&gt; to work you must write 90% of the time the old ES5 &lt;code&gt;function()&lt;/code&gt; declaration: this is expecially clear in VueJS components, an argouments we’ll talk in another post.&lt;/p&gt;</content><author><name>musikele</name></author><category term="vuejs" /><category term="javascript" /><category term="frontend" /><summary type="html">It has been a long week for me, I’m studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.</summary></entry></feed>
