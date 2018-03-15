@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: Non prendere programmatori a P. IVA se il tuo progetto deve durare molto
+title: I programmatori a Partita IVA non sono la soluzione a tutto
 category: Italiano
 layout: post
 date: 2018-03-15 00:00:00 +0000
