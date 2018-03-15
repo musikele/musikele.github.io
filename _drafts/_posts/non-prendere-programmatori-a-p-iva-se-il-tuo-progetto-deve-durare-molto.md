@@ -13,7 +13,7 @@ tags:
 description: Le aziende vogliono che il loro progetto sia concluso con alta qualità
   e con poca spesa; i partita iva invece cercano più clienti per non dipendere da
   uno solo. Riesci a vedere dov'è il problema?
-header-img: ''
+header-img: "/images/partita_iva.jpg"
 ---
 Da coordinatore del [DevDay Salernitano](https://www.meetup.com/devday-salerno) ricevo spesso **richieste di lavoro da parte di aziende**: chi cerca neolaureati, chi cerca senior, chi cerca questo e chi cerca quello. Ma soprattutto **c'è un sacco di gente che cerca i Partita IVA**. Secondo me è un errore, e adesso provo a spiegarti il perché.
 
@@ -44,6 +44,8 @@ Questo si scontra invece con la motivazione per cui i programmatori diventano P.
 * **lavorare con roba sempre nuova**. Sono convinto che un P.IVA guardi prima di tutto al fatturato, ma uno dei vantaggi è che si può permettere anche di esplorare le nuove frontiere dell'informatica, soprattutto sui progetti più piccoli. 
 
 ## Dov'è il problema
+
+![]({{ site.baseurl }}/images/partita_iva.jpg)
 
 **Il problema è nell'accoppiata "progetto grande" (o progetto medio che sta  diventando grande) + "P.IVA con molti clienti".** 
 
