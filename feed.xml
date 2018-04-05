@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-04-05T15:38:37+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Un programmatore dovrebbe continuare a programmare nel suo tempo libero?</title><link href="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" rel="alternate" type="text/html" title="Un programmatore dovrebbe continuare a programmare nel suo tempo libero?" /><published>2018-04-05T02:00:00+02:00</published><updated>2018-04-05T10:17:21+02:00</updated><id>https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero</id><content type="html" xml:base="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html">&lt;p&gt;Programmare è diventata una passione.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-04-05T15:39:34+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Un programmatore dovrebbe continuare a programmare nel suo tempo libero?</title><link href="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" rel="alternate" type="text/html" title="Un programmatore dovrebbe continuare a programmare nel suo tempo libero?" /><published>2018-04-05T02:00:00+02:00</published><updated>2018-04-05T10:17:21+02:00</updated><id>https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero</id><content type="html" xml:base="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html">&lt;p&gt;Programmare è diventata una passione.&lt;/p&gt;
 
 &lt;p&gt;Questa frase mi suona ridicola, perchè io non sono mai stato un tipo che realizza side projects, neanche ai tempi dell’università (e sbagliavo!).&lt;/p&gt;
 
@@ -41,7 +41,75 @@
 
 &lt;p&gt;A queste domande non so ancora rispondere. Se ti piace fare qualcosa vorresti poi farla per più tempo possibile. Salvo poi scoprire che farlo tutti i giorni, e anche nel tempo libero, si rivela non essere questo gran divertimento. E insomma devi necessariamente “scappare” dal codice per passare ad altro, altrimenti rischi di passare la tua giornata a fare qualcosa che odi.&lt;/p&gt;
 
-&lt;p&gt;E questo non lo auguro a nessuno!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="programming" /><category term="tempo libero" /><category term="programmatore" /><category term="riflessioni" /><summary type="html">Programmare è diventata una passione.</summary></entry><entry><title type="html">Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)</title><link href="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html" rel="alternate" type="text/html" title="Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)" /><published>2018-02-25T01:00:00+01:00</published><updated>2018-02-26T14:56:05+01:00</updated><id>https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi</id><content type="html" xml:base="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html">&lt;p&gt;Ieri sera abbiamo tenuto un altro incontro del &lt;a href=&quot;https://www.meetup.com/it-IT/devday-salerno/?chapter_analytics_code=UA-74462208-1&quot;&gt;DevDay Salerno&lt;/a&gt;, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.&lt;/p&gt;
+&lt;p&gt;E questo non lo auguro a nessuno!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="programming" /><category term="tempo libero" /><category term="programmatore" /><category term="riflessioni" /><summary type="html">Programmare è diventata una passione.</summary></entry><entry><title type="html">Come realizzare un form esterno (Es. assistenza) che manda dati a MagNews</title><link href="https://michelenasti.com/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.html" rel="alternate" type="text/html" title="Come realizzare un form esterno (Es. assistenza) che manda dati a MagNews " /><published>2018-04-05T02:00:00+02:00</published><updated>2018-04-05T15:38:27+02:00</updated><id>https://michelenasti.com/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews</id><content type="html" xml:base="https://michelenasti.com/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.html">&lt;p&gt;Questa roba l’ho dovuta fare per lavoro e, nello scoprire tutti i passaggi necessari, me li sono segnati.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosè-magnews-spoiler-non-lo-so&quot;&gt;Cos’è MagNews? (Spoiler: non lo so)&lt;/h2&gt;
+
+&lt;p&gt;E’ un tool per il marketing automation, email marketing, roba così.&lt;/p&gt;
+
+&lt;p&gt;Se siete qui probabilmente già sapete cos’è e avete anche un account.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosa-vogliamo-fare&quot;&gt;Cosa vogliamo fare&lt;/h2&gt;
+
+&lt;p&gt;Su un sito creiamo una pagina “contattaci” in cui l’utente inserisce tutti i dati necessari; questi dati piuttosto che andare in un backend qualsiasi vanno a finire su MagNews.&lt;/p&gt;
+
+&lt;p&gt;Passiamo all’azione!&lt;/p&gt;
+
+&lt;h3 id=&quot;creare-il-form-su-magnews&quot;&gt;Creare il form su Magnews&lt;/h3&gt;
+
+&lt;p&gt;Dalla dashboard di MagNews, &lt;em&gt;Design -&amp;gt; Siti Web -&amp;gt;&lt;/em&gt; Selezionate il sito su cui volete operare -&amp;gt; &lt;em&gt;crea nuova pagina di tipo “forms”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Disegnate un form che contiene i dati che vi interessano. Non è importante la grafica, ma solo che siano presenti i campi di cui avete bisogno.&lt;/p&gt;
+
+&lt;p&gt;Per ogni campo, dategli un &lt;strong&gt;nome&lt;/strong&gt; e poi in &lt;em&gt;Avanzato -&amp;gt; Opzioni per gli script -&amp;gt;&lt;/em&gt; date anche un &lt;strong&gt;NAME del campo&lt;/strong&gt;&lt;em&gt;.&lt;/em&gt;  E’ importante che questo nome sia &lt;strong&gt;tutto minuscolo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Create anche un tasto “submit” a cui dovete dare le solite info, come se fosse un campo.&lt;/p&gt;
+
+&lt;p&gt;Primo step superato :)&lt;/p&gt;
+
+&lt;h3 id=&quot;creare-form-html&quot;&gt;Creare form HTML&lt;/h3&gt;
+
+&lt;p&gt;Questa è la parte facile, dovete realizzare il form nel modo che più vi piace nella pagina che volete voi.&lt;/p&gt;
+
+&lt;p&gt;Ma ora dobbiamo agganciare un evento al tasto SALVA.&lt;/p&gt;
+
+&lt;h3 id=&quot;comunicazione-js--magnews&quot;&gt;Comunicazione JS / MagNews&lt;/h3&gt;
+
+&lt;p&gt;Secondo la loro &lt;a href=&quot;https://be-mn1.mag-news.it/be/documentation.do?packageid=advanceduserguide&amp;amp;pageid=ws023&quot;&gt;pagina ufficiale per i devlopers per creare i FORM&lt;/a&gt;, i dati devono essere in questo formato:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    &quot;idform&quot;:432,
+    &quot;parameters&quot;:[
+        {
+           &quot;name&quot;:&quot;campo_di_testo_1&quot;,
+           &quot;value&quot;:&quot;123&quot;
+        },
+        {
+            ...
+        },
+        {
+           &quot;name&quot;:&quot;submit_button&quot;, // auto generated input name
+           &quot;value&quot;:&quot;I am an input value&quot;
+        }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Cerchiamo di mettere insieme i pezzi.&lt;/p&gt;
+
+&lt;p&gt;La prima cosa che vi serve è un URL a cui mandare i dati.&lt;/p&gt;
+
+&lt;p&gt;Io l’ho trovata cliccando su &lt;em&gt;Visualizza Codice Form&lt;/em&gt;, mi è comparso il form html costruito fino a quel momento. (Esempio: &lt;code&gt;http://tuosito.mno08.com/nl/tuosito_page543.mn&lt;/code&gt; ).&lt;/p&gt;
+
+&lt;p&gt;Sempre secondo la documentazione ufficiale, dobbiamo cambiare leggermente questo URL e trasformarlo in &lt;code&gt;http://tuosito.mno08.com/nl/api/forms&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dopodiché ci serve l’ID del form per il parametro &lt;code&gt;idform&lt;/code&gt;. Anche questo l’ho trovato nella “mappa del sito” su MagNews; di fianco alla pagina c’era l’id tra parentesi graffe.&lt;/p&gt;
+
+&lt;p&gt;Infine, i campi. Se avete settato tutto bene, dovete inviare tutti i campi specificati più il bottone submit (wtf?!) con un valore a caso.&lt;/p&gt;
+
+&lt;p&gt;Se tutto va bene vedrete i vostri dati salvati in MagNews (sempre dal backoffice, andate in edit sulla pagina che contiene il form e cliccate su &lt;em&gt;Visualizza Risultati&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Bene, spero di avervi tolto le castagne dal fuoco! Io invece mi sono scritto questo post per ricordarlo, casomai dovesse servire ancora.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="magnews" /><category term="form submission" /><summary type="html">Questa roba l’ho dovuta fare per lavoro e, nello scoprire tutti i passaggi necessari, me li sono segnati.</summary></entry><entry><title type="html">Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)</title><link href="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html" rel="alternate" type="text/html" title="Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)" /><published>2018-02-25T01:00:00+01:00</published><updated>2018-02-26T14:56:05+01:00</updated><id>https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi</id><content type="html" xml:base="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html">&lt;p&gt;Ieri sera abbiamo tenuto un altro incontro del &lt;a href=&quot;https://www.meetup.com/it-IT/devday-salerno/?chapter_analytics_code=UA-74462208-1&quot;&gt;DevDay Salerno&lt;/a&gt;, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.&lt;/p&gt;
 
 &lt;p&gt;All’incontro c’erano anche due studenti in cerca di uno stage e ciò mi ha fatto molto piacere: la community si è mostrata molto ricettiva con loro.&lt;/p&gt;
 
@@ -421,38 +489,4 @@ Return
 
 &lt;p&gt;Sarà lungo e non sarà una passeggiata, ma dopo avrai la miglior soluzione possibile.&lt;/p&gt;
 
-&lt;p&gt;Poi la devi vendere, ma questa è un’altra storia :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="michele risponde" /><category term="programmazione" /><category term="elon musk" /><category term="tesla" /><category term="spacex" /><summary type="html">Domanda:</summary></entry><entry><title type="html">Essere programmatori e vivere di progetti propri</title><link href="https://michelenasti.com/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri.html" rel="alternate" type="text/html" title="Essere programmatori e vivere di progetti propri" /><published>2018-01-06T01:00:00+01:00</published><updated>2018-01-06T23:50:26+01:00</updated><id>https://michelenasti.com/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri</id><content type="html" xml:base="https://michelenasti.com/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri.html">&lt;p&gt;Inauguriamo una nuova sezione, ossia “Michele risponde” :)&lt;/p&gt;
-
-&lt;p&gt;Mi capita spesso di rispondere a domande su gruppi facebook o nei forum, tanto vale appuntarsele anche qua.&lt;/p&gt;
-
-&lt;p&gt;Mi prendo la libertà di modificare un po’ le domande se sono lunghe.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Domanda:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;[…] Salve ragazzi, forse oggi andrò un po’ OT, perché vorrei chiedervi un consiglio più a livello personale che tecnico.&lt;br /&gt;
-Sono un ragazzo di 17 anni e da un anno a questa parte mi sono buttato  sull’informatica perché lo trovo un settore abbastanza meritocratico,  perciò in questo anno ho imparato i linguaggi per creare grafiche di  pagine web (html;css) e ho iniziato un progetto che fino ad ora va bene.&lt;br /&gt;
-In questi mesi ho pensato molto a come muovermi ed ampliare le mie  conoscenze, e dopo vari ripensamenti, per questo negli ultimi tempi ho  deciso di imparare C (un linguaggio che opera strettamente “vicino”  all’hardware, per imparare le fondamentali logiche e operazioni dei  computer)&lt;br /&gt;
-Premetto che io non voglio aumentare le mie skills per poi  assicurarmi un posto di lavoro, perché non vorrei diventare un  dipendente, ma sviluppare in proprio i miei progetti e magari, perché  no, un giorno viverne di essi .&lt;br /&gt;
-Ora arriviamo al punto, sto  imparando C, forte solo di una ottima/discreta base di matematica, sono arrivato a trattare argomenti quali puntatori e strutture dati, però spesso penso che ha una applicazione, non so da dove partire, cioè per intenderci, io imparo le nozioni per definirmi anche un buon/discreto conoscitore di, ma una volta apprese quelle, non so da dove partire per sviluppare qualche mio programma in proprio, pecco di ispirazione e mi scoraggio e tra me e me penso “per quale motivo stai imparando il C se non  hai nessun fine/scopo o anche idea di applicazione?”&lt;br /&gt;
-Io ora chiedo se a qualcuno di voi sia già capitata una cosa del genere, come vi siete mossi, quale settore dell’informatica può essere un potenziale, un  fondamento da cui poter costruire qualcosa, insomma una fonta di  ispirazione per iniziare a mettersi in proprio.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Risposta:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Uhm.  Ci vedo due cose distinte. Imparando il C diventi un ottimo tecnico: si può vivere già di quello, magari lavorando per altri. Questo da solo è un ottimo piano B da mettere in pratica finchè non hai idee che ti prendono al100%.&lt;/p&gt;
-
-&lt;p&gt;Tu però hai altre ambizioni, ossia realizzare i tuoi progetti e vivere di quello. E ti mancano i progetti. Come tirarli fuori?&lt;br /&gt;
-La  cosa più semplice che mi viene da consigliarti é di creare software che risolve i tuoi problemi. &lt;em&gt;Esempio di problema&lt;/em&gt;: quando tira il vento forte nel paese in cui  vivo, questo mi distrugge il giardino. S_oluzione_: ho  scritto un programma che mi avvisa quando sta per arrivare quel tipo di  vento.&lt;/p&gt;
-
-&lt;p&gt;Io non ho inventato nulla, le App per  il meteo esistono da sempre; ma avevo un’esigenza particolare e nessuna app all’epoca me la risolveva, così ho inventato la mia soluzione. Magari serve anche ad altri? Girando un pò per la rete devi essere bravo e fortunato a trovare qualcuno disposto a pagare per i tuoi software.&lt;/p&gt;
-
-&lt;p&gt;E  qui viene la parte &lt;strong&gt;difficile&lt;/strong&gt;: farsi pagare é una delle cose più difficili in assoluto. Che sia 1€ o 10000€, il furbo che “ci prova” lo  trovi sempre. Alcuni dicono che mettersi in proprio é difficile proprio  perché bisogna continuamente trovare clienti, lavorare per loro, e  &lt;strong&gt;perdere una quantità di tempo immane per farsi pagare&lt;/strong&gt;…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Best Money Making Computer Fields.jpg&quot; alt=&quot;&quot; title=&quot;people won't throw money at you&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;E  per finire: l’informatica (a livello di tecnici) non é meritocratica. Va avanti non il più bravo (tranne forse in Mozilla e in Google) ma chi da meno problemi al boss, ossia quello di cui ci si può fidare. Questo l’ho appreso sulla mia pelle dopo qualche anno di esperienza, e ovviamente vale in contesti aziendali. Nel momento in cui avrai tu un’azienda coi tuoi fantastici software, chi promuoverai come “capo team”? il più bravo a organizzare il gruppo, o il più bravo tecnico che hai? Scoprirai che le due figure di solito non coincidono.&lt;/p&gt;
-
-&lt;p&gt;Un ultimo consiglio, che do sempre a chi vuole organizzare qualcosa in proprio: partecipa a uno &lt;a href=&quot;https://www.google.it/search?q=startup+weekend+italia&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;client=firefox-b-ab&amp;amp;gfe_rd=cr&amp;amp;dcr=0&amp;amp;ei=1FBRWoqRCqHBXvOUqYgG&quot;&gt;Startup Weekend&lt;/a&gt;. Ne organizziamo uno anche a Salerno, anche se ancora non abbiamo una data certa. Lì troverai tutto ciò che cerchi: persone che vogliono fondare la loro azienda, idee innovative, e come realizzarle dal punto di vista pratico (validazione, business plan, analisi dei competitor, stima dei tempi, etc.)&lt;/p&gt;
-
-&lt;p&gt;In bocca al lupo!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="michele risponde" /><category term="lavoro" /><category term="informatico" /><category term="programmatore" /><summary type="html">Inauguriamo una nuova sezione, ossia “Michele risponde” :)</summary></entry></feed>
+&lt;p&gt;Poi la devi vendere, ma questa è un’altra storia :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="michele risponde" /><category term="programmazione" /><category term="elon musk" /><category term="tesla" /><category term="spacex" /><summary type="html">Domanda:</summary></entry></feed>
