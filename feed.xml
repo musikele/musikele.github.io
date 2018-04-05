@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-04-05T10:17:11+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)</title><link href="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html" rel="alternate" type="text/html" title="Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)" /><published>2018-02-25T01:00:00+01:00</published><updated>2018-02-26T14:56:05+01:00</updated><id>https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi</id><content type="html" xml:base="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html">&lt;p&gt;Ieri sera abbiamo tenuto un altro incontro del &lt;a href=&quot;https://www.meetup.com/it-IT/devday-salerno/?chapter_analytics_code=UA-74462208-1&quot;&gt;DevDay Salerno&lt;/a&gt;, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-04-05T10:19:04+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Un programmatore dovrebbe continuare a programmare nel suo tempo libero?</title><link href="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" rel="alternate" type="text/html" title="Un programmatore dovrebbe continuare a programmare nel suo tempo libero?" /><published>2018-04-05T02:00:00+02:00</published><updated>2018-04-05T10:17:21+02:00</updated><id>https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero</id><content type="html" xml:base="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html">&lt;p&gt;Programmare è diventata una passione.&lt;/p&gt;
+
+&lt;p&gt;Questa frase mi suona ridicola, perchè io non sono mai stato un tipo che realizza side projects, neanche ai tempi dell’università (e sbagliavo!).&lt;/p&gt;
+
+&lt;p&gt;Ciò che mi piace, della programmazione in se e per se, &lt;strong&gt;è il processo mentale che parte prima di scrivere la prima riga di codice&lt;/strong&gt;: “&lt;em&gt;se succede questo faccio questo… e se succede quello faccio quello…. nel browser questo non si può fare quindi lo simulo così….&lt;/em&gt;”&lt;/p&gt;
+
+&lt;p&gt;Specialmente durante la prima fase lavorativa (post-università) ricordo serate che tornavo a casa dopo una giornata di lavoro e mi rimettevo col computer a fare prove, seguire tutorial, corsi, etc.&lt;/p&gt;
+
+&lt;p&gt;Poi è nata mia figlia e il tempo di accendere il computer (o di fare qualsiasi altra cosa, come suonare la chitarra) non c’è stato più.Dopo un anno per fortuna la bimba sta iniziando ad andare a dormire alle 21:30 (e mia moglie segue programmi TV che non mi piacciono) quindi ho parzialmente ritrovato tempo per il mio “hobby”.&lt;/p&gt;
+
+&lt;h2 id=&quot;ma-un-buon-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero&quot;&gt;Ma: un buon programmatore dovrebbe continuare a programmare, nel suo tempo libero?&lt;/h2&gt;
+
+&lt;p&gt;Come al solito, dipende.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Se si torna a casa e si continua a lavorare&lt;/strong&gt;, &lt;strong&gt;potrebbe essere divertente ma probabilmente non è un hobby.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Se dovessi rileggere il discorso scritto prima e mettergli la firma di qualcun altro, penserei che chi l’ha scritto deve essere uno di quegli &lt;em&gt;azzeccati&lt;/em&gt; che passano il tempo a fare sempre la stessa cosa, programmare programmare programmare - &lt;em&gt;probabilmente è anche un tipo spocchioso, fastidioso, saccente, buffone&lt;/em&gt;…&lt;/p&gt;
+
+&lt;p&gt;Se invece dovessi fare un colloquio di lavoro a una persona che apre con queste parole, penso gli farei qualche domanda più tosta per testare le sue capacità analitiche.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/rtryt.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ormai lavoro da qualche annetto e qualche programmatore l’ho conosciuto durante la mia carriera; i colleghi si dividono in:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Lavoro solo per lo stipendio&lt;/strong&gt;: La programmazione non mi interessa, alle 18 voglio stare in viaggio verso casa. Conosco abbastanza bene solo gli strumenti che mi servono per lavorare, di sicuro non propongo io qualcosa di nuovo al mio team.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;L’intelligenza non mi manca, ma fondamentalmente sono un tipo pigro&lt;/strong&gt;: queste persone capiscono tutto al volo, leggono tanto, non provano nulla. A casa dopo il lavoro preferiscono netflix.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Voglio stare sempre una spanna avanti a tutti&lt;/strong&gt;. Questa è la categoria più pericolosa, perchè studiano &lt;em&gt;anche&lt;/em&gt; per passione, ma il secondo fine neanche tanto celato è quello di fare carriera e di dimostrare la propria superiorità.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mi piace programmare ma al tempo stesso riesco ad avere una vita sociale equilibrata&lt;/strong&gt;: scherzavo ragazzi, non esiste nessuno in questa categoria. O siete nerd o non siete niente 😂&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Citiamo un’altra categoria che ho contribuito a creare, nel mio piccolo, a Salerno e in Campania. Quella dei &lt;strong&gt;programmatori consapevoli&lt;/strong&gt;. Da quando ho fondato il &lt;a href=&quot;http://www.devday.it&quot;&gt;DevDay&lt;/a&gt; ho intercettato un sacco di professionisti che, per motivi privati o familiari, non hanno più il tempo di scoprire cose nuove. Q&lt;strong&gt;ueste persone vogliono aggiornarsi, ma non possono rubare tempo alla cosa più bella che hanno, ossia la loro vita.&lt;/strong&gt; E quindi “consacrano” un sabato al mese per venire agli incontri che organizziamo, i DevDay appunto, per scoprire le ultime novità o semplicemente incontrare altre persone appassionate. Queste persone diventano anche molto focose se gli tocchi il loro framework preferito, ma &lt;strong&gt;generalmente sono persone che amano ascoltare le opinioni degli altri. Esattamente il contrario delle community on line :)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;programmando-si-invecchia&quot;&gt;Programmando si invecchia&lt;/h2&gt;
+
+&lt;p&gt;Avete mai conosciuto programmatori over-40? e over-50? Io si, ma si contavano sulle dita di una mano. La stragrande maggioranza degli over-40 o over-50 in realtà occupava posti manageriali (capo team, responsabile di progetto, etc.).&lt;/p&gt;
+
+&lt;p&gt;Non tutti possono diventare capi, o manager. &lt;strong&gt;Che fine fanno i programmatori dopo una certa età?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Quando un giorno la programmazione sarà fonte di noia anche per me, in che modo trasformo la mia vita affinchè non sia completamente buttata?&lt;/p&gt;
+
+&lt;p&gt;A queste domande non so ancora rispondere. Se ti piace fare qualcosa vorresti poi farla per più tempo possibile. Salvo poi scoprire che farlo tutti i giorni, e anche nel tempo libero, si rivela non essere questo gran divertimento. E insomma devi necessariamente “scappare” dal codice per passare ad altro, altrimenti rischi di passare la tua giornata a fare qualcosa che odi.&lt;/p&gt;
+
+&lt;p&gt;E questo non lo auguro a nessuno!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="programming" /><category term="tempo libero" /><category term="programmatore" /><category term="riflessioni" /><summary type="html">Programmare è diventata una passione.</summary></entry><entry><title type="html">Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)</title><link href="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html" rel="alternate" type="text/html" title="Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)" /><published>2018-02-25T01:00:00+01:00</published><updated>2018-02-26T14:56:05+01:00</updated><id>https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi</id><content type="html" xml:base="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html">&lt;p&gt;Ieri sera abbiamo tenuto un altro incontro del &lt;a href=&quot;https://www.meetup.com/it-IT/devday-salerno/?chapter_analytics_code=UA-74462208-1&quot;&gt;DevDay Salerno&lt;/a&gt;, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.&lt;/p&gt;
 
 &lt;p&gt;All’incontro c’erano anche due studenti in cerca di uno stage e ciò mi ha fatto molto piacere: la community si è mostrata molto ricettiva con loro.&lt;/p&gt;
 
@@ -412,60 +455,4 @@ La  cosa più semplice che mi viene da consigliarti é di creare software che ri
 
 &lt;p&gt;Un ultimo consiglio, che do sempre a chi vuole organizzare qualcosa in proprio: partecipa a uno &lt;a href=&quot;https://www.google.it/search?q=startup+weekend+italia&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;client=firefox-b-ab&amp;amp;gfe_rd=cr&amp;amp;dcr=0&amp;amp;ei=1FBRWoqRCqHBXvOUqYgG&quot;&gt;Startup Weekend&lt;/a&gt;. Ne organizziamo uno anche a Salerno, anche se ancora non abbiamo una data certa. Lì troverai tutto ciò che cerchi: persone che vogliono fondare la loro azienda, idee innovative, e come realizzarle dal punto di vista pratico (validazione, business plan, analisi dei competitor, stima dei tempi, etc.)&lt;/p&gt;
 
-&lt;p&gt;In bocca al lupo!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="michele risponde" /><category term="lavoro" /><category term="informatico" /><category term="programmatore" /><summary type="html">Inauguriamo una nuova sezione, ossia “Michele risponde” :)</summary></entry><entry><title type="html">VueJS basics</title><link href="https://michelenasti.com/2017/12/17/vuejs-basics.html" rel="alternate" type="text/html" title="VueJS basics" /><published>2017-12-17T01:00:00+01:00</published><updated>2018-01-27T10:21:26+01:00</updated><id>https://michelenasti.com/2017/12/17/vuejs-basics</id><content type="html" xml:base="https://michelenasti.com/2017/12/17/vuejs-basics.html">&lt;p&gt;It has been a long week for me, I’m studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/vuejs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;separation-of-data-and-methods&quot;&gt;Separation of data and methods&lt;/h2&gt;
-
-&lt;p&gt;This is a basic html containing some VueJS markup:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;html&amp;gt;
-  ...
-  &amp;lt;body&amp;gt;
-  	&amp;lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&amp;gt;&amp;lt;/script&amp;gt;
-  	&amp;lt;div id=&quot;app&quot;&amp;gt;
-  	  &amp;lt;h2&amp;gt;{{ message }}&amp;lt;/h2&amp;gt;
-      &amp;lt;p&amp;gt;{{ sayHelloTo(name) }}&amp;lt;/p&amp;gt;
-  	&amp;lt;/div&amp;gt;
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is a basic VueJS element:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello from Vue!',
-    name: 'Michele'
-  },
-  methods: {
-    sayHelloTo: function(name) {
-      return `Hello, ${this.name}!`
-    }
-  }
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Let’s describe this snippet:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;code&gt;el&lt;/code&gt; references the DOM element with the &lt;code&gt;#app&lt;/code&gt; id. This element will be &lt;em&gt;Vuezed&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;the &lt;code&gt;data&lt;/code&gt; object contains the data that can be used inside the HTML: for example, we used the &lt;code&gt;message&lt;/code&gt; property in the Html.&lt;/li&gt;
-  &lt;li&gt;the &lt;code&gt;methods&lt;/code&gt; property contains the methods you can use in your html. These are useful for calculations or for actions, like clicking on a button.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I acutally like a lot: a clear separations of data and methods.&lt;/p&gt;
-
-&lt;p&gt;This is a concept that comes from the &lt;strong&gt;functional programming world&lt;/strong&gt;, that is, separate the data from the functions that interact with this data.&lt;/p&gt;
-
-&lt;p&gt;However, Vue is not &lt;em&gt;functional&lt;/em&gt; in the classic sense of the definition, because you use the &lt;code&gt;this&lt;/code&gt; keyword to access data &amp;amp; you’re not forced to write pure functions, etc etc.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-word-on-this&quot;&gt;A word on this&lt;/h2&gt;
-
-&lt;p&gt;Have you noticed that from the &lt;code&gt;methods&lt;/code&gt; section,  if you want to access &lt;code&gt;data&lt;/code&gt; properties, you use &lt;code&gt;this&lt;/code&gt; ?&lt;/p&gt;
-
-&lt;p&gt;In fact, Vue proxies the &lt;code&gt;this&lt;/code&gt; keyword so that you can access to data without writing &lt;code&gt;this.data.message&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;However, for &lt;code&gt;this&lt;/code&gt; to work you must write 90% of the time the old ES5 &lt;code&gt;function()&lt;/code&gt; declaration: this is expecially clear in VueJS components, an argouments we’ll talk in another post.&lt;/p&gt;</content><author><name>musikele</name></author><category term="vuejs" /><category term="javascript" /><category term="frontend" /><summary type="html">It has been a long week for me, I’m studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.</summary></entry></feed>
+&lt;p&gt;In bocca al lupo!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="michele risponde" /><category term="lavoro" /><category term="informatico" /><category term="programmatore" /><summary type="html">Inauguriamo una nuova sezione, ossia “Michele risponde” :)</summary></entry></feed>
