@@ -1,5 +1,6 @@
 ---
 pages:
+- _posts/ode-ai-libri-di-carta.md
 - _posts/prova.md
 - _posts/2018-04-05-come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.md
 - _posts/2018-04-05-un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.md
@@ -44,6 +45,7 @@ pages:
 - _posts/2017-02-05-quali-sono-gli-svantaggi-nel-lavorare-da-casa.md
 - _posts/2017-02-10-hey-javascript-function-take-this.md
 hide_body: false
+is_partial: false
 fields:
 - name: paginate
   default: true
