@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Cambia la tua vita! (partecipando a uno Startup Weekend) '
+title: 'Cambia la tua vita lavorativa! (partecipando a uno Startup Weekend) '
 category: Italiano
 layout: post
 date: 2018-04-23 00:00:00 +0200
