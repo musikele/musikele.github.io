@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©' - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="functional programming, object oriented, programmazione funzionale" />  
+	<meta http-equiv="last-modified" content="2017-11-06 19:05:22 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©'" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/" property="og:url">
+
+
+
+  <meta content="2016-01-13T11:10:58+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="functional programming" property="article:tag">
+  
+  <meta content="object oriented" property="article:tag">
+  
+  <meta content="programmazione funzionale" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©'">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/">un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©'</a></h1>
+			<p class="post-meta">Jan 13, 2016 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&text=un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©':%20https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©') + ':%20'  + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&title=un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©'&summary=&source=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/stormo-di-gabbiani-un-cielo-color-pastello.jpg" rel="attachment wp-att-518"><img class="wp-image-518 size-full" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/stormo-di-gabbiani-un-cielo-color-pastello-e1452682395609.jpg?fit=798%2C496" alt="stormo-di-gabbiani-un-cielo-color-pastello" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/stormo-di-gabbiani-un-cielo-color-pastello-e1452682395609.jpg?w=798 798w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/stormo-di-gabbiani-un-cielo-color-pastello-e1452682395609.jpg?resize=300%2C186 300w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/stormo-di-gabbiani-un-cielo-color-pastello-e1452682395609.jpg?resize=768%2C477 768w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/stormo-di-gabbiani-un-cielo-color-pastello-e1452682395609.jpg?resize=700%2C435 700w" sizes="(max-width: 798px) 100vw, 798px" data-recalc-dims="1" /></a></p>
+
+<p>Ieri molti amici e lettori mi hanno chiesto perchè avessi iniziato ad approfondire il paradigma funzionale, quando con l’object oriented riesci a risolvere quasi tutti i problemi del mondo.</p>
+
+<p>Voglio farvi vedere un esempio di codice che, siccome dipende dallo stato interno degli oggetti e questo stato è mutevole, risulta molto difficile da seguire e da analizzare.</p>
+
+<p>Stavolta l’esempio l’ho preparato in Java, il linguaggio OO per eccellenza. Ho creato la classe “<span class="lang:default decode:true crayon-inline ">Stormo</span>  (di gabbiani)” che modella uno stormo. Ogni stormo ha due metodi, il metodo “<span class="lang:default decode:true crayon-inline ">unisci</span> ” con un altro stormo, e “<span class="lang:default decode:true crayon-inline">riproduci</span>“, che modella essenzialmente quella cosa là :D.</p>
+
+<p>Nel main invece vedete un po’ di operazioni sugli Stormi. Quanto vale result?</p>
+
+<pre><code class="language-java">class Stormo {
+
+	public int gabbiani;
+
+	public Stormo(int n) {
+		this.gabbiani = n;
+	}
+
+	public Stormo unisci(Stormo other) {
+		this.gabbiani += other.gabbiani;
+		return this;
+	}
+
+	public Stormo riproduci(Stormo other) {
+		this.gabbiani = this.gabbiani * other.gabbiani;
+		return this;
+	}
+}
+
+public class Test {
+
+	public static void main(String args[]) {
+
+		Stormo stormo_a = new Stormo(4);
+		Stormo stormo_b = new Stormo(2);
+		Stormo stormo_c = new Stormo(0);
+
+		int result = stormo_a.unisci(stormo_c).riproduci(stormo_b)
+                  .unisci(stormo_a.riproduci(stormo_b)).gabbiani;
+
+		System.out.println(result);
+	}
+}
+</code></pre>
+
+<p>Quanti gabbiani contate? Quanto vale <code>result</code> alla fine del Main ?</p>
+
+<p>La risposta che avete contato voi è … 16. La riposta del compilatore invece è … 32. E l’oggetto <code>stormo_a</code> è addirittura cambiato!</p>
+
+<p>Come vedete, sono bastate poche righe di codice per ottenere un risultato sballato e un bug piuttosto evidente.</p>
+
+<p>Uno dei problemi che affligge questo codice è che va a mutare lo stato interno dell’oggetto; se i metodi <code>unisci</code> e <code>riproduci</code> avessero restituito copie e lasciato immutato la classe stessa, ora non saremmo qui a parlarne.</p>
+
+<h3 id="edit">EDIT:</h3>
+
+<p>Amici suggeriscono di mostrare cosa si dovrebbe cambiare affinchè il codice funzioni.</p>
+
+<p>Io modificherei i metodi <code>unisci</code> e <code>riproduci</code> per ottenere il risultato corretto:</p>
+
+<pre><code class="language-java">public Stormo unisci(Stormo other) {
+    return new Stormo(this.gabbiani+other.gabbiani);
+}
+
+public Stormo riproduci(Stormo other) {
+     return new Stormo(this.gabbiani*other.gabbiani);
+}
+</code></pre>
+
+<p>Ed è qui che si applica il concetto di <strong>immutabilità</strong>: non ci sono side effects sull’oggetto chiamato e viene restituito un nuovo oggetto contenente le nuove proprietà.</p>
+
+<hr />
+
+<p>Dunque ciò che dicono i miei amici e colleghi è giusto, nel senso che con la programmazione a oggetti (ma anche con la programmazione iterativa) i problemi si risolvono comunque; l’approccio funzionale permette però di avere qualche altro gadget nel coltellino svizzero del programmatore, di scrivere codice più bello, più espressivo, più succinto.</p>
+
+<p>Per completezza, riporto qui l’esempio (con i termini inglesi) in javascript così potrete eseguirlo nella console del browser (senza che aprite eclipse…). Anche questo esempio è preso da <a href="https://github.com/MostlyAdequate/mostly-adequate-guide/blob/master/ch1.md">Mostly Adequate Guide to Functional Programming, capitolo 1.</a></p>
+
+<pre><code class="language-java">var Flock = function(n) {
+  this.seagulls = n;
+};
+
+Flock.prototype.conjoin = function(other) {
+  this.seagulls += other.seagulls;
+  return this;
+};
+
+Flock.prototype.breed = function(other) {
+  this.seagulls = this.seagulls * other.seagulls;
+  return this;
+};
+
+var flock_a = new Flock(4);
+var flock_b = new Flock(2);
+var flock_c = new Flock(0);
+
+var result = flock_a.conjoin(flock_c)
+    .breed(flock_b).conjoin(flock_a.breed(flock_b)).seagulls;
+//=&gt; 32
+</code></pre>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&text=un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©':%20https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©') + ':%20'  + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/&title=un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©'&summary=&source=https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/01/la-programmazione-funzionale-con-le-funzioni-pure/">La Programmazione Funzionale con le Funzioni Pure <span class="label label-default">programmazione funzionale</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/11/ritorno-dal-codemotion-milan-2015/">di ritorno dal Codemotion Milan 2015 <span class="label label-default">programmazione funzionale</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">Tool of the week: Develop faster in NodeJS with Nodemon </a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/';
+			var disqus_identifier = 'https://michelenasti.com/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2016/01/la-programmazione-funzionale-con-le-funzioni-pure/">La Programmazione Funzionale con le Funzioni Pure</a></h2>
+        </header>
+        <section>
+            <p>Le <strong>Funzioni Pure</strong> sono uno dei pilastri fondamentali della programmazione funzionale. La definizione vera è qualcosa di astruso e non la scriverò perchè la capirebbero in pochi; invece <em>in parole povere</em> è addirittura un concetto semplice.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2016/01/la-programmazione-funzionale-con-le-funzioni-pure/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2016/01/realizzare-un-piccolo-motore-di-scripting-in-una-webapp-java-con-groovy/">Realizzare un piccolo motore di Scripting in una webapp Java con Groovy</a></h2>
+        </header>
+        <section>
+            <p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2016/01/2000px-Groovy-logo.svg_.png" rel="attachment wp-att-526"><img class="size-medium wp-image-526 alignleft" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2016/01/2000px-Groovy-logo.svg_-300x149.png?fit=300%2C149" alt="2000px-Groovy-logo.svg" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2016/01/2000px-Groovy-logo.svg_.png?resize=300%2C149 300w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2016/01/2000px-Groovy-logo.svg_.png?resize=768%2C380 768w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2016/01/2000px-Groovy-logo.svg_.png?resize=1024%2C507 1024w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2016/01/2000px-Groovy-logo.svg_.png?resize=700%2C347 700w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2016/01/2000px-Groovy-logo.svg_.png?w=1840 1840w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a></p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2016/01/realizzare-un-piccolo-motore-di-scripting-in-una-webapp-java-con-groovy/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

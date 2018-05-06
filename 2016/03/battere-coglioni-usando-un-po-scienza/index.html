@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="big data, calderoli, emendamenti, Jacopo Notarstefano, python" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/" property="og:url">
+
+
+
+  <meta content="2016-03-04T21:37:24+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="big data" property="article:tag">
+  
+  <meta content="calderoli" property="article:tag">
+  
+  <meta content="emendamenti" property="article:tag">
+  
+  <meta content="Jacopo Notarstefano" property="article:tag">
+  
+  <meta content="python" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2016/03/battere-coglioni-usando-un-po-scienza/">Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli</a></h1>
+			<p class="post-meta">Mar 4, 2016 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&text=Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli:%20https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli) + ':%20'  + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&title=Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli&summary=&source=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>In questi giorni, sul web, è uscito un articolo bellissimo: <a href="http://www.jacquerie.it/battere-calderoli-usando-python">Battere Calderoli usando Python</a>, scritto da <a href="https://twitter.com/Jaconotar">Jacopo Notarstefano</a>. E’ un po’ difficile da leggere perché è tecnico, ma gli effetti sono piuttosto interessanti. Proverò a spiegarvi un attimo l’articolo, da un punto di vista “umano”, e poi vi parlerò dell’autore.</p>
+
+<h2 id="larticolo-originale-spiegato-facile">L’articolo originale spiegato facile</h2>
+
+<p>Spero sappiate tutti che Calderoli se ne è uscito, qualche tempo fa, con un programmino informatico (non scritto da lui) capace di generare emendamenti a proposte di leggi. Semplicemente sposta una virgola qui, aggiunge un comma lì, ed ecco che l’emendamento è servito. Con questo programmino ha presentato milioni di emendamenti in occasione del Ddl Boschi che la Camera avrebbe addirittura dovuto stampare; per fortuna in quel caso hanno preso una svolta ecologista e hanno scelto di non farlo. (Perchè stampano se i deputati hanno un tablet “aziendale”?!)</p>
+
+<p>Dunque molti emendamenti sono simili. Come fare a capire quali sono stati generati da software e quali invece sono “reali”? Come eliminare il “rumore” di questi emendamenti fuffa?</p>
+
+<p>Ecco il procedimento utilizzato da Jacopo, spiegato a chi di informatica capisce poco o niente:</p>
+
+<ul>
+  <li>Il primo passo è di scaricare tutti gli emendamenti dalla pagina del senato.</li>
+  <li>Il problema da risolvere è un classico problema di Data Science, ossia trovare tutti i “cluster” (gruppi) di articoli “omogenei” (simili).</li>
+  <li>Come capire quali articoli sono simili tra loro? Usando una metrica semplice: dati due emendamenti, calcola quanto è grande la sottostringa uguale (una porzione di testo) più grande. E’ abbastanza chiaro che se la sottostringa è grande, i due articoli sono molto simili.</li>
+  <li>Grazie a questa metrica è possibile lanciare un algoritmo, chiamato “Hierarchical Clustering”, che mostra un grafico somigliante a un tabellone dei mondiali disegnato da un ubriaco. Se lo guardate attentamente, però, i colori sono diversi: bene, l’algoritmo ha colorato allo stesso modo gli emendamenti che secondo lui sono simili. Nell’articolo viene mostrato anche praticamente, ispezionando gli esempi.</li>
+</ul>
+
+<h4 id="calderoli-prendi-questo-">Calderoli, prendi questo !</h4>
+
+<p>L’approccio qui spiegato è molto simile a quello che fanno giornalmente i filtri anti-spam dei nostri account di posta, per filtrare le mail indesiderate. Spiace dirlo ma un milione di emendamenti di Calderoli (o di chiunque altro) non è che spam, fuffa, e come tale va buttato. Un senatore (pagato da noi) spammer.</p>
+
+<h3 id="chi-è-lautore">Chi è l’autore?</h3>
+
+<p>Ci sto chattando su Twitter mentre scrivo l’articolo. E’ una persona normale, risponde a tutti (compreso me che non sono nessuno), anche se in questi giorni chiunque lo sta contattando per chiedergli un’intervista. Ha 28 anni, è laureato in matematica alla triennale, sta completando la specialistica di informatica; ha iniziato a programmare seriamente dal 2010, e lavora presso il CERN di Ginevra al motore di ricerca di articoli scientifici (ecco spiegata la familiarità con le metriche sui testi e la capacità di analizzare dati di grandi dimensioni…).</p>
+
+<p>Ci tiene a precisare che il suo articolo è stato realizzato lontano dagli orari di lavoro al CERN, dunque nel tempo libero, e che <strong>il CERN non centra assolutamente nulla con questo lavoro</strong>.</p>
+
+<p>Per me questo ragazzo è un genio, Nel senso che ha applicato strumenti che a suo tempo ho studiato anche io ma che non ho mai pensato di usare in questo senso. Gli chiedo se si sente così (<strong>test della modestia</strong>): “Nah. Cioè, non penso di essere scemo, ma ho conosciuto abbastanza gente che si meritava l’appellativo di “genio” per sapere che io non me lo merito.” E’ anche modesto!</p>
+
+<p>Gli chiedo <strong>se i suoi superiori, o colleghi, gli abbiano chiesto spiegazioni o intimato qualcosa</strong>: “No, nessuno. L’unica cosa che mi ha chiesto il Press Office è di tenere ben presente che questo progetto e il CERN non hanno niente a che vedere l’uno con l’altro.” E poi: “il collega italiano si è congratulato dell’articolo, ma niente di più”. Immagino che la CERN e specificamente nel suo settore, risolvano problemi ben più complessi. E, dato l’ambiente internazionale, a nessuno frega nulla di Calderoli spara-emendamenti.</p>
+
+<p>Mi conferma che anche <strong>dalle istituzioni politiche non è arrivato nessun segnale di interesse</strong> verso il suo lavoro.</p>
+
+<p>Altra domanda, <strong>quante persone ti hanno contattato in questi giorni per chiederti interviste</strong> e chiarimenti sull’articolo? “Chiunque 🙂 sono un po’ indietro con le interviste sebbene stia saltando la pausa pranzo da martedì per farle… Mi sono stati chiesti i dettagli tecnici dell’articolo, ma in genere sono sempre stati tagliati dagli articoli, quindi non li devo aver spiegati granché bene.”</p>
+
+<p>A questo punto, curiosità personale: <strong>come si fa a lavorare per il CERN</strong>? Risposta più facile di quel che pensavo: “Applichi a uno dei (tanti) bandi che escono durante l’anno. A seconda del tipo della posizione hai requisiti diversi sulle qualifiche che devi avere e gli step che devi superare. Quello per una posizione come la mia è appena scaduto: <a class="twitter-timeline-link" dir="ltr" title="https://jobs.web.cern.ch/join-us/fellowship-programme" href="https://t.co/wkZ8oQXj2g" target="_blank" rel="nofollow" data-expanded-url="https://jobs.web.cern.ch/join-us/fellowship-programme"><span class="invisible">https://</span><span class="js-display-url">jobs.web.cern.ch/join-us/fellow</span><span class="invisible">ship-programme</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a>“.</p>
+
+<p>Non resta che salutarci, è una persona davvero squisita, risponde a tutte le mie domande senza troppi problemi. Gli auguro il meglio, e mi riprometto di far arrivare il suo lavoro più in alto possibile (chi lo sa, magari ai presidenti di Camera e Senato?).</p>
+
+<p>Io ripeto quello che ho già scritto in un tweet: <strong>fatelo</strong> <strong>Presidente Del Mondo</strong>, il mio voto già ce l’ha!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&text=Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli:%20https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli) + ':%20'  + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/&title=Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli&summary=&source=https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">Tool of the week: Develop faster in NodeJS with Nodemon </a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2016/03/gioco-flexbox/">Vuoi imparare flexbox ma ti annoi? Prova questo gioco</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/">Angularizing a jQuery website template: what I discovered, what I have done</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/';
+			var disqus_identifier = 'https://michelenasti.com/2016/03/battere-coglioni-usando-un-po-scienza/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2016/02/javascript-meetup-a-salerno/">Javascript Meetup a Salerno!</a></h2>
+        </header>
+        <section>
+            <p>Sabato 5 marzo ci sarà il primo <a href="http://www.meetup.com/it-IT/JS-Salerno/">Meetup Javascript &amp; NodeJS</a>  di Salerno!</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2016/02/javascript-meetup-a-salerno/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2016/03/5-motivi-cui-rework-ti-cambiera-la-vita/">5 motivi per cui Rework ti cambierà la vita</a></h2>
+        </header>
+        <section>
+            <p style="text-align: left;">
+  <a href="http://amzn.to/2nYp7mS"><img class="size-full alignleft" title="wp-1457508741600" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2016/03/wp-1457508741600-2.jpg?w=920" alt="image" data-recalc-dims="1" /></a>
+</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2016/03/5-motivi-cui-rework-ti-cambiera-la-vita/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

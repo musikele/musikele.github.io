@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Un breve riassunto sulla storia di Javascript - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="ecmascript, javascript, javascript, js" />  
+	<meta http-equiv="last-modified" content="2017-11-25 10:02:53 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Un breve riassunto sulla storia di Javascript" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/" property="og:url">
+
+
+
+  <meta content="2015-01-08T00:01:17+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="ecmascript" property="article:tag">
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="js" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Un breve riassunto sulla storia di Javascript">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/01/un-breve-riassunto-sulla-storia-di-javascript/">Un breve riassunto sulla storia di Javascript</a></h1>
+			<p class="post-meta">Jan 7, 2015 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&text=Un breve riassunto sulla storia di Javascript:%20https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Un breve riassunto sulla storia di Javascript) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&title=Un breve riassunto sulla storia di Javascript&summary=&source=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Javascript è un linguaggio ideato da <a href="http://en.wikipedia.org/wiki/Brendan_Eich" title="Brendan Eich">Brendan Eich</a>, che all’epoca lavorava in Netscape. Il principale utilizzo di Javascript doveva essere quello di evitare rimbalzi di richeste / risposte da client a server solo per delle banali validazioni nei form. All’epoca, nel 1995, caricare una pagina poteva costare tantissimo e vedersela ritornare indietro con la scritta “devi accettare questa clausola per continuare” poteva essere moooolto costoso.</p>
+
+<p>All’epoca di Javascript, la connessione più diffusa nel mondo era a 28.8kbps . Diciamo che adesso navighiamo a 1Mbit con le ADSL più sfigate, il ché vuol dire almeno 40 volte più veloce di allora.</p>
+
+<p>Il primo nome di Javascript doveva essere Mocha, poi cambiato in LiveScript. Per accordi commerciali con la Sun, che spingeva per diffondere il linguaggio Java, si arrivò a Javascript, con cui non condivide praticamente nulla.</p>
+
+<p>All’epoca in cui Netscape propose Javascript non vi erano altri browser concorrenti. Chi voleva andare sul web doveva per forza procurarsi (da floppy!) una copia di Netscape Navigator. Fu in questo frangente che Microsoft decise di sviluppare il primo browser, Internet Explorer, e per non farlo sentire inferiore al rivale lo fece iniziare direttamente dalla versione 3.</p>
+
+<p>Tuttavia Microsoft implementò lo standard a modo proprio, e anzi uno standard non c’era neanche, infatti Microsoft per non incorrere in problemi legali chiamò il linguaggio JScript. Per gli sviluppatori ciò voleva dire solo una cosa: dovevano scrivere e testare due codici probabilmente incompatibili, uno per IE, uno per NN.</p>
+
+<h2 id="ecmascript">EcmaScript</h2>
+
+<p>Nel 1997 era chiaro a tutti che bisognava standardizzare il linguaggio per evitare di impazzire. Fu proposta una bozza alla European Computer Manufacturers Association, che se ne uscì con Ecma-262.</p>
+
+<p>Quello che pochi sanno è che EcmaScript e Javascript non sono <em>proprio</em> la stessa cosa: Javascript è molto di più. Un’implementazione Javascript è composta dal <strong>Core (EcmaScript),</strong> un <strong>Document Object Model (DOM)</strong> e un <strong>Browser Object Model (BOM).</strong></p>
+
+<p>EcmaScript infatti non è legato ai Browser. EcmaScript definisce solo la <strong>sintassi del linguaggio</strong> ed infatti non è specificato nessun metodo per l’input o per l’output del linguaggio. I Browser sono solo un ambiente su cui il linguaggio gira, ma altri sistemi possono usare EcmaScript e tararlo sulle loro necessità, come Adobe Flash e il suo ActionScript, o più recentemente NodeJS.</p>
+
+<p>Un cenno sulle versioni di EcmaScript bisogna farlo. La <strong>prima versione</strong> era la stessa del Netscape 1.1 con l’unico cambiamento del supporto a Unicode. Già Javascript 1.2 che Netscape effettivamente distribuì non era conforme a questa prima edizione.</p>
+
+<p>La <strong>seconda versione</strong> fu solo un aggiustamento editoriale, curando omissioni, aggiunte, cambiamenti.</p>
+
+<p>La <strong>terza edizione</strong> di EcmaScript è stata la prima edizione ad aggiornare lo standard. Con questa versione abbiamo Javascript così come lo conosciamo oggi, quindi stringhe, errori, output numerici, espressioni regolari, try-catch, e così via. Questa versione è considerata come quella che ha fatto fare a Javascript il salto di qualità come linguaggio.</p>
+
+<p>La <strong>quarta edizione</strong> è un cambiamento radicale rispetto alla terza: per citarne alcuni, abbiamo variabili fortemente tipizzate, nuove strutture dati, classi vere e ereditarietà. Per molti era un salto generazionale troppo grande e in effetti un <em>branch</em> della terza edizione, chiamato EcmaScript 3.1, fu sviluppato introducendo solo alcune piccole cose. La quarta edizione fu presto abbandonata dopo essere stata rilasciata, in favore della 3.1.</p>
+
+<p>Per concludere, la <strong>quinta edizione</strong> dello standard è stata pubblicata nel 2009 e chiarisce una serie di ambiguità della versione 3 oltre ad aggiungere funzionalità, tra cui JSON, strict mode, e tanto altro che ha effetti su come EcmaScript interpreta ed esegue il codice.</p>
+
+<h2 id="come-i-browser-hanno-implementato-gli-standard">Come i browser hanno implementato gli standard</h2>
+
+<p>Come già scritto, Javascript 1.1 ebbe una tale popolarità che fu subito richiesto di standardizzarlo in EcmaScript, tuttavia i processi di standardizzazione richiedono tempo e la versione di Javascript 1.2, uscita con Netscape Navigator 4, non era compatibile neanche con lo standard da loro proposto. Internet Explorer invece aveva implementato in un altro modo una serie di feature mal-specificate che di fatto rendevano Jscript un linguaggio diverso da Javascript 1.1.</p>
+
+<p>Insomma, per un po’ si andò avanti dicendo sia in Netscape che in Microsoft che i loro browser implementavano EcmaScript, <em>peccato</em> che questo non era ancora uscito.</p>
+
+<p>Soltanto con Netscape Navigator 4.06 si ebbe la prima implementazione di Javascript 1.3, che era finalmente compatibile con lo standard ECMA da poco finalizzato. Dopodiché Netscape donò il suo codice sorgente a Mozilla, e iniziò una lunga riscrittura del browser per migliorarne le prestazioni (e la manutenibilità). Questa operazione è stata un po’ la fine della storia di Netscape, ma questa è un’altra storia.</p>
+
+<p>Nel 2008 tutti i principali browser (Internet Explorer, Firefox, Safari, Chrome e Opera) implementavano EcmaScript terza edizione.  Da allora possiamo dire che la vita degli sviluppatori si è semplificata di molto.</p>
+
+<h2 id="conclusioni">Conclusioni</h2>
+
+<p>Spero di avere fatto un po’ di chiarezza sulla storia di Javascript! Nei prossimi articoli vi parlerò del BOM e del DOM, e di come sono stati standardizzati e/o implementati dai vari browser.</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&text=Un breve riassunto sulla storia di Javascript:%20https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Un breve riassunto sulla storia di Javascript) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/&title=Un breve riassunto sulla storia di Javascript&summary=&source=https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/02/18/un-giro-nell-universo-react.html">Un giro nell'universo React <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018 <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/17/vuejs-basics.html">VueJS basics <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/';
+			var disqus_identifier = 'https://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2015/01/whats-new-in-javascript/">What’s new in Javascript?</a></h2>
+        </header>
+        <section>
+            <p>Javascript esiste praticamente da sempre, per me che ho conosciuto i computer quando Netscape Navigator era alla versione 3. E da sempre ce l’hanno raccontato male: ci hanno parlato delle sue limitazioni, del linguaggio che non si capisce, del codice interpretato, la sicurezza, i cookies etc…</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2015/01/whats-new-in-javascript/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2015/01/il-document-object-model-dom/">Il Document Object Model (DOM)</a></h2>
+        </header>
+        <section>
+            <p>Come abbiamo detto (nell’articolo “<a href="http://michelenasti.com/2015/01/un-breve-riassunto-sulla-storia-di-javascript/">un breve riassunto della storia di Javascript</a>”), Javascript è composto da tre parti:</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2015/01/il-document-object-model-dom/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

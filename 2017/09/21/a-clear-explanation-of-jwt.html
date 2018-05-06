@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>JWT: what is it? How does it work? Why should we use it? - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="authentication, jwt" />  
+	<meta http-equiv="last-modified" content="2017-10-09 11:43:16 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="JWT: what is it? How does it work? Why should we use it?" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" property="og:url">
+
+
+
+  <meta content="2017-09-21T02:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="authentication" property="article:tag">
+  
+  <meta content="jwt" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="JWT: what is it? How does it work? Why should we use it?">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2017/09/21/a-clear-explanation-of-jwt.html">JWT: what is it? How does it work? Why should we use it?</a></h1>
+			<p class="post-meta">Sep 21, 2017 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&text=JWT: what is it? How does it work? Why should we use it?:%20https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(JWT: what is it? How does it work? Why should we use it?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&title=JWT: what is it? How does it work? Why should we use it?&summary=&source=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>In this post I’m going to talk about an authentication “protocol” called JWT, that allows to secure an API so that only authenticated users can use some requests of your API. And more importantly, a user cannot impersonate another by changing something in the request, so we can be reasonably certain that a user is who claims to be.</p>
+
+<p>However, to understand JWT, we must step back and talk about hashing functions.</p>
+
+<!--more-->
+
+<h2 id="hashing-a-one-way-transformation-function">Hashing: a one-way transformation function</h2>
+
+<p>JWT is universal, it will be easy to grasp the concepts in any language you like, but I’ll use NodeJS for this post.</p>
+
+<p>Create a new Node project anywhere you like. We will use this project to do our experiments. In order to use hashing functions in Node, create and enter a new directory, and install <code>crypto-js</code>:</p>
+
+<pre><code class="language-bash">$ npm i --save crypto-js
+</code></pre>
+
+<p>Now, let’s create a new file, <code>hashing.js</code> and fill it with this:</p>
+
+<pre><code class="language-javascript">const {SHA256} = require('crypto-js')
+
+let message = 'I am user number 3'
+
+let hash = SHA256(message).toString();
+
+console.log(`Message: ${message}`)
+console.log(`Hash: ${hash}`)
+</code></pre>
+
+<p>Let’s run this file. What will we get?</p>
+
+<pre><code class="language-bash">$ node hashing.js 
+Message: I am user number 3
+Hash: 9da4d19e100809d42da806c2b7df5cf37e72623d42f1669eb112e23f5c9d45a3
+</code></pre>
+
+<p>What’s happening here? We are importing the function <code>SHA256</code>, that is one of the strongest hash functions we know for the moment, with mathematical proofs, etc. 256 is the number of bits of the hashed message.</p>
+
+<p>Basically, the <code>message</code> text will be converted in a new string of just 256 bits, and this string has some unique properties:</p>
+
+<ul>
+  <li>
+    <p>the same message will always receive the same hash.</p>
+  </li>
+  <li>
+    <p>If you change just one character from the <code>message</code> string, you get a completely different hash.</p>
+  </li>
+  <li>
+    <p>The probability that two different strings get the same hash is definitely low.</p>
+  </li>
+  <li>
+    <p>It’s impossible to get the original message back.</p>
+  </li>
+</ul>
+
+<p>Curious? I won’t lie to you, security is one of the hottest themes in computer science; this stuff is hard, btw we are just using it and the three points before should be sufficient for you to understand.</p>
+
+<h2 id="when-to-use-a-hash">When to use a hash</h2>
+
+<p>You might use Hashes in a lot of different situations; we will use them in <strong>authentication</strong>, but another famous use case is to store passwords in your database. <a href="/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">Bitcoin also uses hashes to mine new bitcoins (italian)</a>.</p>
+
+<p>Passwords should never be stored as plaintext, because users have this bad habit to use the same password everywhere (I guess you don’t, do you?).</p>
+
+<p>So, when a user logs in your system, you should hash their password, and see if it matches the one stored on the db.</p>
+
+<p>To increase security, always use HTTPS too.</p>
+
+<h3 id="back-to-our-hashes">Back to our hashes</h3>
+
+<p>So the user has logged in. Now we want to provide them with a token that certifies that they are who they say they are. What can we do?</p>
+
+<p>It’s not so safe to send the password over and over; an attacker could steal it by listening to the network calls (man in the middle attacks) or by just hacking the client, or the server.</p>
+
+<p>The safest way is to provide them with a <strong>token</strong>. A token is a piece of data (a json, obviously) with some authentication data we need. We give this token to the client, and he will send it back to us with every request.</p>
+
+<p>So let’s create a json object with the user’ ID:</p>
+
+<pre><code class="language-javascript">let data = {
+    id: 4
+}
+</code></pre>
+
+<p>We obviously don’t want that the user can change their ID with some other ID, for example the admin ID. So we can create a new object called <code>token</code> that contains the data and the hash of the data:</p>
+
+<pre><code class="language-javascript">let data = {
+    id: 4
+};
+
+let token = {
+    data, 
+    hash: SHA256(JSON.stringify(data)).toString()
+}
+</code></pre>
+
+<p>We now have a token, but … if the user tamper the data, he can just recalculate the hash and he won.</p>
+
+<h3 id="salting-the-hash">Salting the HASH</h3>
+
+<p>How can we prevent that the user won’t tamper the data? The most used technique it’s also the simplest: we just concatenate a string, called <strong>salt</strong>, that in our case is a secret password.</p>
+
+<p>So the previous example would be something like this:</p>
+
+<pre><code class="language-javascript">let token = {
+    data, 
+    hash: SHA256(JSON.stringify(data) + 'somesecret').toString()
+}
+</code></pre>
+
+<p>Wait, but what if the user knows the salt? <strong>They shouldn’t!</strong> Once they’re logged in, you send them this <em>token</em> signed with the <em>server’s salt</em> and you can be sure that the client cannot recreate the hash back again.</p>
+
+<h2 id="dont-reinvent-the-wheel-json-web-token">Don’t reinvent the wheel: Json Web Token</h2>
+
+<p>We could write all the edge cases, but that would be a lot of work. Instead, there’s a library that does just  this, <strong>JSON Web Token</strong> (JWT): it has becomed a de-facto standard for authentication tokens, even if not all the web loves it.</p>
+
+<p>Let’s install it:</p>
+
+<pre><code class="language-bash">$ npm i --save jsonwebtoken 
+</code></pre>
+
+<p>With this package we get two functions: one to <strong>create</strong> the token (<code>sign</code>), and another to <strong>verify</strong> (<code>verify</code>).</p>
+
+<p>So let’s create a new file (we are not going to need the previous stuff anymore) and start over.</p>
+
+<pre><code class="language-javascript">const jwt = require('jsonwebtoken')
+
+let data = {
+    id: 10
+};
+
+let secret = '123abc'
+let token = jwt.sign(data, secret)
+console.log(token)
+</code></pre>
+
+<p>And this becomes:</p>
+
+<pre><code class="language-bash">$ node jwtExample.js 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
+DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
+</code></pre>
+
+<p>this is different from the hash we presented before: it is divided in three blocks, and it’s clearly bigger. What’s going on?</p>
+
+<p>Let’s copy this string and go over <a href="http://jwt.io">jwt.io</a>, where you’ll see a cool tool that will explain the JWT: paste it in the left side.</p>
+
+<ul>
+  <li>
+    <p>We see the <strong>header</strong>, that contains the algorithm used the type of token issued;</p>
+  </li>
+  <li>
+    <p>we see the <strong>payload</strong>, that contains our original data along with a new property called <code>iat</code>(<em>Issued at</em>, the time this token was created);</p>
+  </li>
+  <li>
+    <p>and finally we see the <strong>verify signature</strong> that will allow us to inser the secret and verify that the token is right. Try to insert our <code>secret</code> (<code>123abc</code>) and the verification box will change to <em>Signature Verified</em> ;)</p>
+  </li>
+</ul>
+
+<p><img src="/images/jwt.PNG" alt="screenshot of JWT website" /></p>
+
+<h3 id="verify-that-the-token-is-valid">Verify that the token is valid</h3>
+
+<p>Very very easy:</p>
+
+<pre><code class="language-javascript">//add this to the preceeding script 
+
+let decoded = jwt.verify(token, secret)
+console.log('decoded', decoded)
+
+</code></pre>
+
+<p>output:</p>
+
+<pre><code class="language-bash">$ node jwtExample.js 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
+DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
+decoded { id: 10, iat: 1505982519 }
+
+</code></pre>
+
+<p>And if we try to change anything in the token, or in the secret, we get a javascript Error back:</p>
+
+<pre><code class="language-javascript">//change the secret to fail the validation  
+
+let decoded = jwt.verify(token, secret+'blah')
+console.log('decoded', decoded)
+
+</code></pre>
+
+<p>output:</p>
+
+<pre><code class="language-bash">$ node jwtExample.js 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTUwNTk4MjUxOX0.w
+DMat521KBdCoTj0XiqYcHxLkTblN01C9v8y26pEtl8
+
+/mnt/c/Users/miche/Documents/code/node-udemy/node-todo-api/node_modules/js
+onwebtoken/verify.js:32
+      if (err) throw err;
+               ^
+Error
+    at Object.module.exports [as verify] (/mnt/c/Users/miche/Documents/cod
+e/node-udemy/node-todo-api/node_modules/jsonwebtoken/verify.js:107:17)
+    at Object.&lt;anonymous&gt; (/mnt/c/Users/miche/Documents/code/node-udemy/no
+de-todo-api/playground/hashingJWT.js:11:19)
+    at Module._compile (module.js:573:30)
+    at Object.Module._extensions..js (module.js:584:10)
+    at Module.load (module.js:507:32)
+    at tryModuleLoad (module.js:470:12)
+    at Function.Module._load (module.js:462:3)
+    at Function.Module.runMain (module.js:609:10)
+    at startup (bootstrap_node.js:158:16)
+    at bootstrap_node.js:598:3
+
+</code></pre>
+
+<p>Not very clear, but once you know, you’ll catch it.</p>
+
+<h3 id="conclusions">Conclusions</h3>
+
+<p>In the past years I have dealt with authentication checking <em>on database</em> if the user was logged.</p>
+
+<p>Think about it: for. every. request. How much delay we introduced? Could we scale? Obviously not!</p>
+
+<p>With JWT the database is not needed anymore (at every request), because we can stay safe that the user has not tampered data and because we know when the token was issued, so we can decide to block the authentication after, you say, 24 hours.</p>
+
+<blockquote>
+  <p><strong>UPDATE</strong>: it seems that you might need the database however, with different strategies depending on your needs. Check out the comments thread, and thanks to <a href="http://disq.us/p/1mremix">Stas Kaufman</a> for pointing this to me. However, i believe JWT can scale better than session tokens: think of a 2 million users logged in to a cluster of servers. You loose some things but you earn scalability.</p>
+</blockquote>
+
+<p>Now you can handle as many users you can, thanks to hash functions and JWT!</p>
+
+<p><em>This post would have never existed without the brilliant course by <a href="https://www.udemy.com/the-complete-nodejs-developer-course-2/">Andrew Mead about NodeJs</a>. Check it out.</em></p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&text=JWT: what is it? How does it work? Why should we use it?:%20https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(JWT: what is it? How does it work? Why should we use it?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html&title=JWT: what is it? How does it work? Why should we use it?&summary=&source=https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">Tool of the week: Develop faster in NodeJS with Nodemon </a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2016/03/gioco-flexbox/">Vuoi imparare flexbox ma ti annoi? Prova questo gioco</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/">Angularizing a jQuery website template: what I discovered, what I have done</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html';
+			var disqus_identifier = 'https://michelenasti.com/2017/09/21/a-clear-explanation-of-jwt.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">Come capire il bitcoin: le funzioni crittografiche</a></h2>
+        </header>
+        <section>
+            <p>Ormai sono un paio di mesi che mi sono appassionato all’anarchico mondo del bitcoin, ossia questa moneta virtuale che esiste su internet che gode di un’infinita serie di proprietà positive: è anonima, decentralizzata, incontrollabile, incopiabile, incraccabile…</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">Viviamo tutti in una grande simulazione aliena? Sembra di no</a></h2>
+        </header>
+        <section>
+            <p>Esitono persone che ritengono che <a href="http://www.lescienze.it/news/2016/04/16/news/universo_simulazione_computer-3054787/">viviamo in una grande, enorme simulazione al computer</a>, magari realizzata da una civiltà aliena che ci sfrutta o ci osserva, manco fossimo al Grande Fratello.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

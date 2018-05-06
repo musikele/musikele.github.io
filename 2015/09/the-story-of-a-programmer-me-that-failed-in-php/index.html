@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>the story of a programmer (me) that failed in PHP - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="fail, php, startup, time management" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="the story of a programmer (me) that failed in PHP" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/" property="og:url">
+
+
+
+  <meta content="2015-09-08T21:22:35+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="fail" property="article:tag">
+  
+  <meta content="php" property="article:tag">
+  
+  <meta content="startup" property="article:tag">
+  
+  <meta content="time management" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="the story of a programmer (me) that failed in PHP">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/09/the-story-of-a-programmer-me-that-failed-in-php/">the story of a programmer (me) that failed in PHP</a></h1>
+			<p class="post-meta">Sep 8, 2015 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&text=the story of a programmer (me) that failed in PHP:%20https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(the story of a programmer (me) that failed in PHP) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&title=the story of a programmer (me) that failed in PHP&summary=&source=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Some time ago a friend of mine called and said: “<em>Hey! I just coded the app I was thinking about three years ago</em>, <strong>would you want to join me</strong>?”</p>
+
+<p>The incredible thing about this is that <strong>my friend is a law student</strong>. He had <strong>no idea about programming</strong>, so he learned everything by himself.</p>
+
+<p><strong>Three years before, he asked me to code his dream</strong> - an e-commerce idea to help websites to get more clients &amp; revenue. I had just graduated, and <strong>I had the feeling that I could not program the amazing things that I saw around me.</strong> Everybody was doing great things, and <strong>all I knew about Computer Science was a bunch of (very important) theorems</strong> about what you can and what you can’t do with a computer.</p>
+
+<p>So, <strong>I had to refuse the offer</strong> - starting a startup and having the feeling of not knowing how to work was my biggest fear..</p>
+
+<p>Then I got a regular job as a computer programmer, starting to code in <em>Java</em> and its related technologies (Hibernate, Maven, GWT, than AngularJS).</p>
+
+<p>After three years I have much more control and power on my capacities, so I feel like <strong>everything is feasible</strong> (<em>the opposite of three years before</em>!).</p>
+
+<p>Returning to my friend, I was very surprised that he could code his idea, and even if the code that I saw was not perfect (it was coded in <strong>PHP</strong> but using a framework called <strong>Symfony</strong>), it was CODE that worked someway.</p>
+
+<p>When he asked me to join him and help I had some concerns:</p>
+
+<ol>
+  <li>I am a <em>Java</em> programmer. In the last 3 years of my life, plus the years of university, I have studied Java as my primary programming language. I am using it every day. <strong>In PHP I have very little experience</strong>, based no what it was 5-6 years ago (a big amount of functions with no namespaces; queries, logic &amp; controllers where all together, everywhere. A big mess.).</li>
+  <li>I have <strong>little to no time to dedicate to the project</strong>. since I have my job that is 9 to 18, from monday to friday, I have only the weekend to work on such things. And I usually have to care about my family, my house and my life. So … how to find the right amount of time?</li>
+  <li><strong>I wanted to work to a side projects</strong> to improve my CV and to learn new things. <strong>Unfortunately I was unattracted by PHP</strong> and its technology stack.</li>
+</ol>
+
+<p>I managed to resolve the second problem: since I have to travel 45 minutes to go to work, I would work in the bus. It’s about 1,5 hrs of work everyday.</p>
+
+<p>But I found myself having to study symfony for everything I wanted to do. the shift from Java to Php is not so great but annoying; syntax glitches like <span class="lang:default decode:true crayon-inline">$object.method()</span>  and <span class="lang:default decode:true crayon-inline">$object-&gt;method()</span>  (just to say the first!) have made to loose many hours in debug time. (both the expressions are legal in php so you don’t get errors!)</p>
+
+<p>I’ve spent many hours studying Symfony documentation without studying enough PHP (newest) syntax.</p>
+
+<p>Finally, I managed to do some small bugfixes but still could not make any substantial modification to the codebase.</p>
+
+<h3 id="so-whats-going-on">So what’s going on?</h3>
+
+<p>After many months I had another personal problem so I had less time to dedicate to this project. At the end I had to inform my partner that I could not help him anymore, at least for now.</p>
+
+<p>This was not an easy decision for me but then I understood that I was asking more from myself, more than I could handle.</p>
+
+<p>Lessons learned:</p>
+
+<p>First, <strong>if you want to _startup _you should code in a language that you feel comfortable</strong>. My language is Java (not because it’s the best, but because I already know how to do everything!) and I have never thought to learn PHP. I have experimented  in Node, Ruby, Python… but not PHP. this language was not a priority for me and day after day I ended up hating it.</p>
+
+<p>Second, <strong>if you don’t have time to do things, and you also have to learn before you do, you are going to hit your head against a hard wall. </strong>I say this because I think of myself as an average (==&gt; good!) programmer, and I believe that I can learn everything (==&gt; I’m a <a href="http://michelenasti.com/2015/02/quando-assumere-generalisti-vs-specialisti/">generalist</a>) <em>given the right amount of time</em>. And I don’t have time. So … It was hard to say, but I cannot work to side projects that demand high availability.</p>
+
+<p>This was harder to accept for me than for my friend.</p>
+
+<p>I really want that he finds a good programmer, skilled in PHP, that can help him growing fast to achieve his MVP. About me, I have still to find my way.</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&text=the story of a programmer (me) that failed in PHP:%20https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(the story of a programmer (me) that failed in PHP) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/&title=the story of a programmer (me) that failed in PHP&summary=&source=https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html">L'innovazione non copia <span class="label label-default">startup</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html">We' waglio', vuoi venire a lavorare nella mia startup? <span class="label label-default">startup</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/09/to-log-php-soap-call-with-nusoap/">How to log a PHP Soap call with NuSoap <span class="label label-default">php</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/02/quanto-ci-metti-problemi-time-management/">"quanto ci metti?" - perchè i programmatori sono delle pippe col time management <span class="label label-default">time management</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/';
+			var disqus_identifier = 'https://michelenasti.com/2015/09/the-story-of-a-programmer-me-that-failed-in-php/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/">loggare il tempo di esecuzione di un JS : console.time e console.timeEnd</a></h2>
+        </header>
+        <section>
+            <p>Ogni browser moderno dispone di avanzatissimi strumenti di sviluppo, Firefox è stato il primo con Firebug (ora integra un suo strumento interno) mentre Chrome ha dettato lo standard con Chrome Developer Tools. A seguire tutti i browser che volevano definirsi moderni hanno dovuto creare delle conosole di sviluppo “serie”, e supportare tutta una serie di costrutti Javascript per facilitare lo sviluppo e il debugging di queste applicazioni.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2015/07/loggare-il-tempo-di-esecuzione-di-un-js-console-time-e-console-timeend/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2015/10/perche-node-js-e-cosi-difficile-da-imparare-per-chi-viene-da-java/">Perchè Node.JS è così difficile da imparare (per chi viene da Java)</a></h2>
+        </header>
+        <section>
+            <p><a href="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/10/node-js-logo.png"><img class="size-full wp-image-390 aligncenter" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/10/node-js-logo.png?fit=600%2C300" alt="node-js-logo" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/10/node-js-logo.png?w=600 600w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/10/node-js-logo.png?resize=300%2C150 300w" sizes="(max-width: 600px) 100vw, 600px" data-recalc-dims="1" /></a></p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2015/10/perche-node-js-e-cosi-difficile-da-imparare-per-chi-viene-da-java/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Interpretare HTML in una stringa popolata da angular con ng-bind-html - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="angular, ng-bind, ng-bind-html" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Interpretare HTML in una stringa popolata da angular con ng-bind-html" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/" property="og:url">
+
+
+
+  <meta content="2015-05-17T02:19:27+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="angular" property="article:tag">
+  
+  <meta content="ng-bind" property="article:tag">
+  
+  <meta content="ng-bind-html" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Interpretare HTML in una stringa popolata da angular con ng-bind-html">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/">Interpretare HTML in una stringa popolata da angular con ng-bind-html</a></h1>
+			<p class="post-meta">May 17, 2015 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&text=Interpretare HTML in una stringa popolata da angular con ng-bind-html:%20https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Interpretare HTML in una stringa popolata da angular con ng-bind-html) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&title=Interpretare HTML in una stringa popolata da angular con ng-bind-html&summary=&source=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Lo sapevate che non potevate inserire del testo html all’interno di una variabile _bind_ata con angular? Eh? Eh? Lo sapevate?</p>
+
+<p>Facciamo l’esempio: in un controller dichiariamo una variabile così:</p>
+
+<pre class="lang:default decode:true ">$scope.errorMessage = 'this is not good! &lt;br&gt; it won't work!'</pre>
+
+<p>e nell’HTML, a un certo punto, vogliamo mostrare questo messaggio in un div:</p>
+
+<pre class="lang:default decode:true ">&lt;div ng-controller="..."&gt;&lt;/div&gt;</pre>
+
+<p>il <br /> sarà interpretato come “a capo”? o vedremo scritto proprio <span class="lang:default decode:true  crayon-inline "><br /></span> ?</p>
+
+<p>….Vedremo scritto proprio <span class="lang:default decode:true  crayon-inline "><br /></span> . Motivo per cui ci sono io a spiegarvi perchè e come aggirare il problema 🙂</p>
+
+<p>Pochi sanno che quando scriviamo <span class="lang:default decode:true  crayon-inline ">&lt;p&gt;&lt;/p&gt;</span>  in realtà per Angular stiamo scrivendo <span class="lang:default decode:true  crayon-inline">&lt;p ng-bind="variabile"&gt;&lt;/p&gt;</span>; insomma il famosissimo <em>two way binding</em> di Angular è una direttiva bella e buona! I creatori di Angular hanno pensato che è decisamente più chiaro scrivere con le parentesi graffe, in modo che anche un non-programmatore possa capire il contenuto dell’html. Angular stesso poi tradurrà le <span class="lang:default decode:true  crayon-inline ">{{…}}  </span>  in <span class="lang:default decode:true  crayon-inline ">ng-bind=”…”</span>  , e infine la variabile in testo.</p>
+
+<h3 id="un-buon-motivo-per-usare-ng-bind">Un buon motivo per usare ng-bind</h3>
+
+<p>Solitamente non dovreste rinunciare alla potenza espressiva delle <code>{{...}}</code> , però c’è un caso speciale che magari <code>ng-bind</code> può essere d’aiuto: al caricamento della prima pagina della nostra webapp.</p>
+
+<p>Quando apriamo la nostra bellissima webapp per la prima volta, il browser inizia a caricare subito il DOM, e poi inizia a scaricare e a eseguire i file javascript. Questo significa che, finchè non verrà scaricato il js di Angular, per pochi istanti vedremo le antipaticissime parentesi graffe.</p>
+
+<p>La soluzione a questo problema è data proprio da <a href="https://docs.angularjs.org/api/ng/directive/ngBind">ng-bind</a>, ossia finchè Angular non viene caricato il browser non mostrerà alcuna parentesi graffa, e poi vedremo il testo. (Il browser, prima di scaricare Angular, non ha idea di come interpretare un attributo ng-bind e nel dubbio lo ignora).</p>
+
+<h3 id="ng-bind-html-un-nuovo-amico">ng-bind-html, un nuovo amico</h3>
+
+<p>Ma torniamo alla domanda iniziale. Come facciamo a mostrare l’html all’interno di una variabile <em>angularizzata</em>? La direttiva da chiamare stavolta è <a href="https://docs.angularjs.org/api/ng/directive/ngBindHtml"><strong>ng-bind-html</strong></a>, che sfortunatamente non ha corrispettivi con un’altra sintassi (niente doppie o triple parentesi qui). Il motivo per cui è meno nota (e dovrebbe essere usata con cura!) è che non bisognerebbe mai lasciare la responsabilità della formattazione del testo a un js, quindi non bisognerebbe inserire un <span class="lang:default decode:true  crayon-inline "><br /></span>  o qualsiasi altro tag in un messaggio. Inoltre sorgono dei problemi di sicurezza: che succede se un utente malevolo carica un tag <span class="lang:default decode:true  crayon-inline "><script>&lt;/span&gt; ?</script></span></p>
+
+<p>Almeno per questo Angular ci mette in guardia, e infatti specifica chiaramente nella guida che per usare ng-bind-html bisogna iniettare <strong>$sanitize</strong> di angular, così da eliminare eventuali tag scomodi. Senza l’import di $sanitize non dovrebbe proprio funzionare, questo per farvi capire quanto è importante ripulire codice che potrebbe essere compromesso.</p>
+
+<p>Morale: usate <span class="lang:default decode:true  crayon-inline ">ng-bind-html</span>  con coscienza, ma utilizzatelo solo in pochi punti ben documentati dell’applicazione, altrimenti in futuro potreste essere anche vittima di attacchi. Nel mio caso, l’ho usato per una fix rapida su un messaggio di errore che arrivava dal server (ove risiedeva il famigerato <span class="lang:default decode:true  crayon-inline "><br /></span> ). Quando ci sono rilasci non si può ragionare troppo 🙂</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&text=Interpretare HTML in una stringa popolata da angular con ng-bind-html:%20https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Interpretare HTML in una stringa popolata da angular con ng-bind-html) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/&title=Interpretare HTML in una stringa popolata da angular con ng-bind-html&summary=&source=https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS <span class="label label-default">angular</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/11/ritorno-dal-codemotion-milan-2015/">di ritorno dal Codemotion Milan 2015 <span class="label label-default">angular</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/11/react-js-day-a-napoli-impressioni/">React.js day a Napoli: impressioni <span class="label label-default">angular</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/">Angularizing a jQuery website template: what I discovered, what I have done <span class="label label-default">angular</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/';
+			var disqus_identifier = 'https://michelenasti.com/2015/05/interpretare-html-una-stringa-popolata-da-angular-con-ng-bind-html/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2015/05/basta-ai-powerpoint-fatti-male/">BASTA! ai powerpoint fatti male</a></h2>
+        </header>
+        <section>
+            <p>Questo articolo l’ho riadattato nel 2009 su un vecchio articolo di Paolo Attivissimo; ogni tanto qualche amico mi dice che deve preparare delle slide e io continuo a ripetere questi suggerimenti. Magari possono essere utili per chi deve ancora preparare le slide della tesi, o si sente insicuro. Seguite questi consigli: io l’ho fatto e ancora oggi ricordano le mie presentazioni all’università.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2015/05/basta-ai-powerpoint-fatti-male/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2015/05/selenium-webdriver-for-dummies/">Selenium WebDriver for dummies</a></h2>
+        </header>
+        <section>
+            <p>Esistono tool che permettono di scrivere i casi di test che simulano il comportamento dell’utente e di eseguirli all’infinito, cosa utile per individuare eventuali regressioni durante lo sviluppo.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2015/05/selenium-webdriver-for-dummies/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

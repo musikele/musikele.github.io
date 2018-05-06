@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Perchè la Green Card è una lotteria? - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="green card, usa, lotteria, michele risponde" />  
+	<meta http-equiv="last-modified" content="2018-01-18 10:47:12 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Perchè la Green Card è una lotteria?" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Perchè per l'asta dei diritti televisivi si usa un'asta di secondo prezzo? E perchè la green card è una lottera? Analizziamo questi metodi da un punto di vista informatico. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html" property="og:url">
+
+
+
+  <meta content="2018-01-17T01:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/lottery.jpg" property="og:image">
+
+
+
+  
+  <meta content="green card" property="article:tag">
+  
+  <meta content="usa" property="article:tag">
+  
+  <meta content="lotteria" property="article:tag">
+  
+  <meta content="michele risponde" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Perchè la Green Card è una lotteria?">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html">
+
+
+
+  <meta name="twitter:description" content="Perchè per l'asta dei diritti televisivi si usa un'asta di secondo prezzo? E perchè la green card è una lottera? Analizziamo questi metodi da un punto di vista informatico. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/lottery.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/01/17/perche-la-green-card-e-una-lotteria.html">Perchè la Green Card è una lotteria?</a></h1>
+			<p class="post-meta">Jan 17, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&text=Perchè la Green Card è una lotteria?:%20https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Perchè la Green Card è una lotteria?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&title=Perchè la Green Card è una lotteria?&summary=&source=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Ho beccato un post on line in cui si chiedeva se un lavoratore da remoto può lavorare dagli USA per clienti italiani. La risposta precisa ve la potrà dare solo un avvocato esperto (o il consolato USA); semplifichiamo dicendo che se si lavora dal territorio USA bisogna pagare le tasse americane. Per lavorare legalmente in USA ci sono <a href="https://www.us-immigration.com/greencard/Green-Card-Lottery.html">molte strade</a>: la <strong>Green Card</strong> è una di queste.</p>
+
+<p>In questo articolo parleremo del <strong>perchè gli USA hanno scelto la lotteria come sistema di assegnazione</strong> (e perchè secondo me hanno fatto bene).</p>
+
+<p><img src="/images/green_card_lottery.jpg" alt="" /></p>
+
+<h2 id="cosè-la-green-card">Cos’è la Green Card?</h2>
+
+<p>La <a href="http://america24.com/news/come-si-ottiene-la-green-card"><strong>Green Card</strong></a> è l’equivalente del <em>permesso di soggiorno italiano</em>, ma permette di lavorare, a tempo indeterminato, negli USA. In pratica chi vince una Green Card può tranquillamente trasferirsi e creare reddito: non ci sono limiti di nessun tipo (ma evitate di violare la legge).</p>
+
+<h2 id="perchè-si-dice-che-è-una-lotteria">Perchè si dice che è una lotteria?</h2>
+
+<p>Perché lo è: il numero di posti messi a disposizione ogni anno è di circa 50.000, a fronte di un numero enorme di richiedenti. E’ una lotteria per promuovere la diversità, quindi si cerca di far arrivare negli States immigranti da qualsiasi area del mondo (tranne alcune nazioni che hanno in essere embarghi con gli Stati Uniti).</p>
+
+<p><img src="/images/lottery.jpg" alt="" /></p>
+
+<p>Per molti tutto ciò potrebbe sembrare un’<strong>americanata,</strong> nel senso che magari c’erano altri modi per assegnare questa risorsa a quanti ne richiedevano. Il problema è che tutti gli altri sistemi hanno pro e contro, e la lotteria è semplicemente il metodo più equo, rapido, ed economico.</p>
+
+<p>Sostanzialmente quando vuoi offrire una risorsa a qualcuno hai molti modi per farlo:</p>
+
+<ul>
+  <li>L’<strong>assegnazione diretta</strong> è il metodo più clientelare che c’è: io titolare di una risorsa  (es. un appalto) decido il vincitore in maniera del tutto arbitraria.</li>
+  <li>Il  <strong>bando di gara “beauty contest”</strong> prevede che tu la commissione scelga il progetto migliore. Anche in questo caso la corruzione la fa da padrona.</li>
+  <li>Le <strong>aste al ribasso o al rialzo</strong> sono frequenti nel settore dei diritti televisivi o  per gli appalti: in questo caso, aziende con forti disponibilità vinceranno sicuramente, o comunque se sai chi altro partecipa e qual è la loro disponibilità economica (ad esempio corrompendo le persone giuste), ti basterà fare un’offerta leggermente maggiore. In questo caso chi ci perde è chi assegna il bene: non intasca il reale valore di quel bene, ma il valore appena necessario per ottenerlo.</li>
+  <li>L’<strong>asta di secondo prezzo</strong> è un meccanismo intelligente, anche eBay funziona così, e su questa cosa <a href="https://it.wikipedia.org/wiki/William_Vickrey">Vickrey ci ha vinto un premio nobel per l’economia</a>. Lo spiego in parole povere: facciamo un’asta a busta chiusa, ognuno di noi offre quanto secondo lui quel bene “vale”, e vince ovviamente chi offre di più MA paga il secondo prezzo più alto. Tramite una serie di teoremi (che a suo tempo ho anche studiato) si può dimostrare che chi partecipa a questo tipo di asta è meno invogliato a offrire di meno rispetto al valore reale.</li>
+  <li>il <strong>Click Day,</strong> mi vergogno addirittura a metterlo in questa lista, è una di quelle cavolate all’italiana venute fuori dalla mente di chissà quale burocrate. Praticamente in un certo giorno e a una certa ora, si fa una gara di velocità: i più veloci a <em>cliccare</em> si assegnano quel bene_._ Capirete che tutto dipende dall’affidabilità del sistema di rilevamento, dalla latenza della velocità internet, dalla dimestichezza che ha l’operatore con mouse e tastiera, e dalla fortuna.</li>
+  <li>E veniamo infine alla <strong>lotteria</strong>: è il meccanismo più equo ed economico quando hai un tot di posti disponibili (es. 50.000) e una quantità enorme di persone che partecipa (es. 10.000.000): semplicemente decide il caso. Costa poco, è di facile realizzazione, non richiede di revisionare tutte le domande per verificare titoli o altro (beauty contest), nè è accessibile solo ai ricchi (aste). Ah, e non vince il più veloce.</li>
+</ul>
+
+<p>Se avete seguito uno dei primi link di questo articolo sappiate che vincere la lotteria per la Green Card è solo il primo passo: seguiranno un paio di anni di colloqui con l’ambasciata, e tanta burocrazia. <strong>La cosa più semplice é di trovare un’azienda USA che sponsorizzi la vostra candidatura per farvi lavorare lì</strong>. In bocca al lupo!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&text=Perchè la Green Card è una lotteria?:%20https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Perchè la Green Card è una lotteria?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html&title=Perchè la Green Card è una lotteria?&summary=&source=https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018 <span class="label label-default">michele risponde</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html">E' importante conoscere come sono fatte le librerie che usiamo? <span class="label label-default">michele risponde</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri.html">Essere programmatori e vivere di progetti propri <span class="label label-default">michele risponde</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/01/17/perche-la-green-card-e-una-lotteria.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/01/12/la-mia-esperienza-col-test-driven-development.html">La mia esperienza col Test Driven Development</a></h2>
+        </header>
+        <section>
+            <p>Il <strong>Test Driven Development</strong> è una pratica <em>mistica</em>: consiste nello <strong>scrivere prima i test e poi il vero e proprio codice che ti serve per realizzare quella funzionalità</strong>.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/01/12/la-mia-esperienza-col-test-driven-development.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2018/01/27/remap-backtick-tilde-on-windows.html">Remap backtick, ñ and tilde characters on Windows computers</a></h2>
+        </header>
+        <section>
+            <p>Since the switch to Windows I had a problem to solve as soon as possible: find a way to write the backtick (`) and tilde (~) characters.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2018/01/27/remap-backtick-tilde-on-windows.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

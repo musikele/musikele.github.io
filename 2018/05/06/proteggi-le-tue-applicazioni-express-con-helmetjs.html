@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Proteggi le tue applicazioni Express con HelmetJs - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="express, helmetjs, helmet, security, node" />  
+	<meta http-equiv="last-modified" content="2018-05-06 18:56:04 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Proteggi le tue applicazioni Express con HelmetJs" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Helmet è un middleware che agganci ad Express e la tua app è immediatamente più sicura. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html" property="og:url">
+
+
+
+  <meta content="2018-05-06T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/testuggine-8.jpg" property="og:image">
+
+
+
+  
+  <meta content="express" property="article:tag">
+  
+  <meta content="helmetjs" property="article:tag">
+  
+  <meta content="helmet" property="article:tag">
+  
+  <meta content="security" property="article:tag">
+  
+  <meta content="node" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Proteggi le tue applicazioni Express con HelmetJs">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html">
+
+
+
+  <meta name="twitter:description" content="Helmet è un middleware che agganci ad Express e la tua app è immediatamente più sicura. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/testuggine-8.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html">Proteggi le tue applicazioni Express con HelmetJs</a></h1>
+			<p class="post-meta">May 6, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&text=Proteggi le tue applicazioni Express con HelmetJs:%20https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Proteggi le tue applicazioni Express con HelmetJs) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&title=Proteggi le tue applicazioni Express con HelmetJs&summary=&source=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Quanto ne capisci di sicurezza informatica? Io molto poco, anzi a dire il vero trovo l’argomento addirittura noioso. Questo non vuol dire che lo sottovaluto: è una di quelle cose che sì, è una palla, ma sì, bisogna trattare l’argomento <em>seriamente</em>.</p>
+
+<p><img src="/images/testuggine-8.jpg" alt="Metti questi tizi a proteggere il tuo server " title="Testuggine romana " /></p>
+
+<p>Intorno al mondo della sicurezza informatica esistono addirittura delle figure specifiche (il pentester, ad esempio, che per lavoro deve <em>bucare</em> i server dei suoi clienti e trovare eventuali falle - per farle correggere!) o comunque interi team devoti alla sicurezza, che si occupano di implementare patch, conoscere gli attacchi più diffusi, capire cosa sta accadendo in tempo reale nella loro rete, etc.</p>
+
+<p>Tutto questo preambolo per dire: quando realizzi la tua applicazione web <strong>pensi alla sicurezza?</strong> Se usi NodeJS è molto probabile che hai scritto qualcosa con Express; <strong>ti sei mai preoccupato di sapere se l’app che hai rilasciato in produzione è <em>sicura</em>?</strong></p>
+
+<p>Ripeto, la sicurezza è una cosa seria e non va abbozzata. Basta installare wordpress pulito su un server custom per scoprire dopo neanche dieci giorni che è stato bucato. Se siete un po’ come me, è probabile che a tutto questo ci pensate alla fine (prima vi rimboccate le maniche per fare in modo che il servizio <em>funioni</em>). Come evitare di prendere sottogamba l’argomento?</p>
+
+<p>L’ideale, per me, è di trovare un middleware per Express che lo agganci e - <em>magia! -</em> la tua app è più sicura.</p>
+
+<p>Tale progetto esiste e si chiama <a href="https://helmetjs.github.io/">HelmetJS</a>.</p>
+
+<p><img src="/images/helmetjs.png" alt="Il logo di HelmetJS. Purtroppo esiste solo in bassa qualità" title="https://helmetjs.github.io/" /></p>
+
+<h2 id="come-funziona">Come funziona</h2>
+
+<p><strong>HelmetJS</strong> non fa analisi di ciò che entra o ciò che esce dal tuo sito.</p>
+
+<p>Quello che invece fa è aggiungere una serie di best practices a Express, alcune che sono semplici regole dettate dal buon senso, e altre che invece dipendono dal contesto.</p>
+
+<p>Un esempio di regola semplice: rimuvere il tag <code>X-Powered-By</code> che di default Express setta con nome e versione; questo rende la vita facile a un attacker che può trovare un exploit specifico per il tuo server.</p>
+
+<p>Altri esempi li trovate cliccando sui vari <a href="">link dei sottomoduli</a> di Helmet, installabili singolarmente.</p>
+
+<h2 id="come-si-installa">Come si installa</h2>
+
+<p>niente di più semplice, e a me le soluzioni semplici piacciono.</p>
+
+<pre><code class="language-shell">$ npm install helmet --save 
+</code></pre>
+
+<p>Dopodichè si tratta solo di istanziare Helmet nel vostro server e usare il middleware il più in alto possibile:</p>
+
+<pre><code class="language-javascript">var express = require('express')
+var helmet = require('helmet')
+
+var app = express()
+
+app.use(helmet())
+
+// ...
+</code></pre>
+
+<h3 id="mai-più-preoccupazioni">Mai più preoccupazioni?</h3>
+
+<p>Non scherziamo. Gli hacker ne sanno una più del diavolo, e non appena un software - sistema - applicativo si diffonde, sfruttano bug sempre più complessi.</p>
+
+<p>Però bisogna riconoscere che Helmet è un progetto semplice che fa quelle cose che Express avrebbe dovuto fare di suo. Per me, è un <em>mai più senza</em>.</p>
+
+<p>Vi lascio le mie personali regole non scritte (prima d’ora) della sicurezza informatica:</p>
+
+<ul>
+  <li>più una cosa è semplice, più è difficile da bucare</li>
+  <li>aggiorna sempre tutti i sw, e se non puoi iscriviti alle mailing list di sicurezza dei software che tieni in produzione (così avvisi chi di dovere)</li>
+  <li>Se i dati che gestisci sono importanti, assumi uno che ne capisce</li>
+</ul>
+
+<p>Conoscete tool simili a Helmet ma per altri linguaggi? Se si, indicali nei commenti!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&text=Proteggi le tue applicazioni Express con HelmetJs:%20https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Proteggi le tue applicazioni Express con HelmetJs) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html&title=Proteggi le tue applicazioni Express con HelmetJs&summary=&source=https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html">Become a test expert in NodeJS with these tricks <span class="label label-default">express</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html">Deploy a NodeJS app on Heroku in less than 1 minute <span class="label label-default">express</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/03/programmare-nodejs-the-right-way/">Come programmare in NodeJS, the right way <span class="label label-default">node</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/10/perche-node-js-e-cosi-difficile-da-imparare-per-chi-viene-da-java/">Perchè Node.JS è così difficile da imparare (per chi viene da Java) <span class="label label-default">node</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/04/23/startup-weekend-salerno-2018.html">Cambia la tua vita lavorativa! (partecipando a uno Startup Weekend) </a></h2>
+        </header>
+        <section>
+            <p>Avete la vostra lista di cose nuove da fare ogni anno? Io sinceramente no, ma se l’avessi probabilmente per quest’anno avrei scritto: <strong>partecipare a uno startup weekend</strong>.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/04/23/startup-weekend-salerno-2018.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>The Javascript Event Loop for dummies - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="javascript, async, event loop" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="The Javascript Event Loop for dummies" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/the-javascript-event-loop-for-dummies/" property="og:url">
+
+
+
+  <meta content="2017-02-25T11:29:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="async" property="article:tag">
+  
+  <meta content="event loop" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="The Javascript Event Loop for dummies">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/the-javascript-event-loop-for-dummies/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/the-javascript-event-loop-for-dummies/">The Javascript Event Loop for dummies</a></h1>
+			<p class="post-meta">Feb 25, 2017 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/the-javascript-event-loop-for-dummies/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/the-javascript-event-loop-for-dummies/&text=The Javascript Event Loop for dummies:%20https://michelenasti.com/the-javascript-event-loop-for-dummies/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(The Javascript Event Loop for dummies) + ':%20'  + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/the-javascript-event-loop-for-dummies/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/the-javascript-event-loop-for-dummies/&title=The Javascript Event Loop for dummies&summary=&source=https://michelenasti.com/the-javascript-event-loop-for-dummies/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>What does it mean that Javascript has no threads?! What is the event loop and how it is related? How can JS be even considered a modern programming language?! Let’s find out the surprising truth about this stuff.</p>
+
+<p><img src="/images/o_weighted_hula_hoop-1.jpg" alt="An event loop. The dancer is not included." /></p>
+
+<h2 id="quiz-whats-going-on">Quiz: what’s going on?</h2>
+
+<p>Let’s consider this small javascript program. What will be printed?</p>
+
+<pre><code class="language-javascript">console.log('Starting app');
+
+//first block 
+setTimeout(() =&gt; {
+  console.log('First setTimeout');
+}, 2000);
+
+//second block 
+setTimeout(() =&gt; {
+  console.log('Second setTimeout');
+}, 0);
+
+console.log('Finishing app');
+</code></pre>
+
+<p>In case you don’t know: <code>setTimeout</code> is a javascript global function used to fire an action (the first argument) when the delay (second argument) is elapsed.</p>
+
+<p>So the first <code>setTimeout()</code> block will wait two seconds and then will write <code>First setTimeout</code> on console.</p>
+
+<p>The second block will wait 0 milliseconds (… it doesn’t wait at all!) and then write <code>Second setTimeout</code> to the console).</p>
+
+<p>Back to the quiz… what is the expected outcome?</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#1</th>
+
+<th>#2</th>
+
+<th>#3</th>
+
+<th>#4</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Starting App  
+First setTimeout  
+Second setTimeout  
+Finishing app</td>
+
+<td>Starting App  
+Second setTimeout  
+Finishing app  
+First setTimeout</td>
+
+<td>Starting App  
+Finishing app  
+Second setTimeout  
+First setTimeout</td>
+
+<td>Starting App  
+Second setTimeout  
+First setTimeout  
+Finishing app</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>What’s your choice? Don’t scroll down and think a little bit…</p>
+
+<p>Hey, you could just paste this code in your browser’s console to discover that … the right answer is <strong>#3</strong>.</p>
+
+<p>This behaviour may seem surprising but is perfectly legit.</p>
+
+<p>Why?</p>
+
+<h2 id="what-is-really-happening-under-the-hood">what is really happening under the hood</h2>
+
+<p>Let’s start with a Dogma: <strong>in Javascript there is just one thread</strong>. (<em>This is not correct anymore, because in the last years a new technology called <code>Service Workers</code> has become available; but it is not important for now.</em>) Everything is always executed in the same thread, even events that happen asynchronously.</p>
+
+<p>So what happens when an asynchronous event happen, like the <code>setTimeout</code>?</p>
+
+<p><code>setTimeout</code> is a good example of an asynchronous event. Expanding the reasoning, this can be a reading of a file, or receiving a packet over the network. The philosophy doesn’t change.</p>
+
+<p>Bearing this in mind, let’s return to the basis.</p>
+
+<ul>
+  <li>
+    <p>The first <code>console.log()</code> is printed: <code>Starting app</code></p>
+  </li>
+  <li>
+    <p>The first block is evaluated:</p>
+  </li>
+</ul>
+
+<pre><code class="language-javascript">//first block 
+setTimeout(() =&gt; {
+  console.log('First setTimeout');
+}, 2000);
+</code></pre>
+
+<p>This code says: <em>after 2000 milliseconds, trigger the function specified as first argument</em>. Since <code>() =&gt; { ... }</code> is a function, this is put in a <strong>callback queue</strong> ready to get fired when the conditions occur.</p>
+
+<ul>
+  <li>The second block is evaluated:</li>
+</ul>
+
+<pre><code class="language-javascript">//second block 
+setTimeout(() =&gt; {
+  console.log('Second setTimeout');
+}, 0);
+</code></pre>
+
+<p>Another explanation. This code says: <em>after zero milliseconds, fire the function specified as first argument</em>. One would expect to be fired instantly, but this does not happen: The function is put in a <strong>callback queue</strong>, and when NodeJS believes the conditions are respected, the function is fired.</p>
+
+<p>Node cannot fire the function NOW because there’s other javascript code being executed in the stack: it’s the <em>main program</em>, the one that starts with the first <code>console.log()</code>. Think of this as a being wrapped inside a function; nodeJS is evaluating <strong>this</strong> function and cannot evaluate others.</p>
+
+<ul>
+  <li>
+    <p>The last <code>console.log()</code> is evaluated and <code>Finishing app</code> is written to console.</p>
+  </li>
+  <li>
+    <p>NodeJS controls the call queue and decides what to fire. There are two functions in the call queue. It’s NodeJS’s responsibility to select the right one: since the second <code>setTimeout</code> had a higher priority, it will be fired first: you’ll then see <code>Second setTimeout</code>.</p>
+  </li>
+  <li>
+    <p>Node will pop the previous function from the stack and will check again the callback queue. This time it will select the first block <code>setTimeout</code> callback, and will print <code>First setTimeout</code>. Then, Node will pop this last function from the stack, and when it realizes that nothing more can be executed, the program will end.</p>
+  </li>
+</ul>
+
+<h3 id="what-happens-when-you-read-data-from-a-file-or-receive-a-response-from-the-network">What happens when you read data from a file or receive a response from the network?</h3>
+
+<p>The behavior is the same! Node will put your callback function in the callback queue, and it will be called as soon as possible.</p>
+
+<h3 id="the-advantages-of-this">The advantages of this</h3>
+
+<p>The main advantage is that <strong>the CPU will not stop when waiting for an I/O event</strong>: it will just put the callback in the queue, and Node will execute the next available function. This means that one single CPU can handle more traffic and a greater number of concurrent connections; it is not limited by the number of threads a server can handle (because there is just one thread).</p>
+
+<h3 id="the-disadvantage">The disadvantage</h3>
+
+<p>The first disadvantage is that <strong>programming with async in mind and with callbacks is profoundly different</strong> from the past: it is more difficult to reason about and to debug, at start. However, once you truly understand the philosophy and the way it works, you’ll never want to come back again.</p>
+
+<h2 id="so-what-you-suggest">So? What you suggest?</h2>
+
+<p>Node.js is a great idea made simple: a complex use case solved smartly. <strong>Learning Node will help you become a better programmer</strong>, and this applies even if you work with other languages.</p>
+
+<p>I can only suggest you to google *NodeJS vs XXX performance”, change XXX with whatever you want… You’ll find that <a href="https://dzone.com/articles/performance-comparison-between">an interpreted language, with no tweaks, is faster than well-established platforms</a> (Caution: old article! but the main points still hold) with years of optimization.</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/the-javascript-event-loop-for-dummies/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/the-javascript-event-loop-for-dummies/&text=The Javascript Event Loop for dummies:%20https://michelenasti.com/the-javascript-event-loop-for-dummies/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(The Javascript Event Loop for dummies) + ':%20'  + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/the-javascript-event-loop-for-dummies/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/the-javascript-event-loop-for-dummies/&title=The Javascript Event Loop for dummies&summary=&source=https://michelenasti.com/the-javascript-event-loop-for-dummies/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/the-javascript-event-loop-for-dummies/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/02/18/un-giro-nell-universo-react.html">Un giro nell'universo React <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018 <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/17/vuejs-basics.html">VueJS basics <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/the-javascript-event-loop-for-dummies/';
+			var disqus_identifier = 'https://michelenasti.com/the-javascript-event-loop-for-dummies/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/libri-motivazionali/">I libri motivazionali funzionano?</a></h2>
+        </header>
+        <section>
+            <p>In una discussione con alcuni miei amici abbiamo iniziato a parlare di libri che stavamo leggendo in questo periodo, e ne è nato un discorso sui libri <em>motivazionali</em> (quei libri che ti insegnano a essere una persona migliore).</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/libri-motivazionali/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html"> Quando l'azienda non paga gli stipendi</a></h2>
+        </header>
+        <section>
+            <p>Qualche anno fa <strong>l’azienda per cui lavoravo ha attraversato un periodo di crisi e lo stipendio arrivava a singhiozzo</strong> (o peggio, non arrivava proprio). Lo ricordo come uno dei periodi più brutti della mia vita.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2017/02/28/quando-l-azienda-non-paga-gli-stipendi.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

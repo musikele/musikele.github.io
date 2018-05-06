@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Un programmatore dovrebbe continuare a programmare nel suo tempo libero? - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="programming, tempo libero, programmatore, riflessioni" />  
+	<meta http-equiv="last-modified" content="2018-04-05 10:17:21 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Un programmatore dovrebbe continuare a programmare nel suo tempo libero?" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Qualche considerazione sparsa sul tempo libero di un programmatore." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" property="og:url">
+
+
+
+  <meta content="2018-04-05T02:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/rtryt.jpg" property="og:image">
+
+
+
+  
+  <meta content="programming" property="article:tag">
+  
+  <meta content="tempo libero" property="article:tag">
+  
+  <meta content="programmatore" property="article:tag">
+  
+  <meta content="riflessioni" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Un programmatore dovrebbe continuare a programmare nel suo tempo libero?">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html">
+
+
+
+  <meta name="twitter:description" content="Qualche considerazione sparsa sul tempo libero di un programmatore.">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/rtryt.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html">Un programmatore dovrebbe continuare a programmare nel suo tempo libero?</a></h1>
+			<p class="post-meta">Apr 5, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&text=Un programmatore dovrebbe continuare a programmare nel suo tempo libero?:%20https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Un programmatore dovrebbe continuare a programmare nel suo tempo libero?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&title=Un programmatore dovrebbe continuare a programmare nel suo tempo libero?&summary=&source=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Programmare è diventata una passione.</p>
+
+<p>Questa frase mi suona ridicola, perchè io non sono mai stato un tipo che realizza side projects, neanche ai tempi dell’università (e sbagliavo!).</p>
+
+<p>Ciò che mi piace, della programmazione in se e per se, <strong>è il processo mentale che parte prima di scrivere la prima riga di codice</strong>: “<em>se succede questo faccio questo… e se succede quello faccio quello…. nel browser questo non si può fare quindi lo simulo così….</em>”</p>
+
+<p>Specialmente durante la prima fase lavorativa (post-università) ricordo serate che tornavo a casa dopo una giornata di lavoro e mi rimettevo col computer a fare prove, seguire tutorial, corsi, etc.</p>
+
+<p>Poi è nata mia figlia e il tempo di accendere il computer (o di fare qualsiasi altra cosa, come suonare la chitarra) non c’è stato più.Dopo un anno per fortuna la bimba sta iniziando ad andare a dormire alle 21:30 (e mia moglie segue programmi TV che non mi piacciono) quindi ho parzialmente ritrovato tempo per il mio “hobby”.</p>
+
+<h2 id="ma-un-buon-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero">Ma: un buon programmatore dovrebbe continuare a programmare, nel suo tempo libero?</h2>
+
+<p>Come al solito, dipende.</p>
+
+<p><strong>Se si torna a casa e si continua a lavorare</strong>, <strong>potrebbe essere divertente ma probabilmente non è un hobby.</strong></p>
+
+<p>Se dovessi rileggere il discorso scritto prima e mettergli la firma di qualcun altro, penserei che chi l’ha scritto deve essere uno di quegli <em>azzeccati</em> che passano il tempo a fare sempre la stessa cosa, programmare programmare programmare - <em>probabilmente è anche un tipo spocchioso, fastidioso, saccente, buffone</em>…</p>
+
+<p>Se invece dovessi fare un colloquio di lavoro a una persona che apre con queste parole, penso gli farei qualche domanda più tosta per testare le sue capacità analitiche.</p>
+
+<p><img src="/images/rtryt.jpg" alt="" /></p>
+
+<p>Ormai lavoro da qualche annetto e qualche programmatore l’ho conosciuto durante la mia carriera; i colleghi si dividono in:</p>
+
+<ul>
+  <li><strong>Lavoro solo per lo stipendio</strong>: La programmazione non mi interessa, alle 18 voglio stare in viaggio verso casa. Conosco abbastanza bene solo gli strumenti che mi servono per lavorare, di sicuro non propongo io qualcosa di nuovo al mio team.</li>
+  <li><strong>L’intelligenza non mi manca, ma fondamentalmente sono un tipo pigro</strong>: queste persone capiscono tutto al volo, leggono tanto, non provano nulla. A casa dopo il lavoro preferiscono netflix.</li>
+  <li><strong>Voglio stare sempre una spanna avanti a tutti</strong>. Questa è la categoria più pericolosa, perchè studiano <em>anche</em> per passione, ma il secondo fine neanche tanto celato è quello di fare carriera e di dimostrare la propria superiorità.</li>
+  <li><strong>Mi piace programmare ma al tempo stesso riesco ad avere una vita sociale equilibrata</strong>: scherzavo ragazzi, non esiste nessuno in questa categoria. O siete nerd o non siete niente 😂</li>
+</ul>
+
+<p>Citiamo un’altra categoria che ho contribuito a creare, nel mio piccolo, a Salerno e in Campania. Quella dei <strong>programmatori consapevoli</strong>. Da quando ho fondato il <a href="http://www.devday.it">DevDay</a> ho intercettato un sacco di professionisti che, per motivi privati o familiari, non hanno più il tempo di scoprire cose nuove. Q<strong>ueste persone vogliono aggiornarsi, ma non possono rubare tempo alla cosa più bella che hanno, ossia la loro vita.</strong> E quindi “consacrano” un sabato al mese per venire agli incontri che organizziamo, i DevDay appunto, per scoprire le ultime novità o semplicemente incontrare altre persone appassionate. Queste persone diventano anche molto focose se gli tocchi il loro framework preferito, ma <strong>generalmente sono persone che amano ascoltare le opinioni degli altri. Esattamente il contrario delle community on line :)</strong></p>
+
+<h2 id="programmando-si-invecchia">Programmando si invecchia</h2>
+
+<p>Avete mai conosciuto programmatori over-40? e over-50? Io si, ma si contavano sulle dita di una mano. La stragrande maggioranza degli over-40 o over-50 in realtà occupava posti manageriali (capo team, responsabile di progetto, etc.).</p>
+
+<p>Non tutti possono diventare capi, o manager. <strong>Che fine fanno i programmatori dopo una certa età?</strong></p>
+
+<p>Quando un giorno la programmazione sarà fonte di noia anche per me, in che modo trasformo la mia vita affinchè non sia completamente buttata?</p>
+
+<p>A queste domande non so ancora rispondere. Se ti piace fare qualcosa vorresti poi farla per più tempo possibile. Salvo poi scoprire che farlo tutti i giorni, e anche nel tempo libero, si rivela non essere questo gran divertimento. E insomma devi necessariamente “scappare” dal codice per passare ad altro, altrimenti rischi di passare la tua giornata a fare qualcosa che odi.</p>
+
+<p>E questo non lo auguro a nessuno!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&text=Un programmatore dovrebbe continuare a programmare nel suo tempo libero?:%20https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Un programmatore dovrebbe continuare a programmare nel suo tempo libero?) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html&title=Un programmatore dovrebbe continuare a programmare nel suo tempo libero?&summary=&source=https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/06/essere-programmatori-e-vivere-di-progetti-propri.html">Essere programmatori e vivere di progetti propri <span class="label label-default">programmatore</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">Tool of the week: Develop faster in NodeJS with Nodemon </a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2016/03/gioco-flexbox/">Vuoi imparare flexbox ma ti annoi? Prova questo gioco</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.html">Come realizzare un form esterno (Es. assistenza) che manda dati a MagNews</a></h2>
+        </header>
+        <section>
+            <p>Questa roba l’ho dovuta fare per lavoro e, nello scoprire tutti i passaggi necessari, me li sono segnati.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2018/04/16/ode-ai-libri-di-carta.html">Ode ai libri di carta </a></h2>
+        </header>
+        <section>
+            <p><img src="/images/kindle-vs-books.jpg" alt="" /></p>
+
+<p>Ci ho provato, attratto dall’idea di portarmi un solo dispositivo dietro con tutti i libri che volevo leggere.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2018/04/16/ode-ai-libri-di-carta.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Pdfmake : libreria JS per creare PDF - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="jasperreports, javascript, javascript pdf, jspdf, pdfmake" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Pdfmake : libreria JS per creare PDF" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/" property="og:url">
+
+
+
+  <meta content="2015-01-13T14:30:46+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="jasperreports" property="article:tag">
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="javascript pdf" property="article:tag">
+  
+  <meta content="jspdf" property="article:tag">
+  
+  <meta content="pdfmake" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Pdfmake : libreria JS per creare PDF">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2015/01/pdfmake-libreria-js-per-creare-pdf/">Pdfmake : libreria JS per creare PDF</a></h1>
+			<p class="post-meta">Jan 13, 2015 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&text=Pdfmake : libreria JS per creare PDF:%20https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Pdfmake : libreria JS per creare PDF) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&title=Pdfmake : libreria JS per creare PDF&summary=&source=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/pdfmake.png"><img class="full-width alignnone wp-image-73 size-full" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/pdfmake.png?fit=877%2C396" alt="pdfmake" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/pdfmake.png?w=877 877w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/pdfmake.png?resize=300%2C135 300w" sizes="(max-width: 877px) 100vw, 877px" data-recalc-dims="1" /></a>Ecco a voi il task della settimana: generare <em>on the fly</em> un <strong>pdf</strong> con il contenuto di una tabella.</p>
+
+<p>Quale libreria scegliere?</p>
+
+<ul>
+  <li><a href="https://community.jaspersoft.com/"><strong>JasperReports</strong></a> non è adatto allo scopo: bisognerebbe spedire il contenuto della tabella sul backend, e far stampare il report al server; ma soprattutto, se l’applicazione contiene 100.000 tabelle, c’è il rischio di dover preparare 100.000 template? (Aiuto miei cari friends della community, sinceramente non sono un super esperto di JasperReports!). In ogni caso, i dati sono in genere già disponibili sul client; possibili che non ci sono soluzioni “native” in js?</li>
+  <li><a href="https://parall.ax/products/jspdf"><strong>jsPDF</strong></a> è un’altra libreria presa in considerazione. E’ Javascript, è frontend, è leggera. Il problema è che non è capace di renderizzare l’HTML, quindi per creare la tabella avrei dovuto disegnarla linea per linea. Non un compito banale. Ad esempio, per scrivere del testo in una certa posizione, bisogna specificare la posizione di ogni oggetto: <span class="lang:default decode:true  crayon-inline">doc.text(35, 25, “Paranyan loves jsPDF”);</span> . Un delirio di numeri! E poi tutti quei problemi come spaziatura… proporzioni … overflow del testo…  insomma è quasi una tesi di laurea! Scartato.</li>
+  <li><a href="http://pdfmake.org/#/"><strong>Pdfmake</strong></a> l’ho scoperto per caso. Nella pagina web di <a href="http://ui-grid.info/">UI-Grid</a> (una tabella per Angular) c’era questo import, ma non trovavo nessun riferimento sul sito. Così sono andato sul sito ufficiale e ho provato a capirci di più.</li>
+</ul>
+
+<h2 id="pdfmake-wow">pdfmake, wow</h2>
+
+<p>Iniziamo con i vantaggi. E’ <strong>javascript puro</strong>, e funziona anche lato server con NodeJs anche se a noi interessa nel browser (quanta roba la community NodeJs sta rilasciando, cose utilissime sul backend, che però migliorano la vita del frontend!).</p>
+
+<p>E’ <strong>dichiarativo</strong>, ossia piuttosto che dire pixel per pixel dove andare ad inserire immagini, testo, linee e tabelle, il documento viene “preparato” quasi come se fosse un HTML. Ci si può dunque focalizzare sul contenuto, e dopo aver dato qualche generica istruzione di layout, il PDF è bello e servito.</p>
+
+<p>Vi devo parlare anche degli svantaggi però. Uscire dal seminato è difficile: la cosa positiva è che a me non serve. Un’altra cosa veramente brutta è che se qualcosa non è stata configurata a dovere, non vi è alcuna eccezione in console, nè niente che faccia capire cosa è accaduto al nostro pdf. Semplicemente non si apre. (E una variabile viene impostata a false). Nei miei test ho creato per errore tabelle con 3 colonne header e 4 colonne dati, e il pdf non veniva generato (e neanche gli errori).</p>
+
+<p>Ma ricordiamoci il nostro obiettivo. Noi vogliamo stampare il contenuto di una tabella html, renderizzata tramite la UI-Grid di Angular. Quindi l’applicazione che vi mostro è Angular based.</p>
+
+<h3 id="testhtml">test.html</h3>
+
+<pre class="lang:default decode:true " title="test.html">&lt;!doctype html&gt;
+&lt;html ng-app="app"&gt;
+&lt;head&gt;
+    &lt;script src="//code.jquery.com/jquery-2.1.3.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"&gt;&lt;/script&gt;
+    &lt;script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js"&gt;&lt;/script&gt;
+    &lt;script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"&gt;&lt;/script&gt;
+    &lt;script src="http://ui-grid.info/docs/grunt-scripts/csv.js"&gt;&lt;/script&gt;
+    &lt;script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"&gt;&lt;/script&gt;
+    &lt;script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"&gt;&lt;/script&gt;
+    &lt;script src="http://ui-grid.info/release/ui-grid-unstable.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="http://ui-grid.info/release/ui-grid-unstable.css" type="text/css"&gt;
+    &lt;link rel="stylesheet" href="main.css" type="text/css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div ng-controller="MainCtrl"&gt;
+    &lt;div id="grid1" ui-grid="{ data: myData }" class="grid"&gt;&lt;/div&gt;
+    &lt;button ng-click="stampa()"&gt;stampiamo il pdf!&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>Una semplice pagina HTML, come potete vedere sto importando <span class="lang:default decode:true  crayon-inline ">pdfmake.js</span>  e <span class="lang:default decode:true  crayon-inline ">vfs_fonts.js</span>  , necessari per renderizzare i pdf. Inoltre abbiamo aggiunto un bottone che chiama la funzione <span class="lang:default decode:true  crayon-inline ">stampa()</span> .</p>
+
+<h3 id="maincss">main.css</h3>
+
+<pre class="lang:default decode:true" title="main.css">.grid {
+    width: 600px;
+    height: 300px;
+}
+</pre>
+
+<p>Niente di particolare qui, stiamo semplicemente dando le definizioni della griglia.</p>
+
+<h3 id="appjs">app.js</h3>
+
+<p>A riga 78 viene definito il documento PDF: vi conviene partire da lì, dalla variabile <span class="lang:default decode:true  crayon-inline ">dd</span> , e poi nelle funzioni <span class="lang:default decode:true  crayon-inline ">table(data, columns)</span>  e <span class="lang:default decode:true  crayon-inline ">buildTableColumns(data, columns)</span> .</p>
+
+<pre class="lang:default decode:true " title="app.js">var app = angular.module('app', ['ngTouch', 'ui.grid']);
+
+app.controller('MainCtrl', ['$scope', function ($scope) {
+
+    //questo array contiene degli oggetti che sono simili a quelli 
+    //che solitamente si ricevono dal server. 
+    $scope.myData = [
+        {
+            "firstName": "Cox",
+            "lastName": "Carney",
+            "company": "Enormo",
+            "employed": true
+        },
+        {
+            "firstName": "Lorraine",
+            "lastName": "Wise",
+            "company": "Comveyer",
+            "employed": false
+        },
+        {
+            "firstName": "Nancy",
+            "lastName": "Waters",
+            "company": "Fuelton",
+            "employed": false
+        }
+
+    ];
+
+    //questa è la funzione che genera il pdf, una volta cliccato
+    $scope.stampa = function () {
+        
+        //headers contiene il titolo della tabella. Viene ripetuto su
+        //più pagine, quindi è importante isolarlo. Vedete la funzione 
+        //getHeaders() per dettagli.  
+        var headers = getHeaders($scope.myData);
+
+        //fingiamo di prendere i dati dal server... 
+        var externalDataRetrievedFromServer = $scope.myData;
+
+        //in questa funzione costruiamo il body della tabella (con i dati).
+        function buildTableBody(data, columns) {
+            var body = [];
+
+            //aggiungiamo gli header, come prima riga della tabella
+            body.push(columns);
+
+            //per ogni riga... 
+            data.forEach(function (row) {
+                var dataRow = [];
+                //aggiungiamo le colonne 
+                columns.forEach(function (column) {
+                    //nel mio caso, il nome delle proprietà è scritto nel 
+                    //campo propertyName delle column. 
+                    dataRow.push(row[column.propertyName].toString());
+                })
+                //costruita la riga, la aggiungiamo al body
+                body.push(dataRow);
+            });
+
+            return body;
+        }
+        //in questa funzione creiamo la table. Notate che passiamo 
+        //sia i dati, sia le colonne. 
+        function table(data, columns) {
+            return {
+                table: {
+                    //headerRows indica quante righe fanno parte  
+                    //dell'header. 
+                    headerRows: 1,
+                    //qui chiamiamo la funzione a riga 41 per 
+                    //costruire i dati contenuti nella tabella 
+                    body: buildTableBody(data, columns)
+                }
+            };
+        }
+
+        //la variabile dd contiene tutto il documento da renderizzare
+        var dd = {
+            content: [
+                { text: 'Tabella di prova', style: 'header' },
+                table(externalDataRetrievedFromServer, headers)
+            ],
+            styles: {
+
+                tableHeader: {
+                    bold: true,
+                    fontSize: 20,
+                    color: 'black'
+                }
+            }
+        }
+        // Apre il PDF in una nuova finestra
+        var outputCreatePdf = pdfMake.createPdf(dd).open();
+
+        console.log(outputCreatePdf);
+
+        // Stampa il PDF (Chrome-only)
+        //pdfMake.createPdf(docDefinition).print();
+
+        // download il PDF ( Chrome-only)
+        //pdfMake.createPdf(docDefinition).download('optionalName.pdf');
+
+    };
+}]);
+
+//sostituisce i nomi da camelCase a Camel case (non funziona troppo bene!)
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+
+//estrapola gli header dagli oggetti definiti sopra
+function getHeaders(data) {
+    var firstObject = data[0];
+    var headers = [];
+    for (var key in firstObject) {
+        
+        //metodo BARBARO per togliere 
+        // questa property aggiunta da Angular  
+        if (key !== '$$hashKey') 
+            headers.push(
+                {
+                    text: toTitleCase(key),
+                    style: 'tableHeader',
+                    propertyName: key //contiene il nome della property
+                });
+    }
+    console.table(headers);
+    return headers;
+}
+
+//trasformo gli oggetti in array di dati 
+function getData(data) {
+    var firstObject = data[0];
+    var newData = [];
+    for (var key in firstObject) {
+        if (key !== '$$hashKey') {
+            for (var i = 0; i &lt; data.length; i++) {
+                if (newData[i] === undefined)
+                    newData[i] = [];
+                newData[i].push(data[i][key]);
+            }
+        }
+    }
+    newData = $.makeArray(newData);
+    console.table(newData);
+    return newData;
+}
+</pre>
+
+<h3 id="conclusioni"> Conclusioni</h3>
+
+<p>Questo codice è quello che ho realizzato oggi per fare una piccola demo sulle capacità di questa libreria. Non è elegante, non è chiarissimo, ma mi è costato tanta fatica (e poi funziona). Penso che in futuro ritorno su questo esempio, specialmente ora che devo realizzare la vera e propria funzionalità, per tutte le tabelle del sistema!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&text=Pdfmake : libreria JS per creare PDF:%20https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Pdfmake : libreria JS per creare PDF) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/&title=Pdfmake : libreria JS per creare PDF&summary=&source=https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/02/18/un-giro-nell-universo-react.html">Un giro nell'universo React <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018 <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/17/vuejs-basics.html">VueJS basics <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/';
+			var disqus_identifier = 'https://michelenasti.com/2015/01/pdfmake-libreria-js-per-creare-pdf/';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2015/01/hackerando-la-caldaia-junkers-ceraclass-smart-incasso-per-farla-funzionare-col-termostato-netatmo/">Hackerando la caldaia Junkers CERACLASS SMART INCASSO per farla funzionare col termostato NetAtmo</a></h2>
+        </header>
+        <section>
+            <p><a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg"><img class=" full-width alignnone wp-image-54 size-full" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg?fit=640%2C437" alt="netatmo-640x0" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg?w=640 640w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/01/netatmo-640x0.jpg?resize=300%2C205 300w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></a></p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2015/01/hackerando-la-caldaia-junkers-ceraclass-smart-incasso-per-farla-funzionare-col-termostato-netatmo/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2015/01/codemotion-2015/">Codemotion 2015</a></h2>
+        </header>
+        <section>
+            <p><a href="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/Schermata-2015-01-17-alle-15.55.09.png"><img class="full-width alignleft wp-image-78 size-large" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/Schermata-2015-01-17-alle-15.55.09-1024x486.png?fit=920%2C437" alt="codemotion-rome-2015" srcset="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/Schermata-2015-01-17-alle-15.55.09.png?resize=1024%2C486 1024w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/Schermata-2015-01-17-alle-15.55.09.png?resize=300%2C142 300w, https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/01/Schermata-2015-01-17-alle-15.55.09.png?w=1106 1106w" sizes="(max-width: 920px) 100vw, 920px" data-recalc-dims="1" /></a>il 27-28 Marzo 2015 sarò al <a href="http://rome2015.codemotionworld.com/">Codemotion</a> di Roma, come “sviluppatore semplice”  (magari in futuro come talker) 😀 !</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2015/01/codemotion-2015/" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

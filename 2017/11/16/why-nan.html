@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Other thoughts about NaN (then, stop) - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="nan, javascript, not-a-number" />  
+	<meta http-equiv="last-modified" content="2017-11-17 10:18:47 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Other thoughts about NaN (then, stop)" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2017/11/16/why-nan.html" property="og:url">
+
+
+
+  <meta content="2017-11-16T01:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/not-a-number.jpg" property="og:image">
+
+
+
+  
+  <meta content="nan" property="article:tag">
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="not-a-number" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Other thoughts about NaN (then, stop)">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2017/11/16/why-nan.html">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/not-a-number.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2017/11/16/why-nan.html">Other thoughts about NaN (then, stop)</a></h1>
+			<p class="post-meta">Nov 16, 2017 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/11/16/why-nan.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/11/16/why-nan.html&text=Other thoughts about NaN (then, stop):%20https://michelenasti.com/2017/11/16/why-nan.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Other thoughts about NaN (then, stop)) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/11/16/why-nan.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/11/16/why-nan.html&title=Other thoughts about NaN (then, stop)&summary=&source=https://michelenasti.com/2017/11/16/why-nan.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>When I posted the <a href="https://michelenasti.com/2017/11/14/not-a-number-when-javascript-gets-crazy.html" title="Not-a-Number: when Javascript gets crazy">NaN article</a> on facebook in a programmers group, I received some very bad reviews. Let’s analyze them.</p>
+
+<h2 id="it-is-obvious">“It is obvious!”</h2>
+
+<p>It is obvious, but it’s not common. Partly because I am a developer with some years of experience and, altough I have studied and studying a lot of programming, I have never occourred in <code>NaN</code>-at-work. You might think that this is impossible, but well, it isn’t because happened to me. Maybe because I rarely do maths without checking types? Maybe because I rarely do maths in Javascript (it’s a very bad idea)?</p>
+
+<h2 id="why-nan--nan-is-false">Why NaN === NaN is false</h2>
+
+<p>The fact that <code>NaN !== NaN</code> is true is obvious, after you reason about it.</p>
+
+<p>When I thought of this the first time, I thought it’s absurd, but after a while I realized that this is the only possible logic behaviour. As some have said, if I divide a number by a string I get <code>NaN</code>, and if I divide another number by another string I get another <code>NaN</code>. Are these two<code>NaN</code> equal? no. <code>NaN</code> is not even a measurable property.<code>NaN</code> is a state, and as such it cannot be compared to other<code>NaN</code>s.</p>
+
+<p>More on this: <a href="https://stackoverflow.com/questions/1565164/what-is-the-rationale-for-all-comparisons-returning-false-for-ieee754-nan-values">What is the rationale for all comparisons returning false for IEEE754 NaN values?</a></p>
+
+<h2 id="why-this-is-not-a-js-only-matter">Why this is not a JS-only matter</h2>
+
+<p><code>NaN</code> has not been invented by Javascript, or by Java. It is here with us since the first processor, and it is used for a wide range of cases. Here are some:</p>
+
+<ol>
+  <li>
+    <p>Division of zero by zero</p>
+  </li>
+  <li>
+    <p>Dividing an infinity by an infinity</p>
+  </li>
+  <li>
+    <p>Multiplication of an infinity by a zero</p>
+  </li>
+  <li>
+    <p>Any operation in which <em>NaN</em> is an operand</p>
+  </li>
+  <li>
+    <p>Converting a non-numeric string or <em>undefined</em> into a number</p>
+  </li>
+</ol>
+
+<p>It is described in standard IEEE 754, from 1985. In this standard you can read how integer and decimal numbers are stored inside a computer (<em>spoiler: decimal numbers in a computer are not real, continuous, neither infinite).</em> You’ll read of many edge cases regarding decimal numbers, along with what should happen when you’re in one of the cases described before. So, <code>NaN</code> <strong>is a convention followed by pretty much every programming language</strong>.</p>
+
+<h2 id="javascript-quirks">Javascript Quirks</h2>
+
+<p>But JS does some <em>stranger things</em>.</p>
+
+<ul>
+  <li>
+    <p>It has two <code>isNaN()</code> functions, and you must choose the one you need carefully.</p>
+  </li>
+  <li>
+    <p>the standard <code>isNaN()</code> function does type cohercion, that’s why <code>isNaN(null) == false</code>.</p>
+  </li>
+</ul>
+
+<h2 id="and-now">And Now?</h2>
+
+<p>Should every developer in the world know this? Yes, but chances are that you’ll never need to use this bit of information.</p>
+
+<p>Is this a good question in a job interview? Well, I don’t think so.</p>
+
+<p>Chances are that you’ll never need to do this, and even if you hit <code>NaN</code>, that’s something you’ll learn in two hours wikipedia’s reading (or my blog, hehehe).</p>
+
+<p>In a Job interview I would focus on what the candidate can actially do and his way of reasoning.</p>
+
+<p>Of course, if I’m interviewing for a position that has to deal with financial or mathematical programming, knowing of <code>Infinity</code> or <code>NaN</code> (and how numbers are processed by the processor). But I wouldn’t do this in Javascript, because JS has no integers.</p>
+
+<h2 id="is-it-dumb-to-explore-these-areas-of-a-programming-language">Is it dumb to explore these areas of a programming language?</h2>
+
+<p>In my opinion, no. It’s just fun, and a new way to learn something.</p>
+
+<p>In some very bad comments (ones that started with “you are idiot”) there were some insightful hints that made me follow links, read articles, study more - and write this.</p>
+
+<p>But on the web I have received some critics like “buy a book and read it”, and the first thing I thought is … <em>haters’ gonna hate</em>.</p>
+
+<p>Others have also accused me of “plagiarism” :D</p>
+
+<p>Honestly, this happens in every group that has more than 1-2 thousand members; people will comment out just to say that you’re dumb and they’re better.</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/11/16/why-nan.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/11/16/why-nan.html&text=Other thoughts about NaN (then, stop):%20https://michelenasti.com/2017/11/16/why-nan.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Other thoughts about NaN (then, stop)) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/11/16/why-nan.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/11/16/why-nan.html&title=Other thoughts about NaN (then, stop)&summary=&source=https://michelenasti.com/2017/11/16/why-nan.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/11/16/why-nan.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/02/18/un-giro-nell-universo-react.html">Un giro nell'universo React <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018 <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/17/vuejs-basics.html">VueJS basics <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2017/11/16/why-nan.html';
+			var disqus_identifier = 'https://michelenasti.com/2017/11/16/why-nan.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2017/11/14/not-a-number-when-javascript-gets-crazy.html">Not-A-Number: when javascript gets crazy</a></h2>
+        </header>
+        <section>
+            <p>Yesterday I was doing some maintenance on a corporate website when I found out that <code>parseInt()</code> returns <code>NaN</code> if the argument is, well, not a number.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2017/11/14/not-a-number-when-javascript-gets-crazy.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html">Growth Hacker: cos'è? Intervista a Raffaele Gaito</a></h2>
+        </header>
+        <section>
+            <p>Conosco <a href="https://www.raffaelegaito.com/" title="Raffaele Gaito, il blog">Raffaele Gaito</a> dai tempi dell’università, e mettiamolo subito in chiaro: siamo amici 😎 Oggi dobbiamo <em>fare finta</em> che non abbiamo mai bevuto una birra insieme (mai!) e parleremo di una cosa che Raf conosce molto bene:</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2017/11/18/growth-hacker-cos-e-intervista-a-raffaele-gaito.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

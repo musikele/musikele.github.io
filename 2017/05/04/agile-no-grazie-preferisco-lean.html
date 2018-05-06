@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Agile? No grazie, noi siamo Lean - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="agile, Lean, scrum, metodologie" />  
+	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Agile? No grazie, noi siamo Lean" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html" property="og:url">
+
+
+
+  <meta content="2017-05-04T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+  
+  <meta content="agile" property="article:tag">
+  
+  <meta content="Lean" property="article:tag">
+  
+  <meta content="scrum" property="article:tag">
+  
+  <meta content="metodologie" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Agile? No grazie, noi siamo Lean">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html">
+
+
+
+  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+
+
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2017/05/04/agile-no-grazie-preferisco-lean.html">Agile? No grazie, noi siamo Lean</a></h1>
+			<p class="post-meta">May 4, 2017 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&text=Agile? No grazie, noi siamo Lean:%20https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Agile? No grazie, noi siamo Lean) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&title=Agile? No grazie, noi siamo Lean&summary=&source=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Agile, agile, agile… ormai tutti fanno Agile, implementando un framework tipo Scrum (che è uno dei possibili modi di essere Agile).</p>
+
+<p>Per dare una definizione: siete <em>Agile</em>® se la vostra metodologia di sviluppo segue il <a href="http://agilemanifesto.org/iso/it/manifesto.html"><em>Manifesto Agile</em></a>.</p>
+
+<p>Tuttavia, è facile prendere un framework (ripeto: Scrum) e sputtanarlo per tirare fuori qualcosa che non va. Spesso ciò accade quando il management continua a ragionare a delivery fisse, chi-fa-cosa, butta-a-mare-la-qualità-dobbiamo-consegnà, etc.</p>
+
+<p><img src="/images/geografia_metodologie.png" alt="Quest'immagine prova a spiegare com'è fatto il mondo" /></p>
+
+<h2 id="ma-in-questo-post-dovevi-parlare-di-lean">Ma in questo post dovevi parlare di LEAN</h2>
+
+<p>Avete ragione.</p>
+
+<p>Ritorniamo sulle definizioni. <em>Lean</em> (in italiano: magro, scarno) è un termine preso in prestito dal settore manifatturiero, e consiste in una serie di principi da seguire per ottenere <em>qualità, velocità &amp; soddisfazione del cliente</em>. (Stesse finalità di Agile!)</p>
+
+<p>Il punto è che i principi base del <em>Lean thinking</em> non sono filosofici, ma pratici. Vediamoli:</p>
+
+<ul>
+  <li><strong>Eliminate Waste</strong>: fate riunioni che non servono? Non fatele. Scrivete documenti che nessuno leggerà? Non scriveteli. Più chiaro di così!</li>
+  <li><strong>Build Quality In</strong>: Mettere in pratica tutte quelle pratiche che portano a evitare i bug, o a correggerli subito. Correggerli dopo è sempre peggio.</li>
+  <li><strong>Create Knowledge</strong>: All’inizio di un progetto difficilmente avrete idea di cosa vuole il cliente. Inoltre, ciò che sapete voi è molto diverso da ciò che conosce il vostro collega. Creare conoscenza significa soprattutto <em>condividerla</em>.</li>
+  <li><strong>Defer Commitment</strong>: Prendere le decisioni all’ultmo momento utile (ossia quando non sono più rinviabili) permette di avere la maggior conoscenza possibile, e quindi di prendere decisioni migliori.</li>
+  <li><strong>Deliver Fast</strong>: Prima fate vedere il prodotto al cliente, prima saprete se è quello che vuole.</li>
+  <li><strong>Respect People</strong>: non significa solo evitare di mandare a cagare il tuo collega; significa anche rispettare le scelte del gruppo, riconoscerne gli sforzi e aiutarli quando gli sforzi non producono frutti.</li>
+  <li><strong>Optimize the Whole</strong>. Ottimizzare il processo, nella sua interezza, significa applicare i punti precedenti. Si deve ottimizzare continuamente, a ogni livello.</li>
+</ul>
+
+<p>Fin qui era filosofia. Ma praticamente che dobbiamo fare?</p>
+
+<h2 id="lean-in-pratica-gli-step-zero">Lean in pratica: gli step zero</h2>
+
+<p>Per essere Lean nel mondo del software ci sono due <strong>step zero</strong>:</p>
+<ul>
+  <li><strong>Source code management</strong> - perchè il codice non si condivide più via email o via floppy da un bel pò. Tools come SVN (antichi!) o GIT dovreste conoscerli tutti ormai.</li>
+  <li><strong>Scripted builds</strong> - il vostro prodotto deve essere generabile a partire da <strong>un solo comando</strong>. Ancora meglio: ogni volta che committate, un ambiente di <em>continuous integration</em> dovrebbe far partire una build automatica e verificare che sia tutto ok. Non dimenticate di mandare una mail a chi ha rotto la build ;)</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><strong>create knowledge</strong> - il codice è in un solo posto</li>
+  <li><strong>eliminate waste</strong> - nessun lavoro manuale per compilare e deployare il progetto!</li>
+  <li><strong>build quality in</strong> - l’automazione elimina possibili cause d’errore.</li>
+</ul>
+
+<p>Vediamo ora altre pratiche che possono aiutarvi a diventare <em>Lean</em>.</p>
+
+<h3 id="il-meeting-giornaliero">Il meeting giornaliero</h3>
+
+<p>Se dovessi scegliere un unico punto da implementare, tra tutti i punti di questo articolo, il meeting giornaliero è sicuramente quello che sceglierei io. <em>La comunicazione tra membri del team è dannatamente importante.</em></p>
+
+<p>Per fare un daily meeting perfetto bisogna:</p>
+<ul>
+  <li>farlo tutti i giorni, alla stessa ora</li>
+  <li>non deve superare 15 minuti</li>
+  <li>partecipano e parlano tutti</li>
+  <li>quando parla qualcuno non si fanno domande e non si interrompe</li>
+  <li>si risponde a tre domande: <em>cosa ho fatto ieri?</em>, <em>cosa farò oggi?</em>, <em>che problemi ho avuto?</em></li>
+  <li><em>facoltativo</em>: fare il meeting in piedi (così durerà anche meno di 15 minuti)</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>respect people</em> - stiamo mettendo il team al centro dello sviluppo. Tutti si sentiranno di far parte di una squadra.</li>
+  <li><em>create knowledge</em> - Parlare di ciò che si sta facendo è il modo migliore di creare una conoscenza condivisa.</li>
+</ul>
+
+<h3 id="testing-automatico">Testing automatico</h3>
+<p>Qui parliamo dell’<strong>esecuzione automatica dei test a partire da un singolo comando</strong>, con tanto di report a fine esecuzione. In questo modo avremo test che sono sempre eseguiti nello stesso modo e che non sono soggetti a errori umani.</p>
+
+<p>I test dovrebbero essere lanciati sia dai singoli sviluppatori mentre realizzano le feature, che dall’ambiene di continuous integration quando committiamo.</p>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Build Quality In</em> - test automatici eseguiti regolarmente aiutano a prevenire i difetti.</li>
+  <li><em>Eliminate Waste</em> - i bug vengono trovati prima, e quindi corretti prima.</li>
+  <li><em>Create Knowledge</em> - i test sono un modo per documentare come funziona il codice.</li>
+</ul>
+
+<h3 id="continuous-integration">Continuous Integration</h3>
+<p>La <strong>continuous integration</strong> è una pratica che consiste nell’integrare i piccoli cambiamenti al codice in maniera frequente. Ciò cerca di ridurre, o addirittura eliminare, la fase di integrazione post-sviluppo.</p>
+
+<p>Per farlo:</p>
+<ul>
+  <li>Usate una macchina (vera o virtuale) per il sistema di CI.</li>
+  <li>a ogni commit, la CI deve far partire una build e i test.</li>
+  <li>I developer devono aggiornare il codice una volta al giorno; una volta all’ora è meglio.</li>
+  <li>Le build fallite devono essere subito sistemate.</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Build Quality In</em> - in Continuous Integration, siamo sicuri che il codice sia sempre funzionante.</li>
+  <li><em>Eliminate Waste</em> - E’ più efficiente integrare continuamente piccole modifiche che una singola grande fase di integrazione finale.</li>
+</ul>
+
+<h3 id="less-code">Less Code</h3>
+<p>“Less Code” significa <strong>scrivere solo il codice necessario per implementare la funzionalità richiesta</strong>. Qui stiamo ribadendo il principio della semplicità: se una cosa è piccola è anche facile capirla; un codice sorgente vasto diventa difficile non solo da capire, ma anche testare e debuggare. Scrivere (<em>poco</em>) codice in modo semplice è un’arte. Per poter scrivere meno codice bisogna:</p>
+
+<ul>
+  <li><strong>eliminare codice inutile</strong>. Facile a dirsi 😊 In pratica bisogna trovare il codice, o le <em>forze</em> che creano il codice non necessario, ed eliminarlo. Ogni codice aggiunto al repository deve essere <em>giustificabile</em>. Sviluppa solo per l’iterazione o il task corrente, non per quelle del futuro che verrà. (Verrà?)</li>
+  <li><strong>Migliorare l’efficienza del codice</strong>. Ciò si fa applicando degli standard o comunque le best practices.</li>
+</ul>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Build Quality In</em> - Codice che fa quello che deve fare. Cosa vuoi di più?</li>
+  <li><em>Eliminate Waste</em> - Codice che non serve, o mega-design-patterns che non si capiscono (o che si capiscono solo nella mente dell’autore), sono scoraggiati.</li>
+</ul>
+
+<h3 id="short-iterations">Short Iterations</h3>
+
+<p>Prima si sviluppavano applicazioni con un ciclo di rilascio da 6 mesi a 1 anno; adesso la moda è 15/30 giorni. Questo tipo di rilasci permette ai clienti di capire se stiamo realizzando davvero il software di cui hanno bisogno, e permette di capirlo <em>prima che sia troppo tardi</em>.</p>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Eliminate Waste</em> - rilasci frequenti permettono di concentrarsi solo su ciò che serve davvero.</li>
+  <li><em>Deliver Fast</em> - Il nuovo codice viene rilasciato al cliente ad intervalli regolari.</li>
+</ul>
+
+<h3 id="customer-partecipation">Customer Partecipation</h3>
+
+<p>In passato il cliente veniva coinvolto solo per le specifiche, a inizio progetto, e poi ci si vedeva alla fine per mostrare il risultato. E lì sentivi frasi “ma non era quello che volevo” 😫</p>
+
+<p>Usando un approccio <em>Lean</em> invece il cliente fa parte del team. E’ il cliente a fornire i requisiti, a prioritizzarli, e ad accettarli a fine iterazione.</p>
+
+<p><strong>Principi Lean rispettati</strong>:</p>
+<ul>
+  <li><em>Create Knowledge</em> - Attraverso la collaborazione col cliente, i requisiti vengono determinati prima e meglio.</li>
+  <li><em>Defer Commitment</em> - Siccome il cliente è coinvolto nel processo, è possibile prendere le decisioni architetturali solo quando servono.</li>
+</ul>
+
+<h2 id="lean-è-uguale-o-diverso-da-agile">Lean è uguale o diverso da Agile?</h2>
+
+<p>Chi ha fatto un po’ di Agile starà ora dicendo: “Ma tutte queste cose le facciamo anche noi!”. Già! Dov’è la differenza?</p>
+
+<p>Le differenze sono sostanzialmente due: <em>scope</em> e <em>focus</em>.</p>
+
+<p>In <strong>Agile</strong> lo scopo è di migliorare lo sviluppo del software e si focalizza sull’adattabilità e sul rilascio veloce. Oppure, come piace dire a me, si parte dalla filosofia e si trovano i mezzi per metterla in pratica.</p>
+
+<p>Nell’approccio <strong>Lean</strong> invece si guarda al quadro generale, e ci si focalizza più sulle pratiche (che sono il punto di partenza!) che sulla filosofia. Infatti <strong>non è obbligatorio mettere in pratica contemporaneamente tutte le pratiche</strong>, si può tranquillamente iniziare a integrarle una alla volta; e soprattutto, si può seguire qualsiasi tipo di metodologia ma usare le pratiche <em>Lean</em>.</p>
+
+<p>Per questo, <strong>negli ultimi team con cui ho collaborato</strong>, piuttosto che mettere insieme tutte le cerimonie di Scrum <strong>ho preferito privilegiare quelle pratiche che sicuramente avrebbero portato un valore effettivo</strong>.</p>
+
+<p>Non avrei conosciuto le pratiche Lean senza Agile. <strong>Non potrei fare Agile senza mettere in pratica i principi Lean. Al contrario, si può essere Lean senza essere Agile</strong>. Questi due mondi si sovrappongono per molte cose e sono, alla fine della fiera, <strong>complementari tra loro</strong>.</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&text=Agile? No grazie, noi siamo Lean:%20https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Agile? No grazie, noi siamo Lean) + ':%20'  + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html&title=Agile? No grazie, noi siamo Lean&summary=&source=https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/">Non c'é nulla di più definitivo di una scelta provvisoria <span class="label label-default">metodologie</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2015/03/codemotion-roma-2015-raccontiamo-questa-prima-giornata/">Codemotion Roma 2015: raccontiamo questa prima giornata <span class="label label-default">agile</span>  <span class="label label-default">scrum</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">Tool of the week: Develop faster in NodeJS with Nodemon </a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html';
+			var disqus_identifier = 'https://michelenasti.com/2017/05/04/agile-no-grazie-preferisco-lean.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html">"Vorrei, ma ho paura che vada male"	&#58 come assumersi dei "rischi intelligenti"</a></h2>
+        </header>
+        <section>
+            <p>Oggi vorrei parlarvi di <strong>come assumersi dei rischi intelligenti</strong>. Intelligenti in che senso?!</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2017/05/22/i-colloqui-di-lavoro-nelle-big.html">I colloqui di lavoro nelle Big</a></h2>
+        </header>
+        <section>
+            <p>Recentemente sono stato speaker all’evento <a href="https://www.meetup.com/it-IT/GDGCampania/events/239723850/">pre-Google I/O</a> organizzato dal <a href="http://gdgcampania.com">Google Developers Group Campania</a>, a Napoli.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2017/05/22/i-colloqui-di-lavoro-nelle-big.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
