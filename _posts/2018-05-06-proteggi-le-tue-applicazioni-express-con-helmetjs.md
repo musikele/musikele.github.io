@@ -5,7 +5,7 @@ author: musikele
 title: Proteggi le tue applicazioni Express con HelmetJs
 category: Italiano
 layout: post
-date: Invalid date
+date: 2018-05-06 00:00:00 +0200
 header-img: "/images/testuggine-8.jpg"
 tags:
 - express
