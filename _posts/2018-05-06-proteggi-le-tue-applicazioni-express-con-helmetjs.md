@@ -18,7 +18,7 @@ description: 'Helmet è un middleware che agganci ad Express e la tua app è imm
 ---
 Quanto ne capisci di sicurezza informatica? Io molto poco, anzi a dire il vero trovo l'argomento addirittura noioso. Questo non vuol dire che lo sottovaluto: è una di quelle cose che sì, è una palla, ma sì, bisogna trattare l'argomento _seriamente_.
 
-![Metti questi tizi a proteggere il tuo server ]({{ site.baseurl }}/images/testuggine-8.jpg "Testuggine romana ")
+![Testuggine romana]({{ site.baseurl }}/images/testuggine-8.jpg "Metti questi tizi a proteggere il tuo server ")
 
 Intorno al mondo della sicurezza informatica esistono addirittura delle figure specifiche (il pentester, ad esempio, che per lavoro deve _bucare_ i server dei suoi clienti e trovare eventuali falle - per farle correggere!) o comunque interi team devoti alla sicurezza, che si occupano di implementare patch, conoscere gli attacchi più diffusi, capire cosa sta accadendo in tempo reale nella loro rete, etc.
 
@@ -30,7 +30,7 @@ L'ideale, per me, è di trovare un middleware per Express che lo agganci e - _ma
 
 Tale progetto esiste e si chiama [HelmetJS](https://helmetjs.github.io/).
 
-![Il logo di HelmetJS. Purtroppo esiste solo in bassa qualità]({{ site.baseurl }}/images/helmetjs.png "https://helmetjs.github.io/")
+![Helmet Logo ]({{ site.baseurl }}/images/helmetjs.png "Il logo di HelmetJS. Purtroppo esiste solo in bassa qualità")
 
 ## Come funziona
 
