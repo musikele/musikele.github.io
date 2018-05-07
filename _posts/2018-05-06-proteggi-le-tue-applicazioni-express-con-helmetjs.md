@@ -24,7 +24,7 @@ Intorno al mondo della sicurezza informatica esistono addirittura delle figure s
 
 Tutto questo preambolo per dire: quando realizzi la tua applicazione web **pensi alla sicurezza?** Se usi NodeJS è molto probabile che hai scritto qualcosa con Express; **ti sei mai preoccupato di sapere se l'app che hai rilasciato in produzione è _sicura_?**
 
-Ripeto, la sicurezza è una cosa seria e non va abbozzata. Basta installare wordpress pulito su un server custom per scoprire dopo neanche dieci giorni che è stato bucato. Se siete un po' come me, è probabile che a tutto questo ci pensate alla fine (prima vi rimboccate le maniche per fare in modo che il servizio _funioni_). Come evitare di prendere sottogamba l'argomento?
+Ripeto, la sicurezza è una cosa seria e non va abbozzata. Basta installare wordpress pulito su un server custom per scoprire dopo neanche dieci giorni che è stato bucato. Se siete un po' come me, è probabile che a tutto questo ci pensate alla fine (prima vi rimboccate le maniche per fare in modo che il servizio _funzioni_). Come evitare di prendere sottogamba l'argomento?
 
 L'ideale, per me, è di trovare un middleware per Express che lo agganci e - _magia! -_ la tua app è più sicura.
 
@@ -40,7 +40,7 @@ Quello che invece fa è aggiungere una serie di best practices a Express, alcune
 
 Un esempio di regola semplice: rimuvere il tag `X-Powered-By` che di default Express setta con nome e versione; questo rende la vita facile a un attacker che può trovare un exploit specifico per il tuo server.
 
-Altri esempi li trovate cliccando sui vari [link dei sottomoduli]() di Helmet, installabili singolarmente. 
+Altri esempi li trovate cliccando sui vari [link dei sottomoduli]() di Helmet, installabili singolarmente.
 
 ## Come si installa
 
@@ -63,16 +63,16 @@ app.use(helmet())
 // ...
 ```
 
-### Mai più preoccupazioni? 
+### Mai più preoccupazioni?
 
-Non scherziamo. Gli hacker ne sanno una più del diavolo, e non appena un software - sistema - applicativo si diffonde, sfruttano bug sempre più complessi. 
+Non scherziamo. Gli hacker ne sanno una più del diavolo, e non appena un software - sistema - applicativo si diffonde, sfruttano bug sempre più complessi.
 
-Però bisogna riconoscere che Helmet è un progetto semplice che fa quelle cose che Express avrebbe dovuto fare di suo. Per me, è un _mai più senza_. 
+Però bisogna riconoscere che Helmet è un progetto semplice che fa quelle cose che Express avrebbe dovuto fare di suo. Per me, è un _mai più senza_.
 
-Vi lascio le mie personali regole non scritte (prima d'ora) della sicurezza informatica: 
+Vi lascio le mie personali regole non scritte (prima d'ora) della sicurezza informatica:
 
-* più una cosa è semplice, più è difficile da bucare 
-* aggiorna sempre tutti i sw, e se non puoi iscriviti alle mailing list di sicurezza dei software che tieni in produzione (così avvisi chi di dovere) 
-* Se i dati che gestisci sono importanti, assumi uno che ne capisce 
+* più una cosa è semplice, più è difficile da bucare
+* aggiorna sempre tutti i sw, e se non puoi iscriviti alle mailing list di sicurezza dei software che tieni in produzione (così avvisi chi di dovere)
+* Se i dati che gestisci sono importanti, assumi uno che ne capisce
 
-Conoscete tool simili a Helmet ma per altri linguaggi? Se si, indicali nei commenti! 
+Conoscete tool simili a Helmet ma per altri linguaggi? Se si, indicali nei commenti!
