@@ -124,115 +124,6 @@
 		
 			<article class="6u$ 12u(small)">
 				<header>
-					<h2><a href="/2017/11/02/gestpay-new-website-is-online.html">Gestpay new website is online!</a></h2>
-					<p class="post-meta">Nov 2, 2017
-         
-        • musikele
-        </p>
-				</header>
-				<section>
-					<p>I’m really excited to write about one of my latest works: <strong>the redesign of Gestpay’s website.</strong></p>
-
-<p><img src="/images/Screenshot-2017-11-6 Gestpay.jpg" alt="" /></p>
-
-<h2 id="what-is-gestpay">What is Gestpay</h2>
-
-<p><a href="https://www.gestpay.it/">Gestpay</a> is the most famous Italian payment processor, owned by Gruppo Banca Sella. It allows websites to accept payments on your ecommerce and your online activities. The main features are:</p>
-
-<ul>
-  <li>
-    <p><strong>Accept credit cards</strong> from all over the world</p>
-  </li>
-  <li>
-    <p>Integrates with 80+ <strong>alternative payment systems</strong>, like PayPal, Apple Pay, Alipay, Qiwi, Sofort, Klarna… And more!</p>
-  </li>
-  <li>
-    <p>Allows to <strong>customize the payment form</strong></p>
-  </li>
-  <li>
-    <p>multiple layers of <strong>security</strong> (3d secure, Gestpay Guaranteed Payment…)</p>
-  </li>
-  <li>
-    <p>It is suitable for <strong>small, medium and giant businesses</strong></p>
-  </li>
-  <li>
-    <p>Still on track after 20 years</p>
-  </li>
-</ul>
-
-<p>One of my first jobs was to design a <a href="Http://docs.gestpay.it">documentation website</a>, with the goal to be as clear and simple as possible, for developers. We did it!</p>
-
-<p>So, what’s great about this?</p>
-
-<h2 id="working-with-designers-is-great">Working with designers is great</h2>
-
-<p>This is the first thing that comes to mind. For the first time in my life ever, I had to implement the work of a professional designer. Behind many choices (like, how many pixels here and there) there was a long discussion that could be going. I want to say this in bold: <strong>every frontend developer should work with a designer.</strong></p>
-
-<p>His job started before mine: based on feedbacks received from Facebook contacts, we had a sense of what of the old site was clear and what not.</p>
-
-<p>Then, we performed <strong>usability tests</strong> that confirmed our hypothesis, thus giving us a clear direction on how to setup the navigation.</p>
-
-<p>He realized the layout and thanks to a product called <a href="">invision</a> I could check all the relevant data for me, like colors, spaces, grab the images, etc.</p>
-
-<p><img src="/images/gestpay-invision.PNG" alt="" /></p>
-
-<h2 id="only-small-subset-of-prerequisites">Only small subset of prerequisites</h2>
-
-<p>When we started, it wanted to be a minor redesign of our website. So we decided to approach it lightly.</p>
-
-<ul>
-  <li>
-    <p><strong>Reuse components</strong> of the previous website, as much as we could</p>
-  </li>
-  <li>
-    <p><strong>Reuse existing css</strong> if possible</p>
-  </li>
-  <li>
-    <p><strong>Internationalization</strong></p>
-  </li>
-  <li>
-    <p><strong>Mobile and tablet friendly</strong></p>
-  </li>
-</ul>
-
-<p>However, the old website was using a structure doomed with old plugins that were not supported anymore. I decided to rewrite a big part of the website structure from zero, reusing only the SCSS (that was indeed very well organized).</p>
-
-<h2 id="technically-speaking">Technically speaking…</h2>
-
-<p>Gestpay is made with <a href="https://jekyllrb.com/">Jekyll</a>, a static website generator. It is written in ruby but you don’t have to understand a line of ruby to get it working.</p>
-
-<p>For the styling part we used <a href="http://sass-lang.com/">SCSS</a>, a CSS extension that allows to split styling in many files. This doesn’t solve all styling problems, but by using two guiding principles like <a href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/">ITCSS </a>and <a href="http://getbem.com/introduction/">BEM</a>, we wrote clearer class names and organized stuff logically.</p>
-
-<p>Combining this with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">responsive classes</a>, like <code>media @screen and (max-width: 650px)</code>, we have developed a website that is also mobile friendly, from the first line of code.</p>
-
-<p>I can’t say how much Flexbox I have used. <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a> is so cool I rarely had to use other display properties. Give it a try!</p>
-
-<h3 id="a-word-on-internet-explorer">A word on Internet Explorer</h3>
-
-<p>Internet explorer is still used out there; it’s about 3-7% of the total traffic received on our website. For some complex styling options I had to write some rules for IE only. Edge, on the other side, is great and supports every new standard. We think IE will be less and less important, so this technique (add a discriminant class if the browser is IE) should be future proof.</p>
-
-<p>Stop using IE! It has been deprecated!</p>
-
-<h3 id="a-word-on-safari">A word on Safari</h3>
-
-<p>Developing for mobile (iOS) is impossible if you don’t have an iPhone with you.</p>
-
-<p>For some reasons Safari is not that cool. For example, when you scroll down a page on iPhone the viewport gets bigger, while If you scroll up, weird effects apply. This happens because the button bar hides at the bottom. From a user experience point of view, this is not optimal.</p>
-
-<h2 id="thats-all-folks">That’s all folks!</h2>
-
-<p>Now we are checking the stats to see if every user can achieve the promised UX. We are also monitoring new bugs and eventually 404s. We believe to have done a great work in simplifying the user experience; check it out and give us your thoughts!</p>
-
-				</section>
-				<footer>
-					<ul class="actions">
-						<li><a href="/2017/11/02/gestpay-new-website-is-online.html" class="button">Read More</a></li>
-					</ul>
-				</footer>
-			</article>
-		
-			<article class="6u 12u(small)">
-				<header>
 					<h2><a href="/2017/10/24/cryptomining-and-websites-how-long-will-be-tolerated.html">Cryptomining and websites: how long will it be tolerated?</a></h2>
 					<p class="post-meta">Oct 24, 2017
          
@@ -310,7 +201,7 @@
 				</footer>
 			</article>
 		
-			<article class="6u$ 12u(small)">
+			<article class="6u 12u(small)">
 				<header>
 					<h2><a href="/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html">By visiting my website you're mining cryptocurrencies for me. Here's what I found out</a></h2>
 					<p class="post-meta">Oct 11, 2017
@@ -330,7 +221,7 @@
 				</footer>
 			</article>
 		
-			<article class="6u 12u(small)">
+			<article class="6u$ 12u(small)">
 				<header>
 					<h2><a href="/2017/10/03/recensione-dell-xps-15-2017.html">Windows non fa più così schifo: recensione Dell XPS 15" 9560 (2017)</a></h2>
 					<p class="post-meta">Oct 3, 2017
@@ -350,7 +241,7 @@
 				</footer>
 			</article>
 		
-			<article class="6u$ 12u(small)">
+			<article class="6u 12u(small)">
 				<header>
 					<h2><a href="/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">Viviamo tutti in una grande simulazione aliena? Sembra di no</a></h2>
 					<p class="post-meta">Oct 3, 2017
@@ -370,7 +261,7 @@
 				</footer>
 			</article>
 		
-			<article class="6u 12u(small)">
+			<article class="6u$ 12u(small)">
 				<header>
 					<h2><a href="/2017/09/21/a-clear-explanation-of-jwt.html">JWT: what is it? How does it work? Why should we use it?</a></h2>
 					<p class="post-meta">Sep 21, 2017
@@ -390,7 +281,7 @@
 				</footer>
 			</article>
 		
-			<article class="6u$ 12u(small)">
+			<article class="6u 12u(small)">
 				<header>
 					<h2><a href="/2017/09/19/come-capire-il-bitcoin-le-funzioni-crittografiche.html">Come capire il bitcoin: le funzioni crittografiche</a></h2>
 					<p class="post-meta">Sep 19, 2017
@@ -410,7 +301,7 @@
 				</footer>
 			</article>
 		
-			<article class="6u 12u(small)">
+			<article class="6u$ 12u(small)">
 				<header>
 					<h2><a href="/2017/08/18/due-tre-opinioni-sul-growth-hacking-da-uno-che-non-ha-mai-fatto-nulla-di-marketing.html">Due-tre opinioni sul Growth Hacking da uno che non ha mai fatto nulla di marketing</a></h2>
 					<p class="post-meta">Aug 18, 2017
@@ -430,7 +321,7 @@
 				</footer>
 			</article>
 		
-			<article class="6u$ 12u(small)">
+			<article class="6u 12u(small)">
 				<header>
 					<h2><a href="/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html">Guida alla Val d'Aosta con un neonato</a></h2>
 					<p class="post-meta">Aug 6, 2017
@@ -446,6 +337,26 @@
 				<footer>
 					<ul class="actions">
 						<li><a href="/2017/08/06/vacanze-guida-alla-val-d-aosta-con-un-neonato.html" class="button">Read More</a></li>
+					</ul>
+				</footer>
+			</article>
+		
+			<article class="6u$ 12u(small)">
+				<header>
+					<h2><a href="/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html">L'innovazione non copia</a></h2>
+					<p class="post-meta">Jul 27, 2017
+         
+        • musikele
+        </p>
+				</header>
+				<section>
+					<p>Negli ultimi (in realtà anche <em>primi</em>) 5 anni di carriera lavorativa, quante volte avrò detto “<strong>dai ragazzi, ci basta pensare a una bella idea e faremo soldi a palate</strong>”? Ecco, se siamo ancora tutti <em>povery</em> ci sarà un motivo. E il libro <a href="https://www.amazon.it/segreti-startup-ovvero-costruisce-futuro/dp/8817080462/ref=as_li_ss_tl?ie=UTF8&amp;qid=1501144633&amp;sr=8-1&amp;keywords=da+zero+a+uno&amp;linkCode=ll1&amp;tag=ilblodimicnas-21&amp;linkId=7e1eada6bd03b1ae3cd088013adf3372">From Zero to One</a> (da me linkato nella versione italiana, <em>Da Zero a Uno</em>) prova a spiegarci qual è.</p>
+
+
+				</section>
+				<footer>
+					<ul class="actions">
+						<li><a href="/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html" class="button">Read More</a></li>
 					</ul>
 				</footer>
 			</article>

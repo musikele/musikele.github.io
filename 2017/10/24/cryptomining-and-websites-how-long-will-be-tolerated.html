@@ -406,15 +406,6 @@
     
 
     
-
-
-
-    
-    
-
-    
-
-    
         <div class="col-4">
         <h5><a href="/2017/10/11/mining-cryptocurrencies-on-your-visitors-browser-with-coinhive.html">By visiting my website you're mining cryptocurrencies for me. Here's what I found out <span class="label label-default">coinhive</span> </a></h5>
         </div>
@@ -1682,7 +1673,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/">Cambio Lavoro</a></h5>
+            <h5><a href="/2016/10/develop-a-microservice-with-ratpack/">Develop a microservice with Ratpack</a></h5>
         </div>
     
         
@@ -1692,7 +1683,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2015/01/uscire-dalla-comfort-zone-per-ottenere-piu-successo/">Uscire dalla Comfort Zone per ottenere più successo</a></h5>
+            <h5><a href="/2015/03/codemotion-roma-2015-day-two/">Codemotion Roma 2015 - day two</a></h5>
         </div>
     
 
@@ -1750,105 +1741,16 @@ s.setAttribute('data-timestamp', +new Date());
 
     <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
         <header>
-            <h2><a href="/2017/11/02/gestpay-new-website-is-online.html">Gestpay new website is online!</a></h2>
+            <h2><a href="/2017/11/14/not-a-number-when-javascript-gets-crazy.html">Not-A-Number: when javascript gets crazy</a></h2>
         </header>
         <section>
-            <p>I’m really excited to write about one of my latest works: <strong>the redesign of Gestpay’s website.</strong></p>
+            <p>Yesterday I was doing some maintenance on a corporate website when I found out that <code>parseInt()</code> returns <code>NaN</code> if the argument is, well, not a number.</p>
 
-<p><img src="/images/Screenshot-2017-11-6 Gestpay.jpg" alt="" /></p>
-
-<h2 id="what-is-gestpay">What is Gestpay</h2>
-
-<p><a href="https://www.gestpay.it/">Gestpay</a> is the most famous Italian payment processor, owned by Gruppo Banca Sella. It allows websites to accept payments on your ecommerce and your online activities. The main features are:</p>
-
-<ul>
-  <li>
-    <p><strong>Accept credit cards</strong> from all over the world</p>
-  </li>
-  <li>
-    <p>Integrates with 80+ <strong>alternative payment systems</strong>, like PayPal, Apple Pay, Alipay, Qiwi, Sofort, Klarna… And more!</p>
-  </li>
-  <li>
-    <p>Allows to <strong>customize the payment form</strong></p>
-  </li>
-  <li>
-    <p>multiple layers of <strong>security</strong> (3d secure, Gestpay Guaranteed Payment…)</p>
-  </li>
-  <li>
-    <p>It is suitable for <strong>small, medium and giant businesses</strong></p>
-  </li>
-  <li>
-    <p>Still on track after 20 years</p>
-  </li>
-</ul>
-
-<p>One of my first jobs was to design a <a href="Http://docs.gestpay.it">documentation website</a>, with the goal to be as clear and simple as possible, for developers. We did it!</p>
-
-<p>So, what’s great about this?</p>
-
-<h2 id="working-with-designers-is-great">Working with designers is great</h2>
-
-<p>This is the first thing that comes to mind. For the first time in my life ever, I had to implement the work of a professional designer. Behind many choices (like, how many pixels here and there) there was a long discussion that could be going. I want to say this in bold: <strong>every frontend developer should work with a designer.</strong></p>
-
-<p>His job started before mine: based on feedbacks received from Facebook contacts, we had a sense of what of the old site was clear and what not.</p>
-
-<p>Then, we performed <strong>usability tests</strong> that confirmed our hypothesis, thus giving us a clear direction on how to setup the navigation.</p>
-
-<p>He realized the layout and thanks to a product called <a href="">invision</a> I could check all the relevant data for me, like colors, spaces, grab the images, etc.</p>
-
-<p><img src="/images/gestpay-invision.PNG" alt="" /></p>
-
-<h2 id="only-small-subset-of-prerequisites">Only small subset of prerequisites</h2>
-
-<p>When we started, it wanted to be a minor redesign of our website. So we decided to approach it lightly.</p>
-
-<ul>
-  <li>
-    <p><strong>Reuse components</strong> of the previous website, as much as we could</p>
-  </li>
-  <li>
-    <p><strong>Reuse existing css</strong> if possible</p>
-  </li>
-  <li>
-    <p><strong>Internationalization</strong></p>
-  </li>
-  <li>
-    <p><strong>Mobile and tablet friendly</strong></p>
-  </li>
-</ul>
-
-<p>However, the old website was using a structure doomed with old plugins that were not supported anymore. I decided to rewrite a big part of the website structure from zero, reusing only the SCSS (that was indeed very well organized).</p>
-
-<h2 id="technically-speaking">Technically speaking…</h2>
-
-<p>Gestpay is made with <a href="https://jekyllrb.com/">Jekyll</a>, a static website generator. It is written in ruby but you don’t have to understand a line of ruby to get it working.</p>
-
-<p>For the styling part we used <a href="http://sass-lang.com/">SCSS</a>, a CSS extension that allows to split styling in many files. This doesn’t solve all styling problems, but by using two guiding principles like <a href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/">ITCSS </a>and <a href="http://getbem.com/introduction/">BEM</a>, we wrote clearer class names and organized stuff logically.</p>
-
-<p>Combining this with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">responsive classes</a>, like <code>media @screen and (max-width: 650px)</code>, we have developed a website that is also mobile friendly, from the first line of code.</p>
-
-<p>I can’t say how much Flexbox I have used. <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a> is so cool I rarely had to use other display properties. Give it a try!</p>
-
-<h3 id="a-word-on-internet-explorer">A word on Internet Explorer</h3>
-
-<p>Internet explorer is still used out there; it’s about 3-7% of the total traffic received on our website. For some complex styling options I had to write some rules for IE only. Edge, on the other side, is great and supports every new standard. We think IE will be less and less important, so this technique (add a discriminant class if the browser is IE) should be future proof.</p>
-
-<p>Stop using IE! It has been deprecated!</p>
-
-<h3 id="a-word-on-safari">A word on Safari</h3>
-
-<p>Developing for mobile (iOS) is impossible if you don’t have an iPhone with you.</p>
-
-<p>For some reasons Safari is not that cool. For example, when you scroll down a page on iPhone the viewport gets bigger, while If you scroll up, weird effects apply. This happens because the button bar hides at the bottom. From a user experience point of view, this is not optimal.</p>
-
-<h2 id="thats-all-folks">That’s all folks!</h2>
-
-<p>Now we are checking the stats to see if every user can achieve the promised UX. We are also monitoring new bugs and eventually 404s. We believe to have done a great work in simplifying the user experience; check it out and give us your thoughts!</p>
 
         </section>
         <div>
             <ul class="actions">
-                <li><a href="//2017/11/02/gestpay-new-website-is-online.html" class="button">Read More</a></li>
+                <li><a href="//2017/11/14/not-a-number-when-javascript-gets-crazy.html" class="button">Read More</a></li>
             </ul>
         </div>
     </div>
