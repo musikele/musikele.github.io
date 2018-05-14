@@ -9,7 +9,7 @@ permalink: /2015/07/instantiate-beans-with-spring-without-autowired/
 dsq_thread_id:
   - "3974297058"
 categories:
-  - english
+  - English
 tags:
   - applicationContextAware
   - autowire

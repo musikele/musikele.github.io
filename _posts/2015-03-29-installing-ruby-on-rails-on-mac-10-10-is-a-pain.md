@@ -9,7 +9,7 @@ permalink: /2015/03/installing-ruby-on-rails-on-mac-10-10-is-a-pain/
 dsq_thread_id:
   - "3980357243"
 categories:
-  - english
+  - English
 tags:
   - howto
   - mac

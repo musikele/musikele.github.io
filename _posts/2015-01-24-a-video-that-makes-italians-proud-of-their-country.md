@@ -9,7 +9,7 @@ permalink: /2015/01/a-video-that-makes-italians-proud-of-their-country/
 dsq_thread_id:
   - "4893213584"
 categories:
-  - english
+  - English
 tags:
   - italy
   - video

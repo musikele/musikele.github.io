@@ -9,7 +9,7 @@ permalink: /2015/03/howto-create-a-blog-with-ruby-on-rails/
 dsq_thread_id:
   - "4061839464"
 categories:
-  - english
+  - English
 tags:
   - blog
   - howto

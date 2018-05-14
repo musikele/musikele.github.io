@@ -10,7 +10,7 @@ dsq_thread_id:
   - "3990321065"
 image: /wp-content/uploads/2015/02/bootstrap-3-progress-bars.jpg
 categories:
-  - english
+  - English
 tags:
   - bootstrap
   - performance

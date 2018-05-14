@@ -9,7 +9,7 @@ permalink: /2016/01/why-groovy-is-not-that-famous/
 dsq_thread_id:
   - "4530571216"
 categories:
-  - english
+  - English
 tags:
   - groovy
   - java

@@ -9,7 +9,7 @@ permalink: /2015/09/the-story-of-a-programmer-me-that-failed-in-php/
 dsq_thread_id:
   - "4110369573"
 categories:
-  - english
+  - English
 tags:
   - fail
   - php

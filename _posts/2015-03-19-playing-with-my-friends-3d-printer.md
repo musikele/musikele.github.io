@@ -9,7 +9,7 @@ permalink: /2015/03/playing-with-my-friends-3d-printer/
 dsq_thread_id:
   - "4893212729"
 categories:
-  - english
+  - English
 tags:
   - 3D printer
   - stampante 3D

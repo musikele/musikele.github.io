@@ -9,7 +9,7 @@ permalink: /2015/06/imovie-50-error/
 dsq_thread_id:
   - "4016107614"
 categories:
-  - english
+  - English
 tags:
   - -50 error
   - apple

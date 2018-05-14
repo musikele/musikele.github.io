@@ -9,7 +9,7 @@ permalink: /2015/01/how-to-style-a-button-to-upload-a-file/
 dsq_thread_id:
   - "4056337607"
 categories:
-  - english
+  - English
 tags:
   - bootstrap
   - css

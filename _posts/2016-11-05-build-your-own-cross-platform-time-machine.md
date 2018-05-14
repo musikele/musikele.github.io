@@ -9,7 +9,7 @@ permalink: /2016/11/build-your-own-cross-platform-time-machine/
 dsq_thread_id:
   - "5279464760"
 categories:
-  - english
+  - English
 tags:
   - backup
   - rsync

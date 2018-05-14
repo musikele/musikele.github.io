@@ -9,7 +9,7 @@ permalink: /2016/08/my-very-personal-javascript-fatigue/
 dsq_thread_id:
   - "5107340415"
 categories:
-  - english
+  - English
 tags:
   - javascript
   - testing

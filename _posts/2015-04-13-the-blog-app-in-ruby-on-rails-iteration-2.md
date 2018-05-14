@@ -9,7 +9,7 @@ permalink: /2015/04/the-blog-app-in-ruby-on-rails-iteration-2/
 dsq_thread_id:
   - "4152000991"
 categories:
-  - english
+  - English
 tags:
   - howto
   - RoR

@@ -9,7 +9,7 @@ permalink: /2015/10/follow-me-on-twitter-and-linkedin/
 dsq_thread_id:
   - "4209922188"
 categories:
-  - english
+  - English
 tags:
   - followme
   - linkedin

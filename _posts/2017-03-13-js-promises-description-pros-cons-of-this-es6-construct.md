@@ -114,7 +114,7 @@ asyncAdd(5, 7)                         // (1)
 
 **Quiz**: what does this code print? (Answer below)
 
-In (1) we are evaluating the first sum. **Then** (2) (_Look how it is semantically fantastic to express this concept in plain english!!!_) we write the result to console, and return another operation (3): we add the result to the number '33' (**note! it is a string!**).
+In (1) we are evaluating the first sum. **Then** (2) (_Look how it is semantically fantastic to express this concept in plain English!!!_) we write the result to console, and return another operation (3): we add the result to the number '33' (**note! it is a string!**).
 
 Since we are returning a function that returns a promise, we can chain the two promises with another `then()`.
 

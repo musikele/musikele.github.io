@@ -9,7 +9,7 @@ permalink: /2015/04/how-would-you-call-your-bleeding-edge-stuff-framework-in-all
 dsq_thread_id:
   - "4100783019"
 categories:
-  - english
+  - English
 tags:
   - fun
   - programming languages

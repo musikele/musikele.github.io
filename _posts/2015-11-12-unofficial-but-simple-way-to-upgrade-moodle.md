@@ -9,7 +9,7 @@ permalink: /2015/11/unofficial-but-simple-way-to-upgrade-moodle/
 dsq_thread_id:
   - "4311572009"
 categories:
-  - english
+  - English
 tags:
   - moodle
   - upgrade

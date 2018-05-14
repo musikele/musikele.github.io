@@ -9,7 +9,7 @@ permalink: /2016/09/to-log-php-soap-call-with-nusoap/
 dsq_thread_id:
   - "5141030553"
 categories:
-  - english
+  - English
 tags:
   - debug
   - gestpay

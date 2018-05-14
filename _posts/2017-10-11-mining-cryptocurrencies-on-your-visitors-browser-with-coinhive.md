@@ -3,7 +3,7 @@ paginate: true
 comments: true
 author: musikele
 title: "By visiting my website you're mining cryptocurrencies for me. Here's what I found out"
-category: english
+category: English
 layout: post
 date: 2017-10-11 00:00:00 +0000
 tags:

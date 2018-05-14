@@ -9,7 +9,7 @@ permalink: /2016/01/guida-agli-annunci-di-lavoro-per-sviluppatori/
 dsq_thread_id:
   - "4525305303"
 categories:
-  - english
+  - English
 tags:
   - funny
   - job

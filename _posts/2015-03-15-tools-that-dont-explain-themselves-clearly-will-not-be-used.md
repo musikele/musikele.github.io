@@ -10,7 +10,7 @@ dsq_thread_id:
   - "4105943629"
 image: /wp-content/uploads/2015/03/If-you-can-t-explain-it-simply-then-you-don-t-understand-it-35.jpg
 categories:
-  - english
+  - English
 tags:
   - communication
   - docker
