@@ -1,5 +1,7 @@
 ---
 pages:
+- _posts/cypressjs-for-your-end-to-end-tests-in-a-real-browser.md
+- _posts/2017-03-13-js-promises-description-pros-cons-of-this-es6-construct.md
 - _posts/2018-05-06-proteggi-le-tue-applicazioni-express-con-helmetjs.md
 - _posts/non-prendere-programmatori-a-p-iva-se-il-tuo-progetto-deve-durare-molto.md
 - _posts/2018-04-16-ode-ai-libri-di-carta.md
@@ -39,7 +41,6 @@ pages:
 - _posts/2017-03-23-deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.md
 - _posts/2017-03-21-l-inglese-tra-italiani-a-lavoro-e-una-scelta-sbagliata.md
 - _posts/2017-03-14-two-easy-ways-perform-get-requests-in-nodejs.md
-- _posts/2017-03-13-js-promises-description-pros-cons-of-this-es6-construct.md
 - _posts/2017-03-01-quando-l-azienda-non-paga-gli-stipendi.md
 - _posts/2017-02-25-the-javascript-event-loop-for-dummies.md
 - _posts/2017-02-05-quali-sono-gli-svantaggi-nel-lavorare-da-casa.md
