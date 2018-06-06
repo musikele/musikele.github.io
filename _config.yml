@@ -44,3 +44,5 @@ exclude:
 
 sass:
     sass_dir: _scss
+
+baseurl: ''
