@@ -14,7 +14,7 @@ description: 'Da ieri sera sono tornato alla carta, con l''obiettivo di trovare 
   strategia per finire i due libri digitali e non comprarne mai più. '
 header-img: "/images/kindle-vs-books.jpg"
 ---
-![]({{ site.baseurl }}/images/kindle-vs-books.jpg)  
+![]({{ '/images/kindle-vs-books.jpg' | relative_url }})  
   
 Ci ho provato, attratto dall'idea di portarmi un solo dispositivo dietro con tutti i libri che volevo leggere.
 
