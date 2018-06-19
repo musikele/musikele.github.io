@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>Time Management, by Nicholas Zakas - Michele Nasti's blog</title>
+	<title>Get the list of files blocked by a process in Linux  - Michele Nasti's blog</title>
 	 
-	<meta name="keywords" content="" />  
-	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<meta name="keywords" content="english" />  
+	<meta http-equiv="last-modified" content="2018-06-19 15:11:18 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="Time Management, by Nicholas Zakas" property="og:title">
+  <meta content="Get the list of files blocked by a process in Linux " property="og:title">
 
 
 
@@ -33,22 +33,26 @@
 
 
 
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+  <meta content="let's find how to find files read by a linux process. It's super easy!" property="og:description">
 
 
 
-  <meta content="https://michelenasti.com/archives/saved_elements/time_management_zakas" property="og:url">
+  <meta content="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" property="og:url">
 
 
 
-  <meta content="2017-04-12T20:13:17+02:00" property="article:published_time">
+  <meta content="2018-06-19T00:00:00+02:00" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 
 
 
-<meta content="/img/logo-high-resolution.png" property="og:image">
+<meta content="https://michelenasti.com///images/find-file-linux-code_magnifying_glass_zero.png" property="og:image">
 
 
+
+  
+  <meta content="english" property="article:tag">
+  
 
 
 <!-- Twitter cards metadatas -->
@@ -56,16 +60,18 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="Time Management, by Nicholas Zakas">
+  <meta name="twitter:title" content="Get the list of files blocked by a process in Linux ">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/archives/saved_elements/time_management_zakas">
+  <meta name="twitter:url" content="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html">
 
 
 
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+  <meta name="twitter:description" content="let's find how to find files read by a linux process. It's super easy!">
 
 
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/find-file-linux-code_magnifying_glass_zero.png">
 
 	<!--</noscript>-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
@@ -95,46 +101,82 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/archives/saved_elements/time_management_zakas">Time Management, by Nicholas Zakas</a></h1>
-			<p class="post-meta">Apr 12, 2017 • musikele</p>
+			<h1 class="post-title"><a href="/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html">Get the list of files blocked by a process in Linux </a></h1>
+			<p class="post-meta">Jun 19, 2018 • musikele</p>
 		</header>
 
 		<section>
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/archives/saved_elements/time_management_zakas&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/archives/saved_elements/time_management_zakas&text=Time Management, by Nicholas Zakas:%20https://michelenasti.com/archives/saved_elements/time_management_zakas&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Time Management, by Nicholas Zakas) + ':%20'  + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/archives/saved_elements/time_management_zakas" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/archives/saved_elements/time_management_zakas&title=Time Management, by Nicholas Zakas&summary=&source=https://michelenasti.com/archives/saved_elements/time_management_zakas" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&text=Get the list of files blocked by a process in Linux :%20https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Get the list of files blocked by a process in Linux ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&title=Get the list of files blocked by a process in Linux &summary=&source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 			
-			<p><em>Below you’ll find a copy of the original email from Nicholas Zakas, sent to the mailing list. Unfortunately the <a href="https://www.nczonline.net/newsletter/archive/5afe08eb6f/">original link</a> seems to be dead. Hope you might find it interesting as I did.</em></p>
+			<p>Problem: <strong>I had a process using 90% of cpu, couldn’t understand what was going on.</strong></p>
 
-<p>Hi everyone,</p>
+<p>After seeking the log files and other stuff, I still couldn’t undestand why it was taking so much CPU.</p>
 
-<p>If you were to ask me what soft skill should software engineers focus on before all others, my answer would be time management. I’ve seen so many good developers struggle at various points in their career through nothing more than time mismanagement. Time is the one non-renewable resource we all share, so managing it properly is key to not just professional success, but also personal success.</p>
+<p>I decided to give a look at what files are used by this process, in order to better understand what’s going on.</p>
 
-<p>To start, most software estimates are wrong, and typically very wrong. We tend to assume the best case scenario (no interruptions, no requirement changes, etc.), underestimate the complexity, underestimate the amount of work, and overestimate our abilities. This can frequently lead to a time crunch, and therefore, a lot of stress. We all do this, which is why it helps to remind yourself to overcorrect your estimates. In general, people are happy when things come in early and angry when they come in late. How do you become better at estimates?</p>
+<p><img src="/images/find-file-linux-code_magnifying_glass_zero-1" alt="" title="find files blocked by processes in linux" /></p>
 
-<p>The truth is you will never become better estimates, and once you accept that, you can adjust accordingly. Estimate as you would normally and then multiply that number by two. For short tasks (a day or two), that gives you a pretty good estimate. For anything four days or longer, it’s a good idea to round up to the nearest week; anything two months or longer, round up to the nearest month. Note that you haven’t really become better at your estimate by doing this, you’re just correcting for the fact that your initial estimate was wrong. In all likelihood, this adjusted estimate is also wrong, but hopefully it’s closer to reality.</p>
+<h2 id="its-so-easy">It’s so easy</h2>
 
-<p>The other area where developers struggle is deciding what they work on each day. I’ve seen people get distracted by side projects, playing foosball, or other things besides what they should be getting done. Don’t get me wrong, I’m a big believer in taking some time away from work during the day to refresh, but not at the expense of your actual tasks. I once worked with someone who didn’t get any of their tasks done in a given week because they were too busy helping other people with their problems. While very nice, that sort of behavior isn’t a good long-term strategy.</p>
+<p>first, <strong>find the PID of your process.</strong> My preferred way to do it is with the command:</p>
 
-<p>The solution? Every day, put two things on your “to do” list that you must absolutely get done. Make each small enough that there’s a good chance you will get them done (break larger tasks into a series of smaller ones), and prioritize them so you know what to work on first. If you finish both, then the rest of the day you are free to do whatever you want. Or, you can take a break after you finish one and know that you’re halfway to your goal. This is an approach I take whether I’m at work or away: two things I want to accomplish that day.</p>
+<pre><code class="language-console">$ ps -ef | grep &lt;command_name&gt;
+</code></pre>
 
-<p>Effective time management isn’t hard, it just takes some practice. Keep practicing!</p>
+<p>you’ll see an output like this:</p>
 
-<p>Be well.</p>
+<pre><code class="language-console">$ ps -ef | grep &lt;command&gt;
+root     13141     1 69 10:36 ?        02:52:34 /path/to/&lt;command&gt;
+admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto &lt;command&gt;
+</code></pre>
 
-<p>-N</p>
+<p>The pid of this process is <code>13141</code>.</p>
+
+<p>And now <strong>let’s get the list of files blocked by this process</strong>.</p>
+
+<pre><code class="language-console">$ ls -al /proc/13141/fd 
+</code></pre>
+
+<p>The system might ask you to run this command as privileged user, so don’t disregard using <code>sudo</code>.</p>
+
+<p>output:</p>
+
+<pre><code class="language-console">total 0
+dr-x------ 2 root root  0 Jun 19 12:12 .
+dr-xr-xr-x 8 root root  0 Jun 19 10:36 ..
+lrwx------ 1 root root 64 Jun 19 12:12 0 -&gt; /dev/null
+lrwx------ 1 root root 64 Jun 19 12:12 1 -&gt; /dev/null
+lr-x------ 1 root root 64 Jun 19 14:30 10 -&gt; /run/sdk/user.uid.db
+lr-x------ 1 root root 64 Jun 19 14:30 11 -&gt; /run/sdk/user.shadow.db
+lrwx------ 1 root root 64 Jun 19 12:12 2 -&gt; /dev/null
+lrwx------ 1 root root 64 Jun 19 12:12 3 -&gt; socket:[2342197]
+lrwx------ 1 root root 64 Jun 19 12:12 4 -&gt; socket:[2342201]
+lr-x------ 1 root root 64 Jun 19 12:12 5 -&gt; anon_inode:inotify
+lr-x------ 1 root root 64 Jun 19 12:12 6 -&gt; /backup_rsync/backup/20170825-1225/lib/azure-cli/lib/python2.7/site-packages/azure/mgmt/network/v2017_03_01/models
+lr-x------ 1 root root 64 Jun 19 12:12 7 -&gt; /run/sdk/lock/lock_pw
+lr-x------ 1 root root 64 Jun 19 14:30 8 -&gt; /run/sdk/user.name.db
+lr-x------ 1 root root 64 Jun 19 14:30 9 -&gt; /run/sdk/user.misc.db
+</code></pre>
+
+<p>Apart from a lot of stuff that seems creepy (<code>/dev/null</code>, <code>socket:\\\[...\\\]</code>), I can clearly spot a file used by my process: the one starting with <code>/backup_rsync</code>.</p>
+
+<p>Running this command other two-three times, I understood that it is not hung, it is just scanning every file in my system and checking against a pattern. Very poor design.</p>
+
+<p>Hope this helps!</p>
  
 			
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/archives/saved_elements/time_management_zakas&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/archives/saved_elements/time_management_zakas&text=Time Management, by Nicholas Zakas:%20https://michelenasti.com/archives/saved_elements/time_management_zakas&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Time Management, by Nicholas Zakas) + ':%20'  + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/archives/saved_elements/time_management_zakas" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/archives/saved_elements/time_management_zakas&title=Time Management, by Nicholas Zakas&summary=&source=https://michelenasti.com/archives/saved_elements/time_management_zakas" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/archives/saved_elements/time_management_zakas) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&text=Get the list of files blocked by a process in Linux :%20https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Get the list of files blocked by a process in Linux ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&title=Get the list of files blocked by a process in Linux &summary=&source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -1673,8 +1715,8 @@
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/archives/saved_elements/time_management_zakas';
-			var disqus_identifier = 'https://michelenasti.com/archives/saved_elements/time_management_zakas';
+			var disqus_url = 'https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html';
 
     };
     
@@ -1690,6 +1732,23 @@ s.setAttribute('data-timestamp', +new Date());
 
 		<footer>			
 			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/06/05/libri-sei-proprio-il-mio-typo-la-vita-segreta-dei-font.html">[libri] Sei proprio il mio typo: la vita segreta dei caratteri tipografici</a></h2>
+        </header>
+        <section>
+            <p>Questa è la storia di un libro che ho comprato due volte.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/06/05/libri-sei-proprio-il-mio-typo-la-vita-segreta-dei-font.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
      
 </div>
 		</footer>
