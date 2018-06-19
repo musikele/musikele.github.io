@@ -15,7 +15,7 @@ Problem: **I had a process using 90% of cpu, couldn't understand what was going 
 
 After seeking the log files and other stuff, I still couldn't undestand why it was taking so much CPU.
 
-I decided to give a look at what files are used by this process, in order to better understand what's going on.
+I decided to give a look at what files are used by this process.
 
 ![]({{ site.baseurl }}/images/find-file-linux-code_magnifying_glass_zero-1 "find files blocked by processes in linux")
 
@@ -23,13 +23,13 @@ I decided to give a look at what files are used by this process, in order to bet
 
 first, **find the PID of your process.** My preferred way to do it is with the command:
 
-```console
+```bash
 $ ps -ef | grep <command_name>
 ```
 
 you'll see an output like this:
 
-```console
+```bash
 $ ps -ef | grep <command>
 root     13141     1 69 10:36 ?        02:52:34 /path/to/<command>
 admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto <command>
@@ -39,7 +39,7 @@ The pid of this process is `13141`.
 
 And now **let's get the list of files blocked by this process**.
 
-```console
+```bash
 $ ls -al /proc/13141/fd 
 ```
 
@@ -47,7 +47,7 @@ The system might ask you to run this command as privileged user, so don't disreg
 
 output:
 
-```console
+```bash
 total 0
 dr-x------ 2 root root  0 Jun 19 12:12 .
 dr-xr-xr-x 8 root root  0 Jun 19 10:36 ..
