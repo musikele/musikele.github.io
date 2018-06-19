@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-06-19T15:13:34+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Get the list of files blocked by a process in Linux</title><link href="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" rel="alternate" type="text/html" title="Get the list of files blocked by a process in Linux " /><published>2018-06-19T00:00:00+02:00</published><updated>2018-06-19T15:11:18+02:00</updated><id>https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux</id><content type="html" xml:base="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html">&lt;p&gt;Problem: &lt;strong&gt;I had a process using 90% of cpu, couldn’t understand what was going on.&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-06-19T19:07:08+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Get the list of files blocked by a process in Linux</title><link href="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" rel="alternate" type="text/html" title="Get the list of files blocked by a process in Linux " /><published>2018-06-19T00:00:00+02:00</published><updated>2018-06-19T19:03:50+02:00</updated><id>https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux</id><content type="html" xml:base="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html">&lt;p&gt;Problem: &lt;strong&gt;I had a process using 90% of cpu, couldn’t understand what was going on.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;After seeking the log files and other stuff, I still couldn’t undestand why it was taking so much CPU.&lt;/p&gt;
 
-&lt;p&gt;I decided to give a look at what files are used by this process, in order to better understand what’s going on.&lt;/p&gt;
+&lt;p&gt;I decided to give a look at what files are used by this process.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/find-file-linux-code_magnifying_glass_zero-1&quot; alt=&quot;&quot; title=&quot;find files blocked by processes in linux&quot; /&gt;&lt;/p&gt;
 
@@ -10,12 +10,12 @@
 
 &lt;p&gt;first, &lt;strong&gt;find the PID of your process.&lt;/strong&gt; My preferred way to do it is with the command:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ ps -ef | grep &amp;lt;command_name&amp;gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ps -ef | grep &amp;lt;command_name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;you’ll see an output like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ ps -ef | grep &amp;lt;command&amp;gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ps -ef | grep &amp;lt;command&amp;gt;
 root     13141     1 69 10:36 ?        02:52:34 /path/to/&amp;lt;command&amp;gt;
 admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto &amp;lt;command&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -24,14 +24,14 @@ admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto &amp;lt;comman
 
 &lt;p&gt;And now &lt;strong&gt;let’s get the list of files blocked by this process&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ ls -al /proc/13141/fd 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ls -al /proc/13141/fd 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The system might ask you to run this command as privileged user, so don’t disregard using &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;total 0
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;total 0
 dr-x------ 2 root root  0 Jun 19 12:12 .
 dr-xr-xr-x 8 root root  0 Jun 19 10:36 ..
 lrwx------ 1 root root 64 Jun 19 12:12 0 -&amp;gt; /dev/null

@@ -12,7 +12,7 @@
 	<title>Get the list of files blocked by a process in Linux  - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="english" />  
-	<meta http-equiv="last-modified" content="2018-06-19 15:11:18 +0200" /> 
+	<meta http-equiv="last-modified" content="2018-06-19 19:03:50 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -118,7 +118,7 @@
 
 <p>After seeking the log files and other stuff, I still couldn’t undestand why it was taking so much CPU.</p>
 
-<p>I decided to give a look at what files are used by this process, in order to better understand what’s going on.</p>
+<p>I decided to give a look at what files are used by this process.</p>
 
 <p><img src="/images/find-file-linux-code_magnifying_glass_zero-1" alt="" title="find files blocked by processes in linux" /></p>
 
@@ -126,12 +126,12 @@
 
 <p>first, <strong>find the PID of your process.</strong> My preferred way to do it is with the command:</p>
 
-<pre><code class="language-console">$ ps -ef | grep &lt;command_name&gt;
+<pre><code class="language-bash">$ ps -ef | grep &lt;command_name&gt;
 </code></pre>
 
 <p>you’ll see an output like this:</p>
 
-<pre><code class="language-console">$ ps -ef | grep &lt;command&gt;
+<pre><code class="language-bash">$ ps -ef | grep &lt;command&gt;
 root     13141     1 69 10:36 ?        02:52:34 /path/to/&lt;command&gt;
 admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto &lt;command&gt;
 </code></pre>
@@ -140,14 +140,14 @@ admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto &lt;command&gt
 
 <p>And now <strong>let’s get the list of files blocked by this process</strong>.</p>
 
-<pre><code class="language-console">$ ls -al /proc/13141/fd 
+<pre><code class="language-bash">$ ls -al /proc/13141/fd 
 </code></pre>
 
 <p>The system might ask you to run this command as privileged user, so don’t disregard using <code>sudo</code>.</p>
 
 <p>output:</p>
 
-<pre><code class="language-console">total 0
+<pre><code class="language-bash">total 0
 dr-x------ 2 root root  0 Jun 19 12:12 .
 dr-xr-xr-x 8 root root  0 Jun 19 10:36 ..
 lrwx------ 1 root root 64 Jun 19 12:12 0 -&gt; /dev/null
@@ -1665,7 +1665,7 @@ lr-x------ 1 root root 64 Jun 19 14:30 9 -&gt; /run/sdk/user.misc.db
         
 
         <div class="col-4">
-            <h5><a href="/2017/05/22/i-colloqui-di-lavoro-nelle-big.html">I colloqui di lavoro nelle Big</a></h5>
+            <h5><a href="/2016/03/gioco-flexbox/">Vuoi imparare flexbox ma ti annoi? Prova questo gioco</a></h5>
         </div>
     
         
@@ -1675,7 +1675,7 @@ lr-x------ 1 root root 64 Jun 19 14:30 9 -&gt; /run/sdk/user.misc.db
         
 
         <div class="col-4">
-            <h5><a href="/2016/09/come-lavorare-da-remoto/">Com'è lavorare da remoto?</a></h5>
+            <h5><a href="/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html">Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)</a></h5>
         </div>
     
         
@@ -1685,7 +1685,7 @@ lr-x------ 1 root root 64 Jun 19 14:30 9 -&gt; /run/sdk/user.misc.db
         
 
         <div class="col-4">
-            <h5><a href="/2015/11/react-js-day-a-napoli-impressioni/">React.js day a Napoli: impressioni</a></h5>
+            <h5><a href="/2016/02/ho-partecipato-a-google-hashcode2016-ecco-come-andata/">Ho partecipato a Google HashCode 2016. Ecco com'é andata</a></h5>
         </div>
     
         
@@ -1695,7 +1695,7 @@ lr-x------ 1 root root 64 Jun 19 14:30 9 -&gt; /run/sdk/user.misc.db
         
 
         <div class="col-4">
-            <h5><a href="/2015/02/attenti-alla-classe-active-delle-progress-bar-bootstrap-3/">Pay attention to the ".active" progress bar class in Bootstrap</a></h5>
+            <h5><a href="/2018/01/07/e-importante-conoscere-come-sono-fatte-le-librerie-che-usiamo.html">E' importante conoscere come sono fatte le librerie che usiamo?</a></h5>
         </div>
     
 
