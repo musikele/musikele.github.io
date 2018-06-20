@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: Come creare luoghi di lavoro in cui è bello recarsi
+title: Come creare luoghi di lavoro in cui é bello recarsi
 category: Italiano
 layout: post
 date: 2018-06-20 00:00:00 +0200
@@ -19,7 +19,7 @@ Dovreste saperlo un po' tutti, ormai, che **lavoro da remoto**. Ai tempi feci qu
 
 Estremizziamo: ha senso, nel 2018, parlare ancora di uffici? E' plausibile prevedere che _nel 2030 lavoreremo tutti da casa?_ 
 
-**Ho conosciuto molte persone che sono felici di andare a lavoro**, che amano la compagnia dei colleghi, e che si trovano bene col loro capo. Per queste persone i soldi non sono importanti (ma guadagnano quanto basta per vivere felicemente).
+**Ho conosciuto molte persone che sono felici di andare a lavoro**, che amano la compagnia dei colleghi, e che si trovano bene col proprio capo. Per queste persone i soldi non sono importanti (ma guadagnano quanto basta per vivere felicemente).
 
 **Recarsi per 200 giorni all'anno in un posto in cui devi trascorrerci almeno 8 ore, e non trovarsi bene, è un suicidio morale.** 
 
@@ -33,23 +33,23 @@ E' probabile che nell'Illuminismo non avevano possibilità di sperimentare col l
 
 > serve molto di più per creare un posto dove le idee migliori emergano, dove si possa essere produttivi e, soprattutto, a proprio agio.
 
-Non basta una sede con biliardini e tavoli da ping pong: nelle sedi in cui ho visto queste cose, i dipendenti hanno candidamente ammesso che non li usano per non disturbare gli altri. Il cambio deve essere culturale! 
+**Non basta una sede con biliardini e tavoli da ping pong**: nelle sedi in cui ho visto queste cose, i dipendenti hanno candidamente ammesso che non li usano per non disturbare gli altri. Il cambio deve essere culturale! 
 
 > ci siano essenzialmente due motivi per cui lavorare sotto lo stesso tetto sia di valore: stringere legami e creare idee.
 
-L'uomo è animale sociale, e se siete tipi solitari, **i colleghi saranno le persone che vedrete di più (non può farvi che bene)**. I legami che si stringono con i colleghi possono durare più del rapporto di lavoro. E all'inizio della carriera i più esperti possono farti da mentore e aiutarti nelle scelte e a diventare più bravo. 
+L'uomo è animale sociale, e se sei un tipo solitario, **i colleghi saranno le persone che vedrai di più (non può farti che bene)**. I legami che si stringono con i colleghi possono durare più del rapporto di lavoro. E all'inizio della carriera i più esperti possono farti da mentore e aiutarti nelle scelte e a diventare più bravo. 
 
 Ma la cosa più interessante è il creare idee. Ci piace pensare che il _genio_ esca all'improvviso, magari in sogno, o più semplicemente mentre si sta facendo altro e si viene folgorati da un'intuizione. Invece sembra che le idee nascano in modi profondamente diversi; **le connessioni casuali con persone che hanno altre idee genera un mix di confusione e chiarezza che porta a ciò che chiamiamo creatività**. 
 
 ## Due parole sul caffè
 
-**Quando volete parlare con un collega, è molto probabile che gli diciate "andiamoci a prendere un caffè".** 
+**Quando vuoi parlare con un collega, è molto probabile che tu gli dica "andiamoci a prendere un caffè".** 
 
 ![]({{ site.baseurl }}/images/caffe-distributore-automatico-ufficio_-672x351.jpg)
 
 E' stato dimostrato che le chiacchierate al distributore (o alla macchinetta del caffè) sono [fondamentali per aumentare la produttività](https://www.nytimes.com/2012/07/15/jobs/group-breaks-can-raise-workplace-productivity.html).
 
-_Come scusa? Ma alla macchinetta del coffè non si cazzeggia?_ 
+_Come scusa? Ma alla macchinetta del caffè non si cazzeggia?_ 
 
 No(n solo), alla macchinetta del caffè si cazzeggia pure, ma più spesso si chiacchiera dei progetti in corso, si chiede aiuto per superare un ostacolo. 
 
@@ -70,6 +70,6 @@ Non ce l'ho, ma posso provare a raccontare i miei desiderata:
 
 ## Se ti piace questo argomento...
 
-Ti consiglio questo libro, da cui ho preso le citazioni che vedi nell'articolo:
+Ti consiglio questo libro, [Human centered work](https://amzn.to/2toNoae), da cui ho preso le citazioni che hai letto in questo articolo.
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ilblodimicnas-21&o=29&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=8823836425&linkId=c724d19e9ba8713adb49f1e18311177b"></iframe>
