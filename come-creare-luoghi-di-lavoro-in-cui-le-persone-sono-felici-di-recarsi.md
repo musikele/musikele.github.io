@@ -14,7 +14,6 @@ header-img: "/images/Indoor-Garden-For-Office-Building-2013-Glass-Ceiling-With-S
 description: 'Perchè la gente vuole lavorare da remoto? Non solo il tempo o i soldi
   sono il fattore principale; se l''ambiente di lavoro fosse accogliente, le persone
   si sveglierebbero al mattino felici di venire a lavorare! '
-published: false
 ---
 Dovreste saperlo un po' tutti, ormai, che **lavoro da remoto**. Ai tempi feci questa scelta perchè non ce la facevo più a viaggiare 2 ore della mia vita in un autobus che restava puntualmente imbottigliato nel traffico. Ma **il lavoro "tradizionale" è così brutto?** 
 
