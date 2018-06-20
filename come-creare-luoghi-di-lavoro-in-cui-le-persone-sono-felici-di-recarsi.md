@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: Come creare luoghi di lavoro in cui le persone sono felici di recarsi
+title: Come creare luoghi di lavoro in cui è bello recarsi
 category: Italiano
 layout: post
 date: 2018-06-20 00:00:00 +0200
