@@ -3,7 +3,13 @@ new_page_extension: md
 auto_deploy: false
 admin_path: "/admin"
 webhook_url: 
-collections: 
+collections:
+- path: _posts
+  label: Posts
+  create: all
+- path: ''
+  label: Pages
+  create: all
 upload_dir: images
 public_path: "{{ site.baseurl }}/images"
 front_matter_path: "/images"
