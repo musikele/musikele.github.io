@@ -9,7 +9,7 @@ date: 2018-07-10 00:00:00 +0200
 tags:
 - Documentation
 - Work
-header-img: "/images/IMG_20180708_195629.jpg"
+header-img: "/images/documentation.png"
 description: 'What makes great a product? The features, the ease of use, and obviously
   all of this must be explained in a great documentation: one of my jobs. '
 ---
@@ -18,6 +18,8 @@ What makes a product a _great_ product?
 one might say the **features**, others may say the **ease of using** these features writing less code, with more throughput, etc.
 
 I agree with this definition; everyday in my job I use tools that can deploy rockets to the moon and others that can at most change the color of a text. But let me tell you how I choose my lethal weapons: by their **documentation**.
+
+![]({{ site.baseurl }}/images/documentation.png)
 
 ## One of the last things a developer thinks about
 
