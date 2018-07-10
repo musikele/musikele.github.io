@@ -60,23 +60,23 @@ I've decided to create two websites:
 * The first one explains, in current English, every possible feature in the form of a tutorial. Many topics are explored in sections (for example there's the _security_ section).
 * The second website contains just the APIs and explains, for every API, what every field does. It also contains examples of requests and responses. 
 
-The first website was made using jekyll; the second was created using a tool called Slate. 
+The first website was made using [jekyll](Https://jekyllrb.com); the second was created using a tool called [Slate](https://github.com/lord/slate). 
 
-In the first website I think I have covered everything: form how to sign up to how to handle very custom configurations. 
+In the first website I think I have covered everything: form how to sign up to how to handle custom configurations. 
 
-Every API referenced in the jekyll documentation is linked to the slate one, so a user can easily enter in details.
+Every API referenced in the jekyll documentation is linked to the slate one, so a user can easily dive in details.
 
 ## The most difficult part
 
 Architecturing the whole solution was the toughest job.
 
-I had to be sure everything was clear enough for newcomers, and clear for experienced customers.
+I had to be sure everything was clear enough for newcomers, and also clear for experienced customers.
 
 I had to organize stuff into chapters, sections, remembering where and when I was going to talk about a topic and to link it in the future.
 
-Then, the job of actually writing the documentation was easy (and a little bit boring!) because the most difficult part was already done.
+Then, the job of actually writing the documentation was easy (and a little bit boring!) because the most difficult part was already done. 
 
-And let's not forget other aspects: allow users to search the docs, deploy a beta version of the docs for internal and review purposes, handle versions...
+I've not mentioned other technical aspects: allow users to search the docs, deploy a beta version of the docs for internal and review purposes, handle versions...
 
 ## Feedbacks
 
