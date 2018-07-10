@@ -17,48 +17,48 @@ What makes a product a _great_ product?
 
 one might say the **features**, others may say the **ease of using** these features writing less code, with more throughput, etc.
 
-I agree with this definition; everyday in my jovlb I use tools that can deploy rockets to the moon and tools that can at most change the color of a text. But let me tell you how I choose my lethal weapons: by their **documentation**.
+I agree with this definition; everyday in my job I use tools that can deploy rockets to the moon and others that can at most change the color of a text. But let me tell you how I choose my lethal weapons: by their **documentation**.
 
 ## One of the last things a developer thinks about
 
-you write a fantastic tool that automatizes a part of your job and you think it might be useful for others, too. What will you do?
+you write a fantastic tool that automatizes a part of your job and you think it might be useful for others, too. What do you do?
 
 * Put on github
 * Write a simple Readme.md
 * Wait for people coming
 
-And nobody comes. Or, people coming will just watch and pass by.
+And nobody comes. Or, people coming will just watch and pass by, preferring another older tool with less features. 
 
-When you write product, and want it to spread as much as possible, you have to impersonate your users and think like them. In your Readme you have to write:
+To spread your product as much as possible you have to impersonate your users and think like them. In your Readme you have to write _at least_:
 
 * What does this tool do
 * How
 * What do you need to start/install the tool
 * How to configure it
-* Etc
+* ... 
 
-This applies to commercial tools too, infact it is the last free thing you can do to spread your product - marketing costs money! 
+This applies to commercial tools too, infact **it is the last free thing you can do to spread your product** - marketing costs money! 
 
 ## My job for the last two years 
 
-In my last two years I've worked (and still working) for a very big digital product. I started with knowing nothing about it, and now I know it better than anyone else (except who works for it). 
+In my last two years I've worked (and still working) for a very big digital product. (I have worked also on other things, but this has been one of my exclusive tasks). I started with knowing nothing about it, and now I know it better than anyone else. 
 
-My job? Designing the documentation websites. I had to explain, to a complete ignorant, like myself, how to use this product to obtain any possible goal. 
+My job? Designing the documentation website. I had to explain to a complete ignorant, like myself, how to use this product to obtain any possible goal. 
 
-It was not an easy journey: available documentation was written in pdf or doc documents, not the best solution in 2016. 
+It was not an easy journey: for example, available documentation was written in _pdf_ or _doc_ documents, not the best solution in 2016. And not all the documentation was publicly accessible. 
 
-The product is old: it started in 1999 and still lives, with many apis unchanged!
+The product is old: it started in 1999 and still kicks asses! 
 
-The product is big: competitors don't have so many features like this product.
+The product is big: competitors don't have many features this product has. 
 
-how did I accomplish the job?
+So: what's the job?
 
 ## My solution: two websites for one documentation 
 
 I've decided to create two websites: 
 
-* The first one will explain, in current English, every possible feature in the form of a tutorial. Many topics are explored in sections (for example _security_).
-* The second one contains just the APIs and explains, for every API, what every field does. It also contains examples of requests and responses. 
+* The first one explains, in current English, every possible feature in the form of a tutorial. Many topics are explored in sections (for example there's the _security_ section).
+* The second website contains just the APIs and explains, for every API, what every field does. It also contains examples of requests and responses. 
 
 The first website was made using jekyll; the second was created using a tool called Slate. 
 
