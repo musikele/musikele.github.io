@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>Get the list of files blocked by a process in Linux  - Michele Nasti's blog</title>
+	<title>Designing the documentation for a tech product - Michele Nasti's blog</title>
 	 
-	<meta name="keywords" content="linux, shell, bash" />  
-	<meta http-equiv="last-modified" content="2018-06-19 19:13:34 +0200" /> 
+	<meta name="keywords" content="Documentation, Work" />  
+	<meta http-equiv="last-modified" content="2018-07-10 23:15:03 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="Get the list of files blocked by a process in Linux " property="og:title">
+  <meta content="Designing the documentation for a tech product" property="og:title">
 
 
 
@@ -33,29 +33,27 @@
 
 
 
-  <meta content="let's find how to find files read by a linux process. It's super easy!" property="og:description">
+  <meta content="What makes great a product? The features, the ease of use, and obviously all of this must be explained in a great documentation: my job " property="og:description">
 
 
 
-  <meta content="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" property="og:url">
+  <meta content="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" property="og:url">
 
 
 
-  <meta content="2018-06-19T00:00:00+02:00" property="article:published_time">
+  <meta content="2018-07-10T00:00:00+02:00" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 
 
 
-<meta content="https://michelenasti.com///images/find-file-linux-code_magnifying_glass_zero.png" property="og:image">
+<meta content="https://michelenasti.com//" property="og:image">
 
 
 
   
-  <meta content="linux" property="article:tag">
+  <meta content="Documentation" property="article:tag">
   
-  <meta content="shell" property="article:tag">
-  
-  <meta content="bash" property="article:tag">
+  <meta content="Work" property="article:tag">
   
 
 
@@ -64,18 +62,18 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="Get the list of files blocked by a process in Linux ">
+  <meta name="twitter:title" content="Designing the documentation for a tech product">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html">
-
-
-
-  <meta name="twitter:description" content="let's find how to find files read by a linux process. It's super easy!">
+  <meta name="twitter:url" content="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html">
 
 
 
-  <meta name="twitter:image:src" content="https://michelenasti.com//images/find-file-linux-code_magnifying_glass_zero.png">
+  <meta name="twitter:description" content="What makes great a product? The features, the ease of use, and obviously all of this must be explained in a great documentation: my job ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com/">
 
 	<!--</noscript>-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
@@ -105,82 +103,105 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html">Get the list of files blocked by a process in Linux </a></h1>
-			<p class="post-meta">Jun 19, 2018 • musikele</p>
+			<h1 class="post-title"><a href="/2018/07/10/designing-the-documentation-for-a-tech-product.html">Designing the documentation for a tech product</a></h1>
+			<p class="post-meta">Jul 10, 2018 • musikele</p>
 		</header>
 
 		<section>
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&text=Get the list of files blocked by a process in Linux :%20https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Get the list of files blocked by a process in Linux ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&title=Get the list of files blocked by a process in Linux &summary=&source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&text=Designing the documentation for a tech product:%20https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Designing the documentation for a tech product) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&title=Designing the documentation for a tech product&summary=&source=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 			
-			<p>Problem: <strong>I had a process using 90% of cpu, couldn’t understand what was going on.</strong></p>
+			<p>What makes a product a <em>great</em> product?</p>
 
-<p>After seeking the log files and other stuff, I still couldn’t undestand why it was taking so much CPU.</p>
+<p>one might say the <strong>features</strong>, others may say the <strong>ease of using</strong> these features writing less code, with more throughput, etc.</p>
 
-<p>I decided to give a look at what files are used by this process.</p>
+<p>I agree with this definition; everyday in my job I use tools that can deploy rockets to the moon and others that can at most change the color of a text. But let me tell you how I choose my lethal weapons: by their <strong>documentation</strong>.</p>
 
-<p><img src="/images/find-file-linux-code_magnifying_glass_zero-1" alt="" title="find files blocked by processes in linux" /></p>
+<h2 id="one-of-the-last-things-a-developer-thinks-about">One of the last things a developer thinks about</h2>
 
-<h2 id="its-so-easy">It’s so easy</h2>
+<p>you write a fantastic tool that automatizes a part of your job and you think it might be useful for others, too. What do you do?</p>
 
-<p>first, <strong>find the PID of your process.</strong> My preferred way to do it is with the command:</p>
+<ul>
+  <li>Put on github</li>
+  <li>Write a simple Readme.md</li>
+  <li>Wait for people coming</li>
+</ul>
 
-<pre><code class="language-bash">$ ps -ef | grep &lt;command_name&gt;
-</code></pre>
+<p>And nobody comes. Or, people coming will just watch and pass by, preferring another older tool with less features.</p>
 
-<p>you’ll see an output like this:</p>
+<p>To spread your product as much as possible you have to impersonate your users and think like them. In your Readme you have to write <em>at least</em>:</p>
 
-<pre><code class="language-bash">$ ps -ef | grep &lt;command&gt;
-root     13141     1 69 10:36 ?        02:52:34 /path/to/&lt;command&gt;
-admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto &lt;command&gt;
-</code></pre>
+<ul>
+  <li>What does this tool do</li>
+  <li>How</li>
+  <li>What do you need to start/install the tool</li>
+  <li>How to configure it</li>
+  <li>…</li>
+</ul>
 
-<p>The pid of this process is <code>13141</code>.</p>
+<p>This applies to commercial tools too, infact <strong>it is the last free thing you can do to spread your product</strong> - marketing costs money!</p>
 
-<p>And now <strong>let’s get the list of files blocked by this process</strong>.</p>
+<h2 id="my-job-for-the-last-two-years">My job for the last two years</h2>
 
-<pre><code class="language-bash">$ ls -al /proc/13141/fd 
-</code></pre>
+<p>In my last two years I’ve worked (and still working) for a very big digital product. (I have worked also on other things, but this has been one of my exclusive tasks). I started with knowing nothing about it, and now I know it better than anyone else.</p>
 
-<p>The system might ask you to run this command as privileged user, so don’t disregard using <code>sudo</code>.</p>
+<p>My job? Designing the documentation website. I had to explain to a complete ignorant, like myself, how to use this product to obtain any possible goal.</p>
 
-<p>output:</p>
+<p>It was not an easy journey: for example, available documentation was written in <em>pdf</em> or <em>doc</em> documents, not the best solution in 2016. And not all the documentation was publicly accessible.</p>
 
-<pre><code class="language-bash">total 0
-dr-x------ 2 root root  0 Jun 19 12:12 .
-dr-xr-xr-x 8 root root  0 Jun 19 10:36 ..
-lrwx------ 1 root root 64 Jun 19 12:12 0 -&gt; /dev/null
-lrwx------ 1 root root 64 Jun 19 12:12 1 -&gt; /dev/null
-lr-x------ 1 root root 64 Jun 19 14:30 10 -&gt; /run/sdk/user.uid.db
-lr-x------ 1 root root 64 Jun 19 14:30 11 -&gt; /run/sdk/user.shadow.db
-lrwx------ 1 root root 64 Jun 19 12:12 2 -&gt; /dev/null
-lrwx------ 1 root root 64 Jun 19 12:12 3 -&gt; socket:[2342197]
-lrwx------ 1 root root 64 Jun 19 12:12 4 -&gt; socket:[2342201]
-lr-x------ 1 root root 64 Jun 19 12:12 5 -&gt; anon_inode:inotify
-lr-x------ 1 root root 64 Jun 19 12:12 6 -&gt; /backup_rsync/backup/20170825-1225/lib/azure-cli/lib/python2.7/site-packages/azure/mgmt/network/v2017_03_01/models
-lr-x------ 1 root root 64 Jun 19 12:12 7 -&gt; /run/sdk/lock/lock_pw
-lr-x------ 1 root root 64 Jun 19 14:30 8 -&gt; /run/sdk/user.name.db
-lr-x------ 1 root root 64 Jun 19 14:30 9 -&gt; /run/sdk/user.misc.db
-</code></pre>
+<p>The product is old: it started in 1999 and still kicks asses!</p>
 
-<p>Apart from a lot of stuff that seems creepy (<code>/dev/null</code>, <code>socket:\\\[...\\\]</code>), I can clearly spot a file used by my process: the one starting with <code>/backup_rsync</code>.</p>
+<p>The product is big: competitors don’t have many features this product has.</p>
 
-<p>Running this command other two-three times, I understood that it is not hung, it is just scanning every file in my system and checking against a pattern. Very poor design.</p>
+<p>So: what’s the job?</p>
 
-<p>Hope this helps!</p>
+<h2 id="my-solution-two-websites-for-one-documentation">My solution: two websites for one documentation</h2>
+
+<p>I’ve decided to create two websites:</p>
+
+<ul>
+  <li>The first one explains, in current English, every possible feature in the form of a tutorial. Many topics are explored in sections (for example there’s the <em>security</em> section).</li>
+  <li>The second website contains just the APIs and explains, for every API, what every field does. It also contains examples of requests and responses.</li>
+</ul>
+
+<p>The first website was made using <a href="Https://jekyllrb.com">jekyll</a>; the second was created using a tool called <a href="https://github.com/lord/slate">Slate</a>.</p>
+
+<p>In the first website I think I have covered everything: form how to sign up to how to handle custom configurations.</p>
+
+<p>Every API referenced in the jekyll documentation is linked to the slate one, so a user can easily dive in details.</p>
+
+<h2 id="the-most-difficult-part">The most difficult part</h2>
+
+<p>Architecturing the whole solution was the toughest job.</p>
+
+<p>I had to be sure everything was clear enough for newcomers, and also clear for experienced customers.</p>
+
+<p>I had to organize stuff into chapters, sections, remembering where and when I was going to talk about a topic and to link it in the future.</p>
+
+<p>Then, the job of actually writing the documentation was easy (and a little bit boring!) because the most difficult part was already done.</p>
+
+<p>I’ve not mentioned other technical aspects: allow users to search the docs, deploy a beta version of the docs for internal and review purposes, handle versions…</p>
+
+<h2 id="feedbacks">Feedbacks</h2>
+
+<p>During my job I have talked to many people who has read “my” documentation. They told me it was extremely clear and they loved the examples, it made the whole thing more readable.</p>
+
+<p>Even my bosses think that the documentation is helping them in expanding the product to new potential  customers.</p>
+
+<p>I feel proud that my job is helping the company and customers to reach their respective goals. I really enjoy working for public products!</p>
  
 			
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&text=Get the list of files blocked by a process in Linux :%20https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Get the list of files blocked by a process in Linux ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html&title=Get the list of files blocked by a process in Linux &summary=&source=https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&text=Designing the documentation for a tech product:%20https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Designing the documentation for a tech product) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html&title=Designing the documentation for a tech product&summary=&source=https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -1737,8 +1758,8 @@ lr-x------ 1 root root 64 Jun 19 14:30 9 -&gt; /run/sdk/user.misc.db
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html';
-			var disqus_identifier = 'https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html';
+			var disqus_url = 'https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html';
 
     };
     
@@ -1758,23 +1779,6 @@ s.setAttribute('data-timestamp', +new Date());
 
     <div class="6u 12u(small) excerpt" id="previousArticle">
         <header>
-            <h2><a href="/2018/06/05/libri-sei-proprio-il-mio-typo-la-vita-segreta-dei-font.html">[libri] Sei proprio il mio typo: la vita segreta dei caratteri tipografici</a></h2>
-        </header>
-        <section>
-            <p>Questa è la storia di un libro che ho comprato due volte.</p>
-
-
-        </section>
-        <div>
-            <ul class="actions">
-                <li><a href="/2018/06/05/libri-sei-proprio-il-mio-typo-la-vita-segreta-dei-font.html" class="button">Read More</a></li>
-            </ul>
-        </div>
-    </div>
-     
-
-    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-        <header>
             <h2><a href="/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html">Come creare luoghi di lavoro in cui é bello recarsi</a></h2>
         </header>
         <section>
@@ -1784,11 +1788,11 @@ s.setAttribute('data-timestamp', +new Date());
         </section>
         <div>
             <ul class="actions">
-                <li><a href="//2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html" class="button">Read More</a></li>
+                <li><a href="/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html" class="button">Read More</a></li>
             </ul>
         </div>
     </div>
-    
+     
 </div>
 		</footer>
 

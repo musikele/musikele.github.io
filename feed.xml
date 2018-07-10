@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-07-10T23:13:22+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Come creare luoghi di lavoro in cui é bello recarsi</title><link href="https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html" rel="alternate" type="text/html" title="Come creare luoghi di lavoro in cui é bello recarsi" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T10:38:45+02:00</updated><id>https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi</id><content type="html" xml:base="https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html">&lt;p&gt;Dovreste saperlo un po’ tutti, ormai, che &lt;strong&gt;lavoro da remoto&lt;/strong&gt;. Ai tempi feci questa scelta perchè non ce la facevo più a viaggiare 2 ore della mia vita in un autobus che restava puntualmente imbottigliato nel traffico. Ma &lt;strong&gt;il lavoro “tradizionale” è così brutto?&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-07-10T23:16:07+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Designing the documentation for a tech product</title><link href="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" rel="alternate" type="text/html" title="Designing the documentation for a tech product" /><published>2018-07-10T00:00:00+02:00</published><updated>2018-07-10T23:15:03+02:00</updated><id>https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product</id><content type="html" xml:base="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html">&lt;p&gt;What makes a product a &lt;em&gt;great&lt;/em&gt; product?&lt;/p&gt;
+
+&lt;p&gt;one might say the &lt;strong&gt;features&lt;/strong&gt;, others may say the &lt;strong&gt;ease of using&lt;/strong&gt; these features writing less code, with more throughput, etc.&lt;/p&gt;
+
+&lt;p&gt;I agree with this definition; everyday in my job I use tools that can deploy rockets to the moon and others that can at most change the color of a text. But let me tell you how I choose my lethal weapons: by their &lt;strong&gt;documentation&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;one-of-the-last-things-a-developer-thinks-about&quot;&gt;One of the last things a developer thinks about&lt;/h2&gt;
+
+&lt;p&gt;you write a fantastic tool that automatizes a part of your job and you think it might be useful for others, too. What do you do?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Put on github&lt;/li&gt;
+  &lt;li&gt;Write a simple Readme.md&lt;/li&gt;
+  &lt;li&gt;Wait for people coming&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And nobody comes. Or, people coming will just watch and pass by, preferring another older tool with less features.&lt;/p&gt;
+
+&lt;p&gt;To spread your product as much as possible you have to impersonate your users and think like them. In your Readme you have to write &lt;em&gt;at least&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What does this tool do&lt;/li&gt;
+  &lt;li&gt;How&lt;/li&gt;
+  &lt;li&gt;What do you need to start/install the tool&lt;/li&gt;
+  &lt;li&gt;How to configure it&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This applies to commercial tools too, infact &lt;strong&gt;it is the last free thing you can do to spread your product&lt;/strong&gt; - marketing costs money!&lt;/p&gt;
+
+&lt;h2 id=&quot;my-job-for-the-last-two-years&quot;&gt;My job for the last two years&lt;/h2&gt;
+
+&lt;p&gt;In my last two years I’ve worked (and still working) for a very big digital product. (I have worked also on other things, but this has been one of my exclusive tasks). I started with knowing nothing about it, and now I know it better than anyone else.&lt;/p&gt;
+
+&lt;p&gt;My job? Designing the documentation website. I had to explain to a complete ignorant, like myself, how to use this product to obtain any possible goal.&lt;/p&gt;
+
+&lt;p&gt;It was not an easy journey: for example, available documentation was written in &lt;em&gt;pdf&lt;/em&gt; or &lt;em&gt;doc&lt;/em&gt; documents, not the best solution in 2016. And not all the documentation was publicly accessible.&lt;/p&gt;
+
+&lt;p&gt;The product is old: it started in 1999 and still kicks asses!&lt;/p&gt;
+
+&lt;p&gt;The product is big: competitors don’t have many features this product has.&lt;/p&gt;
+
+&lt;p&gt;So: what’s the job?&lt;/p&gt;
+
+&lt;h2 id=&quot;my-solution-two-websites-for-one-documentation&quot;&gt;My solution: two websites for one documentation&lt;/h2&gt;
+
+&lt;p&gt;I’ve decided to create two websites:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The first one explains, in current English, every possible feature in the form of a tutorial. Many topics are explored in sections (for example there’s the &lt;em&gt;security&lt;/em&gt; section).&lt;/li&gt;
+  &lt;li&gt;The second website contains just the APIs and explains, for every API, what every field does. It also contains examples of requests and responses.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first website was made using &lt;a href=&quot;Https://jekyllrb.com&quot;&gt;jekyll&lt;/a&gt;; the second was created using a tool called &lt;a href=&quot;https://github.com/lord/slate&quot;&gt;Slate&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the first website I think I have covered everything: form how to sign up to how to handle custom configurations.&lt;/p&gt;
+
+&lt;p&gt;Every API referenced in the jekyll documentation is linked to the slate one, so a user can easily dive in details.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-most-difficult-part&quot;&gt;The most difficult part&lt;/h2&gt;
+
+&lt;p&gt;Architecturing the whole solution was the toughest job.&lt;/p&gt;
+
+&lt;p&gt;I had to be sure everything was clear enough for newcomers, and also clear for experienced customers.&lt;/p&gt;
+
+&lt;p&gt;I had to organize stuff into chapters, sections, remembering where and when I was going to talk about a topic and to link it in the future.&lt;/p&gt;
+
+&lt;p&gt;Then, the job of actually writing the documentation was easy (and a little bit boring!) because the most difficult part was already done.&lt;/p&gt;
+
+&lt;p&gt;I’ve not mentioned other technical aspects: allow users to search the docs, deploy a beta version of the docs for internal and review purposes, handle versions…&lt;/p&gt;
+
+&lt;h2 id=&quot;feedbacks&quot;&gt;Feedbacks&lt;/h2&gt;
+
+&lt;p&gt;During my job I have talked to many people who has read “my” documentation. They told me it was extremely clear and they loved the examples, it made the whole thing more readable.&lt;/p&gt;
+
+&lt;p&gt;Even my bosses think that the documentation is helping them in expanding the product to new potential  customers.&lt;/p&gt;
+
+&lt;p&gt;I feel proud that my job is helping the company and customers to reach their respective goals. I really enjoy working for public products!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Documentation" /><category term="Work" /><summary type="html">What makes a product a great product?</summary></entry><entry><title type="html">Come creare luoghi di lavoro in cui é bello recarsi</title><link href="https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html" rel="alternate" type="text/html" title="Come creare luoghi di lavoro in cui é bello recarsi" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T10:38:45+02:00</updated><id>https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi</id><content type="html" xml:base="https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html">&lt;p&gt;Dovreste saperlo un po’ tutti, ormai, che &lt;strong&gt;lavoro da remoto&lt;/strong&gt;. Ai tempi feci questa scelta perchè non ce la facevo più a viaggiare 2 ore della mia vita in un autobus che restava puntualmente imbottigliato nel traffico. Ma &lt;strong&gt;il lavoro “tradizionale” è così brutto?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Estremizziamo: ha senso, nel 2018, parlare ancora di uffici? E’ plausibile prevedere che &lt;em&gt;nel 2030 lavoreremo tutti da casa?&lt;/em&gt;&lt;/p&gt;
 
@@ -445,36 +522,4 @@ app.use(helmet())
 
 &lt;h2 id=&quot;aiutiamo-i-junior&quot;&gt;Aiutiamo i junior!&lt;/h2&gt;
 
-&lt;p&gt;Mi piacerebbe leggere nei commenti il tuo consiglio per junior, laureandi e neolaureati. &lt;strong&gt;C’è un esercito di studenti che sta per terminare gli studi e vuole risposte a domande che non sa porre&lt;/strong&gt;. Aiutiamoli!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="stage" /><category term="devday" /><category term="junior" /><category term="neolaureati" /><summary type="html">Ieri sera abbiamo tenuto un altro incontro del DevDay Salerno, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.</summary></entry><entry><title type="html">Un giro nell’universo React</title><link href="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html" rel="alternate" type="text/html" title="Un giro nell'universo React" /><published>2018-02-18T01:00:00+01:00</published><updated>2018-02-18T16:49:41+01:00</updated><id>https://michelenasti.com/2018/02/18/un-giro-nell-universo-react</id><content type="html" xml:base="https://michelenasti.com/2018/02/18/un-giro-nell-universo-react.html">&lt;p&gt;Da quando &lt;strong&gt;React&lt;/strong&gt; è stato rilasciato da Facebook è diventato rapidamente una delle librerie più usate per la realizzazione di interfacce web. Come mai?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/1024px-React-icon.svg.png&quot; alt=&quot;&quot; title=&quot;React Logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;perchè-react-piace-ai-millenials&quot;&gt;Perchè React piace ai millenials&lt;/h2&gt;
-
-&lt;p&gt;Abbiamo iniziato a sentir parlare di React in un momento storico in cui AngularJS 1.x era al massimo del suo hype, e si iniziava a progettare Angular2. Quei fantastici ragazzotti della Silicon Valley quando generano tanto hype in genere lo fanno perchè c’è un motivo, ossia ci vedono lungo e in effetti React è con noi da ormai tre anni, che è tantissimo per una libreria frontend.&lt;/p&gt;
-
-&lt;p&gt;I motivi per cui piace sono:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;E’ una libreria che si occupa solo della view&lt;/strong&gt;, quindi tutto il resto è lasciato nelle mani del programmatore. Penso a: comunicazione col server, traduzioni, o più semplicemente gestione dello stato. Per ognuna di queste cose si possono usare librerie esterne (fatte molto bene).&lt;/li&gt;
-  &lt;li&gt;A parte una curva d’apprendimento “media”, tutto sommato &lt;strong&gt;React è abbastanza semplice da imparare e usare&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Ma quali sono i vantaggi rispetto a Angular1? (Lo confronto con questo framework perchè, all’epoca in cui fu rilasciato React, c’era solo lui.) Quello che nessun programmatore ammette di amare, ma che invece è un gran vantaggio, è &lt;strong&gt;il &lt;em&gt;live preview&lt;/em&gt; dei cambiamenti&lt;/strong&gt;, sfruttando le magie di webpack e dell’hot module reloading, per cui i tempi di sviluppo si riducono enormemente.&lt;/li&gt;
-  &lt;li&gt;Inoltre &lt;strong&gt;React gestisce i cambiamenti di migliaia di componenti su una sola pagina senza appesantire il browser&lt;/strong&gt;, anzi è estremamente veloce nel capire cosa è cambiato e cosa deve ri-renderizzare.&lt;/li&gt;
-  &lt;li&gt;E’ &lt;strong&gt;sponsorizzato da FB, è utilizzato in produzione da tante startup di grande successo&lt;/strong&gt; (tra cui AirBnB) e questo ha contribuito all’hype.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La mia paura più grande era di dover imparare un mix di tecnologie che non  conoscevo:  jsx, webpack, es6… Da create-react-app in poi tutto questo è una bestia “addomesticabile”.&lt;/p&gt;
-
-&lt;h2 id=&quot;luso-di-es6&quot;&gt;L’uso di ES6&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;React può essere usato anche con ES5&lt;/strong&gt;, ossia la versione precedente di Javascript che non aveva tante feature, e a dirla tutta può addirittura essere usato senza JSX, che sarebbe un modo per scrivere HTML dentro JS. All’atto pratico tutto ciò è infattibile, &lt;strong&gt;i benefici di JSX (e di babel/webpack che compilano/trasformano) sono impagabili.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Ma è con &lt;strong&gt;ES6&lt;/strong&gt; (la versione di js che contiene arrrow functions, destructuring, etc.) che React viene di solito scritto/usato, ed è quindi con ES6 che troverete codice, esempi e documentazione. Da convinto programmatore NodeJS, la sintassi che più detesto è &lt;code&gt;import Something from './something'&lt;/code&gt; e la  corrispettiva &lt;code&gt;export const&lt;/code&gt;.  Comunque, ci si abitua in fretta.&lt;/p&gt;
-
-&lt;h2 id=&quot;react-vs-vue&quot;&gt;React vs Vue&lt;/h2&gt;
-
-&lt;p&gt;Ci sarebbe tanto da dire, ma voglio concludere ripetendo che questo post viene da neanche un mese di React quindi le mie opinioni potrebbero cambiare.&lt;/p&gt;
-
-&lt;p&gt;Io conosco abbastanza bene anche VueJS, e sinceramente trovo anche questo framework fatto bene con tante feature e una logica di fondo molto chiara, per cui bisogna fare meno scelte rispetto a React (es. come gestire lo stato, come strutturare i componenti …) ma React ha uno sponsor più grande e questo garantisce, sulla carta, una vita più lunga.&lt;/p&gt;
-
-&lt;p&gt;E voi che esperienza avete? Se volete scrivete le vostre impressioni nei commenti, saranno sicuramente utili a chi passa per questo blog e cerca informazioni.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="react" /><category term="frontend" /><category term="javascript" /><summary type="html">Da quando React è stato rilasciato da Facebook è diventato rapidamente una delle librerie più usate per la realizzazione di interfacce web. Come mai?</summary></entry></feed>
+&lt;p&gt;Mi piacerebbe leggere nei commenti il tuo consiglio per junior, laureandi e neolaureati. &lt;strong&gt;C’è un esercito di studenti che sta per terminare gli studi e vuole risposte a domande che non sa porre&lt;/strong&gt;. Aiutiamoli!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="stage" /><category term="devday" /><category term="junior" /><category term="neolaureati" /><summary type="html">Ieri sera abbiamo tenuto un altro incontro del DevDay Salerno, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.</summary></entry></feed>
