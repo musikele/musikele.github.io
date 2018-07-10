@@ -9,9 +9,9 @@ date: 2018-07-10 00:00:00 +0200
 tags:
 - Documentation
 - Work
-header-img: ''
+header-img: "/images/IMG_20180708_195629.jpg"
 description: 'What makes great a product? The features, the ease of use, and obviously
-  all of this must be explained in a great documentation: my job '
+  all of this must be explained in a great documentation: one of my jobs. '
 ---
 What makes a product a _great_ product?
 
