@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-07-22T09:09:51+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Designing the documentation for a tech product</title><link href="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" rel="alternate" type="text/html" title="Designing the documentation for a tech product" /><published>2018-07-10T00:00:00+02:00</published><updated>2018-07-10T23:21:29+02:00</updated><id>https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product</id><content type="html" xml:base="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html">&lt;p&gt;What makes a product a &lt;em&gt;great&lt;/em&gt; product?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-07-22T09:12:12+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Handling configuration for mutliple environments in NodeJS</title><link href="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" rel="alternate" type="text/html" title="Handling configuration for mutliple environments in NodeJS" /><published>2018-07-22T00:00:00+02:00</published><updated>2018-07-22T09:10:53+02:00</updated><id>https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html">&lt;p&gt;Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;on your &lt;strong&gt;developer&lt;/strong&gt; PC, it should use some environment variables (e.g. database connection to &lt;em&gt;localhost&lt;/em&gt;, port to use &lt;em&gt;3000&lt;/em&gt;…)&lt;/li&gt;
+  &lt;li&gt;when you push your code you may want to run some continuous integration &amp;amp; deployiment on a &lt;strong&gt;test environment&lt;/strong&gt;, so you have to configure new environment variables: database now points to &lt;em&gt;192.168.xx.yy&lt;/em&gt;, port is &lt;em&gt;8000…&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Finally, on the &lt;strong&gt;production environment&lt;/strong&gt; you use the official values for these configuration.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How do you handle this? There are several ways to accomplish this task, I wanted to replicate the simple, easy solution provided by &lt;em&gt;Laravel&lt;/em&gt; in &lt;strong&gt;NodeJS&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-laravel-config-works&quot;&gt;How does laravel config works&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://laravel.com/docs/5.6/configuration&quot;&gt;Laravel&lt;/a&gt; you create as many env files you want, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;.dev.env&lt;/code&gt;, that contains configuration for development environment&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;.test.env&lt;/code&gt;, for test environment&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;.prod.env&lt;/code&gt; for production&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Then there’s a last file called &lt;code&gt;.env&lt;/code&gt; that contains a single variable:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code&gt;APP_ENV=dev&lt;/code&gt; (or test, or prod).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We’re in NodeJS, how do we simulate this behaviour?&lt;/p&gt;
+
+&lt;h2 id=&quot;a-node-solution&quot;&gt;a Node solution&lt;/h2&gt;
+
+&lt;p&gt;First, our configuration files are js files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;.development.js&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;.test.js&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;.production.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Naming of files has changed a little bit, we’ll see why in a while.&lt;/p&gt;
+
+&lt;p&gt;Let’s see the content of the .development.js test file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;//.development.js 
+
+module.exports = {
+    API_URL: 'api_url',
+    API_KEY: 'api_key',
+    SECRET_KEY: 'secret_key'
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;.production.js&lt;/code&gt; and &lt;code&gt;.test.js&lt;/code&gt; will contain an object with the same keys but different values.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-environment-variable-node_env&quot;&gt;The environment variable NODE_ENV&lt;/h2&gt;
+
+&lt;p&gt;Since Express became the most popular application server in Node, the NODE_ENV variable has became popular too. In Express, &lt;a href=&quot;https://stackoverflow.com/a/16979503/1020090&quot;&gt;app.get(‘env’) is used to retrieve the execution environment&lt;/a&gt;. Many popular platforms, like Heroku, set this variable to &lt;code&gt;production&lt;/code&gt; and you can also change to your needs, too.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;app.get('env')&lt;/code&gt; is pretty much implemented like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;return process.env.NODE_ENV || 'development'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So you know that if the variable is not set, it is defaulted to &lt;code&gt;development&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s write a solution that is not express-dependent.&lt;/p&gt;
+
+&lt;p&gt;Here’s the configuration.js file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;//configuration.js 
+
+const env = process.env.NODE_ENV || 'development'
+
+module.exports = require(`../.${env}.js`) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Based on the &lt;code&gt;NODE_ENV&lt;/code&gt; variable, we will pick up the right &lt;code&gt;.js&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;And now let’s test this. Run &lt;code&gt;node index.js&lt;/code&gt; (should start with &lt;code&gt;development&lt;/code&gt; environment):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-index.js&quot;&gt;//index.js
+
+const configuration = require('./configuration')
+
+console.log('configuration: ', configuration)
+// =&amp;gt;  
+// configuration:  { API_URL: 'api_url',
+// API_KEY: 'api_key',
+// SECRET_KEY: 'secret_key' }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How to start with other configurations?&lt;/p&gt;
+
+&lt;p&gt;Either set this in package.json:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;//package.json 
+
+ &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node index.js&quot;,
+    &quot;start:test&quot;: &quot;NODE_ENV=test node index.js&quot;,
+    &quot;start:prod&quot;: &quot;NODE_ENV=production node index.js&quot;
+  },
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and run with &lt;code&gt;npm run start:test&lt;/code&gt;; or set the &lt;code&gt;NODE_ENV&lt;/code&gt; variable directly on the server (docker, heroku, aws… they all allow you to set env variables).&lt;/p&gt;
+
+&lt;h2 id=&quot;some-security-concerns&quot;&gt;Some security concerns&lt;/h2&gt;
+
+&lt;p&gt;This approach is very easy to use but you should not versionate &lt;code&gt;.production.js&lt;/code&gt; file, as it will contain sensitive data. In your build process consider injecting this file from some other secure location.&lt;/p&gt;
+
+&lt;p&gt;An alternative could be to use environment variables only for the production file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;//.production.js 
+module.exports = {
+    API_URL: process.env.API_URL || 'some_value' ,
+    API_KEY: process.env.API_KEY,
+    SECRET_KEY: process.env.SECRET_KEY,
+    ... 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The good thing about this approach is that you can even mix the two things or swap them altogether.&lt;/p&gt;
+
+&lt;p&gt;Happy coding with your configurations ;)&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="nodejs" /><category term="configuration" /><category term="laravel" /><summary type="html">Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:</summary></entry><entry><title type="html">Designing the documentation for a tech product</title><link href="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" rel="alternate" type="text/html" title="Designing the documentation for a tech product" /><published>2018-07-10T00:00:00+02:00</published><updated>2018-07-10T23:21:29+02:00</updated><id>https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product</id><content type="html" xml:base="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html">&lt;p&gt;What makes a product a &lt;em&gt;great&lt;/em&gt; product?&lt;/p&gt;
 
 &lt;p&gt;one might say the &lt;strong&gt;features&lt;/strong&gt;, others may say the &lt;strong&gt;ease of using&lt;/strong&gt; these features writing less code, with more throughput, etc.&lt;/p&gt;
 
@@ -459,69 +580,4 @@ app.use(helmet())
 
 &lt;p&gt;Se tutto va bene vedrete i vostri dati salvati in MagNews (sempre dal backoffice, andate in edit sulla pagina che contiene il form e cliccate su &lt;em&gt;Visualizza Risultati&lt;/em&gt;).&lt;/p&gt;
 
-&lt;p&gt;Bene, spero di avervi tolto le castagne dal fuoco! Io invece mi sono scritto questo post per ricordarlo, casomai dovesse servire ancora.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="magnews" /><category term="form submission" /><summary type="html">Questa roba l’ho dovuta fare per lavoro e, nello scoprire tutti i passaggi necessari, me li sono segnati.</summary></entry><entry><title type="html">Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)</title><link href="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html" rel="alternate" type="text/html" title="Consigli ai junior e ai laureandi (ossia: evitate gli errori che ho fatto io)" /><published>2018-02-25T01:00:00+01:00</published><updated>2018-02-26T14:56:05+01:00</updated><id>https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi</id><content type="html" xml:base="https://michelenasti.com/2018/02/25/cosa-ho-imparato-dai-miei-sbagli-ossia-consigli-per-i-giovani-laureandi.html">&lt;p&gt;Ieri sera abbiamo tenuto un altro incontro del &lt;a href=&quot;https://www.meetup.com/it-IT/devday-salerno/?chapter_analytics_code=UA-74462208-1&quot;&gt;DevDay Salerno&lt;/a&gt;, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.&lt;/p&gt;
-
-&lt;p&gt;All’incontro c’erano anche due studenti in cerca di uno stage e ciò mi ha fatto molto piacere: la community si è mostrata molto ricettiva con loro.&lt;/p&gt;
-
-&lt;p&gt;Prima dell’incontro &lt;strong&gt;uno dei due mi ha inviato il cv affinchè gli dessi uno sguardo&lt;/strong&gt;. Purtroppo la mia risposta non è stata quella che si aspettavano: “&lt;em&gt;fa schifo&lt;/em&gt;”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/0402ae2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;che-hanno-i-loro-cv-che-non-va&quot;&gt;Che hanno i loro CV che non va?&lt;/h2&gt;
-
-&lt;h3 id=&quot;regola-numero-1-realizza-il-cv-nel-formato-che-vogliono-le-aziende&quot;&gt;Regola numero 1: &lt;strong&gt;realizza il CV nel formato che vogliono le aziende.&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;In Italia vuol dire, al 99%, &lt;strong&gt;formato europeo&lt;/strong&gt; (potete dire che fa schifo, che è verboso, ma le aziende vogliono questo e questo dovete dargli). Il loro CV invece era colorato, sfondo verde, icone, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Se si cerca lavoro all’estero non basterà tradurre il cv&lt;/strong&gt;: gli stranieri sono abituati a un formato più snello accompagnato da cover letter, quindi dovrai realizzare un CV anche così.&lt;/p&gt;
-
-&lt;p&gt;Io ne ho due sempre pronti e sempre aggiornati, uno &lt;em&gt;formato Europeo&lt;/em&gt; (…che all’estero non usano) e uno in Inglese, per le aziende internazionali.&lt;/p&gt;
-
-&lt;h3 id=&quot;regola-numero-2-keep-it-professional&quot;&gt;Regola numero 2: &lt;strong&gt;Keep it professional&lt;/strong&gt;.&lt;/h3&gt;
-
-&lt;p&gt;Come ho già scritto il CV era colorato, con addirittura il &lt;em&gt;simboletto di whatsapp accanto al numero di telefono&lt;/em&gt;. &lt;strong&gt;Un CV del genere sarebbe appena valutato (…forse?) da un’agenzia di comunicazione&lt;/strong&gt;, ma io non lo consiglierei e infatti gli ho intimato di ritornare al bianco &amp;amp; nero. Ricordiamoci che il CV serve per trovare lavoro, quindi non dobbiamo mettere tutti i possibili modi per trovarci (twitter… facebook… msn?!).&lt;/p&gt;
-
-&lt;p&gt;Alcune &lt;strong&gt;eccezioni&lt;/strong&gt; a questa regola:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Un blog&lt;/strong&gt;. Se hai un blog con contenuti relativi alla tua professione, &lt;strong&gt;il blog merita di essere in prima pagina proprio sotto al numero di telefono&lt;/strong&gt;. I recruiter infatti ti cercano sui social, e se gli rendi facile l’accesso al tuo sito è come se il colloquio partisse già in discesa. Il mio blog è in prima pagina ;)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Eventuali altri contatti e riferimenti social SOLO se richiesti.&lt;/strong&gt; Per posizioni di copywriting, o altre di cui non ne ho idea, potrebbe essere necessario fornire anche il proprio profilo social. In questi casi valutate voi se darli oppure no (purtroppo ho visto job descriptions in USA in cui cercavano dev con un &lt;a href=&quot;https://klout.com/#/micnasti&quot;&gt;&lt;em&gt;Klout Score&lt;/em&gt;&lt;/a&gt; di un certo tipo).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Prima tenevo molto alla privacy ma poi ho capito che i social potevano essere usati a mio favore&lt;/strong&gt;. La mia bacheca prima era chiusa ai più, poi ho cambiato completamente registro e &lt;strong&gt;adesso condivido prevalentemente roba di lavoro&lt;/strong&gt;; chi mi trova sa cosa ha trovato. E il colloquio si semplifica parecchio, di nuovo.&lt;/p&gt;
-
-&lt;h3 id=&quot;regola-numero-3-non-mettere-la-lista-degli-esami&quot;&gt;Regola numero 3: &lt;strong&gt;non mettere la lista degli esami&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Ovviamente, se te la chiedono (per alcuni lavori statali la lista degli esami è richiesta), puoi inserirla. Ma in generale non ha senso.&lt;/p&gt;
-
-&lt;p&gt;Il problema è che la lista degli esami è un’arma a doppio taglio: compare sicuramente anche quel voto di cui ti vergogni, o l’esame che hai &lt;em&gt;rubato&lt;/em&gt;, ma soprattutto la lista degli esami non fa capire a un selezionatore se davanti ha una persona che gioca di squadra, o una persona orientata alla ricerca, al project management, etc.&lt;/p&gt;
-
-&lt;p&gt;Questo è un errore che ho commesso anche io, e &lt;strong&gt;ricordo l’imbarazzo quando il selezionatore di IBM me lo fece notare&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Cosa mettere, dunque, in questo CV?&lt;/strong&gt; Chi si laurea, magari alla triennale, non ha idea di cosa scriverci.&lt;/p&gt;
-
-&lt;p&gt;Durante i tre anni di università si sviluppano tanti progetti: io ho addirittura sostenuto un esame come project manager, cosa che si è poi rivelata molto utile nel mondo del lavoro e come soft skill. Conviene parlare di questi progetti nel CV: racconta cosa hai fatto, il tuo ruolo, le tecnologie usate.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Se avete progetti extrauniversitari&lt;/strong&gt; (es. siti web, app, etc) che hanno un senso per chi vi intervista, &lt;strong&gt;inseriteli&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Se invece avete fatto i camerieri&lt;/strong&gt; (come me!), io l’ho scritto sotto una voce “altre esperienze”, ma è davvero scritto così: &lt;em&gt;altre esperienze: cameriere&lt;/em&gt;. Se ti stanno intervistando per il ruolo di front-end developer, a chi serve sapere che sai portare le pizze ai tavoli? Può però essere utile sapere che non sei stato con le mani in mano, ma questo dipende dalle opinioni dei selezionatori.&lt;/p&gt;
-
-&lt;h2 id=&quot;come-procurarsi-un-paio-di-colloqui-senza-inviare-nemmeno-un-cv&quot;&gt;Come procurarsi un paio di colloqui senza inviare nemmeno un CV&lt;/h2&gt;
-
-&lt;p&gt;Il trucco è davvero semplice e stupido: i due ragazzi di cui sopra sono venuti al nostro evento, si sono presentati (sotto mio consiglio) a decine di persone spiegando chiaramente che erano in cerca di stage.&lt;/p&gt;
-
-&lt;p&gt;Ovviamente &lt;strong&gt;ieri sera non c’erano i CEO&lt;/strong&gt; (…in verità qualcuno si), ma &lt;strong&gt;una sovrabbondanza di senior programmer e team leader che hanno fatto un colloquio “al volo” al termine dell’evento&lt;/strong&gt;, tra una pizzettina e una coca.&lt;/p&gt;
-
-&lt;p&gt;Un altro consiglio è di parlare con tutti, anche con quelli che non ti interessano  (specialmente ora che non hai nessun tipo di esperienza), e di accettare il lavoro che ti permette di imparare di più.&lt;/p&gt;
-
-&lt;p&gt;Ecco infatti un’altra cosa che ho imparato sulla mia pelle: &lt;strong&gt;rifiutare un lavoro non significa rifiutarlo per sempre&lt;/strong&gt;, dobbiamo infatti lavorare 35 anni (almeno) e chi sa che non ci si reincontra, in questo lavoro o nel prossimo.&lt;/p&gt;
-
-&lt;p&gt;Una cosa che infatti i laureandi sottovalutano è che fare una buona &lt;em&gt;prima esperienza&lt;/em&gt; è fondamentale: &lt;strong&gt;conosci delle persone che poi saranno mentor per tutta la tua vita&lt;/strong&gt;, che ti indirizzeranno anche in base alle tue inclinazioni. Non mento se vi dico che le persone che ora considero cruciali per la mia carriera professionale le ho trovate alla mia prima esperienza.&lt;/p&gt;
-
-&lt;h2 id=&quot;e-non-abbiamo-parlato-di-soldi&quot;&gt;E non abbiamo parlato di soldi&lt;/h2&gt;
-
-&lt;p&gt;Finchè siete junior, &lt;strong&gt;non proccupatevi dei soldi&lt;/strong&gt;. Non sto dicendo che devi morire di fame, anzi devi guadaganare il giusto per vivere (non sopravvivere), ma i soldi veri li farai quando ti riterrai senior e potrai far pesare le tue capacità all’azienda.&lt;/p&gt;
-
-&lt;h2 id=&quot;aiutiamo-i-junior&quot;&gt;Aiutiamo i junior!&lt;/h2&gt;
-
-&lt;p&gt;Mi piacerebbe leggere nei commenti il tuo consiglio per junior, laureandi e neolaureati. &lt;strong&gt;C’è un esercito di studenti che sta per terminare gli studi e vuole risposte a domande che non sa porre&lt;/strong&gt;. Aiutiamoli!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="stage" /><category term="devday" /><category term="junior" /><category term="neolaureati" /><summary type="html">Ieri sera abbiamo tenuto un altro incontro del DevDay Salerno, un gruppo di programmatori che si riunisce più o meno una volta al mese per parlare di programmazione, lavoro, informatica, etc. E’ andato molto bene.</summary></entry></feed>
+&lt;p&gt;Bene, spero di avervi tolto le castagne dal fuoco! Io invece mi sono scritto questo post per ricordarlo, casomai dovesse servire ancora.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="magnews" /><category term="form submission" /><summary type="html">Questa roba l’ho dovuta fare per lavoro e, nello scoprire tutti i passaggi necessari, me li sono segnati.</summary></entry></feed>

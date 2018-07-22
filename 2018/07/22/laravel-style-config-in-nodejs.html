@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Handling configuration for mutliple environments in NodeJS - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="nodejs, configuration, laravel" />  
+	<meta http-equiv="last-modified" content="2018-07-22 09:10:53 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Handling configuration for mutliple environments in NodeJS" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="A Laravel-style configuration sytem for NodeJS. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" property="og:url">
+
+
+
+  <meta content="2018-07-22T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/conifer-daylight-environment-454880.jpg" property="og:image">
+
+
+
+  
+  <meta content="nodejs" property="article:tag">
+  
+  <meta content="configuration" property="article:tag">
+  
+  <meta content="laravel" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Handling configuration for mutliple environments in NodeJS">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html">
+
+
+
+  <meta name="twitter:description" content="A Laravel-style configuration sytem for NodeJS. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/conifer-daylight-environment-454880.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/07/22/laravel-style-config-in-nodejs.html">Handling configuration for mutliple environments in NodeJS</a></h1>
+			<p class="post-meta">Jul 22, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&text=Handling configuration for mutliple environments in NodeJS:%20https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Handling configuration for mutliple environments in NodeJS) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&title=Handling configuration for mutliple environments in NodeJS&summary=&source=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:</p>
+
+<ul>
+  <li>on your <strong>developer</strong> PC, it should use some environment variables (e.g. database connection to <em>localhost</em>, port to use <em>3000</em>…)</li>
+  <li>when you push your code you may want to run some continuous integration &amp; deployiment on a <strong>test environment</strong>, so you have to configure new environment variables: database now points to <em>192.168.xx.yy</em>, port is <em>8000…</em></li>
+  <li>Finally, on the <strong>production environment</strong> you use the official values for these configuration.</li>
+</ul>
+
+<p>How do you handle this? There are several ways to accomplish this task, I wanted to replicate the simple, easy solution provided by <em>Laravel</em> in <strong>NodeJS</strong>.</p>
+
+<h2 id="how-does-laravel-config-works">How does laravel config works</h2>
+
+<p>In <a href="https://laravel.com/docs/5.6/configuration">Laravel</a> you create as many env files you want, for example:</p>
+
+<ul>
+  <li><code>.dev.env</code>, that contains configuration for development environment</li>
+  <li><code>.test.env</code>, for test environment</li>
+  <li><code>.prod.env</code> for production</li>
+  <li>
+    <p>Then there’s a last file called <code>.env</code> that contains a single variable:</p>
+
+    <p><code>APP_ENV=dev</code> (or test, or prod).</p>
+  </li>
+</ul>
+
+<p>We’re in NodeJS, how do we simulate this behaviour?</p>
+
+<h2 id="a-node-solution">a Node solution</h2>
+
+<p>First, our configuration files are js files:</p>
+
+<ul>
+  <li><code>.development.js</code></li>
+  <li><code>.test.js</code></li>
+  <li><code>.production.js</code></li>
+</ul>
+
+<p>Naming of files has changed a little bit, we’ll see why in a while.</p>
+
+<p>Let’s see the content of the .development.js test file:</p>
+
+<pre><code class="language-js">//.development.js 
+
+module.exports = {
+    API_URL: 'api_url',
+    API_KEY: 'api_key',
+    SECRET_KEY: 'secret_key'
+}
+</code></pre>
+
+<p><code>.production.js</code> and <code>.test.js</code> will contain an object with the same keys but different values.</p>
+
+<h2 id="the-environment-variable-node_env">The environment variable NODE_ENV</h2>
+
+<p>Since Express became the most popular application server in Node, the NODE_ENV variable has became popular too. In Express, <a href="https://stackoverflow.com/a/16979503/1020090">app.get(‘env’) is used to retrieve the execution environment</a>. Many popular platforms, like Heroku, set this variable to <code>production</code> and you can also change to your needs, too.</p>
+
+<p><code>app.get('env')</code> is pretty much implemented like this:</p>
+
+<pre><code class="language-javascript">return process.env.NODE_ENV || 'development'
+</code></pre>
+
+<p>So you know that if the variable is not set, it is defaulted to <code>development</code>.</p>
+
+<p>Let’s write a solution that is not express-dependent.</p>
+
+<p>Here’s the configuration.js file:</p>
+
+<pre><code class="language-js">//configuration.js 
+
+const env = process.env.NODE_ENV || 'development'
+
+module.exports = require(`../.${env}.js`) 
+</code></pre>
+
+<p>Based on the <code>NODE_ENV</code> variable, we will pick up the right <code>.js</code> file.</p>
+
+<p>And now let’s test this. Run <code>node index.js</code> (should start with <code>development</code> environment):</p>
+
+<pre><code class="language-index.js">//index.js
+
+const configuration = require('./configuration')
+
+console.log('configuration: ', configuration)
+// =&gt;  
+// configuration:  { API_URL: 'api_url',
+// API_KEY: 'api_key',
+// SECRET_KEY: 'secret_key' }
+</code></pre>
+
+<p>How to start with other configurations?</p>
+
+<p>Either set this in package.json:</p>
+
+<pre><code class="language-json">//package.json 
+
+ "scripts": {
+    "start": "node index.js",
+    "start:test": "NODE_ENV=test node index.js",
+    "start:prod": "NODE_ENV=production node index.js"
+  },
+</code></pre>
+
+<p>and run with <code>npm run start:test</code>; or set the <code>NODE_ENV</code> variable directly on the server (docker, heroku, aws… they all allow you to set env variables).</p>
+
+<h2 id="some-security-concerns">Some security concerns</h2>
+
+<p>This approach is very easy to use but you should not versionate <code>.production.js</code> file, as it will contain sensitive data. In your build process consider injecting this file from some other secure location.</p>
+
+<p>An alternative could be to use environment variables only for the production file:</p>
+
+<pre><code class="language-js">//.production.js 
+module.exports = {
+    API_URL: process.env.API_URL || 'some_value' ,
+    API_KEY: process.env.API_KEY,
+    SECRET_KEY: process.env.SECRET_KEY,
+    ... 
+}
+</code></pre>
+
+<p>The good thing about this approach is that you can even mix the two things or swap them altogether.</p>
+
+<p>Happy coding with your configurations ;)</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&text=Handling configuration for mutliple environments in NodeJS:%20https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Handling configuration for mutliple environments in NodeJS) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html&title=Handling configuration for mutliple environments in NodeJS&summary=&source=https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">All my articles about Testing in Javascript in one post <span class="label label-default">nodejs</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/07/fantastic-unit-tests-in-javascript-with-mocks.html">Fantastic Unit Tests in Javascript with Mocks <span class="label label-default">nodejs</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html">Become a test expert in NodeJS with these tricks <span class="label label-default">nodejs</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/18/deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.html">Deploy a NodeJS app on Heroku in less than 1 minute <span class="label label-default">nodejs</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/07/10/designing-the-documentation-for-a-tech-product.html">Designing the documentation for a tech product</a></h2>
+        </header>
+        <section>
+            <p>What makes a product a <em>great</em> product?</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/07/10/designing-the-documentation-for-a-tech-product.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
