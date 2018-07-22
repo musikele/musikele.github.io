@@ -61,7 +61,7 @@ module.exports = {
 
 ## The environment variable NODE_ENV
 
-Since Express became the most popular application server in Node, the NODE_ENV variable has became popular too. In Express, [app.get('env') is used to retrieve the execution environment](https://stackoverflow.com/a/16979503/1020090). Many popular platforms, like HEROKU, set this variable to `production` for example (you can change to your needs, too).
+Since Express became the most popular application server in Node, the NODE_ENV variable has became popular too. In Express, [app.get('env') is used to retrieve the execution environment](https://stackoverflow.com/a/16979503/1020090). Many popular platforms, like Heroku, set this variable to `production` for example (you can change to your needs, too).
 
 `app.get('env')` is pretty much implemented like this:
 
