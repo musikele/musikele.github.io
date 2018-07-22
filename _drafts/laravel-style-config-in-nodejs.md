@@ -65,7 +65,9 @@ Since Express became the most popular application server in Node, the NODE_ENV v
 
 `app.get('env')` is pretty much implemented like this:
 
-    return process.env.NODE_ENV || 'development'
+```javascript
+return process.env.NODE_ENV || 'development'
+```
 
 So you know that if the variable is not set, it is defaulted to `development`.
 
