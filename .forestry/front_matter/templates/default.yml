@@ -64,7 +64,7 @@ fields:
   config:
     required: true
 pages:
-- _posts/laravel-style-config-in-nodejs.md
+- _posts/2018-07-22-laravel-style-config-in-nodejs.md
 - _posts/2018-01-12-la-mia-esperienza-col-test-driven-development.md
 - _posts/2017-11-20-growth-hacker-cos-e-intervista-a-raffaele-gaito.md
 - _posts/2017-04-08-all-my-articles-about-testing-in-javascript-in-one-post.md
