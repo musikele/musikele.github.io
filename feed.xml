@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-08-22T13:07:09+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Handling configuration for mutliple environments in NodeJS</title><link href="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" rel="alternate" type="text/html" title="Handling configuration for mutliple environments in NodeJS" /><published>2018-07-22T00:00:00+02:00</published><updated>2018-07-22T09:10:53+02:00</updated><id>https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html">&lt;p&gt;Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-08-22T13:20:32+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">“ma… cosa intendete per testing?” - una breve introduzione al testing software</title><link href="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" rel="alternate" type="text/html" title="&quot;ma... cosa intendete per testing?&quot; - una breve introduzione al testing software " /><published>2018-08-22T00:00:00+02:00</published><updated>2018-08-22T13:19:02+02:00</updated><id>https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software</id><content type="html" xml:base="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">&lt;p&gt;Mi chiedeva Emanuele su Quora:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;…posso sapere con una certa  precisione cosa intendete con testing? Questa cosa mi ha incuriosito e  mi piacerebbe conoscerne di più.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Testing_in_Progress.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Per testing si intende &lt;strong&gt;un’esecuzione del codice per assicurarsi che faccia  esattamente ciò che viene richiesto&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esistono sostanzialmente due tipi di testing, &lt;em&gt;manuale&lt;/em&gt; e &lt;em&gt;automatico&lt;/em&gt;. Il &lt;strong&gt;testing manuale&lt;/strong&gt; è quello che fa un programmatore dopo che ha sviluppato il codice: lancia l’applicazione e verifica che faccia ciò che dovrebbe. A volte sono altri utenti in carne ed ossa a fare il test dell’applicazione.&lt;/p&gt;
+
+&lt;p&gt;Il testing manuale è efficace e immediato se l’app è semplice o di piccole dimensioni: al crescere della complessità potrebbe essere lungo in termini di tempo, e impreciso nei risultati.&lt;/p&gt;
+
+&lt;p&gt;Esempio: &lt;em&gt;un’app per prenotare visite mediche&lt;/em&gt;. Immaginiamo di aver realizzato la funzionalità di modifica della data di una visita. Se faccio l’edit di una visita e seleziono una data e un orario che già sono state prenotate da qualcun altro, il sistema deve rispondere che l’orario richiesto non è disponibile. Riesci a immaginare quanto tempo serva per poter rieseguire questo caso di test, ogni volta? &lt;em&gt;(Ti aiuto: bisogna prima creare una visita… poi crearne una seconda… poi prendere la prima e impostare la data e l’orario della seconda… e verificare il messaggio di errore)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Passiamo al &lt;strong&gt;test di  tipo automatico&lt;/strong&gt;. Innanzitutto viene scritto in un linguaggio di  programmazione vero e proprio. Nel test viene definito il setup iniziale (es. crea DUE visite nel sistema) e poi viene eseguito il test vero e proprio, ossia cerca la prima visita, e cambia la data e l’orario a quello della seconda.&lt;/p&gt;
+
+&lt;p&gt;Infine, controlliamo che il sistema abbia restituito l’errore. Se è accaduto, il test ha avuto successo (si, se il  sistema risponde correttamente che un’operazione non si può fare, è un  caso di successo!). Se così non fosse, il test dovrebbe fallire.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Quali sono gli svantaggi di questo approccio?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;che il test lo può scrivere solo un programmatore,&lt;/li&gt;
+  &lt;li&gt;per scrivere il test ci vuole del tempo un  po’ più lungo della mera esecuzione;&lt;/li&gt;
+  &lt;li&gt;inoltre, se cambia l’applicazione, bisogna cambiare anche i test relativi.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;I vantaggi, invece, sono un  aumento della qualità generale e un’efficienza nell’esecuzione&lt;/strong&gt;, anche in termini di tempo. Ad esempio, è prassi eseguire tutti i test ad ogni modifica del sistema, per assicurarsi di non aver rotto aree  dell’applicazione collegate con quella che stiamo modificando e che  difficilmente andremmo a testare “manualmente”.&lt;/p&gt;
+
+&lt;p&gt;In questa risposta ho dato una visione molto generica del software testing; esistono tante altre sotto-aree (integration, unit, e2e…) e tecniche da conoscere, ma il senso generale è che si, &lt;strong&gt;un computer può  fare dei test al posto tuo, è molto più veloce di te, e ne guadagni in qualità.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;Link alla domanda originale&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="testing" /><summary type="html">Mi chiedeva Emanuele su Quora:</summary></entry><entry><title type="html">Handling configuration for mutliple environments in NodeJS</title><link href="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" rel="alternate" type="text/html" title="Handling configuration for mutliple environments in NodeJS" /><published>2018-07-22T00:00:00+02:00</published><updated>2018-07-22T09:10:53+02:00</updated><id>https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html">&lt;p&gt;Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;on your &lt;strong&gt;developer&lt;/strong&gt; PC, it should use some environment variables (e.g. database connection to &lt;em&gt;localhost&lt;/em&gt;, port to use &lt;em&gt;3000&lt;/em&gt;…)&lt;/li&gt;
@@ -512,72 +544,4 @@ app.use(helmet())
 
 &lt;p&gt;A queste domande non so ancora rispondere. Se ti piace fare qualcosa vorresti poi farla per più tempo possibile. Salvo poi scoprire che farlo tutti i giorni, e anche nel tempo libero, si rivela non essere questo gran divertimento. E insomma devi necessariamente “scappare” dal codice per passare ad altro, altrimenti rischi di passare la tua giornata a fare qualcosa che odi.&lt;/p&gt;
 
-&lt;p&gt;E questo non lo auguro a nessuno!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="programming" /><category term="tempo libero" /><category term="programmatore" /><category term="riflessioni" /><summary type="html">Programmare è diventata una passione.</summary></entry><entry><title type="html">Come realizzare un form esterno (Es. assistenza) che manda dati a MagNews</title><link href="https://michelenasti.com/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.html" rel="alternate" type="text/html" title="Come realizzare un form esterno (Es. assistenza) che manda dati a MagNews" /><published>2018-04-05T02:00:00+02:00</published><updated>2018-04-05T23:56:13+02:00</updated><id>https://michelenasti.com/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews</id><content type="html" xml:base="https://michelenasti.com/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.html">&lt;p&gt;Questa roba l’ho dovuta fare per lavoro e, nello scoprire tutti i passaggi necessari, me li sono segnati.&lt;/p&gt;
-
-&lt;h2 id=&quot;cosè-magnews-spoiler-non-lo-so&quot;&gt;Cos’è MagNews? (Spoiler: non lo so)&lt;/h2&gt;
-
-&lt;p&gt;E’ un tool per il marketing automation, email marketing, roba così.&lt;/p&gt;
-
-&lt;p&gt;Se siete qui probabilmente già sapete cos’è e avete anche un account.&lt;/p&gt;
-
-&lt;h2 id=&quot;cosa-vogliamo-fare&quot;&gt;Cosa vogliamo fare&lt;/h2&gt;
-
-&lt;p&gt;Su un sito creiamo una pagina “contattaci” in cui l’utente inserisce tutti i dati necessari; questi dati piuttosto che andare in un backend qualsiasi vanno a finire su MagNews.&lt;/p&gt;
-
-&lt;p&gt;Passiamo all’azione!&lt;/p&gt;
-
-&lt;h3 id=&quot;creare-il-form-su-magnews&quot;&gt;Creare il form su Magnews&lt;/h3&gt;
-
-&lt;p&gt;Dalla dashboard di MagNews, &lt;em&gt;Design -&amp;gt; Siti Web -&amp;gt;&lt;/em&gt; Selezionate il sito su cui volete operare -&amp;gt; &lt;em&gt;crea nuova pagina di tipo “forms”&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Disegnate un form che contiene i dati che vi interessano. Non è importante la grafica, ma solo che siano presenti i campi di cui avete bisogno.&lt;/p&gt;
-
-&lt;p&gt;Per ogni campo, dategli un &lt;strong&gt;nome&lt;/strong&gt; e poi in &lt;em&gt;Avanzato -&amp;gt; Opzioni per gli script -&amp;gt;&lt;/em&gt; date anche un &lt;strong&gt;NAME del campo&lt;/strong&gt;&lt;em&gt;.&lt;/em&gt;  E’ importante che questo nome sia &lt;strong&gt;tutto minuscolo&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Create anche un tasto “submit” a cui dovete dare le solite info, come se fosse un campo.&lt;/p&gt;
-
-&lt;p&gt;Primo step superato :)&lt;/p&gt;
-
-&lt;h3 id=&quot;creare-form-html&quot;&gt;Creare form HTML&lt;/h3&gt;
-
-&lt;p&gt;Questa è la parte facile, dovete realizzare il form nel modo che più vi piace nella pagina che volete voi.&lt;/p&gt;
-
-&lt;p&gt;Ma ora dobbiamo agganciare un evento al tasto SALVA.&lt;/p&gt;
-
-&lt;h3 id=&quot;comunicazione-js--magnews&quot;&gt;Comunicazione JS / MagNews&lt;/h3&gt;
-
-&lt;p&gt;Secondo la loro &lt;a href=&quot;https://be-mn1.mag-news.it/be/documentation.do?packageid=advanceduserguide&amp;amp;pageid=ws023&quot;&gt;pagina ufficiale per i devlopers per creare i FORM&lt;/a&gt;, i dati devono essere in questo formato:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-    &quot;idform&quot;:432,
-    &quot;parameters&quot;:[
-        {
-           &quot;name&quot;:&quot;campo_di_testo_1&quot;,
-           &quot;value&quot;:&quot;123&quot;
-        },
-        {
-            ...
-        },
-        {
-           &quot;name&quot;:&quot;submit_button&quot;, // auto generated input name
-           &quot;value&quot;:&quot;I am an input value&quot;
-        }
-    ]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Cerchiamo di mettere insieme i pezzi.&lt;/p&gt;
-
-&lt;p&gt;La prima cosa che vi serve è un URL a cui mandare i dati.&lt;/p&gt;
-
-&lt;p&gt;Io l’ho trovata cliccando su &lt;em&gt;Visualizza Codice Form&lt;/em&gt;, mi è comparso il form html costruito fino a quel momento. (Esempio: &lt;code&gt;http://tuosito.mno08.com/nl/tuosito_page543.mn&lt;/code&gt; ).&lt;/p&gt;
-
-&lt;p&gt;Sempre secondo la documentazione ufficiale, dobbiamo cambiare leggermente questo URL e trasformarlo in &lt;code&gt;http://tuosito.mno08.com/nl/api/forms&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Dopodiché ci serve l’ID del form per il parametro &lt;code&gt;idform&lt;/code&gt;. Anche questo l’ho trovato nella “mappa del sito” su MagNews; di fianco alla pagina c’era l’id tra parentesi graffe.&lt;/p&gt;
-
-&lt;p&gt;Infine, i campi. Se avete settato tutto bene, dovete inviare tutti i campi specificati più il bottone submit (wtf?!) con un valore a caso.&lt;/p&gt;
-
-&lt;p&gt;Se tutto va bene vedrete i vostri dati salvati in MagNews (sempre dal backoffice, andate in edit sulla pagina che contiene il form e cliccate su &lt;em&gt;Visualizza Risultati&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;Bene, spero di avervi tolto le castagne dal fuoco! Io invece mi sono scritto questo post per ricordarlo, casomai dovesse servire ancora.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="magnews" /><category term="form submission" /><summary type="html">Questa roba l’ho dovuta fare per lavoro e, nello scoprire tutti i passaggi necessari, me li sono segnati.</summary></entry></feed>
+&lt;p&gt;E questo non lo auguro a nessuno!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="programming" /><category term="tempo libero" /><category term="programmatore" /><category term="riflessioni" /><summary type="html">Programmare è diventata una passione.</summary></entry></feed>

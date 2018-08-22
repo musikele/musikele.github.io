@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>"ma... cosa intendete per testing?" - una breve introduzione al testing software  - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="testing" />  
+	<meta http-equiv="last-modified" content="2018-08-22 13:19:02 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content=""ma... cosa intendete per testing?" - una breve introduzione al testing software " property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Una brevissima descrizione del testing manuale vs testing automatico. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" property="og:url">
+
+
+
+  <meta content="2018-08-22T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/Testing_in_Progress.gif" property="og:image">
+
+
+
+  
+  <meta content="testing" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content=""ma... cosa intendete per testing?" - una breve introduzione al testing software ">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">
+
+
+
+  <meta name="twitter:description" content="Una brevissima descrizione del testing manuale vs testing automatico. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/Testing_in_Progress.gif">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">"ma... cosa intendete per testing?" - una breve introduzione al testing software </a></h1>
+			<p class="post-meta">Aug 22, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&text="ma... cosa intendete per testing?" - una breve introduzione al testing software :%20https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("ma... cosa intendete per testing?" - una breve introduzione al testing software ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&title="ma... cosa intendete per testing?" - una breve introduzione al testing software &summary=&source=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Mi chiedeva Emanuele su Quora:</p>
+
+<blockquote>
+  <p>…posso sapere con una certa  precisione cosa intendete con testing? Questa cosa mi ha incuriosito e  mi piacerebbe conoscerne di più.</p>
+</blockquote>
+
+<p><img src="/images/Testing_in_Progress.gif" alt="" /></p>
+
+<p>Per testing si intende <strong>un’esecuzione del codice per assicurarsi che faccia  esattamente ciò che viene richiesto</strong>.</p>
+
+<p>Esistono sostanzialmente due tipi di testing, <em>manuale</em> e <em>automatico</em>. Il <strong>testing manuale</strong> è quello che fa un programmatore dopo che ha sviluppato il codice: lancia l’applicazione e verifica che faccia ciò che dovrebbe. A volte sono altri utenti in carne ed ossa a fare il test dell’applicazione.</p>
+
+<p>Il testing manuale è efficace e immediato se l’app è semplice o di piccole dimensioni: al crescere della complessità potrebbe essere lungo in termini di tempo, e impreciso nei risultati.</p>
+
+<p>Esempio: <em>un’app per prenotare visite mediche</em>. Immaginiamo di aver realizzato la funzionalità di modifica della data di una visita. Se faccio l’edit di una visita e seleziono una data e un orario che già sono state prenotate da qualcun altro, il sistema deve rispondere che l’orario richiesto non è disponibile. Riesci a immaginare quanto tempo serva per poter rieseguire questo caso di test, ogni volta? <em>(Ti aiuto: bisogna prima creare una visita… poi crearne una seconda… poi prendere la prima e impostare la data e l’orario della seconda… e verificare il messaggio di errore)</em></p>
+
+<p>Passiamo al <strong>test di  tipo automatico</strong>. Innanzitutto viene scritto in un linguaggio di  programmazione vero e proprio. Nel test viene definito il setup iniziale (es. crea DUE visite nel sistema) e poi viene eseguito il test vero e proprio, ossia cerca la prima visita, e cambia la data e l’orario a quello della seconda.</p>
+
+<p>Infine, controlliamo che il sistema abbia restituito l’errore. Se è accaduto, il test ha avuto successo (si, se il  sistema risponde correttamente che un’operazione non si può fare, è un  caso di successo!). Se così non fosse, il test dovrebbe fallire.</p>
+
+<p><strong>Quali sono gli svantaggi di questo approccio?</strong></p>
+
+<ul>
+  <li>che il test lo può scrivere solo un programmatore,</li>
+  <li>per scrivere il test ci vuole del tempo un  po’ più lungo della mera esecuzione;</li>
+  <li>inoltre, se cambia l’applicazione, bisogna cambiare anche i test relativi.</li>
+</ul>
+
+<p><strong>I vantaggi, invece, sono un  aumento della qualità generale e un’efficienza nell’esecuzione</strong>, anche in termini di tempo. Ad esempio, è prassi eseguire tutti i test ad ogni modifica del sistema, per assicurarsi di non aver rotto aree  dell’applicazione collegate con quella che stiamo modificando e che  difficilmente andremmo a testare “manualmente”.</p>
+
+<p>In questa risposta ho dato una visione molto generica del software testing; esistono tante altre sotto-aree (integration, unit, e2e…) e tecniche da conoscere, ma il senso generale è che si, <strong>un computer può  fare dei test al posto tuo, è molto più veloce di te, e ne guadagni in qualità.</strong></p>
+
+<p><a href="">Link alla domanda originale</a></p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&text="ma... cosa intendete per testing?" - una breve introduzione al testing software :%20https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("ma... cosa intendete per testing?" - una breve introduzione al testing software ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html&title="ma... cosa intendete per testing?" - una breve introduzione al testing software &summary=&source=https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/12/la-mia-esperienza-col-test-driven-development.html">La mia esperienza col Test Driven Development <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/08/all-my-articles-about-testing-in-javascript-in-one-post.html">All my articles about Testing in Javascript in one post <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/04/07/fantastic-unit-tests-in-javascript-with-mocks.html">Fantastic Unit Tests in Javascript with Mocks <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html">Become a test expert in NodeJS with these tricks <span class="label label-default">testing</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/07/22/laravel-style-config-in-nodejs.html">Handling configuration for mutliple environments in NodeJS</a></h2>
+        </header>
+        <section>
+            <p>Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/07/22/laravel-style-config-in-nodejs.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
