@@ -1,4 +1,143 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-09-03T16:34:51+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">“ma… cosa intendete per testing?” - una breve introduzione al testing software</title><link href="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" rel="alternate" type="text/html" title="&quot;ma... cosa intendete per testing?&quot; - una breve introduzione al testing software " /><published>2018-08-22T00:00:00+02:00</published><updated>2018-08-22T13:19:02+02:00</updated><id>https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software</id><content type="html" xml:base="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">&lt;p&gt;Mi chiedeva Emanuele su Quora:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-09-03T17:27:17+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Things you may not know about Object Oriented Javascript (Es6)</title><link href="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" rel="alternate" type="text/html" title="Things you may not know about Object Oriented Javascript (Es6)" /><published>2018-09-03T00:00:00+02:00</published><updated>2018-09-03T17:26:45+02:00</updated><id>https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6</id><content type="html" xml:base="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html">&lt;p&gt;Hi there! Let’s try to create a simple &lt;code&gt;Group&lt;/code&gt; object, very similar to the &lt;a href=&quot;https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set&quot;&gt;existing &lt;/a&gt;&lt;code&gt;[Set](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;/code&gt;&lt;a href=&quot;https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set&quot;&gt; object&lt;/a&gt; in Javascript. Here’s the specification for this Abstract Data Type:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;It should provide a constructor that accepts an iterable object.&lt;/li&gt;
+  &lt;li&gt;An object can be contained only once; there cannot be duplicates.&lt;/li&gt;
+  &lt;li&gt;It must provide &lt;code&gt;add()&lt;/code&gt;, &lt;code&gt;delete()&lt;/code&gt; and &lt;code&gt;has()&lt;/code&gt; methods.&lt;/li&gt;
+  &lt;li&gt;There must be a &lt;code&gt;length&lt;/code&gt; property containing the number of objects stored inside.&lt;/li&gt;
+  &lt;li&gt;Provide a static method that creates a &lt;code&gt;Group&lt;/code&gt; from an array.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We’ll use this example to explain stuff regarding javascript new &lt;code&gt;class&lt;/code&gt; keyword introduced in ES6. We will &lt;strong&gt;not&lt;/strong&gt; focus on the performance of this class; only on js syntax.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;the-constructor&quot;&gt;The constructor&lt;/h2&gt;
+
+&lt;p&gt;Let’s start from the basics. Here’s the constructor for this object:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
+  
+  constructor() {
+    this.elements = []
+  }
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;Group&lt;/code&gt; class has an internal array that will hold the list of objects.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-has-method&quot;&gt;The has() method&lt;/h2&gt;
+
+&lt;p&gt;Let’s start with the &lt;code&gt;has&lt;/code&gt; method, because it will be used widely in other methods. This method should check that an element is already in the group. Here’s the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
+  ...
+  has(element) {
+    return this.elements.indexOf(element) &amp;gt;= 0 ? true : false
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Basically we leave to &lt;code&gt;indexOf()&lt;/code&gt; the burden of checking if the element is already present in our group.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-and-delete-method&quot;&gt;add() and delete() method&lt;/h2&gt;
+
+&lt;p&gt;If an element is not present, &lt;code&gt;add&lt;/code&gt; should add the element to the group. And of course,  if an element is present, &lt;code&gt;delete&lt;/code&gt; should… delete.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
+  ...
+  add(element) {
+    if (this.has(element)) return
+    this.elements.push(element)
+  }
+
+  delete(element) {
+    if (!this.has(element)) return
+    this.elements.splice(this.elements.indexOf(element), 1)        
+  }
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What’s going on in the &lt;code&gt;delete()&lt;/code&gt; method? We search for the index of the element in the array, then we call the &lt;code&gt;[splice()](https://www.w3schools.com/jsref/jsref_splice.asp)&lt;/code&gt;&lt;a href=&quot;https://www.w3schools.com/jsref/jsref_splice.asp&quot;&gt; function&lt;/a&gt; that returns a new array without the element at the specified index. The second argument is the number of elements to remove.&lt;/p&gt;
+
+&lt;h2 id=&quot;that-dont-impress-me-much-fun-begins-now-getters-and-setters&quot;&gt;“That don’t impress me much”. Fun begins now: getters and setters&lt;/h2&gt;
+
+&lt;p&gt;Let’s see how to create a &lt;em&gt;derived&lt;/em&gt; property in a javascript object. A derived property is a property that changes when another property changes. For example we want to write a derived property to get the number of the elements for the group.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
+  ...
+  get length() {
+    return this.elements.length
+  }
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;there’s the keyword &lt;code&gt;get&lt;/code&gt; that specifies this property as a &lt;em&gt;getter&lt;/em&gt;. When we call &lt;code&gt;group.length&lt;/code&gt; (&lt;strong&gt;note: no parenthesis!&lt;/strong&gt;) we get the length of the inner array. We can write very complex stuff in here, and we can access the &lt;code&gt;length&lt;/code&gt; property as a normal property - the user will not know what’s going on internally.&lt;/li&gt;
+  &lt;li&gt;There’s also the &lt;code&gt;set&lt;/code&gt; keyword that you can use for setting a property. Here’s an example:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Example {
+  constructor() {
+    this.hidden = 3
+  }
+  set property(element) {
+    this.hidden = element
+  }
+  
+  get property() {
+    return this.hidden*this.hidden 
+}
+
+const example = new Example()
+console.log(example.hidden)
+// --&amp;gt; 3
+console.log(example.property)
+// --&amp;gt; 9, the getter returns the square of hidden
+example.property = 4
+// now `hidden` is set to 4
+console.log(example.hidden)
+// --&amp;gt; 4
+console.log(example.property)
+// --&amp;gt; 16
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This mechanism is very powerful and you can do a lot of stuff with it. VueJS uses this mechanism to create the Vue object filled with the &lt;code&gt;data&lt;/code&gt; properties.&lt;/p&gt;
+
+&lt;h2 id=&quot;static-methods&quot;&gt;Static methods&lt;/h2&gt;
+
+&lt;p&gt;Our last piece of exercise is to build a static method for the &lt;code&gt;Group&lt;/code&gt; class.&lt;/p&gt;
+
+&lt;p&gt;A static method are called without instantiating their class and are callable when the class is not instantiated. Let’s see an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
+  ...
+  static from(elements) {
+	//here we instantiate the object that will be returned
+    const group = new Group()
+    //for semplicity let's assume that `elements` is an array. 
+	for (let elem of elements) {
+      group.add(elem)
+    }
+    return group
+  }
+}
+
+const group = Group.from([&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;one&quot;]);
+// -&amp;gt; returns a Group 
+
+console.log(group.length)
+// -&amp;gt; 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;finally&quot;&gt;Finally…&lt;/h2&gt;
+
+&lt;p&gt;I don’t suggest you to program in JS as you would in Java; JS object oriented features in JS are very different compared to other languages. However, if you find that something should be an object, and you end up writing an Object, there two tricks might become handy.&lt;/p&gt;
+
+&lt;p&gt;Next time we’ll talk about iterators and symbols in Javascript, another nice addition to the language. Stay tuned!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">Hi there! Let’s try to create a simple Group object, very similar to the existing [Set](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set) object in Javascript. Here’s the specification for this Abstract Data Type:</summary></entry><entry><title type="html">“ma… cosa intendete per testing?” - una breve introduzione al testing software</title><link href="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" rel="alternate" type="text/html" title="&quot;ma... cosa intendete per testing?&quot; - una breve introduzione al testing software " /><published>2018-08-22T00:00:00+02:00</published><updated>2018-08-22T13:19:02+02:00</updated><id>https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software</id><content type="html" xml:base="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">&lt;p&gt;Mi chiedeva Emanuele su Quora:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;…posso sapere con una certa  precisione cosa intendete con testing? Questa cosa mi ha incuriosito e  mi piacerebbe conoscerne di più.&lt;/p&gt;
@@ -501,47 +640,4 @@ app.use(helmet())
 
 &lt;p&gt;Dopo aver sperimentato il problema, sono giunto alla conclusione che &lt;strong&gt;il miglior supporto è quello che scompare per lasciare spazio al contenuto.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;E voi cosa preferite? libri o digital?&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="libri" /><category term="ebook" /><category term="carta" /><summary type="html">Ci ho provato, attratto dall’idea di portarmi un solo dispositivo dietro con tutti i libri che volevo leggere.</summary></entry><entry><title type="html">Un programmatore dovrebbe continuare a programmare nel suo tempo libero?</title><link href="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html" rel="alternate" type="text/html" title="Un programmatore dovrebbe continuare a programmare nel suo tempo libero?" /><published>2018-04-05T02:00:00+02:00</published><updated>2018-04-05T10:17:21+02:00</updated><id>https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero</id><content type="html" xml:base="https://michelenasti.com/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html">&lt;p&gt;Programmare è diventata una passione.&lt;/p&gt;
-
-&lt;p&gt;Questa frase mi suona ridicola, perchè io non sono mai stato un tipo che realizza side projects, neanche ai tempi dell’università (e sbagliavo!).&lt;/p&gt;
-
-&lt;p&gt;Ciò che mi piace, della programmazione in se e per se, &lt;strong&gt;è il processo mentale che parte prima di scrivere la prima riga di codice&lt;/strong&gt;: “&lt;em&gt;se succede questo faccio questo… e se succede quello faccio quello…. nel browser questo non si può fare quindi lo simulo così….&lt;/em&gt;”&lt;/p&gt;
-
-&lt;p&gt;Specialmente durante la prima fase lavorativa (post-università) ricordo serate che tornavo a casa dopo una giornata di lavoro e mi rimettevo col computer a fare prove, seguire tutorial, corsi, etc.&lt;/p&gt;
-
-&lt;p&gt;Poi è nata mia figlia e il tempo di accendere il computer (o di fare qualsiasi altra cosa, come suonare la chitarra) non c’è stato più.Dopo un anno per fortuna la bimba sta iniziando ad andare a dormire alle 21:30 (e mia moglie segue programmi TV che non mi piacciono) quindi ho parzialmente ritrovato tempo per il mio “hobby”.&lt;/p&gt;
-
-&lt;h2 id=&quot;ma-un-buon-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero&quot;&gt;Ma: un buon programmatore dovrebbe continuare a programmare, nel suo tempo libero?&lt;/h2&gt;
-
-&lt;p&gt;Come al solito, dipende.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Se si torna a casa e si continua a lavorare&lt;/strong&gt;, &lt;strong&gt;potrebbe essere divertente ma probabilmente non è un hobby.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Se dovessi rileggere il discorso scritto prima e mettergli la firma di qualcun altro, penserei che chi l’ha scritto deve essere uno di quegli &lt;em&gt;azzeccati&lt;/em&gt; che passano il tempo a fare sempre la stessa cosa, programmare programmare programmare - &lt;em&gt;probabilmente è anche un tipo spocchioso, fastidioso, saccente, buffone&lt;/em&gt;…&lt;/p&gt;
-
-&lt;p&gt;Se invece dovessi fare un colloquio di lavoro a una persona che apre con queste parole, penso gli farei qualche domanda più tosta per testare le sue capacità analitiche.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/rtryt.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ormai lavoro da qualche annetto e qualche programmatore l’ho conosciuto durante la mia carriera; i colleghi si dividono in:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Lavoro solo per lo stipendio&lt;/strong&gt;: La programmazione non mi interessa, alle 18 voglio stare in viaggio verso casa. Conosco abbastanza bene solo gli strumenti che mi servono per lavorare, di sicuro non propongo io qualcosa di nuovo al mio team.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;L’intelligenza non mi manca, ma fondamentalmente sono un tipo pigro&lt;/strong&gt;: queste persone capiscono tutto al volo, leggono tanto, non provano nulla. A casa dopo il lavoro preferiscono netflix.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Voglio stare sempre una spanna avanti a tutti&lt;/strong&gt;. Questa è la categoria più pericolosa, perchè studiano &lt;em&gt;anche&lt;/em&gt; per passione, ma il secondo fine neanche tanto celato è quello di fare carriera e di dimostrare la propria superiorità.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Mi piace programmare ma al tempo stesso riesco ad avere una vita sociale equilibrata&lt;/strong&gt;: scherzavo ragazzi, non esiste nessuno in questa categoria. O siete nerd o non siete niente 😂&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Citiamo un’altra categoria che ho contribuito a creare, nel mio piccolo, a Salerno e in Campania. Quella dei &lt;strong&gt;programmatori consapevoli&lt;/strong&gt;. Da quando ho fondato il &lt;a href=&quot;http://www.devday.it&quot;&gt;DevDay&lt;/a&gt; ho intercettato un sacco di professionisti che, per motivi privati o familiari, non hanno più il tempo di scoprire cose nuove. Q&lt;strong&gt;ueste persone vogliono aggiornarsi, ma non possono rubare tempo alla cosa più bella che hanno, ossia la loro vita.&lt;/strong&gt; E quindi “consacrano” un sabato al mese per venire agli incontri che organizziamo, i DevDay appunto, per scoprire le ultime novità o semplicemente incontrare altre persone appassionate. Queste persone diventano anche molto focose se gli tocchi il loro framework preferito, ma &lt;strong&gt;generalmente sono persone che amano ascoltare le opinioni degli altri. Esattamente il contrario delle community on line :)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;programmando-si-invecchia&quot;&gt;Programmando si invecchia&lt;/h2&gt;
-
-&lt;p&gt;Avete mai conosciuto programmatori over-40? e over-50? Io si, ma si contavano sulle dita di una mano. La stragrande maggioranza degli over-40 o over-50 in realtà occupava posti manageriali (capo team, responsabile di progetto, etc.).&lt;/p&gt;
-
-&lt;p&gt;Non tutti possono diventare capi, o manager. &lt;strong&gt;Che fine fanno i programmatori dopo una certa età?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Quando un giorno la programmazione sarà fonte di noia anche per me, in che modo trasformo la mia vita affinchè non sia completamente buttata?&lt;/p&gt;
-
-&lt;p&gt;A queste domande non so ancora rispondere. Se ti piace fare qualcosa vorresti poi farla per più tempo possibile. Salvo poi scoprire che farlo tutti i giorni, e anche nel tempo libero, si rivela non essere questo gran divertimento. E insomma devi necessariamente “scappare” dal codice per passare ad altro, altrimenti rischi di passare la tua giornata a fare qualcosa che odi.&lt;/p&gt;
-
-&lt;p&gt;E questo non lo auguro a nessuno!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="programming" /><category term="tempo libero" /><category term="programmatore" /><category term="riflessioni" /><summary type="html">Programmare è diventata una passione.</summary></entry></feed>
+&lt;p&gt;E voi cosa preferite? libri o digital?&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="libri" /><category term="ebook" /><category term="carta" /><summary type="html">Ci ho provato, attratto dall’idea di portarmi un solo dispositivo dietro con tutti i libri che volevo leggere.</summary></entry></feed>

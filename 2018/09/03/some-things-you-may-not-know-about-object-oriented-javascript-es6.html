@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Things you may not know about Object Oriented Javascript (Es6) - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="javascript, es6" />  
+	<meta http-equiv="last-modified" content="2018-09-03 17:26:45 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Things you may not know about Object Oriented Javascript (Es6)" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Features that are very handy in Object Oriended Javascript: getters & setters, and static methods. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" property="og:url">
+
+
+
+  <meta content="2018-09-03T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/es6.jpeg" property="og:image">
+
+
+
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="es6" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Things you may not know about Object Oriented Javascript (Es6)">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html">
+
+
+
+  <meta name="twitter:description" content="Features that are very handy in Object Oriended Javascript: getters & setters, and static methods. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/es6.jpeg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html">Things you may not know about Object Oriented Javascript (Es6)</a></h1>
+			<p class="post-meta">Sep 3, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&text=Things you may not know about Object Oriented Javascript (Es6):%20https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Things you may not know about Object Oriented Javascript (Es6)) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&title=Things you may not know about Object Oriented Javascript (Es6)&summary=&source=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p>Hi there! Let’s try to create a simple <code>Group</code> object, very similar to the <a href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set">existing </a><code>[Set](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set)</code><a href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set"> object</a> in Javascript. Here’s the specification for this Abstract Data Type:</p>
+
+<ol>
+  <li>It should provide a constructor that accepts an iterable object.</li>
+  <li>An object can be contained only once; there cannot be duplicates.</li>
+  <li>It must provide <code>add()</code>, <code>delete()</code> and <code>has()</code> methods.</li>
+  <li>There must be a <code>length</code> property containing the number of objects stored inside.</li>
+  <li>Provide a static method that creates a <code>Group</code> from an array.</li>
+</ol>
+
+<blockquote>
+  <p>We’ll use this example to explain stuff regarding javascript new <code>class</code> keyword introduced in ES6. We will <strong>not</strong> focus on the performance of this class; only on js syntax.</p>
+</blockquote>
+
+<h2 id="the-constructor">The constructor</h2>
+
+<p>Let’s start from the basics. Here’s the constructor for this object:</p>
+
+<pre><code class="language-javascript">class Group {
+  
+  constructor() {
+    this.elements = []
+  }
+  ...
+}
+</code></pre>
+
+<p>The <code>Group</code> class has an internal array that will hold the list of objects.</p>
+
+<h2 id="the-has-method">The has() method</h2>
+
+<p>Let’s start with the <code>has</code> method, because it will be used widely in other methods. This method should check that an element is already in the group. Here’s the code:</p>
+
+<pre><code class="language-javascript">class Group {
+  ...
+  has(element) {
+    return this.elements.indexOf(element) &gt;= 0 ? true : false
+  }
+}
+</code></pre>
+
+<p>Basically we leave to <code>indexOf()</code> the burden of checking if the element is already present in our group.</p>
+
+<h2 id="add-and-delete-method">add() and delete() method</h2>
+
+<p>If an element is not present, <code>add</code> should add the element to the group. And of course,  if an element is present, <code>delete</code> should… delete.</p>
+
+<pre><code class="language-javascript">class Group {
+  ...
+  add(element) {
+    if (this.has(element)) return
+    this.elements.push(element)
+  }
+
+  delete(element) {
+    if (!this.has(element)) return
+    this.elements.splice(this.elements.indexOf(element), 1)        
+  }
+  ...
+}
+</code></pre>
+
+<p>What’s going on in the <code>delete()</code> method? We search for the index of the element in the array, then we call the <code>[splice()](https://www.w3schools.com/jsref/jsref_splice.asp)</code><a href="https://www.w3schools.com/jsref/jsref_splice.asp"> function</a> that returns a new array without the element at the specified index. The second argument is the number of elements to remove.</p>
+
+<h2 id="that-dont-impress-me-much-fun-begins-now-getters-and-setters">“That don’t impress me much”. Fun begins now: getters and setters</h2>
+
+<p>Let’s see how to create a <em>derived</em> property in a javascript object. A derived property is a property that changes when another property changes. For example we want to write a derived property to get the number of the elements for the group.</p>
+
+<pre><code class="language-javascript">class Group {
+  ...
+  get length() {
+    return this.elements.length
+  }
+  ...
+}
+</code></pre>
+
+<ol>
+  <li>there’s the keyword <code>get</code> that specifies this property as a <em>getter</em>. When we call <code>group.length</code> (<strong>note: no parenthesis!</strong>) we get the length of the inner array. We can write very complex stuff in here, and we can access the <code>length</code> property as a normal property - the user will not know what’s going on internally.</li>
+  <li>There’s also the <code>set</code> keyword that you can use for setting a property. Here’s an example:</li>
+</ol>
+
+<pre><code class="language-javascript">class Example {
+  constructor() {
+    this.hidden = 3
+  }
+  set property(element) {
+    this.hidden = element
+  }
+  
+  get property() {
+    return this.hidden*this.hidden 
+}
+
+const example = new Example()
+console.log(example.hidden)
+// --&gt; 3
+console.log(example.property)
+// --&gt; 9, the getter returns the square of hidden
+example.property = 4
+// now `hidden` is set to 4
+console.log(example.hidden)
+// --&gt; 4
+console.log(example.property)
+// --&gt; 16
+</code></pre>
+
+<p>This mechanism is very powerful and you can do a lot of stuff with it. VueJS uses this mechanism to create the Vue object filled with the <code>data</code> properties.</p>
+
+<h2 id="static-methods">Static methods</h2>
+
+<p>Our last piece of exercise is to build a static method for the <code>Group</code> class.</p>
+
+<p>A static method are called without instantiating their class and are callable when the class is not instantiated. Let’s see an example:</p>
+
+<pre><code class="language-javascript">class Group {
+  ...
+  static from(elements) {
+	//here we instantiate the object that will be returned
+    const group = new Group()
+    //for semplicity let's assume that `elements` is an array. 
+	for (let elem of elements) {
+      group.add(elem)
+    }
+    return group
+  }
+}
+
+const group = Group.from(["one", "two", "three", "one"]);
+// -&gt; returns a Group 
+
+console.log(group.length)
+// -&gt; 3
+</code></pre>
+
+<h2 id="finally">Finally…</h2>
+
+<p>I don’t suggest you to program in JS as you would in Java; JS object oriented features in JS are very different compared to other languages. However, if you find that something should be an object, and you end up writing an Object, there two tricks might become handy.</p>
+
+<p>Next time we’ll talk about iterators and symbols in Javascript, another nice addition to the language. Stay tuned!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&text=Things you may not know about Object Oriented Javascript (Es6):%20https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Things you may not know about Object Oriented Javascript (Es6)) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&title=Things you may not know about Object Oriented Javascript (Es6)&summary=&source=https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/02/18/un-giro-nell-universo-react.html">Un giro nell'universo React <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018 <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/17/vuejs-basics.html">VueJS basics <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">"ma... cosa intendete per testing?" - una breve introduzione al testing software </a></h2>
+        </header>
+        <section>
+            <p>Mi chiedeva Emanuele su Quora:</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
