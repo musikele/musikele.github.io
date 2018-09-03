@@ -64,7 +64,7 @@ fields:
   config:
     required: true
 pages:
-- _posts/some-things-you-may-not-know-about-object-oriented-javascript-es6.md
+- _posts/2018-09-03-some-things-you-may-not-know-about-object-oriented-javascript-es6.md
 - _posts/2018-08-22-ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.md
 - _posts/2018-07-22-laravel-style-config-in-nodejs.md
 - _posts/2017-09-19-come-capire-il-bitcoin-le-funzioni-crittografiche.md
