@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Symbols & Iterators in Javascript '
+title: Symbols & Iterators in Javascript
 category: English
 layout: post
 date: 2018-09-04 00:00:00 +0200
