@@ -1,4 +1,124 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-09-04T16:31:21+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Things you may not know about Object Oriented Javascript (Es6)</title><link href="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" rel="alternate" type="text/html" title="Things you may not know about Object Oriented Javascript (Es6)" /><published>2018-09-03T00:00:00+02:00</published><updated>2018-09-04T13:09:43+02:00</updated><id>https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6</id><content type="html" xml:base="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html">&lt;p&gt;Hi there! Let’s try to create a simple &lt;code&gt;Group&lt;/code&gt; object, very similar to the &lt;a href=&quot;https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set&quot;&gt;existing &lt;code&gt;Set&lt;/code&gt; object&lt;/a&gt; in Javascript. Here’s the specification for this Abstract Data Type:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-09-04T16:35:17+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Symbols &amp;amp; Iterators in Javascript</title><link href="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html" rel="alternate" type="text/html" title="Symbols &amp; Iterators in Javascript " /><published>2018-09-04T00:00:00+02:00</published><updated>2018-09-04T16:32:48+02:00</updated><id>https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html">&lt;p&gt;ES6 introduced the new &lt;code&gt;for ... of&lt;/code&gt; syntax to iterate a collection. Did you know? And how does it work?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const arr = ['banana', 'apple', 'orange']
+
+for (const fruit of arr) {
+  console.log(fruit)
+}
+// -&amp;gt; banana
+// -&amp;gt; apple
+// -&amp;gt; orange
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;how-does-it-work&quot;&gt;How does it work&lt;/h3&gt;
+
+&lt;p&gt;What you are seeing is a syntax that iterates on an &lt;strong&gt;iterator&lt;/strong&gt;, a common concept in other languages but fairly new in Javascript.&lt;/p&gt;
+
+&lt;p&gt;Basically, if an object has an &lt;em&gt;iterator&lt;/em&gt; you can use the &lt;code&gt;for...of&lt;/code&gt; syntax to iterate on it.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-do-we-create-an-iterator&quot;&gt;How do we create an iterator?&lt;/h3&gt;
+
+&lt;p&gt;To create iterators, we must provide a new property in our object called &lt;code&gt;Symbol.iterator&lt;/code&gt;. &lt;em&gt;…what ?&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-symbol&quot;&gt;What is a Symbol&lt;/h2&gt;
+
+&lt;p&gt;a Symbol is a javascript function that returns a value that is guaranteed to be unique.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const helloSymbol = Symbol('hello')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;They accept names, to be easily recognized and debugged, but if you create two symbols with the same name, they are not equal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const helloSymbol2 = Symbol('hello')
+console.log(helloSymbol === helloSymbol2)
+/// -&amp;gt; false 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;why-do-we-need-symbols&quot;&gt;Why do we &lt;em&gt;need&lt;/em&gt; symbols?&lt;/h3&gt;
+
+&lt;p&gt;First, I’ve seen a similar concept in other languages, like Ruby. They are useful to define properties (or functions) that are shared across different types of objects. You could use symbols to uniquely identify properties in your maps, for example.&lt;/p&gt;
+
+&lt;p&gt;There is one symbol that has been already created by the Javascript runtime, and it’s called &lt;code&gt;Symbol.iterator&lt;/code&gt;. **If an object has a property named &lt;code&gt;Symbol.iterator&lt;/code&gt;, it is iterable.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-do-we-create-an-iterator-for-our-objects&quot;&gt;How do we create an Iterator for our objects&lt;/h2&gt;
+
+&lt;p&gt;To create an iterator the first thing to do is to attach the property:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Example {
+  [Symbol.iterator]() {
+    ...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, this is a legitimate name for a property. Infact, &lt;strong&gt;allowed names for properties are strings and symbols&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The only caveat is that we have to use the square brackets to define the property name, since it is an object.&lt;/p&gt;
+
+&lt;p&gt;The iterator must return a function that returns an object, containing a &lt;code&gt;next()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;This &lt;code&gt;next()&lt;/code&gt; function, in turn, returns an object with two properties, &lt;code&gt;value&lt;/code&gt; (the actual element of the iteration) and &lt;code&gt;done&lt;/code&gt; (set to &lt;code&gt;true&lt;/code&gt; when the iteration has ended).&lt;/p&gt;
+
+&lt;p&gt;Confused?&lt;/p&gt;
+
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
+
+&lt;p&gt;Do you remember the &lt;code&gt;Group&lt;/code&gt; class we &lt;a href=&quot;https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&quot;&gt;designed in the last article&lt;/a&gt;? Basically it is a Set object with another name. It holds just one copy for every object (duplicates are not allowed) and we use a simple array to store data inside. Let’s write an iterator for it!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+const Group {
+  ...
+  [Symbol.iterator]() {
+    // a reference of internal elements...
+    const elements = this.elements;
+    if (elements.length === 0) return; 
+    //the index we'll use to track the next element to return
+    let i=-1;
+    return {
+      //we return a next() function that will be called many times, 
+      //once for every element in the Group 
+      next() {
+        i++;
+        //the next function returns an object with two properties
+        return {
+          //in value we store the actual element we're returning 
+          value: elements[i],
+          // if true, the iteration stops 
+          done: i === elements.length ? true : false
+        }
+      }
+    }
+  }
+}
+
+//Some tests! 
+// You find the code for the Group class in the previous article ;) 
+for (let value of Group.from([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;])) {
+  console.log(value);
+}
+// → a
+// → b
+// → c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;….And this is how we create iterable objects in Javascript.&lt;/p&gt;
+
+&lt;p&gt;Easy, isn’t it?&lt;/p&gt;
+
+&lt;p&gt;Just to let you know, (don’t know if it’s useful..) &lt;code&gt;String&lt;/code&gt; is iterable, so you can write this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const hello = &quot;Hello&quot; 
+for (const letter of hello) {
+  console.log(letter)
+}
+// -&amp;gt; H
+// -&amp;gt; e
+// -&amp;gt; l
+// -&amp;gt; l
+// -&amp;gt; o
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See you in the next iteration!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">ES6 introduced the new for ... of syntax to iterate a collection. Did you know? And how does it work?</summary></entry><entry><title type="html">Things you may not know about Object Oriented Javascript (Es6)</title><link href="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" rel="alternate" type="text/html" title="Things you may not know about Object Oriented Javascript (Es6)" /><published>2018-09-03T00:00:00+02:00</published><updated>2018-09-04T13:09:43+02:00</updated><id>https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6</id><content type="html" xml:base="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html">&lt;p&gt;Hi there! Let’s try to create a simple &lt;code&gt;Group&lt;/code&gt; object, very similar to the &lt;a href=&quot;https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set&quot;&gt;existing &lt;code&gt;Set&lt;/code&gt; object&lt;/a&gt; in Javascript. Here’s the specification for this Abstract Data Type:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;It should provide a constructor that creates an empty Group.&lt;/li&gt;
@@ -624,20 +744,4 @@ app.use(helmet())
 
 &lt;p&gt;Abbiamo quindi creato futuri milionari? No, a parte una startup che ha validato l’idea sul posto e ha guadagnato i suoi primi 50€ non abbiamo mosso grandi cifre; &lt;strong&gt;ma abbiamo sicuramente dato a dei ragazzi gli strumenti per farsi le domande giuste.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Peccato che questi eventi siano nati molto dopo il mio periodo universitario: &lt;strong&gt;quando ero studente non c’era NIENTE di tutto questo&lt;/strong&gt;, sarebbe stato davvero figo parteciparvi. Conserverò il ricordo della gioia e l’adrenalina di vedere i ragazzi sul palco!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="Startup weekend salerno" /><category term="Startup" /><category term="Sws18" /><category term="Mentor" /><summary type="html">Avete la vostra lista di cose nuove da fare ogni anno? Io sinceramente no, ma se l’avessi probabilmente per quest’anno avrei scritto: partecipare a uno startup weekend.</summary></entry><entry><title type="html">Ode ai libri di carta</title><link href="https://michelenasti.com/2018/04/16/ode-ai-libri-di-carta.html" rel="alternate" type="text/html" title="Ode ai libri di carta " /><published>2018-04-16T02:00:00+02:00</published><updated>2018-06-06T15:00:10+02:00</updated><id>https://michelenasti.com/2018/04/16/ode-ai-libri-di-carta</id><content type="html" xml:base="https://michelenasti.com/2018/04/16/ode-ai-libri-di-carta.html">&lt;p&gt;&lt;img src=&quot;/images/kindle-vs-books.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ci ho provato, attratto dall’idea di portarmi un solo dispositivo dietro con tutti i libri che volevo leggere.&lt;/p&gt;
-
-&lt;p&gt;Ho provato anche altre varianti, tipo il &lt;em&gt;kindle&lt;/em&gt; (che non trovo più!), il &lt;em&gt;tablet&lt;/em&gt; tradizionale, il &lt;em&gt;phablet&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Leggere su questi dispositivi è scomodo, stancante, e soprattutto impossibile. &lt;strong&gt;Sono continuamente distratto da altro.&lt;/strong&gt; Non ricordo nemmeno di rimettere la suoneria quando mi sveglio, figuriamoci se ricordo di disattivare le notifiche quando leggo!&lt;/p&gt;
-
-&lt;p&gt;E mentre attendo di completare il libro sullo &lt;a href=&quot;https://leanpub.com/taming-the-state-in-react&quot;&gt;state management in React&lt;/a&gt;, libro piacevolissimo per carità, ma comunque digitale, la pila di libri di carta sul mio comodino cresceva insieme ai sensi di colpa.&lt;/p&gt;
-
-&lt;p&gt;Così ieri sera sono tornato alla carta, con l’obiettivo di trovare una strategia per finire i due libri digitali e non comprarne mai più.&lt;/p&gt;
-
-&lt;p&gt;Sono consapevole che prendere tutto di carta significa comprare un mucchio di roba (tecnica) che nel giro di pochi mesi potrebbe risultare obsoleta.&lt;/p&gt;
-
-&lt;p&gt;Dopo aver sperimentato il problema, sono giunto alla conclusione che &lt;strong&gt;il miglior supporto è quello che scompare per lasciare spazio al contenuto.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;E voi cosa preferite? libri o digital?&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="libri" /><category term="ebook" /><category term="carta" /><summary type="html">Ci ho provato, attratto dall’idea di portarmi un solo dispositivo dietro con tutti i libri che volevo leggere.</summary></entry></feed>
+&lt;p&gt;Peccato che questi eventi siano nati molto dopo il mio periodo universitario: &lt;strong&gt;quando ero studente non c’era NIENTE di tutto questo&lt;/strong&gt;, sarebbe stato davvero figo parteciparvi. Conserverò il ricordo della gioia e l’adrenalina di vedere i ragazzi sul palco!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="Startup weekend salerno" /><category term="Startup" /><category term="Sws18" /><category term="Mentor" /><summary type="html">Avete la vostra lista di cose nuove da fare ogni anno? Io sinceramente no, ma se l’avessi probabilmente per quest’anno avrei scritto: partecipare a uno startup weekend.</summary></entry></feed>
