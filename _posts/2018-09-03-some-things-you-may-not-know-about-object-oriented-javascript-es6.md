@@ -16,7 +16,7 @@ description: 'Features that are very handy in Object Oriended Javascript: getter
 ---
 Hi there! Let's try to create a simple `Group` object, very similar to the [existing `Set` object](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set) in Javascript. Here's the specification for this Abstract Data Type:
 
-1. It should provide a constructor that accepts an iterable object.
+1. It should provide a constructor that creates an empty Group.
 2. An object can be contained only once; there cannot be duplicates.
 3. It must provide `add()`, `delete()` and `has()` methods.
 4. There must be a `length` property containing the number of objects stored inside.
