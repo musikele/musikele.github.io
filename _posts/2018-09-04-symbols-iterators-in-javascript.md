@@ -9,7 +9,7 @@ date: 2018-09-04 00:00:00 +0200
 tags:
 - javascript
 - es6
-header-img: ''
+header-img: "/images/es6.jpeg"
 description: 'Let''s have a look at Symbols and iterators in Javascript. '
 
 ---

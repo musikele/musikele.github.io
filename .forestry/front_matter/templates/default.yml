@@ -64,7 +64,7 @@ fields:
   config:
     required: true
 pages:
-- _posts/symbols-iterators-in-javascript.md
+- _posts/2018-09-04-symbols-iterators-in-javascript.md
 - _posts/2018-07-10-designing-the-documentation-for-a-tech-product.md
 - _posts/2018-07-22-laravel-style-config-in-nodejs.md
 - _posts/2018-08-22-ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.md
