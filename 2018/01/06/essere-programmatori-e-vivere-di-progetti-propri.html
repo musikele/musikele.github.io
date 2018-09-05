@@ -404,6 +404,61 @@ s.setAttribute('data-timestamp', +new Date());
         <section>
             <p>It has been a long week for me, I’m studying very hard VueJS - this time by coding real examples - and I confirm that there are some very good concepts backed in.</p>
 
+<p><img src="/images/vuejs.png" alt="" /></p>
+
+<h2 id="separation-of-data-and-methods">Separation of data and methods</h2>
+
+<p>This is a basic html containing some VueJS markup:</p>
+
+<pre><code class="language-html">&lt;html&gt;
+  ...
+  &lt;body&gt;
+  	&lt;script src="https://cdn.jsdelivr.net/npm/vue"&gt;&lt;/script&gt;
+  	&lt;div id="app"&gt;
+  	  &lt;h2&gt;{{ message }}&lt;/h2&gt;
+      &lt;p&gt;{{ sayHelloTo(name) }}&lt;/p&gt;
+  	&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>This is a basic VueJS element:</p>
+
+<pre><code class="language-javascript">new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello from Vue!',
+    name: 'Michele'
+  },
+  methods: {
+    sayHelloTo: function(name) {
+      return `Hello, ${this.name}!`
+    }
+  }
+})
+</code></pre>
+
+<p>Let’s describe this snippet:</p>
+
+<ul>
+  <li>the <code>el</code> references the DOM element with the <code>#app</code> id. This element will be <em>Vuezed</em>.</li>
+  <li>the <code>data</code> object contains the data that can be used inside the HTML: for example, we used the <code>message</code> property in the Html.</li>
+  <li>the <code>methods</code> property contains the methods you can use in your html. These are useful for calculations or for actions, like clicking on a button.</li>
+</ul>
+
+<p>I acutally like a lot: a clear separations of data and methods.</p>
+
+<p>This is a concept that comes from the <strong>functional programming world</strong>, that is, separate the data from the functions that interact with this data.</p>
+
+<p>However, Vue is not <em>functional</em> in the classic sense of the definition, because you use the <code>this</code> keyword to access data &amp; you’re not forced to write pure functions, etc etc.</p>
+
+<h2 id="a-word-on-this">A word on this</h2>
+
+<p>Have you noticed that from the <code>methods</code> section,  if you want to access <code>data</code> properties, you use <code>this</code> ?</p>
+
+<p>In fact, Vue proxies the <code>this</code> keyword so that you can access to data without writing <code>this.data.message</code>.</p>
+
+<p>However, for <code>this</code> to work you must write 90% of the time the old ES5 <code>function()</code> declaration: this is expecially clear in VueJS components, an argouments we’ll talk in another post.</p>
 
         </section>
         <div>
