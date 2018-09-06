@@ -12,7 +12,7 @@
 	<title>Fantastic Unit Tests in Javascript with Mocks - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="nodejs, testing, rewire, expect" />  
-	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<meta http-equiv="last-modified" content="2018-09-06 09:52:20 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -41,7 +41,7 @@
 
 
 
-  <meta content="2017-04-07T09:49:00+02:00" property="article:published_time">
+  <meta content="2017-04-07T02:00:00+02:00" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 
 
@@ -120,7 +120,7 @@
 			
 			<p>Let’s start with the example. We have two files, one that is the main one called <code>app.js</code> that exports just one method, called <code>handleSignup()</code>:</p>
 
-<pre><code>// file app.js
+<pre><code class="language-javascript">// file app.js
 const db = require('./db.js');
 
 module.exports.handleSignup = (email, password) =&gt; {
@@ -133,7 +133,7 @@ module.exports.handleSignup = (email, password) =&gt; {
 
 <p>This <code>app.js</code>, at some point, calls the <code>db.saveUser()</code> function. Let’s see the <code>db</code> module:</p>
 
-<pre><code>// file db.js
+<pre><code class="language-javascript">// file db.js
 module.exports.saveUser = user =&gt; {
   console.log('Saving the user...', user);
 };
