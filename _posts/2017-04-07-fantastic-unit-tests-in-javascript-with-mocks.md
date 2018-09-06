@@ -5,16 +5,17 @@ author: musikele
 title: Fantastic Unit Tests in Javascript with Mocks
 category: Italiano
 layout: post
-date: '2017-04-07 09:49:00'
+date: 2017-04-07 00:00:00 +0000
 tags:
 - nodejs
 - testing
 - rewire
 - expect
+
 ---
 Let's start with the example. We have two files, one that is the main one called `app.js` that exports just one method, called `handleSignup()`:
 
-```
+```javascript
 // file app.js
 const db = require('./db.js');
 
@@ -28,7 +29,7 @@ module.exports.handleSignup = (email, password) => {
 
 This `app.js`, at some point, calls the `db.saveUser()` function. Let's see the `db` module:
 
-```
+```javascript
 // file db.js
 module.exports.saveUser = user => {
   console.log('Saving the user...', user);
@@ -147,4 +148,4 @@ The test is created as always; we prepare some input parameters and pass them to
 At (4) we can check that the spy has been called for real with the function `toHaveBeenCalledWith` and we can check also that the parameters are the same!
 
 ## There's more... 
-But that's enough for now! Testing is something I really like, because it can tell you instantly if you're doing something wrong. The overall quality of a project is greatly improved when you test and know how to test. 
+But that's enough for now! Testing is something I really like, because it can tell you instantly if you're doing something wrong. The overall quality of a project is greatly improved when you test and know how to test.
