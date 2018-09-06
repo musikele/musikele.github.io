@@ -11,6 +11,7 @@ tags:
 - testing
 - rewire
 - expect
+- javascript
 
 ---
 Let's start with the example. We have two files, one that is the main one called `app.js` that exports just one method, called `handleSignup()`:
