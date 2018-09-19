@@ -1,89 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-09-19T14:57:52+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Javascript: call functions without using parenthesis (what?!)</title><link href="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html" rel="alternate" type="text/html" title="Javascript: call functions without using parenthesis (what?!)" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-19T14:57:25+02:00</updated><id>https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!)</id><content type="html" xml:base="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html">&lt;p&gt;Let’s dig in a not-well-publicized ES6 feature: calling functions without using parenthesys.&lt;/p&gt;
-
-&lt;p&gt;If you are familiar with Ruby, you know that in Ruby you can omit parenthesis when they’re not ambiguous:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;puts 'hello world' 
-puts('hello world') 
-//-&amp;gt; same result!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But we’re in javascript and this is not allowed. Uhm… &lt;strong&gt;in some forms it &lt;em&gt;IS&lt;/em&gt; allowed!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-ive-discovered-this-sqorn&quot;&gt;How I’ve discovered this: SQORN&lt;/h2&gt;
-
-&lt;p&gt;In my search for new libraries, I found &lt;a href=&quot;https://sqorn.org/&quot;&gt;SQORN&lt;/a&gt; library. Sqorn allows you to write sql queries in nodejs.&lt;/p&gt;
-
-&lt;p&gt;What captured my attention is &lt;em&gt;the way Sqorn is intended to be used&lt;/em&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const sq = require('sqorn-pg')()
-const kid = sq.from`person`.where`age &amp;lt; 13` 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What’s happening here?! Where are parenthesis? &lt;strong&gt;Is this javascript after all?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;template-strings&quot;&gt;Template strings&lt;/h2&gt;
-
-&lt;p&gt;You should already know the newest way of declaring a string in JS, like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const str = `this is a string!`
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And it is very useful because you can interpolate values inside, witouth concatenating:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var name = 'Michele';
-//es5
-var helloES5 = &quot;Hello, &quot; + name;
-//es6 
-const helloES6 = `Hello ${name}`;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Imagine you have to concatenate 6-7 items in the same sentence… You’ll agree the ES6 version is clearer ;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The nice part of this string declaration is that you can pass strings as arguments to functions without parenthesis:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function hello(name) {
-	console.log(`How are you ${name}`);
-}
-
-// The convention is to write the string right 
-// after the function name...
-hello`Michele` 
-//-&amp;gt; How are you Michele 
-
-//...but you can put a space too 
-hello `Michele `
-//-&amp;gt; How are you Michele
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This syntax doesn’t work with &lt;code&gt;'&lt;/code&gt; or &lt;code&gt;&quot;&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;hello 'Michele'
-//-&amp;gt; SyntaxError: unexpected token: string literal
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;more-power-to-string-templates&quot;&gt;More power to string templates!&lt;/h2&gt;
-
-&lt;p&gt;Studying this syntax I discovered intresting features. For example, functions can extract the variables (ones in &lt;code&gt;${...}&lt;/code&gt;) from the template string:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a = 5;
-var b = 10;
-
-function tag(strings, ...values) {
-  console.log(strings[0]); // &quot;Hello &quot;
-  console.log(strings[1]); // &quot; World &quot;
-  console.log(values[0]);  // 15
-  console.log(values[1]);  // 50
-  
-  return &quot;Bazinga!&quot;;
-}
-
-tag`Hello ${ a + b } World ${ a * b }`;
-// &quot;Bazinga!&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;This stuff is pretty nice but it is a bit obscure. Infact, apart from SQORN, I’ve never seen this syntax used elsewhere. &lt;strong&gt;It’s a nice-to-know feature, good for impressing others, but my suggestion is to use this only if it’s the clearest way to express your concepts.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><summary type="html">Let’s dig in a not-well-publicized ES6 feature: calling functions without using parenthesys.</summary></entry><entry><title type="html">Symbols &amp;amp; Iterators in Javascript</title><link href="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html" rel="alternate" type="text/html" title="Symbols &amp; Iterators in Javascript" /><published>2018-09-04T00:00:00+02:00</published><updated>2018-09-04T16:41:34+02:00</updated><id>https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html">&lt;p&gt;ES6 introduced the new &lt;code&gt;for ... of&lt;/code&gt; syntax to iterate a collection. Did you know? And how does it work?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-09-19T14:58:57+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Symbols &amp;amp; Iterators in Javascript</title><link href="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html" rel="alternate" type="text/html" title="Symbols &amp; Iterators in Javascript" /><published>2018-09-04T00:00:00+02:00</published><updated>2018-09-04T16:41:34+02:00</updated><id>https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html">&lt;p&gt;ES6 introduced the new &lt;code&gt;for ... of&lt;/code&gt; syntax to iterate a collection. Did you know? And how does it work?&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const arr = ['banana', 'apple', 'orange']
 
@@ -797,4 +712,36 @@ app.use(helmet())
   &lt;li&gt;Se i dati che gestisci sono importanti, assumi uno che ne capisce&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Conoscete tool simili a Helmet ma per altri linguaggi? Se si, indicali nei commenti!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="express" /><category term="helmetjs" /><category term="helmet" /><category term="security" /><category term="node" /><summary type="html">Quanto ne capisci di sicurezza informatica? Io molto poco, anzi a dire il vero trovo l’argomento addirittura noioso. Questo non vuol dire che lo sottovaluto: è una di quelle cose che sì, è una palla, ma sì, bisogna trattare l’argomento seriamente.</summary></entry></feed>
+&lt;p&gt;Conoscete tool simili a Helmet ma per altri linguaggi? Se si, indicali nei commenti!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="express" /><category term="helmetjs" /><category term="helmet" /><category term="security" /><category term="node" /><summary type="html">Quanto ne capisci di sicurezza informatica? Io molto poco, anzi a dire il vero trovo l’argomento addirittura noioso. Questo non vuol dire che lo sottovaluto: è una di quelle cose che sì, è una palla, ma sì, bisogna trattare l’argomento seriamente.</summary></entry><entry><title type="html">Cambia la tua vita lavorativa! (partecipando a uno Startup Weekend)</title><link href="https://michelenasti.com/2018/04/23/startup-weekend-salerno-2018.html" rel="alternate" type="text/html" title="Cambia la tua vita lavorativa! (partecipando a uno Startup Weekend) " /><published>2018-04-23T00:00:00+02:00</published><updated>2018-04-24T09:29:36+02:00</updated><id>https://michelenasti.com/2018/04/23/startup-weekend-salerno-2018</id><content type="html" xml:base="https://michelenasti.com/2018/04/23/startup-weekend-salerno-2018.html">&lt;p&gt;Avete la vostra lista di cose nuove da fare ogni anno? Io sinceramente no, ma se l’avessi probabilmente per quest’anno avrei scritto: &lt;strong&gt;partecipare a uno startup weekend&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;l’occasione l’ho avuta già l’anno scorso ma é sfumata a causa di un altro impegno; la curiosità è rimasta e quindi quest’anno ho riservato lo slot: ho annunciato con largo anticipo a moglie e familiari che mi sarei dedicato a quest’esperienza.&lt;/p&gt;
+
+&lt;h2 id=&quot;cosé-uno-startup-weekend&quot;&gt;Cos’é uno startup weekend&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;È un weekend - 54 ore - in cui si lavora intensamente ad un’idea di business&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tutti abbiamo idee che sembrano geniali, ma come fare per sapere se possono avere successo o se sono delle cagate pazzesche?&lt;/p&gt;
+
+&lt;p&gt;In uno startup weekend ci si confronta con coach, mentor, altri partecipanti e l’idea passa attraverso tre fasi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;scoperta&lt;/strong&gt;: l’idea “acchiappa” altri partecipanti, che magari sono venuti senza un’idea propria ma hanno sentito il tuo discorsetto e ti hanno trovato interessante.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;analisi&lt;/strong&gt; del mercato potenziale, dei problemi, dei rischi: attraverso il &lt;strong&gt;business model canvas&lt;/strong&gt; (uno strumento che viene presentato durante il weekend) le idee iniziano a farsi più chiare e si riesce a rispondere anche a domande cruciali, tipo: che problema sto risolvendo? A chi? Come ci farò i soldi?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;pitch&lt;/strong&gt;: senza lilleri non si lallera, ed é per questo che ci si prepara ad uno speech per convincere un investitore a sganciare soldi motivati.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/IMG_20180422_132054.jpg&quot; alt=&quot;mentors, organizzatori, staff, etc etc mentre è in posa per la foto ufficiale (non la mia eh) &quot; title=&quot;Staff Startup Weekend Salerno 2018&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;il-processo&quot;&gt;Il processo&lt;/h2&gt;
+
+&lt;p&gt;Dal punto di vista di un mentor &lt;strong&gt;vedi le idee/cazzate che diventano, lentamente (e faticosamente) progetti di business rispettabili&lt;/strong&gt;: siamo passati da chi voleva fare un’app per combattere la noia a un serio progetto per concentrarsi durante lo studio, o da un’app per viaggi tra sconosciuti ad un’app per organizzare viaggi di gruppo con persone che hanno qualcosa in comune; e ancora: un modo prendersi cura di un animale anche se purtroppo non puoi più tenerlo in casa; un tracking real time per autobus che non lo hanno, e un’app/gioco in cui più cammini, più guadagni. Queste sono solo alcune delle idee che ho avuto il piacere di accompagnare.&lt;/p&gt;
+
+&lt;h2 id=&quot;conta-il-viaggio-non-la-destinazione&quot;&gt;conta il viaggio, non la destinazione&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Con i ragazzi ci sono stati scontri anche duri&lt;/strong&gt;, volti soprattutto a fargli notare le contraddizioni dei loro ragionamenti. Una persona non scarica un’app “perché é annoiato”, oppure un’autolinea di autobus non implementa il tuo sistema di tracking se non gli porti un vantaggio che altri competitor non hanno…&lt;/p&gt;
+
+&lt;p&gt;Con la scusa delle loro idee &lt;strong&gt;i ragazzi hanno acquisito strumenti, come il business model canvas e l’arte del pitching&lt;/strong&gt;, che potranno riutilizzare per i progetti futuri.&lt;/p&gt;
+
+&lt;p&gt;Abbiamo quindi creato futuri milionari? No, a parte una startup che ha validato l’idea sul posto e ha guadagnato i suoi primi 50€ non abbiamo mosso grandi cifre; &lt;strong&gt;ma abbiamo sicuramente dato a dei ragazzi gli strumenti per farsi le domande giuste.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Peccato che questi eventi siano nati molto dopo il mio periodo universitario: &lt;strong&gt;quando ero studente non c’era NIENTE di tutto questo&lt;/strong&gt;, sarebbe stato davvero figo parteciparvi. Conserverò il ricordo della gioia e l’adrenalina di vedere i ragazzi sul palco!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="Startup weekend salerno" /><category term="Startup" /><category term="Sws18" /><category term="Mentor" /><summary type="html">Avete la vostra lista di cose nuove da fare ogni anno? Io sinceramente no, ma se l’avessi probabilmente per quest’anno avrei scritto: partecipare a uno startup weekend.</summary></entry></feed>
