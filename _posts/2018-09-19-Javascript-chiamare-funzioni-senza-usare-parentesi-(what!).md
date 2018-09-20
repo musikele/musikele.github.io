@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Javascript: call functions without using parenthesis (what?!)'
+title: 'Javascript: call functions without using parentheses (what?!)'
 category: English
 layout: post
 date: 2018-09-19 00:00:00 +0200
@@ -12,9 +12,9 @@ header-img: "/images/es6.jpeg"
 description: 'A nice to know feature, good for impressing others '
 
 ---
-Let's dig in a not-well-publicized ES6 feature: calling functions without using parenthesys.
+Let's dig in a not-well-publicized ES6 feature: calling functions without using parentheses.
 
-If you are familiar with Ruby, you know that in Ruby you can omit parenthesis when they're not ambiguous:
+If you are familiar with Ruby, you know that in Ruby you can omit parentheses when they're not ambiguous:
 
 ```ruby
 puts 'hello world' 
@@ -35,7 +35,7 @@ const sq = require('sqorn-pg')()
 const kid = sq.from`person`.where`age < 13` 
 ```
 
-What's happening here?! Where are parenthesis? **Is this javascript after all?**
+What's happening here?! Where are parentheses? **Is this javascript after all?**
 
 ## Template strings
 
@@ -57,7 +57,7 @@ const helloES6 = `Hello ${name}`;
 
 Imagine you have to concatenate 6-7 items in the same sentence... You'll agree the ES6 version is clearer ;)
 
-**The nice part of this string declaration is that you can pass strings as arguments to functions without parenthesis:**
+**The nice part of this string declaration is that you can pass strings as arguments to functions without parentheses:**
 
 ```javascript
 function hello(name) {
@@ -104,4 +104,4 @@ tag`Hello ${ a + b } World ${ a * b }`;
 
 ## Conclusion
 
-This stuff is pretty nice but it is a bit obscure. Infact, apart from SQORN, I've never seen this syntax used elsewhere. **It's a nice-to-know feature, good for impressing others, but my suggestion is to use this only if it's the clearest way to express your concepts.** 
+This stuff is pretty nice but it is a bit obscure. Infact, apart from SQORN, I've never seen this syntax used elsewhere. **It's a nice-to-know feature, good for impressing others, but my suggestion is to use this only if it's the clearest way to express your concepts.**
