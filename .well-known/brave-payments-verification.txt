@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: michelenasti.com
+Token: 2130d5999eef4cfd2e1ca37119167b4086c7fb9d12f0ec345dc1604d382042f3 
