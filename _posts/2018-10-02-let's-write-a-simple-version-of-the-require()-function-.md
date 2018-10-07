@@ -9,7 +9,7 @@ date: 2018-10-02 00:00:00 +0200
 tags:
 - javascript
 - nodejs
-header-img: ''
+header-img: "/images/require.png"
 description: 'NodeJS was the first environment to offer a way to read files and organize
   code in modules, thanks to the require() function. But how does it work? Let''s
   have a look. '
