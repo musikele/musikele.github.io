@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-07T17:35:02+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Javascript: call functions without using parentheses (what?!)</title><link href="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html" rel="alternate" type="text/html" title="Javascript: call functions without using parentheses (what?!)" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-20T09:52:23+02:00</updated><id>https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!)</id><content type="html" xml:base="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html">&lt;p&gt;Let’s dig in a not-well-publicized ES6 feature: calling functions without using parentheses.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-07T18:14:07+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Let’s write our simple version of the require() function</title><link href="https://michelenasti.com/2018/10/02/let's-write-a-simple-version-of-the-require()-function.html" rel="alternate" type="text/html" title="Let's write our simple version of the require() function " /><published>2018-10-02T00:00:00+02:00</published><updated>2018-10-07T18:13:25+02:00</updated><id>https://michelenasti.com/2018/10/02/let's-write-a-simple-version-of-the-require()-function-</id><content type="html" xml:base="https://michelenasti.com/2018/10/02/let's-write-a-simple-version-of-the-require()-function.html">&lt;p&gt;You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.&lt;/p&gt;
+
+&lt;p&gt;In fact, &lt;strong&gt;Javascript is just the language used by many environments&lt;/strong&gt; (the browser, or NodeJS, are examples of environments) that offer more objects and functions to work with.&lt;/p&gt;
+
+&lt;p&gt;Node was the first environment to offer a way to organize code in modules by using a special function called &lt;code&gt;require()&lt;/code&gt;. How does it work? Let’s try to implement it from zero.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of &lt;code&gt;require&lt;/code&gt; at work:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//test.js
+module.exports = &quot;Hello World&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//main.js
+const test = require(&quot;./test.js&quot;); 
+console.log(test) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s write that &lt;code&gt;require&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-should-a-require-function-do&quot;&gt;What should a require() function do&lt;/h2&gt;
+
+&lt;p&gt;a &lt;code&gt;require&lt;/code&gt; function is expected to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;read the content of a javascript file in a string&lt;/li&gt;
+  &lt;li&gt;evaluate that code&lt;/li&gt;
+  &lt;li&gt;save the exported function/object in a cache for later use (only read files once)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h3&gt;
+
+&lt;p&gt;We will not rebuild the whole NodeJS in a single post. In fact, I will not implement many NodeJS checks and giggles, we are only interested in understand how things work.&lt;/p&gt;
+
+&lt;p&gt;We will still need the real &lt;code&gt;require&lt;/code&gt; function to load the &lt;code&gt;fs&lt;/code&gt; module. I’m not cheating, it’s just that this post has to end sooner or later :)&lt;/p&gt;
+
+&lt;h3 id=&quot;myrequire-function&quot;&gt;myRequire() function&lt;/h3&gt;
+
+&lt;p&gt;here’s the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//file setup.js
+
+const fs = require('fs');
+
+myRequire.cache = Object.create(null); //(1)
+
+function myRequire(name) {   
+    if (!(name in myRequire.cache)) {     
+        let code = fs.readFileSync(name, 'utf8'); //(2)
+        let module = {exports: {}}; //(3)
+        myRequire.cache[name] = module; //(4)    
+        let wrapper = Function(&quot;require, exports, module&quot;, code); //(5)
+        wrapper(myRequire, module.exports, module); //(6)
+    }
+    return myRequire.cache[name].exports; //(7)
+}
+
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;did-you-forget-to-declare-myrequire-variable&quot;&gt;Did you forget to declare myRequire variable?&lt;/h3&gt;
+
+&lt;p&gt;No. In Javascript, functions declared with &lt;code&gt;function&lt;/code&gt; keyword are evaluated before any other code (functions are “hoisted”) so they can be referenced even before they’re declared.&lt;/p&gt;
+
+&lt;p&gt;Also, functions can have properties (&lt;em&gt;this is javascript&lt;/em&gt;!) so you can add the &lt;code&gt;cache&lt;/code&gt; property to the &lt;code&gt;myRequire&lt;/code&gt; function &lt;strong&gt;(step 1)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally we’re creating the &lt;code&gt;cache&lt;/code&gt; property with &lt;code&gt;Object.create&lt;/code&gt;. With this function we can specify the object prototype, we have chosen to not specify a prototype. Why? This way we don’t mess with other functions or properties declared by the runtime. &lt;a href=&quot;https://www.reddit.com/r/javascript/comments/5e62us/is_there_a_reason_to_create_an_object_without_a/&quot;&gt;Here’s an explanation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Let’s go back to &lt;code&gt;myRequire&lt;/code&gt; . If the file we’re importing is not in cache, we read the file from disk &lt;strong&gt;(step 2)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then we declare an empty &lt;code&gt;module&lt;/code&gt; object with just one property, &lt;code&gt;exports&lt;/code&gt; &lt;strong&gt;(step 3)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We add this empty module to the cache, using the filename as the key, and then the magic happens &lt;strong&gt;(step 4)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-function-constructor&quot;&gt;The Function constructor&lt;/h2&gt;
+
+&lt;p&gt;In JS we can evaluate a string js code in two ways. The first way is via &lt;code&gt;eval()&lt;/code&gt; function, that is a bit dangerous (it messes up the scope) so it is highly discouraged to use it.&lt;/p&gt;
+
+&lt;p&gt;The second way to evaluate code that we have in a string is via the &lt;code&gt;Function&lt;/code&gt; constructor. This constructor takes a string with the arguments and a string with the code. This way everything has its own scope and doesn’t mess things up for others.&lt;/p&gt;
+
+&lt;p&gt;So, basically we are creating a new function with these variables &lt;strong&gt;(step 5)&lt;/strong&gt;: &lt;code&gt;require&lt;/code&gt;, &lt;code&gt;exports&lt;/code&gt;, and &lt;code&gt;module&lt;/code&gt;. Let’s think for a moment at the first example of this post, the file &lt;code&gt;test.js&lt;/code&gt;: it becomes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function(require, exports, module) {
+  module.exports = &quot;Hello World&quot; 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and the second file, &lt;code&gt;main.js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function(require, exports, module) {
+  const test = require(&quot;./test.js&quot;); 
+  console.log(test) 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Variables that seemed “global” in files are indeed passed as function arguments.&lt;/p&gt;
+
+&lt;h2 id=&quot;last-step-executing-the-function&quot;&gt;Last step: executing the function&lt;/h2&gt;
+
+&lt;p&gt;We have created &lt;strong&gt;(step 6)&lt;/strong&gt; a &lt;code&gt;wrapper&lt;/code&gt; variable that holds a function, but the function is never executed. We do this at the line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;wrapper(myRequire, module.exports, module); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that the second variable (that should be &lt;code&gt;exports&lt;/code&gt;) is just a handle to &lt;code&gt;module.exports&lt;/code&gt;; NodeJS creators thought that this &lt;a href=&quot;https://blog.tableflip.io/the-difference-between-module-exports-and-exports/&quot;&gt;could have helped in writing less code…&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When Node executes the function, everything that was “exported” (your public API) gets linked to the cache.&lt;/p&gt;
+
+&lt;p&gt;(Remember the &lt;code&gt;myRequire.cache[name] = module;&lt;/code&gt; line? When it was first found by the compiler it was point to a dummy &lt;code&gt;{ exports: {} }&lt;/code&gt; object; now it contains your module.)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;NOTE. Since we pass &lt;code&gt;myRequire&lt;/code&gt; to the wrapper function, we can from now on use &lt;code&gt;require&lt;/code&gt; in our test files, but our require gets called. Add a console.log if you don’t trust me ;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Finally… &lt;code&gt;myRequire&lt;/code&gt; returns the &lt;code&gt;export&lt;/code&gt;ed stuff you declared &lt;strong&gt;(step 7)&lt;/strong&gt;, and that we saved to the cache so we won’t have to reevaluate this code again.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-considerations&quot;&gt;Final considerations&lt;/h2&gt;
+
+&lt;p&gt;An example of this code &lt;a href=&quot;https://github.com/musikele/require-example&quot;&gt;can be found here&lt;/a&gt;, along with some console logs that explain what’s going on.&lt;/p&gt;
+
+&lt;p&gt;The idea of this article comes from the &lt;a href=&quot;https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG&quot;&gt;explanation of this function at chapter 10 (Modules)&lt;/a&gt;. The book (&lt;a href=&quot;www.eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;) is excellent, but I had the urge to better understand, and try with a debugger, what I could not understand with my mind alone.&lt;/p&gt;
+
+&lt;p&gt;You should definitely read the book if you want to better understand javascript.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.</summary></entry><entry><title type="html">Javascript: call functions without using parentheses (what?!)</title><link href="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html" rel="alternate" type="text/html" title="Javascript: call functions without using parentheses (what?!)" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-20T09:52:23+02:00</updated><id>https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!)</id><content type="html" xml:base="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html">&lt;p&gt;Let’s dig in a not-well-publicized ES6 feature: calling functions without using parentheses.&lt;/p&gt;
 
 &lt;p&gt;If you are familiar with Ruby, you know that in Ruby you can omit parentheses when they’re not ambiguous:&lt;/p&gt;
 
@@ -738,63 +861,4 @@ lr-x------ 1 root root 64 Jun 19 14:30 9 -&amp;gt; /run/sdk/user.misc.db
 
 &lt;p&gt;In generale &lt;strong&gt;se vi occupate di design a qualsiasi livello (packaging, pubblicità, marketing, web…), questo libro dovrebbe essere nella vostra lista&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=ilblodimicnas-21&amp;amp;o=29&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B00QFIVE8I&amp;amp;linkId=c330ea265a0ba9192f74f16adb252a00&quot;&gt;&lt;/iframe&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="font" /><category term="libro" /><category term="sei proprio il mio typo" /><summary type="html">Questa è la storia di un libro che ho comprato due volte.</summary></entry><entry><title type="html">Proteggi le tue applicazioni Express con HelmetJs</title><link href="https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html" rel="alternate" type="text/html" title="Proteggi le tue applicazioni Express con HelmetJs" /><published>2018-05-06T00:00:00+02:00</published><updated>2018-05-07T13:16:59+02:00</updated><id>https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs</id><content type="html" xml:base="https://michelenasti.com/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html">&lt;p&gt;Quanto ne capisci di sicurezza informatica? Io molto poco, anzi a dire il vero trovo l’argomento addirittura noioso. Questo non vuol dire che lo sottovaluto: è una di quelle cose che sì, è una palla, ma sì, bisogna trattare l’argomento &lt;em&gt;seriamente&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/testuggine-8.jpg&quot; alt=&quot;Testuggine romana&quot; title=&quot;Metti questi tizi a proteggere il tuo server &quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Intorno al mondo della sicurezza informatica esistono addirittura delle figure specifiche (il pentester, ad esempio, che per lavoro deve &lt;em&gt;bucare&lt;/em&gt; i server dei suoi clienti e trovare eventuali falle - per farle correggere!) o comunque interi team devoti alla sicurezza, che si occupano di implementare patch, conoscere gli attacchi più diffusi, capire cosa sta accadendo in tempo reale nella loro rete, etc.&lt;/p&gt;
-
-&lt;p&gt;Tutto questo preambolo per dire: quando realizzi la tua applicazione web &lt;strong&gt;pensi alla sicurezza?&lt;/strong&gt; Se usi NodeJS è molto probabile che hai scritto qualcosa con Express; &lt;strong&gt;ti sei mai preoccupato di sapere se l’app che hai rilasciato in produzione è &lt;em&gt;sicura&lt;/em&gt;?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Ripeto, la sicurezza è una cosa seria e non va abbozzata. Basta installare wordpress pulito su un server custom per scoprire dopo neanche dieci giorni che è stato bucato. Se siete un po’ come me, è probabile che a tutto questo ci pensate alla fine (prima vi rimboccate le maniche per fare in modo che il servizio &lt;em&gt;funzioni&lt;/em&gt;). Come evitare di prendere sottogamba l’argomento?&lt;/p&gt;
-
-&lt;p&gt;L’ideale, per me, è di trovare un middleware per Express che lo agganci e - &lt;em&gt;magia! -&lt;/em&gt; la tua app è più sicura.&lt;/p&gt;
-
-&lt;p&gt;Tale progetto esiste e si chiama &lt;a href=&quot;https://helmetjs.github.io/&quot;&gt;HelmetJS&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/helmetjs.png&quot; alt=&quot;Helmet Logo &quot; title=&quot;Il logo di HelmetJS. Purtroppo esiste solo in bassa qualità&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;come-funziona&quot;&gt;Come funziona&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;HelmetJS&lt;/strong&gt; non fa analisi di ciò che entra o ciò che esce dal tuo sito.&lt;/p&gt;
-
-&lt;p&gt;Quello che invece fa è aggiungere una serie di best practices a Express, alcune che sono semplici regole dettate dal buon senso, e altre che invece dipendono dal contesto.&lt;/p&gt;
-
-&lt;p&gt;Un esempio di regola semplice: rimuvere il tag &lt;code&gt;X-Powered-By&lt;/code&gt; che di default Express setta con nome e versione; questo rende la vita facile a un attacker che può trovare un exploit specifico per il tuo server.&lt;/p&gt;
-
-&lt;p&gt;Altri esempi li trovate cliccando sui vari &lt;a href=&quot;&quot;&gt;link dei sottomoduli&lt;/a&gt; di Helmet, installabili singolarmente.&lt;/p&gt;
-
-&lt;h2 id=&quot;come-si-installa&quot;&gt;Come si installa&lt;/h2&gt;
-
-&lt;p&gt;niente di più semplice, e a me le soluzioni semplici piacciono.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ npm install helmet --save 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Dopodichè si tratta solo di istanziare Helmet nel vostro server e usare il middleware il più in alto possibile:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var express = require('express')
-var helmet = require('helmet')
-
-var app = express()
-
-app.use(helmet())
-
-// ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;mai-più-preoccupazioni&quot;&gt;Mai più preoccupazioni?&lt;/h3&gt;
-
-&lt;p&gt;Non scherziamo. Gli hacker ne sanno una più del diavolo, e non appena un software - sistema - applicativo si diffonde, sfruttano bug sempre più complessi.&lt;/p&gt;
-
-&lt;p&gt;Però bisogna riconoscere che Helmet è un progetto semplice che fa quelle cose che Express avrebbe dovuto fare di suo. Per me, è un &lt;em&gt;mai più senza&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Vi lascio le mie personali regole non scritte (prima d’ora) della sicurezza informatica:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;più una cosa è semplice, più è difficile da bucare&lt;/li&gt;
-  &lt;li&gt;aggiorna sempre tutti i sw, e se non puoi iscriviti alle mailing list di sicurezza dei software che tieni in produzione (così avvisi chi di dovere)&lt;/li&gt;
-  &lt;li&gt;Se i dati che gestisci sono importanti, assumi uno che ne capisce&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Conoscete tool simili a Helmet ma per altri linguaggi? Se si, indicali nei commenti!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="express" /><category term="helmetjs" /><category term="helmet" /><category term="security" /><category term="node" /><summary type="html">Quanto ne capisci di sicurezza informatica? Io molto poco, anzi a dire il vero trovo l’argomento addirittura noioso. Questo non vuol dire che lo sottovaluto: è una di quelle cose che sì, è una palla, ma sì, bisogna trattare l’argomento seriamente.</summary></entry></feed>
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=ilblodimicnas-21&amp;amp;o=29&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B00QFIVE8I&amp;amp;linkId=c330ea265a0ba9192f74f16adb252a00&quot;&gt;&lt;/iframe&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="font" /><category term="libro" /><category term="sei proprio il mio typo" /><summary type="html">Questa è la storia di un libro che ho comprato due volte.</summary></entry></feed>
