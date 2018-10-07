@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Let''s write a simple version of the require() function '
+title: 'Let''s write our simple version of the require() function '
 category: English
 layout: post
 date: 2018-10-02 00:00:00 +0200
@@ -17,7 +17,7 @@ description: 'NodeJS was the first environment to offer a way to read files and 
 ---
 You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.
 
-In fact, Javascript is the language used by many environments (the browser, or NodeJS, are examples of environments) that offer more objects and functions to work with.
+In fact, **Javascript is just the language used by many environments** (the browser, or NodeJS, are examples of environments) that offer more objects and functions to work with.
 
 Node was the first environment to offer a way to organize code in modules by using a special function called `require()`. How does it work? Let's try to implement it from zero.
 
@@ -32,7 +32,6 @@ module.exports = "Hello World";
 //main.js
 const test = require("./test.js"); 
 console.log(test) 
-// -> Hello World 
 ```
 
 Let's write that `require` function.
@@ -53,52 +52,52 @@ We will still need the real `require` function to load the `fs` module. I'm not 
 
 ### myRequire() function
 
-I 'm going to show the code first, then I'll explain what's going on.
+here's the code:
 
 ```javascript
 //file setup.js
 
 const fs = require('fs');
 
-myRequire.cache = Object.create(null); 
+myRequire.cache = Object.create(null); //(1)
 
 function myRequire(name) {   
     if (!(name in myRequire.cache)) {     
-        let code = fs.readFileSync(name, 'utf8');     
-        let module = {exports: {}};
-        myRequire.cache[name] = module;     
-        let wrapper = Function("require, exports, module", code);     
-        wrapper(myRequire, module.exports, module);   
+        let code = fs.readFileSync(name, 'utf8'); //(2)
+        let module = {exports: {}}; //(3)
+        myRequire.cache[name] = module; //(4)    
+        let wrapper = Function("require, exports, module", code); //(5)
+        wrapper(myRequire, module.exports, module); //(6)
     }
-    return myRequire.cache[name].exports;
+    return myRequire.cache[name].exports; //(7)
 }
 
 ...
 ```
 
-## Did you forget to declare myRequire variable?
+### Did you forget to declare myRequire variable?
 
-No. In Javascript, functions declared with `function` keyword are evaluated before any other code ("hoisted") so they can be referenced even before they're declared.
+No. In Javascript, functions declared with `function` keyword are evaluated before any other code (functions are "hoisted") so they can be referenced even before they're declared.
 
-Also, functions can have properties (this is javascript!) so you can add the `cache` property to the `myRequire` function.
+Also, functions can have properties (_this is javascript_!) so you can add the `cache` property to the `myRequire` function **(step 1)**.
 
 Finally we're creating the `cache` property with `Object.create`. With this function we can specify the object prototype, we have chosen to not specify a prototype. Why? This way we don't mess with other functions or properties declared by the runtime. [Here's an explanation](https://www.reddit.com/r/javascript/comments/5e62us/is_there_a_reason_to_create_an_object_without_a/).
 
 ***
 
-Let's go back to `myRequire` . If the file we're importing is not in cache, we read the file from disk.
+Let's go back to `myRequire` . If the file we're importing is not in cache, we read the file from disk **(step 2)**. 
 
-Then we declare an empty `module` object with just one property, `exports`.
+Then we declare an empty `module` object with just one property, `exports` **(step 3)**.
 
-We add this empty module to the cache, using the filename as the key, and then the magic happens.
+We add this empty module to the cache, using the filename as the key, and then the magic happens **(step 4)**.
 
 ## The Function constructor
 
 In JS we can evaluate a string js code in two ways. The first way is via `eval()` function, that is a bit dangerous (it messes up the scope) so it is highly discouraged to use it.
 
-The second way to evaluate code that we have in a string is via the `Function` constructor. This constructor takes a string with the argouments and a string with the code. This way everything has its own scope and doesn't mess things up for others.
+The second way to evaluate code that we have in a string is via the `Function` constructor. This constructor takes a string with the arguments and a string with the code. This way everything has its own scope and doesn't mess things up for others.
 
-So, basically we are creating a new function with these variables: `require`, `exports`, and `module`. Let's think for a moment at the first example of this post, the file `test.js`: it becomes
+So, basically we are creating a new function with these variables **(step 5)**: `require`, `exports`, and `module`. Let's think for a moment at the first example of this post, the file `test.js`: it becomes
 
 ```javascript
 function(require, exports, module) {
@@ -115,11 +114,11 @@ function(require, exports, module) {
 }
 ```
 
-Variables that seemed "global" are indeed passed as function arguments.
+Variables that seemed "global" in files are indeed passed as function arguments.
 
 ## Last step: executing the function
 
-We have created a `wrapper` variable that holds a function, but the function is never executed. We do this at the line:
+We have created **(step 6)** a `wrapper` variable that holds a function, but the function is never executed. We do this at the line:
 
 ```javascript
 wrapper(myRequire, module.exports, module); 
@@ -133,7 +132,7 @@ When Node executes the function, everything that was "exported" (your public API
 
 > NOTE. Since we pass `myRequire` to the wrapper function, we can from now on use `require` in our test files, but our require gets called. Add a console.log if you don't trust me ;)
 
-Finally... `myRequire` returns the `export`ed stuff you declared, and that we saved to the cache so we won't have to reevaluate this code again.
+Finally... `myRequire` returns the `export`ed stuff you declared **(step 7)**, and that we saved to the cache so we won't have to reevaluate this code again.
 
 ## Final considerations
 
