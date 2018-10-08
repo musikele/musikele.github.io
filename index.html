@@ -6,6 +6,9 @@ layout: default
 <div id="main">
   <section>
     {% for post in site.posts limit:10 %}
+    {% if post.show == false %}
+      {% continue %}
+    {% endif %}
     <header class="major">
       <a href="{{ post.url }}">
         <h1>{{ post.title }}</h1>

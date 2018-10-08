@@ -30,6 +30,9 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 	{% include analytics.html %}
 	<link rel="stylesheet" href="{{ "/css/prism.css" | relative_url }}" />
+	{% if page.redirect_to %}
+		<meta http-equiv="refresh" content="0; url={{page.redirect_to}}">
+	{% endif %}
 </head>
 
 <body id="top">
