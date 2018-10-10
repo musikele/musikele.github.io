@@ -5,7 +5,7 @@ author: musikele
 title: Let's write our simple version of the require() function
 category: English
 layout: post
-date: 2018-10-01 00:00:00 +0200
+date: 2018-10-02 00:00:00 +0200
 tags:
 - javascript
 - nodejs
