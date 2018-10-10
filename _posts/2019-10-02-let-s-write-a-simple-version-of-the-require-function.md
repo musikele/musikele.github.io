@@ -2,10 +2,10 @@
 paginate: true
 comments: true
 author: musikele
-title: 'Let''s write our simple version of the require function'
+title: Let's write our simple version of the require() function
 category: English
 layout: post
-date: 2018-10-02 00:00:00 +0200
+date: 2018-10-01 22:00:00 +0000
 tags:
 - javascript
 - nodejs
@@ -85,7 +85,7 @@ Finally we're creating the `cache` property with `Object.create`. With this func
 
 ***
 
-Let's go back to `myRequire` . If the file we're importing is not in cache, we read the file from disk **(step 2)**. 
+Let's go back to `myRequire` . If the file we're importing is not in cache, we read the file from disk **(step 2)**.
 
 Then we declare an empty `module` object with just one property, `exports` **(step 3)**.
 
@@ -138,6 +138,6 @@ Finally... `myRequire` returns the `export`ed stuff you declared **(step 7)**, a
 
 An example of this code [can be found here](https://github.com/musikele/require-example), along with some console logs that explain what's going on.
 
-The idea of this article comes from the [explanation of this function at chapter 10 (Modules)](https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG). The book ([Eloquent Javascript](www.eloquentjavascript.net)) is excellent, but I had the urge to better understand, and try with a debugger, what I could not understand with my mind alone. 
+The idea of this article comes from the [explanation of this function at chapter 10 (Modules)](https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG). The book ([Eloquent Javascript](https://www.eloquentjavascript.net)) is excellent, but I had the urge to better understand, and try with a debugger, what I could not understand with my mind alone.
 
 You should definitely read the book if you want to better understand javascript.
