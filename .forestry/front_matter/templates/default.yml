@@ -64,7 +64,7 @@ fields:
   config:
     required: true
 pages:
-- _posts/dovrei-imparare-ruby-on-rails-o-nodejs.md
+- _posts/2018-10-15-dovrei-imparare-ruby-on-rails-o-nodejs.md
 - _posts/2018-09-19-Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).md
 - _posts/2017-04-08-all-my-articles-about-testing-in-javascript-in-one-post.md
 - _posts/2018-02-02-risultati-sondaggio-i-programmatori-e-i-corsi-di-formazione.md
