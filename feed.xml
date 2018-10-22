@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-21T22:31:40+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Dovrei imparare Ruby on Rails o NodeJS ?</title><link href="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html" rel="alternate" type="text/html" title="Dovrei imparare Ruby on Rails o NodeJS ? " /><published>2018-10-15T00:00:00+02:00</published><updated>2018-10-15T09:44:32+02:00</updated><id>https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">&lt;p&gt;A questo link su Quora c’è la mia risposta alla domanda: &lt;a href=&quot;https://it.quora.com/Dovrei-imparare-Ruby-on-Rails-o-Node-js/answer/Michele-Nasti&quot;&gt;Dovrei imparare Ruby on Rails o NodeJS?&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="ruby on rails" /><category term="ruby" /><category term="nodejs" /><summary type="html">A questo link su Quora c’è la mia risposta alla domanda: Dovrei imparare Ruby on Rails o NodeJS?</summary></entry><entry><title type="html">Let’s write our simple version of the require() function</title><link href="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html" rel="alternate" type="text/html" title="Let's write our simple version of the require() function" /><published>2018-10-02T00:00:00+02:00</published><updated>2018-10-10T11:00:11+02:00</updated><id>https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function</id><content type="html" xml:base="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html">&lt;p&gt;You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-22T21:28:52+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</title><link href="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" rel="alternate" type="text/html" title="Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?" /><published>2018-10-22T00:00:00+02:00</published><updated>2018-10-22T17:48:04+02:00</updated><id>https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">&lt;p&gt;Su Quora ho risposto a questa domanda: &lt;a href=&quot;https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript&quot;&gt;Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Buona lettura :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jquery" /><category term="javascript" /><category term="web" /><summary type="html">Su Quora ho risposto a questa domanda: Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</summary></entry><entry><title type="html">Dovrei imparare Ruby on Rails o NodeJS ?</title><link href="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html" rel="alternate" type="text/html" title="Dovrei imparare Ruby on Rails o NodeJS ? " /><published>2018-10-15T00:00:00+02:00</published><updated>2018-10-15T09:44:32+02:00</updated><id>https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">&lt;p&gt;A questo link su Quora c’è la mia risposta alla domanda: &lt;a href=&quot;https://it.quora.com/Dovrei-imparare-Ruby-on-Rails-o-Node-js/answer/Michele-Nasti&quot;&gt;Dovrei imparare Ruby on Rails o NodeJS?&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="ruby on rails" /><category term="ruby" /><category term="nodejs" /><summary type="html">A questo link su Quora c’è la mia risposta alla domanda: Dovrei imparare Ruby on Rails o NodeJS?</summary></entry><entry><title type="html">Let’s write our simple version of the require() function</title><link href="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html" rel="alternate" type="text/html" title="Let's write our simple version of the require() function" /><published>2018-10-02T00:00:00+02:00</published><updated>2018-10-10T11:00:11+02:00</updated><id>https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function</id><content type="html" xml:base="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html">&lt;p&gt;You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.&lt;/p&gt;
 
 &lt;p&gt;In fact, &lt;strong&gt;Javascript is just the language used by many environments&lt;/strong&gt; (the browser, or NodeJS, are examples of environments) that offer more objects and functions to work with.&lt;/p&gt;
 
@@ -764,58 +766,4 @@ module.exports = {
 
 &lt;p&gt;Ti consiglio questo libro, &lt;a href=&quot;https://amzn.to/2toNoae&quot;&gt;Human centered work&lt;/a&gt;, da cui ho preso le citazioni che hai letto in questo articolo.&lt;/p&gt;
 
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=ilblodimicnas-21&amp;amp;o=29&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=8823836425&amp;amp;linkId=c724d19e9ba8713adb49f1e18311177b&quot;&gt;&lt;/iframe&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="work" /><category term="ufficio" /><summary type="html">Dovreste saperlo un po’ tutti, ormai, che lavoro da remoto. Ai tempi feci questa scelta perchè non ce la facevo più a viaggiare 2 ore della mia vita in un autobus che restava puntualmente imbottigliato nel traffico. Ma il lavoro “tradizionale” è così brutto?</summary></entry><entry><title type="html">Get the list of files blocked by a process in Linux</title><link href="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html" rel="alternate" type="text/html" title="Get the list of files blocked by a process in Linux " /><published>2018-06-19T00:00:00+02:00</published><updated>2018-06-19T19:13:34+02:00</updated><id>https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux</id><content type="html" xml:base="https://michelenasti.com/2018/06/19/get-the-list-of-files-blocked-by-a-process-in-linux.html">&lt;p&gt;Problem: &lt;strong&gt;I had a process using 90% of cpu, couldn’t understand what was going on.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;After seeking the log files and other stuff, I still couldn’t undestand why it was taking so much CPU.&lt;/p&gt;
-
-&lt;p&gt;I decided to give a look at what files are used by this process.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/find-file-linux-code_magnifying_glass_zero-1&quot; alt=&quot;&quot; title=&quot;find files blocked by processes in linux&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;its-so-easy&quot;&gt;It’s so easy&lt;/h2&gt;
-
-&lt;p&gt;first, &lt;strong&gt;find the PID of your process.&lt;/strong&gt; My preferred way to do it is with the command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ps -ef | grep &amp;lt;command_name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;you’ll see an output like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ps -ef | grep &amp;lt;command&amp;gt;
-root     13141     1 69 10:36 ?        02:52:34 /path/to/&amp;lt;command&amp;gt;
-admin    31182 30798  0 14:45 pts/2    00:00:00 grep --color=auto &amp;lt;command&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The pid of this process is &lt;code&gt;13141&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;And now &lt;strong&gt;let’s get the list of files blocked by this process&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ls -al /proc/13141/fd 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The system might ask you to run this command as privileged user, so don’t disregard using &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;output:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;total 0
-dr-x------ 2 root root  0 Jun 19 12:12 .
-dr-xr-xr-x 8 root root  0 Jun 19 10:36 ..
-lrwx------ 1 root root 64 Jun 19 12:12 0 -&amp;gt; /dev/null
-lrwx------ 1 root root 64 Jun 19 12:12 1 -&amp;gt; /dev/null
-lr-x------ 1 root root 64 Jun 19 14:30 10 -&amp;gt; /run/sdk/user.uid.db
-lr-x------ 1 root root 64 Jun 19 14:30 11 -&amp;gt; /run/sdk/user.shadow.db
-lrwx------ 1 root root 64 Jun 19 12:12 2 -&amp;gt; /dev/null
-lrwx------ 1 root root 64 Jun 19 12:12 3 -&amp;gt; socket:[2342197]
-lrwx------ 1 root root 64 Jun 19 12:12 4 -&amp;gt; socket:[2342201]
-lr-x------ 1 root root 64 Jun 19 12:12 5 -&amp;gt; anon_inode:inotify
-lr-x------ 1 root root 64 Jun 19 12:12 6 -&amp;gt; /backup_rsync/backup/20170825-1225/lib/azure-cli/lib/python2.7/site-packages/azure/mgmt/network/v2017_03_01/models
-lr-x------ 1 root root 64 Jun 19 12:12 7 -&amp;gt; /run/sdk/lock/lock_pw
-lr-x------ 1 root root 64 Jun 19 14:30 8 -&amp;gt; /run/sdk/user.name.db
-lr-x------ 1 root root 64 Jun 19 14:30 9 -&amp;gt; /run/sdk/user.misc.db
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Apart from a lot of stuff that seems creepy (&lt;code&gt;/dev/null&lt;/code&gt;, &lt;code&gt;socket:\\\[...\\\]&lt;/code&gt;), I can clearly spot a file used by my process: the one starting with &lt;code&gt;/backup_rsync&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Running this command other two-three times, I understood that it is not hung, it is just scanning every file in my system and checking against a pattern. Very poor design.&lt;/p&gt;
-
-&lt;p&gt;Hope this helps!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="linux" /><category term="shell" /><category term="bash" /><summary type="html">Problem: I had a process using 90% of cpu, couldn’t understand what was going on.</summary></entry></feed>
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=ilblodimicnas-21&amp;amp;o=29&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=8823836425&amp;amp;linkId=c724d19e9ba8713adb49f1e18311177b&quot;&gt;&lt;/iframe&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="work" /><category term="ufficio" /><summary type="html">Dovreste saperlo un po’ tutti, ormai, che lavoro da remoto. Ai tempi feci questa scelta perchè non ce la facevo più a viaggiare 2 ore della mia vita in un autobus che restava puntualmente imbottigliato nel traffico. Ma il lavoro “tradizionale” è così brutto?</summary></entry></feed>
