@@ -54,5 +54,3 @@ $ docker logs -t -f NAME_OF_CONTAINER
 - `logs NAME_OF_CONTAINER` shows you the logs of the container. Without options you see the latest logs and then the propt gets back to your shell. 
 - `-f` works like `-f` in `tail -f`; logs become live. Use `CTRL-C` to exit. 
 - `-t` shows also timestamps. 
-
-![]({{ site.baseurl }}/images/Q9jiI1pL_400x400.jpg)
