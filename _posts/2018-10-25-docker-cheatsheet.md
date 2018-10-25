@@ -2,12 +2,13 @@
 paginate: true
 comments: true
 author: musikele
-title: docker cheatsheet
+title: Docker cheatsheet
 category: English
 layout: post
 date: 2018-10-25 00:00:00 +0200
 tags:
 - docker
+- cheatsheet
 header-img: "/images/Q9jiI1pL_400x400.jpg"
 description: A docker cheatsheet with stuff I learn on the job
 
