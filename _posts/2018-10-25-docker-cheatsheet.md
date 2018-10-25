@@ -27,7 +27,7 @@ $ docker run -i -t ubuntu /bin/bash
 - `ubuntu` is the name of the image to start 
 - `/bin/bash` is the command to launch once the image is started 
 
-In practice: use `-i -t` to read and write from docker.
+In practice: use `-i -t` to read and write from the docker image in the console.
 
 Optional commands: 
 - `--name XXX` assigns the name XXX to the container 
