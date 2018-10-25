@@ -12,7 +12,7 @@ header-img: "/images/Q9jiI1pL_400x400.jpg"
 description: A docker cheatsheet with stuff I learn on the job
 
 ---
-I usually forget everything if I don't use them that much. Here is a brief list of docker commands. 
+I usually forget everything if I don't use it that much. Here is a brief list of docker commands learned on the go.
 
 ## Start a simple container 
 
