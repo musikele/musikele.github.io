@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>Coderdojo a Salerno: la mia esperienza - Michele Nasti's blog</title>
+	<title>docker cheatsheet - Michele Nasti's blog</title>
 	 
-	<meta name="keywords" content="coderdojo, informatica, puntolingue" />  
-	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<meta name="keywords" content="docker" />  
+	<meta http-equiv="last-modified" content="2018-10-25 14:59:22 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="Coderdojo a Salerno: la mia esperienza" property="og:title">
+  <meta content="docker cheatsheet" property="og:title">
 
 
 
@@ -33,29 +33,25 @@
 
 
 
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+  <meta content="A docker cheatsheet with stuff I learn on the job" property="og:description">
 
 
 
-  <meta content="https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/" property="og:url">
+  <meta content="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" property="og:url">
 
 
 
-  <meta content="2015-05-04T20:30:41+02:00" property="article:published_time">
+  <meta content="2018-10-25T00:00:00+02:00" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 
 
 
-<meta content="/img/logo-high-resolution.png" property="og:image">
+<meta content="https://michelenasti.com///images/Q9jiI1pL_400x400.jpg" property="og:image">
 
 
 
   
-  <meta content="coderdojo" property="article:tag">
-  
-  <meta content="informatica" property="article:tag">
-  
-  <meta content="puntolingue" property="article:tag">
+  <meta content="docker" property="article:tag">
   
 
 
@@ -64,16 +60,18 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="Coderdojo a Salerno: la mia esperienza">
+  <meta name="twitter:title" content="docker cheatsheet">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/">
+  <meta name="twitter:url" content="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">
 
 
 
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+  <meta name="twitter:description" content="A docker cheatsheet with stuff I learn on the job">
 
 
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/Q9jiI1pL_400x400.jpg">
 
 	<!--</noscript>-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
@@ -104,56 +102,75 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2015/05/coderdojo-a-salerno-la-mia-esperienza/">Coderdojo a Salerno: la mia esperienza</a></h1>
-			<p class="post-meta">May 4, 2015 • musikele</p>
+			<h1 class="post-title"><a href="/2018/10/25/docker-cheatsheet.html">docker cheatsheet</a></h1>
+			<p class="post-meta">Oct 25, 2018 • musikele</p>
 		</header>
 
 		<section>
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&text=Coderdojo a Salerno: la mia esperienza:%20https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Coderdojo a Salerno: la mia esperienza) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&title=Coderdojo a Salerno: la mia esperienza&summary=&source=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&text=docker cheatsheet:%20https://michelenasti.com/2018/10/25/docker-cheatsheet.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(docker cheatsheet) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&title=docker cheatsheet&summary=&source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 			
-			<p>Qualche giorno fa è stato organizzato un secondo appuntamento del <a href="http://www.coderdojoitalia.org/">CoderDojo</a> a Salerno, presso la sede di Puntolingue sul primo binario della stazione FS.</p>
+			<p>I usually forget everything if I don’t use them that much. Here is a brief list of docker commands.</p>
 
-<p>Cos’è il CoderDojo? E’ un evento dedicato ai ragazzi dai 10 ai 13 anni in cui si insegna a programmare, grazie ad un linguaggio di programmazione completamente visuale chiamato <a href="https://scratch.mit.edu/">Scratch</a>.</p>
+<h2 id="start-a-simple-container">Start a simple container</h2>
 
-<p>Ieri l’amico Raf (@duplikey) ha tenuto lui la “lezione” e io ho provato a fare da aiutante: il mio ruolo è stato di aiutare i ragazzini che sono rimasti indietro, o che avevano un dubbio, o che volevano andare “oltre”.</p>
-
-<p>Due parole sul tool: Scratch è un linguaggio di programmazione completamente visuale con cui é facilissimo realizzare videogiochi 2D. Le istruzioni sono blocchi di codice che si spostano col mouse per comporre programmi simili a diagrammi di flusso.</p>
-
-<p>E così ieri abbiamo realizzato, tra tanti altri esempi, il simpatico giochino del gatto e del topo. Quando il gatto catturava il topolino, che si muoveva in maniera casuale, il punteggio si incrementava e il topolino scompariva per riapparire da qualche altra parte.</p>
-
-<p>Esempi di domande che mi hanno fatto:</p>
+<pre><code class="language-bash">$ docker run -i -t ubuntu /bin/bash
+</code></pre>
 
 <ul>
-  <li>
-    <p>“io premo Freccia Su ma il gatto va a destra”</p>
-  </li>
-  <li>
-    <p>“come faccio a far scomparire l’aereo in un buco nero?”</p>
-  </li>
-  <li>
-    <p>“la palla quando tocca la barra l’attraversa al posto di rimbalzare..”</p>
-  </li>
+  <li><code>run</code> runs the <code>ubuntu</code> image</li>
+  <li><code>-i</code> allows you to write to the container (“Keep STDIN open even if not attached”)</li>
+  <li><code>-t</code> allocates a pseudoTTY and allows to read from the container</li>
+  <li><code>ubuntu</code> is the name of the image to start</li>
+  <li><code>/bin/bash</code> is the command to launch once the image is started</li>
 </ul>
 
-<p>-“ come azzero il punteggio se ricomincio la partita? “</p>
+<p>In practice: use <code>-i -t</code> to read and write from docker.</p>
 
-<p>Insomma i ragazzi ci vanno dentro, dopo un po’ prendono iniziativa e tirano fuori di tutto. C’è chi ha realizzato (o vuole realizzare)  una versione multi-player di pong, chi invece ha realizzato il gioco del gatto e del topo (uno dei nostri esempi) con 40 topi e 15 gatti (tweakando il programma). Poca giocabilità ma massimo divertimento!</p>
+<p>Optional commands:</p>
+<ul>
+  <li><code>--name XXX</code> assigns the name XXX to the container</li>
+  <li><code>-d</code> launches the container as a daemon</li>
+  <li><code>-c XXX</code> passes XXX to the command. In our example the command is <code>/bin/bash</code>. With -c we can pass any kind of commands; for example <code>-c "while true; do echo hello world; sleep 1; done"</code>. Docker would pass this string t bash and the container would print hello world every second without stopping. Note the quotes.</li>
+</ul>
 
-<p>Insomma sono rimasto colpito dal fatto che in sole 2 ore i ragazzi, seppur guidati, hanno realizzato almeno un videogiochino completo. Dispiace solo per un ragazzo che chiedeva di fare giochi di macchine per il padre (e per la playstation). Vaglielo a spiegare che si arriva per gradi a certe cose… Dovrà partecipare a qualche CoderDojo in più per raggiungere i suoi obiettivi 😉</p>
+<h2 id="see-containers-status">See containers status</h2>
+
+<pre><code class="language-bash">$ docker ps -a 
+</code></pre>
+
+<ul>
+  <li><code>ps</code> alone prints only the active containers</li>
+  <li><code>-a</code> shows also the exited containers</li>
+</ul>
+
+<h2 id="see-container-logs">See container logs</h2>
+
+<p>If the container is started as daemon you might want to see the output.</p>
+
+<pre><code class="language-bash">$ docker logs -t -f NAME_OF_CONTAINER 
+</code></pre>
+
+<ul>
+  <li><code>logs NAME_OF_CONTAINER</code> shows you the logs of the container. Without options you see the latest logs and then the propt gets back to your shell.</li>
+  <li><code>-f</code> works like <code>-f</code> in <code>tail -f</code>; logs become live. Use <code>CTRL-C</code> to exit.</li>
+  <li><code>-t</code> shows also timestamps.</li>
+</ul>
+
+<p><img src="/images/Q9jiI1pL_400x400.jpg" alt="" /></p>
  
 			
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&text=Coderdojo a Salerno: la mia esperienza:%20https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Coderdojo a Salerno: la mia esperienza) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/&title=Coderdojo a Salerno: la mia esperienza&summary=&source=https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&text=docker cheatsheet:%20https://michelenasti.com/2018/10/25/docker-cheatsheet.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(docker cheatsheet) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&title=docker cheatsheet&summary=&source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -1206,6 +1223,12 @@
     
 
     
+        <div class="col-4">
+        <h5><a href="/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/">Ho provato la prossima versione di Eclipse (web-based) per voi <span class="label label-default">docker</span> </a></h5>
+        </div>
+        
+         
+    
 
 
 
@@ -1565,6 +1588,12 @@
 
     
 
+    
+        <div class="col-4">
+        <h5><a href="/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/">Tools that don't explain themselves clearly will not be used <span class="label label-default">docker</span> </a></h5>
+        </div>
+        
+         
     
 
 
@@ -1745,26 +1774,6 @@
             <h5><a href="/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/">Tools that don't explain themselves clearly will not be used</a></h5>
         </div>
     
-        
-        
-        
-        
-        
-
-        <div class="col-4">
-            <h5><a href="/2015/04/how-would-you-call-your-bleeding-edge-stuff-framework-in-all-programming-languages-and-platforms/">How would you call your bleeding-edge Stuff framework in all programming languages and platforms?</a></h5>
-        </div>
-    
-        
-        
-        
-        
-        
-
-        <div class="col-4">
-            <h5><a href="/2015/06/imovie-50-error/">iMovie and the -50 error</a></h5>
-        </div>
-    
 
 
 </div>
@@ -1782,8 +1791,8 @@
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/';
-			var disqus_identifier = 'https://michelenasti.com/2015/05/coderdojo-a-salerno-la-mia-esperienza/';
+			var disqus_url = 'https://michelenasti.com/2018/10/25/docker-cheatsheet.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/10/25/docker-cheatsheet.html';
 
     };
     
@@ -1803,37 +1812,20 @@ s.setAttribute('data-timestamp', +new Date());
 
     <div class="6u 12u(small) excerpt" id="previousArticle">
         <header>
-            <h2><a href="/2015/04/la-libreria-js-del-giorno-elevator-js/">due risate con la libreria JS del giorno: Elevator.JS</a></h2>
+            <h2><a href="/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</a></h2>
         </header>
         <section>
-            <p>Non voglio perdermi in chiacchiere: alzate il volume e, nel caso, mettete le cuffie.</p>
+            <p>Su Quora ho risposto a questa domanda: <a href="https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</a></p>
 
 
         </section>
         <div>
             <ul class="actions">
-                <li><a href="/2015/04/la-libreria-js-del-giorno-elevator-js/" class="button">Read More</a></li>
+                <li><a href="/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" class="button">Read More</a></li>
             </ul>
         </div>
     </div>
      
-
-    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-        <header>
-            <h2><a href="/2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/">convertire label in camelCase o CONSTANT_CASE con IntelliJ e String Manipulation</a></h2>
-        </header>
-        <section>
-            <p><a href="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/05/string-manipulation.gif"><img class="alignleft wp-image-291 size-medium" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/05/string-manipulation-300x139.gif?fit=300%2C139" alt="string-manipulation" data-recalc-dims="1" /></a></p>
-
-
-        </section>
-        <div>
-            <ul class="actions">
-                <li><a href="//2015/05/convertire-label-in-camelcase-o-constant_case-con-intellij-e-string-manipulation/" class="button">Read More</a></li>
-            </ul>
-        </div>
-    </div>
-    
 </div>
 		</footer>
 

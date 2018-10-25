@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-25T12:11:10+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</title><link href="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" rel="alternate" type="text/html" title="Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?" /><published>2018-10-22T00:00:00+02:00</published><updated>2018-10-22T17:48:04+02:00</updated><id>https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">&lt;p&gt;Su Quora ho risposto a questa domanda: &lt;a href=&quot;https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript&quot;&gt;Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-25T15:00:49+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">docker cheatsheet</title><link href="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" rel="alternate" type="text/html" title="docker cheatsheet" /><published>2018-10-25T00:00:00+02:00</published><updated>2018-10-25T14:59:22+02:00</updated><id>https://michelenasti.com/2018/10/25/docker-cheatsheet</id><content type="html" xml:base="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">&lt;p&gt;I usually forget everything if I don’t use them that much. Here is a brief list of docker commands.&lt;/p&gt;
+
+&lt;h2 id=&quot;start-a-simple-container&quot;&gt;Start a simple container&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker run -i -t ubuntu /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;run&lt;/code&gt; runs the &lt;code&gt;ubuntu&lt;/code&gt; image&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-i&lt;/code&gt; allows you to write to the container (“Keep STDIN open even if not attached”)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-t&lt;/code&gt; allocates a pseudoTTY and allows to read from the container&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ubuntu&lt;/code&gt; is the name of the image to start&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;/bin/bash&lt;/code&gt; is the command to launch once the image is started&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In practice: use &lt;code&gt;-i -t&lt;/code&gt; to read and write from docker.&lt;/p&gt;
+
+&lt;p&gt;Optional commands:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;--name XXX&lt;/code&gt; assigns the name XXX to the container&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-d&lt;/code&gt; launches the container as a daemon&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-c XXX&lt;/code&gt; passes XXX to the command. In our example the command is &lt;code&gt;/bin/bash&lt;/code&gt;. With -c we can pass any kind of commands; for example &lt;code&gt;-c &quot;while true; do echo hello world; sleep 1; done&quot;&lt;/code&gt;. Docker would pass this string t bash and the container would print hello world every second without stopping. Note the quotes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;see-containers-status&quot;&gt;See containers status&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker ps -a 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;ps&lt;/code&gt; alone prints only the active containers&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; shows also the exited containers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;see-container-logs&quot;&gt;See container logs&lt;/h2&gt;
+
+&lt;p&gt;If the container is started as daemon you might want to see the output.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker logs -t -f NAME_OF_CONTAINER 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;logs NAME_OF_CONTAINER&lt;/code&gt; shows you the logs of the container. Without options you see the latest logs and then the propt gets back to your shell.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-f&lt;/code&gt; works like &lt;code&gt;-f&lt;/code&gt; in &lt;code&gt;tail -f&lt;/code&gt;; logs become live. Use &lt;code&gt;CTRL-C&lt;/code&gt; to exit.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-t&lt;/code&gt; shows also timestamps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Q9jiI1pL_400x400.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="docker" /><summary type="html">I usually forget everything if I don’t use them that much. Here is a brief list of docker commands.</summary></entry><entry><title type="html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</title><link href="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" rel="alternate" type="text/html" title="Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?" /><published>2018-10-22T00:00:00+02:00</published><updated>2018-10-22T17:48:04+02:00</updated><id>https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">&lt;p&gt;Su Quora ho risposto a questa domanda: &lt;a href=&quot;https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript&quot;&gt;Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Buona lettura :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jquery" /><category term="javascript" /><category term="web" /><summary type="html">Su Quora ho risposto a questa domanda: Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</summary></entry><entry><title type="html">Dovrei imparare Ruby on Rails o NodeJS ?</title><link href="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html" rel="alternate" type="text/html" title="Dovrei imparare Ruby on Rails o NodeJS ? " /><published>2018-10-15T00:00:00+02:00</published><updated>2018-10-15T09:44:32+02:00</updated><id>https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">&lt;p&gt;A questo link su Quora c’è la mia risposta alla domanda: &lt;a href=&quot;https://it.quora.com/Dovrei-imparare-Ruby-on-Rails-o-Node-js/answer/Michele-Nasti&quot;&gt;Dovrei imparare Ruby on Rails o NodeJS?&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="ruby on rails" /><category term="ruby" /><category term="nodejs" /><summary type="html">A questo link su Quora c’è la mia risposta alla domanda: Dovrei imparare Ruby on Rails o NodeJS?</summary></entry><entry><title type="html">Let’s write our simple version of the require() function</title><link href="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html" rel="alternate" type="text/html" title="Let's write our simple version of the require() function" /><published>2018-10-02T00:00:00+02:00</published><updated>2018-10-10T11:00:11+02:00</updated><id>https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function</id><content type="html" xml:base="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html">&lt;p&gt;You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.&lt;/p&gt;
 
@@ -699,71 +746,4 @@ module.exports = {
 
 &lt;p&gt;Even my bosses think that the documentation is helping them in expanding the product to new potential  customers.&lt;/p&gt;
 
-&lt;p&gt;I feel proud that my job is helping the company and customers to reach their respective goals. I really enjoy working for public products!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Documentation" /><category term="Work" /><summary type="html">What makes a product a great product?</summary></entry><entry><title type="html">Come creare luoghi di lavoro in cui é bello recarsi</title><link href="https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html" rel="alternate" type="text/html" title="Come creare luoghi di lavoro in cui é bello recarsi" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T10:38:45+02:00</updated><id>https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi</id><content type="html" xml:base="https://michelenasti.com/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html">&lt;p&gt;Dovreste saperlo un po’ tutti, ormai, che &lt;strong&gt;lavoro da remoto&lt;/strong&gt;. Ai tempi feci questa scelta perchè non ce la facevo più a viaggiare 2 ore della mia vita in un autobus che restava puntualmente imbottigliato nel traffico. Ma &lt;strong&gt;il lavoro “tradizionale” è così brutto?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Estremizziamo: ha senso, nel 2018, parlare ancora di uffici? E’ plausibile prevedere che &lt;em&gt;nel 2030 lavoreremo tutti da casa?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Ho conosciuto molte persone che sono felici di andare a lavoro&lt;/strong&gt;, che amano la compagnia dei colleghi, e che si trovano bene col proprio capo. Per queste persone i soldi non sono importanti (ma guadagnano quanto basta per vivere felicemente).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Recarsi per 200 giorni all’anno in un posto in cui devi trascorrerci almeno 8 ore, e non trovarsi bene, è un suicidio morale.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Quello che quindi consiglio al tuo boss è: &lt;strong&gt;rendi l’ufficio un posto in cui i tuoi dipendenti VOGLIONO andare!&lt;/strong&gt; (…E non dove &lt;em&gt;devono&lt;/em&gt; andare). Vediamo come.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Indoor-Garden-For-Office-Building-2013-Glass-Ceiling-With-Steel-And-Wooden-Frame-Design.jpg&quot; alt=&quot;&quot; title=&quot;Figo un ufficio così, vero?&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Se le caffetterie hanno giocato un ruolo fondamentale nell’Illuminismo, quanto è importante lo spazio dove si lavora nel decretare il successo dei nostri progetti?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;E’ probabile che nell’Illuminismo non avevano possibilità di sperimentare col lavoro da remoto, ma &lt;strong&gt;grandi compagnie che guidano il futuro&lt;/strong&gt; (Google, Apple…) &lt;strong&gt;si sono apertamente schierate contro il remote working&lt;/strong&gt; (e a favore dello smark working, e di questo ne parleremo in un altro articolo). &lt;strong&gt;L’obiettivo è di favorire la comunicazione e lo scambio di idee, e il lavoro da remoto sembra essere un ostacolo.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;serve molto di più per creare un posto dove le idee migliori emergano, dove si possa essere produttivi e, soprattutto, a proprio agio.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Non basta una sede con biliardini e tavoli da ping pong&lt;/strong&gt;: nelle sedi in cui ho visto queste cose, i dipendenti hanno candidamente ammesso che non li usano per non disturbare gli altri. Il cambio deve essere culturale!&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ci siano essenzialmente due motivi per cui lavorare sotto lo stesso tetto sia di valore: stringere legami e creare idee.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;L’uomo è animale sociale, e se sei un tipo solitario, &lt;strong&gt;i colleghi saranno le persone che vedrai di più (non può farti che bene)&lt;/strong&gt;. I legami che si stringono con i colleghi possono durare più del rapporto di lavoro. E all’inizio della carriera i più esperti possono farti da mentore e aiutarti nelle scelte e a diventare più bravo.&lt;/p&gt;
-
-&lt;p&gt;Ma la cosa più interessante è il creare idee. Ci piace pensare che il &lt;em&gt;genio&lt;/em&gt; esca all’improvviso, magari in sogno, o più semplicemente mentre si sta facendo altro e si viene folgorati da un’intuizione. Invece sembra che le idee nascano in modi profondamente diversi; &lt;strong&gt;le connessioni casuali con persone che hanno altre idee genera un mix di confusione e chiarezza che porta a ciò che chiamiamo creatività&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;due-parole-sul-caffè&quot;&gt;Due parole sul caffè&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Quando vuoi parlare con un collega, è molto probabile che tu gli dica “andiamoci a prendere un caffè”.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/caffe-distributore-automatico-ufficio_-672x351.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;E’ stato dimostrato che le chiacchierate al distributore (o alla macchinetta del caffè) sono &lt;a href=&quot;https://www.nytimes.com/2012/07/15/jobs/group-breaks-can-raise-workplace-productivity.html&quot;&gt;fondamentali per aumentare la produttività&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Come scusa? Ma alla macchinetta del caffè non si cazzeggia?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;No(n solo), alla macchinetta del caffè si cazzeggia pure, ma più spesso si chiacchiera dei progetti in corso, si chiede aiuto per superare un ostacolo.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;se avete introdotto policy per ridurre durata e frequenza delle pause caffè in azienda, c’è il rischio che stiate mettendo i bastoni fra le ruote all’innovazione!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;la-ricetta-per-lambiente-di-lavoro-perfetto&quot;&gt;La ricetta per l’ambiente di lavoro perfetto&lt;/h2&gt;
-
-&lt;p&gt;Non ce l’ho, ma posso provare a raccontare i miei desiderata:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Niente regole su come e quando andare alla macchinetta del caffè.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Niente regole sulle cuffiette&lt;/strong&gt;. I programmatori hanno bisogno di lunghe ore di concentrazione per entrare “in the zone”.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Organizza cene&lt;/strong&gt;, uscite, viaggi, visite con l’ufficio. Coinvolgi le famiglie. (Ne bastano un paio all’anno!)&lt;/li&gt;
-  &lt;li&gt;Se possibile, &lt;strong&gt;prevedi un parcheggio aziendale&lt;/strong&gt;. I mezzi di trasporto non sono eccellenti (e puntuali) in tutte le città del mondo!&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Aiuta le persone a tirare fuori idee nuove&lt;/strong&gt; sul prodotto, sull’ufficio, sull’organizzazione. &lt;strong&gt;Ascolta tutti&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Investi sulla formazione&lt;/strong&gt;. Non significa solo mandare la gente ai corsi. Significa comprare libri, ascoltare loro in che direzione vogliono andare con la loro specializzazione, e soprattutto &lt;strong&gt;dargli il tempo di studiare durante l’orario di lavoro&lt;/strong&gt;. Su questo punto tornerò in un altro articolo perchè è determinante anche per l’innovazione interna.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;I dipendenti sono l’asset che vale di più, non farlo svalutare!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;se-ti-piace-questo-argomento&quot;&gt;Se ti piace questo argomento…&lt;/h2&gt;
-
-&lt;p&gt;Ti consiglio questo libro, &lt;a href=&quot;https://amzn.to/2toNoae&quot;&gt;Human centered work&lt;/a&gt;, da cui ho preso le citazioni che hai letto in questo articolo.&lt;/p&gt;
-
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=ilblodimicnas-21&amp;amp;o=29&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=8823836425&amp;amp;linkId=c724d19e9ba8713adb49f1e18311177b&quot;&gt;&lt;/iframe&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="lavoro" /><category term="work" /><category term="ufficio" /><summary type="html">Dovreste saperlo un po’ tutti, ormai, che lavoro da remoto. Ai tempi feci questa scelta perchè non ce la facevo più a viaggiare 2 ore della mia vita in un autobus che restava puntualmente imbottigliato nel traffico. Ma il lavoro “tradizionale” è così brutto?</summary></entry></feed>
+&lt;p&gt;I feel proud that my job is helping the company and customers to reach their respective goals. I really enjoy working for public products!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Documentation" /><category term="Work" /><summary type="html">What makes a product a great product?</summary></entry></feed>
