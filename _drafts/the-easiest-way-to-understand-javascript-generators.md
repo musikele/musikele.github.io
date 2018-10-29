@@ -17,25 +17,25 @@ description: 'Let''s have a look at generator functions in JS. '
 ---
 **Generators in Javascript are functions that return an iterator**.
 
-But what is a generator in JS? 
+But what is a generator in JS?
 
- **Generators** are functions declared with the keyword `function*`. 
+**Generators** are functions declared with the keyword `function*`.
 
-## What do you mean with "iterator"? 
+## What do you mean with "iterator"?
 
-The _iterator_ is a design pattern usually already implemented in many programming languages. It is a **data structure that allows you to _iterate_ (read one by one) over the elements of the data structure.** 
+The _iterator_ is a design pattern usually already implemented in many programming languages. It is a **data structure that allows you to _iterate_ (read one by one) over the elements of the data structure.**
 
-It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over the vertex of a graph, or a tree :) We'll not talk about how to design iterators for complex data structures btw. 
+It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over the vertex of a graph, or a tree :) We'll not talk about how to design iterators for complex data structures btw.
 
 ## An Iterator example in plain Javascript
 
-An iterator obeys to these rules: 
+An iterator obeys to these rules:
 
 * The iterator must return a function that returns an object, containing a `next()` function.
 * This `next()` function, in turn, returns an object with two properties, `value` (the actual element of the iteration) and `done` (set to `true` when the iteration has ended, `false` otherwise).
 * This function is attached to the property `myObj[Symbol.iterator]` .
 
-Here is an example iterator for an array: 
+Here is an example iterator for an array:
 
 ```javascript
 Array.prototype[Symbol.iterator] = function() {
@@ -53,7 +53,7 @@ Array.prototype[Symbol.iterator] = function() {
 }
 ```
 
-Let's try this in the nodejs console... 
+Let's try this in the nodejs console...
 
 ```javascript
 > let iterator = [1,3,5,7,9][Symbol.iterator]()
@@ -74,19 +74,19 @@ undefined
 { value: undefined, done: true }
 ```
 
-> Warning! This code does not do anything if the original array changes; also if you call `next()` when `done` is true it becomes false, can you spot why? 
+> Warning! This code does not do anything if the original array changes; also if you call `next()` when `done` is true it becomes false, can you spot why?
 
 I've already discussed this issue in [more detail in another article](https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html "Symbols & Iterators in Javascript "); there you'll find other examples and more explanations!
 
-## Iterators written this way are not funny 
+## This is not funny
 
-Come on, nobody wants to write a functions that returns an object with a next property that returns a value. 
+nobody wants to write a functions that returns an object with a next property that returns a value.
 
-That's why the Javascript community has invented the generators syntax. 
+That's why the Javascript community has invented the generators syntax.
 
-A generator is declared this way: `function* myGenerator {}` and it will return an iterator. 
+A generator is declared this way: `function* myGenerator {}` and it will return an iterator.
 
-Let's rewrite the preceeding example with generators: 
+Let's rewrite the preceeding example with generators:
 
 ```javascript
 Array.prototype[Symbol.iterator] = function*() {
