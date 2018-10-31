@@ -96,4 +96,63 @@ Array.prototype[Symbol.iterator] = function*() {
 }
 ```
 
-asdasd
+You know that Promises interrupt the function execution, and when the promise resolves, the flow returns to the point it was left.
+
+It comes out that not only Promises but also Generators can interrupt the execution flow: when we return a value via the  `yield` keyword, the generator function gets paused until it is called again.
+
+Is this working?
+
+```javascript
+$ node  
+> Array.prototype[Symbol.iterator] = function*() {
+...   for (let i = 0; i < this.length; i++) {
+.....     yield this[i];
+.....   }
+... }
+[GeneratorFunction]
+> const iterator = [1,2,3,4,5][Symbol.iterator]() // calling the function
+undefined
+> iterator
+Object [Generator] {}
+> iterator.next()
+{ value: 1, done: false }
+> iterator.next()
+{ value: 2, done: false }
+> iterator.next()
+{ value: 3, done: false }
+> iterator.next()
+{ value: 4, done: false }
+> iterator.next()
+{ value: 5, done: false }
+> iterator.next()
+{ value: undefined, done: true }
+```
+
+Yes, it works!!!
+
+## But why Iterators are important
+
+JS uses iterators in `for ... of` loops, so if the object after the `of` contains an iterator, you can iterate over all the elements of the object.
+
+Check? Check!
+
+```javascript
+> for (element of [1,2,3,4,5]) console.log(element)
+1
+2
+3
+4
+5
+```
+
+It works!
+
+## What else you need to know
+
+`yield` must be in generator functions, but you cannot put `yield` in  subfunctions, or in promises results, asyncs, etc.
+
+## Ready to use it ?
+
+Generators are widely supported by all major/modern browsers, **except for IE**.
+
+A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.
