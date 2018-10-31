@@ -12,7 +12,7 @@
 	<title>The easiest way to understand Javascript Generators - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="javascript, es6, nodejs, generators" />  
-	<meta http-equiv="last-modified" content="2018-10-31 15:15:42 +0100" /> 
+	<meta http-equiv="last-modified" content="2018-10-31 15:47:43 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -123,17 +123,15 @@
 			
 			<p><strong>Generators in Javascript are functions that return an iterator</strong>.</p>
 
-<p>But what is a generator in JS?</p>
-
 <p><strong>Generators</strong> are functions declared with the keyword <code>function*</code>.</p>
 
 <h2 id="what-do-you-mean-with-iterator">What do you mean with “iterator”?</h2>
 
-<p>The <em>iterator</em> is a design pattern usually already implemented in many programming languages. It is a <strong>data structure that allows you to <em>iterate</em> (read one by one) over the elements of the data structure.</strong></p>
+<p>The <em>iterator</em> is a design pattern usually already implemented in other programming languages. It is a <strong>data structure that allows you to <em>iterate</em> (read one by one) over the elements of the data structure.</strong></p>
 
-<p>It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over the vertex of a graph, or a tree :) We’ll not talk about how to design iterators for complex data structures btw.</p>
+<p>It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over a graph, or a tree.</p>
 
-<h2 id="an-iterator-example-in-plain-javascript">An Iterator example in plain Javascript</h2>
+<h2 id="an-iterator-example-in-plain-javascript-no-generators-here">An Iterator example in plain Javascript (no generators here)</h2>
 
 <p>An iterator obeys to these rules:</p>
 
@@ -153,7 +151,7 @@
         	i++;
         	return {
             	value: clone[i],
-            	done: i == clone.length
+            	done: i &gt;= clone.length
             }
         }
     }
@@ -180,19 +178,15 @@ undefined
 { value: undefined, done: true }
 </code></pre>
 
-<blockquote>
-  <p>Warning! This code does not do anything if the original array changes; also if you call <code>next()</code> when <code>done</code> is true it becomes false, can you spot why?</p>
-</blockquote>
+<p>I’ve already discussed this issue in <a href="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html" title="Symbols &amp; Iterators in Javascript ">in another article</a>; there you’ll find other examples and more explanations!</p>
 
-<p>I’ve already discussed this issue in <a href="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html" title="Symbols &amp; Iterators in Javascript ">more detail in another article</a>; there you’ll find other examples and more explanations!</p>
+<h2 id="iterators-are-not-funny">Iterators are not funny.</h2>
 
-<h2 id="this-is-not-funny">This is not funny</h2>
+<p>Nobody wants to write a functions that returns an object with a next property that returns a value.</p>
 
-<p>nobody wants to write a functions that returns an object with a next property that returns a value.</p>
+<p>That’s why the Javascript community has introduced the generators syntax.</p>
 
-<p>That’s why the Javascript community has invented the generators syntax.</p>
-
-<p>A generator is declared this way: <code>function* myGenerator {}</code> and it will return an iterator.</p>
+<p>A generator is declared this way: <code>function* myGenerator {}</code> and this will return an iterator.</p>
 
 <p>Let’s rewrite the preceeding example with generators:</p>
 
@@ -205,9 +199,9 @@ undefined
 
 <p>You know that Promises interrupt the function execution, and when the promise resolves, the flow returns to the point it was left.</p>
 
-<p>It comes out that not only Promises but also Generators can interrupt the execution flow: when we return a value via the  <code>yield</code> keyword, the generator function gets paused until it is called again.</p>
+<p><strong>Not only Promises but also Generators can interrupt the execution flow</strong>: when we return a value via the  <code>yield</code> keyword, the generator function gets paused until it’s called again.</p>
 
-<p>Is this working?</p>
+<p>Does it work?</p>
 
 <pre><code class="language-javascript">$ node  
 &gt; Array.prototype[Symbol.iterator] = function*() {
@@ -216,7 +210,7 @@ undefined
 .....   }
 ... }
 [GeneratorFunction]
-&gt; const iterator = [1,2,3,4,5][Symbol.iterator]() // calling the function
+&gt; const iterator = [1,2,3,4,5][Symbol.iterator]() //calling!
 undefined
 &gt; iterator
 Object [Generator] {}
@@ -240,9 +234,8 @@ Object [Generator] {}
 
 <p>JS uses iterators in <code>for ... of</code> loops, so if the object after the <code>of</code> contains an iterator, you can iterate over all the elements of the object.</p>
 
-<p>Check? Check!</p>
-
-<pre><code class="language-javascript">&gt; for (element of [1,2,3,4,5]) console.log(element)
+<pre><code class="language-javascript">&gt; // The array here is using the iterator defined before...
+&gt; for (element of [1,2,3,4,5]) console.log(element)
 1
 2
 3
@@ -254,7 +247,7 @@ Object [Generator] {}
 
 <h2 id="what-else-you-need-to-know">What else you need to know</h2>
 
-<p><code>yield</code> must be in generator functions, but you cannot put <code>yield</code> in  subfunctions, or in promises results, asyncs, etc.</p>
+<p><code>yield</code> must be in generator functions; you cannot put <code>yield</code> in  subfunctions, or in promises results, asyncs, etc.</p>
 
 <h2 id="ready-to-use-it-">Ready to use it ?</h2>
 

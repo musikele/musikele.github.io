@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-31T15:17:39+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">The easiest way to understand Javascript Generators</title><link href="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" rel="alternate" type="text/html" title="The easiest way to understand Javascript Generators" /><published>2018-10-29T00:00:00+01:00</published><updated>2018-10-31T15:15:42+01:00</updated><id>https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators</id><content type="html" xml:base="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">&lt;p&gt;&lt;strong&gt;Generators in Javascript are functions that return an iterator&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;But what is a generator in JS?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-31T15:50:41+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">The easiest way to understand Javascript Generators</title><link href="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" rel="alternate" type="text/html" title="The easiest way to understand Javascript Generators" /><published>2018-10-29T00:00:00+01:00</published><updated>2018-10-31T15:47:43+01:00</updated><id>https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators</id><content type="html" xml:base="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">&lt;p&gt;&lt;strong&gt;Generators in Javascript are functions that return an iterator&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Generators&lt;/strong&gt; are functions declared with the keyword &lt;code&gt;function*&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-do-you-mean-with-iterator&quot;&gt;What do you mean with “iterator”?&lt;/h2&gt;
 
-&lt;p&gt;The &lt;em&gt;iterator&lt;/em&gt; is a design pattern usually already implemented in many programming languages. It is a &lt;strong&gt;data structure that allows you to &lt;em&gt;iterate&lt;/em&gt; (read one by one) over the elements of the data structure.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;iterator&lt;/em&gt; is a design pattern usually already implemented in other programming languages. It is a &lt;strong&gt;data structure that allows you to &lt;em&gt;iterate&lt;/em&gt; (read one by one) over the elements of the data structure.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over the vertex of a graph, or a tree :) We’ll not talk about how to design iterators for complex data structures btw.&lt;/p&gt;
+&lt;p&gt;It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over a graph, or a tree.&lt;/p&gt;
 
-&lt;h2 id=&quot;an-iterator-example-in-plain-javascript&quot;&gt;An Iterator example in plain Javascript&lt;/h2&gt;
+&lt;h2 id=&quot;an-iterator-example-in-plain-javascript-no-generators-here&quot;&gt;An Iterator example in plain Javascript (no generators here)&lt;/h2&gt;
 
 &lt;p&gt;An iterator obeys to these rules:&lt;/p&gt;
 
@@ -30,7 +28,7 @@
         	i++;
         	return {
             	value: clone[i],
-            	done: i == clone.length
+            	done: i &amp;gt;= clone.length
             }
         }
     }
@@ -57,19 +55,15 @@ undefined
 { value: undefined, done: true }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Warning! This code does not do anything if the original array changes; also if you call &lt;code&gt;next()&lt;/code&gt; when &lt;code&gt;done&lt;/code&gt; is true it becomes false, can you spot why?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I’ve already discussed this issue in &lt;a href=&quot;https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html&quot; title=&quot;Symbols &amp;amp; Iterators in Javascript &quot;&gt;in another article&lt;/a&gt;; there you’ll find other examples and more explanations!&lt;/p&gt;
 
-&lt;p&gt;I’ve already discussed this issue in &lt;a href=&quot;https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html&quot; title=&quot;Symbols &amp;amp; Iterators in Javascript &quot;&gt;more detail in another article&lt;/a&gt;; there you’ll find other examples and more explanations!&lt;/p&gt;
+&lt;h2 id=&quot;iterators-are-not-funny&quot;&gt;Iterators are not funny.&lt;/h2&gt;
 
-&lt;h2 id=&quot;this-is-not-funny&quot;&gt;This is not funny&lt;/h2&gt;
+&lt;p&gt;Nobody wants to write a functions that returns an object with a next property that returns a value.&lt;/p&gt;
 
-&lt;p&gt;nobody wants to write a functions that returns an object with a next property that returns a value.&lt;/p&gt;
+&lt;p&gt;That’s why the Javascript community has introduced the generators syntax.&lt;/p&gt;
 
-&lt;p&gt;That’s why the Javascript community has invented the generators syntax.&lt;/p&gt;
-
-&lt;p&gt;A generator is declared this way: &lt;code&gt;function* myGenerator {}&lt;/code&gt; and it will return an iterator.&lt;/p&gt;
+&lt;p&gt;A generator is declared this way: &lt;code&gt;function* myGenerator {}&lt;/code&gt; and this will return an iterator.&lt;/p&gt;
 
 &lt;p&gt;Let’s rewrite the preceeding example with generators:&lt;/p&gt;
 
@@ -82,9 +76,9 @@ undefined
 
 &lt;p&gt;You know that Promises interrupt the function execution, and when the promise resolves, the flow returns to the point it was left.&lt;/p&gt;
 
-&lt;p&gt;It comes out that not only Promises but also Generators can interrupt the execution flow: when we return a value via the  &lt;code&gt;yield&lt;/code&gt; keyword, the generator function gets paused until it is called again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not only Promises but also Generators can interrupt the execution flow&lt;/strong&gt;: when we return a value via the  &lt;code&gt;yield&lt;/code&gt; keyword, the generator function gets paused until it’s called again.&lt;/p&gt;
 
-&lt;p&gt;Is this working?&lt;/p&gt;
+&lt;p&gt;Does it work?&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;$ node  
 &amp;gt; Array.prototype[Symbol.iterator] = function*() {
@@ -93,7 +87,7 @@ undefined
 .....   }
 ... }
 [GeneratorFunction]
-&amp;gt; const iterator = [1,2,3,4,5][Symbol.iterator]() // calling the function
+&amp;gt; const iterator = [1,2,3,4,5][Symbol.iterator]() //calling!
 undefined
 &amp;gt; iterator
 Object [Generator] {}
@@ -117,9 +111,8 @@ Object [Generator] {}
 
 &lt;p&gt;JS uses iterators in &lt;code&gt;for ... of&lt;/code&gt; loops, so if the object after the &lt;code&gt;of&lt;/code&gt; contains an iterator, you can iterate over all the elements of the object.&lt;/p&gt;
 
-&lt;p&gt;Check? Check!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; for (element of [1,2,3,4,5]) console.log(element)
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; // The array here is using the iterator defined before...
+&amp;gt; for (element of [1,2,3,4,5]) console.log(element)
 1
 2
 3
@@ -131,7 +124,7 @@ Object [Generator] {}
 
 &lt;h2 id=&quot;what-else-you-need-to-know&quot;&gt;What else you need to know&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;yield&lt;/code&gt; must be in generator functions, but you cannot put &lt;code&gt;yield&lt;/code&gt; in  subfunctions, or in promises results, asyncs, etc.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yield&lt;/code&gt; must be in generator functions; you cannot put &lt;code&gt;yield&lt;/code&gt; in  subfunctions, or in promises results, asyncs, etc.&lt;/p&gt;
 
 &lt;h2 id=&quot;ready-to-use-it-&quot;&gt;Ready to use it ?&lt;/h2&gt;
 
