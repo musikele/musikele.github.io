@@ -1,4 +1,143 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-31T14:46:20+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Docker cheatsheet</title><link href="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" rel="alternate" type="text/html" title="Docker cheatsheet" /><published>2018-10-25T00:00:00+02:00</published><updated>2018-10-25T15:04:09+02:00</updated><id>https://michelenasti.com/2018/10/25/docker-cheatsheet</id><content type="html" xml:base="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">&lt;p&gt;I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-10-31T15:17:39+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">The easiest way to understand Javascript Generators</title><link href="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" rel="alternate" type="text/html" title="The easiest way to understand Javascript Generators" /><published>2018-10-29T00:00:00+01:00</published><updated>2018-10-31T15:15:42+01:00</updated><id>https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators</id><content type="html" xml:base="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">&lt;p&gt;&lt;strong&gt;Generators in Javascript are functions that return an iterator&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But what is a generator in JS?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Generators&lt;/strong&gt; are functions declared with the keyword &lt;code&gt;function*&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-do-you-mean-with-iterator&quot;&gt;What do you mean with “iterator”?&lt;/h2&gt;
+
+&lt;p&gt;The &lt;em&gt;iterator&lt;/em&gt; is a design pattern usually already implemented in many programming languages. It is a &lt;strong&gt;data structure that allows you to &lt;em&gt;iterate&lt;/em&gt; (read one by one) over the elements of the data structure.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over the vertex of a graph, or a tree :) We’ll not talk about how to design iterators for complex data structures btw.&lt;/p&gt;
+
+&lt;h2 id=&quot;an-iterator-example-in-plain-javascript&quot;&gt;An Iterator example in plain Javascript&lt;/h2&gt;
+
+&lt;p&gt;An iterator obeys to these rules:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The iterator must return a function that returns an object, containing a &lt;code&gt;next()&lt;/code&gt; function.&lt;/li&gt;
+  &lt;li&gt;This &lt;code&gt;next()&lt;/code&gt; function, in turn, returns an object with two properties, &lt;code&gt;value&lt;/code&gt; (the actual element of the iteration) and &lt;code&gt;done&lt;/code&gt; (set to &lt;code&gt;true&lt;/code&gt; when the iteration has ended, &lt;code&gt;false&lt;/code&gt; otherwise).&lt;/li&gt;
+  &lt;li&gt;This function is attached to the property &lt;code&gt;myObj[Symbol.iterator]&lt;/code&gt; .&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is an example iterator for an array:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Array.prototype[Symbol.iterator] = function() {
+	const clone = this.slice(0); // clones the original array
+    let i = -1; // iterating index; 
+  	return {
+    	next() {
+        	i++;
+        	return {
+            	value: clone[i],
+            	done: i == clone.length
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s try this in the nodejs console…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; let iterator = [1,3,5,7,9][Symbol.iterator]()
+undefined
+&amp;gt; iterator
+{ next: [Function: next] }
+&amp;gt; iterator.next()
+{ value: 1, done: false }
+&amp;gt; iterator.next()
+{ value: 3, done: false }
+&amp;gt; iterator.next()
+{ value: 5, done: false }
+&amp;gt; iterator.next()
+{ value: 7, done: false }
+&amp;gt; iterator.next()
+{ value: 9, done: false }
+&amp;gt; iterator.next()
+{ value: undefined, done: true }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Warning! This code does not do anything if the original array changes; also if you call &lt;code&gt;next()&lt;/code&gt; when &lt;code&gt;done&lt;/code&gt; is true it becomes false, can you spot why?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I’ve already discussed this issue in &lt;a href=&quot;https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html&quot; title=&quot;Symbols &amp;amp; Iterators in Javascript &quot;&gt;more detail in another article&lt;/a&gt;; there you’ll find other examples and more explanations!&lt;/p&gt;
+
+&lt;h2 id=&quot;this-is-not-funny&quot;&gt;This is not funny&lt;/h2&gt;
+
+&lt;p&gt;nobody wants to write a functions that returns an object with a next property that returns a value.&lt;/p&gt;
+
+&lt;p&gt;That’s why the Javascript community has invented the generators syntax.&lt;/p&gt;
+
+&lt;p&gt;A generator is declared this way: &lt;code&gt;function* myGenerator {}&lt;/code&gt; and it will return an iterator.&lt;/p&gt;
+
+&lt;p&gt;Let’s rewrite the preceeding example with generators:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Array.prototype[Symbol.iterator] = function*() {
+  for (let i = 0; i &amp;lt; this.length; i++) {
+    yield this[i];
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You know that Promises interrupt the function execution, and when the promise resolves, the flow returns to the point it was left.&lt;/p&gt;
+
+&lt;p&gt;It comes out that not only Promises but also Generators can interrupt the execution flow: when we return a value via the  &lt;code&gt;yield&lt;/code&gt; keyword, the generator function gets paused until it is called again.&lt;/p&gt;
+
+&lt;p&gt;Is this working?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;$ node  
+&amp;gt; Array.prototype[Symbol.iterator] = function*() {
+...   for (let i = 0; i &amp;lt; this.length; i++) {
+.....     yield this[i];
+.....   }
+... }
+[GeneratorFunction]
+&amp;gt; const iterator = [1,2,3,4,5][Symbol.iterator]() // calling the function
+undefined
+&amp;gt; iterator
+Object [Generator] {}
+&amp;gt; iterator.next()
+{ value: 1, done: false }
+&amp;gt; iterator.next()
+{ value: 2, done: false }
+&amp;gt; iterator.next()
+{ value: 3, done: false }
+&amp;gt; iterator.next()
+{ value: 4, done: false }
+&amp;gt; iterator.next()
+{ value: 5, done: false }
+&amp;gt; iterator.next()
+{ value: undefined, done: true }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yes, it works!!!&lt;/p&gt;
+
+&lt;h2 id=&quot;but-why-iterators-are-important&quot;&gt;But why Iterators are important&lt;/h2&gt;
+
+&lt;p&gt;JS uses iterators in &lt;code&gt;for ... of&lt;/code&gt; loops, so if the object after the &lt;code&gt;of&lt;/code&gt; contains an iterator, you can iterate over all the elements of the object.&lt;/p&gt;
+
+&lt;p&gt;Check? Check!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; for (element of [1,2,3,4,5]) console.log(element)
+1
+2
+3
+4
+5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It works!&lt;/p&gt;
+
+&lt;h2 id=&quot;what-else-you-need-to-know&quot;&gt;What else you need to know&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;yield&lt;/code&gt; must be in generator functions, but you cannot put &lt;code&gt;yield&lt;/code&gt; in  subfunctions, or in promises results, asyncs, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;ready-to-use-it-&quot;&gt;Ready to use it ?&lt;/h2&gt;
+
+&lt;p&gt;Generators are widely supported by all major/modern browsers, &lt;strong&gt;except for IE&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><category term="nodejs" /><category term="generators" /><summary type="html">Generators in Javascript are functions that return an iterator.</summary></entry><entry><title type="html">Docker cheatsheet</title><link href="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" rel="alternate" type="text/html" title="Docker cheatsheet" /><published>2018-10-25T00:00:00+02:00</published><updated>2018-10-25T15:04:09+02:00</updated><id>https://michelenasti.com/2018/10/25/docker-cheatsheet</id><content type="html" xml:base="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">&lt;p&gt;I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.&lt;/p&gt;
 
 &lt;h2 id=&quot;start-a-simple-container&quot;&gt;Start a simple container&lt;/h2&gt;
 
@@ -665,83 +804,4 @@ module.exports = {
 
 &lt;p&gt;The good thing about this approach is that you can even mix the two things or swap them altogether.&lt;/p&gt;
 
-&lt;p&gt;Happy coding with your configurations ;)&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="nodejs" /><category term="configuration" /><category term="laravel" /><summary type="html">Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:</summary></entry><entry><title type="html">Designing the documentation for a tech product</title><link href="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html" rel="alternate" type="text/html" title="Designing the documentation for a tech product" /><published>2018-07-10T00:00:00+02:00</published><updated>2018-07-10T23:21:29+02:00</updated><id>https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product</id><content type="html" xml:base="https://michelenasti.com/2018/07/10/designing-the-documentation-for-a-tech-product.html">&lt;p&gt;What makes a product a &lt;em&gt;great&lt;/em&gt; product?&lt;/p&gt;
-
-&lt;p&gt;one might say the &lt;strong&gt;features&lt;/strong&gt;, others may say the &lt;strong&gt;ease of using&lt;/strong&gt; these features writing less code, with more throughput, etc.&lt;/p&gt;
-
-&lt;p&gt;I agree with this definition; everyday in my job I use tools that can deploy rockets to the moon and others that can at most change the color of a text. But let me tell you how I choose my lethal weapons: by their &lt;strong&gt;documentation&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/documentation.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;one-of-the-last-things-a-developer-thinks-about&quot;&gt;One of the last things a developer thinks about&lt;/h2&gt;
-
-&lt;p&gt;you write a fantastic tool that automatizes a part of your job and you think it might be useful for others, too. What do you do?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Put on github&lt;/li&gt;
-  &lt;li&gt;Write a simple Readme.md&lt;/li&gt;
-  &lt;li&gt;Wait for people coming&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And nobody comes. Or, people coming will just watch and pass by, preferring another older tool with less features.&lt;/p&gt;
-
-&lt;p&gt;To spread your product as much as possible you have to impersonate your users and think like them. In your Readme you have to write &lt;em&gt;at least&lt;/em&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;What does this tool do&lt;/li&gt;
-  &lt;li&gt;How&lt;/li&gt;
-  &lt;li&gt;What do you need to start/install the tool&lt;/li&gt;
-  &lt;li&gt;How to configure it&lt;/li&gt;
-  &lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This applies to commercial tools too, infact &lt;strong&gt;it is the last free thing you can do to spread your product&lt;/strong&gt; - marketing costs money!&lt;/p&gt;
-
-&lt;h2 id=&quot;my-job-for-the-last-two-years&quot;&gt;My job for the last two years&lt;/h2&gt;
-
-&lt;p&gt;In my last two years I’ve worked (and still working) for a very big digital product. (I have worked also on other things, but this has been one of my exclusive tasks). I started with knowing nothing about it, and now I know it better than anyone else.&lt;/p&gt;
-
-&lt;p&gt;My job? Designing the documentation website. I had to explain to a complete ignorant, like myself, how to use this product to obtain any possible goal.&lt;/p&gt;
-
-&lt;p&gt;It was not an easy journey: for example, available documentation was written in &lt;em&gt;pdf&lt;/em&gt; or &lt;em&gt;doc&lt;/em&gt; documents, not the best solution in 2016. And not all the documentation was publicly accessible.&lt;/p&gt;
-
-&lt;p&gt;The product is old: it started in 1999 and still kicks asses!&lt;/p&gt;
-
-&lt;p&gt;The product is big: competitors don’t have many features this product has.&lt;/p&gt;
-
-&lt;p&gt;So: what’s the job?&lt;/p&gt;
-
-&lt;h2 id=&quot;my-solution-two-websites-for-one-documentation&quot;&gt;My solution: two websites for one documentation&lt;/h2&gt;
-
-&lt;p&gt;I’ve decided to create two websites:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The first one explains, in current English, every possible feature in the form of a tutorial. Many topics are explored in sections (for example there’s the &lt;em&gt;security&lt;/em&gt; section).&lt;/li&gt;
-  &lt;li&gt;The second website contains just the APIs and explains, for every API, what every field does. It also contains examples of requests and responses.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The first website was made using &lt;a href=&quot;Https://jekyllrb.com&quot;&gt;jekyll&lt;/a&gt;; the second was created using a tool called &lt;a href=&quot;https://github.com/lord/slate&quot;&gt;Slate&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In the first website I think I have covered everything: form how to sign up to how to handle custom configurations.&lt;/p&gt;
-
-&lt;p&gt;Every API referenced in the jekyll documentation is linked to the slate one, so a user can easily dive in details.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-most-difficult-part&quot;&gt;The most difficult part&lt;/h2&gt;
-
-&lt;p&gt;Architecturing the whole solution was the toughest job.&lt;/p&gt;
-
-&lt;p&gt;I had to be sure everything was clear enough for newcomers, and also clear for experienced customers.&lt;/p&gt;
-
-&lt;p&gt;I had to organize stuff into chapters, sections, remembering where and when I was going to talk about a topic and to link it in the future.&lt;/p&gt;
-
-&lt;p&gt;Then, the job of actually writing the documentation was easy (and a little bit boring!) because the most difficult part was already done.&lt;/p&gt;
-
-&lt;p&gt;I’ve not mentioned other technical aspects: allow users to search the docs, deploy a beta version of the docs for internal and review purposes, handle versions…&lt;/p&gt;
-
-&lt;h2 id=&quot;feedbacks&quot;&gt;Feedbacks&lt;/h2&gt;
-
-&lt;p&gt;During my job I have talked to many people who has read “my” documentation. They told me it was extremely clear and they loved the examples, it made the whole thing more readable.&lt;/p&gt;
-
-&lt;p&gt;Even my bosses think that the documentation is helping them in expanding the product to new potential  customers.&lt;/p&gt;
-
-&lt;p&gt;I feel proud that my job is helping the company and customers to reach their respective goals. I really enjoy working for public products!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Documentation" /><category term="Work" /><summary type="html">What makes a product a great product?</summary></entry></feed>
+&lt;p&gt;Happy coding with your configurations ;)&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="nodejs" /><category term="configuration" /><category term="laravel" /><summary type="html">Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:</summary></entry></feed>

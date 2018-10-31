@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>The easiest way to understand Javascript Generators - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="javascript, es6, nodejs, generators" />  
+	<meta http-equiv="last-modified" content="2018-10-31 15:15:42 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="The easiest way to understand Javascript Generators" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Let's have a look at generator functions in JS. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" property="og:url">
+
+
+
+  <meta content="2018-10-29T00:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/81TfpvWrBRL._SL1500_.jpg" property="og:image">
+
+
+
+  
+  <meta content="javascript" property="article:tag">
+  
+  <meta content="es6" property="article:tag">
+  
+  <meta content="nodejs" property="article:tag">
+  
+  <meta content="generators" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="The easiest way to understand Javascript Generators">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">
+
+
+
+  <meta name="twitter:description" content="Let's have a look at generator functions in JS. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/81TfpvWrBRL._SL1500_.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+	
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">The easiest way to understand Javascript Generators</a></h1>
+			<p class="post-meta">Oct 29, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&text=The easiest way to understand Javascript Generators:%20https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(The easiest way to understand Javascript Generators) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&title=The easiest way to understand Javascript Generators&summary=&source=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p><strong>Generators in Javascript are functions that return an iterator</strong>.</p>
+
+<p>But what is a generator in JS?</p>
+
+<p><strong>Generators</strong> are functions declared with the keyword <code>function*</code>.</p>
+
+<h2 id="what-do-you-mean-with-iterator">What do you mean with “iterator”?</h2>
+
+<p>The <em>iterator</em> is a design pattern usually already implemented in many programming languages. It is a <strong>data structure that allows you to <em>iterate</em> (read one by one) over the elements of the data structure.</strong></p>
+
+<p>It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over the vertex of a graph, or a tree :) We’ll not talk about how to design iterators for complex data structures btw.</p>
+
+<h2 id="an-iterator-example-in-plain-javascript">An Iterator example in plain Javascript</h2>
+
+<p>An iterator obeys to these rules:</p>
+
+<ul>
+  <li>The iterator must return a function that returns an object, containing a <code>next()</code> function.</li>
+  <li>This <code>next()</code> function, in turn, returns an object with two properties, <code>value</code> (the actual element of the iteration) and <code>done</code> (set to <code>true</code> when the iteration has ended, <code>false</code> otherwise).</li>
+  <li>This function is attached to the property <code>myObj[Symbol.iterator]</code> .</li>
+</ul>
+
+<p>Here is an example iterator for an array:</p>
+
+<pre><code class="language-javascript">Array.prototype[Symbol.iterator] = function() {
+	const clone = this.slice(0); // clones the original array
+    let i = -1; // iterating index; 
+  	return {
+    	next() {
+        	i++;
+        	return {
+            	value: clone[i],
+            	done: i == clone.length
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Let’s try this in the nodejs console…</p>
+
+<pre><code class="language-javascript">&gt; let iterator = [1,3,5,7,9][Symbol.iterator]()
+undefined
+&gt; iterator
+{ next: [Function: next] }
+&gt; iterator.next()
+{ value: 1, done: false }
+&gt; iterator.next()
+{ value: 3, done: false }
+&gt; iterator.next()
+{ value: 5, done: false }
+&gt; iterator.next()
+{ value: 7, done: false }
+&gt; iterator.next()
+{ value: 9, done: false }
+&gt; iterator.next()
+{ value: undefined, done: true }
+</code></pre>
+
+<blockquote>
+  <p>Warning! This code does not do anything if the original array changes; also if you call <code>next()</code> when <code>done</code> is true it becomes false, can you spot why?</p>
+</blockquote>
+
+<p>I’ve already discussed this issue in <a href="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html" title="Symbols &amp; Iterators in Javascript ">more detail in another article</a>; there you’ll find other examples and more explanations!</p>
+
+<h2 id="this-is-not-funny">This is not funny</h2>
+
+<p>nobody wants to write a functions that returns an object with a next property that returns a value.</p>
+
+<p>That’s why the Javascript community has invented the generators syntax.</p>
+
+<p>A generator is declared this way: <code>function* myGenerator {}</code> and it will return an iterator.</p>
+
+<p>Let’s rewrite the preceeding example with generators:</p>
+
+<pre><code class="language-javascript">Array.prototype[Symbol.iterator] = function*() {
+  for (let i = 0; i &lt; this.length; i++) {
+    yield this[i];
+  }
+}
+</code></pre>
+
+<p>You know that Promises interrupt the function execution, and when the promise resolves, the flow returns to the point it was left.</p>
+
+<p>It comes out that not only Promises but also Generators can interrupt the execution flow: when we return a value via the  <code>yield</code> keyword, the generator function gets paused until it is called again.</p>
+
+<p>Is this working?</p>
+
+<pre><code class="language-javascript">$ node  
+&gt; Array.prototype[Symbol.iterator] = function*() {
+...   for (let i = 0; i &lt; this.length; i++) {
+.....     yield this[i];
+.....   }
+... }
+[GeneratorFunction]
+&gt; const iterator = [1,2,3,4,5][Symbol.iterator]() // calling the function
+undefined
+&gt; iterator
+Object [Generator] {}
+&gt; iterator.next()
+{ value: 1, done: false }
+&gt; iterator.next()
+{ value: 2, done: false }
+&gt; iterator.next()
+{ value: 3, done: false }
+&gt; iterator.next()
+{ value: 4, done: false }
+&gt; iterator.next()
+{ value: 5, done: false }
+&gt; iterator.next()
+{ value: undefined, done: true }
+</code></pre>
+
+<p>Yes, it works!!!</p>
+
+<h2 id="but-why-iterators-are-important">But why Iterators are important</h2>
+
+<p>JS uses iterators in <code>for ... of</code> loops, so if the object after the <code>of</code> contains an iterator, you can iterate over all the elements of the object.</p>
+
+<p>Check? Check!</p>
+
+<pre><code class="language-javascript">&gt; for (element of [1,2,3,4,5]) console.log(element)
+1
+2
+3
+4
+5
+</code></pre>
+
+<p>It works!</p>
+
+<h2 id="what-else-you-need-to-know">What else you need to know</h2>
+
+<p><code>yield</code> must be in generator functions, but you cannot put <code>yield</code> in  subfunctions, or in promises results, asyncs, etc.</p>
+
+<h2 id="ready-to-use-it-">Ready to use it ?</h2>
+
+<p>Generators are widely supported by all major/modern browsers, <strong>except for IE</strong>.</p>
+
+<p>A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&text=The easiest way to understand Javascript Generators:%20https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(The easiest way to understand Javascript Generators) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html&title=The easiest way to understand Javascript Generators&summary=&source=https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript? <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">Dovrei imparare Ruby on Rails o NodeJS ?  <span class="label label-default">nodejs</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html">Let's write our simple version of the require() function <span class="label label-default">javascript</span>  <span class="label label-default">nodejs</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html">Javascript: call functions without using parentheses (what?!) <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/10/25/docker-cheatsheet.html">Docker cheatsheet</a></h2>
+        </header>
+        <section>
+            <p>I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/10/25/docker-cheatsheet.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
