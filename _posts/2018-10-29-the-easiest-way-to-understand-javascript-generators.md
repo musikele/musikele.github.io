@@ -17,17 +17,15 @@ description: 'Let''s have a look at generator functions in JS. '
 ---
 **Generators in Javascript are functions that return an iterator**.
 
-But what is a generator in JS?
-
 **Generators** are functions declared with the keyword `function*`.
 
 ## What do you mean with "iterator"?
 
-The _iterator_ is a design pattern usually already implemented in many programming languages. It is a **data structure that allows you to _iterate_ (read one by one) over the elements of the data structure.**
+The _iterator_ is a design pattern usually already implemented in other programming languages. It is a **data structure that allows you to _iterate_ (read one by one) over the elements of the data structure.**
 
-It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over the vertex of a graph, or a tree :) We'll not talk about how to design iterators for complex data structures btw.
+It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over a graph, or a tree. 
 
-## An Iterator example in plain Javascript
+## An Iterator example in plain Javascript (no generators here) 
 
 An iterator obeys to these rules:
 
@@ -46,7 +44,7 @@ Array.prototype[Symbol.iterator] = function() {
         	i++;
         	return {
             	value: clone[i],
-            	done: i == clone.length
+            	done: i >= clone.length
             }
         }
     }
@@ -74,17 +72,15 @@ undefined
 { value: undefined, done: true }
 ```
 
-> Warning! This code does not do anything if the original array changes; also if you call `next()` when `done` is true it becomes false, can you spot why?
+I've already discussed this issue in [in another article](https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html "Symbols & Iterators in Javascript "); there you'll find other examples and more explanations!
 
-I've already discussed this issue in [more detail in another article](https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html "Symbols & Iterators in Javascript "); there you'll find other examples and more explanations!
+## Iterators are not funny.
 
-## This is not funny
+Nobody wants to write a functions that returns an object with a next property that returns a value.
 
-nobody wants to write a functions that returns an object with a next property that returns a value.
+That's why the Javascript community has introduced the generators syntax.
 
-That's why the Javascript community has invented the generators syntax.
-
-A generator is declared this way: `function* myGenerator {}` and it will return an iterator.
+A generator is declared this way: `function* myGenerator {}` and this will return an iterator.
 
 Let's rewrite the preceeding example with generators:
 
@@ -98,9 +94,9 @@ Array.prototype[Symbol.iterator] = function*() {
 
 You know that Promises interrupt the function execution, and when the promise resolves, the flow returns to the point it was left.
 
-It comes out that not only Promises but also Generators can interrupt the execution flow: when we return a value via the  `yield` keyword, the generator function gets paused until it is called again.
+**Not only Promises but also Generators can interrupt the execution flow**: when we return a value via the  `yield` keyword, the generator function gets paused until it's called again.
 
-Is this working?
+Does it work? 
 
 ```javascript
 $ node  
@@ -110,7 +106,7 @@ $ node
 .....   }
 ... }
 [GeneratorFunction]
-> const iterator = [1,2,3,4,5][Symbol.iterator]() // calling the function
+> const iterator = [1,2,3,4,5][Symbol.iterator]() //calling!
 undefined
 > iterator
 Object [Generator] {}
@@ -134,9 +130,8 @@ Yes, it works!!!
 
 JS uses iterators in `for ... of` loops, so if the object after the `of` contains an iterator, you can iterate over all the elements of the object.
 
-Check? Check!
-
 ```javascript
+> // The array here is using the iterator defined before...
 > for (element of [1,2,3,4,5]) console.log(element)
 1
 2
@@ -149,7 +144,7 @@ It works!
 
 ## What else you need to know
 
-`yield` must be in generator functions, but you cannot put `yield` in  subfunctions, or in promises results, asyncs, etc.
+`yield` must be in generator functions; you cannot put `yield` in  subfunctions, or in promises results, asyncs, etc.
 
 ## Ready to use it ?
 
