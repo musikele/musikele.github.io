@@ -10,7 +10,7 @@ permalink: talks-conferences/
 ---
 In questa pagina cercherò di tenere traccia dei talk che ho tenuto nel corso degli anni.
 
-* [A gentle introduction to VueJS](https://www.eventbrite.com/e/devday-napoli-a-gentle-introduction-to-vuejs-tickets-51400226461), DevDay Napoli, 31/10/2018
+* [A gentle introduction to VueJS](https://www.eventbrite.com/e/devday-napoli-a-gentle-introduction-to-vuejs-tickets-51400226461), DevDay Napoli, 31/10/2018 ([slides](https://docs.google.com/presentation/d/18PNQZr8jCx6gRD-CXYou1XQ5O01OOpcLTgRK9Lpq9nU/edit?usp=sharing))
 * Perché il tuo prossimo lavoro é una 💩, [Linux Day Salerno](Http://linuxdaysalerno.it), 23 ottobre 2017
 * [Hands on NodeJS](https://www.meetup.com/it-IT/devday-av/?chapter_analytics_code=UA-1031071-5)  - DevDay Avellino, @ Analist Group, Avellino, 11 febbraio 2016
 * The Remote Way - [Hello Job](https://www.facebook.com/events/1655414721455166/), Università degli studi di Salerno, 19 ottobre 2016
