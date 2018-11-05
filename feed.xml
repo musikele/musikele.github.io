@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-05T09:41:36+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">The easiest way to understand Javascript Generators</title><link href="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" rel="alternate" type="text/html" title="The easiest way to understand Javascript Generators" /><published>2018-10-29T00:00:00+01:00</published><updated>2018-10-31T15:47:43+01:00</updated><id>https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators</id><content type="html" xml:base="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">&lt;p&gt;&lt;strong&gt;Generators in Javascript are functions that return an iterator&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-05T11:11:07+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Inspiring tech people to follow: Nicholas C. Zakas</title><link href="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html" rel="alternate" type="text/html" title="Inspiring tech people to follow: Nicholas C. Zakas" /><published>2018-11-05T00:00:00+01:00</published><updated>2018-11-05T11:09:06+01:00</updated><id>https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas</id><content type="html" xml:base="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">&lt;p&gt;Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!&lt;/p&gt;
+
+&lt;p&gt;For my first journey in &lt;em&gt;people&lt;/em&gt;, I’ll start with one of my very first guides in the javascript world: &lt;strong&gt;Nicholas C. Zakas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nicholas is a software engineer &amp;amp; architect, he has worked in super big companies like Yahoo and Box. He also wrote a lot of good books, like the one &lt;a href=&quot;https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691/ref=as_li_ss_tl?&amp;amp;linkCode=sl1&amp;amp;tag=nczonline-20&amp;amp;linkId=3910cb3b203837ce343949cac14f05d5&amp;amp;language=en_US&quot; title=&quot; Professional JavaScript for Web Developers &quot;&gt;I used to study in 2013&lt;/a&gt; (DON’T BUY THIS BOOK - it’s outdated now. It was a great book before ES6 and all the good stuff we know about js were in place).&lt;/p&gt;
+
+&lt;h2 id=&quot;successful-open-source-projects&quot;&gt;Successful Open Source projects&lt;/h2&gt;
+
+&lt;p&gt;Nicholas will be remembered for ages because he wrote one of the most successfull projects in the javascript community: &lt;a href=&quot;https://eslint.org/&quot;&gt;&lt;strong&gt;ESLint&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/eslint.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint - for those who might not know - is a linter. This means that catches eventual errors you may have introduced in your javascript code. There were other linters before ESLint, mainly JSlint and JSHint, but &lt;strong&gt;ESLint had something more: rules could be written and plugged by everybody&lt;/strong&gt; (supporting new JS features in seconds, without waiting for the maintainer to release a new version). That’s why it was adopted by React and all the other big frameworks of our community.&lt;/p&gt;
+
+&lt;h2 id=&quot;books&quot;&gt;Books&lt;/h2&gt;
+
+&lt;p&gt;Nicholas has also written some very influent books, and this gave him the opportunity to move to Silicon Valley and find him great jobs. I find his books extremely detailed and also very clear. These are two things that usually don’t go together!&lt;/p&gt;
+
+&lt;h2 id=&quot;blog-mailing-list&quot;&gt;Blog, mailing list&lt;/h2&gt;
+
+&lt;p&gt;If you want to see what Nicholas has been writing about in the latest years, He also has a blog called &lt;a href=&quot;https://humanwhocodes.com/&quot;&gt;Human Who Codes&lt;/a&gt;. His latest blog post, at the moment of this writing, is this post about &lt;a href=&quot;https://humanwhocodes.com/blog/2018/10/my-somewhat-complete-salary-history-software-engineer/&quot;&gt;his earnings history&lt;/a&gt;, useful to get an insight on salaries in Silicon Valley or USA. The intent of the post is to give women more knowledge about what should they earn.&lt;/p&gt;
+
+&lt;p&gt;But there is just more stuff going on his blog. I have also subscribed to his mailing list and when I received one of his emails I was thrilled to read it. I think his gift is to explain complex situations (like the ones he has lived on his own skin) to us, and to perfectly give context so deeply understand the point.&lt;/p&gt;
+
+&lt;h2 id=&quot;health-issues&quot;&gt;Health Issues&lt;/h2&gt;
+
+&lt;p&gt;I’m writing this paragraph because Nicholas talks openly about his problem with the Lyme disease. It was such a huge problem that he had to stop working in 2013, even remotely, and just focus on his health. However he is recovering and he is writing new stuff on his blog.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="zakas" /><category term="eslint" /><category term="people" /><category term="javascript" /><summary type="html">Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!</summary></entry><entry><title type="html">The easiest way to understand Javascript Generators</title><link href="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" rel="alternate" type="text/html" title="The easiest way to understand Javascript Generators" /><published>2018-10-29T00:00:00+01:00</published><updated>2018-10-31T15:47:43+01:00</updated><id>https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators</id><content type="html" xml:base="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">&lt;p&gt;&lt;strong&gt;Generators in Javascript are functions that return an iterator&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Generators&lt;/strong&gt; are functions declared with the keyword &lt;code&gt;function*&lt;/code&gt;.&lt;/p&gt;
 
@@ -676,125 +702,4 @@ console.log(group.length)
 
 &lt;p&gt;In questa risposta ho dato una visione molto generica del software testing; esistono tante altre sotto-aree (integration, unit, e2e…) e tecniche da conoscere, ma il senso generale è che si, &lt;strong&gt;un computer può  fare dei test al posto tuo, è molto più veloce di te, e ne guadagni in qualità.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;Link alla domanda originale&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="testing" /><summary type="html">Mi chiedeva Emanuele su Quora:</summary></entry><entry><title type="html">Handling configuration for mutliple environments in NodeJS</title><link href="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html" rel="alternate" type="text/html" title="Handling configuration for mutliple environments in NodeJS" /><published>2018-07-22T00:00:00+02:00</published><updated>2018-07-22T09:10:53+02:00</updated><id>https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/07/22/laravel-style-config-in-nodejs.html">&lt;p&gt;Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;on your &lt;strong&gt;developer&lt;/strong&gt; PC, it should use some environment variables (e.g. database connection to &lt;em&gt;localhost&lt;/em&gt;, port to use &lt;em&gt;3000&lt;/em&gt;…)&lt;/li&gt;
-  &lt;li&gt;when you push your code you may want to run some continuous integration &amp;amp; deployiment on a &lt;strong&gt;test environment&lt;/strong&gt;, so you have to configure new environment variables: database now points to &lt;em&gt;192.168.xx.yy&lt;/em&gt;, port is &lt;em&gt;8000…&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Finally, on the &lt;strong&gt;production environment&lt;/strong&gt; you use the official values for these configuration.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;How do you handle this? There are several ways to accomplish this task, I wanted to replicate the simple, easy solution provided by &lt;em&gt;Laravel&lt;/em&gt; in &lt;strong&gt;NodeJS&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-does-laravel-config-works&quot;&gt;How does laravel config works&lt;/h2&gt;
-
-&lt;p&gt;In &lt;a href=&quot;https://laravel.com/docs/5.6/configuration&quot;&gt;Laravel&lt;/a&gt; you create as many env files you want, for example:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;.dev.env&lt;/code&gt;, that contains configuration for development environment&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;.test.env&lt;/code&gt;, for test environment&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;.prod.env&lt;/code&gt; for production&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Then there’s a last file called &lt;code&gt;.env&lt;/code&gt; that contains a single variable:&lt;/p&gt;
-
-    &lt;p&gt;&lt;code&gt;APP_ENV=dev&lt;/code&gt; (or test, or prod).&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We’re in NodeJS, how do we simulate this behaviour?&lt;/p&gt;
-
-&lt;h2 id=&quot;a-node-solution&quot;&gt;a Node solution&lt;/h2&gt;
-
-&lt;p&gt;First, our configuration files are js files:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;.development.js&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;.test.js&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;.production.js&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Naming of files has changed a little bit, we’ll see why in a while.&lt;/p&gt;
-
-&lt;p&gt;Let’s see the content of the .development.js test file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;//.development.js 
-
-module.exports = {
-    API_URL: 'api_url',
-    API_KEY: 'api_key',
-    SECRET_KEY: 'secret_key'
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;.production.js&lt;/code&gt; and &lt;code&gt;.test.js&lt;/code&gt; will contain an object with the same keys but different values.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-environment-variable-node_env&quot;&gt;The environment variable NODE_ENV&lt;/h2&gt;
-
-&lt;p&gt;Since Express became the most popular application server in Node, the NODE_ENV variable has became popular too. In Express, &lt;a href=&quot;https://stackoverflow.com/a/16979503/1020090&quot;&gt;app.get(‘env’) is used to retrieve the execution environment&lt;/a&gt;. Many popular platforms, like Heroku, set this variable to &lt;code&gt;production&lt;/code&gt; and you can also change to your needs, too.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;app.get('env')&lt;/code&gt; is pretty much implemented like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;return process.env.NODE_ENV || 'development'
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So you know that if the variable is not set, it is defaulted to &lt;code&gt;development&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let’s write a solution that is not express-dependent.&lt;/p&gt;
-
-&lt;p&gt;Here’s the configuration.js file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;//configuration.js 
-
-const env = process.env.NODE_ENV || 'development'
-
-module.exports = require(`../.${env}.js`) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Based on the &lt;code&gt;NODE_ENV&lt;/code&gt; variable, we will pick up the right &lt;code&gt;.js&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;And now let’s test this. Run &lt;code&gt;node index.js&lt;/code&gt; (should start with &lt;code&gt;development&lt;/code&gt; environment):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-index.js&quot;&gt;//index.js
-
-const configuration = require('./configuration')
-
-console.log('configuration: ', configuration)
-// =&amp;gt;  
-// configuration:  { API_URL: 'api_url',
-// API_KEY: 'api_key',
-// SECRET_KEY: 'secret_key' }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;How to start with other configurations?&lt;/p&gt;
-
-&lt;p&gt;Either set this in package.json:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;//package.json 
-
- &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;node index.js&quot;,
-    &quot;start:test&quot;: &quot;NODE_ENV=test node index.js&quot;,
-    &quot;start:prod&quot;: &quot;NODE_ENV=production node index.js&quot;
-  },
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and run with &lt;code&gt;npm run start:test&lt;/code&gt;; or set the &lt;code&gt;NODE_ENV&lt;/code&gt; variable directly on the server (docker, heroku, aws… they all allow you to set env variables).&lt;/p&gt;
-
-&lt;h2 id=&quot;some-security-concerns&quot;&gt;Some security concerns&lt;/h2&gt;
-
-&lt;p&gt;This approach is very easy to use but you should not versionate &lt;code&gt;.production.js&lt;/code&gt; file, as it will contain sensitive data. In your build process consider injecting this file from some other secure location.&lt;/p&gt;
-
-&lt;p&gt;An alternative could be to use environment variables only for the production file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;//.production.js 
-module.exports = {
-    API_URL: process.env.API_URL || 'some_value' ,
-    API_KEY: process.env.API_KEY,
-    SECRET_KEY: process.env.SECRET_KEY,
-    ... 
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The good thing about this approach is that you can even mix the two things or swap them altogether.&lt;/p&gt;
-
-&lt;p&gt;Happy coding with your configurations ;)&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="nodejs" /><category term="configuration" /><category term="laravel" /><summary type="html">Imagine you have a NodeJS app you’re writing, and this app runs on several different environments:</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;Link alla domanda originale&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="testing" /><summary type="html">Mi chiedeva Emanuele su Quora:</summary></entry></feed>
