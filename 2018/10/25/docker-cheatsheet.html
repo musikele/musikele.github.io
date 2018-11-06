@@ -12,7 +12,7 @@
 	<title>Docker cheatsheet - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="docker, cheatsheet" />  
-	<meta http-equiv="last-modified" content="2018-10-25 15:04:09 +0200" /> 
+	<meta http-equiv="last-modified" content="2018-11-06 10:16:18 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -135,6 +135,7 @@
 <p>In practice: use <code>-i -t</code> to read and write from the docker image in the console.</p>
 
 <p>Optional commands:</p>
+
 <ul>
   <li><code>--name XXX</code> assigns the name XXX to the container</li>
   <li><code>-d</code> launches the container as a daemon</li>
@@ -151,7 +152,7 @@
   <li><code>-a</code> shows also the exited containers</li>
 </ul>
 
-<h2 id="see-container-logs">See container logs</h2>
+<h2 id="inspecting-a-container">Inspecting a container</h2>
 
 <p>If the container is started as daemon you might want to see the output.</p>
 
@@ -163,6 +164,53 @@
   <li><code>-f</code> works like <code>-f</code> in <code>tail -f</code>; logs become live. Use <code>CTRL-C</code> to exit.</li>
   <li><code>-t</code> shows also timestamps.</li>
 </ul>
+
+<p>To check container processes:</p>
+
+<pre><code class="language-shell">$ docker top daemon_dave
+</code></pre>
+
+<p>To get stats about a bunch of docker containers:</p>
+
+<pre><code class="language-shell">$ docker stats daemon_dave daemon_kate
+</code></pre>
+
+<h2 id="running-programs-in-a-container">Running programs in a container</h2>
+
+<p>Daemon mode:</p>
+
+<pre><code class="language-shell">$ sudo docker exec -d daemon_dave touch /etc/new_config_file
+</code></pre>
+
+<ul>
+  <li><code>-d</code> stands for daemon mode.</li>
+  <li><code>exec</code> is used to run a command in the <code>daemon-dave</code> container.</li>
+</ul>
+
+<p>Interactive mode:</p>
+
+<pre><code class="language-shell">$ docker exec -t -i daemon_dave /bin/bash
+</code></pre>
+
+<ul>
+  <li><code>-t</code> creates a TTY</li>
+  <li><code>-i</code> captures STDIN</li>
+</ul>
+
+<p>…basically opens an interactive shell.</p>
+
+<h2 id="stopping--deleting">Stopping &amp; Deleting</h2>
+
+<pre><code class="language-console">$ docker stop CONTAINER 
+</code></pre>
+
+<pre><code class="language-console">$ docker rm CONTAINER 
+</code></pre>
+
+<h2 id="listing-docker-images">Listing docker images</h2>
+
+<pre><code class="language-console">$ docker images
+</code></pre>
  
 			
 			
@@ -1779,7 +1827,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html">Javascript: call functions without using parentheses (what?!)</a></h5>
+            <h5><a href="/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/">Cambio Lavoro</a></h5>
         </div>
     
         
@@ -1789,7 +1837,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2018/06/20/come-creare-luoghi-di-lavoro-in-cui-le-persone-sono-felici-di-recarsi.html">Come creare luoghi di lavoro in cui é bello recarsi</a></h5>
+            <h5><a href="/2018/09/04/symbols-iterators-in-javascript.html">Symbols & Iterators in Javascript</a></h5>
         </div>
     
 

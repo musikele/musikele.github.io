@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-05T11:11:07+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Inspiring tech people to follow: Nicholas C. Zakas</title><link href="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html" rel="alternate" type="text/html" title="Inspiring tech people to follow: Nicholas C. Zakas" /><published>2018-11-05T00:00:00+01:00</published><updated>2018-11-05T11:09:06+01:00</updated><id>https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas</id><content type="html" xml:base="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">&lt;p&gt;Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-06T10:18:17+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Inspiring tech people to follow: Nicholas C. Zakas</title><link href="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html" rel="alternate" type="text/html" title="Inspiring tech people to follow: Nicholas C. Zakas" /><published>2018-11-05T00:00:00+01:00</published><updated>2018-11-05T11:09:06+01:00</updated><id>https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas</id><content type="html" xml:base="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">&lt;p&gt;Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!&lt;/p&gt;
 
 &lt;p&gt;For my first journey in &lt;em&gt;people&lt;/em&gt;, I’ll start with one of my very first guides in the javascript world: &lt;strong&gt;Nicholas C. Zakas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -156,7 +156,7 @@ Object [Generator] {}
 
 &lt;p&gt;Generators are widely supported by all major/modern browsers, &lt;strong&gt;except for IE&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><category term="nodejs" /><category term="generators" /><summary type="html">Generators in Javascript are functions that return an iterator.</summary></entry><entry><title type="html">Docker cheatsheet</title><link href="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" rel="alternate" type="text/html" title="Docker cheatsheet" /><published>2018-10-25T00:00:00+02:00</published><updated>2018-10-25T15:04:09+02:00</updated><id>https://michelenasti.com/2018/10/25/docker-cheatsheet</id><content type="html" xml:base="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">&lt;p&gt;I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.&lt;/p&gt;
+&lt;p&gt;A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><category term="nodejs" /><category term="generators" /><summary type="html">Generators in Javascript are functions that return an iterator.</summary></entry><entry><title type="html">Docker cheatsheet</title><link href="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" rel="alternate" type="text/html" title="Docker cheatsheet" /><published>2018-10-25T00:00:00+02:00</published><updated>2018-11-06T10:16:18+01:00</updated><id>https://michelenasti.com/2018/10/25/docker-cheatsheet</id><content type="html" xml:base="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">&lt;p&gt;I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.&lt;/p&gt;
 
 &lt;h2 id=&quot;start-a-simple-container&quot;&gt;Start a simple container&lt;/h2&gt;
 
@@ -174,6 +174,7 @@ Object [Generator] {}
 &lt;p&gt;In practice: use &lt;code&gt;-i -t&lt;/code&gt; to read and write from the docker image in the console.&lt;/p&gt;
 
 &lt;p&gt;Optional commands:&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;code&gt;--name XXX&lt;/code&gt; assigns the name XXX to the container&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;-d&lt;/code&gt; launches the container as a daemon&lt;/li&gt;
@@ -190,7 +191,7 @@ Object [Generator] {}
   &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; shows also the exited containers&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;see-container-logs&quot;&gt;See container logs&lt;/h2&gt;
+&lt;h2 id=&quot;inspecting-a-container&quot;&gt;Inspecting a container&lt;/h2&gt;
 
 &lt;p&gt;If the container is started as daemon you might want to see the output.&lt;/p&gt;
 
@@ -201,7 +202,54 @@ Object [Generator] {}
   &lt;li&gt;&lt;code&gt;logs NAME_OF_CONTAINER&lt;/code&gt; shows you the logs of the container. Without options you see the latest logs and then the propt gets back to your shell.&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;-f&lt;/code&gt; works like &lt;code&gt;-f&lt;/code&gt; in &lt;code&gt;tail -f&lt;/code&gt;; logs become live. Use &lt;code&gt;CTRL-C&lt;/code&gt; to exit.&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;-t&lt;/code&gt; shows also timestamps.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>musikele</name></author><category term="English" /><category term="docker" /><category term="cheatsheet" /><summary type="html">I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</summary></entry><entry><title type="html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</title><link href="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" rel="alternate" type="text/html" title="Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?" /><published>2018-10-22T00:00:00+02:00</published><updated>2018-10-22T17:48:04+02:00</updated><id>https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">&lt;p&gt;Su Quora ho risposto a questa domanda: &lt;a href=&quot;https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript&quot;&gt;Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To check container processes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker top daemon_dave
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To get stats about a bunch of docker containers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker stats daemon_dave daemon_kate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;running-programs-in-a-container&quot;&gt;Running programs in a container&lt;/h2&gt;
+
+&lt;p&gt;Daemon mode:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ sudo docker exec -d daemon_dave touch /etc/new_config_file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;-d&lt;/code&gt; stands for daemon mode.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;exec&lt;/code&gt; is used to run a command in the &lt;code&gt;daemon-dave&lt;/code&gt; container.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Interactive mode:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker exec -t -i daemon_dave /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;-t&lt;/code&gt; creates a TTY&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-i&lt;/code&gt; captures STDIN&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;…basically opens an interactive shell.&lt;/p&gt;
+
+&lt;h2 id=&quot;stopping--deleting&quot;&gt;Stopping &amp;amp; Deleting&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ docker stop CONTAINER 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ docker rm CONTAINER 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;listing-docker-images&quot;&gt;Listing docker images&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ docker images
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="English" /><category term="docker" /><category term="cheatsheet" /><summary type="html">I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</summary></entry><entry><title type="html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</title><link href="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" rel="alternate" type="text/html" title="Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?" /><published>2018-10-22T00:00:00+02:00</published><updated>2018-10-22T17:48:04+02:00</updated><id>https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">&lt;p&gt;Su Quora ho risposto a questa domanda: &lt;a href=&quot;https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript&quot;&gt;Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Buona lettura :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jquery" /><category term="javascript" /><category term="web" /><summary type="html">Su Quora ho risposto a questa domanda: Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</summary></entry><entry><title type="html">Dovrei imparare Ruby on Rails o NodeJS ?</title><link href="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html" rel="alternate" type="text/html" title="Dovrei imparare Ruby on Rails o NodeJS ? " /><published>2018-10-15T00:00:00+02:00</published><updated>2018-10-15T09:44:32+02:00</updated><id>https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">&lt;p&gt;A questo link su Quora c’è la mia risposta alla domanda: &lt;a href=&quot;https://it.quora.com/Dovrei-imparare-Ruby-on-Rails-o-Node-js/answer/Michele-Nasti&quot;&gt;Dovrei imparare Ruby on Rails o NodeJS?&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="ruby on rails" /><category term="ruby" /><category term="nodejs" /><summary type="html">A questo link su Quora c’è la mia risposta alla domanda: Dovrei imparare Ruby on Rails o NodeJS?</summary></entry><entry><title type="html">Let’s write our simple version of the require() function</title><link href="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html" rel="alternate" type="text/html" title="Let's write our simple version of the require() function" /><published>2018-10-02T00:00:00+02:00</published><updated>2018-10-10T11:00:11+02:00</updated><id>https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function</id><content type="html" xml:base="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html">&lt;p&gt;You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.&lt;/p&gt;
 
