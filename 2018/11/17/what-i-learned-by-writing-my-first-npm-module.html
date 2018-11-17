@@ -12,7 +12,7 @@
 	<title>What I learned by writing my first npm module - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="javascript, nodejs" />  
-	<meta http-equiv="last-modified" content="2018-11-17 17:12:37 +0100" /> 
+	<meta http-equiv="last-modified" content="2018-11-17 17:22:22 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -119,36 +119,36 @@
 			
 			<p>Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called <a href="https://www.npmjs.com/package/html-table-builder" title="HTML Table Builder">Html Table Builder</a>.</p>
 
-<p>Nothing too complex, infact it is an exercise from the book <a href="https://eloquentjavascript.net">Eloquent Javascript</a>; also, there are other gazillion modules on NPM that do the same thing with very similar names.</p>
+<p>It is an exercise from the book <a href="https://eloquentjavascript.net">Eloquent Javascript</a>; also, there are other gazillion modules on NPM that do the same thing with very similar names (a sign that the book is used a lot by javascript learners).</p>
 
-<h2 id="a-little-description-of-the-library">A little description of the library</h2>
+<h2 id="a-little-description">A little description</h2>
 
-<p>The library exposes a js function that accepts a js array and returns a HTML <code>&lt;table&gt;</code> object (not string!), so you can attach to the document with <code>document.appendChild(element)</code>.</p>
+<p>The library exposes a js function that accepts a js array and returns a HTML <code>&lt;table&gt;</code> object (not string!), so you can attach to the document with <code>document.appendChild(element)</code>. Checkout the <a href="https://github.com/musikele/html-table-builder">documentation on github</a>.</p>
 
 <p>My idea was to release a library that was:</p>
 
 <ul>
-  <li>fully tested</li>
-  <li>developed with Test Driven Development</li>
-  <li>isomorphic (it is, by using JSDOM on node)</li>
-  <li>built by webpack</li>
-  <li>accepts objects with custom columns</li>
+  <li><strong>fully tested</strong></li>
+  <li>developed with <strong>Test Driven Development</strong></li>
+  <li><strong>isomorphic</strong> (by using <a href="https://www.npmjs.com/package/jsdom">JSDOM</a> on node)</li>
+  <li>built by <strong>webpack</strong></li>
+  <li>accepts objects with <strong>custom columns</strong></li>
 </ul>
 
 <p>Many more features have to come:</p>
 
 <ul>
   <li>apart from the fact that the input must be an array, I don’t want to force users to pass array of objects. So you can pass an array containing strings, numbers, etc. even heterogeneous objects, the function will render it somehow.</li>
-  <li>I want to generate table-in-tables, if the object in input is an array inside another array. This is tricky to do, I’ll have to handle colspans and more.. but not impossible to do.</li>
-  <li>I also have to add classes to columns</li>
-  <li>…and a showcase page.</li>
+  <li>I want to generate tables-in-tables, if the object in input is an array containing other arrays. This is tricky to do, I’ll have to handle colspans and more.. but not impossible.</li>
+  <li>I also have to add css classes to columns (so you can style your tables)</li>
+  <li>…and add a showcase page. Who’s gonna use your library if nobody understand how to use it?</li>
 </ul>
 
 <h2 id="i-lost-a-lot-of-time-with">I lost a lot of time with…</h2>
 
 <ul>
   <li>
-    <p><strong>Webpack</strong> - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have created one-thousand options to configure every single bit.<br />
+    <p><strong>Webpack</strong> - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have added thousands of options to configure every single bit.<br />
 In the end this is the configuration that works for me:</p>
 
     <pre><code class="language-javascript">// webpack.config.js
@@ -169,26 +169,26 @@ module.exports = {
   
 </code></pre>
 
-    <p>The relevant bits are in the <code>output</code> property; try to understand the <a href="https://webpack.js.org/configuration/output/#output-library">documentation</a> for it.</p>
+    <p>The relevant bits to expose the library are in the <code>output</code> property; read the <a href="https://webpack.js.org/configuration/output/#output-library">documentation</a> for it.</p>
   </li>
-  <li><strong>Npm</strong> - I used NPM (tool) to upload my pckage to npm (site). Npm had some security issues lately, somebody hacked user accounts and released bad code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication and, even I am a huge user of 2FA, I had some trouble activating it. BTW, nothing that cannot be done.</li>
-  <li><strong>Javascript</strong> - I was writing the function that <a href="https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js">extracts the name of the columns</a>, and in the first version it took out an array of strings. <br />
+  <li><strong>NPM</strong> - I used npm (tool) to upload my pckage to NPM (site). NPM had some security issues lately, somebody hacked maintainers accounts and released dangerous code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication and, even I am a huge user of 2FA, I had some trouble activating it. BTW, everything is up and in place now.</li>
+  <li><strong>Javascript</strong> - I have a story to tell about JS and dynamic typing. I was writing the function that <a href="https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js">extracts the name of the columns</a>, and in the first version it returned an array of strings. <br />
 Then I decided to return an array of object and DANG! errors everywhere, fortunately tracked down by unit tests. <br />
 Then I decided to change again and make it return an object instead of an array, and again only TDD could help me to track down errors. <br />
-In the end … static types could have helped to catch errors without TDD and I could have used TDD for better use cases.</li>
+In the end … <strong>static types could have helped to catch errors without TDD</strong> and I could have used TDD-time to develop more complex tests.</li>
 </ul>
 
 <h2 id="what-did-not-give-problems">What did not give problems</h2>
 
 <ul>
-  <li><strong>Jest</strong>. Testing with Jest has been extremely easy. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!</li>
+  <li><strong>Jest</strong>. Testing with Jest has been <em>extremely easy</em>. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!</li>
 </ul>
 
 <h2 id="finally">Finally</h2>
 
-<p>It is a very simple library, but it is already downloaded by 64 users (small number, but <em>great!</em> pass by and let me know you’re using it).</p>
+<p>It is a very simple library, but it is already downloaded by 64 users (small number, but <em>great!</em> If you’re a user, pass by and let me know your problems).</p>
 
-<p>I learned a lot of stuff by writing this library It took me some 8hrs to work it out. But it was fun.</p>
+<p>I learned a lot of stuff by writing this library; <strong>It took me some 8hrs to work it out</strong>. But it was fun.</p>
 
 <blockquote>
   <p>You remember 5% of what you read, 10% of what you write, 90% of what you do again.</p>

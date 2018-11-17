@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-17T17:14:40+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-17T17:12:37+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-17T17:24:14+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-17T17:22:22+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Nothing too complex, infact it is an exercise from the book &lt;a href=&quot;https://eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;; also, there are other gazillion modules on NPM that do the same thing with very similar names.&lt;/p&gt;
+&lt;p&gt;It is an exercise from the book &lt;a href=&quot;https://eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;; also, there are other gazillion modules on NPM that do the same thing with very similar names (a sign that the book is used a lot by javascript learners).&lt;/p&gt;
 
-&lt;h2 id=&quot;a-little-description-of-the-library&quot;&gt;A little description of the library&lt;/h2&gt;
+&lt;h2 id=&quot;a-little-description&quot;&gt;A little description&lt;/h2&gt;
 
-&lt;p&gt;The library exposes a js function that accepts a js array and returns a HTML &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; object (not string!), so you can attach to the document with &lt;code&gt;document.appendChild(element)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The library exposes a js function that accepts a js array and returns a HTML &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; object (not string!), so you can attach to the document with &lt;code&gt;document.appendChild(element)&lt;/code&gt;. Checkout the &lt;a href=&quot;https://github.com/musikele/html-table-builder&quot;&gt;documentation on github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My idea was to release a library that was:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;fully tested&lt;/li&gt;
-  &lt;li&gt;developed with Test Driven Development&lt;/li&gt;
-  &lt;li&gt;isomorphic (it is, by using JSDOM on node)&lt;/li&gt;
-  &lt;li&gt;built by webpack&lt;/li&gt;
-  &lt;li&gt;accepts objects with custom columns&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;fully tested&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;developed with &lt;strong&gt;Test Driven Development&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;isomorphic&lt;/strong&gt; (by using &lt;a href=&quot;https://www.npmjs.com/package/jsdom&quot;&gt;JSDOM&lt;/a&gt; on node)&lt;/li&gt;
+  &lt;li&gt;built by &lt;strong&gt;webpack&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;accepts objects with &lt;strong&gt;custom columns&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Many more features have to come:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;apart from the fact that the input must be an array, I don’t want to force users to pass array of objects. So you can pass an array containing strings, numbers, etc. even heterogeneous objects, the function will render it somehow.&lt;/li&gt;
-  &lt;li&gt;I want to generate table-in-tables, if the object in input is an array inside another array. This is tricky to do, I’ll have to handle colspans and more.. but not impossible to do.&lt;/li&gt;
-  &lt;li&gt;I also have to add classes to columns&lt;/li&gt;
-  &lt;li&gt;…and a showcase page.&lt;/li&gt;
+  &lt;li&gt;I want to generate tables-in-tables, if the object in input is an array containing other arrays. This is tricky to do, I’ll have to handle colspans and more.. but not impossible.&lt;/li&gt;
+  &lt;li&gt;I also have to add css classes to columns (so you can style your tables)&lt;/li&gt;
+  &lt;li&gt;…and add a showcase page. Who’s gonna use your library if nobody understand how to use it?&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;i-lost-a-lot-of-time-with&quot;&gt;I lost a lot of time with…&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Webpack&lt;/strong&gt; - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have created one-thousand options to configure every single bit.&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Webpack&lt;/strong&gt; - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have added thousands of options to configure every single bit.&lt;br /&gt;
 In the end this is the configuration that works for me:&lt;/p&gt;
 
     &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// webpack.config.js
@@ -50,26 +50,26 @@ module.exports = {
   
 &lt;/code&gt;&lt;/pre&gt;
 
-    &lt;p&gt;The relevant bits are in the &lt;code&gt;output&lt;/code&gt; property; try to understand the &lt;a href=&quot;https://webpack.js.org/configuration/output/#output-library&quot;&gt;documentation&lt;/a&gt; for it.&lt;/p&gt;
+    &lt;p&gt;The relevant bits to expose the library are in the &lt;code&gt;output&lt;/code&gt; property; read the &lt;a href=&quot;https://webpack.js.org/configuration/output/#output-library&quot;&gt;documentation&lt;/a&gt; for it.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Npm&lt;/strong&gt; - I used NPM (tool) to upload my pckage to npm (site). Npm had some security issues lately, somebody hacked user accounts and released bad code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication and, even I am a huge user of 2FA, I had some trouble activating it. BTW, nothing that cannot be done.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Javascript&lt;/strong&gt; - I was writing the function that &lt;a href=&quot;https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js&quot;&gt;extracts the name of the columns&lt;/a&gt;, and in the first version it took out an array of strings. &lt;br /&gt;
+  &lt;li&gt;&lt;strong&gt;NPM&lt;/strong&gt; - I used npm (tool) to upload my pckage to NPM (site). NPM had some security issues lately, somebody hacked maintainers accounts and released dangerous code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication and, even I am a huge user of 2FA, I had some trouble activating it. BTW, everything is up and in place now.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Javascript&lt;/strong&gt; - I have a story to tell about JS and dynamic typing. I was writing the function that &lt;a href=&quot;https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js&quot;&gt;extracts the name of the columns&lt;/a&gt;, and in the first version it returned an array of strings. &lt;br /&gt;
 Then I decided to return an array of object and DANG! errors everywhere, fortunately tracked down by unit tests. &lt;br /&gt;
 Then I decided to change again and make it return an object instead of an array, and again only TDD could help me to track down errors. &lt;br /&gt;
-In the end … static types could have helped to catch errors without TDD and I could have used TDD for better use cases.&lt;/li&gt;
+In the end … &lt;strong&gt;static types could have helped to catch errors without TDD&lt;/strong&gt; and I could have used TDD-time to develop more complex tests.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;what-did-not-give-problems&quot;&gt;What did not give problems&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Jest&lt;/strong&gt;. Testing with Jest has been extremely easy. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Jest&lt;/strong&gt;. Testing with Jest has been &lt;em&gt;extremely easy&lt;/em&gt;. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;finally&quot;&gt;Finally&lt;/h2&gt;
 
-&lt;p&gt;It is a very simple library, but it is already downloaded by 64 users (small number, but &lt;em&gt;great!&lt;/em&gt; pass by and let me know you’re using it).&lt;/p&gt;
+&lt;p&gt;It is a very simple library, but it is already downloaded by 64 users (small number, but &lt;em&gt;great!&lt;/em&gt; If you’re a user, pass by and let me know your problems).&lt;/p&gt;
 
-&lt;p&gt;I learned a lot of stuff by writing this library It took me some 8hrs to work it out. But it was fun.&lt;/p&gt;
+&lt;p&gt;I learned a lot of stuff by writing this library; &lt;strong&gt;It took me some 8hrs to work it out&lt;/strong&gt;. But it was fun.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;You remember 5% of what you read, 10% of what you write, 90% of what you do again.&lt;/p&gt;
