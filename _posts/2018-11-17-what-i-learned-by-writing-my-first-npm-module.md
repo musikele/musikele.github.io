@@ -41,7 +41,7 @@ Many more features have to come:
 ## I lost a lot of time with...
 
 * **Webpack** - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have added thousands of options to configure every single bit.  
-  In the end this is the configuration that works for me:
+  In the end this is [the configuration that works for me](https://github.com/musikele/html-table-builder/blob/master/webpack.config.js):
 
   ```javascript
   // webpack.config.js
@@ -72,6 +72,7 @@ Many more features have to come:
 ## What did not give problems 
 
 * **Jest**. Testing with Jest has been _extremely easy_. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good! 
+* **ESLint, Prettier** and **VSCode** - These tools resolve stupid issues for you. Just install and forget about them.  They'll add semicolumns, fix tabs or spaces, return syntactic errors live... A good bonus. 
 
 ## Finally 
 
