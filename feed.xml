@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-17T17:24:14+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-17T17:22:22+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-17T17:27:10+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-17T17:25:21+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It is an exercise from the book &lt;a href=&quot;https://eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;; also, there are other gazillion modules on NPM that do the same thing with very similar names (a sign that the book is used a lot by javascript learners).&lt;/p&gt;
 
@@ -30,7 +30,7 @@
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Webpack&lt;/strong&gt; - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have added thousands of options to configure every single bit.&lt;br /&gt;
-In the end this is the configuration that works for me:&lt;/p&gt;
+In the end this is &lt;a href=&quot;https://github.com/musikele/html-table-builder/blob/master/webpack.config.js&quot;&gt;the configuration that works for me&lt;/a&gt;:&lt;/p&gt;
 
     &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// webpack.config.js
 module.exports = {
@@ -63,6 +63,7 @@ In the end … &lt;strong&gt;static types could have helped to catch errors with
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Jest&lt;/strong&gt;. Testing with Jest has been &lt;em&gt;extremely easy&lt;/em&gt;. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ESLint, Prettier&lt;/strong&gt; and &lt;strong&gt;VSCode&lt;/strong&gt; - These tools resolve stupid issues for you. Just install and forget about them.  They’ll add semicolumns, fix tabs or spaces, return syntactic errors live… A good bonus.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;finally&quot;&gt;Finally&lt;/h2&gt;

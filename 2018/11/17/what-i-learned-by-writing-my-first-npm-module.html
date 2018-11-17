@@ -12,7 +12,7 @@
 	<title>What I learned by writing my first npm module - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="javascript, nodejs" />  
-	<meta http-equiv="last-modified" content="2018-11-17 17:22:22 +0100" /> 
+	<meta http-equiv="last-modified" content="2018-11-17 17:25:21 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -149,7 +149,7 @@
 <ul>
   <li>
     <p><strong>Webpack</strong> - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have added thousands of options to configure every single bit.<br />
-In the end this is the configuration that works for me:</p>
+In the end this is <a href="https://github.com/musikele/html-table-builder/blob/master/webpack.config.js">the configuration that works for me</a>:</p>
 
     <pre><code class="language-javascript">// webpack.config.js
 module.exports = {
@@ -182,6 +182,7 @@ In the end … <strong>static types could have helped to catch errors without TD
 
 <ul>
   <li><strong>Jest</strong>. Testing with Jest has been <em>extremely easy</em>. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!</li>
+  <li><strong>ESLint, Prettier</strong> and <strong>VSCode</strong> - These tools resolve stupid issues for you. Just install and forget about them.  They’ll add semicolumns, fix tabs or spaces, return syntactic errors live… A good bonus.</li>
 </ul>
 
 <h2 id="finally">Finally</h2>
