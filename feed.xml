@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-17T16:20:51+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Inspiring tech people to follow: Nicholas C. Zakas</title><link href="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html" rel="alternate" type="text/html" title="Inspiring tech people to follow: Nicholas C. Zakas" /><published>2018-11-05T00:00:00+01:00</published><updated>2018-11-05T11:09:06+01:00</updated><id>https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas</id><content type="html" xml:base="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">&lt;p&gt;Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-11-17T17:14:40+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-17T17:12:37+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nothing too complex, infact it is an exercise from the book &lt;a href=&quot;https://eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;; also, there are other gazillion modules on NPM that do the same thing with very similar names.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-little-description-of-the-library&quot;&gt;A little description of the library&lt;/h2&gt;
+
+&lt;p&gt;The library exposes a js function that accepts a js array and returns a HTML &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; object (not string!), so you can attach to the document with &lt;code&gt;document.appendChild(element)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;My idea was to release a library that was:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;fully tested&lt;/li&gt;
+  &lt;li&gt;developed with Test Driven Development&lt;/li&gt;
+  &lt;li&gt;isomorphic (it is, by using JSDOM on node)&lt;/li&gt;
+  &lt;li&gt;built by webpack&lt;/li&gt;
+  &lt;li&gt;accepts objects with custom columns&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many more features have to come:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;apart from the fact that the input must be an array, I don’t want to force users to pass array of objects. So you can pass an array containing strings, numbers, etc. even heterogeneous objects, the function will render it somehow.&lt;/li&gt;
+  &lt;li&gt;I want to generate table-in-tables, if the object in input is an array inside another array. This is tricky to do, I’ll have to handle colspans and more.. but not impossible to do.&lt;/li&gt;
+  &lt;li&gt;I also have to add classes to columns&lt;/li&gt;
+  &lt;li&gt;…and a showcase page.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;i-lost-a-lot-of-time-with&quot;&gt;I lost a lot of time with…&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Webpack&lt;/strong&gt; - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have created one-thousand options to configure every single bit.&lt;br /&gt;
+In the end this is the configuration that works for me:&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// webpack.config.js
+module.exports = {
+  entry: './index.js',
+  target: 'web', 
+  output: {
+    filename: 'html-table-builder.js',
+    library: 'HtmlTableBuilder',
+    libraryTarget: 'umd'
+  },
+  mode: 'production',
+  devtool: 'source-map',
+  externals: {
+    jsdom: 'JSDOM'
+  }
+};
+  
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;The relevant bits are in the &lt;code&gt;output&lt;/code&gt; property; try to understand the &lt;a href=&quot;https://webpack.js.org/configuration/output/#output-library&quot;&gt;documentation&lt;/a&gt; for it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Npm&lt;/strong&gt; - I used NPM (tool) to upload my pckage to npm (site). Npm had some security issues lately, somebody hacked user accounts and released bad code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication and, even I am a huge user of 2FA, I had some trouble activating it. BTW, nothing that cannot be done.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Javascript&lt;/strong&gt; - I was writing the function that &lt;a href=&quot;https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js&quot;&gt;extracts the name of the columns&lt;/a&gt;, and in the first version it took out an array of strings. &lt;br /&gt;
+Then I decided to return an array of object and DANG! errors everywhere, fortunately tracked down by unit tests. &lt;br /&gt;
+Then I decided to change again and make it return an object instead of an array, and again only TDD could help me to track down errors. &lt;br /&gt;
+In the end … static types could have helped to catch errors without TDD and I could have used TDD for better use cases.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-did-not-give-problems&quot;&gt;What did not give problems&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Jest&lt;/strong&gt;. Testing with Jest has been extremely easy. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;finally&quot;&gt;Finally&lt;/h2&gt;
+
+&lt;p&gt;It is a very simple library, but it is already downloaded by 64 users (small number, but &lt;em&gt;great!&lt;/em&gt; pass by and let me know you’re using it).&lt;/p&gt;
+
+&lt;p&gt;I learned a lot of stuff by writing this library It took me some 8hrs to work it out. But it was fun.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You remember 5% of what you read, 10% of what you write, 90% of what you do again.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Exactly what I thought while I was preparing the first release!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called Html Table Builder.</summary></entry><entry><title type="html">Inspiring tech people to follow: Nicholas C. Zakas</title><link href="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html" rel="alternate" type="text/html" title="Inspiring tech people to follow: Nicholas C. Zakas" /><published>2018-11-05T00:00:00+01:00</published><updated>2018-11-05T11:09:06+01:00</updated><id>https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas</id><content type="html" xml:base="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">&lt;p&gt;Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!&lt;/p&gt;
 
 &lt;p&gt;For my first journey in &lt;em&gt;people&lt;/em&gt;, I’ll start with one of my very first guides in the javascript world: &lt;strong&gt;Nicholas C. Zakas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -718,36 +795,4 @@ console.log(group.length)
 
 &lt;p&gt;I don’t suggest you to program in JS as you would in Java; JS object oriented features in JS are very different compared to other languages. However, if you find that something should be an object, and you end up writing an Object, there two tricks might become handy.&lt;/p&gt;
 
-&lt;p&gt;Next time we’ll talk about iterators and symbols in Javascript, another nice addition to the language. Stay tuned!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">Hi there! Let’s try to create a simple Group object, very similar to the existing Set object in Javascript. Here’s the specification for this Abstract Data Type:</summary></entry><entry><title type="html">“ma… cosa intendete per testing?” - una breve introduzione al testing software</title><link href="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html" rel="alternate" type="text/html" title="&quot;ma... cosa intendete per testing?&quot; - una breve introduzione al testing software " /><published>2018-08-22T00:00:00+02:00</published><updated>2018-08-22T13:19:02+02:00</updated><id>https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software</id><content type="html" xml:base="https://michelenasti.com/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">&lt;p&gt;Mi chiedeva Emanuele su Quora:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;…posso sapere con una certa  precisione cosa intendete con testing? Questa cosa mi ha incuriosito e  mi piacerebbe conoscerne di più.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Testing_in_Progress.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Per testing si intende &lt;strong&gt;un’esecuzione del codice per assicurarsi che faccia  esattamente ciò che viene richiesto&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esistono sostanzialmente due tipi di testing, &lt;em&gt;manuale&lt;/em&gt; e &lt;em&gt;automatico&lt;/em&gt;. Il &lt;strong&gt;testing manuale&lt;/strong&gt; è quello che fa un programmatore dopo che ha sviluppato il codice: lancia l’applicazione e verifica che faccia ciò che dovrebbe. A volte sono altri utenti in carne ed ossa a fare il test dell’applicazione.&lt;/p&gt;
-
-&lt;p&gt;Il testing manuale è efficace e immediato se l’app è semplice o di piccole dimensioni: al crescere della complessità potrebbe essere lungo in termini di tempo, e impreciso nei risultati.&lt;/p&gt;
-
-&lt;p&gt;Esempio: &lt;em&gt;un’app per prenotare visite mediche&lt;/em&gt;. Immaginiamo di aver realizzato la funzionalità di modifica della data di una visita. Se faccio l’edit di una visita e seleziono una data e un orario che già sono state prenotate da qualcun altro, il sistema deve rispondere che l’orario richiesto non è disponibile. Riesci a immaginare quanto tempo serva per poter rieseguire questo caso di test, ogni volta? &lt;em&gt;(Ti aiuto: bisogna prima creare una visita… poi crearne una seconda… poi prendere la prima e impostare la data e l’orario della seconda… e verificare il messaggio di errore)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Passiamo al &lt;strong&gt;test di  tipo automatico&lt;/strong&gt;. Innanzitutto viene scritto in un linguaggio di  programmazione vero e proprio. Nel test viene definito il setup iniziale (es. crea DUE visite nel sistema) e poi viene eseguito il test vero e proprio, ossia cerca la prima visita, e cambia la data e l’orario a quello della seconda.&lt;/p&gt;
-
-&lt;p&gt;Infine, controlliamo che il sistema abbia restituito l’errore. Se è accaduto, il test ha avuto successo (si, se il  sistema risponde correttamente che un’operazione non si può fare, è un  caso di successo!). Se così non fosse, il test dovrebbe fallire.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Quali sono gli svantaggi di questo approccio?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;che il test lo può scrivere solo un programmatore,&lt;/li&gt;
-  &lt;li&gt;per scrivere il test ci vuole del tempo un  po’ più lungo della mera esecuzione;&lt;/li&gt;
-  &lt;li&gt;inoltre, se cambia l’applicazione, bisogna cambiare anche i test relativi.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;I vantaggi, invece, sono un  aumento della qualità generale e un’efficienza nell’esecuzione&lt;/strong&gt;, anche in termini di tempo. Ad esempio, è prassi eseguire tutti i test ad ogni modifica del sistema, per assicurarsi di non aver rotto aree  dell’applicazione collegate con quella che stiamo modificando e che  difficilmente andremmo a testare “manualmente”.&lt;/p&gt;
-
-&lt;p&gt;In questa risposta ho dato una visione molto generica del software testing; esistono tante altre sotto-aree (integration, unit, e2e…) e tecniche da conoscere, ma il senso generale è che si, &lt;strong&gt;un computer può  fare dei test al posto tuo, è molto più veloce di te, e ne guadagni in qualità.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;Link alla domanda originale&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="testing" /><summary type="html">Mi chiedeva Emanuele su Quora:</summary></entry></feed>
+&lt;p&gt;Next time we’ll talk about iterators and symbols in Javascript, another nice addition to the language. Stay tuned!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">Hi there! Let’s try to create a simple Group object, very similar to the existing Set object in Javascript. Here’s the specification for this Abstract Data Type:</summary></entry></feed>
