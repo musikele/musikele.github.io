@@ -12,7 +12,7 @@ tags:
 header-img: "/images/index.png"
 description: 'I wrote a little browser npm utility just for fun, but the process from
   code to npm is not so straightforward. Let''s have a look at all my mistakes and
-  diskoveries. '
+  discoveries. '
 
 ---
 Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It's called [Html Table Builder](https://www.npmjs.com/package/html-table-builder "HTML Table Builder").
