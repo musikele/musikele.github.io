@@ -64,7 +64,7 @@ fields:
   config:
     required: true
 pages:
-- _posts/what-i-learned-by-writing-my-first-npm-module.md
+- _posts/2018-11-17-what-i-learned-by-writing-my-first-npm-module.md
 - _posts/2018-11-05-inspiring-tech-people-to-follow-nicholas-c-zakas.md
 - _posts/2018-10-29-the-easiest-way-to-understand-javascript-generators.md
 - _posts/2018-10-25-docker-cheatsheet.md
