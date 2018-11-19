@@ -64,6 +64,7 @@ Many more features have to come:
 
   The relevant bits to expose the library are in the `output` property; read the [documentation](https://webpack.js.org/configuration/output/#output-library) for it.
 * **NPM** - I used npm (tool) to upload my pckage to NPM (site). NPM had some security issues lately, somebody hacked maintainers accounts and released dangerous code in popular libraries. That's why they reset all user passwords and implemented 2FA authentication and, even I am a huge user of 2FA, I had some trouble activating it. BTW, everything is up and in place now. 
+  The second little I found was naming the library. It is a table generator, but you really can't imagine [how many there are](https://www.npmjs.com/search?q=json%20to%20table). Trying to be self-explicative, without sacrificing the "ideal good name", took me to choose a `html-table-builder`. I would have loved to call it `super-table` or `table-generator`, but guess what? Already taken. Sad. 
 * **Javascript** - I have a story to tell about JS and dynamic typing. I was writing the function that [extracts the name of the columns](https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js), and in the first version it returned an array of strings.   
   Then I decided to return an array of object and DANG! errors everywhere, fortunately tracked down by unit tests.   
   Then I decided to change again and make it return an object instead of an array, and again only TDD could help me to track down errors.   
