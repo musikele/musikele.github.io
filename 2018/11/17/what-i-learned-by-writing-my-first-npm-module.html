@@ -12,7 +12,7 @@
 	<title>What I learned by writing my first npm module - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="javascript, nodejs" />  
-	<meta http-equiv="last-modified" content="2018-11-19 10:16:09 +0100" /> 
+	<meta http-equiv="last-modified" content="2018-11-19 10:23:28 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -171,8 +171,8 @@ module.exports = {
 
     <p>The relevant bits to expose the library are in the <code>output</code> property; read the <a href="https://webpack.js.org/configuration/output/#output-library">documentation</a> for it.</p>
   </li>
-  <li><strong>NPM</strong> - I used npm (tool) to upload my pckage to NPM (site). NPM had some security issues lately, somebody hacked maintainers accounts and released dangerous code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication and, even I am a huge user of 2FA, I had some trouble activating it. BTW, everything is up and in place now. 
-The second little I found was naming the library. It is a table generator, but you really can’t imagine <a href="https://www.npmjs.com/search?q=json%20to%20table">how many there are</a>. Trying to be self-explicative, without sacrificing the “ideal good name”, took me to choose a <code>html-table-builder</code>. I would have loved to call it <code>super-table</code> or <code>table-generator</code>, but guess what? Already taken. Sad.</li>
+  <li><strong>NPM</strong> - I used npm (tool) to upload my pckage to NPM (site). NPM had some security issues lately, somebody hacked maintainers accounts and released dangerous code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication, that is a good thing. It even works from console. 
+But the main trouble was naming the library. It is a table generator, and you really can’t imagine <a href="https://www.npmjs.com/search?q=json%20to%20table">how many there are</a>. Trying to be self-explicative, without sacrificing the “ideal good name”, took me to choose a <code>html-table-builder</code>. I would have loved to call it <code>super-table</code> or <code>table-generator</code>, but guess what? Already taken. Sad.</li>
   <li><strong>Javascript</strong> - I have a story to tell about JS and dynamic typing. I was writing the function that <a href="https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js">extracts the name of the columns</a>, and in the first version it returned an array of strings. <br />
 Then I decided to return an array of object and DANG! errors everywhere, fortunately tracked down by unit tests. <br />
 Then I decided to change again and make it return an object instead of an array, and again only TDD could help me to track down errors. <br />
