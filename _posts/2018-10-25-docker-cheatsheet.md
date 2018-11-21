@@ -5,7 +5,7 @@ author: musikele
 title: Docker cheatsheet
 category: English
 layout: post
-date: 2018-10-25 00:00:00 +0200
+date: 2018-10-24 22:00:00 +0000
 tags:
 - docker
 - cheatsheet
@@ -44,7 +44,7 @@ $ docker ps -a
 * `ps` alone prints only the active containers
 * `-a` shows also the exited containers
 
-## Inspecting a container 
+## Inspecting a container
 
 If the container is started as daemon you might want to see the output.
 
@@ -56,41 +56,41 @@ $ docker logs -t -f NAME_OF_CONTAINER
 * `-f` works like `-f` in `tail -f`; logs become live. Use `CTRL-C` to exit.
 * `-t` shows also timestamps.
 
-To check container processes: 
+To check container processes:
 
 ```shell
 $ docker top daemon_dave
 ```
 
-To get stats about a bunch of docker containers: 
+To get stats about a bunch of docker containers:
 
 ```shell
 $ docker stats daemon_dave daemon_kate
 ```
 
-## Running programs in a container 
+## Running programs in a container
 
-Daemon mode: 
+Daemon mode:
 
 ```shell
 $ sudo docker exec -d daemon_dave touch /etc/new_config_file
 ```
 
-* `-d` stands for daemon mode. 
-* `exec` is used to run a command in the `daemon-dave` container. 
+* `-d` stands for daemon mode.
+* `exec` is used to run a command in the `daemon-dave` container.
 
-Interactive mode: 
+Interactive mode:
 
 ```shell
 $ docker exec -t -i daemon_dave /bin/bash
 ```
 
-* `-t` creates a TTY 
-* `-i` captures STDIN 
+* `-t` creates a TTY
+* `-i` captures STDIN
 
 ...basically opens an interactive shell.
 
-## Stopping & Deleting 
+## Stopping & Deleting
 
 ```console
 $ docker stop CONTAINER 
@@ -104,4 +104,77 @@ $ docker rm CONTAINER
 
 ```console
 $ docker images
+```
+
+## Build a static container with my blog 
+
+1. create the `Dockerfile`: 
+
+```
+# Version: 0.0.1 
+FROM ubuntu:18.04 
+LABEL maintainer="XXX@gmail.com"
+# update and install stuff we need: ruby, nodejs, nginx
+RUN apt-get update && apt-get install -y nginx make build-essential ruby ruby-dev curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs 
+# install ruby gems to build the blog
+RUN gem install bundler
+RUN gem install jekyll
+# specify that we want to work in the directory /root/
+WORKDIR /root/
+# Remove the default Nginx configuration file
+RUN rm -v /etc/nginx/nginx.conf
+# Copy a configuration file from the current directory
+ADD nginx.conf /etc/nginx/
+# add files from our current directory (.) to the local work dir (/root/)
+ADD . .
+# install jekyll plugins and build the site
+RUN bundle install 
+RUN bundle exec jekyll build --config=_config.yml,_config_dev.yml
+# copy generated website to nginx public dir 
+RUN cp -r _site/* /usr/share/nginx/html/
+# run nginx as foreground process. 
+CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 80
+```
+
+In a Dockerfile there must be a `CMD` command otherwise the process will stop after being launched. 
+
+To actually make it work you should also configure your nginx with a valid `nginx.conf`:
+
+```
+# file nginx.conf
+worker_processes 1;
+
+events { worker_connections 1024; }
+
+http {
+    include    mime.types;
+    sendfile on;
+    server {
+        root /usr/share/nginx/html/;
+        index index.html;
+        server_name localhost;
+        listen 80;
+    }
+}
+```
+
+Then we can build the image: 
+
+```bash 
+$ docker build -t "musikele/blog" .
+```
+
+And we can run it with: 
+
+```bash
+$ docker run -d -p 80:80 --name blog musikele/blog
+```
+
+In case anything goes wrong, you can enter and inspect the running container with: 
+
+```console
+$ docker exec -i -t blog /bin/bash
 ```
