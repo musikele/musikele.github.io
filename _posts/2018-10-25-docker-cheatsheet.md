@@ -108,9 +108,9 @@ $ docker images
 
 ## Build a static container with my blog 
 
-1. create the `Dockerfile`: 
+create the `Dockerfile`: 
 
-```
+```docker
 # Version: 0.0.1 
 FROM ubuntu:18.04 
 LABEL maintainer="XXX@gmail.com"
@@ -143,7 +143,7 @@ In a Dockerfile there must be a `CMD` command otherwise the process will stop af
 
 To actually make it work you should also configure your nginx with a valid `nginx.conf`:
 
-```
+```nginx
 # file nginx.conf
 worker_processes 1;
 
@@ -175,6 +175,6 @@ $ docker run -d -p 80:80 --name blog musikele/blog
 
 In case anything goes wrong, you can enter and inspect the running container with: 
 
-```console
+```bash
 $ docker exec -i -t blog /bin/bash
 ```
