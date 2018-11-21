@@ -12,7 +12,7 @@
 	<title>Docker cheatsheet - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="docker, cheatsheet" />  
-	<meta http-equiv="last-modified" content="2018-11-21 16:19:19 +0100" /> 
+	<meta http-equiv="last-modified" content="2018-11-21 16:21:59 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -214,11 +214,9 @@
 
 <h2 id="build-a-static-container-with-my-blog">Build a static container with my blog</h2>
 
-<ol>
-  <li>create the <code>Dockerfile</code>:</li>
-</ol>
+<p>create the <code>Dockerfile</code>:</p>
 
-<pre><code># Version: 0.0.1 
+<pre><code class="language-docker"># Version: 0.0.1 
 FROM ubuntu:18.04 
 LABEL maintainer="XXX@gmail.com"
 # update and install stuff we need: ruby, nodejs, nginx
@@ -250,7 +248,7 @@ EXPOSE 80
 
 <p>To actually make it work you should also configure your nginx with a valid <code>nginx.conf</code>:</p>
 
-<pre><code># file nginx.conf
+<pre><code class="language-nginx"># file nginx.conf
 worker_processes 1;
 
 events { worker_connections 1024; }
@@ -279,7 +277,7 @@ http {
 
 <p>In case anything goes wrong, you can enter and inspect the running container with:</p>
 
-<pre><code class="language-console">$ docker exec -i -t blog /bin/bash
+<pre><code class="language-bash">$ docker exec -i -t blog /bin/bash
 </code></pre>
  
 			
@@ -1906,7 +1904,7 @@ http {
         
 
         <div class="col-4">
-            <h5><a href="/2018/04/05/un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.html">Un programmatore dovrebbe continuare a programmare nel suo tempo libero?</a></h5>
+            <h5><a href="/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/">Non c'é nulla di più definitivo di una scelta provvisoria</a></h5>
         </div>
     
         
@@ -1916,7 +1914,7 @@ http {
         
 
         <div class="col-4">
-            <h5><a href="/2017/10/03/recensione-dell-xps-15-2017.html">Windows non fa più così schifo: recensione Dell XPS 15" 9560 (2017)</a></h5>
+            <h5><a href="/2017/03/20/l-inglese-tra-italiani-a-lavoro-e-una-scelta-sbagliata.html">L'Inglese tra italiani, a lavoro, è una scelta sbagliata</a></h5>
         </div>
     
 
