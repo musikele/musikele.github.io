@@ -12,7 +12,7 @@
 	<title>Docker cheatsheet - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="docker, cheatsheet" />  
-	<meta http-equiv="last-modified" content="2018-11-06 10:16:18 +0100" /> 
+	<meta http-equiv="last-modified" content="2018-11-21 16:14:46 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -37,7 +37,7 @@
 
 
 
-  <meta content="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" property="og:url">
+  <meta content="https://michelenasti.com/2018/10/24/docker-cheatsheet.html" property="og:url">
 
 
 
@@ -65,7 +65,7 @@
   <meta name="twitter:title" content="Docker cheatsheet">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">
+  <meta name="twitter:url" content="https://michelenasti.com/2018/10/24/docker-cheatsheet.html">
 
 
 
@@ -104,17 +104,17 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2018/10/25/docker-cheatsheet.html">Docker cheatsheet</a></h1>
-			<p class="post-meta">Oct 25, 2018 • musikele</p>
+			<h1 class="post-title"><a href="/2018/10/24/docker-cheatsheet.html">Docker cheatsheet</a></h1>
+			<p class="post-meta">Oct 24, 2018 • musikele</p>
 		</header>
 
 		<section>
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&text=Docker cheatsheet:%20https://michelenasti.com/2018/10/25/docker-cheatsheet.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Docker cheatsheet) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&title=Docker cheatsheet&summary=&source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/24/docker-cheatsheet.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/24/docker-cheatsheet.html&text=Docker cheatsheet:%20https://michelenasti.com/2018/10/24/docker-cheatsheet.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Docker cheatsheet) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/24/docker-cheatsheet.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/24/docker-cheatsheet.html&title=Docker cheatsheet&summary=&source=https://michelenasti.com/2018/10/24/docker-cheatsheet.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 			
 			<p>I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</p>
@@ -211,14 +211,84 @@
 
 <pre><code class="language-console">$ docker images
 </code></pre>
+
+<h2 id="build-a-static-container-with-my-blog">Build a static container with my blog</h2>
+
+<ol>
+  <li>create the <code>Dockerfile</code>:</li>
+</ol>
+
+<pre><code># Version: 0.0.1 
+FROM ubuntu:18.04 
+LABEL maintainer="XXX@gmail.com"
+# update and install stuff we need: ruby, nodejs, nginx
+RUN apt-get update &amp;&amp; apt-get install -y nginx make build-essential ruby ruby-dev curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs 
+# install ruby gems to build the blog
+RUN gem install bundler
+RUN gem install jekyll
+# specify that we want to work in the directory /root/
+WORKDIR /root/
+# Remove the default Nginx configuration file
+RUN rm -v /etc/nginx/nginx.conf
+# Copy a configuration file from the current directory
+ADD nginx.conf /etc/nginx/
+# add files from our current directory (.) to the local work dir (/root/)
+ADD . .
+# install jekyll plugins and build the site
+RUN bundle install 
+RUN bundle exec jekyll build --config=_config.yml,_config_dev.yml
+# copy generated website to nginx public dir 
+RUN cp -r _site/* /usr/share/nginx/html/
+# run nginx as foreground process. 
+CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 80
+</code></pre>
+
+<p>In a Dockerfile there must be a <code>CMD</code> command otherwise the process will stop after being launched.</p>
+
+<p>To actually make it work you should also configure your nginx with a valid <code>nginx.conf</code>:</p>
+
+<pre><code># file nginx.conf
+worker_processes 1;
+
+events { worker_connections 1024; }
+
+http {
+    include    mime.types;
+    sendfile on;
+    server {
+        root /usr/share/nginx/html/;
+        index index.html;
+        server_name localhost;
+        listen 80;
+    }
+}
+</code></pre>
+
+<p>Then we can build the image:</p>
+
+<pre><code class="language-bash">$ docker build -t "musikele/blog" .
+</code></pre>
+
+<p>And we can run it with:</p>
+
+<pre><code class="language-bash">$ docker run -d -p 80:80 --name blog musikele/blog
+</code></pre>
+
+<p>In case anything goes wrong, you can enter and inspect the running container with:</p>
+
+<pre><code class="language-console">$ docker exec -i -t blog /bin/bash
+</code></pre>
  
 			
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&text=Docker cheatsheet:%20https://michelenasti.com/2018/10/25/docker-cheatsheet.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Docker cheatsheet) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/25/docker-cheatsheet.html&title=Docker cheatsheet&summary=&source=https://michelenasti.com/2018/10/25/docker-cheatsheet.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/25/docker-cheatsheet.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/10/24/docker-cheatsheet.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/10/24/docker-cheatsheet.html&text=Docker cheatsheet:%20https://michelenasti.com/2018/10/24/docker-cheatsheet.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Docker cheatsheet) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/10/24/docker-cheatsheet.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/10/24/docker-cheatsheet.html&title=Docker cheatsheet&summary=&source=https://michelenasti.com/2018/10/24/docker-cheatsheet.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/10/24/docker-cheatsheet.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -1836,7 +1906,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2016/01/perche-lobject-oriented-non-e-la-soluzione-a-tutto/">un pratico esempio del perchè l'Object Oriented non è la Soluzione Universale©'</a></h5>
+            <h5><a href="/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">Dovrei imparare Ruby on Rails o NodeJS ? </a></h5>
         </div>
     
         
@@ -1846,7 +1916,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2017/04/21/vorrei-ma-ho-paura-che-vada-male-come-assumersi-dei-rischi-intelligenti.html">"Vorrei, ma ho paura che vada male"	&#58 come assumersi dei "rischi intelligenti"</a></h5>
+            <h5><a href="/2018/08/22/ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.html">"ma... cosa intendete per testing?" - una breve introduzione al testing software </a></h5>
         </div>
     
 
@@ -1866,8 +1936,8 @@
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/2018/10/25/docker-cheatsheet.html';
-			var disqus_identifier = 'https://michelenasti.com/2018/10/25/docker-cheatsheet.html';
+			var disqus_url = 'https://michelenasti.com/2018/10/24/docker-cheatsheet.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/10/24/docker-cheatsheet.html';
 
     };
     
