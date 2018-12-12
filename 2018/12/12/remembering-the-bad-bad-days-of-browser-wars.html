@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>10 years around the web platform, what's changed and what's not - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="html,  javascript, css, internet explorer, jquery, chrome, firefox, edge, safari, microsoft, google, apple, mozilla" />  
+	<meta http-equiv="last-modified" content="2018-12-12 11:33:24 +0100" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="10 years around the web platform, what's changed and what's not" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Starting from 2006, what is changed to the web plaftorm, what we have now and where are we going. Should we leave all the web to only one browser? " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" property="og:url">
+
+
+
+  <meta content="2018-12-12T00:00:00+01:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/1472784019browser-wars-over.png" property="og:image">
+
+
+
+  
+  <meta content="html" property="article:tag">
+  
+  <meta content=" javascript" property="article:tag">
+  
+  <meta content="css" property="article:tag">
+  
+  <meta content="internet explorer" property="article:tag">
+  
+  <meta content="jquery" property="article:tag">
+  
+  <meta content="chrome" property="article:tag">
+  
+  <meta content="firefox" property="article:tag">
+  
+  <meta content="edge" property="article:tag">
+  
+  <meta content="safari" property="article:tag">
+  
+  <meta content="microsoft" property="article:tag">
+  
+  <meta content="google" property="article:tag">
+  
+  <meta content="apple" property="article:tag">
+  
+  <meta content="mozilla" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="10 years around the web platform, what's changed and what's not">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html">
+
+
+
+  <meta name="twitter:description" content="Starting from 2006, what is changed to the web plaftorm, what we have now and where are we going. Should we leave all the web to only one browser? ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/1472784019browser-wars-over.png">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+	
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html">10 years around the web platform, what's changed and what's not</a></h1>
+			<p class="post-meta">Dec 12, 2018 • musikele</p>
+		</header>
+
+		<section>
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&text=10 years around the web platform, what's changed and what's not:%20https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(10 years around the web platform, what's changed and what's not) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&title=10 years around the web platform, what's changed and what's not&summary=&source=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+			
+			<p><strong>In 2006 I was studying web technologies at University</strong>. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.</p>
+
+<p><img src="/images/1 Me2MiUgum7fhYWoUp5nwJA.png" alt="The web was a huge mass of &lt;table&gt; elements" title="The youtube homepage in 2006" /></p>
+
+<p><strong>HTML</strong> was at version 4 and there were a lot of standards competing like <strong>xhtml</strong> (basically, xml to write html and help syntax checkers) and also many <strong>doctypes</strong> (strict, transitional …) that I never fully understood. Fortunately now we just write <code>&lt;!DOCTYPE html&gt;</code> and that’s it. <code>&lt;div&gt;</code> was a relatively new thing.</p>
+
+<p><strong>Javascript</strong> was not cool. The teacher didn’t spend more than 2-3 lessons on it, just explaining how to do basic input validation and some DOM manipulation. Strangely enough, javascript as a language was never versioned but now we refer to that days as EcmaScript3 (<a href="https://www.w3schools.com/js/js_versions.asp">here’s a table with all javascript versions</a>). No JQuery was introduced. There were no books ot guides to learn JS, too. There was just one devtool available, and it was a Firefox extension called <em>Firebug</em> (later it became part of the browser).</p>
+
+<p><strong>CSS</strong> was also crazy (it still is!). Some browsers adhered to the standard, but not the main one, forcing developers to cross test everything on all possible browsers. Fortunately at the time browsers were just 3-4, not the plethora we have now.</p>
+
+<p>So… my first days of web design were just crazy. One of the tasks I had to do for this exam was to develop a “personal website”, and I remember that it was not rendering correctly on IE.</p>
+
+<h2 id="internet-explorer-the-bad-guy">Internet Explorer, the bad guy</h2>
+
+<p>What I didn’t know is that IE <em>deliberately</em> violated the standard, using its power and market share to <strong>impose</strong> their version of the web against rivals.</p>
+
+<p>I struggled realizing a simple website that would show correctly on firefox, following the standards, but not at all on IE (95% of the market share at the time).</p>
+
+<p>Same for Javascript: IE was just not following some rules that were correctly implemented by others, or deliberately not implementing some standard features. This is one of the motivations for libraries like <strong>JQuery</strong> to rise: cross-browser uniformity.</p>
+
+<p>I promised to myself to never work on the web: the platform is unreilable, buggy, nothing works as expected and there’s nothing you can do about it, except than doubling the work.</p>
+
+<h2 id="fast-forward-12-years-later">Fast forward, 12 years later</h2>
+
+<p>I’m working as a web developer since 6 years, basically I had no choice: when I ended university all the companies were transforming their long-lived java applications to web applications. The good news are that javascript has been standardized (ES5 before, and ES6 after, were huge steps towards browser uniformity) and even newer versions of IE are supporting it.</p>
+
+<p><strong>Chrome</strong>, started in 2008, is now the market leader with about 68% of the market share. Chrome uses its own rendering engine called <em>Blink,</em> part of the <em>Chromium project</em>.</p>
+
+<p><strong>Firefox, the only truly indipendent browser,</strong> is my default browser. They are not developed by a company but by a no-profit foundation. Their goal is to make the web platform the best possible platform. For many years they were behind Chrome on features, speed and privacy, but now FF is just the same if not better. So yes, I’m using Firefox for moral issues, but there’s litterally nothing that I’m loosing since the switch. (I also use FF on mobile). Firefox uses its own rendering engine called <em>Gecko</em>.</p>
+
+<p><strong>Edge</strong> was a new browser by Microsoft, and it was a surprisingly great browser. It is very fast and it also has a lot of features dedicated to tablets and touchscreens, so that you may prefer it on portable devices. Edge is still not widely adopted (lates stats say that edge is at 4% while IE is <em>still</em> at 11%!) but it should. Edge uses it’s own rendering engine called <em>EdgeHTML</em>.</p>
+
+<p><strong>Internet Explorer</strong> in 2018 it should be a thing of the past, but it’s not. IE has been <em>deprecated</em> and there will be no support for it in the future. It still has 11% of global market share (In Italy, where I live and work, it’s at 2-4%) and I think this happens because many companies impose to their employees to use IE, since they may have developed security features, of custom applets, or other stuff that cannot be thrown away and rebuild in newer technology because it’s not a simple/cheap job. This is what happens when you entangle your company on a closed platform…</p>
+
+<p><strong>Safari</strong> is a browser that only exists on Apple iDevices. Safari is now considered the IE of the current browsers: many missing features, slow updates, slow fixes… Many standard components are simply ignored because it’s not functional to the company’s view of the web (Apple encourages developers to go native). Safari is based on <em>Webkit</em>.</p>
+
+<p>There are many other browsers, like <strong>Opera</strong>, <strong>Brave</strong>, etc. but they’ve not reached great market share, even if they are technologically very valid.</p>
+
+<p><img src="/images/1472784019browser-wars-over.png" alt="" /></p>
+
+<h2 id="so--what-should-we-do-now">So … what should we do now</h2>
+
+<p>The web is the platform that I know better: I love and hate it. <strong>I love the fact that it’s spontaneous</strong>, with many great ideas going on, and it also moves very fast so that’s impossible to stay current with every possible update.</p>
+
+<p><strong>I hate that some companies implement standards based on what they consider useful.</strong> This has happened for a decade with Internet Explorer, and now with Safari.</p>
+
+<p>With Chrome I have a difficult relationship: <strong>I don’t like that one company owns the future of a browser, and with a 70% of the web they also own the future of the web</strong>; it creates some moral questions about privacy and security, too. But <strong>we cannot negate that Google has done a great job</strong> by open sourcing big parts of the browser and they also have been the first browser to implement new standards (and closing bugs).</p>
+
+<p>The latest news are that <strong>Edge is switching to a Chromium-based rendering engine</strong>. They are doing this because Edge was so new that - like all new things - the browser was crashy, with bugs, and not performing well on some things that others do just fine. I am not an Edge user and, while I have to admit that technologically they are chosing the best available platform, I feel sad that another competitor gives away the competition. <strong>This brings us to a monopoly and that’s not what I expect</strong>. The good thing is that developers at Microsoft will start contributing to parts of Chromium, so the rendering engine will not be really owned by only one company, but we still don’t know the direction of these two companies and their long-term plans.</p>
+
+<h2 id="please-condiser-using-a-non-chromium-browser-for-some-time">Please condiser using a non-Chromium browser for some time</h2>
+
+<p>I’m already using and supporting <strong>Firefox</strong> and there’s literally nothing I miss. It’s fast, secure, privacy oriented, cool. Break the monopoly; <strong>in the long term we - users - will be the only ones to earn the benefits of this choice.</strong></p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&text=10 years around the web platform, what's changed and what's not:%20https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(10 years around the web platform, what's changed and what's not) + ':%20'  + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html&title=10 years around the web platform, what's changed and what's not&summary=&source=https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript? <span class="label label-default">jquery</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/12/01/batman-ha-ispirato-il-comic-sans-storia-di-un-font-che-tutti-odiano.html">Batman ha ispirato il ... Comic Sans: storia di un Font che tutti odiano <span class="label label-default">microsoft</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/10/24/cryptomining-and-websites-how-long-will-be-tolerated.html">Cryptomining and websites: how long will it be tolerated? <span class="label label-default">google</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/02/ho-partecipato-a-google-hashcode2016-ecco-come-andata/">Ho partecipato a Google HashCode 2016. Ecco com'é andata <span class="label label-default">google</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html';
+			var disqus_identifier = 'https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">What I learned by writing my first npm module</a></h2>
+        </header>
+        <section>
+            <p>Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called <a href="https://www.npmjs.com/package/html-table-builder" title="HTML Table Builder">Html Table Builder</a>.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-12-12T11:32:12+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-19T10:23:28+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2018-12-12T11:34:22+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">10 years around the web platform, what’s changed and what’s not</title><link href="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" rel="alternate" type="text/html" title="10 years around the web platform, what's changed and what's not" /><published>2018-12-12T00:00:00+01:00</published><updated>2018-12-12T11:33:24+01:00</updated><id>https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars</id><content type="html" xml:base="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html">&lt;p&gt;&lt;strong&gt;In 2006 I was studying web technologies at University&lt;/strong&gt;. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/1 Me2MiUgum7fhYWoUp5nwJA.png&quot; alt=&quot;The web was a huge mass of &amp;lt;table&amp;gt; elements&quot; title=&quot;The youtube homepage in 2006&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HTML&lt;/strong&gt; was at version 4 and there were a lot of standards competing like &lt;strong&gt;xhtml&lt;/strong&gt; (basically, xml to write html and help syntax checkers) and also many &lt;strong&gt;doctypes&lt;/strong&gt; (strict, transitional …) that I never fully understood. Fortunately now we just write &lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt; and that’s it. &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; was a relatively new thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Javascript&lt;/strong&gt; was not cool. The teacher didn’t spend more than 2-3 lessons on it, just explaining how to do basic input validation and some DOM manipulation. Strangely enough, javascript as a language was never versioned but now we refer to that days as EcmaScript3 (&lt;a href=&quot;https://www.w3schools.com/js/js_versions.asp&quot;&gt;here’s a table with all javascript versions&lt;/a&gt;). No JQuery was introduced. There were no books ot guides to learn JS, too. There was just one devtool available, and it was a Firefox extension called &lt;em&gt;Firebug&lt;/em&gt; (later it became part of the browser).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CSS&lt;/strong&gt; was also crazy (it still is!). Some browsers adhered to the standard, but not the main one, forcing developers to cross test everything on all possible browsers. Fortunately at the time browsers were just 3-4, not the plethora we have now.&lt;/p&gt;
+
+&lt;p&gt;So… my first days of web design were just crazy. One of the tasks I had to do for this exam was to develop a “personal website”, and I remember that it was not rendering correctly on IE.&lt;/p&gt;
+
+&lt;h2 id=&quot;internet-explorer-the-bad-guy&quot;&gt;Internet Explorer, the bad guy&lt;/h2&gt;
+
+&lt;p&gt;What I didn’t know is that IE &lt;em&gt;deliberately&lt;/em&gt; violated the standard, using its power and market share to &lt;strong&gt;impose&lt;/strong&gt; their version of the web against rivals.&lt;/p&gt;
+
+&lt;p&gt;I struggled realizing a simple website that would show correctly on firefox, following the standards, but not at all on IE (95% of the market share at the time).&lt;/p&gt;
+
+&lt;p&gt;Same for Javascript: IE was just not following some rules that were correctly implemented by others, or deliberately not implementing some standard features. This is one of the motivations for libraries like &lt;strong&gt;JQuery&lt;/strong&gt; to rise: cross-browser uniformity.&lt;/p&gt;
+
+&lt;p&gt;I promised to myself to never work on the web: the platform is unreilable, buggy, nothing works as expected and there’s nothing you can do about it, except than doubling the work.&lt;/p&gt;
+
+&lt;h2 id=&quot;fast-forward-12-years-later&quot;&gt;Fast forward, 12 years later&lt;/h2&gt;
+
+&lt;p&gt;I’m working as a web developer since 6 years, basically I had no choice: when I ended university all the companies were transforming their long-lived java applications to web applications. The good news are that javascript has been standardized (ES5 before, and ES6 after, were huge steps towards browser uniformity) and even newer versions of IE are supporting it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Chrome&lt;/strong&gt;, started in 2008, is now the market leader with about 68% of the market share. Chrome uses its own rendering engine called &lt;em&gt;Blink,&lt;/em&gt; part of the &lt;em&gt;Chromium project&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Firefox, the only truly indipendent browser,&lt;/strong&gt; is my default browser. They are not developed by a company but by a no-profit foundation. Their goal is to make the web platform the best possible platform. For many years they were behind Chrome on features, speed and privacy, but now FF is just the same if not better. So yes, I’m using Firefox for moral issues, but there’s litterally nothing that I’m loosing since the switch. (I also use FF on mobile). Firefox uses its own rendering engine called &lt;em&gt;Gecko&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Edge&lt;/strong&gt; was a new browser by Microsoft, and it was a surprisingly great browser. It is very fast and it also has a lot of features dedicated to tablets and touchscreens, so that you may prefer it on portable devices. Edge is still not widely adopted (lates stats say that edge is at 4% while IE is &lt;em&gt;still&lt;/em&gt; at 11%!) but it should. Edge uses it’s own rendering engine called &lt;em&gt;EdgeHTML&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Internet Explorer&lt;/strong&gt; in 2018 it should be a thing of the past, but it’s not. IE has been &lt;em&gt;deprecated&lt;/em&gt; and there will be no support for it in the future. It still has 11% of global market share (In Italy, where I live and work, it’s at 2-4%) and I think this happens because many companies impose to their employees to use IE, since they may have developed security features, of custom applets, or other stuff that cannot be thrown away and rebuild in newer technology because it’s not a simple/cheap job. This is what happens when you entangle your company on a closed platform…&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Safari&lt;/strong&gt; is a browser that only exists on Apple iDevices. Safari is now considered the IE of the current browsers: many missing features, slow updates, slow fixes… Many standard components are simply ignored because it’s not functional to the company’s view of the web (Apple encourages developers to go native). Safari is based on &lt;em&gt;Webkit&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are many other browsers, like &lt;strong&gt;Opera&lt;/strong&gt;, &lt;strong&gt;Brave&lt;/strong&gt;, etc. but they’ve not reached great market share, even if they are technologically very valid.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/1472784019browser-wars-over.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;so--what-should-we-do-now&quot;&gt;So … what should we do now&lt;/h2&gt;
+
+&lt;p&gt;The web is the platform that I know better: I love and hate it. &lt;strong&gt;I love the fact that it’s spontaneous&lt;/strong&gt;, with many great ideas going on, and it also moves very fast so that’s impossible to stay current with every possible update.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I hate that some companies implement standards based on what they consider useful.&lt;/strong&gt; This has happened for a decade with Internet Explorer, and now with Safari.&lt;/p&gt;
+
+&lt;p&gt;With Chrome I have a difficult relationship: &lt;strong&gt;I don’t like that one company owns the future of a browser, and with a 70% of the web they also own the future of the web&lt;/strong&gt;; it creates some moral questions about privacy and security, too. But &lt;strong&gt;we cannot negate that Google has done a great job&lt;/strong&gt; by open sourcing big parts of the browser and they also have been the first browser to implement new standards (and closing bugs).&lt;/p&gt;
+
+&lt;p&gt;The latest news are that &lt;strong&gt;Edge is switching to a Chromium-based rendering engine&lt;/strong&gt;. They are doing this because Edge was so new that - like all new things - the browser was crashy, with bugs, and not performing well on some things that others do just fine. I am not an Edge user and, while I have to admit that technologically they are chosing the best available platform, I feel sad that another competitor gives away the competition. &lt;strong&gt;This brings us to a monopoly and that’s not what I expect&lt;/strong&gt;. The good thing is that developers at Microsoft will start contributing to parts of Chromium, so the rendering engine will not be really owned by only one company, but we still don’t know the direction of these two companies and their long-term plans.&lt;/p&gt;
+
+&lt;h2 id=&quot;please-condiser-using-a-non-chromium-browser-for-some-time&quot;&gt;Please condiser using a non-Chromium browser for some time&lt;/h2&gt;
+
+&lt;p&gt;I’m already using and supporting &lt;strong&gt;Firefox&lt;/strong&gt; and there’s literally nothing I miss. It’s fast, secure, privacy oriented, cool. Break the monopoly; &lt;strong&gt;in the long term we - users - will be the only ones to earn the benefits of this choice.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="html" /><category term=" javascript" /><category term="css" /><category term="internet explorer" /><category term="jquery" /><category term="chrome" /><category term="firefox" /><category term="edge" /><category term="safari" /><category term="microsoft" /><category term="google" /><category term="apple" /><category term="mozilla" /><summary type="html">In 2006 I was studying web technologies at University. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.</summary></entry><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-19T10:23:28+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It is an exercise from the book &lt;a href=&quot;https://eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;; also, there are other gazillion modules on NPM that do the same thing with very similar names (a sign that the book is used a lot by javascript learners).&lt;/p&gt;
 
@@ -726,143 +778,4 @@ for (const letter of hello) {
 // -&amp;gt; o
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;See you in the next iteration!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">ES6 introduced the new for ... of syntax to iterate a collection. Did you know? And how does it work?</summary></entry><entry><title type="html">Things you may not know about Object Oriented Javascript (Es6)</title><link href="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html" rel="alternate" type="text/html" title="Things you may not know about Object Oriented Javascript (Es6)" /><published>2018-09-03T00:00:00+02:00</published><updated>2018-09-04T13:09:43+02:00</updated><id>https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6</id><content type="html" xml:base="https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html">&lt;p&gt;Hi there! Let’s try to create a simple &lt;code&gt;Group&lt;/code&gt; object, very similar to the &lt;a href=&quot;https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Set&quot;&gt;existing &lt;code&gt;Set&lt;/code&gt; object&lt;/a&gt; in Javascript. Here’s the specification for this Abstract Data Type:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;It should provide a constructor that creates an empty Group.&lt;/li&gt;
-  &lt;li&gt;An object can be contained only once; there cannot be duplicates.&lt;/li&gt;
-  &lt;li&gt;It must provide &lt;code&gt;add()&lt;/code&gt;, &lt;code&gt;delete()&lt;/code&gt; and &lt;code&gt;has()&lt;/code&gt; methods.&lt;/li&gt;
-  &lt;li&gt;There must be a &lt;code&gt;length&lt;/code&gt; property containing the number of objects stored inside.&lt;/li&gt;
-  &lt;li&gt;Provide a static method that creates a &lt;code&gt;Group&lt;/code&gt; from an array.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;We’ll use this example to explain stuff regarding javascript new &lt;code&gt;class&lt;/code&gt; keyword introduced in ES6. We will &lt;strong&gt;not&lt;/strong&gt; focus on the performance of this class; only on js syntax.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;the-constructor&quot;&gt;The constructor&lt;/h2&gt;
-
-&lt;p&gt;Let’s start from the basics. Here’s the constructor for this object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
-  
-  constructor() {
-    this.elements = []
-  }
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;Group&lt;/code&gt; class has an internal array that will hold the list of objects.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-has-method&quot;&gt;The has() method&lt;/h2&gt;
-
-&lt;p&gt;Let’s start with the &lt;code&gt;has&lt;/code&gt; method, because it will be used widely in other methods. This method should check that an element is already in the group. Here’s the code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
-  ...
-  has(element) {
-    return this.elements.indexOf(element) &amp;gt;= 0 ? true : false
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Basically we leave to &lt;code&gt;indexOf()&lt;/code&gt; the burden of checking if the element is already present in our group.&lt;/p&gt;
-
-&lt;h2 id=&quot;add-and-delete-method&quot;&gt;add() and delete() method&lt;/h2&gt;
-
-&lt;p&gt;If an element is not present, &lt;code&gt;add&lt;/code&gt; should add the element to the group. And of course,  if an element is present, &lt;code&gt;delete&lt;/code&gt; should… delete.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
-  ...
-  add(element) {
-    if (this.has(element)) return
-    this.elements.push(element)
-  }
-
-  delete(element) {
-    if (!this.has(element)) return
-    this.elements.splice(this.elements.indexOf(element), 1)        
-  }
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What’s going on in the &lt;code&gt;delete()&lt;/code&gt; method? We search for the index of the element in the array, then we call the &lt;code&gt;[splice()](https://www.w3schools.com/jsref/jsref_splice.asp)&lt;/code&gt;&lt;a href=&quot;https://www.w3schools.com/jsref/jsref_splice.asp&quot;&gt; function&lt;/a&gt; that returns a new array without the element at the specified index. The second argument is the number of elements to remove.&lt;/p&gt;
-
-&lt;h2 id=&quot;that-dont-impress-me-much-fun-begins-now-getters-and-setters&quot;&gt;“That don’t impress me much”. Fun begins now: getters and setters&lt;/h2&gt;
-
-&lt;p&gt;Let’s see how to create a &lt;em&gt;derived&lt;/em&gt; property in a javascript object. A derived property is a property that changes when another property changes. For example we want to write a derived property to get the number of the elements for the group.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
-  ...
-  get length() {
-    return this.elements.length
-  }
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;there’s the keyword &lt;code&gt;get&lt;/code&gt; that specifies this property as a &lt;em&gt;getter&lt;/em&gt;. When we call &lt;code&gt;group.length&lt;/code&gt; (&lt;strong&gt;note: no parenthesis!&lt;/strong&gt;) we get the length of the inner array. We can write very complex stuff in here, and we can access the &lt;code&gt;length&lt;/code&gt; property as a normal property - the user will not know what’s going on internally.&lt;/li&gt;
-  &lt;li&gt;There’s also the &lt;code&gt;set&lt;/code&gt; keyword that you can use for setting a property. Here’s an example:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Example {
-  constructor() {
-    this.hidden = 3
-  }
-  set property(element) {
-    this.hidden = element
-  }
-  
-  get property() {
-    return this.hidden*this.hidden 
-}
-
-const example = new Example()
-console.log(example.hidden)
-// --&amp;gt; 3
-console.log(example.property)
-// --&amp;gt; 9, the getter returns the square of hidden
-example.property = 4
-// now `hidden` is set to 4
-console.log(example.hidden)
-// --&amp;gt; 4
-console.log(example.property)
-// --&amp;gt; 16
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This mechanism is very powerful and you can do a lot of stuff with it. VueJS uses this mechanism to create the Vue object filled with the &lt;code&gt;data&lt;/code&gt; properties.&lt;/p&gt;
-
-&lt;h2 id=&quot;static-methods&quot;&gt;Static methods&lt;/h2&gt;
-
-&lt;p&gt;Our last piece of exercise is to build a static method for the &lt;code&gt;Group&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p&gt;A static method are called without instantiating their class and are callable when the class is not instantiated. Let’s see an example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Group {
-  ...
-  static from(elements) {
-	//here we instantiate the object that will be returned
-    const group = new Group()
-    //for semplicity let's assume that `elements` is an array. 
-	for (let elem of elements) {
-      group.add(elem)
-    }
-    return group
-  }
-}
-
-const group = Group.from([&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;one&quot;]);
-// -&amp;gt; returns a Group 
-
-console.log(group.length)
-// -&amp;gt; 3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;finally&quot;&gt;Finally…&lt;/h2&gt;
-
-&lt;p&gt;I don’t suggest you to program in JS as you would in Java; JS object oriented features in JS are very different compared to other languages. However, if you find that something should be an object, and you end up writing an Object, there two tricks might become handy.&lt;/p&gt;
-
-&lt;p&gt;Next time we’ll talk about iterators and symbols in Javascript, another nice addition to the language. Stay tuned!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">Hi there! Let’s try to create a simple Group object, very similar to the existing Set object in Javascript. Here’s the specification for this Abstract Data Type:</summary></entry></feed>
+&lt;p&gt;See you in the next iteration!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">ES6 introduced the new for ... of syntax to iterate a collection. Did you know? And how does it work?</summary></entry></feed>
