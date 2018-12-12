@@ -25,9 +25,11 @@ description: 'Starting from 2006, what is changed to the web plaftorm, what we h
   now and where are we going. Should we leave all the web to only one browser? '
 
 ---
-**In 2006 I was studying web technologies**. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.
+**In 2006 I was studying web technologies at University**. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.
 
-**HTML** was at version 4 and there were a lot of standards competing like **xhtml** (basically, xml to write html and help syntax checkers) and also many **doctypes** (strict, transitional ...) that I never fully understood. Fortunately now we just write `<!DOCTYPE html>` and that's it. 
+![The web was a huge mass of <table> elements]({{ site.baseurl }}/images/1 Me2MiUgum7fhYWoUp5nwJA.png "The youtube homepage in 2006")  
+
+**HTML** was at version 4 and there were a lot of standards competing like **xhtml** (basically, xml to write html and help syntax checkers) and also many **doctypes** (strict, transitional ...) that I never fully understood. Fortunately now we just write `<!DOCTYPE html>` and that's it. `<div>` was a relatively new thing. 
 
 **Javascript** was not cool. The teacher didn't spend more than 2-3 lessons on it, just explaining how to do basic input validation and some DOM manipulation. Strangely enough, javascript as a language was never versioned but now we refer to that days as EcmaScript3 ([here's a table with all javascript versions](https://www.w3schools.com/js/js_versions.asp)). No JQuery was introduced. There were no books ot guides to learn JS, too. There was just one devtool available, and it was a Firefox extension called _Firebug_ (later it became part of the browser). 
 
@@ -47,7 +49,7 @@ I promised to myself to never work on the web: the platform is unreilable, buggy
 
 ## Fast forward, 12 years later 
 
-I'm working as a web developer since 6 years, basically I had no choice: when I ended university all the companies were transforming their long-lived programs to web applications. The good news are that javascript has been standardized (ES5 before, and ES6 after, were huge steps towards browser uniformity) and even newer versions of IE are supporting it. 
+I'm working as a web developer since 6 years, basically I had no choice: when I ended university all the companies were transforming their long-lived java applications to web applications. The good news are that javascript has been standardized (ES5 before, and ES6 after, were huge steps towards browser uniformity) and even newer versions of IE are supporting it. 
 
 **Chrome**, started in 2008, is now the market leader with about 68% of the market share. Chrome uses its own rendering engine called _Blink,_ part of the _Chromium project_. 
 
@@ -60,6 +62,8 @@ I'm working as a web developer since 6 years, basically I had no choice: when I 
 **Safari** is a browser that only exists on Apple iDevices. Safari is now considered the IE of the current browsers: many missing features, slow updates, slow fixes... Many standard components are simply ignored because it's not functional to the company's view of the web (Apple encourages developers to go native). Safari is based on _Webkit_. 
 
 There are many other browsers, like **Opera**, **Brave**, etc. but they've not reached great market share, even if they are technologically very valid. 
+
+![]({{ site.baseurl }}/images/1472784019browser-wars-over.png)
 
 ## So ... what should we do now
 
