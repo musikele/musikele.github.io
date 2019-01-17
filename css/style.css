@@ -1170,6 +1170,17 @@ iframe {
   margin: 0 auto !important;
   margin-bottom: 8px !important; }
 
+.ad {
+  margin: 0 auto;
+  margin-top: 4px;
+  margin-bottom: 16px; }
+  .ad .advertising-text {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-style: italic;
+    margin: 0 auto; }
+
 .badge {
   background-color: black;
   border-radius: 50%;
