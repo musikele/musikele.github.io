@@ -6,6 +6,8 @@ $breakpoints: (
     extraLarge : 100em
   );
 
+$font-size-small: 10px; 
+
   @function break($key) {
     @if map-has-key($breakpoints, $key) {
       @return 'min-width: #{ map-get( $breakpoints, $key ) }';

@@ -45,3 +45,4 @@ In the latest years a new branch in advertising was born, called **Programmatic 
 ## So ... when do you start? 
 
 Yes! I'm already working with them. I'm studying all the parts involved in the advertising world (DSPs, SSPs, DFP, GTP... these acronyms make no sense to those who do not work in this area!) and I am already deep diving in the typescript code. So many things happen in one library. 
+
