@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-01-15T22:19:54+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">10 years around the web platform, what’s changed and what’s not</title><link href="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" rel="alternate" type="text/html" title="10 years around the web platform, what's changed and what's not" /><published>2018-12-12T00:00:00+01:00</published><updated>2018-12-12T11:33:24+01:00</updated><id>https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars</id><content type="html" xml:base="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html">&lt;p&gt;&lt;strong&gt;In 2006 I was studying web technologies at University&lt;/strong&gt;. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-01-17T11:19:02+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Another remote job for me</title><link href="https://michelenasti.com/2019/01/17/another-remote-job-for-me.html" rel="alternate" type="text/html" title="Another remote job for me" /><published>2019-01-17T00:00:00+01:00</published><updated>2019-01-17T11:16:11+01:00</updated><id>https://michelenasti.com/2019/01/17/another-remote-job-for-me</id><content type="html" xml:base="https://michelenasti.com/2019/01/17/another-remote-job-for-me.html">&lt;p&gt;Two years ago I wrote about &lt;a href=&quot;/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/&quot;&gt;quitting a job in a big italian corporation&lt;/a&gt; to join a smaller reality that worked in fintech.&lt;/p&gt;
+
+&lt;p&gt;My previous company gave me an amazing experience. I worked on two fantastic public-facing products, a &lt;strong&gt;payments gateway&lt;/strong&gt; and a low-cost POS solution for small businesses.&lt;/p&gt;
+
+&lt;p&gt;However after two years I felt like I &lt;em&gt;had&lt;/em&gt; to change job, to make new experiences.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-&quot;&gt;How ?&lt;/h2&gt;
+
+&lt;p&gt;Long story short, &lt;a href=&quot;/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html&quot;&gt;I wrote an article on my blog that had an impredictable success&lt;/a&gt; about an obscure javascript feature and &lt;strong&gt;some companies reached out to know weather I wanted to join them&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;I did not send any CV in thist first phase. I think they understood my skills from my blog. I’m writing this because I’m super happy that my blog did pay off. It started as a (cheap) long-term investiment and I’m happy it succeded.&lt;/p&gt;
+
+&lt;p&gt;Back to the job, a guy reached out from Switzerland, writing to me in italian, asking weather I wanted to have a chat about his company. There was a lot of empathy with this guy, and I evaluate empathy as a bonus factor so when his boss finally asked me to go and have a meeting in person, I accepted.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-interview&quot;&gt;The interview&lt;/h2&gt;
+
+&lt;p&gt;So I took a plane one morning and flied to Zurich.  The interview was a classic whiteboard interview, and the question was easy (the difference of the two sum of two diagonals of a matrix) but this was just a starting point. We went through writing pseudocode, optimizing, etc. I remember I did not answer very well a question about how DNS works (a critical component in their architecture) but in the end they still hired me.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-they-do&quot;&gt;What they do&lt;/h2&gt;
+
+&lt;p&gt;The company works in the Advertising space. Their main job is to deliver ads to website visitors, like Adsense; but they organize an auction with many other ad providers, and this happens in the browser, so that the best-paying ads are shown.&lt;/p&gt;
+
+&lt;p&gt;So publishers contact the company and ask them to deliver ads to visitors, by injecting some javascript code. Then, revenues are payed from my company to the websites. At the moment they have clients spanning in the whole US market.&lt;/p&gt;
+
+&lt;h2 id=&quot;programmatic-advertising&quot;&gt;Programmatic advertising&lt;/h2&gt;
+
+&lt;p&gt;In the latest years a new branch in advertising was born, called &lt;strong&gt;Programmatic Advertising&lt;/strong&gt;. Programmatic uses a new approach to deliver ads, &lt;strong&gt;Header bidding&lt;/strong&gt;, and tries to make the website earn as much as possible by delivering the most valuable ad from a variety of sources. It’s way more interesting, complex, asynchronous and fast than you think. The web is basically free because of ads. Delivering good ads as fast as possible it’s super important: most ads you see on any website are rendered before the DOM is even parsed!&lt;/p&gt;
+
+&lt;h2 id=&quot;so--when-do-you-start&quot;&gt;So … when do you start?&lt;/h2&gt;
+
+&lt;p&gt;Yes! I’m already working with them. I’m studying all the parts involved in the advertising world (DSPs, SSPs, DFP, GTP… these acronyms make no sense to those who do not work in this area!) and I am already deep diving in the typescript code. So many things happen in one library.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="lavoro" /><category term="job" /><category term="remote" /><summary type="html">Two years ago I wrote about quitting a job in a big italian corporation to join a smaller reality that worked in fintech.</summary></entry><entry><title type="html">10 years around the web platform, what’s changed and what’s not</title><link href="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" rel="alternate" type="text/html" title="10 years around the web platform, what's changed and what's not" /><published>2018-12-12T00:00:00+01:00</published><updated>2018-12-12T11:33:24+01:00</updated><id>https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars</id><content type="html" xml:base="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html">&lt;p&gt;&lt;strong&gt;In 2006 I was studying web technologies at University&lt;/strong&gt;. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/1 Me2MiUgum7fhYWoUp5nwJA.png&quot; alt=&quot;The web was a huge mass of &amp;lt;table&amp;gt; elements&quot; title=&quot;The youtube homepage in 2006&quot; /&gt;&lt;/p&gt;
 
@@ -658,124 +688,4 @@ tag`Hello ${ a + b } World ${ a * b }`;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;This stuff is pretty nice but it is a bit obscure. Infact, apart from SQORN, I’ve never seen this syntax used elsewhere. &lt;strong&gt;It’s a nice-to-know feature, good for impressing others, but my suggestion is to use this only if it’s the clearest way to express your concepts.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><summary type="html">Let’s dig in a not-well-publicized ES6 feature: calling functions without using parentheses.</summary></entry><entry><title type="html">Symbols &amp;amp; Iterators in Javascript</title><link href="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html" rel="alternate" type="text/html" title="Symbols &amp; Iterators in Javascript" /><published>2018-09-04T00:00:00+02:00</published><updated>2018-09-04T16:41:34+02:00</updated><id>https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html">&lt;p&gt;ES6 introduced the new &lt;code&gt;for ... of&lt;/code&gt; syntax to iterate a collection. Did you know? And how does it work?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const arr = ['banana', 'apple', 'orange']
-
-for (const fruit of arr) {
-  console.log(fruit)
-}
-// -&amp;gt; banana
-// -&amp;gt; apple
-// -&amp;gt; orange
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;how-does-it-work&quot;&gt;How does it work&lt;/h3&gt;
-
-&lt;p&gt;What you are seeing is a syntax that iterates on an &lt;strong&gt;iterator&lt;/strong&gt;, a common concept in other languages but fairly new in Javascript.&lt;/p&gt;
-
-&lt;p&gt;Basically, if an object has an &lt;em&gt;iterator&lt;/em&gt; you can use the &lt;code&gt;for...of&lt;/code&gt; syntax to iterate on it.&lt;/p&gt;
-
-&lt;h3 id=&quot;how-do-we-create-an-iterator&quot;&gt;How do we create an iterator?&lt;/h3&gt;
-
-&lt;p&gt;To create iterators, we must provide a new property in our object called &lt;code&gt;Symbol.iterator&lt;/code&gt;. &lt;em&gt;…what ?&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-a-symbol&quot;&gt;What is a Symbol&lt;/h2&gt;
-
-&lt;p&gt;a Symbol is a javascript function that returns a value that is guaranteed to be unique.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const helloSymbol = Symbol('hello')
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;They accept names, to be easily recognized and debugged, but if you create two symbols with the same name, they are not equal:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const helloSymbol2 = Symbol('hello')
-console.log(helloSymbol === helloSymbol2)
-/// -&amp;gt; false 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;why-do-we-need-symbols&quot;&gt;Why do we &lt;em&gt;need&lt;/em&gt; symbols?&lt;/h3&gt;
-
-&lt;p&gt;First, I’ve seen a similar concept in other languages, like Ruby. They are useful to define properties (or functions) that are shared across different types of objects. You could use symbols to uniquely identify properties in your maps, for example.&lt;/p&gt;
-
-&lt;p&gt;There is one symbol that has been already created by the Javascript runtime, and it’s called &lt;code&gt;Symbol.iterator&lt;/code&gt;. **If an object has a property named &lt;code&gt;Symbol.iterator&lt;/code&gt;, it is iterable.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-do-we-create-an-iterator-for-our-objects&quot;&gt;How do we create an Iterator for our objects&lt;/h2&gt;
-
-&lt;p&gt;To create an iterator the first thing to do is to attach the property:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Example {
-  [Symbol.iterator]() {
-    ...
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As you can see, this is a legitimate name for a property. Infact, &lt;strong&gt;allowed names for properties are strings and symbols&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The only caveat is that we have to use the square brackets to define the property name, since it is an object.&lt;/p&gt;
-
-&lt;p&gt;The iterator must return a function that returns an object, containing a &lt;code&gt;next()&lt;/code&gt; function.&lt;/p&gt;
-
-&lt;p&gt;This &lt;code&gt;next()&lt;/code&gt; function, in turn, returns an object with two properties, &lt;code&gt;value&lt;/code&gt; (the actual element of the iteration) and &lt;code&gt;done&lt;/code&gt; (set to &lt;code&gt;true&lt;/code&gt; when the iteration has ended).&lt;/p&gt;
-
-&lt;p&gt;Confused?&lt;/p&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-
-&lt;p&gt;Do you remember the &lt;code&gt;Group&lt;/code&gt; class we &lt;a href=&quot;https://michelenasti.com/2018/09/03/some-things-you-may-not-know-about-object-oriented-javascript-es6.html&quot;&gt;designed in the last article&lt;/a&gt;? Basically it is a Set object with another name. It holds just one copy for every object (duplicates are not allowed) and we use a simple array to store data inside. Let’s write an iterator for it!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-const Group {
-  ...
-  [Symbol.iterator]() {
-    // a reference of internal elements...
-    const elements = this.elements;
-    if (elements.length === 0) return; 
-    //the index we'll use to track the next element to return
-    let i=-1;
-    return {
-      //we return a next() function that will be called many times, 
-      //once for every element in the Group 
-      next() {
-        i++;
-        //the next function returns an object with two properties
-        return {
-          //in value we store the actual element we're returning 
-          value: elements[i],
-          // if true, the iteration stops 
-          done: i === elements.length ? true : false
-        }
-      }
-    }
-  }
-}
-
-//Some tests! 
-// You find the code for the Group class in the previous article ;) 
-for (let value of Group.from([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;])) {
-  console.log(value);
-}
-// → a
-// → b
-// → c
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;….And this is how we create iterable objects in Javascript.&lt;/p&gt;
-
-&lt;p&gt;Easy, isn’t it?&lt;/p&gt;
-
-&lt;p&gt;Just to let you know, (don’t know if it’s useful..) &lt;code&gt;String&lt;/code&gt; is iterable, so you can write this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const hello = &quot;Hello&quot; 
-for (const letter of hello) {
-  console.log(letter)
-}
-// -&amp;gt; H
-// -&amp;gt; e
-// -&amp;gt; l
-// -&amp;gt; l
-// -&amp;gt; o
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;See you in the next iteration!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><summary type="html">ES6 introduced the new for ... of syntax to iterate a collection. Did you know? And how does it work?</summary></entry></feed>
+&lt;p&gt;This stuff is pretty nice but it is a bit obscure. Infact, apart from SQORN, I’ve never seen this syntax used elsewhere. &lt;strong&gt;It’s a nice-to-know feature, good for impressing others, but my suggestion is to use this only if it’s the clearest way to express your concepts.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><summary type="html">Let’s dig in a not-well-publicized ES6 feature: calling functions without using parentheses.</summary></entry></feed>
