@@ -2,18 +2,19 @@
 paginate: true
 comments: true
 author: musikele
-title: "Another remote job for me"
+title: Another remote job for me
 category: English
 layout: post
-date: 2019-01-17 00:00:00 +0100
+date: 2019-01-16 23:00:00 +0000
 tags:
 - lavoro
 - job
 - remote
-header-img: "/images/index.png"
-description: ''
----
+header-img: "/images/Zurich_Hero.jpg"
+description: 'New job in Zurich! Partially remote but still flying to Zurich from
+  time to time. '
 
+---
 Two years ago I wrote about [quitting a job in a big italian corporation]({{site.baseurl}}/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/) to join a smaller reality that worked in fintech. 
 
 My previous company gave me an amazing experience. I worked on two fantastic public-facing products, a **payments gateway** and a low-cost POS solution for small businesses. 
@@ -44,5 +45,4 @@ In the latest years a new branch in advertising was born, called **Programmatic 
 
 ## So ... when do you start? 
 
-Yes! I'm already working with them. I'm studying all the parts involved in the advertising world (DSPs, SSPs, DFP, GTP... these acronyms make no sense to those who do not work in this area!) and I am already deep diving in the typescript code. So many things happen in one library. 
-
+Yes! I'm already working with them. I'm studying all the parts involved in the advertising world (DSPs, SSPs, DFP, GTP... these acronyms make no sense to those who do not work in this area!) and I am already deep diving in the typescript code. So many things happen in one library.
