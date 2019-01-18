@@ -65,6 +65,7 @@ fields:
     required: true
 pages:
 - _posts/2018-01-12-la-mia-esperienza-col-test-driven-development.md
+- _posts/is-typescript-namespace-feature-deprecated.md
 - _posts/2017-11-20-growth-hacker-cos-e-intervista-a-raffaele-gaito.md
 - _posts/2018-10-29-the-easiest-way-to-understand-javascript-generators.md
 - _posts/2018-10-22-perché-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.md
