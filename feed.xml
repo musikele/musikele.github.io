@@ -1,4 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-01-22T16:06:56+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Another remote job for me</title><link href="https://michelenasti.com/2019/01/16/another-remote-job-for-me.html" rel="alternate" type="text/html" title="Another remote job for me" /><published>2019-01-17T00:00:00+01:00</published><updated>2019-01-18T23:16:53+01:00</updated><id>https://michelenasti.com/2019/01/16/another-remote-job-for-me</id><content type="html" xml:base="https://michelenasti.com/2019/01/16/another-remote-job-for-me.html">&lt;p&gt;Two years ago I wrote about &lt;a href=&quot;/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/&quot;&gt;quitting a job in a big italian corporation&lt;/a&gt; to join a smaller reality that worked in fintech.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-01-23T00:13:20+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Is typescript Namespace feature deprecated?</title><link href="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html" rel="alternate" type="text/html" title="Is typescript Namespace feature deprecated? " /><published>2019-01-23T00:00:00+01:00</published><updated>2019-01-19T00:40:46+01:00</updated><id>https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated</id><content type="html" xml:base="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html">&lt;p&gt;At my new job I maintain a medium-sized typescript library that is critical to the success of the company.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/typescript-cover-image.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The guy who wrote the library was not expert in typescript (but he was in ES6) and he needed a way to manage complexity before it was too late; so he rewrote entire parts of the app using &lt;strong&gt;typescript namespaces&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-namespace-in-typescript&quot;&gt;What is a namespace in Typescript&lt;/h2&gt;
+
+&lt;p&gt;Apart from the fact that typescript actually has a good documentation about &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/namespaces.html&quot; title=&quot;Typescript Namespaces&quot;&gt;namespaces&lt;/a&gt;, it is not clear why you would need them in first place. So, a namespace is declared like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;namespace Validation {
+	...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;inside the namespace you can create wathever you need: classes, functions, etc.&lt;/p&gt;
+
+&lt;p&gt;What’s the corresponding ES5 output?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;(function(Validation) {
+
+    Validation.foo = 123;
+
+})(Validation || (Validation = {}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The magic happens in the arguments: we pass the &lt;code&gt;Validation&lt;/code&gt; object if exists, otherwise we initialize a new &lt;code&gt;Validation&lt;/code&gt; object. This way we can add as many object we want to the same namespace without polluting the global scope.&lt;/p&gt;
+
+&lt;p&gt;But …&lt;/p&gt;
+
+&lt;h2 id=&quot;is-this-actually-needed&quot;&gt;Is this actually needed?&lt;/h2&gt;
+
+&lt;p&gt;You can actually have many files that declare objects and classes in the same namespace:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;// typescript: 
+// file 1
+namespace Validation {
+	const foo = 123;
+}
+// file 2
+namespace Validation {
+	const bar = 567;
+}
+
+//This becomes, in es6:
+(function(Validation) {
+    Validation.foo = 123;
+})(Validation || (Validation = {}))
+
+//file 2... 
+(function(Validation) {
+    Validation.bar = 567;
+})(Validation || (Validation = {}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And in memory &lt;code&gt;Validation&lt;/code&gt; will contain both &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; properties.&lt;/p&gt;
+
+&lt;p&gt;If these two &lt;code&gt;Validation&lt;/code&gt; namespace declaration are in two separate files, evaluating  order is important. That’s why in Typescript when you use namespaces you also use a custom tag &lt;code&gt;/// &amp;lt;reference path=&quot;Validation.ts&quot; /&amp;gt;&lt;/code&gt; to reference the actual ordering of files. But, guess what? &lt;strong&gt;This tag is not supported by Visual Studio Code&lt;/strong&gt; - no autocomplete, bitches.&lt;/p&gt;
+
+&lt;p&gt;Apart from this, the problem we faced was &lt;strong&gt;testing&lt;/strong&gt;: actually being able to test a namespaced class or function is very important (where is quality if you don’t have tests?). We eventually found the combination of importing, module type and typescript setting that would allow us to do this. but it was cumbersome.&lt;/p&gt;
+
+&lt;p&gt;I &lt;em&gt;think&lt;/em&gt; that this syntax was developed before ES6 was actually developed, but in my modest opinion &lt;strong&gt;ES6 modules surpassed them in functionality&lt;/strong&gt; and are more similar to how we commonly modularize stuff. You should go with ES6 straight.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-es6-modules-are-better&quot;&gt;Why ES6 modules are better&lt;/h2&gt;
+
+&lt;p&gt;First, an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;//typescript
+export class Validaton { 
+	... 
+}
+
+//becomes, in javascript:
+export class Validation {
+	... 
+}
+
+//then you can import the class anywhere: 
+import { Validation } from '../Validation' 
+
+function checkData(data) {
+	Validation.isValid(data)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Can you see the difference? There is &lt;em&gt;NO&lt;/em&gt; difference! Typescript is a superset of ES6 so you have more power in what you can do, but that doesn’t mean you should do it. In this case, ES6 solved the problem of modularization for us by doing a good job, so we don’t need any namespace at all in common programs (unless you specifically want to use namespaces).&lt;/p&gt;
+
+&lt;p&gt;My rule of thumb: &lt;strong&gt;stick to ES6 the more you can and just add types&lt;/strong&gt; to classes and functions. This way the code is readable also by those who don’t know typescript.&lt;/p&gt;
+
+&lt;p&gt;The great &lt;strong&gt;benefit&lt;/strong&gt; of all this is with &lt;strong&gt;IDE autocompletion&lt;/strong&gt; and &lt;strong&gt;error highlighting&lt;/strong&gt;. Today I refactored the whole library based only on IDE suggestions, and it was a breeze. Can you imagine doing this in ES6? Impossible.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-people-that-deprecates-namespaces&quot;&gt;Other people that deprecates namespaces&lt;/h2&gt;
+
+&lt;p&gt;This &lt;a href=&quot;https://basarat.gitbooks.io/typescript/docs/project/namespaces.html&quot;&gt;ultra-famous book&lt;/a&gt; about typescript states:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For most projects we recommend using external modules and using &lt;code&gt;namespace&lt;/code&gt; for quick demos and porting old JavaScript code.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;TSLint has a predefined rule to &lt;a href=&quot;https://palantir.github.io/tslint/rules/no-namespace/&quot;&gt;avoid namespaces&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The same opinion is found in &lt;a href=&quot;https://stackoverflow.com/questions/12737942/does-typescript-support-namespace#comment78314603_12742162&quot;&gt;many places&lt;/a&gt; around Stack Overflow:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I wouldn’t recommended &lt;code&gt;namespace&lt;/code&gt; nor mixing it with &lt;code&gt;module&lt;/code&gt; source code.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;so-what&quot;&gt;So what&lt;/h2&gt;
+
+&lt;p&gt;I think namespaces will hit their end-of-life soon, basically they solved a problem that now can be solved with classical ES6 syntax. Even if the import/export keyword is not working in all browsers out of the box, that’ the road they are covering so it’s just a matter of time and we’ll get rid of any other solution we had to manage complexity.&lt;/p&gt;
+
+&lt;p&gt;See you soon!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">At my new job I maintain a medium-sized typescript library that is critical to the success of the company.</summary></entry><entry><title type="html">Another remote job for me</title><link href="https://michelenasti.com/2019/01/17/another-remote-job-for-me.html" rel="alternate" type="text/html" title="Another remote job for me" /><published>2019-01-17T00:00:00+01:00</published><updated>2019-01-23T00:11:17+01:00</updated><id>https://michelenasti.com/2019/01/17/another-remote-job-for-me</id><content type="html" xml:base="https://michelenasti.com/2019/01/17/another-remote-job-for-me.html">&lt;p&gt;Two years ago I wrote about &lt;a href=&quot;/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/&quot;&gt;quitting a job in a big italian corporation&lt;/a&gt; to join a smaller reality that worked in fintech.&lt;/p&gt;
 
 &lt;p&gt;My previous company gave me an amazing experience. I worked on two fantastic public-facing products, a &lt;strong&gt;payments gateway&lt;/strong&gt; and a low-cost POS solution for small businesses.&lt;/p&gt;
 
@@ -603,89 +714,4 @@ function myRequire(name) {  
 
 &lt;p&gt;The idea of this article comes from the &lt;a href=&quot;https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG&quot;&gt;explanation of this function at chapter 10 (Modules)&lt;/a&gt;. The book (&lt;a href=&quot;https://www.eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;) is excellent, but I had the urge to better understand, and try with a debugger, what I could not understand with my mind alone.&lt;/p&gt;
 
-&lt;p&gt;You should definitely read the book if you want to better understand javascript.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.</summary></entry><entry><title type="html">Javascript: call functions without using parentheses (what?!)</title><link href="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html" rel="alternate" type="text/html" title="Javascript: call functions without using parentheses (what?!)" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-20T09:52:23+02:00</updated><id>https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!)</id><content type="html" xml:base="https://michelenasti.com/2018/09/19/Javascript-chiamare-funzioni-senza-usare-parentesi-(what!).html">&lt;p&gt;Let’s dig in a not-well-publicized ES6 feature: calling functions without using parentheses.&lt;/p&gt;
-
-&lt;p&gt;If you are familiar with Ruby, you know that in Ruby you can omit parentheses when they’re not ambiguous:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;puts 'hello world' 
-puts('hello world') 
-//-&amp;gt; same result!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But we’re in javascript and this is not allowed. Uhm… &lt;strong&gt;in some forms it &lt;em&gt;IS&lt;/em&gt; allowed!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-ive-discovered-this-sqorn&quot;&gt;How I’ve discovered this: SQORN&lt;/h2&gt;
-
-&lt;p&gt;In my search for new libraries, I found &lt;a href=&quot;https://sqorn.org/&quot;&gt;SQORN&lt;/a&gt; library. Sqorn allows you to write sql queries in nodejs.&lt;/p&gt;
-
-&lt;p&gt;What captured my attention is &lt;em&gt;the way Sqorn is intended to be used&lt;/em&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const sq = require('sqorn-pg')()
-const kid = sq.from`person`.where`age &amp;lt; 13` 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What’s happening here?! Where are parentheses? &lt;strong&gt;Is this javascript after all?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;template-strings&quot;&gt;Template strings&lt;/h2&gt;
-
-&lt;p&gt;You should already know the newest way of declaring a string in JS, like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const str = `this is a string!`
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And it is very useful because you can interpolate values inside, witouth concatenating:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var name = 'Michele';
-//es5
-var helloES5 = &quot;Hello, &quot; + name;
-//es6 
-const helloES6 = `Hello ${name}`;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Imagine you have to concatenate 6-7 items in the same sentence… You’ll agree the ES6 version is clearer ;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The nice part of this string declaration is that you can pass strings as arguments to functions without parentheses:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function hello(name) {
-	console.log(`How are you ${name}`);
-}
-
-// The convention is to write the string right 
-// after the function name...
-hello`Michele` 
-//-&amp;gt; How are you Michele 
-
-//...but you can put a space too 
-hello `Michele `
-//-&amp;gt; How are you Michele
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This syntax doesn’t work with &lt;code&gt;'&lt;/code&gt; or &lt;code&gt;&quot;&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;hello 'Michele'
-//-&amp;gt; SyntaxError: unexpected token: string literal
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;more-power-to-string-templates&quot;&gt;More power to string templates!&lt;/h2&gt;
-
-&lt;p&gt;Studying this syntax I discovered intresting features. For example, functions can extract the variables (ones in &lt;code&gt;${...}&lt;/code&gt;) from the template string:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a = 5;
-var b = 10;
-
-function tag(strings, ...values) {
-  console.log(strings[0]); // &quot;Hello &quot;
-  console.log(strings[1]); // &quot; World &quot;
-  console.log(values[0]);  // 15
-  console.log(values[1]);  // 50
-  
-  return &quot;Bazinga!&quot;;
-}
-
-tag`Hello ${ a + b } World ${ a * b }`;
-// &quot;Bazinga!&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;This stuff is pretty nice but it is a bit obscure. Infact, apart from SQORN, I’ve never seen this syntax used elsewhere. &lt;strong&gt;It’s a nice-to-know feature, good for impressing others, but my suggestion is to use this only if it’s the clearest way to express your concepts.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><summary type="html">Let’s dig in a not-well-publicized ES6 feature: calling functions without using parentheses.</summary></entry></feed>
+&lt;p&gt;You should definitely read the book if you want to better understand javascript.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.</summary></entry></feed>

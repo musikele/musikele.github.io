@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>My problem: start custom js code with ngRoute - Michele Nasti's blog</title>
+	<title>Is typescript Namespace feature deprecated?  - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="" />  
-	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-01-19 00:40:46 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="My problem: start custom js code with ngRoute" property="og:title">
+  <meta content="Is typescript Namespace feature deprecated? " property="og:title">
 
 
 
@@ -33,20 +33,20 @@
 
 
 
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+  <meta content="Typescript: the good, the bad, the deprecated ?" property="og:description">
 
 
 
-  <meta content="https://michelenasti.com/2015/10/start-custom-js-with-ngroute/" property="og:url">
+  <meta content="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html" property="og:url">
 
 
 
-  <meta content="2015-10-30T09:26:03+01:00" property="article:published_time">
+  <meta content="2019-01-23T00:00:00+01:00" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 
 
 
-<meta content="/img/logo-high-resolution.png" property="og:image">
+<meta content="https://michelenasti.com///images/typescript-cover-image.jpg" property="og:image">
 
 
 
@@ -58,16 +58,18 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="My problem: start custom js code with ngRoute">
+  <meta name="twitter:title" content="Is typescript Namespace feature deprecated? ">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/2015/10/start-custom-js-with-ngroute/">
+  <meta name="twitter:url" content="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html">
 
 
 
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+  <meta name="twitter:description" content="Typescript: the good, the bad, the deprecated ?">
 
 
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/typescript-cover-image.jpg">
 
 	<!--</noscript>-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
@@ -105,37 +107,132 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2015/10/start-custom-js-with-ngroute/">My problem: start custom js code with ngRoute</a></h1>
-			<p class="post-meta">Oct 30, 2015 • musikele</p>
+			<h1 class="post-title"><a href="/2019/01/23/is-typescript-namespace-feature-deprecated.html">Is typescript Namespace feature deprecated? </a></h1>
+			<p class="post-meta">Jan 23, 2019 • musikele</p>
 		</header>
 
 		<section>
 			
-			<p>The problem is: I took a theme for a website and now I am <em>angularizing</em> it, mainly to use two features of this framework: the <strong>ngImport</strong> feature (for the footer) and <strong>ngRoute</strong>, to get a dynamic menu for my website.</p>
+			<p>At my new job I maintain a medium-sized typescript library that is critical to the success of the company.</p>
 
-<p>After 2-3 hours of playing, I almost gave up.</p>
+<p><img src="/images/typescript-cover-image.jpg" alt="" /></p>
 
-<p>This template is built in a very classical way, so all js libraries are just JS files that are imported in each page. We are talking of libraries like jquery, parallax, and others.</p>
+<p>The guy who wrote the library was not expert in typescript (but he was in ES6) and he needed a way to manage complexity before it was too late; so he rewrote entire parts of the app using <strong>typescript namespaces</strong>.</p>
 
-<p>My “angularization” of the website started like this: from the home page, divide the toolbar (it will be my index) from the content.</p>
+<h2 id="what-is-a-namespace-in-typescript">What is a namespace in Typescript</h2>
 
-<p>At this step I already had problems: jquery was not firing its events on the content page.</p>
+<p>Apart from the fact that typescript actually has a good documentation about <a href="https://www.typescriptlang.org/docs/handbook/namespaces.html" title="Typescript Namespaces">namespaces</a>, it is not clear why you would need them in first place. So, a namespace is declared like this:</p>
 
-<p><strong>BEFORE</strong> the page loaded, then scripts started and jquery found its way to start its functions on the elements. <strong>NOW</strong> the header loads, then all the scripts load, then the content loads, then… Nothing. Seems that i can execute only Angularjs code at this point.</p>
+<pre><code class="language-typescript">namespace Validation {
+	...
+}
+</code></pre>
 
-<p>I managed to solve creating a function that wraps the jquery code and calling it everytime I change page; but maybe I have to do this for every other library? Is there a more generic way?</p>
+<p>inside the namespace you can create wathever you need: classes, functions, etc.</p>
 
-<p><strong>RequireJs</strong> might be the solution and I am exploring it, however I am also concerned with how many libraries I am injecting in my website: right now we are already using 190 Mb of RAM…  Too much for a simple website IMHO.</p>
+<p>What’s the corresponding ES5 output?</p>
 
-<p>Let me get back to my dirty website… My feeling is that <strong>Angular was too much to get just this simple routing capability,</strong> maybe I have to explore other libraries to get what I want. Any other idea/solution will be very much appreciated!</p>
+<pre><code class="language-typescript">(function(Validation) {
+
+    Validation.foo = 123;
+
+})(Validation || (Validation = {}))
+</code></pre>
+
+<p>The magic happens in the arguments: we pass the <code>Validation</code> object if exists, otherwise we initialize a new <code>Validation</code> object. This way we can add as many object we want to the same namespace without polluting the global scope.</p>
+
+<p>But …</p>
+
+<h2 id="is-this-actually-needed">Is this actually needed?</h2>
+
+<p>You can actually have many files that declare objects and classes in the same namespace:</p>
+
+<pre><code class="language-typescript">// typescript: 
+// file 1
+namespace Validation {
+	const foo = 123;
+}
+// file 2
+namespace Validation {
+	const bar = 567;
+}
+
+//This becomes, in es6:
+(function(Validation) {
+    Validation.foo = 123;
+})(Validation || (Validation = {}))
+
+//file 2... 
+(function(Validation) {
+    Validation.bar = 567;
+})(Validation || (Validation = {}))
+</code></pre>
+
+<p>And in memory <code>Validation</code> will contain both <code>foo</code> and <code>bar</code> properties.</p>
+
+<p>If these two <code>Validation</code> namespace declaration are in two separate files, evaluating  order is important. That’s why in Typescript when you use namespaces you also use a custom tag <code>/// &lt;reference path="Validation.ts" /&gt;</code> to reference the actual ordering of files. But, guess what? <strong>This tag is not supported by Visual Studio Code</strong> - no autocomplete, bitches.</p>
+
+<p>Apart from this, the problem we faced was <strong>testing</strong>: actually being able to test a namespaced class or function is very important (where is quality if you don’t have tests?). We eventually found the combination of importing, module type and typescript setting that would allow us to do this. but it was cumbersome.</p>
+
+<p>I <em>think</em> that this syntax was developed before ES6 was actually developed, but in my modest opinion <strong>ES6 modules surpassed them in functionality</strong> and are more similar to how we commonly modularize stuff. You should go with ES6 straight.</p>
+
+<h2 id="why-es6-modules-are-better">Why ES6 modules are better</h2>
+
+<p>First, an example:</p>
+
+<pre><code class="language-typescript">//typescript
+export class Validaton { 
+	... 
+}
+
+//becomes, in javascript:
+export class Validation {
+	... 
+}
+
+//then you can import the class anywhere: 
+import { Validation } from '../Validation' 
+
+function checkData(data) {
+	Validation.isValid(data)
+}
+</code></pre>
+
+<p>Can you see the difference? There is <em>NO</em> difference! Typescript is a superset of ES6 so you have more power in what you can do, but that doesn’t mean you should do it. In this case, ES6 solved the problem of modularization for us by doing a good job, so we don’t need any namespace at all in common programs (unless you specifically want to use namespaces).</p>
+
+<p>My rule of thumb: <strong>stick to ES6 the more you can and just add types</strong> to classes and functions. This way the code is readable also by those who don’t know typescript.</p>
+
+<p>The great <strong>benefit</strong> of all this is with <strong>IDE autocompletion</strong> and <strong>error highlighting</strong>. Today I refactored the whole library based only on IDE suggestions, and it was a breeze. Can you imagine doing this in ES6? Impossible.</p>
+
+<h2 id="other-people-that-deprecates-namespaces">Other people that deprecates namespaces</h2>
+
+<p>This <a href="https://basarat.gitbooks.io/typescript/docs/project/namespaces.html">ultra-famous book</a> about typescript states:</p>
+
+<blockquote>
+  <p>For most projects we recommend using external modules and using <code>namespace</code> for quick demos and porting old JavaScript code.</p>
+</blockquote>
+
+<p>TSLint has a predefined rule to <a href="https://palantir.github.io/tslint/rules/no-namespace/">avoid namespaces</a>.</p>
+
+<p>The same opinion is found in <a href="https://stackoverflow.com/questions/12737942/does-typescript-support-namespace#comment78314603_12742162">many places</a> around Stack Overflow:</p>
+
+<blockquote>
+  <p>I wouldn’t recommended <code>namespace</code> nor mixing it with <code>module</code> source code.</p>
+</blockquote>
+
+<h2 id="so-what">So what</h2>
+
+<p>I think namespaces will hit their end-of-life soon, basically they solved a problem that now can be solved with classical ES6 syntax. Even if the import/export keyword is not working in all browsers out of the box, that’ the road they are covering so it’s just a matter of time and we’ll get rid of any other solution we had to manage complexity.</p>
+
+<p>See you soon!</p>
  
 			
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/10/start-custom-js-with-ngroute/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/10/start-custom-js-with-ngroute/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/10/start-custom-js-with-ngroute/&text=My problem: start custom js code with ngRoute:%20https://michelenasti.com/2015/10/start-custom-js-with-ngroute/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(My problem: start custom js code with ngRoute) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/10/start-custom-js-with-ngroute/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/10/start-custom-js-with-ngroute/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/10/start-custom-js-with-ngroute/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/10/start-custom-js-with-ngroute/&title=My problem: start custom js code with ngRoute&summary=&source=https://michelenasti.com/2015/10/start-custom-js-with-ngroute/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/10/start-custom-js-with-ngroute/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html&text=Is typescript Namespace feature deprecated? :%20https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Is typescript Namespace feature deprecated? ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html&title=Is typescript Namespace feature deprecated? &summary=&source=https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -1818,8 +1915,8 @@
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/2015/10/start-custom-js-with-ngroute/';
-			var disqus_identifier = 'https://michelenasti.com/2015/10/start-custom-js-with-ngroute/';
+			var disqus_url = 'https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html';
 
     };
     
@@ -1839,37 +1936,20 @@ s.setAttribute('data-timestamp', +new Date());
 
     <div class="6u 12u(small) excerpt" id="previousArticle">
         <header>
-            <h2><a href="/2015/10/slide-del-mio-mini-talk-su-nodejs-al-linux-day-salerno-2015/">Slide del mio mini-talk su NodeJS al Linux Day Salerno 2015</a></h2>
+            <h2><a href="/2019/01/17/another-remote-job-for-me.html">Another remote job for me</a></h2>
         </header>
         <section>
-            <p>Ecco le slide del mio talk al Linux Day Salerno!</p>
+            <p>Two years ago I wrote about <a href="/2016/06/cambio-lavoro-alla-scoperta-del-remote-working/">quitting a job in a big italian corporation</a> to join a smaller reality that worked in fintech.</p>
 
 
         </section>
         <div>
             <ul class="actions">
-                <li><a href="/2015/10/slide-del-mio-mini-talk-su-nodejs-al-linux-day-salerno-2015/" class="button">Read More</a></li>
+                <li><a href="/2019/01/17/another-remote-job-for-me.html" class="button">Read More</a></li>
             </ul>
         </div>
     </div>
      
-
-    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-        <header>
-            <h2><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/">Angularizing a jQuery website template: what I discovered, what I have done</a></h2>
-        </header>
-        <section>
-            <p>In my <a href="http://michelenasti.com/2015/10/start-custom-js-with-ngroute/">last post</a> I talked about angularizing a jQuery template for a new website I am developing.</p>
-
-
-        </section>
-        <div>
-            <ul class="actions">
-                <li><a href="//2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/" class="button">Read More</a></li>
-            </ul>
-        </div>
-    </div>
-    
 </div>
 		</footer>
 
