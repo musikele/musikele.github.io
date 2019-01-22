@@ -5,7 +5,7 @@ author: musikele
 title: Another remote job for me
 category: English
 layout: post
-date: 2019-01-16 23:00:00 +0000
+date: 2019-01-17 00:00:00 +0100
 tags:
 - lavoro
 - job
