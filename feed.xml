@@ -1,4 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-02-12T22:55:10+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Is typescript Namespace feature deprecated?</title><link href="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html" rel="alternate" type="text/html" title="Is typescript Namespace feature deprecated? " /><published>2019-01-23T00:00:00+01:00</published><updated>2019-01-19T00:40:46+01:00</updated><id>https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated</id><content type="html" xml:base="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html">&lt;p&gt;At my new job I maintain a medium-sized typescript library that is critical to the success of the company.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-02-13T13:31:56+01:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">How ads are loaded so fast: the command queue pattern</title><link href="https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html" rel="alternate" type="text/html" title="How ads are loaded so fast: the command queue pattern" /><published>2019-02-12T00:00:00+01:00</published><updated>2019-02-13T13:30:30+01:00</updated><id>https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern</id><content type="html" xml:base="https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html">&lt;p&gt;Prior to work in an ads company I had no idea of how ads are actually rendered on a page. I mean, I had a vague sense of what was going on, but the actual world behind it … well, it’s huge :)&lt;/p&gt;
+
+&lt;p&gt;Sometimes ads are loaded on a page even before you actually see any content. How? The first thing we learned at university is to wait for the DOM to have completely loaded, before doing anything to the DOM itself. This does not apply to ads, or better to say, ad companies use many tricks to load ads without blocking the DOM.&lt;/p&gt;
+
+&lt;p&gt;I won’t go in the detail of this process now, but basically ads are rendered inside &lt;em&gt;iframes&lt;/em&gt;, and iframes should never be used for anything different than ads (&lt;a href=&quot;https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&quot;&gt;my rule based on experience&lt;/a&gt; - in italian).&lt;/p&gt;
+
+&lt;p&gt;Here in this article I’m going to talk about how some popular ad libraries (like &lt;a href=&quot;https://support.google.com/admanager/answer/1638622?hl=en&amp;amp;ref_topic=4390039&quot;&gt;google publisher tag&lt;/a&gt; or &lt;a href=&quot;http://prebid.org/dev-docs/getting-started.html&quot;&gt;Prebid&lt;/a&gt;) allow users to write code that will be put in a queue and will be executed as soon as the library is loaded.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem-async-library-loading&quot;&gt;The problem: async library loading&lt;/h2&gt;
+
+&lt;p&gt;Suppose we have a library that will load something, and this initialization process will take some time. Also, we don’t know when the library will be actually loaded, since it’s asyncronous. However, we would like to start giving commands (e.g. setup instructions) to this library as soon as possible. How?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Let’s suppose our library’s name is, without much fantasy, &lt;code&gt;Library&lt;/code&gt; and is loaded from file &lt;code&gt;Library.js&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;the-client-code&quot;&gt;The client code&lt;/h2&gt;
+
+&lt;p&gt;in the client’s code, the code that the user will write to interact with our library, we will initialize the library like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var Library = Library || {}; 
+Library.queue = Library.queue || [];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In these two simple lines, we have initialized our library and its commands queue. In fact, if the &lt;code&gt;Library&lt;/code&gt; object does not exist, we will initialize it with an empty object, and then we will create the empty array property &lt;code&gt;Library.queue&lt;/code&gt; that will contain our initalization code. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Library.queue.push(function(){
+	console.log(&quot;Called only when the library has loaded, not before&quot;);
+	Library.doMagic();
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: I’m deliberately using ES5 code here. It would be fantastic that every user in the world was using the latest version of the coolest browser, but the reality is that &lt;strong&gt;a bunch of zombies are still using Internet Explorer&lt;/strong&gt;. Ad companies want to earn money on these people too!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;how-we-load-the-library&quot;&gt;How we load the Library&lt;/h2&gt;
+
+&lt;p&gt;Imagine we load our library with this &lt;code&gt;script&lt;/code&gt; tag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;script src=&quot;/path/to/Library.js&quot; async defer&amp;gt;&amp;lt;/async&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;async&lt;/code&gt; means that the browser will download the library as soon as possible, but the evaluation will start whenever it is more convenient (the browser decides). The HTML parser is paused when the script is evluated. &lt;code&gt;defer&lt;/code&gt; means the same thing (more or less!) but the code execution happens only after the DOM has been loaded. &lt;a href=&quot;https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html&quot; title=&quot;async vs defer&quot;&gt;More info here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By inserting the &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;defer&lt;/code&gt; keyword we don’t have any guarantee of the Library execution time, so we don’t know who will be loaded first.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-library-internals&quot;&gt;The Library internals&lt;/h2&gt;
+
+&lt;p&gt;Here’s an example of how the Library could initialize itself:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//This code could be in file Library.js 
+ 
+var Library = (function() {
+  ...
+  var queue = []; 
+  if (Library) {
+    // queue from outside might be null... 
+    queue = Library.queue || queue;
+  } 
+  //here we execute code that is in the queue
+  while (queue.length &amp;gt; 0) {
+    var command = queue.shift(); 
+    command();
+  }
+  ...
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;First we will check if the &lt;code&gt;Library&lt;/code&gt; object already exists. This may be because of the initialization we did in the client code. If so, we take the queue object and start executing all commands from the queue, until the queue is empty.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-async-its-fast&quot;&gt;So async, it’s fast&lt;/h2&gt;
+
+&lt;p&gt;By not forcing the browser to stop and parse our js, we gain a significant amount of perceived speed. And by splitting the client code in &lt;em&gt;commands&lt;/em&gt; we also get the guarantee that the client code will be executed.&lt;/p&gt;
+
+&lt;p&gt;In this simple snippet we have not covered other themes like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;what if we add another element to the queue after the initialization has already completed?&lt;/li&gt;
+  &lt;li&gt;A way of logging functions (yes, we can stringify functions) and remember a history of executed functions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s an exercise for you, fellow readers!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Prior to work in an ads company I had no idea of how ads are actually rendered on a page. I mean, I had a vague sense of what was going on, but the actual world behind it … well, it’s huge :)</summary></entry><entry><title type="html">Is typescript Namespace feature deprecated?</title><link href="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html" rel="alternate" type="text/html" title="Is typescript Namespace feature deprecated? " /><published>2019-01-23T00:00:00+01:00</published><updated>2019-01-19T00:40:46+01:00</updated><id>https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated</id><content type="html" xml:base="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html">&lt;p&gt;At my new job I maintain a medium-sized typescript library that is critical to the success of the company.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/typescript-cover-image.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -591,127 +673,4 @@ http {
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker exec -i -t blog /bin/bash
 &lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="English" /><category term="docker" /><category term="cheatsheet" /><summary type="html">I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</summary></entry><entry><title type="html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</title><link href="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" rel="alternate" type="text/html" title="Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?" /><published>2018-10-22T00:00:00+02:00</published><updated>2018-10-22T17:48:04+02:00</updated><id>https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">&lt;p&gt;Su Quora ho risposto a questa domanda: &lt;a href=&quot;https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript&quot;&gt;Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Buona lettura :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jquery" /><category term="javascript" /><category term="web" /><summary type="html">Su Quora ho risposto a questa domanda: Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</summary></entry><entry><title type="html">Dovrei imparare Ruby on Rails o NodeJS ?</title><link href="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html" rel="alternate" type="text/html" title="Dovrei imparare Ruby on Rails o NodeJS ? " /><published>2018-10-15T00:00:00+02:00</published><updated>2018-10-15T09:44:32+02:00</updated><id>https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">&lt;p&gt;A questo link su Quora c’è la mia risposta alla domanda: &lt;a href=&quot;https://it.quora.com/Dovrei-imparare-Ruby-on-Rails-o-Node-js/answer/Michele-Nasti&quot;&gt;Dovrei imparare Ruby on Rails o NodeJS?&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="ruby on rails" /><category term="ruby" /><category term="nodejs" /><summary type="html">A questo link su Quora c’è la mia risposta alla domanda: Dovrei imparare Ruby on Rails o NodeJS?</summary></entry><entry><title type="html">Let’s write our simple version of the require() function</title><link href="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html" rel="alternate" type="text/html" title="Let's write our simple version of the require() function" /><published>2018-10-02T00:00:00+02:00</published><updated>2018-11-21T16:24:55+01:00</updated><id>https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function</id><content type="html" xml:base="https://michelenasti.com/2018/10/02/let-s-write-a-simple-version-of-the-require-function.html">&lt;p&gt;You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.&lt;/p&gt;
-
-&lt;p&gt;In fact, &lt;strong&gt;Javascript is just the language used by many environments&lt;/strong&gt; (the browser, or NodeJS, are examples of environments) that offer more objects and functions to work with.&lt;/p&gt;
-
-&lt;p&gt;Node was the first environment to offer a way to organize code in modules by using a special function called &lt;code&gt;require()&lt;/code&gt;. How does it work? Let’s try to implement it from zero.&lt;/p&gt;
-
-&lt;p&gt;Here is an example of &lt;code&gt;require&lt;/code&gt; at work:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//test.js
-module.exports = &quot;Hello World&quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//main.js
-const test = require(&quot;./test.js&quot;); 
-console.log(test) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Let’s write that &lt;code&gt;require&lt;/code&gt; function.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-should-a-require-function-do&quot;&gt;What should a require() function do&lt;/h2&gt;
-
-&lt;p&gt;a &lt;code&gt;require&lt;/code&gt; function is expected to:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;read the content of a javascript file in a string&lt;/li&gt;
-  &lt;li&gt;evaluate that code&lt;/li&gt;
-  &lt;li&gt;save the exported function/object in a cache for later use (only read files once)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h3&gt;
-
-&lt;p&gt;We will not rebuild the whole NodeJS in a single post. In fact, I will not implement many NodeJS checks and giggles, we are only interested in understand how things work.&lt;/p&gt;
-
-&lt;p&gt;We will still need the real &lt;code&gt;require&lt;/code&gt; function to load the &lt;code&gt;fs&lt;/code&gt; module. I’m not cheating, it’s just that this post has to end sooner or later :)&lt;/p&gt;
-
-&lt;h3 id=&quot;myrequire-function&quot;&gt;myRequire() function&lt;/h3&gt;
-
-&lt;p&gt;here’s the code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//file setup.js
-
-const fs = require('fs');
-
-myRequire.cache = Object.create(null); //(1)
-
-function myRequire(name) {   
-    if (!(name in myRequire.cache)) {     
-        let code = fs.readFileSync(name, 'utf8'); //(2)
-        let module = {exports: {}}; //(3)
-        myRequire.cache[name] = module; //(4)    
-        let wrapper = Function(&quot;require, exports, module&quot;, code); //(5)
-        wrapper(myRequire, module.exports, module); //(6)
-    }
-    return myRequire.cache[name].exports; //(7)
-}
-
-...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;did-you-forget-to-declare-myrequire-variable&quot;&gt;Did you forget to declare myRequire variable?&lt;/h3&gt;
-
-&lt;p&gt;No. In Javascript, functions declared with &lt;code&gt;function&lt;/code&gt; keyword are evaluated before any other code (functions are “hoisted”) so they can be referenced even before they’re declared.&lt;/p&gt;
-
-&lt;p&gt;Also, functions can have properties (&lt;em&gt;this is javascript&lt;/em&gt;!) so you can add the &lt;code&gt;cache&lt;/code&gt; property to the &lt;code&gt;myRequire&lt;/code&gt; function &lt;strong&gt;(step 1)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Finally we’re creating the &lt;code&gt;cache&lt;/code&gt; property with &lt;code&gt;Object.create&lt;/code&gt;. With this function we can specify the object prototype, we have chosen to not specify a prototype. Why? This way we don’t mess with other functions or properties declared by the runtime. &lt;a href=&quot;https://www.reddit.com/r/javascript/comments/5e62us/is_there_a_reason_to_create_an_object_without_a/&quot;&gt;Here’s an explanation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Let’s go back to &lt;code&gt;myRequire&lt;/code&gt; . If the file we’re importing is not in cache, we read the file from disk &lt;strong&gt;(step 2)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Then we declare an empty &lt;code&gt;module&lt;/code&gt; object with just one property, &lt;code&gt;exports&lt;/code&gt; &lt;strong&gt;(step 3)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;We add this empty module to the cache, using the filename as the key, and then the magic happens &lt;strong&gt;(step 4)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-function-constructor&quot;&gt;The Function constructor&lt;/h2&gt;
-
-&lt;p&gt;In JS we can evaluate a string js code in two ways. The first way is via &lt;code&gt;eval()&lt;/code&gt; function, that is a bit dangerous (it messes up the scope) so it is highly discouraged to use it.&lt;/p&gt;
-
-&lt;p&gt;The second way to evaluate code that we have in a string is via the &lt;code&gt;Function&lt;/code&gt; constructor. This constructor takes a string with the arguments and a string with the code. This way everything has its own scope and doesn’t mess things up for others.&lt;/p&gt;
-
-&lt;p&gt;So, basically we are creating a new function with these variables &lt;strong&gt;(step 5)&lt;/strong&gt;: &lt;code&gt;require&lt;/code&gt;, &lt;code&gt;exports&lt;/code&gt;, and &lt;code&gt;module&lt;/code&gt;. Let’s think for a moment at the first example of this post, the file &lt;code&gt;test.js&lt;/code&gt;: it becomes&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function(require, exports, module) {
-  module.exports = &quot;Hello World&quot; 
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and the second file, &lt;code&gt;main.js&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function(require, exports, module) {
-  const test = require(&quot;./test.js&quot;); 
-  console.log(test) 
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Variables that seemed “global” in files are indeed passed as function arguments.&lt;/p&gt;
-
-&lt;h2 id=&quot;last-step-executing-the-function&quot;&gt;Last step: executing the function&lt;/h2&gt;
-
-&lt;p&gt;We have created &lt;strong&gt;(step 6)&lt;/strong&gt; a &lt;code&gt;wrapper&lt;/code&gt; variable that holds a function, but the function is never executed. We do this at the line:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;wrapper(myRequire, module.exports, module); 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note that the second variable (that should be &lt;code&gt;exports&lt;/code&gt;) is just a handle to &lt;code&gt;module.exports&lt;/code&gt;; NodeJS creators thought that this &lt;a href=&quot;https://blog.tableflip.io/the-difference-between-module-exports-and-exports/&quot;&gt;could have helped in writing less code…&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;When Node executes the function, everything that was “exported” (your public API) gets linked to the cache.&lt;/p&gt;
-
-&lt;p&gt;(Remember the &lt;code&gt;myRequire.cache[name] = module;&lt;/code&gt; line? When it was first found by the compiler it was point to a dummy &lt;code&gt;{ exports: {} }&lt;/code&gt; object; now it contains your module.)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;NOTE. Since we pass &lt;code&gt;myRequire&lt;/code&gt; to the wrapper function, we can from now on use &lt;code&gt;require&lt;/code&gt; in our test files, but our require gets called. Add a console.log if you don’t trust me ;)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Finally… &lt;code&gt;myRequire&lt;/code&gt; returns the &lt;code&gt;export&lt;/code&gt;ed stuff you declared &lt;strong&gt;(step 7)&lt;/strong&gt;, and that we saved to the cache so we won’t have to reevaluate this code again.&lt;/p&gt;
-
-&lt;h2 id=&quot;final-considerations&quot;&gt;Final considerations&lt;/h2&gt;
-
-&lt;p&gt;An example of this code &lt;a href=&quot;https://github.com/musikele/require-example&quot;&gt;can be found here&lt;/a&gt;, along with some console logs that explain what’s going on.&lt;/p&gt;
-
-&lt;p&gt;The idea of this article comes from the &lt;a href=&quot;https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG&quot;&gt;explanation of this function at chapter 10 (Modules)&lt;/a&gt;. The book (&lt;a href=&quot;https://www.eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;) is excellent, but I had the urge to better understand, and try with a debugger, what I could not understand with my mind alone.&lt;/p&gt;
-
-&lt;p&gt;You should definitely read the book if you want to better understand javascript.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">You should know that Javascript (better to say EcmaScript) does not specify any function to read and write files.</summary></entry></feed>
+&lt;p&gt;Buona lettura :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jquery" /><category term="javascript" /><category term="web" /><summary type="html">Su Quora ho risposto a questa domanda: Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</summary></entry><entry><title type="html">Dovrei imparare Ruby on Rails o NodeJS ?</title><link href="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html" rel="alternate" type="text/html" title="Dovrei imparare Ruby on Rails o NodeJS ? " /><published>2018-10-15T00:00:00+02:00</published><updated>2018-10-15T09:44:32+02:00</updated><id>https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs</id><content type="html" xml:base="https://michelenasti.com/2018/10/15/dovrei-imparare-ruby-on-rails-o-nodejs.html">&lt;p&gt;A questo link su Quora c’è la mia risposta alla domanda: &lt;a href=&quot;https://it.quora.com/Dovrei-imparare-Ruby-on-Rails-o-Node-js/answer/Michele-Nasti&quot;&gt;Dovrei imparare Ruby on Rails o NodeJS?&lt;/a&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="ruby on rails" /><category term="ruby" /><category term="nodejs" /><summary type="html">A questo link su Quora c’è la mia risposta alla domanda: Dovrei imparare Ruby on Rails o NodeJS?</summary></entry></feed>

@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>Ho provato la prossima versione di Eclipse (web-based) per voi - Michele Nasti's blog</title>
+	<title>How ads are loaded so fast: the command queue pattern - Michele Nasti's blog</title>
 	 
-	<meta name="keywords" content="docker, eclipse che" />  
-	<meta http-equiv="last-modified" content="2017-09-19 10:17:10 +0200" /> 
+	<meta name="keywords" content="" />  
+	<meta http-equiv="last-modified" content="2019-02-13 13:30:30 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="Ho provato la prossima versione di Eclipse (web-based) per voi" property="og:title">
+  <meta content="How ads are loaded so fast: the command queue pattern" property="og:title">
 
 
 
@@ -33,27 +33,23 @@
 
 
 
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+  <meta content="The command queue pattern allows you to give commands to your library, even if it has still not been loaded. This technique is widely used in advertising. " property="og:description">
 
 
 
-  <meta content="https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/" property="og:url">
+  <meta content="https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html" property="og:url">
 
 
 
-  <meta content="2015-12-01T14:30:15+01:00" property="article:published_time">
+  <meta content="2019-02-12T00:00:00+01:00" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 
 
 
-<meta content="/img/logo-high-resolution.png" property="og:image">
+<meta content="https://michelenasti.com///images/command_queue_pattern-2.jpg" property="og:image">
 
 
 
-  
-  <meta content="docker" property="article:tag">
-  
-  <meta content="eclipse che" property="article:tag">
   
 
 
@@ -62,16 +58,18 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="Ho provato la prossima versione di Eclipse (web-based) per voi">
+  <meta name="twitter:title" content="How ads are loaded so fast: the command queue pattern">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/">
+  <meta name="twitter:url" content="https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html">
 
 
 
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+  <meta name="twitter:description" content="The command queue pattern allows you to give commands to your library, even if it has still not been loaded. This technique is widely used in advertising. ">
 
 
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/command_queue_pattern-2.jpg">
 
 	<!--</noscript>-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
@@ -109,61 +107,103 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/">Ho provato la prossima versione di Eclipse (web-based) per voi</a></h1>
-			<p class="post-meta">Dec 1, 2015 • musikele</p>
+			<h1 class="post-title"><a href="/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html">How ads are loaded so fast: the command queue pattern</a></h1>
+			<p class="post-meta">Feb 12, 2019 • musikele</p>
 		</header>
 
 		<section>
 			
-			<p>E’ uscita una <a href="https://eclipse.org/che/">nuova versione di Eclipse</a>, denominata <strong>Eclipse Che</strong> (forse realizzata a Cuba?) che promette di essere un’autentica rivoluzione: non a caso, il titolo del sito è</p>
+			<p>Prior to work in an ads company I had no idea of how ads are actually rendered on a page. I mean, I had a vague sense of what was going on, but the actual world behind it … well, it’s huge :)</p>
 
-<div class="carousel-inner">
-  <div class="item active">
-    <div class="carousel-caption">
-      <h3>
-        Next Generation Eclipse IDE
-      </h3>
-      
-      <div id="attachment_462" style="width: 2512px" class="wp-caption aligncenter">
-        <a href="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/12/che-autocomplete.png"><img class="size-full wp-image-462" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/12/che-autocomplete.png?fit=920%2C606" alt="Eclipse Che in esecuzione ... in un browser!" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/12/che-autocomplete.png?w=2502 2502w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/12/che-autocomplete.png?resize=300%2C198 300w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/12/che-autocomplete.png?resize=1024%2C674 1024w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/12/che-autocomplete.png?resize=700%2C461 700w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/12/che-autocomplete.png?w=1840 1840w" sizes="(max-width: 920px) 100vw, 920px" data-recalc-dims="1" /></a>
-        
-        <p class="wp-caption-text">
-          Dall'immagine non si vede che Eclipse Che  è in esecuzione ... in un browser!
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+<p>Sometimes ads are loaded on a page even before you actually see any content. How? The first thing we learned at university is to wait for the DOM to have completely loaded, before doing anything to the DOM itself. This does not apply to ads, or better to say, ad companies use many tricks to load ads without blocking the DOM.</p>
 
-<p>Andiamo dritti al punto: <strong><em>Eclipse Che</em> è un IDE che viene eseguito all’interno del browser</strong>. Avete capito bene: tutta l’applicazione è una webapp che compila, assembla e genera applicazioni Docker per una portabilità massima.</p>
+<p>I won’t go in the detail of this process now, but basically ads are rendered inside <em>iframes</em>, and iframes should never be used for anything different than ads (<a href="https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">my rule based on experience</a> - in italian).</p>
 
-<p><strong>Installazione</strong>: scaricate il pacchetto per la vostra piattaforma, avanti avanti avanti fine. NON provate a cambiare installation path che fate guai (e sono stato una buona mezz’oretta a chiedermi perchè non riuscissi a farlo partire).</p>
+<p>Here in this article I’m going to talk about how some popular ad libraries (like <a href="https://support.google.com/admanager/answer/1638622?hl=en&amp;ref_topic=4390039">google publisher tag</a> or <a href="http://prebid.org/dev-docs/getting-started.html">Prebid</a>) allow users to write code that will be put in a queue and will be executed as soon as the library is loaded.</p>
 
-<p><strong>Primo avvio</strong>: si fa partire un .bat (o .sh) che lancia un webserver su <em>localhost:8080</em> ; una volta raggiunto l’indirizzo si entra nell’IDE vero e proprio. La prima cosa che farà sarà chiedervi di definire un workspace (proprio come il vecchio Eclipse…) e a quel punto potrete provare a buttare le mani.</p>
+<h2 id="the-problem-async-library-loading">The problem: async library loading</h2>
 
-<p>Primo progetto di test: Ho provato a creare uno dei progetti di esempio, nella fattispecie quello con GWT. Dopo averlo selezionato e cliccato su Next, l’applicazione si è bloccata. <em>Mmm.</em></p>
+<p>Suppose we have a library that will load something, and this initialization process will take some time. Also, we don’t know when the library will be actually loaded, since it’s asyncronous. However, we would like to start giving commands (e.g. setup instructions) to this library as soon as possible. How?</p>
 
-<p><strong>Secondo progetto di test:</strong> Visto che con la prima le cose non sono andate, ho provato a creare un progettino di test con maven. In questo caso il progetto è stato creato, ma non sono riuscito a farlo partire (si pianta quando provo a far partire l’app; credo che stesse provando a creare un Docker container e per qualche motivo pretendeva che ci fosse https in esecuzione).</p>
+<blockquote>
+  <p>Let’s suppose our library’s name is, without much fantasy, <code>Library</code> and is loaded from file <code>Library.js</code>.</p>
+</blockquote>
 
-<h3 id="scusa-ma-non-funziona-niente"><strong>Scusa ma… non funziona niente?</strong></h3>
+<h2 id="the-client-code">The client code</h2>
 
-<p>Si, non funziona niente, ma ciò che conta (e che mi elettrizza) è … il <em>_potenziale_</em>.</p>
+<p>in the client’s code, the code that the user will write to interact with our library, we will initialize the library like this:</p>
 
-<p>Siccome l’IDE non è più un programma standalone ma <strong>una webapp che gira in un browser</strong>, lo si potrà sia lanciare in locale sia <strong>installarlo su un server condiviso da tutta l’azienda</strong> e <strong>lavorare a più mani sullo stesso progetto</strong>, inventando nuovi paradigmi collaborativi (superando SVN e GIT).</p>
+<pre><code class="language-javascript">var Library = Library || {}; 
+Library.queue = Library.queue || [];
+</code></pre>
 
-<p>Le <strong>compilazioni e le esecuzioni onerose vengono eseguite in background sul server</strong>, che potrebbe essere molto più potente della vostra macchina. Pacchettizzare tutti gli output, anche quelli di sviluppo, con <strong>Docker significa astrarsi completamente dal sistema operativo dell’utente</strong>.</p>
+<p>In these two simple lines, we have initialized our library and its commands queue. In fact, if the <code>Library</code> object does not exist, we will initialize it with an empty object, and then we will create the empty array property <code>Library.queue</code> that will contain our initalization code. For example:</p>
 
-<p>C’è da dire che <em>Eclipse Che</em> non è il primo esperimento in questo senso. Altri siti offrivano qualcosa di simile, come <a href="https://c9.io/">Cloud9</a>, o <a href="https://codenvy.com/">Codenvy</a>, ma erano sistemi “esterni” che gestivano tutto per voi, senza la possibilità di customizzare l’ambiente con plugins o supportare nuovi linguaggi.</p>
+<pre><code class="language-javascript">Library.queue.push(function(){
+	console.log("Called only when the library has loaded, not before");
+	Library.doMagic();
+});
+</code></pre>
 
-<p>Attualmente <em>Eclipse Che</em> è un “proof-of-concept” o poco più, ma sono sicuro che nei prossimi mesi ne sentiremo delle belle. Forse tra qualche anno gli IDE (o meglio, tutti i programmi a cui siamo abituati) così come li intendiamo non esisteranno più.</p>
+<blockquote>
+  <p>Note: I’m deliberately using ES5 code here. It would be fantastic that every user in the world was using the latest version of the coolest browser, but the reality is that <strong>a bunch of zombies are still using Internet Explorer</strong>. Ad companies want to earn money on these people too!</p>
+</blockquote>
+
+<h2 id="how-we-load-the-library">How we load the Library</h2>
+
+<p>Imagine we load our library with this <code>script</code> tag:</p>
+
+<pre><code class="language-html">&lt;script src="/path/to/Library.js" async defer&gt;&lt;/async&gt;
+</code></pre>
+
+<p><code>async</code> means that the browser will download the library as soon as possible, but the evaluation will start whenever it is more convenient (the browser decides). The HTML parser is paused when the script is evluated. <code>defer</code> means the same thing (more or less!) but the code execution happens only after the DOM has been loaded. <a href="https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html" title="async vs defer">More info here</a>.</p>
+
+<p>By inserting the <code>async</code> and <code>defer</code> keyword we don’t have any guarantee of the Library execution time, so we don’t know who will be loaded first.</p>
+
+<h2 id="the-library-internals">The Library internals</h2>
+
+<p>Here’s an example of how the Library could initialize itself:</p>
+
+<pre><code class="language-javascript">//This code could be in file Library.js 
+ 
+var Library = (function() {
+  ...
+  var queue = []; 
+  if (Library) {
+    // queue from outside might be null... 
+    queue = Library.queue || queue;
+  } 
+  //here we execute code that is in the queue
+  while (queue.length &gt; 0) {
+    var command = queue.shift(); 
+    command();
+  }
+  ...
+})()
+</code></pre>
+
+<p>First we will check if the <code>Library</code> object already exists. This may be because of the initialization we did in the client code. If so, we take the queue object and start executing all commands from the queue, until the queue is empty.</p>
+
+<h2 id="so-async-its-fast">So async, it’s fast</h2>
+
+<p>By not forcing the browser to stop and parse our js, we gain a significant amount of perceived speed. And by splitting the client code in <em>commands</em> we also get the guarantee that the client code will be executed.</p>
+
+<p>In this simple snippet we have not covered other themes like:</p>
+
+<ul>
+  <li>what if we add another element to the queue after the initialization has already completed?</li>
+  <li>A way of logging functions (yes, we can stringify functions) and remember a history of executed functions</li>
+</ul>
+
+<p>That’s an exercise for you, fellow readers!</p>
  
 			
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/&text=Ho provato la prossima versione di Eclipse (web-based) per voi:%20https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Ho provato la prossima versione di Eclipse (web-based) per voi) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/&title=Ho provato la prossima versione di Eclipse (web-based) per voi&summary=&source=https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html&text=How ads are loaded so fast: the command queue pattern:%20https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(How ads are loaded so fast: the command queue pattern) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html&title=How ads are loaded so fast: the command queue pattern&summary=&source=https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -244,12 +284,6 @@
     
 
     
-        <div class="col-4">
-        <h5><a href="/2018/10/25/docker-cheatsheet.html">Docker cheatsheet <span class="label label-default">docker</span> </a></h5>
-        </div>
-        
-         
-    
 
 
 
@@ -1644,12 +1678,6 @@
 
     
 
-    
-        <div class="col-4">
-        <h5><a href="/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/">Tools that don't explain themselves clearly will not be used <span class="label label-default">docker</span> </a></h5>
-        </div>
-        
-         
     
 
 
@@ -1830,6 +1858,26 @@
             <h5><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h5>
         </div>
     
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/12/essere-bravi-colleghi-evitando-di-committare-cazzate/">Essere bravi colleghi evitando di committare cazzate</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2016/04/limportanza-di-un-pet-project-spiegata-da-chi-non-ne-ha-mai-realizzato-uno/">L'importanza di un Pet Project spiegata da chi non ne ha mai realizzato uno</a></h5>
+        </div>
+    
 
 
 </div>
@@ -1847,8 +1895,8 @@
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/';
-			var disqus_identifier = 'https://michelenasti.com/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/';
+			var disqus_url = 'https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html';
 
     };
     
@@ -1868,37 +1916,20 @@ s.setAttribute('data-timestamp', +new Date());
 
     <div class="6u 12u(small) excerpt" id="previousArticle">
         <header>
-            <h2><a href="/2015/11/459/">Leggere la query Hibernate in debug</a></h2>
+            <h2><a href="/2019/01/23/is-typescript-namespace-feature-deprecated.html">Is typescript Namespace feature deprecated? </a></h2>
         </header>
         <section>
-            <p>vi capita mai di aver disabilitato le query Hibernate/Jpa in Tomcat ? Ossia, le query non vengono stampate nella console. In genere si disabilitano altrimenti le prestazioni dell’app diventano scarsissime.</p>
+            <p>At my new job I maintain a medium-sized typescript library that is critical to the success of the company.</p>
 
 
         </section>
         <div>
             <ul class="actions">
-                <li><a href="/2015/11/459/" class="button">Read More</a></li>
+                <li><a href="/2019/01/23/is-typescript-namespace-feature-deprecated.html" class="button">Read More</a></li>
             </ul>
         </div>
     </div>
      
-
-    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-        <header>
-            <h2><a href="/2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/">Non c'é nulla di più definitivo di una scelta provvisoria</a></h2>
-        </header>
-        <section>
-            <p>Negli ultimi due giorni ho lavorato a un  refactoring della webapp che stiamo sviluppando e, mentre sistemavamo tutti i problemi che incontravamo lungo la strada, abbiamo trovato tante scelte <em>provvisorie</em> fatte dagli sviluppatori di sei mesi fa (alcune anche di un anno fa). Ci faceva sorridere il fatto che alcuni div fossero addirittura etichettati come <code>provvisorio</code> e invece sono resistiti tutto questo tempo.</p>
-
-
-        </section>
-        <div>
-            <ul class="actions">
-                <li><a href="//2015/12/non-ce-nulla-di-piu-definitivo-di-una-scelta-provvisoria/" class="button">Read More</a></li>
-            </ul>
-        </div>
-    </div>
-    
 </div>
 		</footer>
 
