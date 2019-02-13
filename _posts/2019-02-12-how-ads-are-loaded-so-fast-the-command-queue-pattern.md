@@ -83,7 +83,7 @@ var Library = (function() {
 
 First we will check if the `Library` object already exists. This may be because of the initialization we did in the client code. If so, we take the queue object and start executing all commands from the queue, until the queue is empty. 
 
-## So async, it's fast
+## That's so async, it's actually fast
 
 By not forcing the browser to stop and parse our js, we gain a significant amount of perceived speed. And by splitting the client code in _commands_ we also get the guarantee that the client code will be executed. 
 
