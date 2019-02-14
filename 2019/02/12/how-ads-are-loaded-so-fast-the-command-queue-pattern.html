@@ -12,7 +12,7 @@
 	<title>How ads are loaded so fast: the command queue pattern - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="" />  
-	<meta http-equiv="last-modified" content="2019-02-13 14:55:24 +0100" /> 
+	<meta http-equiv="last-modified" content="2019-02-14 17:14:12 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -153,7 +153,7 @@ Library.queue = Library.queue || [];
 
 <p>Imagine we load our library with this <code>script</code> tag:</p>
 
-<pre><code class="language-html">&lt;script src="/path/to/Library.js" async defer&gt;&lt;/async&gt;
+<pre><code class="language-html">&lt;script src="/path/to/Library.js" async defer&gt;&lt;/script&gt;
 </code></pre>
 
 <p><code>async</code> means that the browser will download the library as soon as possible, but the evaluation will start whenever it is more convenient (the browser decides). The HTML parser is paused when the script is evluated. <code>defer</code> means the same thing (more or less!) but the code execution happens only after the DOM has been loaded. <a href="https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html" title="async vs defer">More info here</a>.</p>
@@ -1845,7 +1845,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2015/03/playing-with-my-friends-3d-printer/">Playing with my friend's 3D printer</a></h5>
+            <h5><a href="/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">Viviamo tutti in una grande simulazione aliena? Sembra di no</a></h5>
         </div>
     
         
@@ -1855,7 +1855,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2015/07/alcune-best-practices-per-non-impazzire-con-i-db-relazionali/">Alcune Best Practices per non impazzire con i DB relazionali</a></h5>
+            <h5><a href="/2016/11/build-your-own-cross-platform-time-machine/">I was not satisfied with Time Machine so I wrote my own Backup System</a></h5>
         </div>
     
         
@@ -1865,7 +1865,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2015/11/459/">Leggere la query Hibernate in debug</a></h5>
+            <h5><a href="/2015/11/unofficial-but-simple-way-to-upgrade-moodle/">Unofficial but simple way to upgrade Moodle</a></h5>
         </div>
     
         
@@ -1875,7 +1875,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2016/03/battere-coglioni-usando-un-po-scienza/">Chi è Jacopo Notarstefano, l'inventore del programma anti-Calderoli</a></h5>
+            <h5><a href="/2015/01/pdfmake-libreria-js-per-creare-pdf/">Pdfmake : libreria JS per creare PDF</a></h5>
         </div>
     
 
