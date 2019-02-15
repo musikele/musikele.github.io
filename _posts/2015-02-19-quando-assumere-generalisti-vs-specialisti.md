@@ -1,23 +1,29 @@
 ---
 id: 136
 title: Quando assumere Generalisti vs Specialisti
-date: 2015-02-19T13:00:32+00:00
+date: 2015-02-19 13:00:32 +0000
 author: musikele
 layout: post
 guid: http://michelenasti.com/?p=136
-permalink: /2015/02/quando-assumere-generalisti-vs-specialisti/
+permalink: "/2015/02/quando-assumere-generalisti-vs-specialisti/"
 dsq_thread_id:
-  - "4108724544"
-image: /wp-content/uploads/2015/02/vs.jpg
+- '4108724544'
+image: "/wp-content/uploads/2015/02/vs.jpg"
 categories:
-  - Italiano
+- Italiano
 tags:
-  - assumere
-  - generalisti
-  - lavoro
-  - specialisti
+- assumere
+- generalisti
+- lavoro
+- specialisti
+header-img: "/images/vs.jpg"
+description: 'Siete generalisti o specialisti? In questo articolo proviamo a scoprire
+  cosa conviene fare alle aziende in base al loro ciclo di vita. '
+
 ---
-[<img class=" size-medium wp-image-151 alignright" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs-300x300.jpg?fit=300%2C300" alt="generalists vs Specialists" srcset="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs.jpg?w=300 300w, https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs.jpg?resize=150%2C150 150w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs.jpg)Oggi voglio riproporre in Italiano un articolo di una persona molto skillata sulle tecnologie web, Nicolas Zakas. Zakas ha scritto questo libro su Javascript: (http://amzn.to/2mKc6gl) che ho letto per metà e che mi ha dato le basi per capire Javascript dal di dentro, ossia tutte le sue parti più nascoste come scoping, prototyping, type system, object model, etc.
+![](https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/02/vs.jpg)
+
+Oggi voglio riproporre in Italiano un articolo di una persona molto skillata sulle tecnologie web, Nicolas Zakas. Zakas è autore di ESLint e ha scritto [questo libro su Javascript](http://amzn.to/2mKc6gl) che ho letto per metà e che mi ha dato le basi per capire Javascript dal di dentro, ossia tutte le sue parti più nascoste come scoping, prototyping, type system, object model, etc.
 
 L'articolo che però vi propongo non è un articolo sul web e le sue tecnologie, bensì sul processo di assunzione nelle varie aziende. Ciò che si chiede Zakas è [quando assumere "**generalisti**" vs quando (e se) assumere "**specialisti**"](http://www.nczonline.net/blog/2014/07/15/generalists-and-specialists-thoughts-on-hiring/). Se capite l'inglese e avete dieci minuti leggetelo, ne vale la pena. Altrimenti, leggete qui sotto 🙂 Ne farò un riassunto e infine scriverò alcune considerazioni personali.
 
@@ -25,11 +31,13 @@ Ritengo che _questo tipo di ragionamento non si applica solo al mondo del softwa
 
 ## Chi sono i "Generalisti"
 
-i Generalisti sono coloro che sono bravi a fare un po' di tutto, senza una reale specializzazione. Sono bravi a fare le cosiddette attività _server-side_: database, setup di tool complessi, builds, etc. Solitamente riescono a passare da un linguaggio ad un altro con facilità, perché ciò che conta è il procedimento e non la tecnica. Queste persone riescono a portare a termine qualsiasi compito gli venga assegnato.
+i Generalisti sono coloro che sono bravi a fare un po' di tutto, senza una reale specializzazione. Sono solitamente bravi a fare le cosiddette attività _server-side_: database, setup di tool complessi, builds, etc. 
+
+Riescono a passare da un linguaggio ad un altro con facilità, perché ciò che conta è il procedimento e non la tecnica. Queste persone riescono a portare a termine qualsiasi compito gli venga assegnato.
 
 I Generalisti tendono a fare un lavoro buono, ma non eccezionale; spesso vanno in crisi quando bisogna ragionare su un paradigma di lavoro che richiede un modo di pensare diverso (es. mobile, frontend).
 
-Spesso, all'inizio del ciclo di vita di un'azienda (o di un progetto), vengono assunte persone che sono capaci di fare compiti anche molto diversi da quelli inizialmente previsti. In questo caso i Generalisti sono la scelta migliore perché possono lavorare a più ambiti senza sentirsi in difficoltà. Inoltre all'inizio del ciclo di vita di un'azienda il sistema è relativamente piccolo e ogni programmatore deve conoscere ogni aspetto del progetto. Se tutti sanno fare tutto, questo lavoro viene notevolmente semplificato.
+All'inizio del ciclo di vita di un'azienda (o di un progetto), spesso vengono assunte persone che sono capaci di fare compiti anche molto diversi da quelli inizialmente previsti. In questo caso i Generalisti sono la scelta migliore perché possono lavorare a più ambiti senza sentirsi in difficoltà. Inoltre all'inizio del ciclo di vita di un'azienda il sistema è relativamente piccolo e ogni programmatore deve conoscere ogni aspetto del progetto. Se tutti sanno fare tutto, questo lavoro viene notevolmente semplificato.
 
 ## Gli "Specialisti"
 
@@ -37,29 +45,29 @@ Non c'è bisogno di me o di Zakas per spiegare chi sono gli specialisti 🙂 So
 
 All'inizio del ciclo di vita di un'azienda i Generalisti implementano molte soluzioni che sono "abbastanza buone"; non appena la crescita dell'azienda è diventata consistente, e ci si rende conto che le soluzioni "abbastanza buone" non sono più così buone, ed è il momento di assumere degli specialisti. Ma come?
 
-[<img class="aligncenter wp-image-152 size-full" src="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/SPECIALIST-vs-GENERALIST.jpg?fit=597%2C278" alt="SPECIALIST-vs-GENERALIST" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/SPECIALIST-vs-GENERALIST.jpg?w=597 597w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/SPECIALIST-vs-GENERALIST.jpg?resize=300%2C140 300w" sizes="(max-width: 597px) 100vw, 597px" data-recalc-dims="1" />](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/SPECIALIST-vs-GENERALIST.jpg)
+![](https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/SPECIALIST-vs-GENERALIST.jpg)
 
 ## Come assumere specialisti
 
 Generalmente è il front-end il problema principale dei generalisti; spesso non riescono a trasformare in realtà ciò che i designer hanno prodotto, e i manager iniziano a brontolare perché "_front-end is a feature_", e quindi si inizia a chiedere di qualcuno che sappia cosa fare. Tuttavia, **non sempre le aziende sanno come assumere uno specialista**. Il processo di assunzione è tarato sui Generalisti e le domande che vengono fatte in questi colloqui non vanno bene per gli Specialisti.
-  
+
 Un altro problema spesso paventato dai manager è che **uno Specialista crea problemi di allocazione**. Molti credono che uno Specialista, una volta esaurita la sua mole di lavoro, diventi un peso e non si sappia dove allocarlo.
-  
+
 Dunque il vero primo problema è riuscire ad assumere il primo specialista abbastanza bravo da risolvere problemi nel breve termine. Grazie a questa prima figura si potranno assumere altre persone nel medio termine, e fare un trasferimento di conoscenze verso gli altri nel lungo termine.
-  
+
 Facile no?
 
 ## Quando assumere uno specialista
 
 La risposta può variare, ma per sommi capi potremmo pensare a queste situazioni:
 
-  * quando le cose sono veramente messe male. Ossia quando il lavoro che era "abbastanza buono" ora è diventato un totale casino.
-  * quando ci si vuole muovere su un'area completamente nuova e bisogna farlo in fretta (es. Quando si ha già una webApp e si deve creare subito una app mobile)
+* quando le cose sono veramente messe male. Ossia quando il lavoro che era "abbastanza buono" ora è diventato un totale casino.
+* quando ci si vuole muovere su un'area completamente nuova e bisogna farlo in fretta (es. Quando si ha già una webApp e si deve creare subito una app mobile)
 
 ## chi deve condurre l'intervista
 
 Se in azienda nessuno ha le competenze dello specialista che si vuole assumere, diventa un problema anche solo fargli un colloquio. Le solite domande non vanno bene per questo tipo di figure. Eppure in azienda qualcuno ha provato a svolgere il lavoro dello specialista, sporcandosi le mani con la UI o il mobile: secondo Zakas queste sono le persone che dovrebbero condurre l'intervista.
-  
+
 I contenuti dell'intervista dovrebbero vertere sui problemi già affrontati e da affrontare e vedere se lo specialista riesce a spiegare con facilità ciò che ha in mente per risolvere il problema. La capacità di spiegarsi è fondamentale quando si assume il primo specialista; egli infatti sarà colui che dovrà dialogare con tutti i Generalisti preesistenti.
 
 A un certo punto della vita aziendale sarà difficile vivere senza Specialisti. Gli stessi Generalisti, quando il sistema sarà diventato troppo grande, inizieranno a focalizzarsi su parti del sistema e saranno loro stessi a chiedere di poter migliorare qualcosa. In genere questa è la fase in cui ci si trasforma da Generalisti a Specialisti.
@@ -68,13 +76,13 @@ Assumere Generalisti diventa addirittura un rischio in questa fase, in quanto un
 
 ## l'approccio Google
 
-L'approccio utilizzato a Mountain View viene detto "_ultimate generalist_" : assumere solo le persone più brave, più in gamba, che sappiano ragionare. Google ragiona così perchè non sa queste persone su quale progetto andranno a lavorare: può darsi lavoreranno a migliorare un DB o a sviluppare App per iPhone, lo si scoprirà il primo giorno di lavoro.
+L'approccio utilizzato a Mountain View viene detto "_ultimate generalist_" : assumere solo le persone più brave, più in gamba, che sappiano ragionare. Google ragiona così perchè non sa queste persone su quale progetto andranno a lavorare: può darsi lavoreranno a migliorare un DB o a sviluppare App per iPhone, lo si scoprirà solo il primo giorno di lavoro.
 
 È come se, dovendo fare una squadra di calcio, si punti a prendere i migliori giocatori disponibili sul mercato, ignorando completamente i ruoli: portiere, difensori, centrocapisti e attaccanti. Nel metodo Google, tutti possono trovarsi a fare tutto. Lo immaginate?
 
-Per questo, assumere generalisti all'inizio è un'ottima idea, ma se si hanno grandi ambizioni (giocare in Serie A) a un certo punto bisogna assolutamente diversificare i ruoli specializzandoli. Assumere generalisti e puntare al "training on the job" diventa un problema di scalabilità, con molte persone nuove che non riescono a gestire la mole di lavoro subito.
+Per questo, assumere generalisti all'inizio è un'ottima idea, ma se si hanno grandi ambizioni (giocare in Serie A) a un certo punto bisogna assolutamente diversificare i ruoli specializzandoli. Assumere generalisti e puntare al _training on the job_ diventa un problema di scalabilità, con molte persone nuove che non riescono a gestire la mole di lavoro subito.
 
-## Considerazioni personali <del>(inutili)</del>
+## (inutili) Considerazioni personali
 
 Sebbene abbia poca esperienza lavorativa, ho visto questi comportamenti su piccola scala. Ho vissuto la fase in cui un'azienda è passata da tool proprietari a tool aperti, e quindi siamo riusciti a trovare nuovi specialisti subito. Ho anche visto quanto è sconveniente prendere persone alle prime esperienze e affidarsi al training on the job, specialmente quando il progetto è avviato da diversi anni.
 
