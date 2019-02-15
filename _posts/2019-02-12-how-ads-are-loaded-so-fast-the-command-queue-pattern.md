@@ -16,7 +16,7 @@ Prior to work in an ads company I had no idea of how ads are actually rendered o
 
 Sometimes ads are loaded on a page even before you actually see any content. How? The first thing we learned at university is to wait for the DOM to have completely loaded, before doing anything to the DOM itself. This does not apply to ads, or better to say, ad companies use many tricks to load ads without blocking the DOM.
 
-I won't go in the detail of this process now, but basically ads are rendered inside _iframes_, and iframes should never be used for anything different than ads ([my rule based on experience](https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/) - in italian).
+I won't go in the detail of this process now, but basically **ads are rendered inside _iframes_**, and iframes should be used only for very narrow use cases, like widgets to inject on other pages, or payment processors. In the past I did the exact opposite: we implemented an angular 1 routing system with iframes, and that's something I wouldn't do again ([my experience](https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/) - in italian).
 
 Here in this article I'm going to talk about how some popular ad libraries (like [google publisher tag](https://support.google.com/admanager/answer/1638622?hl=en&ref_topic=4390039) or [Prebid](http://prebid.org/dev-docs/getting-started.html)) allow users to write code that will be put in a queue and will be executed as soon as the library is loaded.
 
