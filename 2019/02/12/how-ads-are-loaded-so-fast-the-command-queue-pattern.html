@@ -12,7 +12,7 @@
 	<title>How ads are loaded so fast: the command queue pattern - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="" />  
-	<meta http-equiv="last-modified" content="2019-02-14 17:14:12 +0100" /> 
+	<meta http-equiv="last-modified" content="2019-02-15 11:55:44 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -117,7 +117,7 @@
 
 <p>Sometimes ads are loaded on a page even before you actually see any content. How? The first thing we learned at university is to wait for the DOM to have completely loaded, before doing anything to the DOM itself. This does not apply to ads, or better to say, ad companies use many tricks to load ads without blocking the DOM.</p>
 
-<p>I won’t go in the detail of this process now, but basically ads are rendered inside <em>iframes</em>, and iframes should never be used for anything different than ads (<a href="https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">my rule based on experience</a> - in italian).</p>
+<p>I won’t go in the detail of this process now, but basically <strong>ads are rendered inside <em>iframes</em></strong>, and iframes should be used only for very narrow use cases, like widgets to inject on other pages, or payment processors. In the past I did the exact opposite: we implemented an angular 1 routing system with iframes, and that’s something I wouldn’t do again (<a href="https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/">my experience</a> - in italian).</p>
 
 <p>Here in this article I’m going to talk about how some popular ad libraries (like <a href="https://support.google.com/admanager/answer/1638622?hl=en&amp;ref_topic=4390039">google publisher tag</a> or <a href="http://prebid.org/dev-docs/getting-started.html">Prebid</a>) allow users to write code that will be put in a queue and will be executed as soon as the library is loaded.</p>
 
@@ -1845,7 +1845,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2017/10/03/viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.html">Viviamo tutti in una grande simulazione aliena? Sembra di no</a></h5>
+            <h5><a href="/2015/07/ci-ho-messo-del-tempo-per-capire-il-passaggio-dei-parametri-in-javascript/">Ci ho messo del tempo per capire il passaggio di parametri delle funzioni Javascript</a></h5>
         </div>
     
         
@@ -1855,7 +1855,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2016/11/build-your-own-cross-platform-time-machine/">I was not satisfied with Time Machine so I wrote my own Backup System</a></h5>
+            <h5><a href="/2016/04/limportanza-di-un-pet-project-spiegata-da-chi-non-ne-ha-mai-realizzato-uno/">L'importanza di un Pet Project spiegata da chi non ne ha mai realizzato uno</a></h5>
         </div>
     
         
@@ -1865,7 +1865,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2015/11/unofficial-but-simple-way-to-upgrade-moodle/">Unofficial but simple way to upgrade Moodle</a></h5>
+            <h5><a href="/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html">Become a test expert in NodeJS with these tricks</a></h5>
         </div>
     
         
@@ -1875,7 +1875,7 @@ var Library = (function() {
         
 
         <div class="col-4">
-            <h5><a href="/2015/01/pdfmake-libreria-js-per-creare-pdf/">Pdfmake : libreria JS per creare PDF</a></h5>
+            <h5><a href="/2018/05/06/proteggi-le-tue-applicazioni-express-con-helmetjs.html">Proteggi le tue applicazioni Express con HelmetJs</a></h5>
         </div>
     
 
