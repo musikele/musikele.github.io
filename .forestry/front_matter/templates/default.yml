@@ -63,7 +63,7 @@ fields:
   config:
     required: true
 pages:
-- _posts/what-s-the-difference-between-browserify-and-webpack.md
+- _posts/2019-03-23-what-s-the-difference-between-browserify-and-webpack.md
 - _posts/2019-02-12-how-ads-are-loaded-so-fast-the-command-queue-pattern.md
 - _posts/is-typescript-namespace-feature-deprecated.md
 - _posts/2018-12-12-remembering-the-bad-bad-days-of-browser-wars.md
