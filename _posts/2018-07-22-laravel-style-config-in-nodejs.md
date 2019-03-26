@@ -75,7 +75,7 @@ Let's write a solution that is not express-dependent.
 
 Here's the configuration.js file:
 
-```js 
+```javascript
 //configuration.js 
 
 const env = process.env.NODE_ENV || 'development'
@@ -87,7 +87,7 @@ Based on the `NODE_ENV` variable, we will pick up the right `.js` file.
 
 And now let's test this. Run `node index.js` (should start with `development` environment):
 
-```index.js
+```javascript
 //index.js
 
 const configuration = require('./configuration')
@@ -104,8 +104,6 @@ How to start with other configurations?
 Either set this in package.json:
 
 ```json
-//package.json 
-
  "scripts": {
     "start": "node index.js",
     "start:test": "NODE_ENV=test node index.js",
