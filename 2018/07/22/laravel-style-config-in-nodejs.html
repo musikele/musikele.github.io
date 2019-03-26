@@ -12,7 +12,7 @@
 	<title>Handling configuration for mutliple environments in NodeJS - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="nodejs, configuration, laravel" />  
-	<meta http-equiv="last-modified" content="2018-07-22 09:10:53 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-03-26 09:44:39 +0100" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -186,7 +186,7 @@ module.exports = {
 
 <p>Here’s the configuration.js file:</p>
 
-<pre><code class="language-js">//configuration.js 
+<pre><code class="language-javascript">//configuration.js 
 
 const env = process.env.NODE_ENV || 'development'
 
@@ -197,7 +197,7 @@ module.exports = require(`../.${env}.js`)
 
 <p>And now let’s test this. Run <code>node index.js</code> (should start with <code>development</code> environment):</p>
 
-<pre><code class="language-index.js">//index.js
+<pre><code class="language-javascript">//index.js
 
 const configuration = require('./configuration')
 
@@ -212,9 +212,7 @@ console.log('configuration: ', configuration)
 
 <p>Either set this in package.json:</p>
 
-<pre><code class="language-json">//package.json 
-
- "scripts": {
+<pre><code class="language-json"> "scripts": {
     "start": "node index.js",
     "start:test": "NODE_ENV=test node index.js",
     "start:prod": "NODE_ENV=production node index.js"
