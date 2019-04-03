@@ -63,9 +63,9 @@ fields:
   config:
     required: true
 pages:
-- _posts/2019-03-23-what-s-the-difference-between-browserify-and-webpack.md
 - _posts/2019-02-12-how-ads-are-loaded-so-fast-the-command-queue-pattern.md
-- _posts/is-typescript-namespace-feature-deprecated.md
+- _posts/2019-03-23-what-s-the-difference-between-browserify-and-webpack.md
+- _posts/2018-07-22-laravel-style-config-in-nodejs.md
 - _posts/2018-12-12-remembering-the-bad-bad-days-of-browser-wars.md
 - _posts/2018-10-25-docker-cheatsheet.md
 - _posts/2018-10-15-dovrei-imparare-ruby-on-rails-o-nodejs.md
@@ -83,7 +83,6 @@ pages:
 - _posts/2018-04-24-startup-weekend-salerno-2018.md
 - _posts/2018-09-03-some-things-you-may-not-know-about-object-oriented-javascript-es6.md
 - _posts/2018-07-10-designing-the-documentation-for-a-tech-product.md
-- _posts/2018-07-22-laravel-style-config-in-nodejs.md
 - _posts/2018-08-22-ma-cosa-intendete-per-testing-una-breve-introduzione-al-testing-software.md
 - _posts/2018-01-09-i-trend-javascript-del-2018.md
 - _posts/2018-04-05-un-programmatore-dovrebbe-continuare-a-programmare-nel-suo-tempo-libero.md
