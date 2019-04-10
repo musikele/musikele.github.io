@@ -16,7 +16,15 @@ description: 'SSH is one of the fundamental tools you must master to become a su
   ssh connections '
 
 ---
+You know what SSH is, don't you?
+
+SSH is one of the basic commands you need to master, no matter what's your platform of choice. Because you'll always end up working on some random server, sooner or later, and you'll have to login to see logs or restarting some service. Also, you'll never see it as a _skill to know_ because it's implicit that you have to know how to use it, at least for logging in to some website.
+
+Here is a little cheatsheet of the most important commands (and tricks) you might find useful.
+
 ## Creating a new pair of keys
+
+Before working with SSH, you need to create a new pair of keys. Basically it is a pair of private/public keys. **To generate a new key pair on your computer**, run:
 
 ```bash
 $ ssh-keyjen
@@ -34,17 +42,28 @@ keys are created in `~/.ssh` directory. Two files will be created:
 
 The private key is `id_rsa` and you should never share it with anybody.
 
-The public key is `id``_rsa.pub_` _and this can be shared with others. As you can see the_ `_id_``_rsa.pub` is also readable by anyone on the system.
+The public key is `id_rsa.pub` and this can be shared with others. As you can see the `id_rsa.pub` is also readable by anyone on the system.
 
 ## Set up SSH login to remote server without password
 
-There's a simple command to set up the ssh key on a remote server:
+Now that we have SSH set up on our computer, let's see how we can login to a remote server. (We assume that ssh is set up on the remote server too - if not, just lunch the previous command there too!). 
+
+There are two ways to log in to a remote server: 
+
+* by typing the remote user's password, 
+* by using your private/public key. 
+
+We will talk about the second option from now on. 
+
+What we want to do now is to register our public key on the server. I want to remain  practical in this article, but if you need some deep explanation of what happens during the login process I suggest you to [follow this link](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process "How SSH works"). 
+
+There's a simple command to set up the ssh key on a remote server (run on your local computer):
 
 ```bash
 $ ssh-copy-id root@123.123.123.123
 ```
 
-once you hit enter, the remote server will ask for the password (at least for the first time). Once done, you can log in to a remote server by only typing
+once you hit enter, the remote server will ask for the password (at least for the first time). Once done, you can log in to a remote server by typing
 
 ```bash
 $ ssh root@123.123.123.123
@@ -54,14 +73,16 @@ $ ssh root@123.123.123.123
 
 What is this command `ssh-copy-id` doing? This command will copy your public key (`~/.ssh/id_rsa.pub`) in the remote file `~/.ssh/authenticated_keys`. The server will use the your public key to authenticate you.
 
-When we log in to a remote server, without using a username, we will log in with the same username of the local machine. E.g.
+## Logging in as a different user
+
+When we log in to a remote server, without using a username, we will log in with the same username of our local machine. My username is `musikele`, so if I try to login to a remote server that's what happens: 
 
 ```bash
 $ ssh 123.123.123.123
 musikele@123.123.123.123's password: 
 ```
 
-... but if you're logging in to a corporate machine you don't have a user set up with the same local username. So we prefix the host address with the remote user. If the remote user's name is `remote_user` here is the example:
+... but if you're logging in to a corporate machine you don't have a user set up with your  username. So we prefix the host address with the remote user, like this: 
 
 ```bash
 $ ssh remote_user@123.123.123.123
@@ -72,48 +93,67 @@ We're in!
 Other useful options:
 
 * `-p 2222` is used to specify the port to use. Default port for SSH is 22.
-* `-i /path/to/alternate/key` is used to speficy another _private_ key you want to use instead of the default one.
+* `-i /path/to/alternate/key` is used to speficy another _private_ key you want to use instead of the default one. You can have as many public/private keys you want, and they an be in different files or in different paths. 
 * `-f` runs ssh in the background (you'll see later when to use it)
-* `-N` does not open a show window.
+* `-N` does not open a window.
 
 to run only one command and exit, simply write the command after the ssh connection string:
 
 ```bash
-ssh -p 2222 remote_user@123.123.123.123 ls -al 
+$ ssh -p 2222 remote_user@123.123.123.123 ls -al 
 drwxrwxrwx+  3 root          root     4096 Apr  3 10:02 #recycle
 drwxr-xr-x  31 admin         users    4096 Mar 13 07:41 .
 drwxrwxrwx+ 13 root          root     4096 Feb  6 09:54 ..
 -rwxrwxrwx+  1 admin         users   14340 Jun 18  2017 .DS_Store
 ...
+$ 
 ```
+
+We just lunched `ls -al` on a remote machine! (and the prompt at line 7 is our local prompt, again). 
 
 ## Simplify connections with ssh config files
 
-`vi ~/.ssh/config`
+It may be tedious to write the same info (username, remote server address, port...) again and again. With ssh we can define an alias with some informations already set, so that we don't have to type them again and again. Here's an example: 
 
+```bash
+$ vi ~/.ssh/config
+```
+
+    # use four spaces to indent 
     Host foo
         Hostname 123.123.123.123
         User root
         IdentityFile ~/.ssh/id_rsa
         Port 22
 
+And then we just log in with 
+
 ```bash
-ssh foo
+$ ssh foo
 ```
+
+This is a real time saver tip ;) 
 
 ## Copy files to and from the remote host
 
-from local to remote:
+One of the most common actions we want to do with our remote servers is to copy files from and to it. The handy command **scp** will help us doing this.  
+
+To  transfer a file from local host to a remote one:
 
 ```bash
 scp bar.txt mark@123.123.123.123:~/
 ```
 
-port: `-P` (uppercase)
+Here we are coping `bar.txt` file on the server, logging in as user `mark`. 
 
-recursive copy: `-r`
+Whatever is after the `:` is the path on the remote server. If the path starts with `/` it is an absolute path; otherwise it will be local to the user's home folder. 
 
-from remote to local:
+Some other handy options for this command are:
+
+* `-P` for the port (note that for the regular ssh we used `-p` lowercase)
+* `-r` for a recursive copy of a folder 
+
+And of course, if you want to copy from a remote host to your local pc:
 
 ```bash
 scp mark@123.123.123.123:~/bar.txt ./new.txt
@@ -121,37 +161,37 @@ scp mark@123.123.123.123:~/bar.txt ./new.txt
 
 ## Configure a ssh tunnel
 
+With _tunneling_ you can redirect traffic from one port of an ssh host to a remote server. 
+
+Remote tunneling is disabled by default; to enable it we must open the config file: 
+
+```bash
+$ vi etc/ssh/sshd_config
+```
+
+In this file, set `GatewayPorts` option to `Yes` and restart the service (for example with `service ssh restart` on Debian/Ubuntu systems). 
+
+Now we can explore the tunneling functionality. Let's see an easy example: 
+
 ```bash
 ssh -L 8000:yahoo.com:80 mark@myhost.com
 ```
 
-connections to local port `8000` will be redirected to `yahoo.com` on port `80`, on host `myhost.com`.
+In this case, connections to local port `8000` will be redirected to `yahoo.com` on port `80`, on host `myhost.com`. The only problem is that we also log in to `myhost.com` and stay connected.  
 
-Combining the same command with `-f -N` options:
+Combining the same command with `-f -N` options we run the tunnel and return to the localhost computer: 
 
 ```bash
 ssh -f -N -L 8000:yahoo.com:80 mark@myhost.com
 ```
 
-Suppose we want to create a tunnel to localhost. Users that will connect to myhost.com:8000 will be redirected to port 3000. How to do this?
-
-Remote tunneling is disabled by default to enable:
-
-```bash
-vi /etc/ssh/sshd_config
-```
-
-search for `GatewayPorts`and set to `Yes`.
-
-Now we have to restart the ssh server with `service ssh restart`.
-
-Now we can connect with
+A great use for tunneling is to redirect some traffic from the ssh server to your local host. For example, In the following company, you hit `myhost.com:8000` but the traffic is redirected to `localhost:3000`. This is useful for debugging, or to set up proxies, etc. 
 
 ```bash
 ssh -R 8000:localhost:3000 mark@myhost.com
 ```
 
-## escape sequences
+## Escape sequences
 
 To stop a blocked ssh connection write: `~.` (tilde fullstop).
 
@@ -186,12 +226,12 @@ If you want to accept connections only for a specific set of users, or only user
 
 Remember to restart the server with `service ssh restart`.
 
-## Monitoring connection attempts 
+## Monitoring connection attempts
 
-`vi /var/log/auth.log` contains all the informations about who tried to log in the system, with other info like the IP, etc. 
+`vi /var/log/auth.log` contains all the informations about who tried to log in the system, with other info like the IP, etc.
 
-command `lastlog` will show last logs from all users of the system. 
+command `lastlog` will show last logs from all users of the system.
 
-`lastlog -u mark` will display last log of the user `mark`. 
+`lastlog -u mark` will display last log of the user `mark`.
 
-vi `~/bash_history` for a user will show his last commands launched and we can use this info to check if he legitimately accessed the machine, or if it was a hacker. 
+vi `~/bash_history` for a user will show his last commands launched and we can use this info to check if he legitimately accessed the machine, or if it was a hacker.
