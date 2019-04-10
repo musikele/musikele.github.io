@@ -201,7 +201,7 @@ Another escape sequence is `~ CTRL-Z` (tilde CTRL-Z). The ssh connection will be
 
 When you connect to a new machine, a new entry is created in the local file `~/.ssh/known_hosts` .
 
-But sometimes keys on remote servers will change and our machine will not be able to connect.
+But sometimes keys on remote servers will change and our machine will not be able to connect again.
 
 In order to check the new fingerprint of a remote server:
 
@@ -216,9 +216,7 @@ open `vi /etc/ssh/sshd_config`.
 
 Search for `PermitRootLogin` and set to `no` to avoid root login.
 
-Another value for this setting is `prohibit-password`. This way you can only connect via public/private key.
-.
-You can disable password authentication by setting `PasswordAuthentication` option to `no`.
+Another value for this setting is `prohibit-password`. This way you can only connect via public/private key.  You can disable password authentication by setting `PasswordAuthentication` option to `no`.
 
 If you want to accept connections only for a specific set of users, or only users that come from a specific IP, you can set `AllowUsers` option like this:
 
@@ -228,10 +226,7 @@ Remember to restart the server with `service ssh restart`.
 
 ## Monitoring connection attempts
 
-`vi /var/log/auth.log` contains all the informations about who tried to log in the system, with other info like the IP, etc.
-
-command `lastlog` will show last logs from all users of the system.
-
-`lastlog -u mark` will display last log of the user `mark`.
-
-vi `~/bash_history` for a user will show his last commands launched and we can use this info to check if he legitimately accessed the machine, or if it was a hacker.
+* `vi /var/log/auth.log` contains all the informations about who tried to log in the system, with other info like the IP, etc.
+* command `lastlog` will show last logs from all users of the system.
+* `lastlog -u mark` will display last logs for user `mark`.
+* vi `~/bash_history` for a user will show his last commands launched and we can use this info to check if he legitimately accessed the machine, or if it was a hacker.
