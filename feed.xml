@@ -1,4 +1,271 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-04-30T00:11:55+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What’s the difference between Browserify and Webpack?</title><link href="https://michelenasti.com/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html" rel="alternate" type="text/html" title="What's the difference between Browserify and Webpack?" /><published>2019-03-23T00:00:00+01:00</published><updated>2019-03-23T11:34:02+01:00</updated><id>https://michelenasti.com/2019/03/23/what-s-the-difference-between-browserify-and-webpack</id><content type="html" xml:base="https://michelenasti.com/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html">&lt;p&gt;&lt;strong&gt;Browserify&lt;/strong&gt; belongs to the very first generation of module bundlers and it basically allowed one thing, that is, use the &lt;code&gt;require&lt;/code&gt; function from NodeJS in the browser. Browserify’s only job was to concatenate files wrapping them in functions that were then called by other fils.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-04-30T16:52:12+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">SSH cheatsheet (from zero to hero)</title><link href="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" rel="alternate" type="text/html" title="SSH cheatsheet (from zero to hero) " /><published>2019-04-03T00:00:00+02:00</published><updated>2019-04-30T16:50:42+02:00</updated><id>https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero</id><content type="html" xml:base="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">&lt;p&gt;SSH is one of the basic commands you need to master, no matter what’s your platform of choice. Because you’ll always end up working on some random server, and you’ll have to login to see logs or restarting services. Also, you’ll never see it as a &lt;em&gt;skill to show&lt;/em&gt; because it’s implicit that you have to know how to use it, at least for logging in to some website.&lt;/p&gt;
+
+&lt;p&gt;Here is a little cheatsheet of the most important commands (and tricks) you might find useful.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ssh-big.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-new-pair-of-keys&quot;&gt;Creating a new pair of keys&lt;/h2&gt;
+
+&lt;p&gt;Before working with SSH, you need to create a new pair of keys. Basically it is a pair of private/public keys. &lt;strong&gt;To generate a new key pair on your computer&lt;/strong&gt;, run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh-keyjen
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;keys are created in &lt;code&gt;~/.ssh&lt;/code&gt; directory. Two files will be created:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;➜  $ cd ~/.ssh 
+➜  $ ls -al
+-rw------- 1 musikele musikele 1,8K feb 18 21:56 id_rsa
+-rw-r--r-- 1 musikele musikele  411 feb 18 21:56 id_rsa.pub
+➜  $ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The private key is &lt;code&gt;id_rsa&lt;/code&gt; and you should never share it with anybody. It is readable and writable only by the current user.&lt;/p&gt;
+
+&lt;p&gt;The public key is &lt;code&gt;id_rsa.pub&lt;/code&gt; and it can be shared with others. As you can see the &lt;code&gt;id_rsa.pub&lt;/code&gt; is also readable by anyone on the system.&lt;/p&gt;
+
+&lt;h2 id=&quot;set-up-ssh-login-to-remote-server-without-password&quot;&gt;Set up SSH login to remote server without password&lt;/h2&gt;
+
+&lt;p&gt;Now that we have SSH set up on our computer, let’s see how we can login to a remote server. (We assume that ssh is set up on the remote server too - if not, just lunch the previous command there too!).&lt;/p&gt;
+
+&lt;p&gt;There are two ways to log in to a remote server:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;by typing the remote user’s password,&lt;/li&gt;
+  &lt;li&gt;by using your private/public key.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We will talk about the second option from now on.&lt;/p&gt;
+
+&lt;p&gt;What we want to do now is to register our public key on the server. I want to remain  practical in this article, but if you need some deep explanation of what happens during the login process I suggest you to &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process&quot; title=&quot;How SSH works&quot;&gt;follow this link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There’s a simple command to set up the ssh key on a remote server (run on your local computer):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh-copy-id root@123.123.123.123
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;once you hit enter, the remote server will ask for the password (at least for the first time). Once done, you can log in to a remote server by typing&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh root@123.123.123.123
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…and you’re in!&lt;/p&gt;
+
+&lt;p&gt;What is this command &lt;code&gt;ssh-copy-id&lt;/code&gt; doing? This command will copy your public key (&lt;code&gt;~/.ssh/id_rsa.pub&lt;/code&gt;) in the remote file &lt;code&gt;~/.ssh/authenticated_keys&lt;/code&gt;. The server will use the your public key to authenticate you.&lt;/p&gt;
+
+&lt;h2 id=&quot;logging-in-as-a-different-user&quot;&gt;Logging in as a different user&lt;/h2&gt;
+
+&lt;p&gt;When we log in to a remote server, without using a username, we will log in with the same username of our local machine. My username is &lt;code&gt;musikele&lt;/code&gt;, so if I try to login to a remote server that’s what happens:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh 123.123.123.123
+musikele@123.123.123.123's password: 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;… but if you’re logging in to a corporate machine you don’t have a user set up with your  username. So we prefix the host address with the remote user, like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh remote_user@123.123.123.123
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We’re in!&lt;/p&gt;
+
+&lt;p&gt;Other useful options:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;-p 2222&lt;/code&gt; is used to specify the port to use. Default port for SSH is 22.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-i /path/to/alternate/key&lt;/code&gt; is used to speficy another &lt;em&gt;private&lt;/em&gt; key you want to use instead of the default one. You can have as many public/private keys you want, and they an be in different files or in different paths.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-f&lt;/code&gt; runs ssh in the background (you’ll see later when to use it)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-N&lt;/code&gt; does not open a window.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;to run only one command and exit, simply write the command after the ssh connection string:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh -p 2222 remote_user@123.123.123.123 ls -al 
+drwxrwxrwx+  3 root          root     4096 Apr  3 10:02 #recycle
+drwxr-xr-x  31 admin         users    4096 Mar 13 07:41 .
+drwxrwxrwx+ 13 root          root     4096 Feb  6 09:54 ..
+-rwxrwxrwx+  1 admin         users   14340 Jun 18  2017 .DS_Store
+...
+$ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We just lunched &lt;code&gt;ls -al&lt;/code&gt; on a remote machine! (and the prompt at line 7 is our local prompt, again).&lt;/p&gt;
+
+&lt;h2 id=&quot;simplify-connections-with-ssh-config-files&quot;&gt;Simplify connections with ssh config files&lt;/h2&gt;
+
+&lt;p&gt;It may be tedious to write the same info (username, remote server address, port…) again and again. With ssh we can define an alias with some informations already set, so that we don’t have to type them again and again. Here’s an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ vi ~/.ssh/config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;# use four spaces to indent 
+Host foo
+    Hostname 123.123.123.123
+    User root
+    IdentityFile ~/.ssh/id_rsa
+    Port 22
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then we just log in with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh foo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a real time saver tip ;)&lt;/p&gt;
+
+&lt;h2 id=&quot;copy-files-to-and-from-the-remote-host&quot;&gt;Copy files to and from the remote host&lt;/h2&gt;
+
+&lt;p&gt;One of the most common actions we want to do with our remote servers is to copy files from and to it. The handy command &lt;strong&gt;scp&lt;/strong&gt; will help us doing this.&lt;/p&gt;
+
+&lt;p&gt;To  transfer a file from local host to a remote one:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;scp bar.txt mark@123.123.123.123:~/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we are coping &lt;code&gt;bar.txt&lt;/code&gt; file on the server, logging in as user &lt;code&gt;mark&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Whatever is after the &lt;code&gt;:&lt;/code&gt; is the path on the remote server. If the path starts with &lt;code&gt;/&lt;/code&gt; it is an absolute path; otherwise it will be local to the user’s home folder.&lt;/p&gt;
+
+&lt;p&gt;Some other handy options for this command are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;-P&lt;/code&gt; for the port (note that for the regular ssh we used &lt;code&gt;-p&lt;/code&gt; lowercase)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-r&lt;/code&gt; for a recursive copy of a folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And of course, if you want to copy from a remote host to your local pc:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;scp mark@123.123.123.123:~/bar.txt ./new.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;configure-a-ssh-tunnel&quot;&gt;Configure a ssh tunnel&lt;/h2&gt;
+
+&lt;p&gt;With &lt;em&gt;tunneling&lt;/em&gt; you can redirect traffic from one port of an ssh host to a remote server.&lt;/p&gt;
+
+&lt;p&gt;Let’s see an easy example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh -L 8000:yahoo.com:80 mark@myhost.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this case:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;your computer will listen on port &lt;code&gt;localhost:8000&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;when a packet is sent at &lt;code&gt;localhost:8000&lt;/code&gt; it will reach &lt;code&gt;myhost.com&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;ssh daemon at &lt;code&gt;myhost.com&lt;/code&gt; will redirect to &lt;code&gt;yahoo.com:80&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;responses follow the same path.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This technique can be useful to access a server on a private network. The only problem is that we also log in to &lt;code&gt;myhost.com&lt;/code&gt; and the connection stays open until we exit from the remote session.&lt;/p&gt;
+
+&lt;p&gt;Combining with options  &lt;code&gt;-f -N&lt;/code&gt; ,  we run the tunnel and return to the localhost computer:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh -f -N -L 8000:yahoo.com:80 mark@myhost.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Another great use for tunneling is to redirect  traffic from the ssh server to your local host. Imagine to hit &lt;code&gt;myhost.com:8000&lt;/code&gt; but the traffic is redirected to &lt;code&gt;localhost:3000&lt;/code&gt;. This is useful for debugging, or to set up proxies, etc.&lt;/p&gt;
+
+&lt;p&gt;Remote tunneling is disabled by default; to enable, open the config file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vi etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;set &lt;code&gt;GatewayPorts&lt;/code&gt; option to &lt;code&gt;yes&lt;/code&gt; and restart the service (for example with &lt;code&gt;service ssh restart&lt;/code&gt; on Debian/Ubuntu systems).&lt;/p&gt;
+
+&lt;p&gt;Now we can explore the tunneling functionality by launching:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh -R 8000:localhost:3000 mark@myhost.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What’s happening here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;port &lt;code&gt;8000&lt;/code&gt; on server &lt;code&gt;myhost.com&lt;/code&gt; is exposed (be sure that it’s reachable, for example by setting port forwarding on gateways if you have)&lt;/li&gt;
+  &lt;li&gt;when you connect to port &lt;code&gt;myhost.com:8000&lt;/code&gt; the data is sent to &lt;code&gt;localhost:3000&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;eventual responses will flow back on the same route.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;escape-sequences&quot;&gt;Escape sequences&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To stop a blocked ssh connection write: &lt;code&gt;~.&lt;/code&gt; (tilde fullstop).&lt;/li&gt;
+  &lt;li&gt;Another escape sequence is &lt;code&gt;~ CTRL-Z&lt;/code&gt; (tilde character + CTRL + Z). The ssh connection will be moved to background. To resume, type &lt;code&gt;fg&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;verify-ssh-fingerprints&quot;&gt;Verify SSH fingerprints&lt;/h2&gt;
+
+&lt;p&gt;When you connect to a new machine, a new entry is created in the local file &lt;code&gt;~/.ssh/known_hosts&lt;/code&gt; of your computer. This entry contains the fingerprint of the server, so next time it will be already trusted.&lt;/p&gt;
+
+&lt;p&gt;However, sometimes keys on remote servers will change and our machine will not be able to connect again.&lt;/p&gt;
+
+&lt;p&gt;In order to check the new fingerprint of a remote server:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;connect to the remote server (e.g. &lt;code&gt;ssh root@123.123.123.123&lt;/code&gt;) with password&lt;/li&gt;
+  &lt;li&gt;on remote host, launch:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output of the command is the fingerprint of the key.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;on localhost, launch:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh-keygen -R 123.123.123.123
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will remove the line associated with &lt;code&gt;123.123.123.123&lt;/code&gt; in the &lt;code&gt;~/.ssh/known_hosts&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;finally, connect again to the remote server:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh root@123.123.123.123
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The remote host will show its fingerprint, and it should match the one calculated before.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-cool-ssh-options&quot;&gt;Other cool SSH options&lt;/h2&gt;
+
+&lt;h3 id=&quot;deny-any-root-access&quot;&gt;Deny any root access&lt;/h3&gt;
+
+&lt;p&gt;You can imagine why a ssh connection for the root account can be a bad thing. Fortunately It can be disabled.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;launch &lt;code&gt;vi /etc/ssh/sshd_config&lt;/code&gt;. This file contains a bunch of options for ssh.&lt;/li&gt;
+  &lt;li&gt;Search for &lt;code&gt;PermitRootLogin&lt;/code&gt; and set to &lt;code&gt;no&lt;/code&gt; to avoid root login.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;prohibit-password-access&quot;&gt;Prohibit password access&lt;/h3&gt;
+
+&lt;p&gt;Another value for this setting is &lt;code&gt;prohibit-password&lt;/code&gt;. This way you can only connect via public/private key.  You can disable password authentication by setting &lt;code&gt;PasswordAuthentication&lt;/code&gt; option to &lt;code&gt;no&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to accept connections only for a specific set of users, or only users that come from a specific IP, you can set &lt;code&gt;AllowUsers&lt;/code&gt; option like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AllowUsers foo bar@1.2.3.4 *@2.3.4.5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Remember to restart the server with &lt;code&gt;service ssh restart&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;monitoring-connection-attempts&quot;&gt;Monitoring connection attempts&lt;/h2&gt;
+
+&lt;p&gt;To check malicious/suspicious activity we have some tools that come at help.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;vi /var/log/auth.log&lt;/code&gt; contains all the informations about who tried to log in the system, with other info like the IP, etc.&lt;/li&gt;
+  &lt;li&gt;command &lt;code&gt;lastlog&lt;/code&gt; will show last logs from all users of the system.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;lastlog -u mark&lt;/code&gt; will display last logs for user &lt;code&gt;mark&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, we may see that our employee &lt;code&gt;mark&lt;/code&gt; is connecting to the server, but at strange hours. So we can ask mark to  &lt;code&gt;cat ~/bash_history&lt;/code&gt; and check his latest commands.  We can use this info to check if he legitimately accessed the machine, or if it was a hacker.&lt;/p&gt;
+
+&lt;h3 id=&quot;thats-all-folks&quot;&gt;That’s all folks&lt;/h3&gt;
+
+&lt;p&gt;This article is nothing more than a summary of what I learned by following &lt;a href=&quot;&quot;&gt;this excellent ssh course from Egghead&lt;/a&gt;. I think they are great and deserve a paid subscription.&lt;/p&gt;
+
+&lt;p&gt;Tunnelling was the most difficult thing to set up. Here are &lt;a href=&quot;&quot;&gt;two&lt;/a&gt; &lt;a href=&quot;&quot;&gt;articles&lt;/a&gt; that have helped me out. about this&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="ssh" /><category term="tutorial" /><summary type="html">SSH is one of the basic commands you need to master, no matter what’s your platform of choice. Because you’ll always end up working on some random server, and you’ll have to login to see logs or restarting services. Also, you’ll never see it as a skill to show because it’s implicit that you have to know how to use it, at least for logging in to some website.</summary></entry><entry><title type="html">What’s the difference between Browserify and Webpack?</title><link href="https://michelenasti.com/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html" rel="alternate" type="text/html" title="What's the difference between Browserify and Webpack?" /><published>2019-03-23T00:00:00+01:00</published><updated>2019-03-23T11:34:02+01:00</updated><id>https://michelenasti.com/2019/03/23/what-s-the-difference-between-browserify-and-webpack</id><content type="html" xml:base="https://michelenasti.com/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html">&lt;p&gt;&lt;strong&gt;Browserify&lt;/strong&gt; belongs to the very first generation of module bundlers and it basically allowed one thing, that is, use the &lt;code&gt;require&lt;/code&gt; function from NodeJS in the browser. Browserify’s only job was to concatenate files wrapping them in functions that were then called by other fils.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/bropack.png&quot; alt=&quot;&quot; title=&quot;Browserify vs Webpack&quot; /&gt;&lt;/p&gt;
 
@@ -681,6 +948,4 @@ http {
 &lt;p&gt;In case anything goes wrong, you can enter and inspect the running container with:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker exec -i -t blog /bin/bash
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="English" /><category term="docker" /><category term="cheatsheet" /><summary type="html">I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</summary></entry><entry><title type="html">Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</title><link href="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html" rel="alternate" type="text/html" title="Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?" /><published>2018-10-22T00:00:00+02:00</published><updated>2018-10-22T17:48:04+02:00</updated><id>https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript</id><content type="html" xml:base="https://michelenasti.com/2018/10/22/perch%C3%A9-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.html">&lt;p&gt;Su Quora ho risposto a questa domanda: &lt;a href=&quot;https://it.quora.com/Perché-ci-sono-persone-che-conoscono-jQuery-ma-non-conoscono-JavaScript&quot;&gt;Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Buona lettura :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jquery" /><category term="javascript" /><category term="web" /><summary type="html">Su Quora ho risposto a questa domanda: Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="English" /><category term="docker" /><category term="cheatsheet" /><summary type="html">I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</summary></entry></feed>

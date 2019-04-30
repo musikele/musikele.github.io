@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>SSH cheatsheet (from zero to hero)  - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="ssh, tutorial" />  
+	<meta http-equiv="last-modified" content="2019-04-30 16:50:42 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="SSH cheatsheet (from zero to hero) " property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="SSH is one of the fundamental tools you must master to become a successful developer. In this article we'll talk about using it for advanced configurations, like logging to remote server without password, configuring a tunnel, monitoring ssh connections " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" property="og:url">
+
+
+
+  <meta content="2019-04-03T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/ssh-big.png" property="og:image">
+
+
+
+  
+  <meta content="ssh" property="article:tag">
+  
+  <meta content="tutorial" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="SSH cheatsheet (from zero to hero) ">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">
+
+
+
+  <meta name="twitter:description" content="SSH is one of the fundamental tools you must master to become a successful developer. In this article we'll talk about using it for advanced configurations, like logging to remote server without password, configuring a tunnel, monitoring ssh connections ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/ssh-big.png">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9588917209740632",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">SSH cheatsheet (from zero to hero) </a></h1>
+			<p class="post-meta">Apr 3, 2019 • musikele</p>
+		</header>
+
+		<section>
+			
+			<p>SSH is one of the basic commands you need to master, no matter what’s your platform of choice. Because you’ll always end up working on some random server, and you’ll have to login to see logs or restarting services. Also, you’ll never see it as a <em>skill to show</em> because it’s implicit that you have to know how to use it, at least for logging in to some website.</p>
+
+<p>Here is a little cheatsheet of the most important commands (and tricks) you might find useful.</p>
+
+<p><img src="/images/ssh-big.png" alt="" /></p>
+
+<h2 id="creating-a-new-pair-of-keys">Creating a new pair of keys</h2>
+
+<p>Before working with SSH, you need to create a new pair of keys. Basically it is a pair of private/public keys. <strong>To generate a new key pair on your computer</strong>, run:</p>
+
+<pre><code class="language-bash">$ ssh-keyjen
+</code></pre>
+
+<p>keys are created in <code>~/.ssh</code> directory. Two files will be created:</p>
+
+<pre><code class="language-bash">➜  $ cd ~/.ssh 
+➜  $ ls -al
+-rw------- 1 musikele musikele 1,8K feb 18 21:56 id_rsa
+-rw-r--r-- 1 musikele musikele  411 feb 18 21:56 id_rsa.pub
+➜  $ 
+</code></pre>
+
+<p>The private key is <code>id_rsa</code> and you should never share it with anybody. It is readable and writable only by the current user.</p>
+
+<p>The public key is <code>id_rsa.pub</code> and it can be shared with others. As you can see the <code>id_rsa.pub</code> is also readable by anyone on the system.</p>
+
+<h2 id="set-up-ssh-login-to-remote-server-without-password">Set up SSH login to remote server without password</h2>
+
+<p>Now that we have SSH set up on our computer, let’s see how we can login to a remote server. (We assume that ssh is set up on the remote server too - if not, just lunch the previous command there too!).</p>
+
+<p>There are two ways to log in to a remote server:</p>
+
+<ul>
+  <li>by typing the remote user’s password,</li>
+  <li>by using your private/public key.</li>
+</ul>
+
+<p>We will talk about the second option from now on.</p>
+
+<p>What we want to do now is to register our public key on the server. I want to remain  practical in this article, but if you need some deep explanation of what happens during the login process I suggest you to <a href="https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process" title="How SSH works">follow this link</a>.</p>
+
+<p>There’s a simple command to set up the ssh key on a remote server (run on your local computer):</p>
+
+<pre><code class="language-bash">$ ssh-copy-id root@123.123.123.123
+</code></pre>
+
+<p>once you hit enter, the remote server will ask for the password (at least for the first time). Once done, you can log in to a remote server by typing</p>
+
+<pre><code class="language-bash">$ ssh root@123.123.123.123
+</code></pre>
+
+<p>…and you’re in!</p>
+
+<p>What is this command <code>ssh-copy-id</code> doing? This command will copy your public key (<code>~/.ssh/id_rsa.pub</code>) in the remote file <code>~/.ssh/authenticated_keys</code>. The server will use the your public key to authenticate you.</p>
+
+<h2 id="logging-in-as-a-different-user">Logging in as a different user</h2>
+
+<p>When we log in to a remote server, without using a username, we will log in with the same username of our local machine. My username is <code>musikele</code>, so if I try to login to a remote server that’s what happens:</p>
+
+<pre><code class="language-bash">$ ssh 123.123.123.123
+musikele@123.123.123.123's password: 
+</code></pre>
+
+<p>… but if you’re logging in to a corporate machine you don’t have a user set up with your  username. So we prefix the host address with the remote user, like this:</p>
+
+<pre><code class="language-bash">$ ssh remote_user@123.123.123.123
+</code></pre>
+
+<p>We’re in!</p>
+
+<p>Other useful options:</p>
+
+<ul>
+  <li><code>-p 2222</code> is used to specify the port to use. Default port for SSH is 22.</li>
+  <li><code>-i /path/to/alternate/key</code> is used to speficy another <em>private</em> key you want to use instead of the default one. You can have as many public/private keys you want, and they an be in different files or in different paths.</li>
+  <li><code>-f</code> runs ssh in the background (you’ll see later when to use it)</li>
+  <li><code>-N</code> does not open a window.</li>
+</ul>
+
+<p>to run only one command and exit, simply write the command after the ssh connection string:</p>
+
+<pre><code class="language-bash">$ ssh -p 2222 remote_user@123.123.123.123 ls -al 
+drwxrwxrwx+  3 root          root     4096 Apr  3 10:02 #recycle
+drwxr-xr-x  31 admin         users    4096 Mar 13 07:41 .
+drwxrwxrwx+ 13 root          root     4096 Feb  6 09:54 ..
+-rwxrwxrwx+  1 admin         users   14340 Jun 18  2017 .DS_Store
+...
+$ 
+</code></pre>
+
+<p>We just lunched <code>ls -al</code> on a remote machine! (and the prompt at line 7 is our local prompt, again).</p>
+
+<h2 id="simplify-connections-with-ssh-config-files">Simplify connections with ssh config files</h2>
+
+<p>It may be tedious to write the same info (username, remote server address, port…) again and again. With ssh we can define an alias with some informations already set, so that we don’t have to type them again and again. Here’s an example:</p>
+
+<pre><code class="language-bash">$ vi ~/.ssh/config
+</code></pre>
+
+<pre><code># use four spaces to indent 
+Host foo
+    Hostname 123.123.123.123
+    User root
+    IdentityFile ~/.ssh/id_rsa
+    Port 22
+</code></pre>
+
+<p>And then we just log in with</p>
+
+<pre><code class="language-bash">$ ssh foo
+</code></pre>
+
+<p>This is a real time saver tip ;)</p>
+
+<h2 id="copy-files-to-and-from-the-remote-host">Copy files to and from the remote host</h2>
+
+<p>One of the most common actions we want to do with our remote servers is to copy files from and to it. The handy command <strong>scp</strong> will help us doing this.</p>
+
+<p>To  transfer a file from local host to a remote one:</p>
+
+<pre><code class="language-bash">scp bar.txt mark@123.123.123.123:~/
+</code></pre>
+
+<p>Here we are coping <code>bar.txt</code> file on the server, logging in as user <code>mark</code>.</p>
+
+<p>Whatever is after the <code>:</code> is the path on the remote server. If the path starts with <code>/</code> it is an absolute path; otherwise it will be local to the user’s home folder.</p>
+
+<p>Some other handy options for this command are:</p>
+
+<ul>
+  <li><code>-P</code> for the port (note that for the regular ssh we used <code>-p</code> lowercase)</li>
+  <li><code>-r</code> for a recursive copy of a folder</li>
+</ul>
+
+<p>And of course, if you want to copy from a remote host to your local pc:</p>
+
+<pre><code class="language-bash">scp mark@123.123.123.123:~/bar.txt ./new.txt
+</code></pre>
+
+<h2 id="configure-a-ssh-tunnel">Configure a ssh tunnel</h2>
+
+<p>With <em>tunneling</em> you can redirect traffic from one port of an ssh host to a remote server.</p>
+
+<p>Let’s see an easy example:</p>
+
+<pre><code class="language-bash">ssh -L 8000:yahoo.com:80 mark@myhost.com
+</code></pre>
+
+<p>In this case:</p>
+
+<ul>
+  <li>your computer will listen on port <code>localhost:8000</code></li>
+  <li>when a packet is sent at <code>localhost:8000</code> it will reach <code>myhost.com</code></li>
+  <li>ssh daemon at <code>myhost.com</code> will redirect to <code>yahoo.com:80</code></li>
+  <li>responses follow the same path.</li>
+</ul>
+
+<p>This technique can be useful to access a server on a private network. The only problem is that we also log in to <code>myhost.com</code> and the connection stays open until we exit from the remote session.</p>
+
+<p>Combining with options  <code>-f -N</code> ,  we run the tunnel and return to the localhost computer:</p>
+
+<pre><code class="language-bash">ssh -f -N -L 8000:yahoo.com:80 mark@myhost.com
+</code></pre>
+
+<p>Another great use for tunneling is to redirect  traffic from the ssh server to your local host. Imagine to hit <code>myhost.com:8000</code> but the traffic is redirected to <code>localhost:3000</code>. This is useful for debugging, or to set up proxies, etc.</p>
+
+<p>Remote tunneling is disabled by default; to enable, open the config file:</p>
+
+<pre><code>$ vi etc/ssh/sshd_config
+</code></pre>
+
+<p>set <code>GatewayPorts</code> option to <code>yes</code> and restart the service (for example with <code>service ssh restart</code> on Debian/Ubuntu systems).</p>
+
+<p>Now we can explore the tunneling functionality by launching:</p>
+
+<pre><code class="language-bash">ssh -R 8000:localhost:3000 mark@myhost.com
+</code></pre>
+
+<p>What’s happening here:</p>
+
+<ul>
+  <li>port <code>8000</code> on server <code>myhost.com</code> is exposed (be sure that it’s reachable, for example by setting port forwarding on gateways if you have)</li>
+  <li>when you connect to port <code>myhost.com:8000</code> the data is sent to <code>localhost:3000</code></li>
+  <li>eventual responses will flow back on the same route.</li>
+</ul>
+
+<h2 id="escape-sequences">Escape sequences</h2>
+
+<ul>
+  <li>To stop a blocked ssh connection write: <code>~.</code> (tilde fullstop).</li>
+  <li>Another escape sequence is <code>~ CTRL-Z</code> (tilde character + CTRL + Z). The ssh connection will be moved to background. To resume, type <code>fg</code>.</li>
+</ul>
+
+<h2 id="verify-ssh-fingerprints">Verify SSH fingerprints</h2>
+
+<p>When you connect to a new machine, a new entry is created in the local file <code>~/.ssh/known_hosts</code> of your computer. This entry contains the fingerprint of the server, so next time it will be already trusted.</p>
+
+<p>However, sometimes keys on remote servers will change and our machine will not be able to connect again.</p>
+
+<p>In order to check the new fingerprint of a remote server:</p>
+
+<ul>
+  <li>connect to the remote server (e.g. <code>ssh root@123.123.123.123</code>) with password</li>
+  <li>on remote host, launch:</li>
+</ul>
+
+<pre><code class="language-bash">$ ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
+</code></pre>
+
+<p>The output of the command is the fingerprint of the key.</p>
+
+<ul>
+  <li>on localhost, launch:</li>
+</ul>
+
+<pre><code class="language-bash">$ ssh-keygen -R 123.123.123.123
+</code></pre>
+
+<p>This will remove the line associated with <code>123.123.123.123</code> in the <code>~/.ssh/known_hosts</code> file.</p>
+
+<ul>
+  <li>finally, connect again to the remote server:</li>
+</ul>
+
+<pre><code class="language-bash">$ ssh root@123.123.123.123
+</code></pre>
+
+<p>The remote host will show its fingerprint, and it should match the one calculated before.</p>
+
+<h2 id="other-cool-ssh-options">Other cool SSH options</h2>
+
+<h3 id="deny-any-root-access">Deny any root access</h3>
+
+<p>You can imagine why a ssh connection for the root account can be a bad thing. Fortunately It can be disabled.</p>
+
+<ul>
+  <li>launch <code>vi /etc/ssh/sshd_config</code>. This file contains a bunch of options for ssh.</li>
+  <li>Search for <code>PermitRootLogin</code> and set to <code>no</code> to avoid root login.</li>
+</ul>
+
+<h3 id="prohibit-password-access">Prohibit password access</h3>
+
+<p>Another value for this setting is <code>prohibit-password</code>. This way you can only connect via public/private key.  You can disable password authentication by setting <code>PasswordAuthentication</code> option to <code>no</code>.</p>
+
+<p>If you want to accept connections only for a specific set of users, or only users that come from a specific IP, you can set <code>AllowUsers</code> option like this:</p>
+
+<pre><code>AllowUsers foo bar@1.2.3.4 *@2.3.4.5
+</code></pre>
+
+<p>Remember to restart the server with <code>service ssh restart</code>.</p>
+
+<h2 id="monitoring-connection-attempts">Monitoring connection attempts</h2>
+
+<p>To check malicious/suspicious activity we have some tools that come at help.</p>
+
+<ul>
+  <li><code>vi /var/log/auth.log</code> contains all the informations about who tried to log in the system, with other info like the IP, etc.</li>
+  <li>command <code>lastlog</code> will show last logs from all users of the system.</li>
+  <li><code>lastlog -u mark</code> will display last logs for user <code>mark</code>.</li>
+</ul>
+
+<p>For example, we may see that our employee <code>mark</code> is connecting to the server, but at strange hours. So we can ask mark to  <code>cat ~/bash_history</code> and check his latest commands.  We can use this info to check if he legitimately accessed the machine, or if it was a hacker.</p>
+
+<h3 id="thats-all-folks">That’s all folks</h3>
+
+<p>This article is nothing more than a summary of what I learned by following <a href="">this excellent ssh course from Egghead</a>. I think they are great and deserve a paid subscription.</p>
+
+<p>Tunnelling was the most difficult thing to set up. Here are <a href="">two</a> <a href="">articles</a> that have helped me out. about this</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html&text=SSH cheatsheet (from zero to hero) :%20https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(SSH cheatsheet (from zero to hero) ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html&title=SSH cheatsheet (from zero to hero) &summary=&source=https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/04/07/fantastic-unit-tests-in-javascript-with-mocks.html">Fantastic Unit Tests in Javascript with Mocks</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/12/essere-bravi-colleghi-evitando-di-committare-cazzate/">Essere bravi colleghi evitando di committare cazzate</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html">What's the difference between Browserify and Webpack?</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2017/03/27/become-a-test-expert-in-nodejs-with-these-tricks.html">Become a test expert in NodeJS with these tricks</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html">What's the difference between Browserify and Webpack?</a></h2>
+        </header>
+        <section>
+            <p><strong>Browserify</strong> belongs to the very first generation of module bundlers and it basically allowed one thing, that is, use the <code>require</code> function from NodeJS in the browser. Browserify’s only job was to concatenate files wrapping them in functions that were then called by other fils.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
