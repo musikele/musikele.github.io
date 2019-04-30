@@ -20,6 +20,8 @@ SSH is one of the basic commands you need to master, no matter what's your platf
 
 Here is a little cheatsheet of the most important commands (and tricks) you might find useful.
 
+![]({{ site.baseurl }}/images/ssh-big.png)
+
 ## Creating a new pair of keys
 
 Before working with SSH, you need to create a new pair of keys. Basically it is a pair of private/public keys. **To generate a new key pair on your computer**, run:
@@ -273,4 +275,4 @@ For example, we may see that our employee `mark` is connecting to the server, bu
 
 This article is nothing more than a summary of what I learned by following [this excellent ssh course from Egghead](). I think they are great and deserve a paid subscription. 
 
-Tunnelling was the most difficult thing to set up. Here are [two]() [articles]() that have helped me out. 
+Tunnelling was the most difficult thing to set up. Here are [two]() [articles]() that have helped me out. about this
