@@ -63,6 +63,7 @@ fields:
   config:
     required: true
 pages:
+- _posts/just-enough-functional-programming-in-javascript.md
 - _posts/2019-04-03-ssh-cheatsheet-from-zero-to-hero.md
 - _posts/2019-02-12-how-ads-are-loaded-so-fast-the-command-queue-pattern.md
 - _posts/2019-03-23-what-s-the-difference-between-browserify-and-webpack.md
