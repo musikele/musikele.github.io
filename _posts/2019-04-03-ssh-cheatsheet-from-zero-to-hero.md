@@ -27,17 +27,17 @@ Here is a little cheatsheet of the most important commands (and tricks) you migh
 Before working with SSH, you need to create a new pair of keys. Basically it is a pair of private/public keys. **To generate a new key pair on your computer**, run:
 
 ```bash
-$ ssh-keyjen
+$ ssh-keygen
 ```
 
 keys are created in `~/.ssh` directory. Two files will be created:
 
 ```bash
-➜  $ cd ~/.ssh 
+➜  $ cd ~/.ssh
 ➜  $ ls -al
 -rw------- 1 musikele musikele 1,8K feb 18 21:56 id_rsa
 -rw-r--r-- 1 musikele musikele  411 feb 18 21:56 id_rsa.pub
-➜  $ 
+➜  $
 ```
 
 The private key is `id_rsa` and you should never share it with anybody. It is readable and writable only by the current user.
@@ -79,7 +79,7 @@ When we log in to a remote server, without using a username, we will log in with
 
 ```bash
 $ ssh 123.123.123.123
-musikele@123.123.123.123's password: 
+musikele@123.123.123.123's password:
 ```
 
 ... but if you're logging in to a corporate machine you don't have a user set up with your  username. So we prefix the host address with the remote user, like this:
@@ -100,13 +100,13 @@ Other useful options:
 to run only one command and exit, simply write the command after the ssh connection string:
 
 ```bash
-$ ssh -p 2222 remote_user@123.123.123.123 ls -al 
+$ ssh -p 2222 remote_user@123.123.123.123 ls -al
 drwxrwxrwx+  3 root          root     4096 Apr  3 10:02 #recycle
 drwxr-xr-x  31 admin         users    4096 Mar 13 07:41 .
 drwxrwxrwx+ 13 root          root     4096 Feb  6 09:54 ..
 -rwxrwxrwx+  1 admin         users   14340 Jun 18  2017 .DS_Store
 ...
-$ 
+$
 ```
 
 We just lunched `ls -al` on a remote machine! (and the prompt at line 7 is our local prompt, again).
@@ -119,7 +119,7 @@ It may be tedious to write the same info (username, remote server address, port.
 $ vi ~/.ssh/config
 ```
 
-    # use four spaces to indent 
+    # use four spaces to indent
     Host foo
         Hostname 123.123.123.123
         User root
@@ -176,7 +176,7 @@ In this case:
 * ssh daemon at `myhost.com` will redirect to `yahoo.com:80`
 * responses follow the same path.
 
-This technique can be useful to access a server on a private network. The only problem is that we also log in to `myhost.com` and the connection stays open until we exit from the remote session. 
+This technique can be useful to access a server on a private network. The only problem is that we also log in to `myhost.com` and the connection stays open until we exit from the remote session.
 
 Combining with options  `-f -N` ,  we run the tunnel and return to the localhost computer:
 
@@ -184,7 +184,7 @@ Combining with options  `-f -N` ,  we run the tunnel and return to the localhost
 ssh -f -N -L 8000:yahoo.com:80 mark@myhost.com
 ```
 
-Another great use for tunneling is to redirect  traffic from the ssh server to your local host. Imagine to hit `myhost.com:8000` but the traffic is redirected to `localhost:3000`. This is useful for debugging, or to set up proxies, etc. 
+Another great use for tunneling is to redirect  traffic from the ssh server to your local host. Imagine to hit `myhost.com:8000` but the traffic is redirected to `localhost:3000`. This is useful for debugging, or to set up proxies, etc.
 
 Remote tunneling is disabled by default; to enable, open the config file:
 
@@ -192,16 +192,16 @@ Remote tunneling is disabled by default; to enable, open the config file:
 
 set `GatewayPorts` option to `yes` and restart the service (for example with `service ssh restart` on Debian/Ubuntu systems).
 
-Now we can explore the tunneling functionality by launching: 
+Now we can explore the tunneling functionality by launching:
 
 ```bash
 ssh -R 8000:localhost:3000 mark@myhost.com
 ```
 
-What's happening here: 
+What's happening here:
 
 * port `8000` on server `myhost.com` is exposed (be sure that it's reachable, for example by setting port forwarding on gateways if you have)
-* when you connect to port `myhost.com:8000` the data is sent to `localhost:3000` 
+* when you connect to port `myhost.com:8000` the data is sent to `localhost:3000`
 * eventual responses will flow back on the same route.
 
 ## Escape sequences
@@ -226,7 +226,7 @@ $ ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
 
 The output of the command is the fingerprint of the key.
 
-* on localhost, launch: 
+* on localhost, launch:
 
 ```bash
 $ ssh-keygen -R 123.123.123.123
@@ -234,7 +234,7 @@ $ ssh-keygen -R 123.123.123.123
 
 This will remove the line associated with `123.123.123.123` in the `~/.ssh/known_hosts` file.
 
-* finally, connect again to the remote server: 
+* finally, connect again to the remote server:
 
 ```bash
 $ ssh root@123.123.123.123
@@ -246,9 +246,9 @@ The remote host will show its fingerprint, and it should match the one calculate
 
 ### Deny any root access
 
-You can imagine why a ssh connection for the root account can be a bad thing. Fortunately It can be disabled. 
+You can imagine why a ssh connection for the root account can be a bad thing. Fortunately It can be disabled.
 
-* launch `vi /etc/ssh/sshd_config`. This file contains a bunch of options for ssh. 
+* launch `vi /etc/ssh/sshd_config`. This file contains a bunch of options for ssh.
 * Search for `PermitRootLogin` and set to `no` to avoid root login.
 
 ### Prohibit password access
@@ -263,7 +263,7 @@ Remember to restart the server with `service ssh restart`.
 
 ## Monitoring connection attempts
 
-To check malicious/suspicious activity we have some tools that come at help. 
+To check malicious/suspicious activity we have some tools that come at help.
 
 * `vi /var/log/auth.log` contains all the informations about who tried to log in the system, with other info like the IP, etc.
 * command `lastlog` will show last logs from all users of the system.
@@ -273,6 +273,6 @@ For example, we may see that our employee `mark` is connecting to the server, bu
 
 ### That's all folks
 
-This article is nothing more than a summary of what I learned by following [this excellent ssh course from Egghead](). I think they are great and deserve a paid subscription. 
+This article is nothing more than a summary of what I learned by following [this excellent ssh course from Egghead](). I think they are great and deserve a paid subscription.
 
 Tunnelling was the most difficult thing to set up. Here are [two]() [articles]() that have helped me out. about this
