@@ -12,7 +12,7 @@
 	<title>SSH cheatsheet (from zero to hero)  - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="ssh, tutorial" />  
-	<meta http-equiv="last-modified" content="2019-04-30 16:50:42 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-05-09 10:34:34 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -127,16 +127,16 @@
 
 <p>Before working with SSH, you need to create a new pair of keys. Basically it is a pair of private/public keys. <strong>To generate a new key pair on your computer</strong>, run:</p>
 
-<pre><code class="language-bash">$ ssh-keyjen
+<pre><code class="language-bash">$ ssh-keygen
 </code></pre>
 
 <p>keys are created in <code>~/.ssh</code> directory. Two files will be created:</p>
 
-<pre><code class="language-bash">➜  $ cd ~/.ssh 
+<pre><code class="language-bash">➜  $ cd ~/.ssh
 ➜  $ ls -al
 -rw------- 1 musikele musikele 1,8K feb 18 21:56 id_rsa
 -rw-r--r-- 1 musikele musikele  411 feb 18 21:56 id_rsa.pub
-➜  $ 
+➜  $
 </code></pre>
 
 <p>The private key is <code>id_rsa</code> and you should never share it with anybody. It is readable and writable only by the current user.</p>
@@ -177,7 +177,7 @@
 <p>When we log in to a remote server, without using a username, we will log in with the same username of our local machine. My username is <code>musikele</code>, so if I try to login to a remote server that’s what happens:</p>
 
 <pre><code class="language-bash">$ ssh 123.123.123.123
-musikele@123.123.123.123's password: 
+musikele@123.123.123.123's password:
 </code></pre>
 
 <p>… but if you’re logging in to a corporate machine you don’t have a user set up with your  username. So we prefix the host address with the remote user, like this:</p>
@@ -198,13 +198,13 @@ musikele@123.123.123.123's password:
 
 <p>to run only one command and exit, simply write the command after the ssh connection string:</p>
 
-<pre><code class="language-bash">$ ssh -p 2222 remote_user@123.123.123.123 ls -al 
+<pre><code class="language-bash">$ ssh -p 2222 remote_user@123.123.123.123 ls -al
 drwxrwxrwx+  3 root          root     4096 Apr  3 10:02 #recycle
 drwxr-xr-x  31 admin         users    4096 Mar 13 07:41 .
 drwxrwxrwx+ 13 root          root     4096 Feb  6 09:54 ..
 -rwxrwxrwx+  1 admin         users   14340 Jun 18  2017 .DS_Store
 ...
-$ 
+$
 </code></pre>
 
 <p>We just lunched <code>ls -al</code> on a remote machine! (and the prompt at line 7 is our local prompt, again).</p>
@@ -216,7 +216,7 @@ $
 <pre><code class="language-bash">$ vi ~/.ssh/config
 </code></pre>
 
-<pre><code># use four spaces to indent 
+<pre><code># use four spaces to indent
 Host foo
     Hostname 123.123.123.123
     User root
@@ -2052,7 +2052,7 @@ Host foo
         
 
         <div class="col-4">
-            <h5><a href="/2016/11/tasse-e-disuguaglianza/">Tasse e disuguaglianza</a></h5>
+            <h5><a href="/2017/02/07/discesa-in-inferno-e-risalita-in-paradiso-le-24-ore-da-incubo-di-gitlab.html">Discesa in Inferno e risalita in Paradiso: le 24 ore da incubo di Gitlab</a></h5>
         </div>
     
         
@@ -2062,7 +2062,7 @@ Host foo
         
 
         <div class="col-4">
-            <h5><a href="/2015/02/webapp-nel-tempo-libero-con-approccio-mean/">WebApp nel tempo libero con approccio MEAN</a></h5>
+            <h5><a href="/2015/06/imovie-50-error/">iMovie and the -50 error</a></h5>
         </div>
     
         
@@ -2072,7 +2072,7 @@ Host foo
         
 
         <div class="col-4">
-            <h5><a href="/libri-motivazionali/">I libri motivazionali funzionano?</a></h5>
+            <h5><a href="/2017/12/04/dovrei-partecipare-al-programma-erasmus.html">Dovrei partecipare al programma Erasmus?</a></h5>
         </div>
     
         
@@ -2082,7 +2082,7 @@ Host foo
         
 
         <div class="col-4">
-            <h5><a href="/2015/04/should-i-learn-php-symphony/">PHP Symphony: che faccio, me lo studio?</a></h5>
+            <h5><a href="/2016/02/quanto-ci-metti-problemi-time-management/">"quanto ci metti?" - perchè i programmatori sono delle pippe col time management</a></h5>
         </div>
     
 

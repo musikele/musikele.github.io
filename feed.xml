@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-05-08T00:15:45+02:00</updated><id>https://michelenasti.com/</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">SSH cheatsheet (from zero to hero)</title><link href="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" rel="alternate" type="text/html" title="SSH cheatsheet (from zero to hero) " /><published>2019-04-03T00:00:00+02:00</published><updated>2019-04-30T16:50:42+02:00</updated><id>https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero</id><content type="html" xml:base="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">&lt;p&gt;SSH is one of the basic commands you need to master, no matter what’s your platform of choice. Because you’ll always end up working on some random server, and you’ll have to login to see logs or restarting services. Also, you’ll never see it as a &lt;em&gt;skill to show&lt;/em&gt; because it’s implicit that you have to know how to use it, at least for logging in to some website.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-05-09T10:37:09+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">SSH cheatsheet (from zero to hero)</title><link href="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" rel="alternate" type="text/html" title="SSH cheatsheet (from zero to hero) " /><published>2019-04-03T00:00:00+02:00</published><updated>2019-05-09T10:34:34+02:00</updated><id>https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero</id><content type="html" xml:base="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">&lt;p&gt;SSH is one of the basic commands you need to master, no matter what’s your platform of choice. Because you’ll always end up working on some random server, and you’ll have to login to see logs or restarting services. Also, you’ll never see it as a &lt;em&gt;skill to show&lt;/em&gt; because it’s implicit that you have to know how to use it, at least for logging in to some website.&lt;/p&gt;
 
 &lt;p&gt;Here is a little cheatsheet of the most important commands (and tricks) you might find useful.&lt;/p&gt;
 
@@ -8,16 +8,16 @@
 
 &lt;p&gt;Before working with SSH, you need to create a new pair of keys. Basically it is a pair of private/public keys. &lt;strong&gt;To generate a new key pair on your computer&lt;/strong&gt;, run:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh-keyjen
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh-keygen
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;keys are created in &lt;code&gt;~/.ssh&lt;/code&gt; directory. Two files will be created:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;➜  $ cd ~/.ssh 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;➜  $ cd ~/.ssh
 ➜  $ ls -al
 -rw------- 1 musikele musikele 1,8K feb 18 21:56 id_rsa
 -rw-r--r-- 1 musikele musikele  411 feb 18 21:56 id_rsa.pub
-➜  $ 
+➜  $
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The private key is &lt;code&gt;id_rsa&lt;/code&gt; and you should never share it with anybody. It is readable and writable only by the current user.&lt;/p&gt;
@@ -58,7 +58,7 @@
 &lt;p&gt;When we log in to a remote server, without using a username, we will log in with the same username of our local machine. My username is &lt;code&gt;musikele&lt;/code&gt;, so if I try to login to a remote server that’s what happens:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh 123.123.123.123
-musikele@123.123.123.123's password: 
+musikele@123.123.123.123's password:
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;… but if you’re logging in to a corporate machine you don’t have a user set up with your  username. So we prefix the host address with the remote user, like this:&lt;/p&gt;
@@ -79,13 +79,13 @@ musikele@123.123.123.123's password:
 
 &lt;p&gt;to run only one command and exit, simply write the command after the ssh connection string:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh -p 2222 remote_user@123.123.123.123 ls -al 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ssh -p 2222 remote_user@123.123.123.123 ls -al
 drwxrwxrwx+  3 root          root     4096 Apr  3 10:02 #recycle
 drwxr-xr-x  31 admin         users    4096 Mar 13 07:41 .
 drwxrwxrwx+ 13 root          root     4096 Feb  6 09:54 ..
 -rwxrwxrwx+  1 admin         users   14340 Jun 18  2017 .DS_Store
 ...
-$ 
+$
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;We just lunched &lt;code&gt;ls -al&lt;/code&gt; on a remote machine! (and the prompt at line 7 is our local prompt, again).&lt;/p&gt;
@@ -97,7 +97,7 @@ $
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ vi ~/.ssh/config
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;# use four spaces to indent 
+&lt;pre&gt;&lt;code&gt;# use four spaces to indent
 Host foo
     Hostname 123.123.123.123
     User root
