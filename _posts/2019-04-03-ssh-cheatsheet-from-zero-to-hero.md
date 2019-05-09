@@ -206,8 +206,8 @@ What's happening here:
 
 ## Escape sequences
 
-* To stop a blocked ssh connection write: `~.` (tilde fullstop).
-* Another escape sequence is `~ CTRL-Z` (tilde character + CTRL + Z). The ssh connection will be moved to background. To resume, type `fg`.
+* To stop a blocked ssh connection hit `<ENTER>` then write: `~.` (tilde fullstop).
+* Another escape sequence is `~ CTRL-Z` (tilde character + CTRL + Z). The ssh connection will be moved to background. To resume, type `fg`. Remember to hit `<ENTER>` if you have written anything before.
 
 ## Verify SSH fingerprints
 
