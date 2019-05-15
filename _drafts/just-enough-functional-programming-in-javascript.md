@@ -26,8 +26,19 @@ High order functions are functions that:
 So for example we can write a new high-order function that logs calls to a function in input:
 
 ```javascript
-const withLogger = fn => () => {
-  console.log('calling function...')
-  return fn(...args)
+const withLogger = fn => {
+  return (...args) => {
+  	console.log('called fn with arguments', ...args)
+    return fn(...args)
+  }
 }
+
+//example use:
+const add = (x,y) => x + y
+
+const addWithLogger = withLogger(add);
+
+addWithLogger(3,4);
+// => called fn with arguments 3 4 
+// => 7
 ```
