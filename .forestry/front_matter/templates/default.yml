@@ -63,8 +63,8 @@ fields:
   config:
     required: true
 pages:
-- _posts/2019-04-03-ssh-cheatsheet-from-zero-to-hero.md
 - _posts/just-enough-functional-programming-in-javascript.md
+- _posts/2019-04-03-ssh-cheatsheet-from-zero-to-hero.md
 - _posts/2017-02-25-the-javascript-event-loop-for-dummies.md
 - _posts/2017-03-01-quando-l-azienda-non-paga-gli-stipendi.md
 - _posts/2017-03-13-js-promises-description-pros-cons-of-this-es6-construct.md
