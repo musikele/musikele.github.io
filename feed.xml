@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-06-13T20:44:48+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">SSH cheatsheet (from zero to hero)</title><link href="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" rel="alternate" type="text/html" title="SSH cheatsheet (from zero to hero) " /><published>2019-04-03T00:00:00+02:00</published><updated>2019-05-09T11:34:37+02:00</updated><id>https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero</id><content type="html" xml:base="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">&lt;p&gt;SSH is one of the basic commands you need to master, no matter what’s your platform of choice. Because you’ll always end up working on some random server, and you’ll have to login to see logs or restarting services. Also, you’ll never see it as a &lt;em&gt;skill to show&lt;/em&gt; because it’s implicit that you have to know how to use it, at least for logging in to some website.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-06-13T21:07:12+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">I work remote, I do two video calls per day</title><link href="https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day.html" rel="alternate" type="text/html" title="I work remote, I do two video calls per day" /><published>2019-06-13T00:00:00+02:00</published><updated>2019-06-13T21:05:00+02:00</updated><id>https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day</id><content type="html" xml:base="https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day.html">&lt;p&gt;Do you love meetings? Do you enjoy taking a break from your work and &lt;em&gt;talk&lt;/em&gt; - ehm, &lt;em&gt;listen&lt;/em&gt; to your managers, stakeholders, customers, peers? I suppose you not. If you’re like me, 99% of your work life meetings have been a total waste of time.&lt;/p&gt;
+
+&lt;p&gt;For example, I remember one day I had 8 hours of meetings, well actually they were 4 different meetings of 2 hours, but with the same people and the same manager attending.&lt;/p&gt;
+
+&lt;p&gt;I also remember a boss sentence, “&lt;em&gt;we will discuss later about this, and we will, because this topic is important for me”&lt;/em&gt;, usually meaning that we should never ever bring the discussion back.&lt;/p&gt;
+
+&lt;p&gt;I also remember another meeting, on friday evening, were we decided to use framework “X” to do something, so I started studying it in the weekend, only to find on monday that the company has decided to use another framework Y.&lt;/p&gt;
+
+&lt;p&gt;The list can go on, feel free to add your horror stories in the comments. I’m sure you had worse meetings than mine :)&lt;/p&gt;
+
+&lt;p&gt;But I’m here to say that I’ve also experienced another way of working: for some projects I had no meetings at all.&lt;/p&gt;
+
+&lt;p&gt;For example, referring to my remote work experience, when you start working remotely the first sentiment you feel is &lt;em&gt;abandonment&lt;/em&gt;. It’s like, &lt;em&gt;where’s my boss?&lt;/em&gt; Obviously I was not &lt;em&gt;abandoned&lt;/em&gt; but that’s the first feeling you get.&lt;/p&gt;
+
+&lt;p&gt;Then I read a book about &lt;a href=&quot;https://amzn.to/2RdiUUt&quot; title=&quot;Human centered work&quot;&gt;human centered work (in italian)&lt;/a&gt;, and amongst other things there is an entire chapter on how to organize the team work. &lt;strong&gt;Before calling your next meeting, ask yourself if all the attendees are actually getting a benefit from it&lt;/strong&gt;. (With this simple rule, 50% of my meetings could have been discarded).&lt;/p&gt;
+
+&lt;p&gt;Some meetings are strictly necessary. &lt;strong&gt;The main role of a boss is to give the &lt;em&gt;strategic direction&lt;/em&gt; to the team&lt;/strong&gt;, and there’s no email that can substitute the facial expression or the tone of voice.&lt;/p&gt;
+
+&lt;p&gt;So, let’s go back to the title of this post. Yes, I work remotely, and yes, &lt;strong&gt;I do two&lt;/strong&gt; (small) &lt;strong&gt;meetings every day&lt;/strong&gt;. Two video-meetings actually. The first one at 9:30 is to kick off the day, the second at 15:30 as a status update.&lt;/p&gt;
+
+&lt;p&gt;They don’t last long, usually in 5 minutes they are done, but it’s a ritual that helps me accomplish my tasks.&lt;/p&gt;
+
+&lt;p&gt;The best part is that we use a software where we can see each other in the face during the meeting, and the default is with webcam on. This actually gives a lot of humanity to remote working: as programmers, we are used to solve problems via chat, by typing, but that’s the slowest way to do that.&lt;/p&gt;
+
+&lt;p&gt;When you start introducing video calls as an option, and switch to that whenever it’s the clearest (&amp;amp; fastest) way to solve a problem, you’ll see the benefit.&lt;/p&gt;
+
+&lt;p&gt;So … should your company do video meetings every day? If your team is small enough, and you all work in the same time zone, why not. I suppose this approach doesn’t scale at all, but I still have to work for a big remote company so I don’t know how they organize their work. As a programmer, I like to see that managers - and peers - are interested in what I’m doing, and doing a meeting is the bare minimum for showing appreciation.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="remote" /><category term="work" /><category term="meeting" /><category term="meetings" /><summary type="html">Do you love meetings? Do you enjoy taking a break from your work and talk - ehm, listen to your managers, stakeholders, customers, peers? I suppose you not. If you’re like me, 99% of your work life meetings have been a total waste of time.</summary></entry><entry><title type="html">SSH cheatsheet (from zero to hero)</title><link href="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html" rel="alternate" type="text/html" title="SSH cheatsheet (from zero to hero) " /><published>2019-04-03T00:00:00+02:00</published><updated>2019-05-09T11:34:37+02:00</updated><id>https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero</id><content type="html" xml:base="https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">&lt;p&gt;SSH is one of the basic commands you need to master, no matter what’s your platform of choice. Because you’ll always end up working on some random server, and you’ll have to login to see logs or restarting services. Also, you’ll never see it as a &lt;em&gt;skill to show&lt;/em&gt; because it’s implicit that you have to know how to use it, at least for logging in to some website.&lt;/p&gt;
 
 &lt;p&gt;Here is a little cheatsheet of the most important commands (and tricks) you might find useful.&lt;/p&gt;
 
@@ -787,165 +813,4 @@ Object [Generator] {}
 
 &lt;p&gt;Generators are widely supported by all major/modern browsers, &lt;strong&gt;except for IE&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><category term="nodejs" /><category term="generators" /><summary type="html">Generators in Javascript are functions that return an iterator.</summary></entry><entry><title type="html">Docker cheatsheet</title><link href="https://michelenasti.com/2018/10/25/docker-cheatsheet.html" rel="alternate" type="text/html" title="Docker cheatsheet" /><published>2018-10-25T01:00:00+02:00</published><updated>2018-11-21T16:24:06+01:00</updated><id>https://michelenasti.com/2018/10/25/docker-cheatsheet</id><content type="html" xml:base="https://michelenasti.com/2018/10/25/docker-cheatsheet.html">&lt;p&gt;I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.&lt;/p&gt;
-
-&lt;h2 id=&quot;start-a-simple-container&quot;&gt;Start a simple container&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker run -i -t ubuntu /bin/bash
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;run&lt;/code&gt; runs the &lt;code&gt;ubuntu&lt;/code&gt; image&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-i&lt;/code&gt; allows you to write to the container (“Keep STDIN open even if not attached”)&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-t&lt;/code&gt; allocates a pseudoTTY and allows to read from the container&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;ubuntu&lt;/code&gt; is the name of the image to start&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;/bin/bash&lt;/code&gt; is the command to launch once the image is started&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In practice: use &lt;code&gt;-i -t&lt;/code&gt; to read and write from the docker image in the console.&lt;/p&gt;
-
-&lt;p&gt;Optional commands:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;--name XXX&lt;/code&gt; assigns the name XXX to the container&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-d&lt;/code&gt; launches the container as a daemon&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-c XXX&lt;/code&gt; passes XXX to the command. In our example the command is &lt;code&gt;/bin/bash&lt;/code&gt;. With -c we can pass any kind of commands; for example &lt;code&gt;-c &quot;while true; do echo hello world; sleep 1; done&quot;&lt;/code&gt;. Docker would pass this string t bash and the container would print hello world every second without stopping. Note the quotes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;see-containers-status&quot;&gt;See containers status&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker ps -a 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;ps&lt;/code&gt; alone prints only the active containers&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; shows also the exited containers&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;inspecting-a-container&quot;&gt;Inspecting a container&lt;/h2&gt;
-
-&lt;p&gt;If the container is started as daemon you might want to see the output.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker logs -t -f NAME_OF_CONTAINER 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;logs NAME_OF_CONTAINER&lt;/code&gt; shows you the logs of the container. Without options you see the latest logs and then the propt gets back to your shell.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-f&lt;/code&gt; works like &lt;code&gt;-f&lt;/code&gt; in &lt;code&gt;tail -f&lt;/code&gt;; logs become live. Use &lt;code&gt;CTRL-C&lt;/code&gt; to exit.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-t&lt;/code&gt; shows also timestamps.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To check container processes:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker top daemon_dave
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To get stats about a bunch of docker containers:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker stats daemon_dave daemon_kate
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;running-programs-in-a-container&quot;&gt;Running programs in a container&lt;/h2&gt;
-
-&lt;p&gt;Daemon mode:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ sudo docker exec -d daemon_dave touch /etc/new_config_file
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;-d&lt;/code&gt; stands for daemon mode.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;exec&lt;/code&gt; is used to run a command in the &lt;code&gt;daemon-dave&lt;/code&gt; container.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Interactive mode:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker exec -t -i daemon_dave /bin/bash
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;-t&lt;/code&gt; creates a TTY&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;-i&lt;/code&gt; captures STDIN&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;…basically opens an interactive shell.&lt;/p&gt;
-
-&lt;h2 id=&quot;stopping--deleting&quot;&gt;Stopping &amp;amp; Deleting&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ docker stop CONTAINER 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ docker rm CONTAINER 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;listing-docker-images&quot;&gt;Listing docker images&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$ docker images
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;build-a-static-container-with-my-blog&quot;&gt;Build a static container with my blog&lt;/h2&gt;
-
-&lt;p&gt;create the &lt;code&gt;Dockerfile&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-docker&quot;&gt;# Version: 0.0.1 
-FROM ubuntu:18.04 
-LABEL maintainer=&quot;XXX@gmail.com&quot;
-# update and install stuff we need: ruby, nodejs, nginx
-RUN apt-get update &amp;amp;&amp;amp; apt-get install -y nginx make build-essential ruby ruby-dev curl
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN apt-get install -y nodejs 
-# install ruby gems to build the blog
-RUN gem install bundler
-RUN gem install jekyll
-# specify that we want to work in the directory /root/
-WORKDIR /root/
-# Remove the default Nginx configuration file
-RUN rm -v /etc/nginx/nginx.conf
-# Copy a configuration file from the current directory
-ADD nginx.conf /etc/nginx/
-# add files from our current directory (.) to the local work dir (/root/)
-ADD . .
-# install jekyll plugins and build the site
-RUN bundle install 
-RUN bundle exec jekyll build --config=_config.yml,_config_dev.yml
-# copy generated website to nginx public dir 
-RUN cp -r _site/* /usr/share/nginx/html/
-# run nginx as foreground process. 
-CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
-EXPOSE 80
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In a Dockerfile there must be a &lt;code&gt;CMD&lt;/code&gt; command otherwise the process will stop after being launched.&lt;/p&gt;
-
-&lt;p&gt;To actually make it work you should also configure your nginx with a valid &lt;code&gt;nginx.conf&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-nginx&quot;&gt;# file nginx.conf
-worker_processes 1;
-
-events { worker_connections 1024; }
-
-http {
-    include    mime.types;
-    sendfile on;
-    server {
-        root /usr/share/nginx/html/;
-        index index.html;
-        server_name localhost;
-        listen 80;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then we can build the image:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker build -t &quot;musikele/blog&quot; .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And we can run it with:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker run -d -p 80:80 --name blog musikele/blog
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In case anything goes wrong, you can enter and inspect the running container with:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker exec -i -t blog /bin/bash
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>musikele</name></author><category term="English" /><category term="docker" /><category term="cheatsheet" /><summary type="html">I usually forget everything if I don’t use it that much. Here is a brief list of docker commands learned on the go.</summary></entry></feed>
+&lt;p&gt;A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><category term="nodejs" /><category term="generators" /><summary type="html">Generators in Javascript are functions that return an iterator.</summary></entry></feed>
