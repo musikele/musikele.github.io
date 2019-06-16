@@ -39,6 +39,7 @@ Now w have installed typescript, but it will still not work because we didn't te
 {
     "compilerOptions": {
         "module": "esnext",
+        "target": "esnext",
         "sourceMap": true,
         "outDir": "./build_ts/",
         "moduleResolution": "node",
@@ -60,8 +61,10 @@ Now w have installed typescript, but it will still not work because we didn't te
 }
 ```
 
-* **module** is one of the most important options here. It's possible values are `None`, `CommonJS`, `AMD`, `System`, `UMD`, `ES6`, `ES2015` or `ESNext`. All these options mean something different to the compiler, also I don't have experience with them all. **AMD** and **System** are things of the past, the first came from [RequireJS](https://requirejs.org/docs/whyamd.html "RequireJS") and the second from [SystemJS](https://github.com/systemjs/systemjs "SystemJS"). Not so long ago there was no way to express dependencies across files in JS, so many competing systems came out to solve this problems. **CommonJS** is a spec that is very similar to what NodeJS has implemented (`require`/`exports`). However, the node community is going towards `import/export` keyword, that was introduced with `ES6` or `ES2015`. **UMD** stands for Universal Module Definition and tries to deliver a modul that works with every possible module definition defined before.   
+* **module** is one of the most important options here. This option determines the way modules (and files) express dependencies between each other. It's possible values are `None`, `CommonJS`, `AMD`, `System`, `UMD`, `ES6`, `ES2015` or `ESNext`. If you use **None** you cannot use `import`, `export`, `require`... nothing.  **AMD** and **System** are (IMHO) a thing of the past, the first came from [RequireJS](https://requirejs.org/docs/whyamd.html "RequireJS") and the second from [SystemJS](https://github.com/systemjs/systemjs "SystemJS"). Not so long ago there was no way to express dependencies across JS files, so many competing systems came out to solve this problem. AMD and System did not get enough fortune to become a standard. **CommonJS** is a spec that is very similar to what NodeJS has implemented (`require`/`exports`). However, the JS community is going towards `import/export` keyword, and node has embraced that too, and we have options `ES6` or `ES2015` for that. **UMD** stands for Universal Module Definition and tries to deliver a modul that works with every possible module definition defined before.   
   I honestly prefer to use Typescript as a superset of JS, so I choose `esnext` and let webpack decide how to bundle stuff together. 
+* **target:** if _module_ determines the way your code is imported, _target_ determines what kind of EcmaScript should be targeted. If you choose `ES3` your code would be compatible with Internet Explorer 5 or Netscape Navigator, and this is the default value. There is a caveat, though: you may be tempted to use `fetch`, or `Promise`, and typescript will let you use them, BUT typescript will not add any polyfill to your code. Beware of this! That's anoter reason to use babel.   
+  Similarly you can choose several different options, `ES5`, `ES6`... again I prefer `esnext` to be able to use the latest features of the language and let babel transpile everything. 
 * **sourcemap** to true if you want to be able to read typescript source code in the browser. 
 * **outDir** is the directory where the single `.ts` files are compiled to `.js`. This is just an  intermediate step. Webpack will take care of the final bundling in the final destination. 
 * **moduleResolution**: again, [there's no need](https://www.typescriptlang.org/docs/handbook/module-resolution.html) to have a value different than `node` here. 
@@ -79,7 +82,7 @@ $ tsc
 $ 
 ```
 
-No output. that's how typescript says, "everything's good". In `build_ts` directory you'll see the file output: 
+No output. that's how typescript says, "everything's good". In `build_ts` directory you'll see the file: 
 
 ```javascript
 //build_ts/sumLibrary.js
@@ -89,3 +92,5 @@ export var sum = function (a, b) { return a + b; };
 ```
 
 ## Webpack & Babel 
+
+The first step of our toolchain has been set up: our typescript files are now converted to javascript, but it's a form of javascript so advanced that not all browsers can understand. If you target Internet Explorer, for example, you cannot use `export` nor 
