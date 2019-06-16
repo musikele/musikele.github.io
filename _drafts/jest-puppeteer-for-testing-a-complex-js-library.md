@@ -87,7 +87,7 @@ No output. that's how typescript says, "everything's good". In `build_ts` direct
 ```javascript
 //build_ts/sumLibrary.js
 
-export var sum = function (a, b) { return a + b; };
+export const sum = (a, b) => a + b;
 //# sourceMappingURL=sumLibrary.js.map
 ```
 
