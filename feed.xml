@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-06-23T00:40:49+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">I work remote, I do two video meetings per day</title><link href="https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day.html" rel="alternate" type="text/html" title="I work remote, I do two video meetings per day" /><published>2019-06-13T00:00:00+02:00</published><updated>2019-06-16T17:26:53+02:00</updated><id>https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day</id><content type="html" xml:base="https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day.html">&lt;p&gt;Do you love meetings? Do you enjoy taking a break from your work and &lt;em&gt;talk&lt;/em&gt; - ehm, &lt;em&gt;listen&lt;/em&gt; to your managers, stakeholders, customers, peers? I suppose you not. If you’re like me, 99% of your work life meetings have been a total waste of time.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-06-24T23:40:43+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Module and Target: meet two typescript compiler options</title><link href="https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html" rel="alternate" type="text/html" title="Module and Target: meet two typescript compiler options " /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-24T23:38:17+02:00</updated><id>https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library</id><content type="html" xml:base="https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html">&lt;p&gt;Hey there, after digging over the web about how Typescript settings mesh together, I decided to write an article about what I found &lt;em&gt;the hard way&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once you install Typescript, default values are a bit dumb. For example, 99% of the world would put the source code in a &lt;code&gt;src&lt;/code&gt; directory, and typescript has to be configured this way. Let’s change &lt;code&gt;tsconfig.json&lt;/code&gt; into something more meaningful:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+    &quot;compilerOptions&quot;: {
+        &quot;module&quot;: &quot;esnext&quot;,
+        &quot;target&quot;: &quot;esnext&quot;,
+        &quot;sourceMap&quot;: true,
+        &quot;outDir&quot;: &quot;./build/&quot;,
+        &quot;moduleResolution&quot;: &quot;node&quot;,
+        &quot;lib&quot;: [
+            &quot;dom&quot;,
+            &quot;esnext&quot;,
+            &quot;dom.iterable&quot;,
+            &quot;scripthost&quot;
+        ],
+    },
+    &quot;include&quot;: [
+        &quot;src/**/*.ts&quot;
+    ],
+    &quot;exclude&quot;: [
+        &quot;src/**/*.spec.ts&quot;,
+        &quot;src/**/*.test.ts&quot;
+    ],
+    &quot;compileOnSave&quot;: true
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is part of my setup. I will go through some of these options so you can choose wisely. However, since I also use Webpack + Babel in my toolchain, …well, read on, I’ll express later my final setup.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-target-option&quot;&gt;The “target” option&lt;/h3&gt;
+
+&lt;p&gt;Typescript is mainly a compiler from a superset to a subset of Javascript features and  &lt;em&gt;target&lt;/em&gt; determines what kind of EcmaScript (Javascript’s formal name) should be targeted.&lt;/p&gt;
+
+&lt;p&gt;Possible values are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;ES3&lt;/code&gt; (default)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ES5&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ES6&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;esnext&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you leave it blank, or choose &lt;code&gt;ES3&lt;/code&gt;, your code would be compatible with very old browsers, like Internet Explorer 5 or Netscape Navigator (joking, but not that much). ES3 is the first standardized version of Javascript.&lt;/p&gt;
+
+&lt;p&gt;You may think this is a great default value and be tempted to use &lt;code&gt;fetch&lt;/code&gt;, or &lt;code&gt;Promise&lt;/code&gt;, and typescript will let you use them, BUT &lt;strong&gt;typescript will not add any polyfill to your code.&lt;/strong&gt; Beware of this!&lt;/p&gt;
+
+&lt;p&gt;Similarly you can choose to run several different options, &lt;code&gt;ES5&lt;/code&gt; (if your users are on Internet Explorer),  &lt;code&gt;ES6&lt;/code&gt;… I prefer &lt;code&gt;esnext&lt;/code&gt; to be able to use the latest features of the language and leave to Babel the transpilation step.&lt;/p&gt;
+
+&lt;p&gt;Did you know that prior to ES6 there was no official way to import some JS code inside another JS code? The community came out with several options and the next section will discuss them.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-module-option&quot;&gt;The “module” option&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;module&lt;/strong&gt; determines the way modules (and files) express dependencies between each other. Possible values are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;None&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;CommonJS&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;AMD&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;System&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;UMD&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ES6&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ES2015&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ESNext&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ouch, so many options for a single task: importing code. Why?! That’s because the evolution of Javascript is non-linear,  and many of them do not apply for every platform.&lt;/p&gt;
+
+&lt;p&gt;If you use &lt;strong&gt;None&lt;/strong&gt; you cannot use &lt;code&gt;import&lt;/code&gt;, &lt;code&gt;export&lt;/code&gt;, &lt;code&gt;require&lt;/code&gt;… nothing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;AMD&lt;/strong&gt;, &lt;strong&gt;System&lt;/strong&gt; and &lt;strong&gt;CommonJS&lt;/strong&gt; are (IMHO) a thing of the past.  the first (AMD) came from &lt;a href=&quot;https://requirejs.org/docs/whyamd.html&quot; title=&quot;RequireJS&quot;&gt;RequireJS&lt;/a&gt; and the second from &lt;a href=&quot;https://github.com/systemjs/systemjs&quot; title=&quot;SystemJS&quot;&gt;SystemJS&lt;/a&gt;. These two are browser’s solutions. Not so long ago there was no way to express dependencies across JS files, so many competing systems came out to solve the same problem. AMD and SystemJS did not get enough fortune to become a standard.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CommonJS&lt;/strong&gt; is a spec that is very similar to what NodeJS has implemented (&lt;code&gt;require&lt;/code&gt;/&lt;code&gt;exports&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UMD&lt;/strong&gt; stands for &lt;em&gt;Universal Module Definition&lt;/em&gt; and tries to deliver a module that works with every possible module definition defined before.&lt;/p&gt;
+
+&lt;p&gt;However, the ECMAScript community went for the &lt;code&gt;import/export&lt;/code&gt; solution, and node has embraced that too, and we have that available in  &lt;code&gt;ES6&lt;/code&gt; and &lt;code&gt;ES2015&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Again, I prefer to use Typescript as a superset of JS, so I choose &lt;code&gt;esnext&lt;/code&gt; and let webpack decide how to bundle stuff together.&lt;/p&gt;
+
+&lt;h3 id=&quot;outdir-or-outfile-&quot;&gt;outDir or outFile ?&lt;/h3&gt;
+
+&lt;p&gt;You have decided which module system you want to use (you know  my vote for &lt;code&gt;ES6&lt;/code&gt;), but do you want a single file in output (&lt;code&gt;outFile&lt;/code&gt;) or many single files in a output directory (&lt;code&gt;outDir&lt;/code&gt;)?&lt;/p&gt;
+
+&lt;p&gt;If you write JS for the browser you may be tempted to go for &lt;code&gt;outFile&lt;/code&gt; and let TS deal with everything. You may think that this way you can skip webpack, babel and so on. The problem is that TS allows to use this option only with &lt;code&gt;amd&lt;/code&gt; and &lt;code&gt;system&lt;/code&gt;. So this is a hard requirement for that.&lt;/p&gt;
+
+&lt;p&gt;The second big problem is that, to build a single file with all modules, Typescript needs also to know the &lt;em&gt;order&lt;/em&gt; of files, so &lt;em&gt;you&lt;/em&gt; have to provide the list in the right order. Imagine having 30-50-100 modules…&lt;/p&gt;
+
+&lt;p&gt;Again, my advice is to use&lt;code&gt;outDir&lt;/code&gt;. For every source file you get a compiled file in the output directory. Then, again, did I tell you of webpack + babel?&lt;/p&gt;
+
+&lt;h3 id=&quot;moduleresolution&quot;&gt;ModuleResolution&lt;/h3&gt;
+
+&lt;p&gt;This setting accepts two possible values: &lt;code&gt;node&lt;/code&gt; and &lt;code&gt;classic&lt;/code&gt;. At this point there’s no need to have a value different than &lt;code&gt;node&lt;/code&gt; here. For what I read &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/module-resolution.html&quot;&gt;in the official documentation&lt;/a&gt;,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nowadays, this strategy [&lt;code&gt;classic&lt;/code&gt;] is mainly present for backward compatibility.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;lib&quot;&gt;Lib&lt;/h3&gt;
+
+&lt;p&gt;Since we are working in the browser and we are targeting a JS version greater than ES2015, I use the defaults that are &lt;code&gt;DOM,ES6,DOM.Iterable,ScriptHost&lt;/code&gt;. The list of all available libraries is &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/compiler-options.html&quot;&gt;here&lt;/a&gt;. If you forget to put those, Typescript will output weird errors like missing &lt;code&gt;Set&lt;/code&gt; interface or other stuff - I guess the problem is that TS goes in &lt;code&gt;node_modules&lt;/code&gt; and finds code that is obviously thought for Node, and it fails somehow.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;So many choices to do and I guess inexperienced developers do not know what to do at first. I had to dig in Typescript configuration for a while before figuring out the best configuration for my projects.&lt;/p&gt;
+
+&lt;p&gt;I’ve also cited about Webpack + Babel setup here, and this will be discussed in another artile. It will require some changes here and there, and typescript will only be used to check the syntax of the project, but the transpilation will be done by Babel.&lt;/p&gt;
+
+&lt;p&gt;Curious? Stay tuned!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><summary type="html">Hey there, after digging over the web about how Typescript settings mesh together, I decided to write an article about what I found the hard way.</summary></entry><entry><title type="html">I work remote, I do two video meetings per day</title><link href="https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day.html" rel="alternate" type="text/html" title="I work remote, I do two video meetings per day" /><published>2019-06-13T00:00:00+02:00</published><updated>2019-06-16T17:26:53+02:00</updated><id>https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day</id><content type="html" xml:base="https://michelenasti.com/2019/06/13/i-work-remote-i-do-two-video-calls-per-day.html">&lt;p&gt;Do you love meetings? Do you enjoy taking a break from your work and &lt;em&gt;talk&lt;/em&gt; - ehm, &lt;em&gt;listen&lt;/em&gt; to your managers, stakeholders, customers, peers? I suppose you not. If you’re like me, 99% of your work life meetings have been a total waste of time.&lt;/p&gt;
 
 &lt;p&gt;For example, I remember one day I had 8 hours of meetings, well actually they were 4 different meetings of 2 hours, but with the same people and the same manager attending.&lt;/p&gt;
 
@@ -681,136 +790,4 @@ In the end … &lt;strong&gt;static types could have helped to catch errors with
 
 &lt;h2 id=&quot;health-issues&quot;&gt;Health Issues&lt;/h2&gt;
 
-&lt;p&gt;I’m writing this paragraph because Nicholas talks openly about his problem with the Lyme disease. It was such a huge problem that he had to stop working in 2013, even remotely, and just focus on his health. However he is recovering and he is writing new stuff on his blog.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="zakas" /><category term="eslint" /><category term="people" /><category term="javascript" /><summary type="html">Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!</summary></entry><entry><title type="html">The easiest way to understand Javascript Generators</title><link href="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html" rel="alternate" type="text/html" title="The easiest way to understand Javascript Generators" /><published>2018-10-29T00:00:00+01:00</published><updated>2018-10-31T15:47:43+01:00</updated><id>https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators</id><content type="html" xml:base="https://michelenasti.com/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">&lt;p&gt;&lt;strong&gt;Generators in Javascript are functions that return an iterator&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Generators&lt;/strong&gt; are functions declared with the keyword &lt;code&gt;function*&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-do-you-mean-with-iterator&quot;&gt;What do you mean with “iterator”?&lt;/h2&gt;
-
-&lt;p&gt;The &lt;em&gt;iterator&lt;/em&gt; is a design pattern usually already implemented in other programming languages. It is a &lt;strong&gt;data structure that allows you to &lt;em&gt;iterate&lt;/em&gt; (read one by one) over the elements of the data structure.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;It might be very easy to think of an iterator for an array (a function that returns every element of the array, one by one), things become more complex if you want to iterate over a graph, or a tree.&lt;/p&gt;
-
-&lt;h2 id=&quot;an-iterator-example-in-plain-javascript-no-generators-here&quot;&gt;An Iterator example in plain Javascript (no generators here)&lt;/h2&gt;
-
-&lt;p&gt;An iterator obeys to these rules:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The iterator must return a function that returns an object, containing a &lt;code&gt;next()&lt;/code&gt; function.&lt;/li&gt;
-  &lt;li&gt;This &lt;code&gt;next()&lt;/code&gt; function, in turn, returns an object with two properties, &lt;code&gt;value&lt;/code&gt; (the actual element of the iteration) and &lt;code&gt;done&lt;/code&gt; (set to &lt;code&gt;true&lt;/code&gt; when the iteration has ended, &lt;code&gt;false&lt;/code&gt; otherwise).&lt;/li&gt;
-  &lt;li&gt;This function is attached to the property &lt;code&gt;myObj[Symbol.iterator]&lt;/code&gt; .&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Here is an example iterator for an array:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Array.prototype[Symbol.iterator] = function() {
-	const clone = this.slice(0); // clones the original array
-    let i = -1; // iterating index; 
-  	return {
-    	next() {
-        	i++;
-        	return {
-            	value: clone[i],
-            	done: i &amp;gt;= clone.length
-            }
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Let’s try this in the nodejs console…&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; let iterator = [1,3,5,7,9][Symbol.iterator]()
-undefined
-&amp;gt; iterator
-{ next: [Function: next] }
-&amp;gt; iterator.next()
-{ value: 1, done: false }
-&amp;gt; iterator.next()
-{ value: 3, done: false }
-&amp;gt; iterator.next()
-{ value: 5, done: false }
-&amp;gt; iterator.next()
-{ value: 7, done: false }
-&amp;gt; iterator.next()
-{ value: 9, done: false }
-&amp;gt; iterator.next()
-{ value: undefined, done: true }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I’ve already discussed this issue in &lt;a href=&quot;https://michelenasti.com/2018/09/04/symbols-iterators-in-javascript.html&quot; title=&quot;Symbols &amp;amp; Iterators in Javascript &quot;&gt;in another article&lt;/a&gt;; there you’ll find other examples and more explanations!&lt;/p&gt;
-
-&lt;h2 id=&quot;iterators-are-not-funny&quot;&gt;Iterators are not funny.&lt;/h2&gt;
-
-&lt;p&gt;Nobody wants to write a functions that returns an object with a next property that returns a value.&lt;/p&gt;
-
-&lt;p&gt;That’s why the Javascript community has introduced the generators syntax.&lt;/p&gt;
-
-&lt;p&gt;A generator is declared this way: &lt;code&gt;function* myGenerator {}&lt;/code&gt; and this will return an iterator.&lt;/p&gt;
-
-&lt;p&gt;Let’s rewrite the preceeding example with generators:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Array.prototype[Symbol.iterator] = function*() {
-  for (let i = 0; i &amp;lt; this.length; i++) {
-    yield this[i];
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You know that Promises interrupt the function execution, and when the promise resolves, the flow returns to the point it was left.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Not only Promises but also Generators can interrupt the execution flow&lt;/strong&gt;: when we return a value via the  &lt;code&gt;yield&lt;/code&gt; keyword, the generator function gets paused until it’s called again.&lt;/p&gt;
-
-&lt;p&gt;Does it work?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;$ node  
-&amp;gt; Array.prototype[Symbol.iterator] = function*() {
-...   for (let i = 0; i &amp;lt; this.length; i++) {
-.....     yield this[i];
-.....   }
-... }
-[GeneratorFunction]
-&amp;gt; const iterator = [1,2,3,4,5][Symbol.iterator]() //calling!
-undefined
-&amp;gt; iterator
-Object [Generator] {}
-&amp;gt; iterator.next()
-{ value: 1, done: false }
-&amp;gt; iterator.next()
-{ value: 2, done: false }
-&amp;gt; iterator.next()
-{ value: 3, done: false }
-&amp;gt; iterator.next()
-{ value: 4, done: false }
-&amp;gt; iterator.next()
-{ value: 5, done: false }
-&amp;gt; iterator.next()
-{ value: undefined, done: true }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Yes, it works!!!&lt;/p&gt;
-
-&lt;h2 id=&quot;but-why-iterators-are-important&quot;&gt;But why Iterators are important&lt;/h2&gt;
-
-&lt;p&gt;JS uses iterators in &lt;code&gt;for ... of&lt;/code&gt; loops, so if the object after the &lt;code&gt;of&lt;/code&gt; contains an iterator, you can iterate over all the elements of the object.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&amp;gt; // The array here is using the iterator defined before...
-&amp;gt; for (element of [1,2,3,4,5]) console.log(element)
-1
-2
-3
-4
-5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It works!&lt;/p&gt;
-
-&lt;h2 id=&quot;what-else-you-need-to-know&quot;&gt;What else you need to know&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;yield&lt;/code&gt; must be in generator functions; you cannot put &lt;code&gt;yield&lt;/code&gt; in  subfunctions, or in promises results, asyncs, etc.&lt;/p&gt;
-
-&lt;h2 id=&quot;ready-to-use-it-&quot;&gt;Ready to use it ?&lt;/h2&gt;
-
-&lt;p&gt;Generators are widely supported by all major/modern browsers, &lt;strong&gt;except for IE&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;A not well known JS feature; since it is part of the language specification, the more you know, the more you gain.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="es6" /><category term="nodejs" /><category term="generators" /><summary type="html">Generators in Javascript are functions that return an iterator.</summary></entry></feed>
+&lt;p&gt;I’m writing this paragraph because Nicholas talks openly about his problem with the Lyme disease. It was such a huge problem that he had to stop working in 2013, even remotely, and just focus on his health. However he is recovering and he is writing new stuff on his blog.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="zakas" /><category term="eslint" /><category term="people" /><category term="javascript" /><summary type="html">Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!</summary></entry></feed>
