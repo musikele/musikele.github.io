@@ -6,12 +6,16 @@ category: English
 layout: post
 date: 2019-06-16 00:00:00 +0200
 tags: []
-title: 'Module and Target: meet two typescript compiler options '
+title: 'Typescript: why so complicated?! (A list of my preferred options) '
 header-img: "/images/typescript-cover-image.jpg"
-description: Let's try to make peace with Typescript module and target options.
+description: Typescript does not have sane defaults and I had to experiment a lot
+  before finding the right set of options for my projects. Here's a discussion about
+  module, target, outDir, moduleResolution, lib, etc
 
 ---
 Hey there, after digging over the web about how Typescript settings mesh together, I decided to write an article about what I found _the hard way_.
+
+![]({{ site.baseurl }}/images/typescript-cover-image.jpg)
 
 Once you install Typescript, default values are a bit dumb. For example, 99% of the world would put the source code in a `src` directory, and typescript has to be configured this way. Let's change `tsconfig.json` into something more meaningful:
 
@@ -41,7 +45,7 @@ Once you install Typescript, default values are a bit dumb. For example, 99% of 
 }
 ```
 
-This is part of my setup. I will go through some of these options so you can choose wisely. However, since I also use Webpack + Babel in my toolchain, ...well, read on, I'll express later my final setup. 
+This is part of my setup. I will go through some of these options so you can choose wisely. 
 
 ### The "target" option 
 
@@ -109,10 +113,14 @@ This setting accepts two possible values: `node` and `classic`. At this point th
 
 Since we are working in the browser and we are targeting a JS version greater than ES2015, I use the defaults that are `DOM,ES6,DOM.Iterable,ScriptHost`. The list of all available libraries is [here](https://www.typescriptlang.org/docs/handbook/compiler-options.html). If you forget to put those, Typescript will output weird errors like missing `Set` interface or other stuff - I guess the problem is that TS goes in `node_modules` and finds code that is obviously thought for Node, and it fails somehow.  
 
+### compileOnSave 
+
+An option for IDEs to trigger compilation on a file save. If your IDE does not support it you can disable it but having it turned on it does not harm. 
+
 ## Conclusions 
 
-So many choices to do and I guess inexperienced developers do not know what to do at first. I had to dig in Typescript configuration for a while before figuring out the best configuration for my projects. 
+So many choices to do and I guess inexperienced developers do not know what to do at first. Hoping to do them a favour! 
 
-I've also cited about Webpack + Babel setup here, and this will be discussed in another artile. It will require some changes here and there, and typescript will only be used to check the syntax of the project, but the transpilation will be done by Babel. 
+I've also cited **Webpack + Babel** setup here, and this will be discussed in another article. It will require some changes here and there, and typescript will only be used to check the syntax of the project, but the transpilation will be done by Babel. 
 
 Curious? Stay tuned! 
