@@ -49,7 +49,7 @@ This is part of my setup. I will go through some of these options so you can cho
 
 ### The "target" option 
 
-Typescript is mainly a compiler from a superset to a subset of Javascript features and  _target_ determines what kind of EcmaScript (Javascript's formal name) should be targeted. 
+Typescript is a compiler from a superset to a subset of Javascript features and `target` determines what kind of EcmaScript (Javascript's formal name) should be targeted.
 
 Possible values are: 
 
