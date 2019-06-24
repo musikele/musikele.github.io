@@ -15,11 +15,11 @@ description: Typescript does not have sane defaults and I had to experiment a lo
   module, target, outDir, moduleResolution, lib, etc
 
 ---
-Hey there, after digging over the web about how Typescript settings mesh together, I decided to write an article about what I found _the hard way_.
+Hey there, after digging about how Typescript settings mesh together, I decided to write my article about what I found _the hard way_, hoping to clear the path for newcomers.
 
 ![]({{ site.baseurl }}/images/typescript-cover-image.jpg)
 
-Once you install Typescript, default values are a bit dumb. For example, 99% of the world would put the source code in a `src` directory, and typescript has to be configured this way. Let's change `tsconfig.json` into something more meaningful:
+Once you install Typescript, default values are a bit dumb. For example, 99% of the world would put the source code in a `src` directory, and typescript has to be configured explicitly this way. Let's see my `tsconfig.json`:
 
 ```json
 {
@@ -38,10 +38,6 @@ Once you install Typescript, default values are a bit dumb. For example, 99% of 
     },
     "include": [
         "src/**/*.ts"
-    ],
-    "exclude": [
-        "src/**/*.spec.ts",
-        "src/**/*.test.ts"
     ],
     "compileOnSave": true
 }
