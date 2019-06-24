@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>Module and Target: meet two typescript compiler options  - Michele Nasti's blog</title>
+	<title>Typescript: why so complicated?! (A list of my preferred options) - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="" />  
-	<meta http-equiv="last-modified" content="2019-06-24 23:38:17 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-06-24 23:45:11 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="Module and Target: meet two typescript compiler options " property="og:title">
+  <meta content="Typescript: why so complicated?! (A list of my preferred options)" property="og:title">
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-  <meta content="Let's try to make peace with Typescript module and target options." property="og:description">
+  <meta content="Typescript does not have sane defaults and I had to experiment a lot before finding the right set of options for my projects. Here's a discussion about module, target, outDir, moduleResolution, lib, etc" property="og:description">
 
 
 
@@ -58,14 +58,14 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="Module and Target: meet two typescript compiler options ">
+  <meta name="twitter:title" content="Typescript: why so complicated?! (A list of my preferred options)">
 
 
   <meta name="twitter:url" content="https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html">
 
 
 
-  <meta name="twitter:description" content="Let's try to make peace with Typescript module and target options.">
+  <meta name="twitter:description" content="Typescript does not have sane defaults and I had to experiment a lot before finding the right set of options for my projects. Here's a discussion about module, target, outDir, moduleResolution, lib, etc">
 
 
 
@@ -107,13 +107,15 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html">Module and Target: meet two typescript compiler options </a></h1>
+			<h1 class="post-title"><a href="/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html">Typescript: why so complicated?! (A list of my preferred options)</a></h1>
 			<p class="post-meta">Jun 16, 2019 • musikele</p>
 		</header>
 
 		<section>
 			
 			<p>Hey there, after digging over the web about how Typescript settings mesh together, I decided to write an article about what I found <em>the hard way</em>.</p>
+
+<p><img src="/images/typescript-cover-image.jpg" alt="" /></p>
 
 <p>Once you install Typescript, default values are a bit dumb. For example, 99% of the world would put the source code in a <code>src</code> directory, and typescript has to be configured this way. Let’s change <code>tsconfig.json</code> into something more meaningful:</p>
 
@@ -142,11 +144,11 @@
 }
 </code></pre>
 
-<p>This is part of my setup. I will go through some of these options so you can choose wisely. However, since I also use Webpack + Babel in my toolchain, …well, read on, I’ll express later my final setup.</p>
+<p>This is part of my setup. I will go through some of these options so you can choose wisely.</p>
 
 <h3 id="the-target-option">The “target” option</h3>
 
-<p>Typescript is mainly a compiler from a superset to a subset of Javascript features and  <em>target</em> determines what kind of EcmaScript (Javascript’s formal name) should be targeted.</p>
+<p>Typescript is a compiler from a superset to a subset of Javascript features and <code>target</code> determines what kind of EcmaScript (Javascript’s formal name) should be targeted.</p>
 
 <p>Possible values are:</p>
 
@@ -216,11 +218,15 @@
 
 <p>Since we are working in the browser and we are targeting a JS version greater than ES2015, I use the defaults that are <code>DOM,ES6,DOM.Iterable,ScriptHost</code>. The list of all available libraries is <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">here</a>. If you forget to put those, Typescript will output weird errors like missing <code>Set</code> interface or other stuff - I guess the problem is that TS goes in <code>node_modules</code> and finds code that is obviously thought for Node, and it fails somehow.</p>
 
+<h3 id="compileonsave">compileOnSave</h3>
+
+<p>An option for IDEs to trigger compilation on a file save. If your IDE does not support it you can disable it but having it turned on it does not harm.</p>
+
 <h2 id="conclusions">Conclusions</h2>
 
-<p>So many choices to do and I guess inexperienced developers do not know what to do at first. I had to dig in Typescript configuration for a while before figuring out the best configuration for my projects.</p>
+<p>So many choices to do and I guess inexperienced developers do not know what to do at first. Hoping to do them a favour!</p>
 
-<p>I’ve also cited about Webpack + Babel setup here, and this will be discussed in another artile. It will require some changes here and there, and typescript will only be used to check the syntax of the project, but the transpilation will be done by Babel.</p>
+<p>I’ve also cited <strong>Webpack + Babel</strong> setup here, and this will be discussed in another article. It will require some changes here and there, and typescript will only be used to check the syntax of the project, but the transpilation will be done by Babel.</p>
 
 <p>Curious? Stay tuned!</p>
  
@@ -228,9 +234,9 @@
 			
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html&text=Module and Target: meet two typescript compiler options :%20https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Module and Target: meet two typescript compiler options ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html&text=Typescript: why so complicated?! (A list of my preferred options):%20https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Typescript: why so complicated?! (A list of my preferred options)) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
   <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html&title=Module and Target: meet two typescript compiler options &summary=&source=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html&title=Typescript: why so complicated?! (A list of my preferred options)&summary=&source=https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/06/16/jest-puppeteer-for-testing-a-complex-js-library.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -1908,7 +1914,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2018/04/16/ode-ai-libri-di-carta.html">Ode ai libri di carta </a></h5>
+            <h5><a href="/2016/03/gioco-flexbox/">Vuoi imparare flexbox ma ti annoi? Prova questo gioco</a></h5>
         </div>
     
         
@@ -1918,7 +1924,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2017/07/27/il-libro-che-tutti-i-tecnologhi-dovrebbero-leggere-from-zero-to-one.html">L'innovazione non copia</a></h5>
+            <h5><a href="/2018/04/05/come-realizzare-un-form-esterno-es-assistenza-che-manda-dati-a-magnews.html">Come realizzare un form esterno (Es. assistenza) che manda dati a MagNews</a></h5>
         </div>
     
         
@@ -1928,7 +1934,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2017/01/31/develop-faster-in-nodejs-with-nodemon.html">Tool of the week: Develop faster in NodeJS with Nodemon </a></h5>
+            <h5><a href="/2015/11/angularizing-a-jquery-website-template-what-i-discovered-what-i-have-done/">Angularizing a jQuery website template: what I discovered, what I have done</a></h5>
         </div>
     
         
@@ -1938,7 +1944,7 @@
         
 
         <div class="col-4">
-            <h5><a href="/2016/04/limportanza-di-un-pet-project-spiegata-da-chi-non-ne-ha-mai-realizzato-uno/">L'importanza di un Pet Project spiegata da chi non ne ha mai realizzato uno</a></h5>
+            <h5><a href="/2017/06/09/we-waglio-vuoi-venire-a-lavorare-nella-mia-startup.html">We' waglio', vuoi venire a lavorare nella mia startup?</a></h5>
         </div>
     
 
