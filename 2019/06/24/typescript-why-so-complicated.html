@@ -12,7 +12,7 @@
 	<title>Typescript: why so complicated?! (A list of my preferred options) - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="typescript, javascript" />  
-	<meta http-equiv="last-modified" content="2019-06-24 23:55:47 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-06-25 22:01:34 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -130,6 +130,7 @@
         "sourceMap": true,
         "outDir": "./build/",
         "moduleResolution": "node",
+        "strict": true,
         "lib": [
             "dom",
             "esnext",
@@ -221,6 +222,12 @@
 <h3 id="compileonsave">compileOnSave</h3>
 
 <p>An option for IDEs to trigger compilation on a file save. If your IDE does not support it you can disable it but having it turned on it does not harm.</p>
+
+<h3 id="strict-true">strict: true</h3>
+
+<p>You use Typescript because you want it to catch syntax errors in your library. However, the default value for this option is <code>false</code> and this means that many syntax checks are not done for you.</p>
+
+<p>If you start a new project, I strongly advise to turn on this option. If you, like me, are converting a JS library to TS, this option may transform your job in hell: introduce it gradually and slowly.</p>
 
 <h2 id="conclusions">Conclusions</h2>
 

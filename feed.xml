@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-06-24T23:57:48+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Typescript: why so complicated?! (A list of my preferred options)</title><link href="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html" rel="alternate" type="text/html" title="Typescript: why so complicated?! (A list of my preferred options)" /><published>2019-06-24T00:00:00+02:00</published><updated>2019-06-24T23:55:47+02:00</updated><id>https://michelenasti.com/2019/06/24/typescript-why-so-complicated</id><content type="html" xml:base="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html">&lt;p&gt;Hey there, after digging about how Typescript settings mesh together, I decided to write my article about what I found &lt;em&gt;the hard way&lt;/em&gt;, hoping to clear the path for newcomers.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-06-25T22:04:57+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Typescript: why so complicated?! (A list of my preferred options)</title><link href="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html" rel="alternate" type="text/html" title="Typescript: why so complicated?! (A list of my preferred options)" /><published>2019-06-24T00:00:00+02:00</published><updated>2019-06-25T22:01:34+02:00</updated><id>https://michelenasti.com/2019/06/24/typescript-why-so-complicated</id><content type="html" xml:base="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html">&lt;p&gt;Hey there, after digging about how Typescript settings mesh together, I decided to write my article about what I found &lt;em&gt;the hard way&lt;/em&gt;, hoping to clear the path for newcomers.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/typescript-cover-image.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -11,6 +11,7 @@
         &quot;sourceMap&quot;: true,
         &quot;outDir&quot;: &quot;./build/&quot;,
         &quot;moduleResolution&quot;: &quot;node&quot;,
+        &quot;strict&quot;: true,
         &quot;lib&quot;: [
             &quot;dom&quot;,
             &quot;esnext&quot;,
@@ -102,6 +103,12 @@
 &lt;h3 id=&quot;compileonsave&quot;&gt;compileOnSave&lt;/h3&gt;
 
 &lt;p&gt;An option for IDEs to trigger compilation on a file save. If your IDE does not support it you can disable it but having it turned on it does not harm.&lt;/p&gt;
+
+&lt;h3 id=&quot;strict-true&quot;&gt;strict: true&lt;/h3&gt;
+
+&lt;p&gt;You use Typescript because you want it to catch syntax errors in your library. However, the default value for this option is &lt;code&gt;false&lt;/code&gt; and this means that many syntax checks are not done for you.&lt;/p&gt;
+
+&lt;p&gt;If you start a new project, I strongly advise to turn on this option. If you, like me, are converting a JS library to TS, this option may transform your job in hell: introduce it gradually and slowly.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
 
