@@ -135,3 +135,13 @@ module.exports = {
 ```
 
 The most important part is the `rules` part. Our rule is that every file will be tested, if it ends with `.ts` it will be passed to plugin `babel-loader` that will pass the file to `babel` before assembling it with babel.
+
+### Test that it's working
+
+```bash
+$ npx webpack
+```
+
+It should create the file `build/dist.js`.
+
+### ESLint 
