@@ -78,7 +78,7 @@ Quick explanation:
 * `@babel/typescript` is the king here. It will _strip off_ all Typescript specific data (interfaces, types, etc.).
 * the two plugins added are already in a very advanced standardization process, but they are added because typescript allows them.
 
-### Test that this is working
+### Is it working? 
 
 run this command:
 
@@ -113,9 +113,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'dist.js',
-    //library: ...,
-    //libraryExport: ...,
-    //libraryTarget: ...,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -136,6 +133,8 @@ module.exports = {
 
 The most important part is the `rules` part. Our rule is that every file will be tested, if it ends with `.ts` it will be passed to plugin `babel-loader` that will pass the file to `babel` before assembling it with babel.
 
+> **Note**: This is the most basic webpack setup I could come up with. Reality is much more complicated than this and [you may need to set additional options/plugins](https://webpack.js.org/configuration/output/). Don't be afraid to check out webpack documentation, you'll learn interesting things 
+
 ### Is it working?
 
 ```bash
@@ -144,4 +143,46 @@ $ npx webpack
 
 It should create the file `build/dist.js`.
 
-## ESLint 
+## ESLint
+
+Installation: 
+
+```bash
+npm i --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+Configuration code: 
+
+```javascript
+//.eslintrc.js
+module.exports = {
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint'],
+    'env': {
+        'browser': true,
+        'es6': true,
+        'jest': true
+    },
+    'extends': [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+    ],
+    'rules': {
+    //...
+    }
+};
+```
+
+* we tell ESLint to use the [typescript parser](https://www.npmjs.com/package/@typescript-eslint/parser) with some specific parser options. 
+* Then we add the plugin @typescript-eslint that will provide us with some useful rules for typescript... 
+* ...Like `@typescript-eslint/recommended`, that contains a few rules that are recommended by the community.
+
+> **Note**: if you convert a legacy Javascript project to typescript, the `typescript-eslint/recommended` set of rules is ... _too much_. That's why I usually comment it out and try to fix problems day after day. 
+
+## Ready to start your projects? 
+
+Hope my configuration files have helped you creating your new projects. Can't wait to know what you're working at! 
