@@ -11,7 +11,7 @@ tags:
 - webpack
 - eslint
 title: 'Typescript, Babel, Webpack, ESLint: my configuration '
-header-img: ''
+header-img: "/images/typescript-cover-image.jpg"
 description: 'Here''s a little guide on how to setup a project with Typescript, Babel,
   Webpack and ESLint. '
 
@@ -72,13 +72,13 @@ Here's my babel setup:
 
 Quick explanation:
 
-* I use Jest and puppeteer to test my code, and Jest requires `targets.node` to be set to `current`. If you don't use Jest and Puppeteer, just remove the `isTest`check.
+* I use Jest and puppeteer to test my code, and Puppeteer requires `targets.node` to be set to `current`. If you don't use Jest and Puppeteer, just remove the `isTest`check.
 * Babel works with presets, each preset will transform some pieces of code depending on some rules.
 * `@babel/env` is a quasi-default rule, it will transform our js code to something that is understandable by something that is parsable by what's defined in `targets`.
 * `@babel/typescript` is the king here. It will _strip off_ all Typescript specific data (interfaces, types, etc.).
 * the two plugins added are already in a very advanced standardization process, but they are added because typescript allows them.
 
-### Is it working? 
+### Is it working?
 
 run this command:
 
@@ -133,7 +133,7 @@ module.exports = {
 
 The most important part is the `rules` part. Our rule is that every file will be tested, if it ends with `.ts` it will be passed to plugin `babel-loader` that will pass the file to `babel` before assembling it with babel.
 
-> **Note**: This is the most basic webpack setup I could come up with. Reality is much more complicated than this and [you may need to set additional options/plugins](https://webpack.js.org/configuration/output/). Don't be afraid to check out webpack documentation, you'll learn interesting things 
+> **Note**: This is the most basic webpack setup I could come up with. Reality is much more complicated than this and [you may need to set additional options/plugins](https://webpack.js.org/configuration/output/). Don't be afraid to check out webpack documentation, you'll learn interesting things
 
 ### Is it working?
 
@@ -145,13 +145,13 @@ It should create the file `build/dist.js`.
 
 ## ESLint
 
-Installation: 
+Installation:
 
 ```bash
 npm i --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
-Configuration code: 
+Configuration code:
 
 ```javascript
 //.eslintrc.js
@@ -177,12 +177,12 @@ module.exports = {
 };
 ```
 
-* we tell ESLint to use the [typescript parser](https://www.npmjs.com/package/@typescript-eslint/parser) with some specific parser options. 
-* Then we add the plugin @typescript-eslint that will provide us with some useful rules for typescript... 
+* we tell ESLint to use the [typescript parser](https://www.npmjs.com/package/@typescript-eslint/parser) with some specific parser options.
+* Then we add the plugin @typescript-eslint that will provide us with some useful rules for typescript...
 * ...Like `@typescript-eslint/recommended`, that contains a few rules that are recommended by the community.
 
-> **Note**: if you convert a legacy Javascript project to typescript, the `typescript-eslint/recommended` set of rules is ... _too much_. That's why I usually comment it out and try to fix problems day after day. 
+> **Note**: if you convert a legacy Javascript project to typescript, the `typescript-eslint/recommended` set of rules is ... _too much_. That's why I usually comment it out and try to fix problems day after day.
 
-## Ready to start your projects? 
+## Ready to start your projects?
 
-Hope my configuration files have helped you creating your new projects. Can't wait to know what you're working at! 
+Hope my configuration files have helped you creating your new projects. Can't wait to know what you're working at!

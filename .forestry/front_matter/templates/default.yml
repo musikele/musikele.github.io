@@ -63,7 +63,7 @@ fields:
   config:
     required: true
 pages:
-- _posts/typescript-babel-webpack-eslint-my-configuration.md
+- _posts/2019-06-27-typescript-babel-webpack-eslint-my-configuration.md
 - _posts/typescript-why-so-complicated.md
 - _posts/2019-06-13-i-work-remote-i-do-two-video-calls-per-day.md
 - _posts/just-enough-functional-programming-in-javascript.md
