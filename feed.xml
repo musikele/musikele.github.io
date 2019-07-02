@@ -1,4 +1,173 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-07-02T00:44:49+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Typescript: why so complicated?! (A list of my preferred options)</title><link href="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html" rel="alternate" type="text/html" title="Typescript: why so complicated?! (A list of my preferred options)" /><published>2019-06-24T00:00:00+02:00</published><updated>2019-06-25T22:01:34+02:00</updated><id>https://michelenasti.com/2019/06/24/typescript-why-so-complicated</id><content type="html" xml:base="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html">&lt;p&gt;Hey there, after digging about how Typescript settings mesh together, I decided to write my article about what I found &lt;em&gt;the hard way&lt;/em&gt;, hoping to clear the path for newcomers.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-07-02T13:38:51+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Typescript, Babel, Webpack, ESLint: my configuration</title><link href="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" rel="alternate" type="text/html" title="Typescript, Babel, Webpack, ESLint: my configuration" /><published>2019-06-27T00:00:00+02:00</published><updated>2019-07-02T13:35:34+02:00</updated><id>https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration</id><content type="html" xml:base="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">&lt;p&gt;The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.&lt;/p&gt;
+
+&lt;h2 id=&quot;typescript&quot;&gt;Typescript&lt;/h2&gt;
+
+&lt;p&gt;I &lt;a href=&quot;https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html&quot;&gt;just wrote an article&lt;/a&gt; about that and you should read it. It contains my &lt;code&gt;tsconfig.json&lt;/code&gt; and why every option is configured that way.&lt;/p&gt;
+
+&lt;h2 id=&quot;babel--7x-&quot;&gt;Babel ( 7.x )&lt;/h2&gt;
+
+&lt;p&gt;The fun fact is, even if we use Typescript and our files end with &lt;code&gt;.ts&lt;/code&gt;, to build the project we will &lt;em&gt;skip&lt;/em&gt; typescript. Let me be clearer. We will use &lt;strong&gt;Babel&lt;/strong&gt;, that is a transpiler, and &lt;strong&gt;Webpack&lt;/strong&gt;, that is a bundler. Webpack will bundle files that are transpiled by Babel.&lt;/p&gt;
+
+&lt;p&gt;But wait?! Babel transpiles what? The latest trend is that Babel will &lt;em&gt;strip out&lt;/em&gt; every Typescript interface, annotation or type inference and will just transform the file to a normal &lt;code&gt;.js&lt;/code&gt; file. This output will then be given in input to Webpack.&lt;/p&gt;
+
+&lt;p&gt;Enough talking! Time to install babel and it’s dependencies:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/preset-typescript
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here’s my babel setup:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//babel.config.js
+  module.exports = api =&amp;gt; {
+      const isTest = api.env('test');
+
+      const targets = {
+          browsers: &quot;&amp;gt; 0.25%, not dead&quot;
+      }
+
+      if (isTest) {
+          delete targets.browsers;
+          targets.node = &quot;current&quot;;
+      }
+
+      return {
+          &quot;presets&quot;: [
+              [
+                  &quot;@babel/env&quot;,
+                  {
+                      &quot;useBuiltIns&quot;: &quot;entry&quot;,
+                      &quot;corejs&quot;: &quot;3.0.0&quot;,
+                      targets
+                  }
+              ],
+              &quot;@babel/typescript&quot;
+          ],
+          &quot;plugins&quot;: [
+              &quot;@babel/proposal-class-properties&quot;,
+              &quot;@babel/proposal-object-rest-spread&quot;
+          ]
+      };
+  };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Quick explanation:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I use Jest and puppeteer to test my code, and Jest requires &lt;code&gt;targets.node&lt;/code&gt; to be set to &lt;code&gt;current&lt;/code&gt;. If you don’t use Jest and Puppeteer, just remove the &lt;code&gt;isTest&lt;/code&gt;check.&lt;/li&gt;
+  &lt;li&gt;Babel works with presets, each preset will transform some pieces of code depending on some rules.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;@babel/env&lt;/code&gt; is a quasi-default rule, it will transform our js code to something that is understandable by something that is parsable by what’s defined in &lt;code&gt;targets&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;@babel/typescript&lt;/code&gt; is the king here. It will &lt;em&gt;strip off&lt;/em&gt; all Typescript specific data (interfaces, types, etc.).&lt;/li&gt;
+  &lt;li&gt;the two plugins added are already in a very advanced standardization process, but they are added because typescript allows them.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;is-it-working&quot;&gt;Is it working?&lt;/h3&gt;
+
+&lt;p&gt;run this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;npx babel src --out-dir build_ts --extensions &quot;.ts,.tsx&quot; --source-maps inline
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we’ll run babel on the directory &lt;code&gt;src&lt;/code&gt;, the output will go in &lt;code&gt;build_ts&lt;/code&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It works? without hassles? Let’s go to the next step:&lt;/p&gt;
+
+&lt;h3 id=&quot;webpack-4x&quot;&gt;Webpack (4.x)&lt;/h3&gt;
+
+&lt;p&gt;Installation:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npm i --save-dev webpack webpack-cli babel-loader
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here’s my configuration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//webpack.config.js
+
+var path = require('path');
+var webpack = require('webpack');
+
+module.exports = {
+  entry: './src/index',
+  mode: 'development',
+  devtool: 'false',
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'dist.js',
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
+  module: {
+    rules: [
+      {
+        // Include ts, tsx, js, and jsx files.
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
+  },
+  plugins: [],
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The most important part is the &lt;code&gt;rules&lt;/code&gt; part. Our rule is that every file will be tested, if it ends with &lt;code&gt;.ts&lt;/code&gt; it will be passed to plugin &lt;code&gt;babel-loader&lt;/code&gt; that will pass the file to &lt;code&gt;babel&lt;/code&gt; before assembling it with babel.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is the most basic webpack setup I could come up with. Reality is much more complicated than this and &lt;a href=&quot;https://webpack.js.org/configuration/output/&quot;&gt;you may need to set additional options/plugins&lt;/a&gt;. Don’t be afraid to check out webpack documentation, you’ll learn interesting things&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;is-it-working-1&quot;&gt;Is it working?&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npx webpack
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It should create the file &lt;code&gt;build/dist.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;eslint&quot;&gt;ESLint&lt;/h2&gt;
+
+&lt;p&gt;Installation:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;npm i --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Configuration code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//.eslintrc.js
+module.exports = {
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint'],
+    'env': {
+        'browser': true,
+        'es6': true,
+        'jest': true
+    },
+    'extends': [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+    ],
+    'rules': {
+    //...
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we tell ESLint to use the &lt;a href=&quot;https://www.npmjs.com/package/@typescript-eslint/parser&quot;&gt;typescript parser&lt;/a&gt; with some specific parser options.&lt;/li&gt;
+  &lt;li&gt;Then we add the plugin @typescript-eslint that will provide us with some useful rules for typescript…&lt;/li&gt;
+  &lt;li&gt;…Like &lt;code&gt;@typescript-eslint/recommended&lt;/code&gt;, that contains a few rules that are recommended by the community.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: if you convert a legacy Javascript project to typescript, the &lt;code&gt;typescript-eslint/recommended&lt;/code&gt; set of rules is … &lt;em&gt;too much&lt;/em&gt;. That’s why I usually comment it out and try to fix problems day after day.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;ready-to-start-your-projects&quot;&gt;Ready to start your projects?&lt;/h2&gt;
+
+&lt;p&gt;Hope my configuration files have helped you creating your new projects. Can’t wait to know what you’re working at!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="typescript" /><category term="babel" /><category term="webpack" /><category term="eslint" /><summary type="html">The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.</summary></entry><entry><title type="html">Typescript: why so complicated?! (A list of my preferred options)</title><link href="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html" rel="alternate" type="text/html" title="Typescript: why so complicated?! (A list of my preferred options)" /><published>2019-06-24T00:00:00+02:00</published><updated>2019-06-25T22:01:34+02:00</updated><id>https://michelenasti.com/2019/06/24/typescript-why-so-complicated</id><content type="html" xml:base="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html">&lt;p&gt;Hey there, after digging about how Typescript settings mesh together, I decided to write my article about what I found &lt;em&gt;the hard way&lt;/em&gt;, hoping to clear the path for newcomers.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/typescript-cover-image.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -773,30 +942,4 @@ In the end … &lt;strong&gt;static types could have helped to catch errors with
   &lt;p&gt;You remember 5% of what you read, 10% of what you write, 90% of what you do again.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Exactly what I thought while I was preparing the first release!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called Html Table Builder.</summary></entry><entry><title type="html">Inspiring tech people to follow: Nicholas C. Zakas</title><link href="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html" rel="alternate" type="text/html" title="Inspiring tech people to follow: Nicholas C. Zakas" /><published>2018-11-05T00:00:00+01:00</published><updated>2018-11-05T11:09:06+01:00</updated><id>https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas</id><content type="html" xml:base="https://michelenasti.com/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">&lt;p&gt;Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!&lt;/p&gt;
-
-&lt;p&gt;For my first journey in &lt;em&gt;people&lt;/em&gt;, I’ll start with one of my very first guides in the javascript world: &lt;strong&gt;Nicholas C. Zakas&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Nicholas is a software engineer &amp;amp; architect, he has worked in super big companies like Yahoo and Box. He also wrote a lot of good books, like the one &lt;a href=&quot;https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691/ref=as_li_ss_tl?&amp;amp;linkCode=sl1&amp;amp;tag=nczonline-20&amp;amp;linkId=3910cb3b203837ce343949cac14f05d5&amp;amp;language=en_US&quot; title=&quot; Professional JavaScript for Web Developers &quot;&gt;I used to study in 2013&lt;/a&gt; (DON’T BUY THIS BOOK - it’s outdated now. It was a great book before ES6 and all the good stuff we know about js were in place).&lt;/p&gt;
-
-&lt;h2 id=&quot;successful-open-source-projects&quot;&gt;Successful Open Source projects&lt;/h2&gt;
-
-&lt;p&gt;Nicholas will be remembered for ages because he wrote one of the most successfull projects in the javascript community: &lt;a href=&quot;https://eslint.org/&quot;&gt;&lt;strong&gt;ESLint&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/eslint.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint - for those who might not know - is a linter. This means that catches eventual errors you may have introduced in your javascript code. There were other linters before ESLint, mainly JSlint and JSHint, but &lt;strong&gt;ESLint had something more: rules could be written and plugged by everybody&lt;/strong&gt; (supporting new JS features in seconds, without waiting for the maintainer to release a new version). That’s why it was adopted by React and all the other big frameworks of our community.&lt;/p&gt;
-
-&lt;h2 id=&quot;books&quot;&gt;Books&lt;/h2&gt;
-
-&lt;p&gt;Nicholas has also written some very influent books, and this gave him the opportunity to move to Silicon Valley and find him great jobs. I find his books extremely detailed and also very clear. These are two things that usually don’t go together!&lt;/p&gt;
-
-&lt;h2 id=&quot;blog-mailing-list&quot;&gt;Blog, mailing list&lt;/h2&gt;
-
-&lt;p&gt;If you want to see what Nicholas has been writing about in the latest years, He also has a blog called &lt;a href=&quot;https://humanwhocodes.com/&quot;&gt;Human Who Codes&lt;/a&gt;. His latest blog post, at the moment of this writing, is this post about &lt;a href=&quot;https://humanwhocodes.com/blog/2018/10/my-somewhat-complete-salary-history-software-engineer/&quot;&gt;his earnings history&lt;/a&gt;, useful to get an insight on salaries in Silicon Valley or USA. The intent of the post is to give women more knowledge about what should they earn.&lt;/p&gt;
-
-&lt;p&gt;But there is just more stuff going on his blog. I have also subscribed to his mailing list and when I received one of his emails I was thrilled to read it. I think his gift is to explain complex situations (like the ones he has lived on his own skin) to us, and to perfectly give context so deeply understand the point.&lt;/p&gt;
-
-&lt;h2 id=&quot;health-issues&quot;&gt;Health Issues&lt;/h2&gt;
-
-&lt;p&gt;I’m writing this paragraph because Nicholas talks openly about his problem with the Lyme disease. It was such a huge problem that he had to stop working in 2013, even remotely, and just focus on his health. However he is recovering and he is writing new stuff on his blog.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="zakas" /><category term="eslint" /><category term="people" /><category term="javascript" /><summary type="html">Usually in the software engineering world we talk about programming languages, tools and code. Let’s start a different path with my blog and talk about people behind it!</summary></entry></feed>
+&lt;p&gt;Exactly what I thought while I was preparing the first release!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called Html Table Builder.</summary></entry></feed>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Typescript, Babel, Webpack, ESLint: my configuration - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="typescript, babel, webpack, eslint" />  
+	<meta http-equiv="last-modified" content="2019-07-02 13:35:34 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Typescript, Babel, Webpack, ESLint: my configuration" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Here's a little guide on how to setup a project with Typescript, Babel, Webpack and ESLint. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" property="og:url">
+
+
+
+  <meta content="2019-06-27T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/typescript-cover-image.jpg" property="og:image">
+
+
+
+  
+  <meta content="typescript" property="article:tag">
+  
+  <meta content="babel" property="article:tag">
+  
+  <meta content="webpack" property="article:tag">
+  
+  <meta content="eslint" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Typescript, Babel, Webpack, ESLint: my configuration">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">
+
+
+
+  <meta name="twitter:description" content="Here's a little guide on how to setup a project with Typescript, Babel, Webpack and ESLint. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/typescript-cover-image.jpg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9588917209740632",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">Typescript, Babel, Webpack, ESLint: my configuration</a></h1>
+			<p class="post-meta">Jun 27, 2019 • musikele</p>
+		</header>
+
+		<section>
+			
+			<p>The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.</p>
+
+<h2 id="typescript">Typescript</h2>
+
+<p>I <a href="https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html">just wrote an article</a> about that and you should read it. It contains my <code>tsconfig.json</code> and why every option is configured that way.</p>
+
+<h2 id="babel--7x-">Babel ( 7.x )</h2>
+
+<p>The fun fact is, even if we use Typescript and our files end with <code>.ts</code>, to build the project we will <em>skip</em> typescript. Let me be clearer. We will use <strong>Babel</strong>, that is a transpiler, and <strong>Webpack</strong>, that is a bundler. Webpack will bundle files that are transpiled by Babel.</p>
+
+<p>But wait?! Babel transpiles what? The latest trend is that Babel will <em>strip out</em> every Typescript interface, annotation or type inference and will just transform the file to a normal <code>.js</code> file. This output will then be given in input to Webpack.</p>
+
+<p>Enough talking! Time to install babel and it’s dependencies:</p>
+
+<pre><code class="language-bash">npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/preset-typescript
+</code></pre>
+
+<p>Here’s my babel setup:</p>
+
+<pre><code class="language-javascript">//babel.config.js
+  module.exports = api =&gt; {
+      const isTest = api.env('test');
+
+      const targets = {
+          browsers: "&gt; 0.25%, not dead"
+      }
+
+      if (isTest) {
+          delete targets.browsers;
+          targets.node = "current";
+      }
+
+      return {
+          "presets": [
+              [
+                  "@babel/env",
+                  {
+                      "useBuiltIns": "entry",
+                      "corejs": "3.0.0",
+                      targets
+                  }
+              ],
+              "@babel/typescript"
+          ],
+          "plugins": [
+              "@babel/proposal-class-properties",
+              "@babel/proposal-object-rest-spread"
+          ]
+      };
+  };
+</code></pre>
+
+<p>Quick explanation:</p>
+
+<ul>
+  <li>I use Jest and puppeteer to test my code, and Jest requires <code>targets.node</code> to be set to <code>current</code>. If you don’t use Jest and Puppeteer, just remove the <code>isTest</code>check.</li>
+  <li>Babel works with presets, each preset will transform some pieces of code depending on some rules.</li>
+  <li><code>@babel/env</code> is a quasi-default rule, it will transform our js code to something that is understandable by something that is parsable by what’s defined in <code>targets</code>.</li>
+  <li><code>@babel/typescript</code> is the king here. It will <em>strip off</em> all Typescript specific data (interfaces, types, etc.).</li>
+  <li>the two plugins added are already in a very advanced standardization process, but they are added because typescript allows them.</li>
+</ul>
+
+<h3 id="is-it-working">Is it working?</h3>
+
+<p>run this command:</p>
+
+<pre><code class="language-bash">npx babel src --out-dir build_ts --extensions ".ts,.tsx" --source-maps inline
+</code></pre>
+
+<p>Here we’ll run babel on the directory <code>src</code>, the output will go in <code>build_ts</code><em>.</em></p>
+
+<p>It works? without hassles? Let’s go to the next step:</p>
+
+<h3 id="webpack-4x">Webpack (4.x)</h3>
+
+<p>Installation:</p>
+
+<pre><code class="language-bash">$ npm i --save-dev webpack webpack-cli babel-loader
+</code></pre>
+
+<p>Here’s my configuration:</p>
+
+<pre><code class="language-javascript">//webpack.config.js
+
+var path = require('path');
+var webpack = require('webpack');
+
+module.exports = {
+  entry: './src/index',
+  mode: 'development',
+  devtool: 'false',
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'dist.js',
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
+  module: {
+    rules: [
+      {
+        // Include ts, tsx, js, and jsx files.
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
+  },
+  plugins: [],
+};
+</code></pre>
+
+<p>The most important part is the <code>rules</code> part. Our rule is that every file will be tested, if it ends with <code>.ts</code> it will be passed to plugin <code>babel-loader</code> that will pass the file to <code>babel</code> before assembling it with babel.</p>
+
+<blockquote>
+  <p><strong>Note</strong>: This is the most basic webpack setup I could come up with. Reality is much more complicated than this and <a href="https://webpack.js.org/configuration/output/">you may need to set additional options/plugins</a>. Don’t be afraid to check out webpack documentation, you’ll learn interesting things</p>
+</blockquote>
+
+<h3 id="is-it-working-1">Is it working?</h3>
+
+<pre><code class="language-bash">$ npx webpack
+</code></pre>
+
+<p>It should create the file <code>build/dist.js</code>.</p>
+
+<h2 id="eslint">ESLint</h2>
+
+<p>Installation:</p>
+
+<pre><code class="language-bash">npm i --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+</code></pre>
+
+<p>Configuration code:</p>
+
+<pre><code class="language-javascript">//.eslintrc.js
+module.exports = {
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint'],
+    'env': {
+        'browser': true,
+        'es6': true,
+        'jest': true
+    },
+    'extends': [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+    ],
+    'rules': {
+    //...
+    }
+};
+</code></pre>
+
+<ul>
+  <li>we tell ESLint to use the <a href="https://www.npmjs.com/package/@typescript-eslint/parser">typescript parser</a> with some specific parser options.</li>
+  <li>Then we add the plugin @typescript-eslint that will provide us with some useful rules for typescript…</li>
+  <li>…Like <code>@typescript-eslint/recommended</code>, that contains a few rules that are recommended by the community.</li>
+</ul>
+
+<blockquote>
+  <p><strong>Note</strong>: if you convert a legacy Javascript project to typescript, the <code>typescript-eslint/recommended</code> set of rules is … <em>too much</em>. That’s why I usually comment it out and try to fix problems day after day.</p>
+</blockquote>
+
+<h2 id="ready-to-start-your-projects">Ready to start your projects?</h2>
+
+<p>Hope my configuration files have helped you creating your new projects. Can’t wait to know what you’re working at!</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html&text=Typescript, Babel, Webpack, ESLint: my configuration:%20https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Typescript, Babel, Webpack, ESLint: my configuration) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html&title=Typescript, Babel, Webpack, ESLint: my configuration&summary=&source=https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2019/06/24/typescript-why-so-complicated.html">Typescript: why so complicated?! (A list of my preferred options) <span class="label label-default">typescript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2019/03/23/what-s-the-difference-between-browserify-and-webpack.html">What's the difference between Browserify and Webpack? <span class="label label-default">webpack</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">Inspiring tech people to follow: Nicholas C. Zakas <span class="label label-default">eslint</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/01/09/i-trend-javascript-del-2018.html">I trend Javascript del 2018 <span class="label label-default">typescript</span>  <span class="label label-default">webpack</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2019/06/24/typescript-why-so-complicated.html">Typescript: why so complicated?! (A list of my preferred options)</a></h2>
+        </header>
+        <section>
+            <p>Hey there, after digging about how Typescript settings mesh together, I decided to write my article about what I found <em>the hard way</em>, hoping to clear the path for newcomers.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2019/06/24/typescript-why-so-complicated.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
