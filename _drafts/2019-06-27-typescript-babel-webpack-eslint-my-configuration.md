@@ -11,7 +11,7 @@ tags:
 - webpack
 - eslint
 title: 'Typescript, Babel, Webpack, ESLint: my configuration'
-header-img: ''
+header-img: "/images/typescript-cover-image.jpg"
 description: 'Here''s a little guide on how to setup a project with Typescript, Babel,
   Webpack and ESLint. '
 
