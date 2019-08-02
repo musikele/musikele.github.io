@@ -15,7 +15,7 @@ description: 'How to check if a URL is not working just for us or globally? '
 ---
 Suppose you see that a website, or a URL, that seems to be unaccessible.
 
-The first thing to do is to check if the website is down just for you or for the whole universe. There are many websites that do this, the one I discovered recently is [Uptrends](https://www.uptrends.com/tools/uptime).
+The first thing to do is to check **if the website is down just for you or for the whole universe**. There are many websites that do this, the one I discovered recently is [Uptrends](https://www.uptrends.com/tools/uptime).
 
 By putting a url in uptrends you can see how long a resource will take to load from a bunch of locations in the world:
 
@@ -23,7 +23,7 @@ By putting a url in uptrends you can see how long a resource will take to load f
 
 _Oh no! There's an issue in Europe!_
 
-Another check you can do is for _proper hackers ®_. Launch this command from bash:
+Another check you can do is for **_proper hackers_** _®_**.** Launch this command from bash:
 
     $ sudo mtr -rwc 50 <url> 
 
@@ -49,7 +49,7 @@ HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst S
 
 `mtr` stands for **My TraceRoute** and combines ping with traceroute. It gives a lot of information about the routers crossed during the path to the destination. 
 
-One may think that there are some errors in the upper report, however you should have in mind that many routers are configured to delete ICMP packets (the ones used by mtr or by ping) or to slow them down a lot. 
+One may think that there are some errors in the upper report, however you should have in mind that many routers are configured to delete ICMP packets (the ones used by mtr, or by ping) or to slow them down for quality assurance. 
 
 I really suggest you to read [this article from Linode](https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/) that explains almost everything you may want to know and it's very easy to follow. 
 
