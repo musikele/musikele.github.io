@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-08-02T16:21:12+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Typescript, Babel, Webpack, ESLint: my configuration</title><link href="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" rel="alternate" type="text/html" title="Typescript, Babel, Webpack, ESLint: my configuration" /><published>2019-06-27T00:00:00+02:00</published><updated>2019-07-02T13:35:34+02:00</updated><id>https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration</id><content type="html" xml:base="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">&lt;p&gt;The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-08-02T19:42:25+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Detect network issues from your pc to a remote url</title><link href="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" rel="alternate" type="text/html" title="Detect network issues from your pc to a remote url" /><published>2019-08-02T00:00:00+02:00</published><updated>2019-08-02T19:39:48+02:00</updated><id>https://michelenasti.com/2019/08/02/detect-network-issues-to-urls</id><content type="html" xml:base="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">&lt;p&gt;Suppose you see that a website, or a URL, that seems to be unaccessible.&lt;/p&gt;
+
+&lt;p&gt;The first thing to do is to check &lt;strong&gt;if the website is down just for you or for the whole universe&lt;/strong&gt;. There are many websites that do this, the one I discovered recently is &lt;a href=&quot;https://www.uptrends.com/tools/uptime&quot;&gt;Uptrends&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By putting a url in uptrends you can see how long a resource will take to load from a bunch of locations in the world:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://files.slack.com/files-pri/T04DE1CDJ-FLXGT5B8Q/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Oh no! There’s an issue in Europe!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Another check you can do is for &lt;strong&gt;&lt;em&gt;proper hackers&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;®&lt;/em&gt;&lt;strong&gt;.&lt;/strong&gt; Launch this command from bash:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo mtr -rwc 50 &amp;lt;url&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The result  is a very nice list of all hops made by data from our PC to the remote host&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;➜  ~ sudo mtr -rwc 50 michelenasti.com 
+[sudo] password di musikele: 
+Start: 2019-08-02T10:27:39+0200
+HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst StDev
+  1.|-- _gateway                             0.0%    50    2.7   2.2   1.9   4.2   0.4
+  2.|-- ???                                 100.0    50    0.0   0.0   0.0   0.0   0.0
+  3.|-- 172.18.18.108                        0.0%    50   10.6  10.7   8.5  16.8   1.5
+  4.|-- 172.18.19.226                       56.0%    50   11.7  11.3   9.0  30.4   4.6
+  5.|-- 172.19.177.38                        0.0%    50   16.5  16.9  15.6  19.6   0.7
+  6.|-- 172.19.177.2                         0.0%    50   27.4  27.8  24.6  69.4   8.6
+  7.|-- etrunk49.milano50.mil.seabone.net   52.0%    50   28.2  28.3  26.6  40.6   2.9
+  8.|-- et9-1-0.ashburn2.ash.seabone.net     0.0%    50  122.1 121.0 119.1 129.5   2.0
+  9.|-- cloudflare.ashburn2.ash.seabone.net  0.0%    50  128.3 133.4 125.5 216.4  14.6
+ 10.|-- 104.28.13.252                        0.0%    50  124.4 124.8 123.5 126.3   0.6
+➜  ~ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;mtr&lt;/code&gt; stands for &lt;strong&gt;My TraceRoute&lt;/strong&gt; and combines ping with traceroute. It gives a lot of information about the routers crossed during the path to the destination.&lt;/p&gt;
+
+&lt;p&gt;One may think that there are some errors in the upper report, however you should have in mind that many routers are configured to delete ICMP packets (the ones used by mtr, or by ping) or to slow them down for quality assurance.&lt;/p&gt;
+
+&lt;p&gt;I really suggest you to read &lt;a href=&quot;https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/&quot;&gt;this article from Linode&lt;/a&gt; that explains almost everything you may want to know and it’s very easy to follow.&lt;/p&gt;
+
+&lt;p&gt;Enjoy your networking!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="network" /><category term="sysadmin" /><summary type="html">Suppose you see that a website, or a URL, that seems to be unaccessible.</summary></entry><entry><title type="html">Typescript, Babel, Webpack, ESLint: my configuration</title><link href="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" rel="alternate" type="text/html" title="Typescript, Babel, Webpack, ESLint: my configuration" /><published>2019-06-27T00:00:00+02:00</published><updated>2019-07-02T13:35:34+02:00</updated><id>https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration</id><content type="html" xml:base="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">&lt;p&gt;The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.&lt;/p&gt;
 
 &lt;h2 id=&quot;typescript&quot;&gt;Typescript&lt;/h2&gt;
 
@@ -863,83 +903,4 @@ function checkData(data) {
 
 &lt;h2 id=&quot;please-condiser-using-a-non-chromium-browser-for-some-time&quot;&gt;Please condiser using a non-Chromium browser for some time&lt;/h2&gt;
 
-&lt;p&gt;I’m already using and supporting &lt;strong&gt;Firefox&lt;/strong&gt; and there’s literally nothing I miss. It’s fast, secure, privacy oriented, cool. Break the monopoly; &lt;strong&gt;in the long term we - users - will be the only ones to earn the benefits of this choice.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="html" /><category term=" javascript" /><category term="css" /><category term="internet explorer" /><category term="jquery" /><category term="chrome" /><category term="firefox" /><category term="edge" /><category term="safari" /><category term="microsoft" /><category term="google" /><category term="apple" /><category term="mozilla" /><summary type="html">In 2006 I was studying web technologies at University. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.</summary></entry><entry><title type="html">What I learned by writing my first npm module</title><link href="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html" rel="alternate" type="text/html" title="What I learned by writing my first npm module" /><published>2018-11-17T00:00:00+01:00</published><updated>2018-11-19T10:23:28+01:00</updated><id>https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module</id><content type="html" xml:base="https://michelenasti.com/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">&lt;p&gt;Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called &lt;a href=&quot;https://www.npmjs.com/package/html-table-builder&quot; title=&quot;HTML Table Builder&quot;&gt;Html Table Builder&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is an exercise from the book &lt;a href=&quot;https://eloquentjavascript.net&quot;&gt;Eloquent Javascript&lt;/a&gt;; also, there are other gazillion modules on NPM that do the same thing with very similar names (a sign that the book is used a lot by javascript learners).&lt;/p&gt;
-
-&lt;h2 id=&quot;a-little-description&quot;&gt;A little description&lt;/h2&gt;
-
-&lt;p&gt;The library exposes a js function that accepts a js array and returns a HTML &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; object (not string!), so you can attach to the document with &lt;code&gt;document.appendChild(element)&lt;/code&gt;. Checkout the &lt;a href=&quot;https://github.com/musikele/html-table-builder&quot;&gt;documentation on github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;My idea was to release a library that was:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;fully tested&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;developed with &lt;strong&gt;Test Driven Development&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;isomorphic&lt;/strong&gt; (by using &lt;a href=&quot;https://www.npmjs.com/package/jsdom&quot;&gt;JSDOM&lt;/a&gt; on node)&lt;/li&gt;
-  &lt;li&gt;built by &lt;strong&gt;webpack&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;accepts objects with &lt;strong&gt;custom columns&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Many more features have to come:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;apart from the fact that the input must be an array, I don’t want to force users to pass array of objects. So you can pass an array containing strings, numbers, etc. even heterogeneous objects, the function will render it somehow.&lt;/li&gt;
-  &lt;li&gt;I want to generate tables-in-tables, if the object in input is an array containing other arrays. This is tricky to do, I’ll have to handle colspans and more.. but not impossible.&lt;/li&gt;
-  &lt;li&gt;I also have to add css classes to columns (so you can style your tables)&lt;/li&gt;
-  &lt;li&gt;…and add a showcase page. Who’s gonna use your library if nobody understand how to use it?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;i-lost-a-lot-of-time-with&quot;&gt;I lost a lot of time with…&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Webpack&lt;/strong&gt; - diving inside the webpack configuration to get the library minimized and bundled should be an easy task, BUT our friends in webpack have added thousands of options to configure every single bit.&lt;br /&gt;
-In the end this is &lt;a href=&quot;https://github.com/musikele/html-table-builder/blob/master/webpack.config.js&quot;&gt;the configuration that works for me&lt;/a&gt;:&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// webpack.config.js
-module.exports = {
-  entry: './index.js',
-  target: 'web', 
-  output: {
-    filename: 'html-table-builder.js',
-    library: 'HtmlTableBuilder',
-    libraryTarget: 'umd'
-  },
-  mode: 'production',
-  devtool: 'source-map',
-  externals: {
-    jsdom: 'JSDOM'
-  }
-};
-  
-&lt;/code&gt;&lt;/pre&gt;
-
-    &lt;p&gt;The relevant bits to expose the library are in the &lt;code&gt;output&lt;/code&gt; property; read the &lt;a href=&quot;https://webpack.js.org/configuration/output/#output-library&quot;&gt;documentation&lt;/a&gt; for it.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;NPM&lt;/strong&gt; - I used npm (tool) to upload my pckage to NPM (site). NPM had some security issues lately, somebody hacked maintainers accounts and released dangerous code in popular libraries. That’s why they reset all user passwords and implemented 2FA authentication, that is a good thing. It even works from console. 
-But the main trouble was naming the library. It is a table generator, and you really can’t imagine &lt;a href=&quot;https://www.npmjs.com/search?q=json%20to%20table&quot;&gt;how many there are&lt;/a&gt;. Trying to be self-explicative, without sacrificing the “ideal good name”, took me to choose a &lt;code&gt;html-table-builder&lt;/code&gt;. I would have loved to call it &lt;code&gt;super-table&lt;/code&gt; or &lt;code&gt;table-generator&lt;/code&gt;, but guess what? Already taken. Sad.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Javascript&lt;/strong&gt; - I have a story to tell about JS and dynamic typing. I was writing the function that &lt;a href=&quot;https://github.com/musikele/html-table-builder/blob/master/get-columns/index.js&quot;&gt;extracts the name of the columns&lt;/a&gt;, and in the first version it returned an array of strings. &lt;br /&gt;
-Then I decided to return an array of object and DANG! errors everywhere, fortunately tracked down by unit tests. &lt;br /&gt;
-Then I decided to change again and make it return an object instead of an array, and again only TDD could help me to track down errors. &lt;br /&gt;
-In the end … &lt;strong&gt;static types could have helped to catch errors without TDD&lt;/strong&gt; and I could have used TDD-time to develop more complex tests.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;what-did-not-give-problems&quot;&gt;What did not give problems&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Jest&lt;/strong&gt;. Testing with Jest has been &lt;em&gt;extremely easy&lt;/em&gt;. It was my first experience with Jest (coming from Mocha) but I have never had to checkout the documentation for anything. Good!&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ESLint, Prettier&lt;/strong&gt; and &lt;strong&gt;VSCode&lt;/strong&gt; - These tools resolve stupid issues for you. Just install and forget about them.  They’ll add semicolumns, fix tabs or spaces, return syntactic errors live… A good bonus.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;finally&quot;&gt;Finally&lt;/h2&gt;
-
-&lt;p&gt;It is a very simple library, but it is already downloaded by 64 users (small number, but &lt;em&gt;great!&lt;/em&gt; If you’re a user, pass by and let me know your problems).&lt;/p&gt;
-
-&lt;p&gt;I learned a lot of stuff by writing this library; &lt;strong&gt;It took me some 8hrs to work it out&lt;/strong&gt;. But it was fun.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;You remember 5% of what you read, 10% of what you write, 90% of what you do again.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Exactly what I thought while I was preparing the first release!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="javascript" /><category term="nodejs" /><summary type="html">Last weekend I wrote a simple module that converts a Javascript array in a HTML table. It’s called Html Table Builder.</summary></entry></feed>
+&lt;p&gt;I’m already using and supporting &lt;strong&gt;Firefox&lt;/strong&gt; and there’s literally nothing I miss. It’s fast, secure, privacy oriented, cool. Break the monopoly; &lt;strong&gt;in the long term we - users - will be the only ones to earn the benefits of this choice.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="html" /><category term=" javascript" /><category term="css" /><category term="internet explorer" /><category term="jquery" /><category term="chrome" /><category term="firefox" /><category term="edge" /><category term="safari" /><category term="microsoft" /><category term="google" /><category term="apple" /><category term="mozilla" /><summary type="html">In 2006 I was studying web technologies at University. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.</summary></entry></feed>

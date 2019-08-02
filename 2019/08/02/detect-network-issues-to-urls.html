@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>Tools that don't explain themselves clearly will not be used - Michele Nasti's blog</title>
+	<title>Detect network issues from your pc to a remote url - Michele Nasti's blog</title>
 	 
-	<meta name="keywords" content="communication, docker, requireJs, vagrant" />  
-	<meta http-equiv="last-modified" content="2018-05-14 20:23:58 +0200" /> 
+	<meta name="keywords" content="network, sysadmin" />  
+	<meta http-equiv="last-modified" content="2019-08-02 19:39:48 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="Tools that don't explain themselves clearly will not be used" property="og:title">
+  <meta content="Detect network issues from your pc to a remote url" property="og:title">
 
 
 
@@ -33,31 +33,27 @@
 
 
 
-  <meta content="I'm a full stack Developer with an eye for the web." property="og:description">
+  <meta content="How to check if a URL is not working just for us or globally? " property="og:description">
 
 
 
-  <meta content="https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/" property="og:url">
+  <meta content="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" property="og:url">
 
 
 
-  <meta content="2015-03-15T18:24:44+01:00" property="article:published_time">
+  <meta content="2019-08-02T00:00:00+02:00" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
 
 
 
-<meta content="/img/logo-high-resolution.png" property="og:image">
+<meta content="https://michelenasti.com///images/network-cables-499792_1280.jpg" property="og:image">
 
 
 
   
-  <meta content="communication" property="article:tag">
+  <meta content="network" property="article:tag">
   
-  <meta content="docker" property="article:tag">
-  
-  <meta content="requireJs" property="article:tag">
-  
-  <meta content="vagrant" property="article:tag">
+  <meta content="sysadmin" property="article:tag">
   
 
 
@@ -66,16 +62,18 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="Tools that don't explain themselves clearly will not be used">
+  <meta name="twitter:title" content="Detect network issues from your pc to a remote url">
 
 
-  <meta name="twitter:url" content="https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/">
+  <meta name="twitter:url" content="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">
 
 
 
-  <meta name="twitter:description" content="I'm a full stack Developer with an eye for the web.">
+  <meta name="twitter:description" content="How to check if a URL is not working just for us or globally? ">
 
 
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/network-cables-499792_1280.jpg">
 
 	<!--</noscript>-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
@@ -113,35 +111,61 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/">Tools that don't explain themselves clearly will not be used</a></h1>
-			<p class="post-meta">Mar 15, 2015 • musikele</p>
+			<h1 class="post-title"><a href="/2019/08/02/detect-network-issues-to-urls.html">Detect network issues from your pc to a remote url</a></h1>
+			<p class="post-meta">Aug 2, 2019 • musikele</p>
 		</header>
 
 		<section>
 			
-			<p><a href="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/03/If-you-can-t-explain-it-simply-then-you-don-t-understand-it-35.jpg"><img class="alignleft wp-image-174 size-medium" src="https://i0.wp.com/michelenasti.com/wp-content/uploads/2015/03/If-you-can-t-explain-it-simply-then-you-don-t-understand-it-35-300x225.jpg?fit=300%2C225" alt="If-you-can-t-explain-it-simply-then-you-don-t-understand-it-35" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/03/If-you-can-t-explain-it-simply-then-you-don-t-understand-it-35.jpg?resize=300%2C225 300w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/03/If-you-can-t-explain-it-simply-then-you-don-t-understand-it-35.jpg?w=480 480w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a></p>
+			<p>Suppose you see that a website, or a URL, that seems to be unaccessible.</p>
 
-<p>My life is full of stuff to do and I really have no time to update my knowledge, so I have to dig on rss feeds or conferences or ask friends for the latest tools to be aware of.</p>
+<p>The first thing to do is to check <strong>if the website is down just for you or for the whole universe</strong>. There are many websites that do this, the one I discovered recently is <a href="https://www.uptrends.com/tools/uptime">Uptrends</a>.</p>
 
-<p>There are tons of tools that are super useful and also super easy to use. I won’t cite here all of them; one of the best (that serves as an example for this article) is <a href="https://www.vagrantup.com/">Vagrant</a>: The first time I went on their website I understood clearly what was it’s mission, and how they wanted to accomplish their goal. Not only, we were having this problem at work so Vagrant was a candidate solution.</p>
+<p>By putting a url in uptrends you can see how long a resource will take to load from a bunch of locations in the world:</p>
 
-<p>Indeed, there are some websites that do not explain clearly what their tools want to do. I read a lot about it, and maybe I also get the idea behind it, but the right info is not coming from the official website.</p>
+<p><img src="https://files.slack.com/files-pri/T04DE1CDJ-FLXGT5B8Q/image.png" alt="" /></p>
 
-<p>I have two examples for two tools that everybody is talking about, and I have still not understood how they work (and what problem they try to solve). One of these is <a href="https://www.docker.com/">Docker</a>: every time I cite Vagrant as an example of an easy-to-use and clearly designed tool, people say “but there’s also docker”. Honestly I have not understood what docker does (maybe the same as vagrant?) and how (without virtual machines?). I read that there is a lot of hype about it, and also it seems that Docker has a lot of enemies and angry developers, but I cannot understand why.</p>
+<p><em>Oh no! There’s an issue in Europe!</em></p>
 
-<p>Another tool that everybody is talking about is <a href="http://requirejs.org/">RequireJs</a> : In this case the website is pretty much theoretical and it’s not doing a clear example on how to use it. Also, I have never found other tutorials or examples. There is a lot of hype, but the complexity of the tool has not been mitigated so we still have a lot of people using <code>&lt;script&gt;</code> tags everywhere. I would love to try it but I cannot figure out even how much time I need to migrate some existing project.</p>
+<p>Another check you can do is for <strong><em>proper hackers</em></strong> <em>®</em><strong>.</strong> Launch this command from bash:</p>
 
-<p>What do you think about this? Do you admit that there are some pieces of software that do not explain themselves clearly?</p>
+<pre><code>$ sudo mtr -rwc 50 &lt;url&gt; 
+</code></pre>
 
-<p>Also: is there anybody that can/wants to explain me this two tools? 😀</p>
+<p>The result  is a very nice list of all hops made by data from our PC to the remote host</p>
+
+<pre><code class="language-bash">➜  ~ sudo mtr -rwc 50 michelenasti.com 
+[sudo] password di musikele: 
+Start: 2019-08-02T10:27:39+0200
+HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst StDev
+  1.|-- _gateway                             0.0%    50    2.7   2.2   1.9   4.2   0.4
+  2.|-- ???                                 100.0    50    0.0   0.0   0.0   0.0   0.0
+  3.|-- 172.18.18.108                        0.0%    50   10.6  10.7   8.5  16.8   1.5
+  4.|-- 172.18.19.226                       56.0%    50   11.7  11.3   9.0  30.4   4.6
+  5.|-- 172.19.177.38                        0.0%    50   16.5  16.9  15.6  19.6   0.7
+  6.|-- 172.19.177.2                         0.0%    50   27.4  27.8  24.6  69.4   8.6
+  7.|-- etrunk49.milano50.mil.seabone.net   52.0%    50   28.2  28.3  26.6  40.6   2.9
+  8.|-- et9-1-0.ashburn2.ash.seabone.net     0.0%    50  122.1 121.0 119.1 129.5   2.0
+  9.|-- cloudflare.ashburn2.ash.seabone.net  0.0%    50  128.3 133.4 125.5 216.4  14.6
+ 10.|-- 104.28.13.252                        0.0%    50  124.4 124.8 123.5 126.3   0.6
+➜  ~ 
+</code></pre>
+
+<p><code>mtr</code> stands for <strong>My TraceRoute</strong> and combines ping with traceroute. It gives a lot of information about the routers crossed during the path to the destination.</p>
+
+<p>One may think that there are some errors in the upper report, however you should have in mind that many routers are configured to delete ICMP packets (the ones used by mtr, or by ping) or to slow them down for quality assurance.</p>
+
+<p>I really suggest you to read <a href="https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/">this article from Linode</a> that explains almost everything you may want to know and it’s very easy to follow.</p>
+
+<p>Enjoy your networking!</p>
  
 			
 			
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/&text=Tools that don't explain themselves clearly will not be used:%20https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Tools that don't explain themselves clearly will not be used) + ':%20'  + encodeURIComponent(https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
-  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/&title=Tools that don't explain themselves clearly will not be used&summary=&source=https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html&text=Detect network issues from your pc to a remote url:%20https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Detect network issues from your pc to a remote url) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html&title=Detect network issues from your pc to a remote url&summary=&source=https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -276,12 +300,6 @@
     
 
     
-        <div class="col-4">
-        <h5><a href="/2018/10/25/docker-cheatsheet.html">Docker cheatsheet <span class="label label-default">docker</span> </a></h5>
-        </div>
-        
-         
-    
 
 
 
@@ -1317,12 +1335,6 @@
     
 
     
-        <div class="col-4">
-        <h5><a href="/2015/12/ho-provato-la-prossima-versione-di-eclipse-che-web-based-per-voi/">Ho provato la prossima versione di Eclipse (web-based) per voi <span class="label label-default">docker</span> </a></h5>
-        </div>
-        
-         
-    
 
 
 
@@ -1727,12 +1739,6 @@
 
     
 
-    
-        <div class="col-4">
-        <h5><a href="/2015/02/pro-e-contro-di-angularjs-dopo-2-mesi-di-lavoro/">Pro e contro di AngularJs dopo 2 mesi di lavoro <span class="label label-default">requireJs</span> </a></h5>
-        </div>
-        
-         
     
 
 
@@ -1858,6 +1864,36 @@
             <h5><a href="/2016/10/slides-del-talk-perche-prossimo-lavoro-%f0%9f%92%a9-devfest/">Slides del talk &#8220;Perchè il tuo prossimo lavoro è una 💩&#8220; @ DevFest</a></h5>
         </div>
     
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html">SSH cheatsheet (from zero to hero) </a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2016/08/my-very-personal-javascript-fatigue/">My very personal Javascript Fatigue: the truth about JS testing</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2019/01/17/another-remote-job-for-me.html">Another remote job for me</a></h5>
+        </div>
+    
 
 
 </div>
@@ -1875,8 +1911,8 @@
     var disqus_config = function () {
     	//var disqus_identifier = 'https://michelenasti.com';
 			//var disqus_url = '';
-			var disqus_url = 'https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/';
-			var disqus_identifier = 'https://michelenasti.com/2015/03/tools-that-dont-explain-themselves-clearly-will-not-be-used/';
+			var disqus_url = 'https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html';
 
     };
     
@@ -1896,37 +1932,20 @@ s.setAttribute('data-timestamp', +new Date());
 
     <div class="6u 12u(small) excerpt" id="previousArticle">
         <header>
-            <h2><a href="/2015/02/scrivere-codice-migliore-rispondendo-a-12-semplici-domande/">Scrivere codice migliore rispondendo a 12 semplici domande</a></h2>
+            <h2><a href="/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">Typescript, Babel, Webpack, ESLint: my configuration</a></h2>
         </header>
         <section>
-            <p><a href="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png"><img class=" size-medium wp-image-164 alignleft" src="https://i2.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230-300x119.png?fit=300%2C119" alt="code-hero-580x230" srcset="https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png?resize=300%2C119 300w, https://i1.wp.com/michelenasti.com/wp-content/uploads/2015/02/code-hero-580x230.png?resize=580%2C230 580w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>Qualcuno (per la precisione, uno dei creatori del celeberrimo Stack Overflow) nel 2000 ha ideato un <a href="http://www.joelonsoftware.com/articles/fog0000000043.html">questionario di 12 domande</a> per sapere se la vostra azienda (o il vostro progetto) sta seguendo le “buone pratiche di qualità del software”, che tradotto in programmatorese, significa <strong>codice migliore</strong>. Questa roba non è fuffa, visto che esistono anche standard internazionali che codificano più o meno le stesse cose, solo che sono libri di 1500 pagine che non sono stati letti nemmeno da chi li ha scritti.</p>
+            <p>The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.</p>
 
 
         </section>
         <div>
             <ul class="actions">
-                <li><a href="/2015/02/scrivere-codice-migliore-rispondendo-a-12-semplici-domande/" class="button">Read More</a></li>
+                <li><a href="/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" class="button">Read More</a></li>
             </ul>
         </div>
     </div>
      
-
-    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
-        <header>
-            <h2><a href="/2015/03/playing-with-my-friends-3d-printer/">Playing with my friend's 3D printer</a></h2>
-        </header>
-        <section>
-            <p>Yesterday one of my best friends invited me to his house to see his new toy: a 3D printer, proudly bought on Internet from China. He assembled it piece from piece, and now he can print whatever he wants to.</p>
-
-
-        </section>
-        <div>
-            <ul class="actions">
-                <li><a href="//2015/03/playing-with-my-friends-3d-printer/" class="button">Read More</a></li>
-            </ul>
-        </div>
-    </div>
-    
 </div>
 		</footer>
 
