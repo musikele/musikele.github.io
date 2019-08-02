@@ -8,7 +8,7 @@ date: 2019-08-02 00:00:00 +0200
 tags:
 - network
 - sysadmin
-title: Detect network issues to urls
+title: Detect network issues from your pc to a remote url
 header-img: "/images/network-cables-499792_1280.jpg"
 description: 'How to check if a URL is not working just for us or globally? '
 
