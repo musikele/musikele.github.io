@@ -15,3 +15,9 @@ description: 'Var is deprecated; let and const are introduced with es6. Let''s s
   how to use them '
 
 ---
+I did some interviews in the last few days, the role we were searching was "super-duper senior javascript master" so I asked this very simple question as starter: 
+
+> What is the difference between var, let and const to declare a variable? 
+
+Surprisingly, a lot of js developers do 
+
