@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>What is the difference between var, let and const in Javascript  - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="Javascript,  Interview,  Questions" />  
+	<meta http-equiv="last-modified" content="2019-08-18 14:25:37 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="What is the difference between var, let and const in Javascript " property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Var is deprecated; let and const are introduced with es6. Let's see how to use them " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" property="og:url">
+
+
+
+  <meta content="2019-08-17T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/proxy.duckduckgo.com-2.jpeg" property="og:image">
+
+
+
+  
+  <meta content="Javascript" property="article:tag">
+  
+  <meta content=" Interview" property="article:tag">
+  
+  <meta content=" Questions" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="What is the difference between var, let and const in Javascript ">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">
+
+
+
+  <meta name="twitter:description" content="Var is deprecated; let and const are introduced with es6. Let's see how to use them ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/proxy.duckduckgo.com-2.jpeg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9588917209740632",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">What is the difference between var, let and const in Javascript </a></h1>
+			<p class="post-meta">Aug 17, 2019 • musikele</p>
+		</header>
+
+		<section>
+			
+			<p>I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:</p>
+
+<blockquote>
+  <p>What is the difference between var, let and const to declare a variable?</p>
+</blockquote>
+
+<p>Surprisingly, a lot of js developers do not know the answer.</p>
+
+<p><img src="/images/proxy.duckduckgo.com-3.jpeg" alt="" /></p>
+
+<h2 id="var-the-first-the-oldest-the-deprecated">Var: the first, the oldest, the deprecated</h2>
+
+<p>Var is with us since the very first version of Javascript. All major browsers, including Internet Explorer, still and will understand a var declaration forever. So why I say it’s deprecated?</p>
+
+<p>Well, when you declare a variable with var, it’s declaration is hoisted and the assignment will happen in a separate time. This is unnoticed for most js developers, unless you hit a bug and start complaining that javascript is weird. Let’s see an example:</p>
+
+<pre><code class="language-javascript">// in one snippet: 
+if (!someVariable) {
+    console.log("will this execute?") 
+    // no: ReferenceError: someVariable is not defineddebugger 
+}
+</code></pre>
+
+<p>Now refresh the page and run this:</p>
+
+<pre><code class="language-javascript">if (! someVariable) {
+    console.log("will this execute? and what is the value of someVariable?", someVariable) 
+    var someVariable = true
+    console.log("Value of someVariable again: ", someVariable)    
+}
+
+//output:
+//  "will this execute? and what is the value of someVariable? undefined"
+//  "Value of someVariable again:  true"
+</code></pre>
+
+<p>Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead js will just let you do it. Why?</p>
+
+<h3 id="hoisting">Hoisting</h3>
+
+<p>Javascript will read your .js file twice. The first time it will <strong>move on the top of the function</strong> all <code>var</code> declarations, initializing these variables with <code>undefined</code>.</p>
+
+<p>The second time it reads the <code>.js</code> file, it will now execute the interpreted code.</p>
+
+<p>Based on this, the previous code becomes something like this:</p>
+
+<pre><code class="language-javascript">// 
+function someFunction() {
+  	var someVariable = undefined
+  	if (!someVariable) {
+		console.log("will this execute? and what is the value of someVariable?", someVariable) 
+    	someVariable = true
+      	console.log("Value of someVariable again: ", someVariable)    
+  	}
+}
+</code></pre>
+
+<blockquote>
+  <p>Note: If the script is executed outside a function, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.</p>
+</blockquote>
+
+<p>Since this <em>movement of variables</em> happen in functions, we can say tha <code>var</code> is function-scoped. This code should not surprise you:</p>
+
+<pre><code class="language-javascript"> if (someCondition) {
+ someCondition = false
+} else {
+  var someCondition = true
+}
+</code></pre>
+
+<p>Then you check the code and see that <code>someCondition</code> is true, but the first if block didn’t execute! wtf?</p>
+
+<h3 id="whats-the-problem-with-this">What’s the problem with this</h3>
+
+<p>The biggest problem is that this way of thinking of variables is completely different from all other programming languages. <strong>Developers coming from other programming languages will believe that a</strong> <code>**var**</code> <strong>is block scoped, while indeed it’s function scoped</strong>. This will take you to weird bugs, and blame javascript.</p>
+
+<p>That’s why the JS community decided to fix this with ES6 introducing two new variable declarations: <strong>let</strong> and <strong>const</strong>.</p>
+
+<h2 id="let">Let</h2>
+
+<p>Imagine a world where you declare a variable and it will behave exactly as you thought: it’s block scoped, it doesn’t do strange movements, and the browser will throw at you the right errors if you forget to initialize. Let me present you … <code>let</code> !</p>
+
+<p>The same code as before will now be more reasonable:</p>
+
+<pre><code class="language-javascript">if (! someVariable) {
+    console.log("will this execute? and what is the value of someVariable?", someVariable) 
+    let someVariable = true
+    console.log("Value of someVariable again: ", someVariable)    
+}
+
+// : ReferenceError: someVariable is not defined
+</code></pre>
+
+<p>Once the <code>var</code> problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private variables.</p>
+
+<h2 id="const">Const</h2>
+
+<p>With const, we can finally declare constant references, but what does it mean practically? Let’s see an example again:</p>
+
+<pre><code class="language-javascript">const PRICE=33
+const TITLE = 'wonderful title'
+const anObject = { a: 'obj property' } 
+
+PRICE=44 // TypeError: invalid assignment to const `PRICE'
+TITLE = 'less beautiful title' // TypeError: invalid assignment to const `TITLE'
+
+anObject = {} // TypeError: invalid assignment to const `anObject'
+anObject.a = 'new obj property' // no error! 
+</code></pre>
+
+<p>The last two lines should bring you special attention. <code>const</code> will freeze the reference. If the referenced object holds other properties, you can still change them.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>Since Internet Explorer is fading away, the days we can finally get rid of <code>var</code> are very close. The problem is that until it is not completely dead we have to transpile our code with <code>let</code> and <code>const</code> to <code>var</code>.</p>
+
+<p>A lot of developers have no idea of what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :)</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&text=What is the difference between var, let and const in Javascript :%20https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(What is the difference between var, let and const in Javascript ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&title=What is the difference between var, let and const in Javascript &summary=&source=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/23/node-js-testing-easy-with-mocha.html">Easy testing of NodeJS applications with Mocha <span class="label label-default">Javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/03/14/two-easy-ways-perform-get-requests-in-nodejs.html">Two easy ways perform GET requests in NodeJS  <span class="label label-default">Javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/10/libreria-del-giorno-imbroglia-i-server-di-continuous-automation-con-wolkswagen/">Libreria del giorno: imbroglia i server di Continuous Automation con Wolkswagen</a></h5>
+        </div>
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2016/11/build-your-own-cross-platform-time-machine/">I was not satisfied with Time Machine so I wrote my own Backup System</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2019/08/02/detect-network-issues-to-urls.html">Detect network issues from your pc to a remote url</a></h2>
+        </header>
+        <section>
+            <p>Suppose you see that a website, or a URL, that seems to be unaccessible.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2019/08/02/detect-network-issues-to-urls.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

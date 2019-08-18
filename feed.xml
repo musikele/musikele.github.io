@@ -1,4 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-08-17T18:45:48+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Detect network issues from your pc to a remote url</title><link href="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" rel="alternate" type="text/html" title="Detect network issues from your pc to a remote url" /><published>2019-08-02T00:00:00+02:00</published><updated>2019-08-02T19:39:48+02:00</updated><id>https://michelenasti.com/2019/08/02/detect-network-issues-to-urls</id><content type="html" xml:base="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">&lt;p&gt;Suppose you see that a website, or a URL, that seems to be unaccessible.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-08-18T14:26:48+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript " /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-18T14:25:37+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What is the difference between var, let and const to declare a variable?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Surprisingly, a lot of js developers do not know the answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/proxy.duckduckgo.com-3.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;var-the-first-the-oldest-the-deprecated&quot;&gt;Var: the first, the oldest, the deprecated&lt;/h2&gt;
+
+&lt;p&gt;Var is with us since the very first version of Javascript. All major browsers, including Internet Explorer, still and will understand a var declaration forever. So why I say it’s deprecated?&lt;/p&gt;
+
+&lt;p&gt;Well, when you declare a variable with var, it’s declaration is hoisted and the assignment will happen in a separate time. This is unnoticed for most js developers, unless you hit a bug and start complaining that javascript is weird. Let’s see an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// in one snippet: 
+if (!someVariable) {
+    console.log(&quot;will this execute?&quot;) 
+    // no: ReferenceError: someVariable is not defineddebugger 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now refresh the page and run this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (! someVariable) {
+    console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
+    var someVariable = true
+    console.log(&quot;Value of someVariable again: &quot;, someVariable)    
+}
+
+//output:
+//  &quot;will this execute? and what is the value of someVariable? undefined&quot;
+//  &quot;Value of someVariable again:  true&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead js will just let you do it. Why?&lt;/p&gt;
+
+&lt;h3 id=&quot;hoisting&quot;&gt;Hoisting&lt;/h3&gt;
+
+&lt;p&gt;Javascript will read your .js file twice. The first time it will &lt;strong&gt;move on the top of the function&lt;/strong&gt; all &lt;code&gt;var&lt;/code&gt; declarations, initializing these variables with &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The second time it reads the &lt;code&gt;.js&lt;/code&gt; file, it will now execute the interpreted code.&lt;/p&gt;
+
+&lt;p&gt;Based on this, the previous code becomes something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// 
+function someFunction() {
+  	var someVariable = undefined
+  	if (!someVariable) {
+		console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
+    	someVariable = true
+      	console.log(&quot;Value of someVariable again: &quot;, someVariable)    
+  	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: If the script is executed outside a function, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Since this &lt;em&gt;movement of variables&lt;/em&gt; happen in functions, we can say tha &lt;code&gt;var&lt;/code&gt; is function-scoped. This code should not surprise you:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt; if (someCondition) {
+ someCondition = false
+} else {
+  var someCondition = true
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then you check the code and see that &lt;code&gt;someCondition&lt;/code&gt; is true, but the first if block didn’t execute! wtf?&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-the-problem-with-this&quot;&gt;What’s the problem with this&lt;/h3&gt;
+
+&lt;p&gt;The biggest problem is that this way of thinking of variables is completely different from all other programming languages. &lt;strong&gt;Developers coming from other programming languages will believe that a&lt;/strong&gt; &lt;code&gt;**var**&lt;/code&gt; &lt;strong&gt;is block scoped, while indeed it’s function scoped&lt;/strong&gt;. This will take you to weird bugs, and blame javascript.&lt;/p&gt;
+
+&lt;p&gt;That’s why the JS community decided to fix this with ES6 introducing two new variable declarations: &lt;strong&gt;let&lt;/strong&gt; and &lt;strong&gt;const&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;let&quot;&gt;Let&lt;/h2&gt;
+
+&lt;p&gt;Imagine a world where you declare a variable and it will behave exactly as you thought: it’s block scoped, it doesn’t do strange movements, and the browser will throw at you the right errors if you forget to initialize. Let me present you … &lt;code&gt;let&lt;/code&gt; !&lt;/p&gt;
+
+&lt;p&gt;The same code as before will now be more reasonable:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (! someVariable) {
+    console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
+    let someVariable = true
+    console.log(&quot;Value of someVariable again: &quot;, someVariable)    
+}
+
+// : ReferenceError: someVariable is not defined
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the &lt;code&gt;var&lt;/code&gt; problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private variables.&lt;/p&gt;
+
+&lt;h2 id=&quot;const&quot;&gt;Const&lt;/h2&gt;
+
+&lt;p&gt;With const, we can finally declare constant references, but what does it mean practically? Let’s see an example again:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const PRICE=33
+const TITLE = 'wonderful title'
+const anObject = { a: 'obj property' } 
+
+PRICE=44 // TypeError: invalid assignment to const `PRICE'
+TITLE = 'less beautiful title' // TypeError: invalid assignment to const `TITLE'
+
+anObject = {} // TypeError: invalid assignment to const `anObject'
+anObject.a = 'new obj property' // no error! 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The last two lines should bring you special attention. &lt;code&gt;const&lt;/code&gt; will freeze the reference. If the referenced object holds other properties, you can still change them.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;Since Internet Explorer is fading away, the days we can finally get rid of &lt;code&gt;var&lt;/code&gt; are very close. The problem is that until it is not completely dead we have to transpile our code with &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to &lt;code&gt;var&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A lot of developers have no idea of what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Javascript" /><category term=" Interview" /><category term=" Questions" /><summary type="html">I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:</summary></entry><entry><title type="html">Detect network issues from your pc to a remote url</title><link href="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" rel="alternate" type="text/html" title="Detect network issues from your pc to a remote url" /><published>2019-08-02T00:00:00+02:00</published><updated>2019-08-02T19:39:48+02:00</updated><id>https://michelenasti.com/2019/08/02/detect-network-issues-to-urls</id><content type="html" xml:base="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">&lt;p&gt;Suppose you see that a website, or a URL, that seems to be unaccessible.&lt;/p&gt;
 
 &lt;p&gt;The first thing to do is to check &lt;strong&gt;if the website is down just for you or for the whole universe&lt;/strong&gt;. There are many websites that do this, the one I discovered recently is &lt;a href=&quot;https://www.uptrends.com/tools/uptime&quot;&gt;Uptrends&lt;/a&gt;.&lt;/p&gt;
 
@@ -851,56 +967,4 @@ function checkData(data) {
 
 &lt;h2 id=&quot;so--when-do-you-start&quot;&gt;So … when do you start?&lt;/h2&gt;
 
-&lt;p&gt;Yes! I’m already working with them. I’m studying all the parts involved in the advertising world (DSPs, SSPs, DFP, GTP… these acronyms make no sense to those who do not work in this area!) and I am already deep diving in the typescript code. So many things happen in one library.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="lavoro" /><category term="job" /><category term="remote" /><summary type="html">Two years ago I wrote about quitting a job in a big italian corporation to join a smaller reality that worked in fintech.</summary></entry><entry><title type="html">10 years around the web platform, what’s changed and what’s not</title><link href="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html" rel="alternate" type="text/html" title="10 years around the web platform, what's changed and what's not" /><published>2018-12-12T00:00:00+01:00</published><updated>2018-12-12T11:33:24+01:00</updated><id>https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars</id><content type="html" xml:base="https://michelenasti.com/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html">&lt;p&gt;&lt;strong&gt;In 2006 I was studying web technologies at University&lt;/strong&gt;. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/1 Me2MiUgum7fhYWoUp5nwJA.png&quot; alt=&quot;The web was a huge mass of &amp;lt;table&amp;gt; elements&quot; title=&quot;The youtube homepage in 2006&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;HTML&lt;/strong&gt; was at version 4 and there were a lot of standards competing like &lt;strong&gt;xhtml&lt;/strong&gt; (basically, xml to write html and help syntax checkers) and also many &lt;strong&gt;doctypes&lt;/strong&gt; (strict, transitional …) that I never fully understood. Fortunately now we just write &lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt; and that’s it. &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; was a relatively new thing.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Javascript&lt;/strong&gt; was not cool. The teacher didn’t spend more than 2-3 lessons on it, just explaining how to do basic input validation and some DOM manipulation. Strangely enough, javascript as a language was never versioned but now we refer to that days as EcmaScript3 (&lt;a href=&quot;https://www.w3schools.com/js/js_versions.asp&quot;&gt;here’s a table with all javascript versions&lt;/a&gt;). No JQuery was introduced. There were no books ot guides to learn JS, too. There was just one devtool available, and it was a Firefox extension called &lt;em&gt;Firebug&lt;/em&gt; (later it became part of the browser).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CSS&lt;/strong&gt; was also crazy (it still is!). Some browsers adhered to the standard, but not the main one, forcing developers to cross test everything on all possible browsers. Fortunately at the time browsers were just 3-4, not the plethora we have now.&lt;/p&gt;
-
-&lt;p&gt;So… my first days of web design were just crazy. One of the tasks I had to do for this exam was to develop a “personal website”, and I remember that it was not rendering correctly on IE.&lt;/p&gt;
-
-&lt;h2 id=&quot;internet-explorer-the-bad-guy&quot;&gt;Internet Explorer, the bad guy&lt;/h2&gt;
-
-&lt;p&gt;What I didn’t know is that IE &lt;em&gt;deliberately&lt;/em&gt; violated the standard, using its power and market share to &lt;strong&gt;impose&lt;/strong&gt; their version of the web against rivals.&lt;/p&gt;
-
-&lt;p&gt;I struggled realizing a simple website that would show correctly on firefox, following the standards, but not at all on IE (95% of the market share at the time).&lt;/p&gt;
-
-&lt;p&gt;Same for Javascript: IE was just not following some rules that were correctly implemented by others, or deliberately not implementing some standard features. This is one of the motivations for libraries like &lt;strong&gt;JQuery&lt;/strong&gt; to rise: cross-browser uniformity.&lt;/p&gt;
-
-&lt;p&gt;I promised to myself to never work on the web: the platform is unreilable, buggy, nothing works as expected and there’s nothing you can do about it, except than doubling the work.&lt;/p&gt;
-
-&lt;h2 id=&quot;fast-forward-12-years-later&quot;&gt;Fast forward, 12 years later&lt;/h2&gt;
-
-&lt;p&gt;I’m working as a web developer since 6 years, basically I had no choice: when I ended university all the companies were transforming their long-lived java applications to web applications. The good news are that javascript has been standardized (ES5 before, and ES6 after, were huge steps towards browser uniformity) and even newer versions of IE are supporting it.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Chrome&lt;/strong&gt;, started in 2008, is now the market leader with about 68% of the market share. Chrome uses its own rendering engine called &lt;em&gt;Blink,&lt;/em&gt; part of the &lt;em&gt;Chromium project&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Firefox, the only truly indipendent browser,&lt;/strong&gt; is my default browser. They are not developed by a company but by a no-profit foundation. Their goal is to make the web platform the best possible platform. For many years they were behind Chrome on features, speed and privacy, but now FF is just the same if not better. So yes, I’m using Firefox for moral issues, but there’s litterally nothing that I’m loosing since the switch. (I also use FF on mobile). Firefox uses its own rendering engine called &lt;em&gt;Gecko&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Edge&lt;/strong&gt; was a new browser by Microsoft, and it was a surprisingly great browser. It is very fast and it also has a lot of features dedicated to tablets and touchscreens, so that you may prefer it on portable devices. Edge is still not widely adopted (lates stats say that edge is at 4% while IE is &lt;em&gt;still&lt;/em&gt; at 11%!) but it should. Edge uses it’s own rendering engine called &lt;em&gt;EdgeHTML&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Internet Explorer&lt;/strong&gt; in 2018 it should be a thing of the past, but it’s not. IE has been &lt;em&gt;deprecated&lt;/em&gt; and there will be no support for it in the future. It still has 11% of global market share (In Italy, where I live and work, it’s at 2-4%) and I think this happens because many companies impose to their employees to use IE, since they may have developed security features, of custom applets, or other stuff that cannot be thrown away and rebuild in newer technology because it’s not a simple/cheap job. This is what happens when you entangle your company on a closed platform…&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Safari&lt;/strong&gt; is a browser that only exists on Apple iDevices. Safari is now considered the IE of the current browsers: many missing features, slow updates, slow fixes… Many standard components are simply ignored because it’s not functional to the company’s view of the web (Apple encourages developers to go native). Safari is based on &lt;em&gt;Webkit&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;There are many other browsers, like &lt;strong&gt;Opera&lt;/strong&gt;, &lt;strong&gt;Brave&lt;/strong&gt;, etc. but they’ve not reached great market share, even if they are technologically very valid.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/1472784019browser-wars-over.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;so--what-should-we-do-now&quot;&gt;So … what should we do now&lt;/h2&gt;
-
-&lt;p&gt;The web is the platform that I know better: I love and hate it. &lt;strong&gt;I love the fact that it’s spontaneous&lt;/strong&gt;, with many great ideas going on, and it also moves very fast so that’s impossible to stay current with every possible update.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;I hate that some companies implement standards based on what they consider useful.&lt;/strong&gt; This has happened for a decade with Internet Explorer, and now with Safari.&lt;/p&gt;
-
-&lt;p&gt;With Chrome I have a difficult relationship: &lt;strong&gt;I don’t like that one company owns the future of a browser, and with a 70% of the web they also own the future of the web&lt;/strong&gt;; it creates some moral questions about privacy and security, too. But &lt;strong&gt;we cannot negate that Google has done a great job&lt;/strong&gt; by open sourcing big parts of the browser and they also have been the first browser to implement new standards (and closing bugs).&lt;/p&gt;
-
-&lt;p&gt;The latest news are that &lt;strong&gt;Edge is switching to a Chromium-based rendering engine&lt;/strong&gt;. They are doing this because Edge was so new that - like all new things - the browser was crashy, with bugs, and not performing well on some things that others do just fine. I am not an Edge user and, while I have to admit that technologically they are chosing the best available platform, I feel sad that another competitor gives away the competition. &lt;strong&gt;This brings us to a monopoly and that’s not what I expect&lt;/strong&gt;. The good thing is that developers at Microsoft will start contributing to parts of Chromium, so the rendering engine will not be really owned by only one company, but we still don’t know the direction of these two companies and their long-term plans.&lt;/p&gt;
-
-&lt;h2 id=&quot;please-condiser-using-a-non-chromium-browser-for-some-time&quot;&gt;Please condiser using a non-Chromium browser for some time&lt;/h2&gt;
-
-&lt;p&gt;I’m already using and supporting &lt;strong&gt;Firefox&lt;/strong&gt; and there’s literally nothing I miss. It’s fast, secure, privacy oriented, cool. Break the monopoly; &lt;strong&gt;in the long term we - users - will be the only ones to earn the benefits of this choice.&lt;/strong&gt;&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="html" /><category term=" javascript" /><category term="css" /><category term="internet explorer" /><category term="jquery" /><category term="chrome" /><category term="firefox" /><category term="edge" /><category term="safari" /><category term="microsoft" /><category term="google" /><category term="apple" /><category term="mozilla" /><summary type="html">In 2006 I was studying web technologies at University. Avilable browsers were Firefox, Opera, Internet Explorer, Netscape on some linux computers.</summary></entry></feed>
+&lt;p&gt;Yes! I’m already working with them. I’m studying all the parts involved in the advertising world (DSPs, SSPs, DFP, GTP… these acronyms make no sense to those who do not work in this area!) and I am already deep diving in the typescript code. So many things happen in one library.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="lavoro" /><category term="job" /><category term="remote" /><summary type="html">Two years ago I wrote about quitting a job in a big italian corporation to join a smaller reality that worked in fintech.</summary></entry></feed>
