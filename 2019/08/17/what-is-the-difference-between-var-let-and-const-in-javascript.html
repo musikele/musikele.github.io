@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>What is the difference between var, let and const in Javascript  - Michele Nasti's blog</title>
+	<title>What is the difference between var, let and const in Javascript - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="Javascript,  Interview,  Questions" />  
-	<meta http-equiv="last-modified" content="2019-08-18 14:25:37 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-08-19 11:10:06 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="What is the difference between var, let and const in Javascript " property="og:title">
+  <meta content="What is the difference between var, let and const in Javascript" property="og:title">
 
 
 
@@ -64,7 +64,7 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="What is the difference between var, let and const in Javascript ">
+  <meta name="twitter:title" content="What is the difference between var, let and const in Javascript">
 
 
   <meta name="twitter:url" content="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">
@@ -113,7 +113,7 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">What is the difference between var, let and const in Javascript </a></h1>
+			<h1 class="post-title"><a href="/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">What is the difference between var, let and const in Javascript</a></h1>
 			<p class="post-meta">Aug 17, 2019 • musikele</p>
 		</header>
 
@@ -122,10 +122,10 @@
 			<p>I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:</p>
 
 <blockquote>
-  <p>What is the difference between var, let and const to declare a variable?</p>
+  <p>What is the difference between <code>var</code>, <code>let</code> and <code>const</code> to declare a variable?</p>
 </blockquote>
 
-<p>Surprisingly, a lot of js developers do not know the answer.</p>
+<p>Surprisingly, a lot of js developers do not know the right answer.</p>
 
 <p><img src="/images/proxy.duckduckgo.com-3.jpeg" alt="" /></p>
 
@@ -133,12 +133,12 @@
 
 <p>Var is with us since the very first version of Javascript. All major browsers, including Internet Explorer, still and will understand a var declaration forever. So why I say it’s deprecated?</p>
 
-<p>Well, when you declare a variable with var, it’s declaration is hoisted and the assignment will happen in a separate time. This is unnoticed for most js developers, unless you hit a bug and start complaining that javascript is weird. Let’s see an example:</p>
+<p>Well, when you declare a variable with var, it’s declaration is <em>hoisted</em> and the assignment will happen in a separate time. This is unnoticed for most of the time, unless you hit a bug and start complaining. Let’s see an example:</p>
 
-<pre><code class="language-javascript">// in one snippet: 
+<pre><code class="language-javascript">// ...looks fine, isn't it?
 if (!someVariable) {
     console.log("will this execute?") 
-    // no: ReferenceError: someVariable is not defineddebugger 
+    // will throw ReferenceError: someVariable is not defined
 }
 </code></pre>
 
@@ -146,7 +146,8 @@ if (!someVariable) {
 
 <pre><code class="language-javascript">if (! someVariable) {
     console.log("will this execute? and what is the value of someVariable?", someVariable) 
-    var someVariable = true
+    // apart from console.logs, we only added this line: 
+    var someVariable = true 
     console.log("Value of someVariable again: ", someVariable)    
 }
 
@@ -155,11 +156,11 @@ if (!someVariable) {
 //  "Value of someVariable again:  true"
 </code></pre>
 
-<p>Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead js will just let you do it. Why?</p>
+<p>Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead Javascript will just let you do it. Why?</p>
 
 <h3 id="hoisting">Hoisting</h3>
 
-<p>Javascript will read your .js file twice. The first time it will <strong>move on the top of the function</strong> all <code>var</code> declarations, initializing these variables with <code>undefined</code>.</p>
+<p>Javascript will read your .js file twice. The first time it will <strong>move on the top of the current unction</strong> all <code>var</code> declarations, initializing these variables with <code>undefined</code>.</p>
 
 <p>The second time it reads the <code>.js</code> file, it will now execute the interpreted code.</p>
 
@@ -177,10 +178,10 @@ function someFunction() {
 </code></pre>
 
 <blockquote>
-  <p>Note: If the script is executed outside a function, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.</p>
+  <p>Note: If the script is executed in a “global” context, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.</p>
 </blockquote>
 
-<p>Since this <em>movement of variables</em> happen in functions, we can say tha <code>var</code> is function-scoped. This code should not surprise you:</p>
+<p>Since this <em>movement of variables</em> happen in functions, we can say tha <code>var</code> is function-scoped. This code should not surprise you anymore:</p>
 
 <pre><code class="language-javascript"> if (someCondition) {
  someCondition = false
@@ -189,11 +190,11 @@ function someFunction() {
 }
 </code></pre>
 
-<p>Then you check the code and see that <code>someCondition</code> is true, but the first if block didn’t execute! wtf?</p>
+<p>… But when you check the code and see that <code>someCondition</code> is true, but the first if block didn’t execute,  you’ll end in wtf.</p>
 
-<h3 id="whats-the-problem-with-this">What’s the problem with this</h3>
+<h3 id="so-whats-the-problem">So, what’s the problem</h3>
 
-<p>The biggest problem is that this way of thinking of variables is completely different from all other programming languages. <strong>Developers coming from other programming languages will believe that a</strong> <code>**var**</code> <strong>is block scoped, while indeed it’s function scoped</strong>. This will take you to weird bugs, and blame javascript.</p>
+<p>The biggest problem is that this way of thinking of variables is completely different from all other programming languages. <strong>Developers coming from other programming languages will believe that a</strong> <code>var</code> <strong>is block scoped, while indeed it’s function scoped</strong>. This will take you to weird bugs.</p>
 
 <p>That’s why the JS community decided to fix this with ES6 introducing two new variable declarations: <strong>let</strong> and <strong>const</strong>.</p>
 
@@ -212,13 +213,13 @@ function someFunction() {
 // : ReferenceError: someVariable is not defined
 </code></pre>
 
-<p>Once the <code>var</code> problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private variables.</p>
+<p>Once the <code>var</code> problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private properties; now that’s a lot easier.</p>
 
 <h2 id="const">Const</h2>
 
-<p>With const, we can finally declare constant references, but what does it mean practically? Let’s see an example again:</p>
+<p>With const, we can finally declare constant <em>references</em>, but what does it mean? Let’s see an example again:</p>
 
-<pre><code class="language-javascript">const PRICE=33
+<pre><code class="language-javascript">const PRICE = 33
 const TITLE = 'wonderful title'
 const anObject = { a: 'obj property' } 
 
@@ -229,21 +230,21 @@ anObject = {} // TypeError: invalid assignment to const `anObject'
 anObject.a = 'new obj property' // no error! 
 </code></pre>
 
-<p>The last two lines should bring you special attention. <code>const</code> will freeze the reference. If the referenced object holds other properties, you can still change them.</p>
+<p><em>The last two lines should bring you special attention.</em> <code>const</code> will <strong>freeze the reference</strong>. If the referenced object holds other properties, you can still change them.</p>
 
 <h2 id="conclusions">Conclusions</h2>
 
 <p>Since Internet Explorer is fading away, the days we can finally get rid of <code>var</code> are very close. The problem is that until it is not completely dead we have to transpile our code with <code>let</code> and <code>const</code> to <code>var</code>.</p>
 
-<p>A lot of developers have no idea of what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :)</p>
+<p>A lot of developers have no idea of why we transpile and what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :/</p>
  
 			
 			
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&text=What is the difference between var, let and const in Javascript :%20https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(What is the difference between var, let and const in Javascript ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&text=What is the difference between var, let and const in Javascript:%20https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(What is the difference between var, let and const in Javascript) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
   <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&title=What is the difference between var, let and const in Javascript &summary=&source=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html&title=What is the difference between var, let and const in Javascript&summary=&source=https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
@@ -1960,7 +1961,7 @@ anObject.a = 'new obj property' // no error!
         
 
         <div class="col-4">
-            <h5><a href="/2016/02/quanto-ci-metti-problemi-time-management/">"quanto ci metti?" - perchè i programmatori sono delle pippe col time management</a></h5>
+            <h5><a href="/2015/10/libreria-del-giorno-imbroglia-i-server-di-continuous-automation-con-wolkswagen/">Libreria del giorno: imbroglia i server di Continuous Automation con Wolkswagen</a></h5>
         </div>
     
         
@@ -1970,7 +1971,7 @@ anObject.a = 'new obj property' // no error!
         
 
         <div class="col-4">
-            <h5><a href="/2017/12/03/alla-scoperta-di-vue-js.html">Alla scoperta di VueJS</a></h5>
+            <h5><a href="/2016/11/build-your-own-cross-platform-time-machine/">I was not satisfied with Time Machine so I wrote my own Backup System</a></h5>
         </div>
     
 

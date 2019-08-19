@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-08-18T14:27:54+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript " /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-18T14:25:37+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-08-19T11:12:14+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript" /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-19T11:10:06+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;What is the difference between var, let and const to declare a variable?&lt;/p&gt;
+  &lt;p&gt;What is the difference between &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to declare a variable?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Surprisingly, a lot of js developers do not know the answer.&lt;/p&gt;
+&lt;p&gt;Surprisingly, a lot of js developers do not know the right answer.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/proxy.duckduckgo.com-3.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -12,12 +12,12 @@
 
 &lt;p&gt;Var is with us since the very first version of Javascript. All major browsers, including Internet Explorer, still and will understand a var declaration forever. So why I say it’s deprecated?&lt;/p&gt;
 
-&lt;p&gt;Well, when you declare a variable with var, it’s declaration is hoisted and the assignment will happen in a separate time. This is unnoticed for most js developers, unless you hit a bug and start complaining that javascript is weird. Let’s see an example:&lt;/p&gt;
+&lt;p&gt;Well, when you declare a variable with var, it’s declaration is &lt;em&gt;hoisted&lt;/em&gt; and the assignment will happen in a separate time. This is unnoticed for most of the time, unless you hit a bug and start complaining. Let’s see an example:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// in one snippet: 
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// ...looks fine, isn't it?
 if (!someVariable) {
     console.log(&quot;will this execute?&quot;) 
-    // no: ReferenceError: someVariable is not defineddebugger 
+    // will throw ReferenceError: someVariable is not defined
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -25,7 +25,8 @@ if (!someVariable) {
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (! someVariable) {
     console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
-    var someVariable = true
+    // apart from console.logs, we only added this line: 
+    var someVariable = true 
     console.log(&quot;Value of someVariable again: &quot;, someVariable)    
 }
 
@@ -34,11 +35,11 @@ if (!someVariable) {
 //  &quot;Value of someVariable again:  true&quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead js will just let you do it. Why?&lt;/p&gt;
+&lt;p&gt;Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead Javascript will just let you do it. Why?&lt;/p&gt;
 
 &lt;h3 id=&quot;hoisting&quot;&gt;Hoisting&lt;/h3&gt;
 
-&lt;p&gt;Javascript will read your .js file twice. The first time it will &lt;strong&gt;move on the top of the function&lt;/strong&gt; all &lt;code&gt;var&lt;/code&gt; declarations, initializing these variables with &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Javascript will read your .js file twice. The first time it will &lt;strong&gt;move on the top of the current unction&lt;/strong&gt; all &lt;code&gt;var&lt;/code&gt; declarations, initializing these variables with &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;The second time it reads the &lt;code&gt;.js&lt;/code&gt; file, it will now execute the interpreted code.&lt;/p&gt;
 
@@ -56,10 +57,10 @@ function someFunction() {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Note: If the script is executed outside a function, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.&lt;/p&gt;
+  &lt;p&gt;Note: If the script is executed in a “global” context, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Since this &lt;em&gt;movement of variables&lt;/em&gt; happen in functions, we can say tha &lt;code&gt;var&lt;/code&gt; is function-scoped. This code should not surprise you:&lt;/p&gt;
+&lt;p&gt;Since this &lt;em&gt;movement of variables&lt;/em&gt; happen in functions, we can say tha &lt;code&gt;var&lt;/code&gt; is function-scoped. This code should not surprise you anymore:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt; if (someCondition) {
  someCondition = false
@@ -68,11 +69,11 @@ function someFunction() {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Then you check the code and see that &lt;code&gt;someCondition&lt;/code&gt; is true, but the first if block didn’t execute! wtf?&lt;/p&gt;
+&lt;p&gt;… But when you check the code and see that &lt;code&gt;someCondition&lt;/code&gt; is true, but the first if block didn’t execute,  you’ll end in wtf.&lt;/p&gt;
 
-&lt;h3 id=&quot;whats-the-problem-with-this&quot;&gt;What’s the problem with this&lt;/h3&gt;
+&lt;h3 id=&quot;so-whats-the-problem&quot;&gt;So, what’s the problem&lt;/h3&gt;
 
-&lt;p&gt;The biggest problem is that this way of thinking of variables is completely different from all other programming languages. &lt;strong&gt;Developers coming from other programming languages will believe that a&lt;/strong&gt; &lt;code&gt;**var**&lt;/code&gt; &lt;strong&gt;is block scoped, while indeed it’s function scoped&lt;/strong&gt;. This will take you to weird bugs, and blame javascript.&lt;/p&gt;
+&lt;p&gt;The biggest problem is that this way of thinking of variables is completely different from all other programming languages. &lt;strong&gt;Developers coming from other programming languages will believe that a&lt;/strong&gt; &lt;code&gt;var&lt;/code&gt; &lt;strong&gt;is block scoped, while indeed it’s function scoped&lt;/strong&gt;. This will take you to weird bugs.&lt;/p&gt;
 
 &lt;p&gt;That’s why the JS community decided to fix this with ES6 introducing two new variable declarations: &lt;strong&gt;let&lt;/strong&gt; and &lt;strong&gt;const&lt;/strong&gt;.&lt;/p&gt;
 
@@ -91,13 +92,13 @@ function someFunction() {
 // : ReferenceError: someVariable is not defined
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Once the &lt;code&gt;var&lt;/code&gt; problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private variables.&lt;/p&gt;
+&lt;p&gt;Once the &lt;code&gt;var&lt;/code&gt; problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private properties; now that’s a lot easier.&lt;/p&gt;
 
 &lt;h2 id=&quot;const&quot;&gt;Const&lt;/h2&gt;
 
-&lt;p&gt;With const, we can finally declare constant references, but what does it mean practically? Let’s see an example again:&lt;/p&gt;
+&lt;p&gt;With const, we can finally declare constant &lt;em&gt;references&lt;/em&gt;, but what does it mean? Let’s see an example again:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const PRICE=33
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const PRICE = 33
 const TITLE = 'wonderful title'
 const anObject = { a: 'obj property' } 
 
@@ -108,13 +109,13 @@ anObject = {} // TypeError: invalid assignment to const `anObject'
 anObject.a = 'new obj property' // no error! 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The last two lines should bring you special attention. &lt;code&gt;const&lt;/code&gt; will freeze the reference. If the referenced object holds other properties, you can still change them.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The last two lines should bring you special attention.&lt;/em&gt; &lt;code&gt;const&lt;/code&gt; will &lt;strong&gt;freeze the reference&lt;/strong&gt;. If the referenced object holds other properties, you can still change them.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
 
 &lt;p&gt;Since Internet Explorer is fading away, the days we can finally get rid of &lt;code&gt;var&lt;/code&gt; are very close. The problem is that until it is not completely dead we have to transpile our code with &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to &lt;code&gt;var&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;A lot of developers have no idea of what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :)&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Javascript" /><category term=" Interview" /><category term=" Questions" /><summary type="html">I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:</summary></entry><entry><title type="html">Detect network issues from your pc to a remote url</title><link href="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" rel="alternate" type="text/html" title="Detect network issues from your pc to a remote url" /><published>2019-08-02T00:00:00+02:00</published><updated>2019-08-02T19:39:48+02:00</updated><id>https://michelenasti.com/2019/08/02/detect-network-issues-to-urls</id><content type="html" xml:base="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">&lt;p&gt;Suppose you see that a website, or a URL, that seems to be unaccessible.&lt;/p&gt;
+&lt;p&gt;A lot of developers have no idea of why we transpile and what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :/&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Javascript" /><category term=" Interview" /><category term=" Questions" /><summary type="html">I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:</summary></entry><entry><title type="html">Detect network issues from your pc to a remote url</title><link href="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" rel="alternate" type="text/html" title="Detect network issues from your pc to a remote url" /><published>2019-08-02T00:00:00+02:00</published><updated>2019-08-02T19:39:48+02:00</updated><id>https://michelenasti.com/2019/08/02/detect-network-issues-to-urls</id><content type="html" xml:base="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">&lt;p&gt;Suppose you see that a website, or a URL, that seems to be unaccessible.&lt;/p&gt;
 
 &lt;p&gt;The first thing to do is to check &lt;strong&gt;if the website is down just for you or for the whole universe&lt;/strong&gt;. There are many websites that do this, the one I discovered recently is &lt;a href=&quot;https://www.uptrends.com/tools/uptime&quot;&gt;Uptrends&lt;/a&gt;.&lt;/p&gt;
 
