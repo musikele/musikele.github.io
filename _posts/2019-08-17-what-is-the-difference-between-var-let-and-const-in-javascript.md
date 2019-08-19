@@ -9,7 +9,7 @@ tags:
 - Javascript
 - " Interview"
 - " Questions"
-title: 'What is the difference between var, let and const in Javascript '
+title: What is the difference between var, let and const in Javascript
 header-img: "/images/proxy.duckduckgo.com-2.jpeg"
 description: 'Var is deprecated; let and const are introduced with es6. Let''s see
   how to use them '
@@ -17,9 +17,9 @@ description: 'Var is deprecated; let and const are introduced with es6. Let''s s
 ---
 I did some interviews in the last few days, the role we were searching was "super-duper senior javascript master" so I asked this very simple question as starter:
 
-> What is the difference between var, let and const to declare a variable?
+> What is the difference between `var`, `let` and `const` to declare a variable?
 
-Surprisingly, a lot of js developers do not know the answer.
+Surprisingly, a lot of js developers do not know the right answer.
 
 ![]({{ site.baseurl }}/images/proxy.duckduckgo.com-3.jpeg)
 
@@ -27,13 +27,13 @@ Surprisingly, a lot of js developers do not know the answer.
 
 Var is with us since the very first version of Javascript. All major browsers, including Internet Explorer, still and will understand a var declaration forever. So why I say it's deprecated?
 
-Well, when you declare a variable with var, it's declaration is hoisted and the assignment will happen in a separate time. This is unnoticed for most js developers, unless you hit a bug and start complaining that javascript is weird. Let's see an example:
+Well, when you declare a variable with var, it's declaration is _hoisted_ and the assignment will happen in a separate time. This is unnoticed for most of the time, unless you hit a bug and start complaining. Let's see an example:
 
 ```javascript
-// in one snippet: 
+// ...looks fine, isn't it?
 if (!someVariable) {
     console.log("will this execute?") 
-    // no: ReferenceError: someVariable is not defineddebugger 
+    // will throw ReferenceError: someVariable is not defined
 }
 ```
 
@@ -42,7 +42,8 @@ Now refresh the page and run this:
 ```javascript 
 if (! someVariable) {
     console.log("will this execute? and what is the value of someVariable?", someVariable) 
-    var someVariable = true
+    // apart from console.logs, we only added this line: 
+    var someVariable = true 
     console.log("Value of someVariable again: ", someVariable)    
 }
 
@@ -51,11 +52,11 @@ if (! someVariable) {
 //  "Value of someVariable again:  true"
 ```
 
-Did you notice that I declared the variable inside the if block? You would expect an error ("dude, your variable does not exist at this moment") instead js will just let you do it. Why?
+Did you notice that I declared the variable inside the if block? You would expect an error ("dude, your variable does not exist at this moment") instead Javascript will just let you do it. Why?
 
 ### Hoisting
 
-Javascript will read your .js file twice. The first time it will **move on the top of the function** all `var` declarations, initializing these variables with `undefined`.
+Javascript will read your .js file twice. The first time it will **move on the top of the current unction** all `var` declarations, initializing these variables with `undefined`.
 
 The second time it reads the `.js` file, it will now execute the interpreted code.
 
@@ -73,9 +74,9 @@ function someFunction() {
 }
 ```
 
-> Note: If the script is executed outside a function, you should imagine a "wrapper function" around your code. So variable declarations are moved on top of the file.
+> Note: If the script is executed in a "global" context, you should imagine a "wrapper function" around your code. So variable declarations are moved on top of the file.
 
-Since this _movement of variables_ happen in functions, we can say tha `var` is function-scoped. This code should not surprise you:
+Since this _movement of variables_ happen in functions, we can say tha `var` is function-scoped. This code should not surprise you anymore:
 
 ```javascript
  if (someCondition) {
@@ -85,11 +86,11 @@ Since this _movement of variables_ happen in functions, we can say tha `var` is 
 }
 ```
 
-Then you check the code and see that `someCondition` is true, but the first if block didn't execute! wtf?
+... But when you check the code and see that `someCondition` is true, but the first if block didn't execute,  you'll end in wtf. 
 
-### What's the problem with this
+### So, what's the problem
 
-The biggest problem is that this way of thinking of variables is completely different from all other programming languages. **Developers coming from other programming languages will believe that a** `**var**` **is block scoped, while indeed it's function scoped**. This will take you to weird bugs, and blame javascript.
+The biggest problem is that this way of thinking of variables is completely different from all other programming languages. **Developers coming from other programming languages will believe that a** `var` **is block scoped, while indeed it's function scoped**. This will take you to weird bugs.
 
 That's why the JS community decided to fix this with ES6 introducing two new variable declarations: **let** and **const**.
 
@@ -109,14 +110,14 @@ if (! someVariable) {
 // : ReferenceError: someVariable is not defined
 ```
 
-Once the `var` problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private variables.
+Once the `var` problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private properties; now that's a lot easier.
 
 ## Const
 
-With const, we can finally declare constant references, but what does it mean practically? Let's see an example again:
+With const, we can finally declare constant _references_, but what does it mean? Let's see an example again:
 
 ```javascript 
-const PRICE=33
+const PRICE = 33
 const TITLE = 'wonderful title'
 const anObject = { a: 'obj property' } 
 
@@ -127,10 +128,10 @@ anObject = {} // TypeError: invalid assignment to const `anObject'
 anObject.a = 'new obj property' // no error! 
 ```
 
-The last two lines should bring you special attention. `const` will freeze the reference. If the referenced object holds other properties, you can still change them.
+_The last two lines should bring you special attention._ `const` will **freeze the reference**. If the referenced object holds other properties, you can still change them.
 
 ## Conclusions
 
 Since Internet Explorer is fading away, the days we can finally get rid of `var` are very close. The problem is that until it is not completely dead we have to transpile our code with `let` and `const` to `var`.
 
-A lot of developers have no idea of what is happening under the hood, and it's a pity because it's my first question when I interview JS senior developers :)
+A lot of developers have no idea of why we transpile and what is happening under the hood, and it's a pity because it's my first question when I interview JS senior developers :/
