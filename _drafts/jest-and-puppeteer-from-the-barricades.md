@@ -16,16 +16,8 @@ description: 'Jest and Puppeteer are two great tools. Together they can satisfy 
   cases here are some tips and tricks I discovered the hard way. '
 
 ---
-**Puppeteer** is a tool that lets you control a headless chrome to do a lot of things.
-
-By combining the two worlds together, we can achieve the "testing guru" level!
-
 ![]({{ site.baseurl }}/images/1*BM_RS2-DjYk_JZUKr4uq0g.png)
 
-* Latest trends in JS testing: unit, e2e, browserstack, etc. 
-* how to install jest
-* how to run a simple test 
-* explanation of the test 
 * a complex example: mocking, spying, etc.
 * Alternatives to Jest  
 * What is Puppeteer
@@ -48,6 +40,8 @@ At the start of 2019 there was a lot of hope around Javascript testing, mainly b
 * popular UI frameworks (react, vue, angular...) that were designed from the ground up to be unit-tested; 
 * NodeJS, that has become stable and mature 
 * the real _need_ of testing for regressions.
+
+I also read an article saying: _the js community has finally understood that web apps must be E2E tested first, instead of unit tested_. That's true because e2e tests have become extremely easy to write and to repeat. Let's see it!
 
 ## JEST
 
