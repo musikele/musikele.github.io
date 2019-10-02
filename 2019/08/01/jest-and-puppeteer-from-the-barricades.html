@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>Jest and Puppeteer from the barricades  - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="jest, testing, javascript" />  
+	<meta http-equiv="last-modified" content="2019-10-02 23:20:05 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="Jest and Puppeteer from the barricades " property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="Jest and Puppeteer are two great tools. Together they can satisfy a lot of needs, BUT testing in JS has never been easy and if you want to test hard cases here are some tips and tricks I discovered the hard way. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" property="og:url">
+
+
+
+  <meta content="2019-08-01T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/1*BM_RS2-DjYk_JZUKr4uq0g.png" property="og:image">
+
+
+
+  
+  <meta content="jest" property="article:tag">
+  
+  <meta content="testing" property="article:tag">
+  
+  <meta content="javascript" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="Jest and Puppeteer from the barricades ">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html">
+
+
+
+  <meta name="twitter:description" content="Jest and Puppeteer are two great tools. Together they can satisfy a lot of needs, BUT testing in JS has never been easy and if you want to test hard cases here are some tips and tricks I discovered the hard way. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/1*BM_RS2-DjYk_JZUKr4uq0g.png">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9588917209740632",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2019/08/01/jest-and-puppeteer-from-the-barricades.html">Jest and Puppeteer from the barricades </a></h1>
+			<p class="post-meta">Aug 1, 2019 • musikele</p>
+		</header>
+
+		<section>
+			
+			<h2 id="why">Why</h2>
+
+<p>When I started my career as a software developer I immediately become “friend” with the concepts of unit testing and integration testing. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.</p>
+
+<p>Unfortunately all our testing efforts were only directed towards the backend, probably because of the language; this means that we could not find UI bugs before it was too late.</p>
+
+<p>Fast fotward many years, GWT is not a thing anymore (good for you!), and Javascript is one of the most studied and used languages of the world. Javascript ecosystem is growing exponentially with thousands of packages, frameworks, ideas, applications that come out all the time. The language itself is evolving every year, after the first 20 years of no interesting additions. So… testing in JS became a necessity!</p>
+
+<p>At the start of 2019 there was a lot of hype around Javascript testing, mainly because of:</p>
+
+<ul>
+  <li>popular UI frameworks (react, vue, angular…) were designed from the ground up to be testable;</li>
+  <li>NodeJS has become stable and mature</li>
+  <li>The ubiquity of the web (progressive web apps, or React Native-like projects, made possible to use js on mobile too)</li>
+</ul>
+
+<p>I also read an interesting article saying (cannot find it anymore) “<em>the js community has finally realized that web apps must be E2E tested first, instead of unit tested”</em>. That’s true because e2e tests have become easier to write and to repeat. Let’s see it!</p>
+
+<p><img src="/images/1*BM_RS2-DjYk_JZUKr4uq0g.png" alt="" /></p>
+
+<h2 id="jest">JEST</h2>
+
+<p>Let me introduce Jest. <strong>Jest</strong> is a testing framework mainly maintained by Facebook. It has a lot of features:</p>
+
+<ul>
+  <li>support for typescript,</li>
+  <li>babel,</li>
+  <li>webpack,</li>
+  <li>latest ES features,</li>
+  <li>support for testing timers, classes, etc.</li>
+  <li>support for mocking</li>
+  <li>a clear-enough documentation</li>
+</ul>
+
+<p>To install:</p>
+
+<pre><code>$ npm i --save-dev jest 
+$ jest --init
+</code></pre>
+
+<p>and, for the purpose of using ES6 syntax:</p>
+
+<pre><code class="language-console">npm i --dev babel-jest @babel/core @babel/preset-env
+</code></pre>
+
+<p>Then, let’s add some configuration in jest to specify our environment:</p>
+
+<pre><code class="language-javascript">//babel.config.js
+module.exports = {
+    presets: [
+        [
+            '@babel/preset-env',
+            {
+                targets: {
+                    browsers: '&gt;2%',
+                },
+            },
+        ],
+    ],
+};
+</code></pre>
+
+<p>Jest can also be configured to calculate coverage, to specify environments (node vs browser), and probably every other configuration you may ever need to set.</p>
+
+<h2 id="lets-run-our-first-test">Let’s run our first test</h2>
+
+<p>This example is slightly modified from JEST <a href="https://jestjs.io/docs/en/getting-started">getting started</a>. Suppose we have this function:</p>
+
+<pre><code class="language-javascript">//sum.js
+export default (a, b) =&gt; {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('The sum function accepts only numbers')
+    }
+    return a + b
+}
+</code></pre>
+
+<p>Ok! Let’s write a test for this function:</p>
+
+<pre><code class="language-javascript">import sum from './sum'
+
+describe('sum module', () =&gt; {
+    it('should sum two numbers', () =&gt; {
+        const result = sum(2,3)
+        expect(result).toBe(5)
+    });
+});
+</code></pre>
+
+<blockquote>
+  <p><strong>Try it!</strong> Use <code>$ npx jest</code>  from the command line and see the output! Jest will search for *<em>.test.js and *.spec.js</em> files, and will execute them.</p>
+</blockquote>
+
+<p><code>describe()</code> is used to define a test suite - a logical group of tests that are related. You can write tests directly at the top level, or you can wrap as many <code>describe</code> blocks you want one into another; these names hare helpful when the tests start failing because they provide some context of what went nuts.</p>
+
+<blockquote>
+  <p><strong>Suggestion</strong>: I prefer to write at least one containing the module name and optionally another that will explain the base condition I am checking. Example:</p>
+</blockquote>
+
+<pre><code class="language-javascript">describe('Products service', () =&gt; {
+	describe('The product is not in the database', () =&gt; {
+		...
+    })
+})
+</code></pre>
+
+<p>Let’s go back to our example. the function <code>it()</code> (alias for <code>test()</code>) is the actual test that will be executed. Usually our tests are comprised of three parts:</p>
+
+<ul>
+  <li>setup - import the code, insert the configuration, etc.</li>
+  <li>execution - where we actually call the sum function</li>
+  <li>test expectations - where we check that the test has actually succeded.</li>
+</ul>
+
+<p>Here we use Jest function <code>expect()</code> to assert that the result of the function is actually <code>5</code>; thanks to a bunch of jest expectations, we can test pretty much everything is testable.</p>
+
+<blockquote>
+  <p><strong>Suggestion</strong>: limit yourself to test only the public API of a module.  There’s no need to test the inner workings!</p>
+</blockquote>
+
+<p>And now let’s write a test for the <em>bad</em> case:</p>
+
+<pre><code class="language-javascript">//sum.spec.js
+import sum from './sum'
+
+describe('sum module', () =&gt; {
+    it('should sum two numbers', () =&gt; { ... })
+
+    it('should explode with exception', () =&gt; {
+        try {
+            sum(2,'pippo')
+        } catch(e) {
+            expect(e).toBeDefined()
+        }
+    })
+})
+</code></pre>
+
+<blockquote>
+  <p><strong>Hint</strong>: try to make your tests fail. Otherwise you can never know if they’re really working.</p>
+</blockquote>
+
+<h3 id="can-we-check-dom-modifications">Can we check DOM modifications?</h3>
+
+<p>Jest is cool because it integrates JSDOM, a browser DOM API implementation in pure JS. In my experience it will work very similarly to a real browser, and I found it super useful. For example, let’s write a function that will change toggle a class over a DOM element:</p>
+
+<pre><code class="language-javascript">// example02/toggleClass.js
+export default (domElement, className) =&gt; {
+    domElement.classList.toggle(className)
+}
+</code></pre>
+
+<p>This very super stupid snippet will add or remove to a <code>domElement</code> a <code>¢lassName</code> .</p>
+
+<p>Now let’s write a Jest test for it:</p>
+
+<pre><code class="language-javascript">// example02/toggleClass.spec.js
+import toggleClass from './toggleClass';
+
+describe('Toggle class on DOM element', () =&gt; {
+    it('attach an element to the Document and toggle a clas on it', () =&gt; {
+        // (1) 
+        const div = document.createElement('div')
+        div.id = 'myDiv'
+        document.body.appendChild(div);
+        
+		// (2) div actually attached to the virtual dom:
+        const sameDivAsBefore = document.getElementById('myDiv');
+        expect(div).toBe(sameDivAsBefore);
+		
+        // (3)
+        toggleClass(sameDivAsBefore, 'myClass');
+        expect(sameDivAsBefore.classList).toContain('myClass');
+		
+        // (4) 
+        toggleClass(sameDivAsBefore, 'myClass');
+        expect(sameDivAsBefore.classList).not.toContain('myClass');
+    })
+});
+</code></pre>
+
+<p>Heeeey, a 3 lines function tested by a 20 lines test :D Well, lot of the code was added to show you something.</p>
+
+<p>At (1) I create a DIV and attach to a Document. This Document object is provided by JSDOM and is instantiated by Jest - if you are using NodeJS, remember to change a setting in jest configuration and you’re done.</p>
+
+<p>At (2) I just show that all the DOM API is available, so I retreive the same element with <code>getElementById()</code>.</p>
+
+<p>Then, I will add a class to this element by calling <code>togleClass()</code>. We then check that the class has been added by using <code>expect().toContain()</code>.</p>
+
+<p>Finally, we call again <code>toggleClass</code> (4) and check that the dom element does <strong>not</strong> contain the class anymore.</p>
+
+<p>This is so powerful, that by enabling some features (via configuration) I could also load scripts (like jquery) and use it in the test! Not bad.</p>
+
+<h2 id="can-we-mock-other-functionsclasses">Can we mock other functions/classes?</h2>
+
+<p>Yes! That’s how you reach the zen of unit test.</p>
+
+<p>Let’s imagine we have a class <code>apiClient</code> that will ask another class <code>apiService</code> to make a REST call.  <strong>We want to test apiClient</strong>.</p>
+
+<p>In this example, <code>apiService</code> will ask for currency exchange from Euro to many other currencies. <code>apiClient</code> will in turn transform the data in a way it is usable, by just keeping the <code>USD</code> value.</p>
+
+<p>Here’s the code for <code>apiService.js</code>, the module that will call the REST endpoint:</p>
+
+<pre><code class="language-javascript">// apiService.js 
+export const getCurrencyExchange = async () =&gt; {
+  const response = await window.fetch(' https://api.ratesapi.io/api/latest');
+  const json = await response.json()
+  return json;
+}
+</code></pre>
+
+<p>And the consumer, <code>apiClient.js</code> (this is the module we want to test):</p>
+
+<pre><code class="language-javascript">//apiClient.js
+import { getCurrencyExchange } from './apiService'
+
+export const getEuroDollar = async () =&gt; {
+    const currencyExchange = await getCurrencyExchange()
+    console.log(`1 Euro is ${currencyExchange.rates.USD} dollars`)
+    return currencyExchange.rates.USD
+}
+</code></pre>
+
+<p>What’s the problem with this test?</p>
+
+<ul>
+  <li>the value of the USD exchange rate will change over time</li>
+  <li>if the network is down, the test will fail</li>
+</ul>
+
+<p>So we need… <strong>mocks!</strong></p>
+
+<p>Here’s a unit test that will mock out <code>apiService</code> from using the network.</p>
+
+<pre><code class="language-javascript">//class to test (1)
+import { getEuroDollar } from './apiClient';
+
+// stuff we need to mock (2)
+import { getCurrencyExchange } from './apiService'
+jest.mock('./apiService');
+
+describe('apiClient tests', () =&gt; {
+    //reset all mocks before use! (3) 
+    beforeEach(() =&gt; {
+        getCurrencyExchange.mockClear()
+    })
+    
+    it('should return euro/dollar exchange', async () =&gt; {
+        //when called, return this result (4) 
+        getCurrencyExchange.mockResolvedValue({
+            rates: {
+                USD: 2000
+            }
+        })
+        //call the function under test 
+        const euroDollarChange = await getEuroDollar()
+        
+        //expect that getCurrencyExchange has been called (5)
+        expect(getCurrencyExchange).toHaveBeenCalled()
+        expect(euroDollarChange).toBe(2000)
+    })
+})
+</code></pre>
+
+<ul>
+  <li>(1) - we import the function we want to test</li>
+  <li>(2) - but we need to intercept and change the behaviour of <code>getCurrencyExchange()</code>  so we also import it, and with <code>jest.mock()</code> we tell jest we want to modify the behaviour</li>
+  <li>(3) - imagine we have not just one test like in this example, but a suite of tests, with this code we tell Jest to clear eventual mocks between tests.</li>
+  <li>(4) - here we are <em>really</em> mocking the behaviour of <code>getCurrencyExchange</code>. Jest will return the value specified in <code>mockResolvedValue</code> instead of making the actual network call. In this mock, inflation was really a thing and 1 Euro corresponds to 2000 $.</li>
+  <li>After having instructed the test, we check that the mocked function has really ben called and the mocked value has been returned.</li>
+</ul>
+
+<p>I only scratched the surface of what is possible to do with Jest, and there are thousand of mock tecniques depending of what you want to mock: classes, timers, async methods.. jest has you covered.</p>
+
+<p>Now let’s talk about… Puppeteer.</p>
+
+<h2 id="a-headless-chrome">A headless Chrome</h2>
+
+<p><a href="https://pptr.dev/">Puppeteer</a> is a node library that allows to control a Chromium instance. Let’s quiclky see an example. To install:</p>
+
+<pre><code class="language-console">$ npm i --save-dev puppeteer 
+</code></pre>
+
+<p>Puppeteer will download a beta-version of chromium that will be used to run our tests. Usually the puppeteer version uses a chromium version that is 2-3 versions further than the regular chrome, and this is done to test new chromium too.</p>
+
+<p>Let’s try to run a super-easy example that comes from their website: let’s take a screenshot of my personal website, michelenasti.com:</p>
+
+<pre><code class="language-javascript">const puppeteer = require('puppeteer');
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('https://michelenasti.com');
+  await page.screenshot({path: 'example.png'});
+
+  await browser.close();
+})();
+</code></pre>
+
+<p>Some things to note:</p>
+
+<ul>
+  <li>Most of the time we will interact with the <code>page</code> object, almost all cool stuff is there</li>
+  <li>Almost all methods are async, so we have to use <code>await</code> everywhere</li>
+  <li>Chromium is started with a very dumb resolution, 800x600, like my first 486 monitor.</li>
+  <li>If you want to <em>see</em> chrome in action, pass this configuration to <code>puppeteer.launch()</code>:</li>
+</ul>
+
+<pre><code class="language-javascript">await puppeteer.launch({
+  headless: false
+})
+</code></pre>
+
+<p>Nothing more to say, we are ready to glue together jest + puppeteer in our tests!</p>
+
+<h2 id="jest-puppeteer-to-the-rescue">jest-puppeteer to the rescue!</h2>
+
+<p>Let’s instal <a href="https://github.com/smooth-code/jest-puppeteer">jest-puppeteer</a>, a jest plugin to remote-control puppeteer in jest:</p>
+
+<pre><code class="language-console">$ npm install --save-dev jest-puppeteer
+</code></pre>
+
+<p>In <code>jest.config.js</code>, let’s add this option:</p>
+
+<pre><code class="language-javascript">{
+  "preset": "jest-puppeteer"
+}
+</code></pre>
+
+<p>Ready to run our first test?</p>
+
+<pre><code class="language-javascript">// e2e/jest-puppeteer-01/01.spec.js
+describe('Google', () =&gt; {
+    beforeAll(async () =&gt; {
+      await page.goto('https://google.com')
+    })
+  
+    it('should display "google" text on page', async () =&gt; {
+      await expect(page).toMatch('google')
+    })
+  })
+</code></pre>
+
+<p>I cheated, this comes directly from jest guide, but it is helpful to understand how it works.</p>
+
+<ul>
+  <li>in the <code>beforeAll</code> block we navigate to the google page;</li>
+  <li>in the test block, we check that <code>google</code> is somewhere on the page.</li>
+</ul>
+
+<blockquote>
+  <p>Hint: try to change website with michelenasti.com … it will fail</p>
+</blockquote>
+
+<p>Let’s move to something more interactive. We will borrow <a href="http://todomvc.com/examples/vue/">Todolist MVC app</a> from <a href="http://todomvc.com/">this website</a>, they replicate the same app in every possible framework so you can study them.</p>
+
+<p>The idea is to:</p>
+
+<ul>
+  <li>add a todo item</li>
+  <li>check that it has been added to the list</li>
+  <li>remove it</li>
+</ul>
+
+<p>Let’s write such test!</p>
+
+<pre><code class="language-javascript">describe('TodoApp MVC tests', () =&gt; {
+    beforeEach(async () =&gt; {
+        await page.goto('http://todomvc.com/examples/vue/')
+    })
+
+    it('should add a todo', async () =&gt; {
+    	// (1)
+        await page.type('input.new-todo', 'this is a todo');
+        await page.keyboard.press('Enter');
+        const label = await page.$('div.view label')
+		// (2)
+        const property = await label.getProperty('innerHTML')
+        const jsonValue = await property.jsonValue()
+        console.log(jsonValue)
+        expect(jsonValue).toBe('this is a todo')
+		// (3)
+        await page.hover('div.view label')
+        await page.click('div.view button.destroy')
+        const label2 = await page.$('div.view label')
+        expect(label2).toBe(null)
+    })
+});
+</code></pre>
+
+<p>I don’t want to illude you, you’ll learn many tricks with experience, like me while I was preparing these examples.</p>
+
+<ul>
+  <li>at (1) we write in the big input box our todo item</li>
+  <li>at (2) we check that the value has been added to the list</li>
+  <li>at (3) we first hover the item, in order to make the destroy button appear; then we click it. <em>What happens if we do not hover over the text?</em></li>
+</ul>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>…And that’s it! Testing is an art and as such must be constantly exercised. These frameworks are complex because they allow to do complex things. During this talk I tried to give you hints of what you should do based on my experience.</p>
+
+<p>I also want to highlight some <strong>competitors</strong> of these two frameworks. For <strong>Jest</strong> the most famous is <strong>Mocha</strong>, it has almost the same API. However, to use mocha you have to install a lot of external libraries (the assertion library, the mocking framework, etc), so I prefer jest because it already contains everything.</p>
+
+<p>Regarding <strong>puppeteer</strong>, there are some old competitors like <strong>Selenium</strong> (and you can write tests in other languages too, or you can also use other browsers);  if you want to stick with Chrome, <strong>Cypress</strong> is another great tool that is worth to try. It is much more visual than puppeteer.</p>
+
+<p>Remember:</p>
+
+<blockquote>
+  <p>If there is no test written, than you didn’t test it.</p>
+</blockquote>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&text=Jest and Puppeteer from the barricades :%20https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Jest and Puppeteer from the barricades ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&title=Jest and Puppeteer from the barricades &summary=&source=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2019/06/24/typescript-why-so-complicated.html">Typescript: why so complicated?! (A list of my preferred options) <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/11/17/what-i-learned-by-writing-my-first-npm-module.html">What I learned by writing my first npm module <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/11/05/inspiring-tech-people-to-follow-nicholas-c-zakas.html">Inspiring tech people to follow: Nicholas C. Zakas <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/10/29/the-easiest-way-to-understand-javascript-generators.html">The easiest way to understand Javascript Generators <span class="label label-default">javascript</span> </a></h5>
+        </div>
+        
+        
+            
+
+
+
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">Typescript, Babel, Webpack, ESLint: my configuration</a></h2>
+        </header>
+        <section>
+            <p>The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+
+    <div class="6u$ 12u(small) excerpt f-right" id="nextArticle">
+        <header>
+            <h2><a href="/2019/08/02/detect-network-issues-to-urls.html">Detect network issues from your pc to a remote url</a></h2>
+        </header>
+        <section>
+            <p>Suppose you see that a website, or a URL, that seems to be unaccessible.</p>
+
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="//2019/08/02/detect-network-issues-to-urls.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>
