@@ -9,10 +9,10 @@
 			window.location.protocol = "https";
 	</script>
 	
-	<title>Jest and Puppeteer from the barricades  - Michele Nasti's blog</title>
+	<title>Jest and Puppeteer from the barricades - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="jest, testing, javascript" />  
-	<meta http-equiv="last-modified" content="2019-10-02 23:33:22 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-10-02 23:48:11 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -25,7 +25,7 @@
 <meta content="" property="og:site_name">
 
 
-  <meta content="Jest and Puppeteer from the barricades " property="og:title">
+  <meta content="Jest and Puppeteer from the barricades" property="og:title">
 
 
 
@@ -64,7 +64,7 @@
 <meta name="twitter:site" content="@vdaubry">
 <meta name="twitter:creator" content="@micnasti">
 
-  <meta name="twitter:title" content="Jest and Puppeteer from the barricades ">
+  <meta name="twitter:title" content="Jest and Puppeteer from the barricades">
 
 
   <meta name="twitter:url" content="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html">
@@ -113,7 +113,7 @@
 </header> <div id="main">
 	<article>
 		<header class="major">
-			<h1 class="post-title"><a href="/2019/08/01/jest-and-puppeteer-from-the-barricades.html">Jest and Puppeteer from the barricades </a></h1>
+			<h1 class="post-title"><a href="/2019/08/01/jest-and-puppeteer-from-the-barricades.html">Jest and Puppeteer from the barricades</a></h1>
 			<p class="post-meta">Aug 1, 2019 • musikele</p>
 		</header>
 
@@ -121,9 +121,9 @@
 			
 			<h2 id="why">Why</h2>
 
-<p>When I started my career as a software developer I immediately become “friend” with the concepts of unit testing and integration testing. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.</p>
+<p>When I started my career as a software developer I immediately become “friend” with the concepts of <strong>unit testing and integration testing</strong>. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.</p>
 
-<p>Unfortunately all our testing efforts were only directed towards the backend, probably because of the language; this means that we could not find UI bugs before it was too late.</p>
+<p>Unfortunately <strong>all our testing efforts were only directed towards the backend</strong>, probably because of the language; this means that <strong>we could not find UI bugs before it was too late</strong>.</p>
 
 <p>Fast fotward many years, GWT is not a thing anymore (good for you!), and Javascript is one of the most studied and used languages of the world. Javascript ecosystem is growing exponentially with thousands of packages, frameworks, ideas, applications that come out all the time. The language itself is evolving every year, after the first 20 years of no interesting additions. So… testing in JS became a necessity!</p>
 
@@ -135,7 +135,7 @@
   <li>The ubiquity of the web (progressive web apps, or React Native-like projects, made possible to use js on mobile too)</li>
 </ul>
 
-<p>I also read an interesting article saying (cannot find it anymore) “<em>the js community has finally realized that web apps must be E2E tested first, instead of unit tested”</em>. That’s true because e2e tests have become easier to write and to repeat. Let’s see it!</p>
+<p>I also read an interesting article saying (cannot find it anymore) “<strong>the js community has finally realized that web apps must be E2E tested first, instead of unit tested</strong><em>“</em>. That’s true because e2e tests have become easier (but not dead easy) to write and to repeat. Let’s see it!</p>
 
 <p><img src="/images/1*BM_RS2-DjYk_JZUKr4uq0g.png" alt="" /></p>
 
@@ -150,7 +150,7 @@
 
 <p><a href="https://github.com/musikele/jest-puppeteer-tutorial">All the code is here</a>.</p>
 
-<h2 id="jest">JEST</h2>
+<h2 id="unit-testing-jest">Unit testing: JEST</h2>
 
 <p>Let me introduce Jest. <strong>Jest</strong> is a testing framework mainly maintained by Facebook. It has a lot of features:</p>
 
@@ -167,7 +167,7 @@
 <p>To install:</p>
 
 <pre><code>$ npm i --save-dev jest 
-$ jest --init
+$ jest --init # create an initial conf file
 </code></pre>
 
 <p>and, for the purpose of using ES6 syntax:</p>
@@ -175,7 +175,7 @@ $ jest --init
 <pre><code class="language-console">npm i --dev babel-jest @babel/core @babel/preset-env
 </code></pre>
 
-<p>Then, let’s add some configuration in jest to specify our environment:</p>
+<p>Then, let’s add some Babel configuration to transpile code:</p>
 
 <pre><code class="language-javascript">//babel.config.js
 module.exports = {
@@ -192,13 +192,11 @@ module.exports = {
 };
 </code></pre>
 
-<p>Jest can also be configured to calculate coverage, to specify environments (node vs browser), and probably every other configuration you may ever need to set.</p>
-
 <h2 id="lets-run-our-first-test">Let’s run our first test</h2>
 
 <p>This example is slightly modified from JEST <a href="https://jestjs.io/docs/en/getting-started">getting started</a>. Suppose we have this function:</p>
 
-<pre><code class="language-javascript">//sum.js
+<pre><code class="language-javascript">// unit/jest-example01/sum.js
 export default (a, b) =&gt; {
     if (typeof a !== 'number' || typeof b !== 'number') {
         throw new Error('The sum function accepts only numbers')
@@ -209,7 +207,8 @@ export default (a, b) =&gt; {
 
 <p>Ok! Let’s write a test for this function:</p>
 
-<pre><code class="language-javascript">import sum from './sum'
+<pre><code class="language-javascript">// unit/jest-example01/sum.spec.js
+import sum from './sum'
 
 describe('sum module', () =&gt; {
     it('should sum two numbers', () =&gt; {
@@ -236,15 +235,15 @@ describe('sum module', () =&gt; {
 })
 </code></pre>
 
-<p>Let’s go back to our example. the function <code>it()</code> (alias for <code>test()</code>) is the actual test that will be executed. Usually our tests are comprised of three parts:</p>
+<p>Let’s go back to our example. the function <code>it()</code> (or <code>test()</code>) is the actual test function that will be executed. Usually our tests are comprised of three parts:</p>
 
 <ul>
-  <li>setup - import the code, insert the configuration, etc.</li>
-  <li>execution - where we actually call the sum function</li>
-  <li>test expectations - where we check that the test has actually succeded.</li>
+  <li><strong>setup</strong> - import the code, insert the configuration, etc.</li>
+  <li><strong>execution</strong> - where we actually call the sum function</li>
+  <li><strong>expectations test</strong> - where we check that the test has actually succeded.</li>
 </ul>
 
-<p>Here we use Jest function <code>expect()</code> to assert that the result of the function is actually <code>5</code>; thanks to a bunch of jest expectations, we can test pretty much everything is testable.</p>
+<p>We use Jest function <code>expect()</code> to assert that the result of the function is <code>5</code>; thanks to a bunch of <a href="https://jestjs.io/docs/en/expect">Jest expectations</a>, we can test pretty much everything is testable.</p>
 
 <blockquote>
   <p><strong>Suggestion</strong>: limit yourself to test only the public API of a module.  There’s no need to test the inner workings!</p>
@@ -252,7 +251,7 @@ describe('sum module', () =&gt; {
 
 <p>And now let’s write a test for the <em>bad</em> case:</p>
 
-<pre><code class="language-javascript">//sum.spec.js
+<pre><code class="language-javascript">// unit/jest-example01/sum.spec.js
 import sum from './sum'
 
 describe('sum module', () =&gt; {
@@ -274,9 +273,9 @@ describe('sum module', () =&gt; {
 
 <h3 id="can-we-check-dom-modifications">Can we check DOM modifications?</h3>
 
-<p>Jest is cool because it integrates JSDOM, a browser DOM API implementation in pure JS. In my experience it will work very similarly to a real browser, and I found it super useful. For example, let’s write a function that will change toggle a class over a DOM element:</p>
+<p>Jest integrates JSDOM, a browser DOM API implementation in pure JS. In my experience it will work very similarly to a real browser, and I found it super useful. For example, let’s write a function that will change toggle a class over a DOM element:</p>
 
-<pre><code class="language-javascript">// example02/toggleClass.js
+<pre><code class="language-javascript">// unit/jest-example02/toggleClass.js
 export default (domElement, className) =&gt; {
     domElement.classList.toggle(className)
 }
@@ -286,7 +285,7 @@ export default (domElement, className) =&gt; {
 
 <p>Now let’s write a Jest test for it:</p>
 
-<pre><code class="language-javascript">// example02/toggleClass.spec.js
+<pre><code class="language-javascript">// unit/jest-example02/toggleClass.spec.js
 import toggleClass from './toggleClass';
 
 describe('Toggle class on DOM element', () =&gt; {
@@ -313,15 +312,15 @@ describe('Toggle class on DOM element', () =&gt; {
 
 <p>Heeeey, a 3 lines function tested by a 20 lines test :D Well, lot of the code was added to show you something.</p>
 
-<p>At (1) I create a DIV and attach to a Document. This Document object is provided by JSDOM and is instantiated by Jest - if you are using NodeJS, remember to change a setting in jest configuration and you’re done.</p>
+<p>At (1) I create a DIV and attach to a Document. <strong>The Document object is provided by JSDOM and is instantiated by Jest</strong> - if you are using NodeJS, remember to change a setting in jest configuration and you’re done.</p>
 
-<p>At (2) I just show that all the DOM API is available, so I retreive the same element with <code>getElementById()</code>.</p>
+<p>At (2) I just show that <em>all the DOM API is available</em>, so I retreive the same element with <code>getElementById()</code>.</p>
 
 <p>Then, I will add a class to this element by calling <code>togleClass()</code>. We then check that the class has been added by using <code>expect().toContain()</code>.</p>
 
 <p>Finally, we call again <code>toggleClass</code> (4) and check that the dom element does <strong>not</strong> contain the class anymore.</p>
 
-<p>This is so powerful, that by enabling some features (via configuration) I could also load scripts (like jquery) and use it in the test! Not bad.</p>
+<p>This is so <strong>powerful</strong>, that by enabling some features (via configuration) I could also <em>load scripts</em> (like jquery) and use it in the test! Not bad.</p>
 
 <h2 id="can-we-mock-other-functionsclasses">Can we mock other functions/classes?</h2>
 
@@ -333,7 +332,7 @@ describe('Toggle class on DOM element', () =&gt; {
 
 <p>Here’s the code for <code>apiService.js</code>, the module that will call the REST endpoint:</p>
 
-<pre><code class="language-javascript">// apiService.js 
+<pre><code class="language-javascript">// unit/jest-example03/apiService.js 
 export const getCurrencyExchange = async () =&gt; {
   const response = await window.fetch(' https://api.ratesapi.io/api/latest');
   const json = await response.json()
@@ -341,9 +340,9 @@ export const getCurrencyExchange = async () =&gt; {
 }
 </code></pre>
 
-<p>And the consumer, <code>apiClient.js</code> (this is the module we want to test):</p>
+<p>And the consumer, <code>apiClient.js</code> (<strong>this</strong> <em>is the module we want to test</em>):</p>
 
-<pre><code class="language-javascript">//apiClient.js
+<pre><code class="language-javascript">// unit/jest-example03/apiClient.js
 import { getCurrencyExchange } from './apiService'
 
 export const getEuroDollar = async () =&gt; {
@@ -353,7 +352,7 @@ export const getEuroDollar = async () =&gt; {
 }
 </code></pre>
 
-<p>What’s the problem with this test?</p>
+<p>What’s the problem with this module?</p>
 
 <ul>
   <li>the value of the USD exchange rate will change over time</li>
@@ -364,7 +363,9 @@ export const getEuroDollar = async () =&gt; {
 
 <p>Here’s a unit test that will mock out <code>apiService</code> from using the network.</p>
 
-<pre><code class="language-javascript">//class to test (1)
+<pre><code class="language-javascript">// unit/jest-example03/apiClient.spec.js
+
+//class to test (1)
 import { getEuroDollar } from './apiClient';
 
 // stuff we need to mock (2)
@@ -398,7 +399,7 @@ describe('apiClient tests', () =&gt; {
   <li>(1) - we import the function we want to test</li>
   <li>(2) - but we need to intercept and change the behaviour of <code>getCurrencyExchange()</code>  so we also import it, and with <code>jest.mock()</code> we tell jest we want to modify the behaviour</li>
   <li>(3) - imagine we have not just one test like in this example, but a suite of tests, with this code we tell Jest to clear eventual mocks between tests.</li>
-  <li>(4) - here we are <em>really</em> mocking the behaviour of <code>getCurrencyExchange</code>. Jest will return the value specified in <code>mockResolvedValue</code> instead of making the actual network call. In this mock, inflation was really a thing and 1 Euro corresponds to 2000 $.</li>
+  <li>(4) - here we are <em>really</em> <strong>mocking the behaviour</strong> of <code>getCurrencyExchange</code>. Jest will return the value specified in <code>mockResolvedValue</code> instead of making the actual network call. In this mock, inflation was really a thing and 1 Euro corresponds to 2000 $ (Euro rulez!).</li>
   <li>After having instructed the test, we check that the mocked function has really ben called and the mocked value has been returned.</li>
 </ul>
 
@@ -406,7 +407,7 @@ describe('apiClient tests', () =&gt; {
 
 <p>Now let’s talk about… Puppeteer.</p>
 
-<h2 id="a-headless-chrome">A headless Chrome</h2>
+<h2 id="puppetteer-a-headless-chrome">Puppetteer: a headless Chrome</h2>
 
 <p><a href="https://pptr.dev/">Puppeteer</a> is a node library that allows to control a Chromium instance. Let’s quiclky see an example. To install:</p>
 
@@ -432,9 +433,10 @@ describe('apiClient tests', () =&gt; {
 <p>Some things to note:</p>
 
 <ul>
-  <li>Most of the time we will interact with the <code>page</code> object, almost all cool stuff is there</li>
+  <li>Most of the time we will interact with the <code>page</code> object, almost all useful stuff is there</li>
   <li>Almost all methods are async, so we have to use <code>await</code> everywhere</li>
   <li>Chromium is started with a very dumb resolution, 800x600, like my first 486 monitor.</li>
+  <li>The documentation is your friend: check it out!</li>
   <li>If you want to <em>see</em> chrome in action, pass this configuration to <code>puppeteer.launch()</code>:</li>
 </ul>
 
@@ -452,12 +454,14 @@ describe('apiClient tests', () =&gt; {
 <pre><code class="language-console">$ npm install --save-dev jest-puppeteer
 </code></pre>
 
-<p>In <code>jest.config.js</code>, let’s add this option:</p>
+<p>At this point, in the root of your project, create an <code>e2e</code> folder that will contain all your e2e tests. Copy <code>jest.config.js</code> from <code>unit</code> and add this option:</p>
 
 <pre><code class="language-javascript">{
   "preset": "jest-puppeteer"
 }
 </code></pre>
+
+<p>This setting will tell Jest to launch tests in a different environment, that is Chrome.</p>
 
 <p>Ready to run our first test?</p>
 
@@ -473,7 +477,7 @@ describe('Google', () =&gt; {
   })
 </code></pre>
 
-<p>I cheated, this comes directly from jest guide, but it is helpful to understand how it works.</p>
+<p>I cheated, this example comes directly from jest guide, but it is helpful to understand how it works.</p>
 
 <ul>
   <li>in the <code>beforeAll</code> block we navigate to the google page;</li>
@@ -481,10 +485,10 @@ describe('Google', () =&gt; {
 </ul>
 
 <blockquote>
-  <p>Hint: try to change website with michelenasti.com … it will fail</p>
+  <p><strong>Suggestion</strong>: try to change website with michelenasti.com … it will fail</p>
 </blockquote>
 
-<p>Let’s move to something more interactive. We will borrow <a href="http://todomvc.com/examples/vue/">Todolist MVC app</a> from <a href="http://todomvc.com/">this website</a>, they replicate the same app in every possible framework so you can study them.</p>
+<p>Let’s move to something more interactive. We will borrow <a href="http://todomvc.com/examples/vue/">Todolist MVC app</a> from <a href="http://todomvc.com/">this website</a> (they replicate the same app in every possible framework so you can study them).</p>
 
 <p>The idea is to:</p>
 
@@ -532,7 +536,7 @@ describe('Google', () =&gt; {
 
 <p>…And that’s it! Testing is an art and as such must be constantly exercised. These frameworks are complex because they allow to do complex things. During this talk I tried to give you hints of what you should do based on my experience.</p>
 
-<p>I also want to highlight some <strong>competitors</strong> of these two frameworks. For <strong>Jest</strong> the most famous is <strong>Mocha</strong>, it has almost the same API. However, to use mocha you have to install a lot of external libraries (the assertion library, the mocking framework, etc), so I prefer jest because it already contains everything.</p>
+<p>I also want to highlight some <strong>alternatives</strong> of these frameworks. For <strong>Jest</strong> the most famous alternative is <strong>Mocha</strong>, it has almost the same API. However, to use mocha you have to install a lot of external libraries (the assertion library, the mocking framework, etc), so I prefer jest because it already contains everything.</p>
 
 <p>Regarding <strong>puppeteer</strong>, there are some old competitors like <strong>Selenium</strong> (and you can write tests in other languages too, or you can also use other browsers);  if you want to stick with Chrome, <strong>Cypress</strong> is another great tool that is worth to try. It is much more visual than puppeteer.</p>
 
@@ -546,9 +550,9 @@ describe('Google', () =&gt; {
 			
 <ul class="share-buttons">
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&text=Jest and Puppeteer from the barricades :%20https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Jest and Puppeteer from the barricades ) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&text=Jest and Puppeteer from the barricades:%20https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(Jest and Puppeteer from the barricades) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
   <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&title=Jest and Puppeteer from the barricades &summary=&source=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html&title=Jest and Puppeteer from the barricades&summary=&source=https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
 </ul>
 
 			<h4>Related Posts:</h4>
