@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-02T23:22:42+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript" /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-19T11:10:06+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-02T23:35:38+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript" /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-19T11:10:06+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;What is the difference between &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to declare a variable?&lt;/p&gt;
@@ -155,7 +155,7 @@ HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst S
 
 &lt;p&gt;I really suggest you to read &lt;a href=&quot;https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/&quot;&gt;this article from Linode&lt;/a&gt; that explains almost everything you may want to know and it’s very easy to follow.&lt;/p&gt;
 
-&lt;p&gt;Enjoy your networking!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="network" /><category term="sysadmin" /><summary type="html">Suppose you see that a website, or a URL, that seems to be unaccessible.</summary></entry><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades " /><published>2019-08-01T00:00:00+02:00</published><updated>2019-10-02T23:20:05+02:00</updated><id>https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html">&lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
+&lt;p&gt;Enjoy your networking!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="network" /><category term="sysadmin" /><summary type="html">Suppose you see that a website, or a URL, that seems to be unaccessible.</summary></entry><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades " /><published>2019-08-01T00:00:00+02:00</published><updated>2019-10-02T23:33:22+02:00</updated><id>https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html">&lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
 
 &lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of unit testing and integration testing. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
 
@@ -174,6 +174,17 @@ HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst S
 &lt;p&gt;I also read an interesting article saying (cannot find it anymore) “&lt;em&gt;the js community has finally realized that web apps must be E2E tested first, instead of unit tested”&lt;/em&gt;. That’s true because e2e tests have become easier to write and to repeat. Let’s see it!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/1*BM_RS2-DjYk_JZUKr4uq0g.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-structure-the-code&quot;&gt;How to structure the code&lt;/h2&gt;
+
+&lt;p&gt;Unit tests and End-to-end (e2e) tests are executed in two different environments: unit tests are executed in a browser-like environment provided by jest, while e2e tests are executed in a real browser. They need different configurations, that’s why I’ve created two directories:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;unit&lt;/code&gt; for unit tests&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;e2e&lt;/code&gt; for end to end tests&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/musikele/jest-puppeteer-tutorial&quot;&gt;All the code is here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;jest&quot;&gt;JEST&lt;/h2&gt;
 

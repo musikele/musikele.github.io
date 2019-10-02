@@ -12,7 +12,7 @@
 	<title>Jest and Puppeteer from the barricades  - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="jest, testing, javascript" />  
-	<meta http-equiv="last-modified" content="2019-10-02 23:20:05 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-10-02 23:33:22 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -138,6 +138,17 @@
 <p>I also read an interesting article saying (cannot find it anymore) “<em>the js community has finally realized that web apps must be E2E tested first, instead of unit tested”</em>. That’s true because e2e tests have become easier to write and to repeat. Let’s see it!</p>
 
 <p><img src="/images/1*BM_RS2-DjYk_JZUKr4uq0g.png" alt="" /></p>
+
+<h2 id="how-to-structure-the-code">How to structure the code</h2>
+
+<p>Unit tests and End-to-end (e2e) tests are executed in two different environments: unit tests are executed in a browser-like environment provided by jest, while e2e tests are executed in a real browser. They need different configurations, that’s why I’ve created two directories:</p>
+
+<ul>
+  <li><code>unit</code> for unit tests</li>
+  <li><code>e2e</code> for end to end tests</li>
+</ul>
+
+<p><a href="https://github.com/musikele/jest-puppeteer-tutorial">All the code is here</a>.</p>
 
 <h2 id="jest">JEST</h2>
 
