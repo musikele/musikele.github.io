@@ -427,4 +427,4 @@ Regarding **puppeteer**, there are some old competitors like **Selenium** (and y
 
 Remember: 
 
-> If there is no test written, than you didn't test it. 
+> If there is no test written, than you didn't test it.
