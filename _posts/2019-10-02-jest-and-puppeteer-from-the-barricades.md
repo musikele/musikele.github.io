@@ -17,8 +17,6 @@ description: 'Jest and Puppeteer are two great tools. Together they can satisfy 
 
 ---
 
-## Why
-
 When I started my career as a software developer I immediately become "friend" with the concepts of **unit testing and integration testing**. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.
 
 Unfortunately **all our testing efforts were only directed towards the backend**, probably because of the language; this means that **we could not find UI bugs before it was too late**.
