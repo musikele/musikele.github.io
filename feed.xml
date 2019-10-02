@@ -1,161 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-02T23:50:45+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript" /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-19T11:10:06+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;What is the difference between &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to declare a variable?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Surprisingly, a lot of js developers do not know the right answer.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/proxy.duckduckgo.com-3.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;var-the-first-the-oldest-the-deprecated&quot;&gt;Var: the first, the oldest, the deprecated&lt;/h2&gt;
-
-&lt;p&gt;Var is with us since the very first version of Javascript. All major browsers, including Internet Explorer, still and will understand a var declaration forever. So why I say it’s deprecated?&lt;/p&gt;
-
-&lt;p&gt;Well, when you declare a variable with var, it’s declaration is &lt;em&gt;hoisted&lt;/em&gt; and the assignment will happen in a separate time. This is unnoticed for most of the time, unless you hit a bug and start complaining. Let’s see an example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// ...looks fine, isn't it?
-if (!someVariable) {
-    console.log(&quot;will this execute?&quot;) 
-    // will throw ReferenceError: someVariable is not defined
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now refresh the page and run this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (! someVariable) {
-    console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
-    // apart from console.logs, we only added this line: 
-    var someVariable = true 
-    console.log(&quot;Value of someVariable again: &quot;, someVariable)    
-}
-
-//output:
-//  &quot;will this execute? and what is the value of someVariable? undefined&quot;
-//  &quot;Value of someVariable again:  true&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead Javascript will just let you do it. Why?&lt;/p&gt;
-
-&lt;h3 id=&quot;hoisting&quot;&gt;Hoisting&lt;/h3&gt;
-
-&lt;p&gt;Javascript will read your .js file twice. The first time it will &lt;strong&gt;move on the top of the current unction&lt;/strong&gt; all &lt;code&gt;var&lt;/code&gt; declarations, initializing these variables with &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The second time it reads the &lt;code&gt;.js&lt;/code&gt; file, it will now execute the interpreted code.&lt;/p&gt;
-
-&lt;p&gt;Based on this, the previous code becomes something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// 
-function someFunction() {
-  	var someVariable = undefined
-  	if (!someVariable) {
-		console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
-    	someVariable = true
-      	console.log(&quot;Value of someVariable again: &quot;, someVariable)    
-  	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note: If the script is executed in a “global” context, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Since this &lt;em&gt;movement of variables&lt;/em&gt; happen in functions, we can say tha &lt;code&gt;var&lt;/code&gt; is function-scoped. This code should not surprise you anymore:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt; if (someCondition) {
- someCondition = false
-} else {
-  var someCondition = true
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;… But when you check the code and see that &lt;code&gt;someCondition&lt;/code&gt; is true, but the first if block didn’t execute,  you’ll end in wtf.&lt;/p&gt;
-
-&lt;h3 id=&quot;so-whats-the-problem&quot;&gt;So, what’s the problem&lt;/h3&gt;
-
-&lt;p&gt;The biggest problem is that this way of thinking of variables is completely different from all other programming languages. &lt;strong&gt;Developers coming from other programming languages will believe that a&lt;/strong&gt; &lt;code&gt;var&lt;/code&gt; &lt;strong&gt;is block scoped, while indeed it’s function scoped&lt;/strong&gt;. This will take you to weird bugs.&lt;/p&gt;
-
-&lt;p&gt;That’s why the JS community decided to fix this with ES6 introducing two new variable declarations: &lt;strong&gt;let&lt;/strong&gt; and &lt;strong&gt;const&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;let&quot;&gt;Let&lt;/h2&gt;
-
-&lt;p&gt;Imagine a world where you declare a variable and it will behave exactly as you thought: it’s block scoped, it doesn’t do strange movements, and the browser will throw at you the right errors if you forget to initialize. Let me present you … &lt;code&gt;let&lt;/code&gt; !&lt;/p&gt;
-
-&lt;p&gt;The same code as before will now be more reasonable:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (! someVariable) {
-    console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
-    let someVariable = true
-    console.log(&quot;Value of someVariable again: &quot;, someVariable)    
-}
-
-// : ReferenceError: someVariable is not defined
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Once the &lt;code&gt;var&lt;/code&gt; problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private properties; now that’s a lot easier.&lt;/p&gt;
-
-&lt;h2 id=&quot;const&quot;&gt;Const&lt;/h2&gt;
-
-&lt;p&gt;With const, we can finally declare constant &lt;em&gt;references&lt;/em&gt;, but what does it mean? Let’s see an example again:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const PRICE = 33
-const TITLE = 'wonderful title'
-const anObject = { a: 'obj property' } 
-
-PRICE=44 // TypeError: invalid assignment to const `PRICE'
-TITLE = 'less beautiful title' // TypeError: invalid assignment to const `TITLE'
-
-anObject = {} // TypeError: invalid assignment to const `anObject'
-anObject.a = 'new obj property' // no error! 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;The last two lines should bring you special attention.&lt;/em&gt; &lt;code&gt;const&lt;/code&gt; will &lt;strong&gt;freeze the reference&lt;/strong&gt;. If the referenced object holds other properties, you can still change them.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
-
-&lt;p&gt;Since Internet Explorer is fading away, the days we can finally get rid of &lt;code&gt;var&lt;/code&gt; are very close. The problem is that until it is not completely dead we have to transpile our code with &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to &lt;code&gt;var&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;A lot of developers have no idea of why we transpile and what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :/&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Javascript" /><category term=" Interview" /><category term=" Questions" /><summary type="html">I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:</summary></entry><entry><title type="html">Detect network issues from your pc to a remote url</title><link href="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" rel="alternate" type="text/html" title="Detect network issues from your pc to a remote url" /><published>2019-08-02T00:00:00+02:00</published><updated>2019-08-02T19:39:48+02:00</updated><id>https://michelenasti.com/2019/08/02/detect-network-issues-to-urls</id><content type="html" xml:base="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">&lt;p&gt;Suppose you see that a website, or a URL, that seems to be unaccessible.&lt;/p&gt;
-
-&lt;p&gt;The first thing to do is to check &lt;strong&gt;if the website is down just for you or for the whole universe&lt;/strong&gt;. There are many websites that do this, the one I discovered recently is &lt;a href=&quot;https://www.uptrends.com/tools/uptime&quot;&gt;Uptrends&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;By putting a url in uptrends you can see how long a resource will take to load from a bunch of locations in the world:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://files.slack.com/files-pri/T04DE1CDJ-FLXGT5B8Q/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Oh no! There’s an issue in Europe!&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Another check you can do is for &lt;strong&gt;&lt;em&gt;proper hackers&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;®&lt;/em&gt;&lt;strong&gt;.&lt;/strong&gt; Launch this command from bash:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo mtr -rwc 50 &amp;lt;url&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The result  is a very nice list of all hops made by data from our PC to the remote host&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;➜  ~ sudo mtr -rwc 50 michelenasti.com 
-[sudo] password di musikele: 
-Start: 2019-08-02T10:27:39+0200
-HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst StDev
-  1.|-- _gateway                             0.0%    50    2.7   2.2   1.9   4.2   0.4
-  2.|-- ???                                 100.0    50    0.0   0.0   0.0   0.0   0.0
-  3.|-- 172.18.18.108                        0.0%    50   10.6  10.7   8.5  16.8   1.5
-  4.|-- 172.18.19.226                       56.0%    50   11.7  11.3   9.0  30.4   4.6
-  5.|-- 172.19.177.38                        0.0%    50   16.5  16.9  15.6  19.6   0.7
-  6.|-- 172.19.177.2                         0.0%    50   27.4  27.8  24.6  69.4   8.6
-  7.|-- etrunk49.milano50.mil.seabone.net   52.0%    50   28.2  28.3  26.6  40.6   2.9
-  8.|-- et9-1-0.ashburn2.ash.seabone.net     0.0%    50  122.1 121.0 119.1 129.5   2.0
-  9.|-- cloudflare.ashburn2.ash.seabone.net  0.0%    50  128.3 133.4 125.5 216.4  14.6
- 10.|-- 104.28.13.252                        0.0%    50  124.4 124.8 123.5 126.3   0.6
-➜  ~ 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;mtr&lt;/code&gt; stands for &lt;strong&gt;My TraceRoute&lt;/strong&gt; and combines ping with traceroute. It gives a lot of information about the routers crossed during the path to the destination.&lt;/p&gt;
-
-&lt;p&gt;One may think that there are some errors in the upper report, however you should have in mind that many routers are configured to delete ICMP packets (the ones used by mtr, or by ping) or to slow them down for quality assurance.&lt;/p&gt;
-
-&lt;p&gt;I really suggest you to read &lt;a href=&quot;https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/&quot;&gt;this article from Linode&lt;/a&gt; that explains almost everything you may want to know and it’s very easy to follow.&lt;/p&gt;
-
-&lt;p&gt;Enjoy your networking!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="network" /><category term="sysadmin" /><summary type="html">Suppose you see that a website, or a URL, that seems to be unaccessible.</summary></entry><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-08-01T00:00:00+02:00</published><updated>2019-10-02T23:48:11+02:00</updated><id>https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/08/01/jest-and-puppeteer-from-the-barricades.html">&lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-02T23:55:04+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-10-02T00:00:00+02:00</published><updated>2019-10-02T23:54:19+02:00</updated><id>https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html">&lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
 
 &lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of &lt;strong&gt;unit testing and integration testing&lt;/strong&gt;. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
 
@@ -580,7 +423,164 @@ describe('Google', () =&amp;gt; {
 
 &lt;blockquote&gt;
   &lt;p&gt;If there is no test written, than you didn’t test it.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jest" /><category term="testing" /><category term="javascript" /><summary type="html">Why</summary></entry><entry><title type="html">Typescript, Babel, Webpack, ESLint: my configuration</title><link href="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" rel="alternate" type="text/html" title="Typescript, Babel, Webpack, ESLint: my configuration" /><published>2019-06-27T00:00:00+02:00</published><updated>2019-07-02T13:35:34+02:00</updated><id>https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration</id><content type="html" xml:base="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">&lt;p&gt;The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jest" /><category term="testing" /><category term="javascript" /><summary type="html">Why</summary></entry><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript" /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-19T11:10:06+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What is the difference between &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to declare a variable?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Surprisingly, a lot of js developers do not know the right answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/proxy.duckduckgo.com-3.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;var-the-first-the-oldest-the-deprecated&quot;&gt;Var: the first, the oldest, the deprecated&lt;/h2&gt;
+
+&lt;p&gt;Var is with us since the very first version of Javascript. All major browsers, including Internet Explorer, still and will understand a var declaration forever. So why I say it’s deprecated?&lt;/p&gt;
+
+&lt;p&gt;Well, when you declare a variable with var, it’s declaration is &lt;em&gt;hoisted&lt;/em&gt; and the assignment will happen in a separate time. This is unnoticed for most of the time, unless you hit a bug and start complaining. Let’s see an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// ...looks fine, isn't it?
+if (!someVariable) {
+    console.log(&quot;will this execute?&quot;) 
+    // will throw ReferenceError: someVariable is not defined
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now refresh the page and run this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (! someVariable) {
+    console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
+    // apart from console.logs, we only added this line: 
+    var someVariable = true 
+    console.log(&quot;Value of someVariable again: &quot;, someVariable)    
+}
+
+//output:
+//  &quot;will this execute? and what is the value of someVariable? undefined&quot;
+//  &quot;Value of someVariable again:  true&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Did you notice that I declared the variable inside the if block? You would expect an error (“dude, your variable does not exist at this moment”) instead Javascript will just let you do it. Why?&lt;/p&gt;
+
+&lt;h3 id=&quot;hoisting&quot;&gt;Hoisting&lt;/h3&gt;
+
+&lt;p&gt;Javascript will read your .js file twice. The first time it will &lt;strong&gt;move on the top of the current unction&lt;/strong&gt; all &lt;code&gt;var&lt;/code&gt; declarations, initializing these variables with &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The second time it reads the &lt;code&gt;.js&lt;/code&gt; file, it will now execute the interpreted code.&lt;/p&gt;
+
+&lt;p&gt;Based on this, the previous code becomes something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// 
+function someFunction() {
+  	var someVariable = undefined
+  	if (!someVariable) {
+		console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
+    	someVariable = true
+      	console.log(&quot;Value of someVariable again: &quot;, someVariable)    
+  	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: If the script is executed in a “global” context, you should imagine a “wrapper function” around your code. So variable declarations are moved on top of the file.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Since this &lt;em&gt;movement of variables&lt;/em&gt; happen in functions, we can say tha &lt;code&gt;var&lt;/code&gt; is function-scoped. This code should not surprise you anymore:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt; if (someCondition) {
+ someCondition = false
+} else {
+  var someCondition = true
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;… But when you check the code and see that &lt;code&gt;someCondition&lt;/code&gt; is true, but the first if block didn’t execute,  you’ll end in wtf.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-whats-the-problem&quot;&gt;So, what’s the problem&lt;/h3&gt;
+
+&lt;p&gt;The biggest problem is that this way of thinking of variables is completely different from all other programming languages. &lt;strong&gt;Developers coming from other programming languages will believe that a&lt;/strong&gt; &lt;code&gt;var&lt;/code&gt; &lt;strong&gt;is block scoped, while indeed it’s function scoped&lt;/strong&gt;. This will take you to weird bugs.&lt;/p&gt;
+
+&lt;p&gt;That’s why the JS community decided to fix this with ES6 introducing two new variable declarations: &lt;strong&gt;let&lt;/strong&gt; and &lt;strong&gt;const&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;let&quot;&gt;Let&lt;/h2&gt;
+
+&lt;p&gt;Imagine a world where you declare a variable and it will behave exactly as you thought: it’s block scoped, it doesn’t do strange movements, and the browser will throw at you the right errors if you forget to initialize. Let me present you … &lt;code&gt;let&lt;/code&gt; !&lt;/p&gt;
+
+&lt;p&gt;The same code as before will now be more reasonable:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;if (! someVariable) {
+    console.log(&quot;will this execute? and what is the value of someVariable?&quot;, someVariable) 
+    let someVariable = true
+    console.log(&quot;Value of someVariable again: &quot;, someVariable)    
+}
+
+// : ReferenceError: someVariable is not defined
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the &lt;code&gt;var&lt;/code&gt; problem is fixed, what if you want to declare an immutable reference to a variable? In the past, doing so in Javascript was weird and included accessing some private properties; now that’s a lot easier.&lt;/p&gt;
+
+&lt;h2 id=&quot;const&quot;&gt;Const&lt;/h2&gt;
+
+&lt;p&gt;With const, we can finally declare constant &lt;em&gt;references&lt;/em&gt;, but what does it mean? Let’s see an example again:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const PRICE = 33
+const TITLE = 'wonderful title'
+const anObject = { a: 'obj property' } 
+
+PRICE=44 // TypeError: invalid assignment to const `PRICE'
+TITLE = 'less beautiful title' // TypeError: invalid assignment to const `TITLE'
+
+anObject = {} // TypeError: invalid assignment to const `anObject'
+anObject.a = 'new obj property' // no error! 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;The last two lines should bring you special attention.&lt;/em&gt; &lt;code&gt;const&lt;/code&gt; will &lt;strong&gt;freeze the reference&lt;/strong&gt;. If the referenced object holds other properties, you can still change them.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;Since Internet Explorer is fading away, the days we can finally get rid of &lt;code&gt;var&lt;/code&gt; are very close. The problem is that until it is not completely dead we have to transpile our code with &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to &lt;code&gt;var&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A lot of developers have no idea of why we transpile and what is happening under the hood, and it’s a pity because it’s my first question when I interview JS senior developers :/&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="Javascript" /><category term=" Interview" /><category term=" Questions" /><summary type="html">I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:</summary></entry><entry><title type="html">Detect network issues from your pc to a remote url</title><link href="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html" rel="alternate" type="text/html" title="Detect network issues from your pc to a remote url" /><published>2019-08-02T00:00:00+02:00</published><updated>2019-08-02T19:39:48+02:00</updated><id>https://michelenasti.com/2019/08/02/detect-network-issues-to-urls</id><content type="html" xml:base="https://michelenasti.com/2019/08/02/detect-network-issues-to-urls.html">&lt;p&gt;Suppose you see that a website, or a URL, that seems to be unaccessible.&lt;/p&gt;
+
+&lt;p&gt;The first thing to do is to check &lt;strong&gt;if the website is down just for you or for the whole universe&lt;/strong&gt;. There are many websites that do this, the one I discovered recently is &lt;a href=&quot;https://www.uptrends.com/tools/uptime&quot;&gt;Uptrends&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By putting a url in uptrends you can see how long a resource will take to load from a bunch of locations in the world:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://files.slack.com/files-pri/T04DE1CDJ-FLXGT5B8Q/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Oh no! There’s an issue in Europe!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Another check you can do is for &lt;strong&gt;&lt;em&gt;proper hackers&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;®&lt;/em&gt;&lt;strong&gt;.&lt;/strong&gt; Launch this command from bash:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo mtr -rwc 50 &amp;lt;url&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The result  is a very nice list of all hops made by data from our PC to the remote host&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;➜  ~ sudo mtr -rwc 50 michelenasti.com 
+[sudo] password di musikele: 
+Start: 2019-08-02T10:27:39+0200
+HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst StDev
+  1.|-- _gateway                             0.0%    50    2.7   2.2   1.9   4.2   0.4
+  2.|-- ???                                 100.0    50    0.0   0.0   0.0   0.0   0.0
+  3.|-- 172.18.18.108                        0.0%    50   10.6  10.7   8.5  16.8   1.5
+  4.|-- 172.18.19.226                       56.0%    50   11.7  11.3   9.0  30.4   4.6
+  5.|-- 172.19.177.38                        0.0%    50   16.5  16.9  15.6  19.6   0.7
+  6.|-- 172.19.177.2                         0.0%    50   27.4  27.8  24.6  69.4   8.6
+  7.|-- etrunk49.milano50.mil.seabone.net   52.0%    50   28.2  28.3  26.6  40.6   2.9
+  8.|-- et9-1-0.ashburn2.ash.seabone.net     0.0%    50  122.1 121.0 119.1 129.5   2.0
+  9.|-- cloudflare.ashburn2.ash.seabone.net  0.0%    50  128.3 133.4 125.5 216.4  14.6
+ 10.|-- 104.28.13.252                        0.0%    50  124.4 124.8 123.5 126.3   0.6
+➜  ~ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;mtr&lt;/code&gt; stands for &lt;strong&gt;My TraceRoute&lt;/strong&gt; and combines ping with traceroute. It gives a lot of information about the routers crossed during the path to the destination.&lt;/p&gt;
+
+&lt;p&gt;One may think that there are some errors in the upper report, however you should have in mind that many routers are configured to delete ICMP packets (the ones used by mtr, or by ping) or to slow them down for quality assurance.&lt;/p&gt;
+
+&lt;p&gt;I really suggest you to read &lt;a href=&quot;https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/&quot;&gt;this article from Linode&lt;/a&gt; that explains almost everything you may want to know and it’s very easy to follow.&lt;/p&gt;
+
+&lt;p&gt;Enjoy your networking!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="network" /><category term="sysadmin" /><summary type="html">Suppose you see that a website, or a URL, that seems to be unaccessible.</summary></entry><entry><title type="html">Typescript, Babel, Webpack, ESLint: my configuration</title><link href="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" rel="alternate" type="text/html" title="Typescript, Babel, Webpack, ESLint: my configuration" /><published>2019-06-27T00:00:00+02:00</published><updated>2019-07-02T13:35:34+02:00</updated><id>https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration</id><content type="html" xml:base="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">&lt;p&gt;The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.&lt;/p&gt;
 
 &lt;h2 id=&quot;typescript&quot;&gt;Typescript&lt;/h2&gt;
 
