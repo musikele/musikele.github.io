@@ -9,7 +9,7 @@ tags:
 - jest
 - testing
 - javascript
-title: 'Jest and Puppeteer from the barricades '
+title: Jest and Puppeteer from the barricades
 header-img: "/images/1*BM_RS2-DjYk_JZUKr4uq0g.png"
 description: 'Jest and Puppeteer are two great tools. Together they can satisfy a
   lot of needs, BUT testing in JS has never been easy and if you want to test hard
