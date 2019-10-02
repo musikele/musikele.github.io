@@ -35,6 +35,15 @@ I also read an interesting article saying (cannot find it anymore) "_the js comm
 
 ![]({{ site.baseurl }}/images/1*BM_RS2-DjYk_JZUKr4uq0g.png)
 
+## How to structure the code
+
+Unit tests and End-to-end (e2e) tests are executed in two different environments: unit tests are executed in a browser-like environment provided by jest, while e2e tests are executed in a real browser. They need different configurations, that's why I've created two directories: 
+
+*  `unit` for unit tests
+* `e2e` for end to end tests 
+
+[All the code is here](https://github.com/musikele/jest-puppeteer-tutorial). 
+
 ## JEST
 
 Let me introduce Jest. **Jest** is a testing framework mainly maintained by Facebook. It has a lot of features:
