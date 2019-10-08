@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-08T01:36:44+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-10-02T00:00:00+02:00</published><updated>2019-10-02T23:56:10+02:00</updated><id>https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html">&lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of &lt;strong&gt;unit testing and integration testing&lt;/strong&gt;. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-08T10:06:54+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-10-02T00:00:00+02:00</published><updated>2019-10-08T10:06:19+02:00</updated><id>https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html">&lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of &lt;strong&gt;unit testing and integration testing&lt;/strong&gt;. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately &lt;strong&gt;all our testing efforts were only directed towards the backend&lt;/strong&gt;, probably because of the language; this means that &lt;strong&gt;we could not find UI bugs before it was too late&lt;/strong&gt;.&lt;/p&gt;
 
@@ -49,7 +49,7 @@ $ jest --init # create an initial conf file
 
 &lt;p&gt;and, for the purpose of using ES6 syntax:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;npm i --dev babel-jest @babel/core @babel/preset-env
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;npm i --save-dev babel-jest @babel/core @babel/preset-env
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Then, let’s add some Babel configuration to transpile code:&lt;/p&gt;
@@ -73,7 +73,7 @@ module.exports = {
 
 &lt;p&gt;This example is slightly modified from JEST &lt;a href=&quot;https://jestjs.io/docs/en/getting-started&quot;&gt;getting started&lt;/a&gt;. Suppose we have this function:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example01/sum.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example01/sum.js
 export default (a, b) =&amp;gt; {
     if (typeof a !== 'number' || typeof b !== 'number') {
         throw new Error('The sum function accepts only numbers')
@@ -84,7 +84,7 @@ export default (a, b) =&amp;gt; {
 
 &lt;p&gt;Ok! Let’s write a test for this function:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example01/sum.spec.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example01/sum.spec.js
 import sum from './sum'
 
 describe('sum module', () =&amp;gt; {
@@ -128,7 +128,7 @@ describe('sum module', () =&amp;gt; {
 
 &lt;p&gt;And now let’s write a test for the &lt;em&gt;bad&lt;/em&gt; case:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example01/sum.spec.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example01/sum.spec.js
 import sum from './sum'
 
 describe('sum module', () =&amp;gt; {
@@ -152,7 +152,7 @@ describe('sum module', () =&amp;gt; {
 
 &lt;p&gt;Jest integrates JSDOM, a browser DOM API implementation in pure JS. In my experience it will work very similarly to a real browser, and I found it super useful. For example, let’s write a function that will change toggle a class over a DOM element:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example02/toggleClass.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example02/toggleClass.js
 export default (domElement, className) =&amp;gt; {
     domElement.classList.toggle(className)
 }
@@ -162,7 +162,7 @@ export default (domElement, className) =&amp;gt; {
 
 &lt;p&gt;Now let’s write a Jest test for it:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example02/toggleClass.spec.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example02/toggleClass.spec.js
 import toggleClass from './toggleClass';
 
 describe('Toggle class on DOM element', () =&amp;gt; {
@@ -209,7 +209,7 @@ describe('Toggle class on DOM element', () =&amp;gt; {
 
 &lt;p&gt;Here’s the code for &lt;code&gt;apiService.js&lt;/code&gt;, the module that will call the REST endpoint:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example03/apiService.js 
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example03/apiService.js 
 export const getCurrencyExchange = async () =&amp;gt; {
   const response = await window.fetch(' https://api.ratesapi.io/api/latest');
   const json = await response.json()
@@ -219,7 +219,7 @@ export const getCurrencyExchange = async () =&amp;gt; {
 
 &lt;p&gt;And the consumer, &lt;code&gt;apiClient.js&lt;/code&gt; (&lt;strong&gt;this&lt;/strong&gt; &lt;em&gt;is the module we want to test&lt;/em&gt;):&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example03/apiClient.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example03/apiClient.js
 import { getCurrencyExchange } from './apiService'
 
 export const getEuroDollar = async () =&amp;gt; {
@@ -240,7 +240,7 @@ export const getEuroDollar = async () =&amp;gt; {
 
 &lt;p&gt;Here’s a unit test that will mock out &lt;code&gt;apiService&lt;/code&gt; from using the network.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/jest-example03/apiClient.spec.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// unit/example03/apiClient.spec.js
 
 //class to test (1)
 import { getEuroDollar } from './apiClient';
@@ -342,7 +342,7 @@ describe('apiClient tests', () =&amp;gt; {
 
 &lt;p&gt;Ready to run our first test?&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// e2e/jest-puppeteer-01/01.spec.js
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// e2e/example01/01.spec.js
 describe('Google', () =&amp;gt; {
     beforeAll(async () =&amp;gt; {
       await page.goto('https://google.com')
@@ -377,7 +377,8 @@ describe('Google', () =&amp;gt; {
 
 &lt;p&gt;Let’s write such test!&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;describe('TodoApp MVC tests', () =&amp;gt; {
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// e2e/example02/01.spec.js
+describe('TodoApp MVC tests', () =&amp;gt; {
     beforeEach(async () =&amp;gt; {
         await page.goto('http://todomvc.com/examples/vue/')
     })
@@ -421,7 +422,7 @@ describe('Google', () =&amp;gt; {
 
 &lt;blockquote&gt;
   &lt;p&gt;If there is no test written, than you didn’t test it.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="jest" /><category term="testing" /><category term="javascript" /><summary type="html">When I started my career as a software developer I immediately become “friend” with the concepts of unit testing and integration testing. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.</summary></entry><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript" /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-19T11:10:06+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>musikele</name></author><category term="[&quot;english&quot;]" /><category term="jest" /><category term="testing" /><category term="javascript" /><summary type="html">When I started my career as a software developer I immediately become “friend” with the concepts of unit testing and integration testing. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.</summary></entry><entry><title type="html">What is the difference between var, let and const in Javascript</title><link href="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html" rel="alternate" type="text/html" title="What is the difference between var, let and const in Javascript" /><published>2019-08-17T00:00:00+02:00</published><updated>2019-08-19T11:10:06+02:00</updated><id>https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript</id><content type="html" xml:base="https://michelenasti.com/2019/08/17/what-is-the-difference-between-var-let-and-const-in-javascript.html">&lt;p&gt;I did some interviews in the last few days, the role we were searching was “super-duper senior javascript master” so I asked this very simple question as starter:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;What is the difference between &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; to declare a variable?&lt;/p&gt;

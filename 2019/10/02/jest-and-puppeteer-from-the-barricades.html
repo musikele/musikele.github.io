@@ -12,7 +12,7 @@
 	<title>Jest and Puppeteer from the barricades - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="jest, testing, javascript" />  
-	<meta http-equiv="last-modified" content="2019-10-02 23:56:10 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-10-08 10:06:19 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -33,7 +33,7 @@
 
 
 
-  <meta content="Jest and Puppeteer are two great tools. Together they can satisfy a lot of needs, BUT testing in JS has never been easy and if you want to test hard cases here are some tips and tricks I discovered the hard way. " property="og:description">
+  <meta content="Jest and Puppeteer are two great tools. Together they can satisfy a lot of needs. Testing simple JS is easy, testing complex async scenarios is super hard: by learning these two tools you'll get test superpowers to use in your projects!" property="og:description">
 
 
 
@@ -71,7 +71,7 @@
 
 
 
-  <meta name="twitter:description" content="Jest and Puppeteer are two great tools. Together they can satisfy a lot of needs, BUT testing in JS has never been easy and if you want to test hard cases here are some tips and tricks I discovered the hard way. ">
+  <meta name="twitter:description" content="Jest and Puppeteer are two great tools. Together they can satisfy a lot of needs. Testing simple JS is easy, testing complex async scenarios is super hard: by learning these two tools you'll get test superpowers to use in your projects!">
 
 
 
@@ -170,7 +170,7 @@ $ jest --init # create an initial conf file
 
 <p>and, for the purpose of using ES6 syntax:</p>
 
-<pre><code class="language-console">npm i --dev babel-jest @babel/core @babel/preset-env
+<pre><code class="language-console">npm i --save-dev babel-jest @babel/core @babel/preset-env
 </code></pre>
 
 <p>Then, let’s add some Babel configuration to transpile code:</p>
@@ -194,7 +194,7 @@ module.exports = {
 
 <p>This example is slightly modified from JEST <a href="https://jestjs.io/docs/en/getting-started">getting started</a>. Suppose we have this function:</p>
 
-<pre><code class="language-javascript">// unit/jest-example01/sum.js
+<pre><code class="language-javascript">// unit/example01/sum.js
 export default (a, b) =&gt; {
     if (typeof a !== 'number' || typeof b !== 'number') {
         throw new Error('The sum function accepts only numbers')
@@ -205,7 +205,7 @@ export default (a, b) =&gt; {
 
 <p>Ok! Let’s write a test for this function:</p>
 
-<pre><code class="language-javascript">// unit/jest-example01/sum.spec.js
+<pre><code class="language-javascript">// unit/example01/sum.spec.js
 import sum from './sum'
 
 describe('sum module', () =&gt; {
@@ -249,7 +249,7 @@ describe('sum module', () =&gt; {
 
 <p>And now let’s write a test for the <em>bad</em> case:</p>
 
-<pre><code class="language-javascript">// unit/jest-example01/sum.spec.js
+<pre><code class="language-javascript">// unit/example01/sum.spec.js
 import sum from './sum'
 
 describe('sum module', () =&gt; {
@@ -273,7 +273,7 @@ describe('sum module', () =&gt; {
 
 <p>Jest integrates JSDOM, a browser DOM API implementation in pure JS. In my experience it will work very similarly to a real browser, and I found it super useful. For example, let’s write a function that will change toggle a class over a DOM element:</p>
 
-<pre><code class="language-javascript">// unit/jest-example02/toggleClass.js
+<pre><code class="language-javascript">// unit/example02/toggleClass.js
 export default (domElement, className) =&gt; {
     domElement.classList.toggle(className)
 }
@@ -283,7 +283,7 @@ export default (domElement, className) =&gt; {
 
 <p>Now let’s write a Jest test for it:</p>
 
-<pre><code class="language-javascript">// unit/jest-example02/toggleClass.spec.js
+<pre><code class="language-javascript">// unit/example02/toggleClass.spec.js
 import toggleClass from './toggleClass';
 
 describe('Toggle class on DOM element', () =&gt; {
@@ -330,7 +330,7 @@ describe('Toggle class on DOM element', () =&gt; {
 
 <p>Here’s the code for <code>apiService.js</code>, the module that will call the REST endpoint:</p>
 
-<pre><code class="language-javascript">// unit/jest-example03/apiService.js 
+<pre><code class="language-javascript">// unit/example03/apiService.js 
 export const getCurrencyExchange = async () =&gt; {
   const response = await window.fetch(' https://api.ratesapi.io/api/latest');
   const json = await response.json()
@@ -340,7 +340,7 @@ export const getCurrencyExchange = async () =&gt; {
 
 <p>And the consumer, <code>apiClient.js</code> (<strong>this</strong> <em>is the module we want to test</em>):</p>
 
-<pre><code class="language-javascript">// unit/jest-example03/apiClient.js
+<pre><code class="language-javascript">// unit/example03/apiClient.js
 import { getCurrencyExchange } from './apiService'
 
 export const getEuroDollar = async () =&gt; {
@@ -361,7 +361,7 @@ export const getEuroDollar = async () =&gt; {
 
 <p>Here’s a unit test that will mock out <code>apiService</code> from using the network.</p>
 
-<pre><code class="language-javascript">// unit/jest-example03/apiClient.spec.js
+<pre><code class="language-javascript">// unit/example03/apiClient.spec.js
 
 //class to test (1)
 import { getEuroDollar } from './apiClient';
@@ -463,7 +463,7 @@ describe('apiClient tests', () =&gt; {
 
 <p>Ready to run our first test?</p>
 
-<pre><code class="language-javascript">// e2e/jest-puppeteer-01/01.spec.js
+<pre><code class="language-javascript">// e2e/example01/01.spec.js
 describe('Google', () =&gt; {
     beforeAll(async () =&gt; {
       await page.goto('https://google.com')
@@ -498,7 +498,8 @@ describe('Google', () =&gt; {
 
 <p>Let’s write such test!</p>
 
-<pre><code class="language-javascript">describe('TodoApp MVC tests', () =&gt; {
+<pre><code class="language-javascript">// e2e/example02/01.spec.js
+describe('TodoApp MVC tests', () =&gt; {
     beforeEach(async () =&gt; {
         await page.goto('http://todomvc.com/examples/vue/')
     })
