@@ -4,7 +4,7 @@ comments: true
 author: musikele
 category: Italiano
 layout: post
-date: 2019-10-02 00:00:00 +0200
+date: 2019-10-01T22:00:00.000+00:00
 tags:
 - jest
 - testing
@@ -16,7 +16,6 @@ description: 'Jest and Puppeteer are two great tools. Together they can satisfy 
   cases here are some tips and tricks I discovered the hard way. '
 
 ---
-
 When I started my career as a software developer I immediately become "friend" with the concepts of **unit testing and integration testing**. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.
 
 Unfortunately **all our testing efforts were only directed towards the backend**, probably because of the language; this means that **we could not find UI bugs before it was too late**.
@@ -27,7 +26,7 @@ At the start of 2019 there was a lot of hype around Javascript testing, mainly b
 
 * popular UI frameworks (react, vue, angular...) were designed from the ground up to be testable;
 * NodeJS has become stable and mature
-* The ubiquity of the web (progressive web apps, or React Native-like projects, made possible to use js on mobile too) 
+* The ubiquity of the web (progressive web apps, or React Native-like projects, made possible to use js on mobile too)
 
 I also read an interesting article saying (cannot find it anymore) "**the js community has finally realized that web apps must be E2E tested first, instead of unit tested**_"_. That's true because e2e tests have become easier (but not dead easy) to write and to repeat. Let's see it!
 
@@ -35,12 +34,12 @@ I also read an interesting article saying (cannot find it anymore) "**the js com
 
 ## How to structure the code
 
-Unit tests and End-to-end (e2e) tests are executed in two different environments: unit tests are executed in a browser-like environment provided by jest, while e2e tests are executed in a real browser. They need different configurations, that's why I've created two directories: 
+Unit tests and End-to-end (e2e) tests are executed in two different environments: unit tests are executed in a browser-like environment provided by jest, while e2e tests are executed in a real browser. They need different configurations, that's why I've created two directories:
 
-*  `unit` for unit tests
-* `e2e` for end to end tests 
+* `unit` for unit tests
+* `e2e` for end to end tests
 
-[All the code is here](https://github.com/musikele/jest-puppeteer-tutorial). 
+[All the code is here](https://github.com/musikele/jest-puppeteer-tutorial).
 
 ## Unit testing: JEST
 
@@ -51,7 +50,7 @@ Let me introduce Jest. **Jest** is a testing framework mainly maintained by Face
 * webpack,
 * latest ES features,
 * support for testing timers, classes, etc.
-* support for mocking 
+* support for mocking
 * a clear-enough documentation
 
 To install:
@@ -59,13 +58,13 @@ To install:
     $ npm i --save-dev jest 
     $ jest --init # create an initial conf file
 
-and, for the purpose of using ES6 syntax: 
+and, for the purpose of using ES6 syntax:
 
 ```console
-npm i --dev babel-jest @babel/core @babel/preset-env
+npm i --save-dev babel-jest @babel/core @babel/preset-env
 ```
 
-Then, let's add some Babel configuration to transpile code: 
+Then, let's add some Babel configuration to transpile code:
 
 ```javascript
 //babel.config.js
@@ -88,7 +87,7 @@ module.exports = {
 This example is slightly modified from JEST [getting started](https://jestjs.io/docs/en/getting-started). Suppose we have this function:
 
 ```javascript
-// unit/jest-example01/sum.js
+// unit/example01/sum.js
 export default (a, b) => {
     if (typeof a !== 'number' || typeof b !== 'number') {
         throw new Error('The sum function accepts only numbers')
@@ -100,7 +99,7 @@ export default (a, b) => {
 Ok! Let's write a test for this function:
 
 ```javascript
-// unit/jest-example01/sum.spec.js
+// unit/example01/sum.spec.js
 import sum from './sum'
 
 describe('sum module', () => {
@@ -138,7 +137,7 @@ We use Jest function `expect()` to assert that the result of the function is `5`
 And now let's write a test for the _bad_ case:
 
 ```javascript
-// unit/jest-example01/sum.spec.js
+// unit/example01/sum.spec.js
 import sum from './sum'
 
 describe('sum module', () => {
@@ -161,7 +160,7 @@ describe('sum module', () => {
 Jest integrates JSDOM, a browser DOM API implementation in pure JS. In my experience it will work very similarly to a real browser, and I found it super useful. For example, let's write a function that will change toggle a class over a DOM element:
 
 ```javascript
-// unit/jest-example02/toggleClass.js
+// unit/example02/toggleClass.js
 export default (domElement, className) => {
     domElement.classList.toggle(className)
 }
@@ -172,7 +171,7 @@ This very super stupid snippet will add or remove to a `domElement` a `¢lassNam
 Now let's write a Jest test for it:
 
 ```javascript
-// unit/jest-example02/toggleClass.spec.js
+// unit/example02/toggleClass.spec.js
 import toggleClass from './toggleClass';
 
 describe('Toggle class on DOM element', () => {
@@ -213,14 +212,14 @@ This is so **powerful**, that by enabling some features (via configuration) I co
 
 Yes! That's how you reach the zen of unit test.
 
-Let's imagine we have a class `apiClient` that will ask another class `apiService` to make a REST call.  **We want to test apiClient**. 
+Let's imagine we have a class `apiClient` that will ask another class `apiService` to make a REST call.  **We want to test apiClient**.
 
-In this example, `apiService` will ask for currency exchange from Euro to many other currencies. `apiClient` will in turn transform the data in a way it is usable, by just keeping the `USD` value. 
+In this example, `apiService` will ask for currency exchange from Euro to many other currencies. `apiClient` will in turn transform the data in a way it is usable, by just keeping the `USD` value.
 
-Here's the code for `apiService.js`, the module that will call the REST endpoint: 
+Here's the code for `apiService.js`, the module that will call the REST endpoint:
 
 ```javascript
-// unit/jest-example03/apiService.js 
+// unit/example03/apiService.js 
 export const getCurrencyExchange = async () => {
   const response = await window.fetch(' https://api.ratesapi.io/api/latest');
   const json = await response.json()
@@ -231,7 +230,7 @@ export const getCurrencyExchange = async () => {
 And the consumer, `apiClient.js` (**this** _is the module we want to test_):
 
 ```javascript
-// unit/jest-example03/apiClient.js
+// unit/example03/apiClient.js
 import { getCurrencyExchange } from './apiService'
 
 export const getEuroDollar = async () => {
@@ -241,17 +240,17 @@ export const getEuroDollar = async () => {
 }
 ```
 
-What's the problem with this module? 
+What's the problem with this module?
 
-* the value of the USD exchange rate will change over time 
-* if the network is down, the test will fail 
+* the value of the USD exchange rate will change over time
+* if the network is down, the test will fail
 
-So we need... **mocks!** 
+So we need... **mocks!**
 
-Here's a unit test that will mock out `apiService` from using the network. 
+Here's a unit test that will mock out `apiService` from using the network.
 
 ```javascript
-// unit/jest-example03/apiClient.spec.js
+// unit/example03/apiClient.spec.js
 
 //class to test (1)
 import { getEuroDollar } from './apiClient';
@@ -283,27 +282,27 @@ describe('apiClient tests', () => {
 })
 ```
 
-* (1) - we import the function we want to test 
-* (2) - but we need to intercept and change the behaviour of `getCurrencyExchange()`  so we also import it, and with `jest.mock()` we tell jest we want to modify the behaviour 
+* (1) - we import the function we want to test
+* (2) - but we need to intercept and change the behaviour of `getCurrencyExchange()`  so we also import it, and with `jest.mock()` we tell jest we want to modify the behaviour
 * (3) - imagine we have not just one test like in this example, but a suite of tests, with this code we tell Jest to clear eventual mocks between tests.
-* (4) - here we are _really_ **mocking the behaviour** of `getCurrencyExchange`. Jest will return the value specified in `mockResolvedValue` instead of making the actual network call. In this mock, inflation was really a thing and 1 Euro corresponds to 2000 $ (Euro rulez!). 
-* After having instructed the test, we check that the mocked function has really ben called and the mocked value has been returned. 
+* (4) - here we are _really_ **mocking the behaviour** of `getCurrencyExchange`. Jest will return the value specified in `mockResolvedValue` instead of making the actual network call. In this mock, inflation was really a thing and 1 Euro corresponds to 2000 $ (Euro rulez!).
+* After having instructed the test, we check that the mocked function has really ben called and the mocked value has been returned.
 
-I only scratched the surface of what is possible to do with Jest, and there are thousand of mock tecniques depending of what you want to mock: classes, timers, async methods.. jest has you covered. 
+I only scratched the surface of what is possible to do with Jest, and there are thousand of mock tecniques depending of what you want to mock: classes, timers, async methods.. jest has you covered.
 
-Now let's talk about... Puppeteer. 
+Now let's talk about... Puppeteer.
 
-## Puppetteer: a headless Chrome 
+## Puppetteer: a headless Chrome
 
-[Puppeteer](https://pptr.dev/) is a node library that allows to control a Chromium instance. Let's quiclky see an example. To install: 
+[Puppeteer](https://pptr.dev/) is a node library that allows to control a Chromium instance. Let's quiclky see an example. To install:
 
 ```console
 $ npm i --save-dev puppeteer 
 ```
 
-Puppeteer will download a beta-version of chromium that will be used to run our tests. Usually the puppeteer version uses a chromium version that is 2-3 versions further than the regular chrome, and this is done to test new chromium too. 
+Puppeteer will download a beta-version of chromium that will be used to run our tests. Usually the puppeteer version uses a chromium version that is 2-3 versions further than the regular chrome, and this is done to test new chromium too.
 
-Let's try to run a super-easy example that comes from their website: let's take a screenshot of my personal website, michelenasti.com: 
+Let's try to run a super-easy example that comes from their website: let's take a screenshot of my personal website, michelenasti.com:
 
 ```javascript
 const puppeteer = require('puppeteer');
@@ -318,13 +317,13 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-Some things to note: 
+Some things to note:
 
-* Most of the time we will interact with the `page` object, almost all useful stuff is there 
-* Almost all methods are async, so we have to use `await` everywhere 
-* Chromium is started with a very dumb resolution, 800x600, like my first 486 monitor. 
-* The documentation is your friend: check it out! 
-* If you want to _see_ chrome in action, pass this configuration to `puppeteer.launch()`: 
+* Most of the time we will interact with the `page` object, almost all useful stuff is there
+* Almost all methods are async, so we have to use `await` everywhere
+* Chromium is started with a very dumb resolution, 800x600, like my first 486 monitor.
+* The documentation is your friend: check it out!
+* If you want to _see_ chrome in action, pass this configuration to `puppeteer.launch()`:
 
 ```javascript
 await puppeteer.launch({
@@ -332,17 +331,17 @@ await puppeteer.launch({
 })
 ```
 
-Nothing more to say, we are ready to glue together jest + puppeteer in our tests! 
+Nothing more to say, we are ready to glue together jest + puppeteer in our tests!
 
 ## jest-puppeteer to the rescue!
 
-Let's instal [jest-puppeteer](https://github.com/smooth-code/jest-puppeteer), a jest plugin to remote-control puppeteer in jest: 
+Let's instal [jest-puppeteer](https://github.com/smooth-code/jest-puppeteer), a jest plugin to remote-control puppeteer in jest:
 
 ```console
 $ npm install --save-dev jest-puppeteer
 ```
 
-At this point, in the root of your project, create an `e2e` folder that will contain all your e2e tests. Copy `jest.config.js` from `unit` and add this option: 
+At this point, in the root of your project, create an `e2e` folder that will contain all your e2e tests. Copy `jest.config.js` from `unit` and add this option:
 
 ```javascript
 {
@@ -350,12 +349,12 @@ At this point, in the root of your project, create an `e2e` folder that will con
 }
 ```
 
-This setting will tell Jest to launch tests in a different environment, that is Chrome. 
+This setting will tell Jest to launch tests in a different environment, that is Chrome.
 
-Ready to run our first test? 
+Ready to run our first test?
 
 ```javascript
-// e2e/jest-puppeteer-01/01.spec.js
+// e2e/example01/01.spec.js
 describe('Google', () => {
     beforeAll(async () => {
       await page.goto('https://google.com')
@@ -367,24 +366,25 @@ describe('Google', () => {
   })
 ```
 
-I cheated, this example comes directly from jest guide, but it is helpful to understand how it works. 
+I cheated, this example comes directly from jest guide, but it is helpful to understand how it works.
 
-* in the `beforeAll` block we navigate to the google page; 
-* in the test block, we check that `google` is somewhere on the page. 
+* in the `beforeAll` block we navigate to the google page;
+* in the test block, we check that `google` is somewhere on the page.
 
-> **Suggestion**: try to change website with michelenasti.com ... it will fail 
+> **Suggestion**: try to change website with michelenasti.com ... it will fail
 
-Let's move to something more interactive. We will borrow [Todolist MVC app](http://todomvc.com/examples/vue/) from [this website](http://todomvc.com/) (they replicate the same app in every possible framework so you can study them). 
+Let's move to something more interactive. We will borrow [Todolist MVC app](http://todomvc.com/examples/vue/) from [this website](http://todomvc.com/) (they replicate the same app in every possible framework so you can study them).
 
 The idea is to:
 
-* add a todo item 
-* check that it has been added to the list 
-* remove it 
+* add a todo item
+* check that it has been added to the list
+* remove it
 
-Let's write such test! 
+Let's write such test!
 
 ```javascript
+// e2e/example02/01.spec.js
 describe('TodoApp MVC tests', () => {
     beforeEach(async () => {
         await page.goto('http://todomvc.com/examples/vue/')
@@ -409,20 +409,20 @@ describe('TodoApp MVC tests', () => {
 });
 ```
 
-I don't want to illude you, you'll learn many tricks with experience, like me while I was preparing these examples. 
+I don't want to illude you, you'll learn many tricks with experience, like me while I was preparing these examples.
 
-* at (1) we write in the big input box our todo item 
-* at (2) we check that the value has been added to the list 
-* at (3) we first hover the item, in order to make the destroy button appear; then we click it. _What happens if we do not hover over the text?_ 
+* at (1) we write in the big input box our todo item
+* at (2) we check that the value has been added to the list
+* at (3) we first hover the item, in order to make the destroy button appear; then we click it. _What happens if we do not hover over the text?_
 
 ## Conclusions
 
-...And that's it! Testing is an art and as such must be constantly exercised. These frameworks are complex because they allow to do complex things. During this talk I tried to give you hints of what you should do based on my experience. 
+...And that's it! Testing is an art and as such must be constantly exercised. These frameworks are complex because they allow to do complex things. During this talk I tried to give you hints of what you should do based on my experience.
 
-I also want to highlight some **alternatives** of these frameworks. For **Jest** the most famous alternative is **Mocha**, it has almost the same API. However, to use mocha you have to install a lot of external libraries (the assertion library, the mocking framework, etc), so I prefer jest because it already contains everything.  
+I also want to highlight some **alternatives** of these frameworks. For **Jest** the most famous alternative is **Mocha**, it has almost the same API. However, to use mocha you have to install a lot of external libraries (the assertion library, the mocking framework, etc), so I prefer jest because it already contains everything.
 
 Regarding **puppeteer**, there are some old competitors like **Selenium** (and you can write tests in other languages too, or you can also use other browsers);  if you want to stick with Chrome, **Cypress** is another great tool that is worth to try. It is much more visual than puppeteer.
 
-Remember: 
+Remember:
 
 > If there is no test written, than you didn't test it.
