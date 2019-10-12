@@ -63,6 +63,7 @@ fields:
   config:
     required: true
 pages:
+- _posts/how-internet-ads-work.md
 - _posts/2018-10-29-the-easiest-way-to-understand-javascript-generators.md
 - _posts/2018-10-22-perché-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.md
 - _posts/2018-10-15-dovrei-imparare-ruby-on-rails-o-nodejs.md
