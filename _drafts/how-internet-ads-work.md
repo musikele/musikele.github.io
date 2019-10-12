@@ -11,7 +11,7 @@ tags:
 - prebid
 - dfp
 - rtb
-title: 'How internet ads work '
+title: How internet ads work
 header-img: "/images/pexels-photo-802024.jpeg"
 description: 'Real time bidding, header bidding, DFP, GAM, cpm ... welcome in the
   world of ads, where everything is an acronym. Le me try to explain how everything
