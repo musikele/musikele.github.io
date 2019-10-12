@@ -4,3 +4,6 @@ _site/
 .DS_Store
 deploy_key
 node_modules/
+.jekyll-cache/
+vendor/
+.bundle/
