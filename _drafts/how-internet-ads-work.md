@@ -18,7 +18,7 @@ description: 'Real time bidding, header bidding, DFP, GAM, cpm ... welcome in th
   works under the hood. '
 
 ---
-This year I started working in an ad tech company as a software engineer, and obviously I did not know anything about how ad tech. It is a world on its own, it even has a story that could be taled, and here's my gentle introduction to modern ad tech. 
+This year I started working in an ad tech company as a software engineer, and obviously I did not know anything about ad tech. It is a world on its own, it even has a story that could be taled, and here's my gentle introduction to modern ad tech. 
 
 ![]({{ site.baseurl }}/images/pexels-photo-802024.jpeg)
 
