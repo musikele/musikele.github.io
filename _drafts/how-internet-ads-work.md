@@ -10,12 +10,11 @@ tags:
 - google
 - prebid
 - dfp
-- rtb
+- hb
 title: How internet ads work
 header-img: "/images/pexels-photo-802024.jpeg"
-description: 'Real time bidding, header bidding, DFP, GAM, cpm ... welcome in the
-  world of ads, where everything is an acronym. Le me try to explain how everything
-  works under the hood. '
+description: 'header bidding, DFP, GAM, cpm ... welcome in the world of ads, where
+  everything is an acronym. Le me try to explain how everything works under the hood. '
 
 ---
 Since money was invented, people felt the urge to advertise their products to others. I live very near to Pompeii (Italy) and if you visit this incredible town you'll discover that in 79 a.D. there were a lot of ads painted on walls, trying to sell you wine, prostitutes, or ask for a vote.
@@ -26,7 +25,7 @@ You can guess - since it's the topic of this post - many websites earn money by 
 
 ![]({{ site.baseurl }}/images/pexels-photo-802024.jpeg)
 
-> This year I started working for an adtech company and this post tries to describe what I've learned of this mega-curious world. 
+> This year I started working for an adtech company and this post tries to describe what I've learned of this mega-curious world.
 
 ## How were ads in 1999?
 
@@ -55,15 +54,15 @@ Not all publishers had the resources for a _dedicated sales team_ or the power t
 
 With the acquisition of DFP, Google does not change the original philosophy of DFP as an Ad Manager, but introduces a new element: instead of choosing ads from deals only, publishers can also include ads from **AdExchange** (abbreviated: **AdEx**). This means that when for an _ad unit_ (the area to fill on the publisher's website) there are no ads to display, DFP could deliver an ad from Google's network of advertisers. These are good news for small publishers who could get ads from AdEx and do not base their incomes on direct sales only.
 
-With Google acquisition, DFP also started to track users and display ads based on their navigation history. So if you navigate an exclusive watch website, you'll see the ad for that watch following you on other websites. 
+With Google acquisition, DFP also started to track users and display ads based on their navigation history. So if you navigate an exclusive watch website, you'll see the ad for that watch following you on other websites.
 
-DFP has now been renamed in **Google Ads Manager (GAM).** I will use GAM for the rest of the article but the world is still calling DFP at the time of writing. 
+DFP has now been renamed in **Google Ads Manager (GAM).** I will use GAM for the rest of the article but the world is still calling DFP at the time of writing.
 
 ## What happens when a browser asks for an ad to GAM
 
 Let's pretend you're a publisher. To integrate GAM on your website you must _create an account and configure it_. I am not an expert in this field so I will not discuss this in detail. One important part, however, is that **when you setup a "deal", you can insert the advertiser's creatives in the form of javascript code**, and **if this creative is selected for display, it will be injected in the user page inside an iframe**. Keep this in mind: it is one of the foundation pieces of header bidding.
 
-Let me introduce another important piece of terminology now, a "deal" is called **Order** in GAM words. 
+Let me introduce another important piece of terminology now, a "deal" is called **Order** in GAM words.
 
 The next step is to integrate `googletag` code. This is a JS library that will make the request to GAM for an ad, that will be shown in a `div` on your website. Along with the request, `googletag` will pass some cookies trying to identify the user and only show ads that match the user interests.
 
@@ -83,21 +82,21 @@ However, living with Google only is not the best option. Google does not make an
 
 Due to the fact that Google has the majority of the market, it is _ignoring_ all other SSPs and does not offer an easy way to integrate them in DFP.
 
-**SSPs still have some advantages**. For example, when asking for an ad to an SSP, we know exactly how much we're going to be paid if we render that ad, and this means **we can start auctions amongst all configured SSPs and get the best priced ad.** The price is usually given in **CPM** (_cost per mille -_ cost per thousand impressions), so if an ad has a cpm of 10$, one single impression is worth 0.01$ ! (The average cpm, at the time of writing, is around 1$ if you were asking). 
+**SSPs still have some advantages**. For example, when asking for an ad to an SSP, we know exactly how much we're going to be paid if we render that ad, and this means **we can start auctions amongst all configured SSPs and get the best priced ad.** The price is usually given in **CPM** (_cost per mille -_ cost per thousand impressions), so if an ad has a cpm of 10$, one single impression is worth 0.01$ ! (The average cpm, at the time of writing, is around 1$ if you were asking).
 
 Interestingly, **we can use this feature to deduce the price of GAM ads**, too. How? Let's introduce...
 
-## Real Time Bidding (aka Header Bidding)
+## Header Bidding
 
-_Header bidding_ is the legacy name for this subsection of ad tech, because historically what I'm going to describe was done in the `<head>` part of the page. This is no more true and now we tend to use the name **Real Time Bidding (RTB)** to describe this process.
+the name _Header bidding (HB)_ comes from the fact that, historically, what I'm going to describe was done in the `<head>` part of the page. This is no more true, but the name remained :) 
 
-**RTB _hacks_ GAM to allow other SSPs to bid for the same ad units**. Let's recap the three foundational items:
+**HB _hacks_ GAM to allow other SSPs to bid for the same ad units**. Let's recap the three foundational items:
 
 * we can inject whatever creative we want for custom orders.
 * we can define targeting on GAM requests, so we can display specific ads to some users.
 * SSPs will tell us what they're paying us, and we can use this piece of information to estimate the price of GAM ads too.
 
-You're finally ready to discover **the RTB process**, _for dummies:_
+You're finally ready to discover **the HB process**, _for dummies:_
 
 1. **We start an auction for every ad unit on page**. This means that we ask a bunch of SSPs (except Google, at this stage!) how much they are willing to pay if their ad is chosen.
 2. SSPs will answer with their responses, and **we choose the SSP with the highest value**. SSPs will also answer with the ad to render, we will store it in memory and render in the next stage.
@@ -111,7 +110,9 @@ How can we infer the price of a GAM ad ? By GAM terms of service, GAM is obliged
 
 What you've just read here is nothing more than the logic behind [PrebidJS](http://prebid.org/index.html), an **open source project born as a synergy between the SSPs community**.
 
-Prebid will perform the auction amongst the publisher chosen set of SSPs, then will query GAM, and finally will render the ad. Prebid also contains code to display video ads, mobile ads, handle different currencies, and much more.
+Prebid will perform the auction amongst the publisher chosen set of SSPs, then will query GAM, and finally will render the ad. Prebid also contains code to display video ads, mobile ads, handle different currencies, and much more. 
+
+Here you can see an example of [prebid in action](http://prebid.org/dev-docs/getting-started.html). 
 
 ## That's it?
 
