@@ -53,7 +53,7 @@ Not all publishers had the resources for a _dedicated sales team_ or the power t
 
 ## Google acquires DFP
 
-With the acquisition of DFP, Google does not change the original philosophy of DFP as an Ad Manager, but introduces a new element: instead of choosing ads from deals only, there will be also ads from **AdExchange** (abbreviated: **AdEx**). This means that when for an _ad unit_ (the area to fill on the publisher's website) there are no ads to display, DFP could deliver an ad from its network of advertisers. This is good news for small publishers who could get ads from AdEx and not base their incomes on direct sales only.
+With the acquisition of DFP, Google does not change the original philosophy of DFP as an Ad Manager, but introduces a new element: instead of choosing ads from deals only, publishers can also include ads from **AdExchange** (abbreviated: **AdEx**). This means that when for an _ad unit_ (the area to fill on the publisher's website) there are no ads to display, DFP could deliver an ad from its network of advertisers. This is good news for small publishers who could get ads from AdEx and not base their incomes on direct sales only.
 
 With Google acquisition, DFP also started to track users and displaying ads based on their navigation history. So if you navigate an exclusive watch website, you'll see the ad for that watch following you on many other websites.
 
