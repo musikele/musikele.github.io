@@ -149,7 +149,7 @@ module.exports = {
 
 The most important part is the `rules` part. Our rule is that every file will be tested, if it ends with `.ts` it will be passed to plugin `babel-loader` that will pass the file to `babel` before assembling it with babel.
 
-**For Typescript**: change the \`rules:  \[ ... \` section with 
+**For Typescript**: change the `rules:  [ ...` section with 
 
 ```js
 rules: [{
