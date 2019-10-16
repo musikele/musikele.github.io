@@ -12,7 +12,7 @@
 	<title>Typescript, Babel, Webpack, ESLint: my configuration - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="typescript, babel, webpack, eslint" />  
-	<meta http-equiv="last-modified" content="2019-10-16 11:20:50 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-10-16 11:26:25 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -253,7 +253,7 @@ module.exports = {
 
 <p>The most important part is the <code>rules</code> part. Our rule is that every file will be tested, if it ends with <code>.ts</code> it will be passed to plugin <code>babel-loader</code> that will pass the file to <code>babel</code> before assembling it with babel.</p>
 
-<p><strong>For Typescript</strong>: change the `rules:  [ … ` section with</p>
+<p><strong>For Typescript</strong>: change the <code>rules:  [ ...</code> section with</p>
 
 <pre><code class="language-js">rules: [{
     // Include ts, tsx, js, and jsx files.
