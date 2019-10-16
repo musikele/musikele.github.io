@@ -63,6 +63,7 @@ fields:
   config:
     required: true
 pages:
+- _posts/2019-06-27-typescript-babel-webpack-eslint-my-configuration.md
 - _posts/how-internet-ads-work.md
 - _posts/2018-10-29-the-easiest-way-to-understand-javascript-generators.md
 - _posts/2018-10-22-perché-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.md
@@ -105,7 +106,6 @@ pages:
 - _posts/2017-02-25-the-javascript-event-loop-for-dummies.md
 - _posts/2019-04-03-ssh-cheatsheet-from-zero-to-hero.md
 - _posts/2019-06-13-i-work-remote-i-do-two-video-calls-per-day.md
-- _posts/2019-06-27-typescript-babel-webpack-eslint-my-configuration.md
 - _posts/2017-02-05-quali-sono-gli-svantaggi-nel-lavorare-da-casa.md
 - _posts/2017-03-23-deploy-a-nodejs-app-on-heroku-in-less-than-1-minute.md
 - _posts/2017-04-08-all-my-articles-about-testing-in-javascript-in-one-post.md
