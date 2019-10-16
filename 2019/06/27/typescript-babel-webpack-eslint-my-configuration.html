@@ -12,7 +12,7 @@
 	<title>Typescript, Babel, Webpack, ESLint: my configuration - Michele Nasti's blog</title>
 	 
 	<meta name="keywords" content="typescript, babel, webpack, eslint" />  
-	<meta http-equiv="last-modified" content="2019-07-02 13:35:34 +0200" /> 
+	<meta http-equiv="last-modified" content="2019-10-16 11:20:50 +0200" /> 
 	<!--<noscript>-->
 	<link rel="stylesheet" href="/css/skel.css" />
 	<link rel="stylesheet" href="/css/style.css" />
@@ -129,6 +129,10 @@
 
 <h2 id="babel--7x-">Babel ( 7.x )</h2>
 
+<blockquote>
+  <p><strong>Update (2019-10-16)</strong>: on my work projects I had to use Typescript for transpiling, I’ll cover this in the next paragraph. You can skip Babel setup if you do not need this.</p>
+</blockquote>
+
 <p>The fun fact is, even if we use Typescript and our files end with <code>.ts</code>, to build the project we will <em>skip</em> typescript. Let me be clearer. We will use <strong>Babel</strong>, that is a transpiler, and <strong>Webpack</strong>, that is a bundler. Webpack will bundle files that are transpiled by Babel.</p>
 
 <p>But wait?! Babel transpiles what? The latest trend is that Babel will <em>strip out</em> every Typescript interface, annotation or type inference and will just transform the file to a normal <code>.js</code> file. This output will then be given in input to Webpack.</p>
@@ -194,12 +198,26 @@
 
 <p>It works? without hassles? Let’s go to the next step:</p>
 
-<h3 id="webpack-4x">Webpack (4.x)</h3>
+<h2 id="alternative-to-babel-typescript-compiler-update">Alternative to Babel: Typescript compiler (UPDATE)</h2>
+
+<p>When I wrote this article I was just fine with babel + typescript + webpack, unfortunately shit happens and in this case the shit’s name is called Internet Explorer.</p>
+
+<p>Babel is notoriously good at adding polyfills for older browsers, however this process was not particularly suitable for my use case since I develop a library and I did not want to bloat my project with external dependencies, only to support IE.</p>
+
+<p>So, if you use Babel you can add polyfills and you can follow <a href="https://www.codementor.io/lawwantsin/babel-polyfills-transforms-presets-csbnjsok6">this article</a> to do it. <strong>I still think Babel is the best solution for webapps (not for libraries)</strong>. Babel does also do a great job in converting ES6-only objects (like Promises) to ES5 with the right configuration.  With the right set of babel plugins and polyfills, you can convert whatever syntax from the past, the present and the future.</p>
+
+<p>Instead, <strong>Typescript will deliver a smaller bundle but you must be sure to be using a syntax that will work with IE</strong>. If you use Promises, or fetch for example, TS will not provide any polyfill for it and you must manually check that IE will not break. Not the best experience, but not an impossible job either.</p>
+
+<p>In our case, the “broken” error came from the use of <code>Symbol</code>, that is used in <code>for... of</code> iterations. Read more to see what to change if you want to support <code>tsc</code> instead of babel for transpiling code.</p>
+
+<h2 id="webpack-4x">Webpack (4.x)</h2>
 
 <p>Installation:</p>
 
 <pre><code class="language-bash">$ npm i --save-dev webpack webpack-cli babel-loader
 </code></pre>
+
+<p><strong>For Typescript:</strong> change <code>babel-loader</code> with <code>ts-loader</code>.</p>
 
 <p>Here’s my configuration:</p>
 
@@ -235,6 +253,16 @@ module.exports = {
 
 <p>The most important part is the <code>rules</code> part. Our rule is that every file will be tested, if it ends with <code>.ts</code> it will be passed to plugin <code>babel-loader</code> that will pass the file to <code>babel</code> before assembling it with babel.</p>
 
+<p><strong>For Typescript</strong>: change the `rules:  [ … ` section with</p>
+
+<pre><code class="language-js">rules: [{
+    // Include ts, tsx, js, and jsx files.
+    test: /\.(ts|js)x?$/,
+    exclude: /node_modules/,
+    loader: 'ts-loader',
+}],
+</code></pre>
+
 <blockquote>
   <p><strong>Note</strong>: This is the most basic webpack setup I could come up with. Reality is much more complicated than this and <a href="https://webpack.js.org/configuration/output/">you may need to set additional options/plugins</a>. Don’t be afraid to check out webpack documentation, you’ll learn interesting things</p>
 </blockquote>
@@ -266,7 +294,12 @@ module.exports = {
     'env': {
         'browser': true,
         'es6': true,
-        'jest': true
+        'jest': trueparser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint'],
     },
     'extends': [
         'eslint:recommended',
@@ -287,6 +320,25 @@ module.exports = {
 <blockquote>
   <p><strong>Note</strong>: if you convert a legacy Javascript project to typescript, the <code>typescript-eslint/recommended</code> set of rules is … <em>too much</em>. That’s why I usually comment it out and try to fix problems day after day.</p>
 </blockquote>
+
+<h2 id="jest">JEST</h2>
+
+<p>this article doesn’t really cover Jest and Typescript, but I’ll only add this quick snippet for those who may find it useful. To configure Jest with TS:</p>
+
+<p>install <code>ts-jest</code>:</p>
+
+<pre><code class="language-basj">$ npm i --save-dev ts-jest
+</code></pre>
+
+<p>add these lines to <code>jest.config.js</code>:</p>
+
+<pre><code class="language-js">module.exports = {
+    ...,
+    transform: {
+        '^.+\\.tsx?$': 'ts-jest'
+    },
+}
+</code></pre>
 
 <h2 id="ready-to-start-your-projects">Ready to start your projects?</h2>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-15T10:11:19+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-10-02T00:00:00+02:00</published><updated>2019-10-08T10:06:19+02:00</updated><id>https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html">&lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of &lt;strong&gt;unit testing and integration testing&lt;/strong&gt;. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-16T11:25:00+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-10-02T00:00:00+02:00</published><updated>2019-10-08T10:06:19+02:00</updated><id>https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html">&lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of &lt;strong&gt;unit testing and integration testing&lt;/strong&gt;. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately &lt;strong&gt;all our testing efforts were only directed towards the backend&lt;/strong&gt;, probably because of the language; this means that &lt;strong&gt;we could not find UI bugs before it was too late&lt;/strong&gt;.&lt;/p&gt;
 
@@ -579,13 +579,17 @@ HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst S
 
 &lt;p&gt;I really suggest you to read &lt;a href=&quot;https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/&quot;&gt;this article from Linode&lt;/a&gt; that explains almost everything you may want to know and it’s very easy to follow.&lt;/p&gt;
 
-&lt;p&gt;Enjoy your networking!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="network" /><category term="sysadmin" /><summary type="html">Suppose you see that a website, or a URL, that seems to be unaccessible.</summary></entry><entry><title type="html">Typescript, Babel, Webpack, ESLint: my configuration</title><link href="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" rel="alternate" type="text/html" title="Typescript, Babel, Webpack, ESLint: my configuration" /><published>2019-06-27T00:00:00+02:00</published><updated>2019-07-02T13:35:34+02:00</updated><id>https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration</id><content type="html" xml:base="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">&lt;p&gt;The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.&lt;/p&gt;
+&lt;p&gt;Enjoy your networking!&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="network" /><category term="sysadmin" /><summary type="html">Suppose you see that a website, or a URL, that seems to be unaccessible.</summary></entry><entry><title type="html">Typescript, Babel, Webpack, ESLint: my configuration</title><link href="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html" rel="alternate" type="text/html" title="Typescript, Babel, Webpack, ESLint: my configuration" /><published>2019-06-27T00:00:00+02:00</published><updated>2019-10-16T11:20:50+02:00</updated><id>https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration</id><content type="html" xml:base="https://michelenasti.com/2019/06/27/typescript-babel-webpack-eslint-my-configuration.html">&lt;p&gt;The purpose of this post is to give you, dear reader, an example of the configuration I use on some projects. Configuring the whole stack is sometimes frustrating. Here’s what works for me.&lt;/p&gt;
 
 &lt;h2 id=&quot;typescript&quot;&gt;Typescript&lt;/h2&gt;
 
 &lt;p&gt;I &lt;a href=&quot;https://michelenasti.com/2019/06/24/typescript-why-so-complicated.html&quot;&gt;just wrote an article&lt;/a&gt; about that and you should read it. It contains my &lt;code&gt;tsconfig.json&lt;/code&gt; and why every option is configured that way.&lt;/p&gt;
 
 &lt;h2 id=&quot;babel--7x-&quot;&gt;Babel ( 7.x )&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Update (2019-10-16)&lt;/strong&gt;: on my work projects I had to use Typescript for transpiling, I’ll cover this in the next paragraph. You can skip Babel setup if you do not need this.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;The fun fact is, even if we use Typescript and our files end with &lt;code&gt;.ts&lt;/code&gt;, to build the project we will &lt;em&gt;skip&lt;/em&gt; typescript. Let me be clearer. We will use &lt;strong&gt;Babel&lt;/strong&gt;, that is a transpiler, and &lt;strong&gt;Webpack&lt;/strong&gt;, that is a bundler. Webpack will bundle files that are transpiled by Babel.&lt;/p&gt;
 
@@ -652,12 +656,26 @@ HOST: musikele-XPS-15-9560                Loss%   Snt   Last   Avg  Best  Wrst S
 
 &lt;p&gt;It works? without hassles? Let’s go to the next step:&lt;/p&gt;
 
-&lt;h3 id=&quot;webpack-4x&quot;&gt;Webpack (4.x)&lt;/h3&gt;
+&lt;h2 id=&quot;alternative-to-babel-typescript-compiler-update&quot;&gt;Alternative to Babel: Typescript compiler (UPDATE)&lt;/h2&gt;
+
+&lt;p&gt;When I wrote this article I was just fine with babel + typescript + webpack, unfortunately shit happens and in this case the shit’s name is called Internet Explorer.&lt;/p&gt;
+
+&lt;p&gt;Babel is notoriously good at adding polyfills for older browsers, however this process was not particularly suitable for my use case since I develop a library and I did not want to bloat my project with external dependencies, only to support IE.&lt;/p&gt;
+
+&lt;p&gt;So, if you use Babel you can add polyfills and you can follow &lt;a href=&quot;https://www.codementor.io/lawwantsin/babel-polyfills-transforms-presets-csbnjsok6&quot;&gt;this article&lt;/a&gt; to do it. &lt;strong&gt;I still think Babel is the best solution for webapps (not for libraries)&lt;/strong&gt;. Babel does also do a great job in converting ES6-only objects (like Promises) to ES5 with the right configuration.  With the right set of babel plugins and polyfills, you can convert whatever syntax from the past, the present and the future.&lt;/p&gt;
+
+&lt;p&gt;Instead, &lt;strong&gt;Typescript will deliver a smaller bundle but you must be sure to be using a syntax that will work with IE&lt;/strong&gt;. If you use Promises, or fetch for example, TS will not provide any polyfill for it and you must manually check that IE will not break. Not the best experience, but not an impossible job either.&lt;/p&gt;
+
+&lt;p&gt;In our case, the “broken” error came from the use of &lt;code&gt;Symbol&lt;/code&gt;, that is used in &lt;code&gt;for... of&lt;/code&gt; iterations. Read more to see what to change if you want to support &lt;code&gt;tsc&lt;/code&gt; instead of babel for transpiling code.&lt;/p&gt;
+
+&lt;h2 id=&quot;webpack-4x&quot;&gt;Webpack (4.x)&lt;/h2&gt;
 
 &lt;p&gt;Installation:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npm i --save-dev webpack webpack-cli babel-loader
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;For Typescript:&lt;/strong&gt; change &lt;code&gt;babel-loader&lt;/code&gt; with &lt;code&gt;ts-loader&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here’s my configuration:&lt;/p&gt;
 
@@ -693,6 +711,16 @@ module.exports = {
 
 &lt;p&gt;The most important part is the &lt;code&gt;rules&lt;/code&gt; part. Our rule is that every file will be tested, if it ends with &lt;code&gt;.ts&lt;/code&gt; it will be passed to plugin &lt;code&gt;babel-loader&lt;/code&gt; that will pass the file to &lt;code&gt;babel&lt;/code&gt; before assembling it with babel.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;For Typescript&lt;/strong&gt;: change the `rules:  [ … ` section with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;rules: [{
+    // Include ts, tsx, js, and jsx files.
+    test: /\.(ts|js)x?$/,
+    exclude: /node_modules/,
+    loader: 'ts-loader',
+}],
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is the most basic webpack setup I could come up with. Reality is much more complicated than this and &lt;a href=&quot;https://webpack.js.org/configuration/output/&quot;&gt;you may need to set additional options/plugins&lt;/a&gt;. Don’t be afraid to check out webpack documentation, you’ll learn interesting things&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -724,7 +752,12 @@ module.exports = {
     'env': {
         'browser': true,
         'es6': true,
-        'jest': true
+        'jest': trueparser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint'],
     },
     'extends': [
         'eslint:recommended',
@@ -745,6 +778,25 @@ module.exports = {
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: if you convert a legacy Javascript project to typescript, the &lt;code&gt;typescript-eslint/recommended&lt;/code&gt; set of rules is … &lt;em&gt;too much&lt;/em&gt;. That’s why I usually comment it out and try to fix problems day after day.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;h2 id=&quot;jest&quot;&gt;JEST&lt;/h2&gt;
+
+&lt;p&gt;this article doesn’t really cover Jest and Typescript, but I’ll only add this quick snippet for those who may find it useful. To configure Jest with TS:&lt;/p&gt;
+
+&lt;p&gt;install &lt;code&gt;ts-jest&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-basj&quot;&gt;$ npm i --save-dev ts-jest
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;add these lines to &lt;code&gt;jest.config.js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;module.exports = {
+    ...,
+    transform: {
+        '^.+\\.tsx?$': 'ts-jest'
+    },
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;ready-to-start-your-projects&quot;&gt;Ready to start your projects?&lt;/h2&gt;
 
