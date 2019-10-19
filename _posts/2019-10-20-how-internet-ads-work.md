@@ -11,6 +11,7 @@ tags:
 - prebid
 - dfp
 - hb
+- header bidding
 title: How internet ads work
 header-img: "/images/pexels-photo-802024.jpeg"
 description: 'header bidding, DFP, GAM, cpm ... welcome in the world of ads, where
