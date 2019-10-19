@@ -58,6 +58,8 @@ With Google acquisition, DFP also started to track users and display ads based o
 
 DFP has now been renamed in **Google Ads Manager (GAM).** I will use GAM for the rest of the article but the world is still calling DFP at the time of writing.
 
+![]({{ site.baseurl }}/images/google ad manager .png "Google Ads Manager when you setup a new account, appears like this")
+
 ## What happens when a browser asks for an ad to GAM
 
 Let's pretend you're a publisher. To integrate GAM on your website you must _create an account and configure it_. I am not an expert in this field so I will not discuss this in detail. One important part, however, is that **when you setup a "deal", you can insert the advertiser's creatives in the form of javascript code**, and **if this creative is selected for display, it will be injected in the user page inside an iframe**. Keep this in mind: it is one of the foundation pieces of header bidding.
@@ -88,7 +90,7 @@ Interestingly, **we can use this feature to deduce the price of GAM ads**, too. 
 
 ## Header Bidding
 
-the name _Header bidding (HB)_ comes from the fact that, historically, what I'm going to describe was done in the `<head>` part of the page. This is no more true, but the name remained :) 
+the name _Header bidding (HB)_ comes from the fact that, historically, what I'm going to describe was done in the `<head>` part of the page. This is no more true, but the name remained :)
 
 **HB _hacks_ GAM to allow other SSPs to bid for the same ad units**. Let's recap the three foundational items:
 
@@ -110,9 +112,11 @@ How can we infer the price of a GAM ad ? By GAM terms of service, GAM is obliged
 
 What you've just read here is nothing more than the logic behind [PrebidJS](http://prebid.org/index.html), an **open source project born as a synergy between the SSPs community**.
 
-Prebid will perform the auction amongst the publisher chosen set of SSPs, then will query GAM, and finally will render the ad. Prebid also contains code to display video ads, mobile ads, handle different currencies, and much more. 
+![]({{ site.baseurl }}/images/Schermata da 2019-10-19 11-08-37.png "Prebid.org homepage")
 
-Here you can see an example of [prebid in action](http://prebid.org/dev-docs/getting-started.html). 
+Prebid will perform the auction amongst the publisher chosen set of SSPs, then will query GAM, and finally will render the ad. Prebid also contains code to display video ads, mobile ads, handle different currencies, and much more.
+
+Here you can see an example of [prebid in action](http://prebid.org/dev-docs/getting-started.html).
 
 ## That's it?
 
