@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script>
+		var host = "michelenasti.com";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
+	
+	<title>How internet ads work - Michele Nasti's blog</title>
+	 
+	<meta name="keywords" content="ads, google, prebid, dfp, hb, header bidding" />  
+	<meta http-equiv="last-modified" content="2019-10-19 11:11:08 +0200" /> 
+	<!--<noscript>-->
+	<link rel="stylesheet" href="/css/skel.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/style-xlarge.css" />
+	<link rel="stylesheet" href="/css/colorful.css" />
+	<link rel="stylesheet" href="/css/social.css" />
+	<link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> <!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+
+  <meta content="How internet ads work" property="og:title">
+
+
+
+  <meta content="article" property="og:type">
+
+
+
+  <meta content="header bidding, DFP, GAM, cpm ... welcome in the world of ads, where everything is an acronym. Le me try to explain how everything works under the hood. " property="og:description">
+
+
+
+  <meta content="https://michelenasti.com/2019/10/21/how-internet-ads-work.html" property="og:url">
+
+
+
+  <meta content="2019-10-21T00:00:00+02:00" property="article:published_time">
+  <meta content="https://www.facebook.com/micnasti/" property="article:author">
+
+
+
+<meta content="https://michelenasti.com///images/pexels-photo-802024.jpeg" property="og:image">
+
+
+
+  
+  <meta content="ads" property="article:tag">
+  
+  <meta content="google" property="article:tag">
+  
+  <meta content="prebid" property="article:tag">
+  
+  <meta content="dfp" property="article:tag">
+  
+  <meta content="hb" property="article:tag">
+  
+  <meta content="header bidding" property="article:tag">
+  
+
+
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@micnasti">
+
+  <meta name="twitter:title" content="How internet ads work">
+
+
+  <meta name="twitter:url" content="https://michelenasti.com/2019/10/21/how-internet-ads-work.html">
+
+
+
+  <meta name="twitter:description" content="header bidding, DFP, GAM, cpm ... welcome in the world of ads, where everything is an acronym. Le me try to explain how everything works under the hood. ">
+
+
+
+  <meta name="twitter:image:src" content="https://michelenasti.com//images/pexels-photo-802024.jpeg">
+
+	<!--</noscript>-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88764277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="/css/prism.css" />
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9588917209740632",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+
+<body id="top">
+
+	<header id="header">
+	<a href="#" class="image avatar"><img src="/images/michele_nasti.jpg" alt="michele nasti volto" /></a>
+	<h1><strong><a href="/">Michele Nasti</a></strong><br /> Full-stack developer <br> with an eye for the web<br>
+	</h1>
+<a href="/chi-sono-michele-nasti/">Chi sono</a> | 
+<a href="/talks-conferences/">Talks &amp; Conferences</a> | 
+<a href="/archives/">Archives</a>
+
+</header> <div id="main">
+	<article>
+		<header class="major">
+			<h1 class="post-title"><a href="/2019/10/21/how-internet-ads-work.html">How internet ads work</a></h1>
+			<p class="post-meta">Oct 21, 2019 • musikele</p>
+		</header>
+
+		<section>
+			
+			<p>Since money was invented, people felt the urge to advertise their products to others. I live very near to Pompeii (Italy) and if you visit this incredible town you’ll discover that in 79 a.D. there were a lot of ads painted on walls, trying to sell you wine, prostitutes, or ask for a vote.</p>
+
+<p>Fast-forward a couple of millenia, we have many websites that are free to their users - think at your favourite newspaper. This is totally different from how newspapers made money few years ago: you had to buy them in shops. So, how they pay salaries to their employees now?</p>
+
+<p>You can guess - since it’s the topic of this post - many websites earn money by displaying ads. So here’s an engineering point of view of this world.</p>
+
+<p><img src="/images/pexels-photo-802024.jpeg" alt="" /></p>
+
+<blockquote>
+  <p>This year I started working for an adtech company and this post tries to describe what I’ve learned of this mega-curious world.</p>
+</blockquote>
+
+<h2 id="how-were-ads-in-1999">How were ads in 1999?</h2>
+
+<p>In 1999 I was 14 years old, so what I know is based on the tales of wise old men. When a news company launched a website, it had to find <strong>advertisers</strong> that wanted to display ads on their website. The news company, in adtech words, is called <strong>publisher</strong>. Many publishers had sales teams that contacted advertisers directly, trying to make a deal like “Publisher will display 1,5 million impressions of these <em>images</em> (in adtech terms: <strong>creatives</strong>) and Advertiser will pay 100k bucks”.</p>
+
+<p>Once the deal was closed, there were needs to:</p>
+
+<ul>
+  <li><strong>track impressions</strong> - how many times ads were rendered? and how many times they were actually <em>viewed</em>? and clicked?</li>
+  <li><strong>handle multiple campaigns concurrently</strong> - I can close a deal with advertiser A for 1.5mln impressions per 100k, but then close another deal with advertiser B for 500k impressions for 200k - which one would you show most? and with what algorithm?</li>
+</ul>
+
+<p>Turns out, you need a software to implement these logics. A software like that is called <strong>Ad Manager</strong>. One of the most famous ad managers is…</p>
+
+<h2 id="doubleclick-for-publishers">Doubleclick for Publishers</h2>
+
+<p><strong>DoubleClick for Publishers,</strong> also known as <strong>DFP</strong>, has been one of the most successful ad managers ever created. I think part of his success was due to the fact it was a SaaS based product, developed when SaaS was not even a word :)</p>
+
+<p>DFP allowed to:</p>
+
+<ul>
+  <li><strong>organize campaigns, creatives, orders</strong>, <strong>line items</strong>, etc. Many obscure terms I will not explain here. I will only explain what is needed to understand the rest of this article, btw.</li>
+  <li><strong>serve the</strong> <strong>most valuable creative</strong> amongst the closed deals</li>
+  <li><strong>track, analyze, report</strong> - because after all, based on this data, advertisers will pay publishers!</li>
+</ul>
+
+<p>Not all publishers had the resources for a <em>dedicated sales team</em> or the power to <em>engage with the most valuable customers</em>. Also, when campaigns are exhausted, there are no remnant ads to show and this can lead to blanks in some moments of the year. But things are going to change again because at some point in 2007…</p>
+
+<h2 id="google-acquires-dfp">Google acquires DFP</h2>
+
+<p>With the acquisition of DFP, Google does not change the original philosophy of DFP as an Ad Manager, but introduces a new element: instead of choosing ads from deals only, publishers can also include ads from <strong>AdExchange</strong> (abbreviated: <strong>AdEx</strong>). This means that when for an <em>ad unit</em> (the area to fill on the publisher’s website) there are no ads to display, DFP could deliver an ad from Google’s network of advertisers. These are good news for small publishers who could get ads from AdEx and do not base their incomes on direct sales only.</p>
+
+<p>With Google acquisition, DFP also started to track users and display ads based on their navigation history. So if you navigate an exclusive watch website, you’ll see the ad for that watch following you on other websites.</p>
+
+<p>DFP has now been renamed in <strong>Google Ads Manager (GAM).</strong> I will use GAM for the rest of the article but the world is still calling DFP at the time of writing.</p>
+
+<p><img src="/images/google ad manager .png" alt="" title="Google Ads Manager when you setup a new account, appears like this" /></p>
+
+<h2 id="what-happens-when-a-browser-asks-for-an-ad-to-gam">What happens when a browser asks for an ad to GAM</h2>
+
+<p>Let’s pretend you’re a publisher. To integrate GAM on your website you must <em>create an account and configure it</em>. I am not an expert in this field so I will not discuss this in detail. One important part, however, is that <strong>when you setup a “deal”, you can insert the advertiser’s creatives in the form of javascript code</strong>, and <strong>if this creative is selected for display, it will be injected in the user page inside an iframe</strong>. Keep this in mind: it is one of the foundation pieces of header bidding.</p>
+
+<p>Let me introduce another important piece of terminology now, a “deal” is called <strong>Order</strong> in GAM words.</p>
+
+<p>The next step is to integrate <code>googletag</code> code. This is a JS library that will make the request to GAM for an ad, that will be shown in a <code>div</code> on your website. Along with the request, <code>googletag</code> will pass some cookies trying to identify the user and only show ads that match the user interests.</p>
+
+<p><code>googletag</code> will take care of <strong>resizing and render the ad, track viewability</strong> (that means: has the ad been in the viewport for more than 1.5 seconds? if yes, publisher will be paid), and detect fraud. The internals are obscure, probably to avoid malicious attempts to reverse engineer and forge attacks.</p>
+
+<p>An important aspect of <code>googletag</code> is that <em>you can define custom key-value pairs along with the request</em>, and this feature is called (in GAM terms) <strong>Targeting</strong>. A targeting example could be <code>country=IT</code> or <code>interests=sports</code>. GAM can be later configured to read these key-value pairs, and do some logic on them - like, if the user is from Italy and is interested in sports, show him ads from the important sports brand I have a deal with.</p>
+
+<p>Why I said that it’s important? well, <strong><em>Targeting</em> is another key concept of Header Bidding. I’ll explain later on.</strong></p>
+
+<p><a href="https://support.google.com/admanager/answer/1638622?hl=en">Here is an example googletag call</a>.</p>
+
+<h2 id="is-there-life-after-google">Is there life after Google?</h2>
+
+<p>In Ad tech terms, Google is a <strong>SSP</strong> - <strong>Supply Side Partner</strong> - meaning it will supply publishers with ads (and pay them). Are there other SSPs ? Yes there are, I guess more than 2-300, however the number of ads they can provide is much lower than that of Google and Facebook. An estimation is that 60% of all ads are traded by Google and Facebook, leaving the remaining SSPs trading the remaining 40%. So it’s a tough market and many websites do not even think of substituting or integrating with other SSPs.</p>
+
+<p>However, living with Google only is not the best option. Google does not make any effort to be transparent on how much ads have been payed, so <strong>some suppose that Google is showing us the most profitable ads for <em>them</em></strong> - not for <em>publishers</em>.</p>
+
+<p>Due to the fact that Google has the majority of the market, it is <em>ignoring</em> all other SSPs and does not offer an easy way to integrate them in DFP.</p>
+
+<p><strong>SSPs still have some advantages</strong>. For example, when asking for an ad to an SSP, we know exactly how much we’re going to be paid if we render that ad, and this means <strong>we can start auctions amongst all configured SSPs and get the best priced ad.</strong> The price is usually given in <strong>CPM</strong> (<em>cost per mille -</em> cost per thousand impressions), so if an ad has a cpm of 10$, one single impression is worth 0.01$ ! (The average cpm, at the time of writing, is around 1$ if you were asking).</p>
+
+<p>Interestingly, <strong>we can use this feature to deduce the price of GAM ads</strong>, too. How? Let’s introduce…</p>
+
+<h2 id="header-bidding">Header Bidding</h2>
+
+<p>the name <em>Header bidding (HB)</em> comes from the fact that, historically, what I’m going to describe was done in the <code>&lt;head&gt;</code> part of the page. This is no more true, but the name remained :)</p>
+
+<p><strong>HB <em>hacks</em> GAM to allow other SSPs to bid for the same ad units</strong>. Let’s recap the three foundational items:</p>
+
+<ul>
+  <li>we can inject whatever creative we want for custom orders.</li>
+  <li>we can define targeting on GAM requests, so we can display specific ads to some users.</li>
+  <li>SSPs will tell us what they’re paying us, and we can use this piece of information to estimate the price of GAM ads too.</li>
+</ul>
+
+<p>You’re finally ready to discover <strong>the HB process</strong>, <em>for dummies:</em></p>
+
+<ol>
+  <li><strong>We start an auction for every ad unit on page</strong>. This means that we ask a bunch of SSPs (except Google, at this stage!) how much they are willing to pay if their ad is chosen.</li>
+  <li>SSPs will answer with their responses, and <strong>we choose the SSP with the highest value</strong>. SSPs will also answer with the ad to render, we will store it in memory and render in the next stage.</li>
+  <li><strong>We send to GAM a request by setting some targeting keys</strong>: among them, we set the <strong>SSP name</strong> that has the best offer (for reporting) and the <strong>price</strong> of the ad.</li>
+  <li>When GAM receives the request, it will decide what to do according to a specified set of rules. <strong>if AdEx has an ad that has an higher value, it will return AdEx ad. Otherwise, it will return the creative that has been specified by us.</strong></li>
+  <li>If the returned creative is the piece of javascript we defined, this means that the SSP won against GAM too, and the creative will contain only one instruction: <em>render the ad that has won the auction at step 2.</em></li>
+</ol>
+
+<p>How can we infer the price of a GAM ad ? By GAM terms of service, GAM is obliged to send us an ad that costs at least 0.01 cpm than the one we sent at step 3. So if the SSP ad was priced 0.26, we know GAM ad is worth at least 0.27 .</p>
+
+<h2 id="prebidjs">Prebid.js</h2>
+
+<p>What you’ve just read here is nothing more than the logic behind <a href="http://prebid.org/index.html">PrebidJS</a>, an <strong>open source project born as a synergy between the SSPs community</strong>.</p>
+
+<p><img src="/images/Schermata da 2019-10-19 11-08-37.png" alt="" title="Prebid.org homepage" /></p>
+
+<p>Prebid will perform the auction amongst the publisher chosen set of SSPs, then will query GAM, and finally will render the ad. Prebid also contains code to display video ads, mobile ads, handle different currencies, and much more.</p>
+
+<p>Here you can see an example of <a href="http://prebid.org/dev-docs/getting-started.html">prebid in action</a>.</p>
+
+<h2 id="thats-it">That’s it?</h2>
+
+<p>That’s definitely <strong>not</strong> all, folks! I’ve just <em>scratched the surface</em> of the ad tech world; I apologize if something is not clear (ask in the comments!) and probably I’ve generalized too much.</p>
+
+<p>If you’re a programmer, you’ll be able to understand a lot of concepts that you’ll encounter in the future. I’ve deliberately decided not to talk about many GAM concepts that are not worth introduce at this point, but <strong>you’re highly encouraged to study if you want to succeed in this field</strong>. GAM alone has a big slice of market share of all ad tech servers and you’ll for sure end up working on it, sooner or later ;)</p>
+ 
+			
+			
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://michelenasti.com/2019/10/21/how-internet-ads-work.html&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(https://michelenasti.com/2019/10/21/how-internet-ads-work.html) + '&t=' + encodeURIComponent(document.title)); return false;"><img alt="Share on Facebook" src="/images/icons/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=https://michelenasti.com/2019/10/21/how-internet-ads-work.html&text=How internet ads work:%20https://michelenasti.com/2019/10/21/how-internet-ads-work.html&via=micnasti" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(How internet ads work) + ':%20'  + encodeURIComponent(https://michelenasti.com/2019/10/21/how-internet-ads-work.html)); return false;"><img alt="Tweet" src="/images/icons/Twitter.svg"></a></li>
+  <li><a href="https://plus.google.com/share?url=https://michelenasti.com/2019/10/21/how-internet-ads-work.html" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(https://michelenasti.com/2019/10/21/how-internet-ads-work.html)); return false;"><img alt="Share on Google+" src="/images/icons/Google+.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://michelenasti.com/2019/10/21/how-internet-ads-work.html&title=How internet ads work&summary=&source=https://michelenasti.com/2019/10/21/how-internet-ads-work.html" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(https://michelenasti.com/2019/10/21/how-internet-ads-work.html) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/icons/LinkedIn.svg"></a></li>
+</ul>
+
+			<h4>Related Posts:</h4>
+<div class="articles-row">
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2018/12/12/remembering-the-bad-bad-days-of-browser-wars.html">10 years around the web platform, what's changed and what's not <span class="label label-default">google</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2017/10/24/cryptomining-and-websites-how-long-will-be-tolerated.html">Cryptomining and websites: how long will it be tolerated? <span class="label label-default">google</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+        <div class="col-4">
+        <h5><a href="/2016/02/ho-partecipato-a-google-hashcode2016-ecco-come-andata/">Ho partecipato a Google HashCode 2016. Ecco com'é andata <span class="label label-default">google</span> </a></h5>
+        </div>
+        
+         
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+
+
+    
+        
+        
+        
+        
+        
+
+        <div class="col-4">
+            <h5><a href="/2015/01/imparare-a-programmare-come-chef-cannavacciuolo/">Imparare a programmare come ... chef Cannavacciuolo</a></h5>
+        </div>
+    
+
+
+</div>
+
+		</section>
+
+		<section>
+			 <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+    	//var disqus_identifier = 'https://michelenasti.com';
+			//var disqus_url = '';
+			var disqus_url = 'https://michelenasti.com/2019/10/21/how-internet-ads-work.html';
+			var disqus_identifier = 'https://michelenasti.com/2019/10/21/how-internet-ads-work.html';
+
+    };
+    
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//michele-nastis-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+		</section>
+
+		<footer>			
+			<div>
+    
+
+    <div class="6u$ 12u(small) excerpt" id="previousArticle">
+        <header>
+            <h2><a href="/2019/10/02/jest-and-puppeteer-from-the-barricades.html">Jest and Puppeteer from the barricades</a></h2>
+        </header>
+        <section>
+            <p>When I started my career as a software developer I immediately become “friend” with the concepts of <strong>unit testing and integration testing</strong>. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.</p>
+
+        </section>
+        <div>
+            <ul class="actions">
+                <li><a href="/2019/10/02/jest-and-puppeteer-from-the-barricades.html" class="button">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+     
+</div>
+		</footer>
+
+	</article>
+
+</div>
+<script src="/js/infinite-scroll.js"></script>
+
+	<!-- Footer -->
+	<footer id="footer">
+	<ul class="icons">
+
+		
+		<li>
+			<a href="https://github.com/musikele" class="icon fa-github">
+				<span class="label">GitHub</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://twitter.com/micnasti" class="icon fa-twitter">
+				<span class="label">Twitter</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://linkedin.com/in/michelenasti" class="icon fa-linkedin">
+				<span class="label">LinkedIn</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://plus.google.com/+MicheleNasti" class="icon fa-google-plus">
+				<span class="label">Google+</span>
+			</a>
+		</li>
+		 
+		<li>
+			<a href="https://www.facebook.com/musikele" class="icon fa-facebook">
+				<span class="label">Facebook</span>
+			</a>
+		</li>
+		  
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Michele Nasti</li>
+		<li>Based on <a href="http://html5up.net/strata">STRATA</a> theme</li>
+	</ul>
+</footer>
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/init.js"></script>
+	<script src="/js/prism.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+    "href": "//www.iubenda.com/privacy-policy/84379975"
+  }
+})});
+</script>
+	<!-- <script src="/js/badge.js"></script> -->
+</body>
+
+</html>

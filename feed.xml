@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-19T11:14:32+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-10-02T00:00:00+02:00</published><updated>2019-10-08T10:06:19+02:00</updated><id>https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html">&lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of &lt;strong&gt;unit testing and integration testing&lt;/strong&gt;. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-21T01:43:37+02:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">How internet ads work</title><link href="https://michelenasti.com/2019/10/21/how-internet-ads-work.html" rel="alternate" type="text/html" title="How internet ads work" /><published>2019-10-21T00:00:00+02:00</published><updated>2019-10-19T11:11:08+02:00</updated><id>https://michelenasti.com/2019/10/21/how-internet-ads-work</id><content type="html" xml:base="https://michelenasti.com/2019/10/21/how-internet-ads-work.html">&lt;p&gt;Since money was invented, people felt the urge to advertise their products to others. I live very near to Pompeii (Italy) and if you visit this incredible town you’ll discover that in 79 a.D. there were a lot of ads painted on walls, trying to sell you wine, prostitutes, or ask for a vote.&lt;/p&gt;
+
+&lt;p&gt;Fast-forward a couple of millenia, we have many websites that are free to their users - think at your favourite newspaper. This is totally different from how newspapers made money few years ago: you had to buy them in shops. So, how they pay salaries to their employees now?&lt;/p&gt;
+
+&lt;p&gt;You can guess - since it’s the topic of this post - many websites earn money by displaying ads. So here’s an engineering point of view of this world.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pexels-photo-802024.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This year I started working for an adtech company and this post tries to describe what I’ve learned of this mega-curious world.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;how-were-ads-in-1999&quot;&gt;How were ads in 1999?&lt;/h2&gt;
+
+&lt;p&gt;In 1999 I was 14 years old, so what I know is based on the tales of wise old men. When a news company launched a website, it had to find &lt;strong&gt;advertisers&lt;/strong&gt; that wanted to display ads on their website. The news company, in adtech words, is called &lt;strong&gt;publisher&lt;/strong&gt;. Many publishers had sales teams that contacted advertisers directly, trying to make a deal like “Publisher will display 1,5 million impressions of these &lt;em&gt;images&lt;/em&gt; (in adtech terms: &lt;strong&gt;creatives&lt;/strong&gt;) and Advertiser will pay 100k bucks”.&lt;/p&gt;
+
+&lt;p&gt;Once the deal was closed, there were needs to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;track impressions&lt;/strong&gt; - how many times ads were rendered? and how many times they were actually &lt;em&gt;viewed&lt;/em&gt;? and clicked?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;handle multiple campaigns concurrently&lt;/strong&gt; - I can close a deal with advertiser A for 1.5mln impressions per 100k, but then close another deal with advertiser B for 500k impressions for 200k - which one would you show most? and with what algorithm?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Turns out, you need a software to implement these logics. A software like that is called &lt;strong&gt;Ad Manager&lt;/strong&gt;. One of the most famous ad managers is…&lt;/p&gt;
+
+&lt;h2 id=&quot;doubleclick-for-publishers&quot;&gt;Doubleclick for Publishers&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;DoubleClick for Publishers,&lt;/strong&gt; also known as &lt;strong&gt;DFP&lt;/strong&gt;, has been one of the most successful ad managers ever created. I think part of his success was due to the fact it was a SaaS based product, developed when SaaS was not even a word :)&lt;/p&gt;
+
+&lt;p&gt;DFP allowed to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;organize campaigns, creatives, orders&lt;/strong&gt;, &lt;strong&gt;line items&lt;/strong&gt;, etc. Many obscure terms I will not explain here. I will only explain what is needed to understand the rest of this article, btw.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;serve the&lt;/strong&gt; &lt;strong&gt;most valuable creative&lt;/strong&gt; amongst the closed deals&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;track, analyze, report&lt;/strong&gt; - because after all, based on this data, advertisers will pay publishers!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not all publishers had the resources for a &lt;em&gt;dedicated sales team&lt;/em&gt; or the power to &lt;em&gt;engage with the most valuable customers&lt;/em&gt;. Also, when campaigns are exhausted, there are no remnant ads to show and this can lead to blanks in some moments of the year. But things are going to change again because at some point in 2007…&lt;/p&gt;
+
+&lt;h2 id=&quot;google-acquires-dfp&quot;&gt;Google acquires DFP&lt;/h2&gt;
+
+&lt;p&gt;With the acquisition of DFP, Google does not change the original philosophy of DFP as an Ad Manager, but introduces a new element: instead of choosing ads from deals only, publishers can also include ads from &lt;strong&gt;AdExchange&lt;/strong&gt; (abbreviated: &lt;strong&gt;AdEx&lt;/strong&gt;). This means that when for an &lt;em&gt;ad unit&lt;/em&gt; (the area to fill on the publisher’s website) there are no ads to display, DFP could deliver an ad from Google’s network of advertisers. These are good news for small publishers who could get ads from AdEx and do not base their incomes on direct sales only.&lt;/p&gt;
+
+&lt;p&gt;With Google acquisition, DFP also started to track users and display ads based on their navigation history. So if you navigate an exclusive watch website, you’ll see the ad for that watch following you on other websites.&lt;/p&gt;
+
+&lt;p&gt;DFP has now been renamed in &lt;strong&gt;Google Ads Manager (GAM).&lt;/strong&gt; I will use GAM for the rest of the article but the world is still calling DFP at the time of writing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/google ad manager .png&quot; alt=&quot;&quot; title=&quot;Google Ads Manager when you setup a new account, appears like this&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-happens-when-a-browser-asks-for-an-ad-to-gam&quot;&gt;What happens when a browser asks for an ad to GAM&lt;/h2&gt;
+
+&lt;p&gt;Let’s pretend you’re a publisher. To integrate GAM on your website you must &lt;em&gt;create an account and configure it&lt;/em&gt;. I am not an expert in this field so I will not discuss this in detail. One important part, however, is that &lt;strong&gt;when you setup a “deal”, you can insert the advertiser’s creatives in the form of javascript code&lt;/strong&gt;, and &lt;strong&gt;if this creative is selected for display, it will be injected in the user page inside an iframe&lt;/strong&gt;. Keep this in mind: it is one of the foundation pieces of header bidding.&lt;/p&gt;
+
+&lt;p&gt;Let me introduce another important piece of terminology now, a “deal” is called &lt;strong&gt;Order&lt;/strong&gt; in GAM words.&lt;/p&gt;
+
+&lt;p&gt;The next step is to integrate &lt;code&gt;googletag&lt;/code&gt; code. This is a JS library that will make the request to GAM for an ad, that will be shown in a &lt;code&gt;div&lt;/code&gt; on your website. Along with the request, &lt;code&gt;googletag&lt;/code&gt; will pass some cookies trying to identify the user and only show ads that match the user interests.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;googletag&lt;/code&gt; will take care of &lt;strong&gt;resizing and render the ad, track viewability&lt;/strong&gt; (that means: has the ad been in the viewport for more than 1.5 seconds? if yes, publisher will be paid), and detect fraud. The internals are obscure, probably to avoid malicious attempts to reverse engineer and forge attacks.&lt;/p&gt;
+
+&lt;p&gt;An important aspect of &lt;code&gt;googletag&lt;/code&gt; is that &lt;em&gt;you can define custom key-value pairs along with the request&lt;/em&gt;, and this feature is called (in GAM terms) &lt;strong&gt;Targeting&lt;/strong&gt;. A targeting example could be &lt;code&gt;country=IT&lt;/code&gt; or &lt;code&gt;interests=sports&lt;/code&gt;. GAM can be later configured to read these key-value pairs, and do some logic on them - like, if the user is from Italy and is interested in sports, show him ads from the important sports brand I have a deal with.&lt;/p&gt;
+
+&lt;p&gt;Why I said that it’s important? well, &lt;strong&gt;&lt;em&gt;Targeting&lt;/em&gt; is another key concept of Header Bidding. I’ll explain later on.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://support.google.com/admanager/answer/1638622?hl=en&quot;&gt;Here is an example googletag call&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;is-there-life-after-google&quot;&gt;Is there life after Google?&lt;/h2&gt;
+
+&lt;p&gt;In Ad tech terms, Google is a &lt;strong&gt;SSP&lt;/strong&gt; - &lt;strong&gt;Supply Side Partner&lt;/strong&gt; - meaning it will supply publishers with ads (and pay them). Are there other SSPs ? Yes there are, I guess more than 2-300, however the number of ads they can provide is much lower than that of Google and Facebook. An estimation is that 60% of all ads are traded by Google and Facebook, leaving the remaining SSPs trading the remaining 40%. So it’s a tough market and many websites do not even think of substituting or integrating with other SSPs.&lt;/p&gt;
+
+&lt;p&gt;However, living with Google only is not the best option. Google does not make any effort to be transparent on how much ads have been payed, so &lt;strong&gt;some suppose that Google is showing us the most profitable ads for &lt;em&gt;them&lt;/em&gt;&lt;/strong&gt; - not for &lt;em&gt;publishers&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Due to the fact that Google has the majority of the market, it is &lt;em&gt;ignoring&lt;/em&gt; all other SSPs and does not offer an easy way to integrate them in DFP.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SSPs still have some advantages&lt;/strong&gt;. For example, when asking for an ad to an SSP, we know exactly how much we’re going to be paid if we render that ad, and this means &lt;strong&gt;we can start auctions amongst all configured SSPs and get the best priced ad.&lt;/strong&gt; The price is usually given in &lt;strong&gt;CPM&lt;/strong&gt; (&lt;em&gt;cost per mille -&lt;/em&gt; cost per thousand impressions), so if an ad has a cpm of 10$, one single impression is worth 0.01$ ! (The average cpm, at the time of writing, is around 1$ if you were asking).&lt;/p&gt;
+
+&lt;p&gt;Interestingly, &lt;strong&gt;we can use this feature to deduce the price of GAM ads&lt;/strong&gt;, too. How? Let’s introduce…&lt;/p&gt;
+
+&lt;h2 id=&quot;header-bidding&quot;&gt;Header Bidding&lt;/h2&gt;
+
+&lt;p&gt;the name &lt;em&gt;Header bidding (HB)&lt;/em&gt; comes from the fact that, historically, what I’m going to describe was done in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; part of the page. This is no more true, but the name remained :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HB &lt;em&gt;hacks&lt;/em&gt; GAM to allow other SSPs to bid for the same ad units&lt;/strong&gt;. Let’s recap the three foundational items:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we can inject whatever creative we want for custom orders.&lt;/li&gt;
+  &lt;li&gt;we can define targeting on GAM requests, so we can display specific ads to some users.&lt;/li&gt;
+  &lt;li&gt;SSPs will tell us what they’re paying us, and we can use this piece of information to estimate the price of GAM ads too.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You’re finally ready to discover &lt;strong&gt;the HB process&lt;/strong&gt;, &lt;em&gt;for dummies:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;We start an auction for every ad unit on page&lt;/strong&gt;. This means that we ask a bunch of SSPs (except Google, at this stage!) how much they are willing to pay if their ad is chosen.&lt;/li&gt;
+  &lt;li&gt;SSPs will answer with their responses, and &lt;strong&gt;we choose the SSP with the highest value&lt;/strong&gt;. SSPs will also answer with the ad to render, we will store it in memory and render in the next stage.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;We send to GAM a request by setting some targeting keys&lt;/strong&gt;: among them, we set the &lt;strong&gt;SSP name&lt;/strong&gt; that has the best offer (for reporting) and the &lt;strong&gt;price&lt;/strong&gt; of the ad.&lt;/li&gt;
+  &lt;li&gt;When GAM receives the request, it will decide what to do according to a specified set of rules. &lt;strong&gt;if AdEx has an ad that has an higher value, it will return AdEx ad. Otherwise, it will return the creative that has been specified by us.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;If the returned creative is the piece of javascript we defined, this means that the SSP won against GAM too, and the creative will contain only one instruction: &lt;em&gt;render the ad that has won the auction at step 2.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;How can we infer the price of a GAM ad ? By GAM terms of service, GAM is obliged to send us an ad that costs at least 0.01 cpm than the one we sent at step 3. So if the SSP ad was priced 0.26, we know GAM ad is worth at least 0.27 .&lt;/p&gt;
+
+&lt;h2 id=&quot;prebidjs&quot;&gt;Prebid.js&lt;/h2&gt;
+
+&lt;p&gt;What you’ve just read here is nothing more than the logic behind &lt;a href=&quot;http://prebid.org/index.html&quot;&gt;PrebidJS&lt;/a&gt;, an &lt;strong&gt;open source project born as a synergy between the SSPs community&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Schermata da 2019-10-19 11-08-37.png&quot; alt=&quot;&quot; title=&quot;Prebid.org homepage&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Prebid will perform the auction amongst the publisher chosen set of SSPs, then will query GAM, and finally will render the ad. Prebid also contains code to display video ads, mobile ads, handle different currencies, and much more.&lt;/p&gt;
+
+&lt;p&gt;Here you can see an example of &lt;a href=&quot;http://prebid.org/dev-docs/getting-started.html&quot;&gt;prebid in action&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;thats-it&quot;&gt;That’s it?&lt;/h2&gt;
+
+&lt;p&gt;That’s definitely &lt;strong&gt;not&lt;/strong&gt; all, folks! I’ve just &lt;em&gt;scratched the surface&lt;/em&gt; of the ad tech world; I apologize if something is not clear (ask in the comments!) and probably I’ve generalized too much.&lt;/p&gt;
+
+&lt;p&gt;If you’re a programmer, you’ll be able to understand a lot of concepts that you’ll encounter in the future. I’ve deliberately decided not to talk about many GAM concepts that are not worth introduce at this point, but &lt;strong&gt;you’re highly encouraged to study if you want to succeed in this field&lt;/strong&gt;. GAM alone has a big slice of market share of all ad tech servers and you’ll for sure end up working on it, sooner or later ;)&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="ads" /><category term="google" /><category term="prebid" /><category term="dfp" /><category term="hb" /><category term="header bidding" /><summary type="html">Since money was invented, people felt the urge to advertise their products to others. I live very near to Pompeii (Italy) and if you visit this incredible town you’ll discover that in 79 a.D. there were a lot of ads painted on walls, trying to sell you wine, prostitutes, or ask for a vote.</summary></entry><entry><title type="html">Jest and Puppeteer from the barricades</title><link href="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html" rel="alternate" type="text/html" title="Jest and Puppeteer from the barricades" /><published>2019-10-02T00:00:00+02:00</published><updated>2019-10-08T10:06:19+02:00</updated><id>https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades</id><content type="html" xml:base="https://michelenasti.com/2019/10/02/jest-and-puppeteer-from-the-barricades.html">&lt;p&gt;When I started my career as a software developer I immediately become “friend” with the concepts of &lt;strong&gt;unit testing and integration testing&lt;/strong&gt;. At the time (2012) the backend was written in Java and the frontend was written in GWT, a Java framework to build UIs that is compiled to JS.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately &lt;strong&gt;all our testing efforts were only directed towards the backend&lt;/strong&gt;, probably because of the language; this means that &lt;strong&gt;we could not find UI bugs before it was too late&lt;/strong&gt;.&lt;/p&gt;
 
@@ -1303,115 +1418,4 @@ var Library = (function() {
   &lt;li&gt;A way of logging functions (yes, we can stringify functions) and remember a history of executed functions&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;That’s an exercise for you, fellow readers!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Prior to work in an ads company I had no idea of how ads are actually rendered on a page. I mean, I had a vague sense of what was going on, but the actual world behind it … well, it’s huge :)</summary></entry><entry><title type="html">Is typescript Namespace feature deprecated?</title><link href="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html" rel="alternate" type="text/html" title="Is typescript Namespace feature deprecated? " /><published>2019-01-23T00:00:00+01:00</published><updated>2019-01-19T00:40:46+01:00</updated><id>https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated</id><content type="html" xml:base="https://michelenasti.com/2019/01/23/is-typescript-namespace-feature-deprecated.html">&lt;p&gt;At my new job I maintain a medium-sized typescript library that is critical to the success of the company.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/typescript-cover-image.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The guy who wrote the library was not expert in typescript (but he was in ES6) and he needed a way to manage complexity before it was too late; so he rewrote entire parts of the app using &lt;strong&gt;typescript namespaces&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-a-namespace-in-typescript&quot;&gt;What is a namespace in Typescript&lt;/h2&gt;
-
-&lt;p&gt;Apart from the fact that typescript actually has a good documentation about &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/namespaces.html&quot; title=&quot;Typescript Namespaces&quot;&gt;namespaces&lt;/a&gt;, it is not clear why you would need them in first place. So, a namespace is declared like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;namespace Validation {
-	...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;inside the namespace you can create wathever you need: classes, functions, etc.&lt;/p&gt;
-
-&lt;p&gt;What’s the corresponding ES5 output?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;(function(Validation) {
-
-    Validation.foo = 123;
-
-})(Validation || (Validation = {}))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The magic happens in the arguments: we pass the &lt;code&gt;Validation&lt;/code&gt; object if exists, otherwise we initialize a new &lt;code&gt;Validation&lt;/code&gt; object. This way we can add as many object we want to the same namespace without polluting the global scope.&lt;/p&gt;
-
-&lt;p&gt;But …&lt;/p&gt;
-
-&lt;h2 id=&quot;is-this-actually-needed&quot;&gt;Is this actually needed?&lt;/h2&gt;
-
-&lt;p&gt;You can actually have many files that declare objects and classes in the same namespace:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;// typescript: 
-// file 1
-namespace Validation {
-	const foo = 123;
-}
-// file 2
-namespace Validation {
-	const bar = 567;
-}
-
-//This becomes, in es6:
-(function(Validation) {
-    Validation.foo = 123;
-})(Validation || (Validation = {}))
-
-//file 2... 
-(function(Validation) {
-    Validation.bar = 567;
-})(Validation || (Validation = {}))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And in memory &lt;code&gt;Validation&lt;/code&gt; will contain both &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; properties.&lt;/p&gt;
-
-&lt;p&gt;If these two &lt;code&gt;Validation&lt;/code&gt; namespace declaration are in two separate files, evaluating  order is important. That’s why in Typescript when you use namespaces you also use a custom tag &lt;code&gt;/// &amp;lt;reference path=&quot;Validation.ts&quot; /&amp;gt;&lt;/code&gt; to reference the actual ordering of files. But, guess what? &lt;strong&gt;This tag is not supported by Visual Studio Code&lt;/strong&gt; - no autocomplete, bitches.&lt;/p&gt;
-
-&lt;p&gt;Apart from this, the problem we faced was &lt;strong&gt;testing&lt;/strong&gt;: actually being able to test a namespaced class or function is very important (where is quality if you don’t have tests?). We eventually found the combination of importing, module type and typescript setting that would allow us to do this. but it was cumbersome.&lt;/p&gt;
-
-&lt;p&gt;I &lt;em&gt;think&lt;/em&gt; that this syntax was developed before ES6 was actually developed, but in my modest opinion &lt;strong&gt;ES6 modules surpassed them in functionality&lt;/strong&gt; and are more similar to how we commonly modularize stuff. You should go with ES6 straight.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-es6-modules-are-better&quot;&gt;Why ES6 modules are better&lt;/h2&gt;
-
-&lt;p&gt;First, an example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;//typescript
-export class Validaton { 
-	... 
-}
-
-//becomes, in javascript:
-export class Validation {
-	... 
-}
-
-//then you can import the class anywhere: 
-import { Validation } from '../Validation' 
-
-function checkData(data) {
-	Validation.isValid(data)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Can you see the difference? There is &lt;em&gt;NO&lt;/em&gt; difference! Typescript is a superset of ES6 so you have more power in what you can do, but that doesn’t mean you should do it. In this case, ES6 solved the problem of modularization for us by doing a good job, so we don’t need any namespace at all in common programs (unless you specifically want to use namespaces).&lt;/p&gt;
-
-&lt;p&gt;My rule of thumb: &lt;strong&gt;stick to ES6 the more you can and just add types&lt;/strong&gt; to classes and functions. This way the code is readable also by those who don’t know typescript.&lt;/p&gt;
-
-&lt;p&gt;The great &lt;strong&gt;benefit&lt;/strong&gt; of all this is with &lt;strong&gt;IDE autocompletion&lt;/strong&gt; and &lt;strong&gt;error highlighting&lt;/strong&gt;. Today I refactored the whole library based only on IDE suggestions, and it was a breeze. Can you imagine doing this in ES6? Impossible.&lt;/p&gt;
-
-&lt;h2 id=&quot;other-people-that-deprecates-namespaces&quot;&gt;Other people that deprecates namespaces&lt;/h2&gt;
-
-&lt;p&gt;This &lt;a href=&quot;https://basarat.gitbooks.io/typescript/docs/project/namespaces.html&quot;&gt;ultra-famous book&lt;/a&gt; about typescript states:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;For most projects we recommend using external modules and using &lt;code&gt;namespace&lt;/code&gt; for quick demos and porting old JavaScript code.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;TSLint has a predefined rule to &lt;a href=&quot;https://palantir.github.io/tslint/rules/no-namespace/&quot;&gt;avoid namespaces&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The same opinion is found in &lt;a href=&quot;https://stackoverflow.com/questions/12737942/does-typescript-support-namespace#comment78314603_12742162&quot;&gt;many places&lt;/a&gt; around Stack Overflow:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I wouldn’t recommended &lt;code&gt;namespace&lt;/code&gt; nor mixing it with &lt;code&gt;module&lt;/code&gt; source code.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;so-what&quot;&gt;So what&lt;/h2&gt;
-
-&lt;p&gt;I think namespaces will hit their end-of-life soon, basically they solved a problem that now can be solved with classical ES6 syntax. Even if the import/export keyword is not working in all browsers out of the box, that’ the road they are covering so it’s just a matter of time and we’ll get rid of any other solution we had to manage complexity.&lt;/p&gt;
-
-&lt;p&gt;See you soon!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">At my new job I maintain a medium-sized typescript library that is critical to the success of the company.</summary></entry></feed>
+&lt;p&gt;That’s an exercise for you, fellow readers!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Prior to work in an ads company I had no idea of how ads are actually rendered on a page. I mean, I had a vague sense of what was going on, but the actual world behind it … well, it’s huge :)</summary></entry></feed>
