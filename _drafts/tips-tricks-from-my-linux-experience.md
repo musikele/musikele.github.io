@@ -59,12 +59,28 @@ So next question: where I am storing all the data?
 
 ## buy (or build) a NAS
 
-The problem: decouple my life from Dropbox, Google Drive, etc. I have more than 100+ GB of data, up to 2003, that I want to preserve forever. Also, I want to backup my photos and my entire PC, everyday, twice per day. Buying space from one of those accounts can cost up to 100€ per year. 
+**The problem**: decouple my life from Dropbox, Google Drive, etc. 
 
-But I'm a nerd and I want to do it myself! 
+I have more than 100+ GB of data, going back to 2003, that I want to preserve forever. Also, I want to backup my photos and my entire PC, everyday, twice per day. Buying space from one of those accounts can cost up to 100€ per year.
+
+But I'm a nerd and I want to do it myself!
 
 What I am looking for is a **NAS** (_Network Attached Storage_), basically a Server connected to the internet. After having looked around, building one means you have time,  knowledge and a spare computer. I did not have time and a spare computer so I decided to buy one :) 
 
-I bought a NAS with two 3TB hard disks, total expense 320€, duplicated in a RAID 1 configuration. This means that the two disks are exact clones and when a disk will fail I can substitute it with a new one and the system will autoclone the disks. 
+I bought 5 years ago a NAS with two 3TB hard disks, total expense 320€, duplicated in a RAID 1 configuration. This means that the two disks are exact clones and when a disk will fail I can substitute it with a new one and the system will autoclone the disks.
 
-But buying a NAS it's not only great because of the power you get, 
+But buying a NAS it's not only great because of the power you get, but because you can experiment with a lot of cool features! That's a list of what I accomplished: 
+
+* buy a domain and point to the NAS - access the NAS from everywhere 
+* use let's encrypt to generate certificates and connect to the NAS with HTTPS only 
+* use 2 factor auth 
+* install apps on it, like owncloud (drobox clone)...
+* a webserver with mysql and a wordpress instance (for my wedding)... 
+* a mail server for my custom domain ...
+* a DLNA for video streaming 
+* SSH access with no password 
+* SAMBA, SFTP, etc for network devices, 
+* an italian proxy to watch football matches from abroad (go Napoli!) 
+* ... and whatever else you may ever need! 
+
+I did not expect to learn that much when I first bought my NAS, but yes, after watching the journey 
