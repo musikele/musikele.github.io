@@ -16,7 +16,7 @@ description: In more than 15 years I've used Ubuntu, windows and mac as my deskt
 ---
 While at university, I - like many other students - were encouraged to install linux on our laptops, to learn the fundamentals of programming and the internals of operating systems.
 
-I guess it was 2006-2007 and I installed Ubuntu in dual boot on my machine, but since I'm not an easy guy **I decided to use it as my first operating system**, leaving Windows as a backup. Blog posts, magazines and books agreed, linux was _ready_ for desktop PCs. 
+I guess it was 2006-2007 and I installed Ubuntu in dual boot on my machine, but since I'm not an easy guy **I decided to use it as my first operating system**, leaving Windows as a backup. Blog posts, magazines and books agreed, linux was _ready_ for desktop PCs.
 
 Could not agree: **at the time, drivers support was a mess**. There was no support, for example, for a usb DSL modem and a printer I owned. I remember buying an external wifi adapter and that was not working too. I had to consume a lot of time on forums, even translating from french, to make my laptop working.
 
@@ -39,24 +39,32 @@ However, Bash is still super popular, and if you administer or work on a remote 
 
 ## How to backup a Linux system?
 
-When I switched to MacOS everybody was talking about how _advanced_, _superior_, _cool_ was Time Machine, the backup solution every Mac has already installed. It is actually very nice to use, mainly because the graphics seem to come from the future, but I did not like for one aspect: the backup files were compressed (and encrypted) in a way that only another Mac could understand. 
+When I switched to MacOS everybody was talking about how _advanced_, _superior_, _cool_ was Time Machine, the backup solution every Mac has already installed. It is actually very nice to use, mainly because the graphics seem to come from the future, but I did not like for one aspect: the backup files were compressed (and encrypted) in a way that only another Mac could understand.
 
 I am not a fan of vendor lock-in, so I did not want to be obliged to buy Macs forever only because of my backups, so I started looking around at alternatives. There are many, either free or payed, but there is one sitting there in your `/usr/bin` called **rsync**.
 
-**Rsync** is a Unix tool to synchronize the content of a folder on another position, that can bee over the net, or another hard disk. It is capable of everything you can think of - preserving attributes, navigating symlinks, crypt files, incremental backups, etc. - and has a very nice man page. 
+**Rsync** is a Unix tool to synchronize the content of a folder on another position, that can bee over the net, or another hard disk. It is capable of everything you can think of - preserving attributes, navigating symlinks, crypt files, incremental backups, etc. - and has a very nice man page.
 
-So I decided to build [my own backup script](https://github.com/musikele/backupscript). It's written in bash, it will take your data from your home directory to a network position using SSH. It will also copy only differences in files, and hard linking unchanged files, so everytime I run it I get a snapshot of my pc that takes the smallest possible space. 
+So I decided to build [my own backup script](https://github.com/musikele/backupscript). It's written in bash, it will take your data from your home directory to a network position using SSH. It will also copy only differences in files, and hard linking unchanged files, so everytime I run it I get a snapshot of my pc that takes the smallest possible space.
 
-If you can access a network position with ssh access (without password), you can schedule a cron job to run every X hours and have a full backup of your computer. 
+If you can access a network position with ssh access (without password), you can schedule a cron job to run every X hours and have a full backup of your computer.
 
-Nice, isn't it? However, I ended up not using my script. 
+Nice, isn't it? However, I ended up not using my script.
 
-A backup is a critical process and must run flawlessly without hassles, without the user even knowing it's running. In my case, since my solution was "homemade", I had to check every now and then if it was working, and what was going on, etc. 
+A backup is a critical process and must run flawlessly without hassles, without the user even knowing it's running. In my case, since my solution was "homemade", I had to check every now and then if it was working, and what was going on, etc.
 
-After a couple of years of honoured service I ended up using [Duplicati](https://www.duplicati.com/), an open source .NET project that has a lot of features for the backup nerds like me. 
+After a couple of years of honoured service I ended up using [Duplicati](https://www.duplicati.com/), an open source .NET project that has a lot of features for the backup nerds like me.
 
-So next question: where I am storing all the data? 
+So next question: where I am storing all the data?
 
-## buy (or build) a NAS 
+## buy (or build) a NAS
 
-The problem: 
+The problem: decouple my life from Dropbox, Google Drive, etc. I have more than 100+ GB of data, up to 2003, that I want to preserve forever. Also, I want to backup my photos and my entire PC, everyday, twice per day. Buying space from one of those accounts can cost up to 100€ per year. 
+
+But I'm a nerd and I want to do it myself! 
+
+What I am looking for is a **NAS** (_Network Attached Storage_), basically a Server connected to the internet. After having looked around, building one means you have time,  knowledge and a spare computer. I did not have time and a spare computer so I decided to buy one :) 
+
+I bought a NAS with two 3TB hard disks, total expense 320€, duplicated in a RAID 1 configuration. This means that the two disks are exact clones and when a disk will fail I can substitute it with a new one and the system will autoclone the disks. 
+
+But buying a NAS it's not only great because of the power you get, 
