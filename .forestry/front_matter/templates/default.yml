@@ -63,7 +63,6 @@ fields:
   config:
     required: true
 pages:
-- _posts/tips-tricks-from-my-linux-experience.md
 - _posts/2019-06-27-typescript-babel-webpack-eslint-my-configuration.md
 - _posts/2019-08-17-what-is-the-difference-between-var-let-and-const-in-javascript.md
 - _posts/2019-06-13-i-work-remote-i-do-two-video-calls-per-day.md
@@ -88,6 +87,7 @@ pages:
 - _posts/2018-10-22-perché-ci-sono-persone-che-conoscono-jquery-ma-non-conoscono-javascript.md
 - _posts/2018-10-15-dovrei-imparare-ruby-on-rails-o-nodejs.md
 - _posts/2018-11-17-what-i-learned-by-writing-my-first-npm-module.md
+- _posts/2019-10-27-tips-tricks-from-my-linux-experience.md
 - _posts/2017-10-03-viviamo-tutti-in-una-grande-simulazione-aliena-sembra-di-no.md
 - _posts/2018-06-05-libri-sei-proprio-il-mio-typo-la-vita-segreta-dei-font.md
 - _posts/2017-12-04-alla-scoperta-di-vue-js.md
