@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-30T00:49:05+01:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">How internet ads work</title><link href="https://michelenasti.com/2019/10/21/how-internet-ads-work.html" rel="alternate" type="text/html" title="How internet ads work" /><published>2019-10-21T00:00:00+02:00</published><updated>2019-10-19T11:11:08+02:00</updated><id>https://michelenasti.com/2019/10/21/how-internet-ads-work</id><content type="html" xml:base="https://michelenasti.com/2019/10/21/how-internet-ads-work.html">&lt;p&gt;Since money was invented, people felt the urge to advertise their products to others. I live very near to Pompeii (Italy) and if you visit this incredible town you’ll discover that in 79 a.D. there were a lot of ads painted on walls, trying to sell you wine, prostitutes, or ask for a vote.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://michelenasti.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://michelenasti.com/" rel="alternate" type="text/html" /><updated>2019-10-30T12:29:06+01:00</updated><id>https://michelenasti.com/feed.xml</id><title type="html">Michele Nasti’s blog</title><subtitle>I'm a full stack Developer with an eye for the web.</subtitle><entry><title type="html">Tips &amp;amp; Tricks from my linux experience</title><link href="https://michelenasti.com/2019/10/27/tips-tricks-from-my-linux-experience.html" rel="alternate" type="text/html" title="Tips &amp; Tricks from my linux experience" /><published>2019-10-27T00:00:00+02:00</published><updated>2019-10-30T12:24:48+01:00</updated><id>https://michelenasti.com/2019/10/27/tips-tricks-from-my-linux-experience</id><content type="html" xml:base="https://michelenasti.com/2019/10/27/tips-tricks-from-my-linux-experience.html">&lt;blockquote&gt;
+  &lt;p&gt;This article is the summary of a talk I gave for &lt;a href=&quot;https://www.facebook.com/events/686761111828223/permalink/686775338493467/&quot;&gt;Linux Day Avellino 2019&lt;/a&gt;. Slides are &lt;a href=&quot;https://show.zohopublic.com/publish/h93fsd5b97c46dd57465e9769d542c3871bea&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;While at university, I - like many other students - were encouraged to install linux on our laptops, to learn the fundamentals of programming and the internals of operating systems.&lt;/p&gt;
+
+&lt;p&gt;I guess it was 2006-2007 and I installed Ubuntu in dual boot on my machine, but since I’m not an easy guy &lt;strong&gt;I decided to use it as my first operating system&lt;/strong&gt;, leaving Windows as a backup. Blog posts, magazines and books agreed, linux was &lt;em&gt;ready&lt;/em&gt; for desktop PCs.&lt;/p&gt;
+
+&lt;p&gt;Could not agree: &lt;strong&gt;at the time, drivers support was a mess&lt;/strong&gt;. There was no support, for example, for a usb DSL modem and a printer I owned. I remember buying an external wifi adapter and that was not working too. I had to consume a lot of time on forums, even translating from french, to make my laptop working.&lt;/p&gt;
+
+&lt;p&gt;However, I was happy with what I had, also because I do not play videogames and I really do not need Windows for any special reason (no adobe, no MS Office, etc.). Also, 100% of my studies could be done from linux standard tools, and this was something I really loved.&lt;/p&gt;
+
+&lt;p&gt;Let’s fast-forward a couple of years, I bought a Mac with my first salary - a Mac that lasted 5 years - and a Windows PC - this one. I used it with WSL (&lt;em&gt;bash on Windows&lt;/em&gt;) for some time, then I had to switch back to linux as my daily operating system because WSL is &lt;em&gt;so slow&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this article I’ll share some neat tricks I found useful, together with some stories about my experience. If you want to reach the buddha developer status, there are some steps to make!&lt;/p&gt;
+
+&lt;h2 id=&quot;get-comfy-with-the-command-line&quot;&gt;Get comfy with the command line&lt;/h2&gt;
+
+&lt;p&gt;If you’re a Windows user, you can avoid command line for the rest of your life, even as a developer. But if you work in a Unix environment, the terminal becomes the best tool for your job. &lt;strong&gt;Knowing bash is really important&lt;/strong&gt;: you can automate almost any aspect of your daily tasks. The problem is that &lt;strong&gt;bash has the most obscure syntax ever&lt;/strong&gt;, and honestly I can’t even remember how to check for a file existence. what a mess!&lt;/p&gt;
+
+&lt;p&gt;However, Bash is still super popular, and if you administer or work on a remote server, chances are your only tool is bash. Here are some resources:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dylanaraps/pure-bash-bible&quot;&gt;Pure Bash Bible&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://coderwall.com/p/oqtj8w/the-single-most-useful-thing-in-bash&quot;&gt;The single most useful thing in bash&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://devhints.io/bash&quot;&gt;Bash cheatsheet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;… and obviously Stack Overflow, Google, etc.&lt;/li&gt;
+  &lt;li&gt;don’t forget to learn &lt;em&gt;vi&lt;/em&gt; or &lt;em&gt;emacs&lt;/em&gt; (i prefer the former).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-to-backup-a-linux-system&quot;&gt;How to backup a Linux system?&lt;/h2&gt;
+
+&lt;p&gt;When I switched to MacOS everybody was talking about how &lt;em&gt;advanced&lt;/em&gt;, &lt;em&gt;superior&lt;/em&gt;, &lt;em&gt;cool&lt;/em&gt; was Time Machine, the backup solution every Mac has. It is actually very nice to use, mainly because the graphics seem to come from the future, but I did not like one aspect: the backup files were compressed (and encrypted) in a way that only another Mac could understand.&lt;/p&gt;
+
+&lt;p&gt;I am not a vendor lock-in fan, so I did not want to be obliged to buy Macs forever only because of my backups, so I started looking around at alternatives. There are many, either free or payed, but there is one sitting there in your &lt;code&gt;/usr/bin&lt;/code&gt; called &lt;strong&gt;rsync&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rsync&lt;/strong&gt; is a Unix tool to synchronize the content of two folders that can be located over the net, or on different hard disks. It is capable of everything you can think of - preserving attributes, navigating symlinks, encrypt files, incremental backups, etc. - and has a very nice man page.&lt;/p&gt;
+
+&lt;p&gt;So I decided to build &lt;a href=&quot;https://github.com/musikele/backupscript&quot;&gt;my own backup script&lt;/a&gt;. It was not an easy journey. It’s written in bash, it will take your data from your home directory to a network position using SSH. It will also copy only differences in files, and hard linking unchanged files, so everytime I run it I get a snapshot of my pc that takes the smallest possible space.&lt;/p&gt;
+
+&lt;p&gt;If you can access a network position with ssh access (without password), you can schedule a cron job to run every X hours and have a full backup of your computer.&lt;/p&gt;
+
+&lt;p&gt;Nice, isn’t it? However, I ended up not using my script.&lt;/p&gt;
+
+&lt;p&gt;A backup is a critical process and must run flawlessly without hassles, without the user even knowing it’s running. In my case, since my solution was “homemade”, I had to check every now and then if it was working, and what was going on, etc.&lt;/p&gt;
+
+&lt;p&gt;After a couple of years of honoured service I moved to &lt;a href=&quot;https://www.duplicati.com/&quot;&gt;Duplicati&lt;/a&gt;, an open source .NET project that has a lot of features for backup nerds like me.&lt;/p&gt;
+
+&lt;p&gt;So next question: where I am storing all the data?&lt;/p&gt;
+
+&lt;h2 id=&quot;buy-or-build-a-nas&quot;&gt;buy (or build) a NAS&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;The problem&lt;/strong&gt;: decouple my life from Dropbox, Google Drive, etc.&lt;/p&gt;
+
+&lt;p&gt;I have more than 100+ GB of data, going back to 2003, that I want to preserve forever. Also, I want to backup my photos and my entire PC, everyday, twice per day. Buying space from one of those accounts can cost up to 100€ per year.&lt;/p&gt;
+
+&lt;p&gt;But I’m a nerd and I want to do it myself!&lt;/p&gt;
+
+&lt;p&gt;What I am looking for is a &lt;strong&gt;NAS&lt;/strong&gt; (&lt;em&gt;Network Attached Storage&lt;/em&gt;), basically a Server connected to the internet. After having looked around, building one means you have time,  knowledge and a spare computer. I did not have time and a spare computer so I decided to buy one :)&lt;/p&gt;
+
+&lt;p&gt;I bought 5 years ago a NAS with two 3TB hard disks, total expense 320€, duplicated in a RAID 1 configuration. This means that the two disks are exact clones and when a disk will fail I can substitute it with a new one and the system will autoclone the disks.&lt;/p&gt;
+
+&lt;p&gt;But buying a NAS it’s not only great because of the power you get, but because you can experiment with a lot of cool features! That’s a list of what I accomplished:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;buy a domain and point to the NAS - access the NAS from everywhere&lt;/li&gt;
+  &lt;li&gt;use let’s encrypt to generate certificates and connect to the NAS with HTTPS only&lt;/li&gt;
+  &lt;li&gt;use 2 factor auth&lt;/li&gt;
+  &lt;li&gt;install apps on it, like owncloud (drobox clone)…&lt;/li&gt;
+  &lt;li&gt;a webserver with mysql and a wordpress instance (for my wedding)…&lt;/li&gt;
+  &lt;li&gt;a mail server for my custom domain …&lt;/li&gt;
+  &lt;li&gt;a DLNA for video streaming&lt;/li&gt;
+  &lt;li&gt;SSH access with no password&lt;/li&gt;
+  &lt;li&gt;SAMBA, SFTP, etc for network devices,&lt;/li&gt;
+  &lt;li&gt;an italian proxy to watch football matches from abroad (go Napoli!)&lt;/li&gt;
+  &lt;li&gt;… and whatever else you may ever need!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I did not expect to learn that much when I first bought my NAS, but yes, after looking at what I’ve gained 5 years after, I really did a good choice.&lt;/p&gt;
+
+&lt;h2 id=&quot;for-your-pet-projects-buy-a-private-server&quot;&gt;For your pet projects, buy a private server&lt;/h2&gt;
+
+&lt;p&gt;I have a bunch of pet projects and I run all of them on a virtual machine I’ve bought online.&lt;/p&gt;
+
+&lt;p&gt;The cool thing is that this machine costs me nothing - around 2.5€ per month - and I spend my time to setup the machine, but that time is rewarded with experience.&lt;/p&gt;
+
+&lt;p&gt;In the past I used to configure everything with command line and by following the &lt;a href=&quot;https://help.ubuntu.com/lts/serverguide/&quot;&gt;Ubuntu Server Guide&lt;/a&gt;, today I don’t do this anymore (too time consuming and error-prone) and I usually install &lt;a href=&quot;https://www.virtualmin.com/&quot;&gt;Virtualmin&lt;/a&gt; and then try to figure out my needs with it.&lt;/p&gt;
+
+&lt;p&gt;With Virtualmin you can pretty much administer your machine as you want, like your NAS, but I prefer to physically separate the two things because if a hacker ever gets access to this machine (that is designed to be exposed to the web) I don’t want to loose all my personal life.&lt;/p&gt;
+
+&lt;p&gt;So my setup is to create a third level domain (XXX.abc.def), then create an https certificate for it thanks to lets encrypt, set up a cron job that will take care of renewing the certificate, and then setup database etc.&lt;/p&gt;
+
+&lt;p&gt;In the past I used heroku but now i find that platform too limiting if my requirements are slightly more complex.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-now-some-cool-terminal-tricks&quot;&gt;And now… some cool terminal tricks&lt;/h2&gt;
+
+&lt;p&gt;For my terminal I use &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;Oh-My-Zsh&lt;/a&gt;, it will make your command line more beautiful and with tons of plugins you can configure autocomplete for stuff that usually is not auto-completable - like git, or docker, etc.&lt;/p&gt;
+
+&lt;p&gt;When I have to test the communication between a client and a server I use &lt;a href=&quot;&quot;&gt;ngrok&lt;/a&gt;, that will create an address like &lt;code&gt;&amp;lt;random_numbers&amp;gt;.ngrok.io&lt;/code&gt; even with HTTPS, all of this for free. Then, you can inspect what happened during the connection. The cool thing is that you can use this tool to show to your colleagues some work, even if you’re not on the same net.&lt;/p&gt;
+
+&lt;p&gt;I wrote a nice article about &lt;a href=&quot;https://michelenasti.com/2019/04/03/ssh-cheatsheet-from-zero-to-hero.html&quot;&gt;SSH, from zero to hero&lt;/a&gt; and you shoul read it - it’s the &lt;strong&gt;basic foundation&lt;/strong&gt; for all the stuff you read above.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-notes-on-dell-xps-15&quot;&gt;Some notes on Dell XPS 15”&lt;/h2&gt;
+
+&lt;p&gt;Installing Ubuntu on my Dell was not so flawless as I thought. Google will be your friend (or enemy) if you try this path. Here are some insights:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;since the monitor is 4K, the native terminal is too small to be read.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Connecting a non-external monitor that is not-4k is a real problem. I generally launch this command to connect a monitor on the right:&lt;/p&gt;
+
+    &lt;p&gt;$ xrandr –output HDMI1 –scale 2x2 –mode 1920x1080 –fb 3840x0 –pos 3840x0&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(trick: connect the cable, and when the system looks freezed, run this command. I don’t know why, but if I wait for the system to unfreeze and then run the command, the system will definitely block!)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Wayland&lt;/strong&gt; - an alternative composer to Xorg - is not ready for 4K monitors. Gnome apps will look fine, but Electron apps will not.&lt;/li&gt;
+  &lt;li&gt;This PC also has a &lt;strong&gt;touchscreen&lt;/strong&gt;. It works nice with Chrome, but it is useless with Firefox because it will select text instead of scroll. &lt;a href=&quot;https://superuser.com/questions/1151161/enable-touch-scrolling-in-firefox&quot;&gt;Here are some fixes&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Snap or apt&lt;/strong&gt; ? I tend to embrace new stuff and I like snap because applications get updated faster, since they’re self-contained. Also, many command line tools can be snap-installed. However, I also got some 4K problems with snap apps so I had to install some apps few times before finding one that works without issues.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s all folks! I hope you enjoy linux as much as I did.&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><category term="linux" /><category term="ubuntu" /><summary type="html">This article is the summary of a talk I gave for Linux Day Avellino 2019. Slides are here.</summary></entry><entry><title type="html">How internet ads work</title><link href="https://michelenasti.com/2019/10/21/how-internet-ads-work.html" rel="alternate" type="text/html" title="How internet ads work" /><published>2019-10-21T00:00:00+02:00</published><updated>2019-10-19T11:11:08+02:00</updated><id>https://michelenasti.com/2019/10/21/how-internet-ads-work</id><content type="html" xml:base="https://michelenasti.com/2019/10/21/how-internet-ads-work.html">&lt;p&gt;Since money was invented, people felt the urge to advertise their products to others. I live very near to Pompeii (Italy) and if you visit this incredible town you’ll discover that in 79 a.D. there were a lot of ads painted on walls, trying to sell you wine, prostitutes, or ask for a vote.&lt;/p&gt;
 
 &lt;p&gt;Fast-forward a couple of millenia, we have many websites that are free to their users - think at your favourite newspaper. This is totally different from how newspapers made money few years ago: you had to buy them in shops. So, how they pay salaries to their employees now?&lt;/p&gt;
 
@@ -1336,86 +1459,4 @@ Host foo
 
 &lt;p&gt;The third generation not only did all of this but also introduced the concept of &lt;em&gt;zero config&lt;/em&gt;, meaning you don’t have to configure anything, it will just work.&lt;/p&gt;
 
-&lt;p&gt;And then there’s &lt;em&gt;threeshaking&lt;/em&gt;: if an external file exposes 100 functions but you use only one, webpack picks only the one you used and its dependencies, not the whole file. This way, your bundler will save space, meaning less data flowing through the net.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="browserify" /><category term="webpack" /><category term="rollup" /><category term="parcel" /><category term="bundler" /><summary type="html">Browserify belongs to the very first generation of module bundlers and it basically allowed one thing, that is, use the require function from NodeJS in the browser. Browserify’s only job was to concatenate files wrapping them in functions that were then called by other fils.</summary></entry><entry><title type="html">How ads are loaded so fast: the command queue pattern</title><link href="https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html" rel="alternate" type="text/html" title="How ads are loaded so fast: the command queue pattern" /><published>2019-02-12T00:00:00+01:00</published><updated>2019-02-15T11:55:44+01:00</updated><id>https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern</id><content type="html" xml:base="https://michelenasti.com/2019/02/12/how-ads-are-loaded-so-fast-the-command-queue-pattern.html">&lt;p&gt;Prior to work in an ads company I had no idea of how ads are actually rendered on a page. I mean, I had a vague sense of what was going on, but the actual world behind it … well, it’s huge :)&lt;/p&gt;
-
-&lt;p&gt;Sometimes ads are loaded on a page even before you actually see any content. How? The first thing we learned at university is to wait for the DOM to have completely loaded, before doing anything to the DOM itself. This does not apply to ads, or better to say, ad companies use many tricks to load ads without blocking the DOM.&lt;/p&gt;
-
-&lt;p&gt;I won’t go in the detail of this process now, but basically &lt;strong&gt;ads are rendered inside &lt;em&gt;iframes&lt;/em&gt;&lt;/strong&gt;, and iframes should be used only for very narrow use cases, like widgets to inject on other pages, or payment processors. In the past I did the exact opposite: we implemented an angular 1 routing system with iframes, and that’s something I wouldn’t do again (&lt;a href=&quot;https://michelenasti.com/2015/05/iframe-safari-ios-e-la-lotta-allultimo-millisecondo/&quot;&gt;my experience&lt;/a&gt; - in italian).&lt;/p&gt;
-
-&lt;p&gt;Here in this article I’m going to talk about how some popular ad libraries (like &lt;a href=&quot;https://support.google.com/admanager/answer/1638622?hl=en&amp;amp;ref_topic=4390039&quot;&gt;google publisher tag&lt;/a&gt; or &lt;a href=&quot;http://prebid.org/dev-docs/getting-started.html&quot;&gt;Prebid&lt;/a&gt;) allow users to write code that will be put in a queue and will be executed as soon as the library is loaded.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-problem-async-library-loading&quot;&gt;The problem: async library loading&lt;/h2&gt;
-
-&lt;p&gt;Suppose we have a library that will load something, and this initialization process will take some time. Also, we don’t know when the library will be actually loaded, since it’s asyncronous. However, we would like to start giving commands (e.g. setup instructions) to this library as soon as possible. How?&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Let’s suppose our library’s name is, without much fantasy, &lt;code&gt;Library&lt;/code&gt; and is loaded from file &lt;code&gt;Library.js&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;the-client-code&quot;&gt;The client code&lt;/h2&gt;
-
-&lt;p&gt;in the client’s code, the code that the user will write to interact with our library, we will initialize the library like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var Library = Library || {}; 
-Library.queue = Library.queue || [];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In these two simple lines, we have initialized our library and its commands queue. In fact, if the &lt;code&gt;Library&lt;/code&gt; object does not exist, we will initialize it with an empty object, and then we will create the empty array property &lt;code&gt;Library.queue&lt;/code&gt; that will contain our initalization code. For example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Library.queue.push(function(){
-	console.log(&quot;Called only when the library has loaded, not before&quot;);
-	Library.doMagic();
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note: I’m deliberately using ES5 code here. It would be fantastic that every user in the world was using the latest version of the coolest browser, but the reality is that &lt;strong&gt;a bunch of zombies are still using Internet Explorer&lt;/strong&gt;. Ad companies want to earn money on these people too!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;how-we-load-the-library&quot;&gt;How we load the Library&lt;/h2&gt;
-
-&lt;p&gt;Imagine we load our library with this &lt;code&gt;script&lt;/code&gt; tag:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;script src=&quot;/path/to/Library.js&quot; async defer&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;async&lt;/code&gt; means that the browser will download the library as soon as possible, but the evaluation will start whenever it is more convenient (the browser decides). The HTML parser is paused when the script is evluated. &lt;code&gt;defer&lt;/code&gt; means the same thing (more or less!) but the code execution happens only after the DOM has been loaded. &lt;a href=&quot;https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html&quot; title=&quot;async vs defer&quot;&gt;More info here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;By inserting the &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;defer&lt;/code&gt; keyword we don’t have any guarantee of the Library execution time, so we don’t know who will be loaded first.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-library-internals&quot;&gt;The Library internals&lt;/h2&gt;
-
-&lt;p&gt;Here’s an example of how the Library could initialize itself:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//This code could be in file Library.js 
- 
-var Library = (function() {
-  ...
-  var queue = []; 
-  if (Library) {
-    // queue from outside might be null... 
-    queue = Library.queue || queue;
-  } 
-  //here we execute code that is in the queue
-  while (queue.length &amp;gt; 0) {
-    var command = queue.shift(); 
-    command();
-  }
-  ...
-})()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;First we will check if the &lt;code&gt;Library&lt;/code&gt; object already exists. This may be because of the initialization we did in the client code. If so, we take the queue object and start executing all commands from the queue, until the queue is empty.&lt;/p&gt;
-
-&lt;h2 id=&quot;thats-so-async-its-actually-fast&quot;&gt;That’s so async, it’s actually fast&lt;/h2&gt;
-
-&lt;p&gt;By not forcing the browser to stop and parse our js, we gain a significant amount of perceived speed. And by splitting the client code in &lt;em&gt;commands&lt;/em&gt; we also get the guarantee that the client code will be executed.&lt;/p&gt;
-
-&lt;p&gt;In this simple snippet we have not covered other themes like:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;what if we add another element to the queue after the initialization has already completed?&lt;/li&gt;
-  &lt;li&gt;A way of logging functions (yes, we can stringify functions) and remember a history of executed functions&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That’s an exercise for you, fellow readers!&lt;/p&gt;</content><author><name>musikele</name></author><category term="Italiano" /><summary type="html">Prior to work in an ads company I had no idea of how ads are actually rendered on a page. I mean, I had a vague sense of what was going on, but the actual world behind it … well, it’s huge :)</summary></entry></feed>
+&lt;p&gt;And then there’s &lt;em&gt;threeshaking&lt;/em&gt;: if an external file exposes 100 functions but you use only one, webpack picks only the one you used and its dependencies, not the whole file. This way, your bundler will save space, meaning less data flowing through the net.&lt;/p&gt;</content><author><name>musikele</name></author><category term="English" /><category term="browserify" /><category term="webpack" /><category term="rollup" /><category term="parcel" /><category term="bundler" /><summary type="html">Browserify belongs to the very first generation of module bundlers and it basically allowed one thing, that is, use the require function from NodeJS in the browser. Browserify’s only job was to concatenate files wrapping them in functions that were then called by other fils.</summary></entry></feed>
