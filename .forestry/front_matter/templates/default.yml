@@ -53,7 +53,7 @@ fields:
     date_format: DD/MM/YYYY
     required: true
     display_utc: false
-    export_format: MM/DD/YYYY
+    export_format: YYYY-MM-DD
     time_format: " "
 - type: file
   name: header-img
