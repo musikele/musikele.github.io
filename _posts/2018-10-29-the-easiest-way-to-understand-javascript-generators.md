@@ -5,7 +5,7 @@ author: musikele
 title: The easiest way to understand Javascript Generators
 category: English
 layout: post
-date: 2018-10-29 00:00:00 +0100
+date: 2018-10-29
 tags:
 - javascript
 - es6

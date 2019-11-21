@@ -5,7 +5,7 @@ author: musikele
 title: 'Inspiring tech people to follow: Nicholas C. Zakas'
 category: English
 layout: post
-date: 2018-11-05 00:00:00 +0100
+date: 2018-11-05
 tags:
 - zakas
 - eslint

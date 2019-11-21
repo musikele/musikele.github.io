@@ -4,7 +4,7 @@ comments: true
 author: musikele
 category: Italiano
 layout: post
-date: 2019-06-26T22:00:00.000+00:00
+date: 2019-06-26
 tags:
 - typescript
 - babel

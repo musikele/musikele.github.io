@@ -4,7 +4,7 @@ comments: true
 author: musikele
 category: Italiano
 layout: post
-date: 2019-01-23 00:00:00 +0100
+date: 2019-01-23
 tags: []
 title: 'Is typescript Namespace feature deprecated? '
 header-img: "/images/typescript-cover-image.jpg"

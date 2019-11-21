@@ -4,7 +4,7 @@ comments: true
 author: musikele
 category: English
 layout: post
-date: 2019-06-13 00:00:00 +0200
+date: 2019-06-13
 tags:
 - remote
 - work

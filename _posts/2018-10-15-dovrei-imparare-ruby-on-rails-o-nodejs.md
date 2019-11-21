@@ -5,7 +5,7 @@ author: musikele
 title: 'Dovrei imparare Ruby on Rails o NodeJS ? '
 category: Italiano
 layout: post
-date: 2018-10-15 00:00:00 +0200
+date: 2018-10-15
 tags:
 - ruby on rails
 - ruby

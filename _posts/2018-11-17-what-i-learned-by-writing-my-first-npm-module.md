@@ -5,7 +5,7 @@ author: musikele
 title: What I learned by writing my first npm module
 category: English
 layout: post
-date: 2018-11-17 00:00:00 +0100
+date: 2018-11-17
 tags:
 - javascript
 - nodejs

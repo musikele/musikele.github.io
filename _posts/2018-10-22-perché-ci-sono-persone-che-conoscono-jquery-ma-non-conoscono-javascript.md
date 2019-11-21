@@ -5,7 +5,7 @@ author: musikele
 title: Perché ci sono persone che conoscono jQuery ma non conoscono JavaScript?
 category: Italiano
 layout: post
-date: 2018-10-22 00:00:00 +0200
+date: 2018-10-22
 tags:
 - jquery
 - javascript

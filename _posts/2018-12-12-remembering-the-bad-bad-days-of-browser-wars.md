@@ -5,7 +5,7 @@ author: musikele
 title: 10 years around the web platform, what's changed and what's not
 category: Italiano
 layout: post
-date: 2018-12-12 00:00:00 +0100
+date: 2018-12-12
 tags:
 - html
 - " javascript"

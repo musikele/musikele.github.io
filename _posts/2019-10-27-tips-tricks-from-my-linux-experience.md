@@ -4,7 +4,7 @@ comments: true
 author: musikele
 category: Italiano
 layout: post
-date: 2019-10-27 00:00:00 +0200
+date: 2019-10-27
 tags:
 - linux
 - ubuntu

@@ -5,7 +5,7 @@ author: musikele
 title: Docker cheatsheet
 category: English
 layout: post
-date: 2018-10-25 00:00:00 +0100
+date: 2018-10-25
 tags:
 - docker
 - cheatsheet
