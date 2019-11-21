@@ -4,9 +4,9 @@ comments: true
 author: musikele
 category: Italiano
 layout: post
-date: 11/21/2019
+date: 2019-11-21
 tags: []
-title: Thinking about your customer like a CEO
+title: Thinking about customers like a CEO
 header-img: ''
 description: test
 

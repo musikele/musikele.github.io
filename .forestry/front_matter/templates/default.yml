@@ -67,7 +67,6 @@ fields:
     required: true
 pages:
 - _posts/thinking-about-your-customer-like-a-ceo.md
-- _posts/thinking-to-your-users-and-customers-like-a-ceo.md
 - _posts/2019-03-23-what-s-the-difference-between-browserify-and-webpack.md
 - _posts/2019-06-27-typescript-babel-webpack-eslint-my-configuration.md
 - _posts/2018-11-05-inspiring-tech-people-to-follow-nicholas-c-zakas.md
