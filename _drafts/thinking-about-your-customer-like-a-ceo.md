@@ -2,12 +2,11 @@
 paginate: true
 comments: true
 author: musikele
-category: English
+category: Italiano
 layout: post
 date: 11/21/2019
-tags:
-- customer experience
-title: Thinking about customers like a CEO
+tags: []
+title: Thinking about your customer like a CEO
 header-img: ''
 description: test
 
