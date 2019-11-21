@@ -2,10 +2,12 @@
 paginate: true
 comments: true
 author: musikele
-category: Italiano
+category: English
 layout: post
 date: 2019-11-21
-tags: []
+tags:
+- customers
+- work
 title: Thinking about customers like a CEO
 header-img: ''
 description: test
