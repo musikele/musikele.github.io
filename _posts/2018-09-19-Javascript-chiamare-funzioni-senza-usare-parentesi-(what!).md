@@ -5,7 +5,7 @@ author: musikele
 title: 'Javascript: call functions without using parentheses (what?!)'
 category: English
 layout: post
-date: 2018-09-19 00:00:00 +0200
+date: 2018-09-19
 tags:
 - javascript
 header-img: "/images/es6.jpeg"
