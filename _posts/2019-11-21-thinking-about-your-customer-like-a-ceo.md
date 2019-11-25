@@ -14,7 +14,7 @@ description: 'customers represent the best resource of every company, but do we 
   care about them? Here''s an interesting insight of my work experience. '
 
 ---
-but do we reallyToday I'll talk about Michele-on-the-job.
+Today I'll talk about Michele-on-the-job.
 
 Some time ago I jumped on a brand new job, a _service oriented_ one, where we had many customers and we offered a **product as a service**.
 
