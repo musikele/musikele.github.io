@@ -22,13 +22,17 @@ One of the first tasks I was assigned to was to check what was going on with a c
 
 Replicating this kind of problems was difficult, because at the time the **product itself was not very mature**; also, many customers were **using the product in a very unconventional way** and this caused more trouble; finally, the product was **very susceptible about network conditions, users, browsers, locations**, etc. A real mess, but that's probably the same in every other startup :)
 
-Anyway, I tried hard to reproduce the bug as described in the ticket, but whatever I did, I failed. So I took the easy path, and wrote as a response "sorry but I am unable to replicate the problem, probably the issue was temporary and has resolved by itself".
+Anyway, I tried hard to reproduce the bug as described in the ticket, but whatever I did, I failed. So I took the easy path, and wrote as a response _sorry but I am unable to replicate the problem, probably the issue was temporary and has resolved by itself_.
 
 After no longer than 1-2 hours, the CEO answered to my card. And wrote:
 
 > this is not the way we should ever answer to our customers; **this is the best way to see them go to competitors**. We need to find an answer that is supported by proofs, or fix the problem.
 
 I don't remember, however, what was the issue in the end. I asked a more experienced colleague if he could help me and in a couple of hours we figured out. But I think that day I leaned some important lessons.
+
+![Not me, not my coworkers]({{ site.baseurl }}/images/customer.jpg "A couple of programmers")
+
+_about the image: i work remotely, so this is not me and not my coworker, but it can be seen as a beautiful depiction of us discussing of problems :)_ 
 
 ## Lessons learned
 
