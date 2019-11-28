@@ -10,9 +10,9 @@
 	</script>
 	{% if page.title %}
 	<title>{{ page.title }} - {{ site.name }}</title>
-	{% comment %} 
+	{% comment %}
 	<meta name="description" content="{{page.excerpt | strip_html }}" />
-	{% endcomment %} 
+	{% endcomment %}
 	<meta name="keywords" content="{{page.tags | join: ', '}}" /> {% else %}
 	<title>{{ site.name }} - {{ site.description }}</title>
 	<meta name="description" content="Michele Nasti's personal blog'" />
@@ -24,14 +24,16 @@
 	<link rel="stylesheet" href="{{ "/css/style-xlarge.css" | relative_url }}" />
 	<link rel="stylesheet" href="{{ "/css/colorful.css" | relative_url }}" />
 	<link rel="stylesheet" href="{{ "/css/social.css" | relative_url }}" />
-	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" /> {% include metadata.html %}
+	<meta name="google-site-verification" content="wpVjnRuXV99CAZxjYBzZgKbJm-8_tdLPrlP43u9zhV0" />
+	{% include metadata.html %}
 	<!--</noscript>-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 	{% include analytics.html %}
 	<link rel="stylesheet" href="{{ "/css/prism.css" | relative_url }}" />
 	{% if page.redirect_to %}
-		<meta http-equiv="refresh" content="0; url={{page.redirect_to}}">
+	<meta http-equiv="refresh" content="0; url={{page.redirect_to}}">
 	{% endif %}
+	<link rel="apple-touch-icon" href="favicon.ico" />
 </head>
 
 <body id="top">
