@@ -16,44 +16,42 @@ I attended a hackaton recently: an italian bank organizes an event every year fo
 
 Once we had defined the problem we wanted to solve, and defined who-does-what, we also decided that there was some space to actually _implement_ the solution. While other team members worked on slides, number, charts, motivation, me and my friend did produce a web application that could be shown to the jury.
 
-What happened during the 24 hours we worked on? We _pair-programmed_. Two people, one pc only. I programmed, my friend looked at what I was writing. 
+What happened during the 24 hours we worked on? **We _pair-programmed_.** Two people, one pc only. 
 
-## What happen when you do pair programming
+## What happens when you do pair programming
 
 This was unexpected, but I felt _good_. 
 
-* When you code by yourself from zero you have to make a lof of choices, like what framework to use and why, how to store information, how to design the app, etc. Having another person crosscheck the ideas was great: many bugs were catched before even writing the first line of code. 
-* Having another pair of eyes on the monitor helped reduce more bugs before hitting _Save_. 
-* After a couple of hours of work we both had an incredible amount of knowledge of the project; at some point we decided it was time to split efforts, and he worked on backend while I set up domain, hosting etc. We clearly knew what we wanted and how these two independent tasks fitted together. 
+* When you code by yourself from zero you have to make a lof of choices, like what framework to use and why, how to store information, how to design the app, etc. **Having another person crosscheck the ideas is great**: many bugs were catched before even writing the first line of code. 
+* Having another pair of eyes on the monitor helped **reduce other kind of bugs (like typos)** before hitting _Save_. 
+* **After a couple of hours of work we both had an incredible amount of knowledge of the project**; at some point we decided it was time to split efforts, and he worked on backend while I set up domain, hosting etc. We clearly knew what we wanted and how independent tasks fitted into the whole picture. 
 
-So, should we all switch to pair programming and trash a computer every two developers? No. Pair programming (or _pair thinking_) is great to : 
+So, should we all switch to pair programming and _trash_ a computer every two developers? No. Pair programming (or _pair thinking_) is great to : 
 
-* teach stuff to a new hire while you work on it 
-* Design a project or a feature in its initial phase 
-* discover, before it's too late, of hidden or conflicting use cases.
-* increase the quality of the project (fewer bugs) 
-* sread knowledge on the project to all team members.
+* **teach stuff to a new hire** while you work on it 
+* **Design a project or a feature** in its initial phase 
+* **discover**, before it's too late, **hidden or conflicting use cases**.
+* **increase the quality of the project** (fewer bugs) 
+* **spread knowledge** of the project **to all team members**.
 
 And the downsides? 
 
-* Probably managers fear one thing: that productivity is halfed. 
-* Also, not all tasks are great to be worked on by two people, like writing tests, or bug fixing.  
-* Finally, if your coworker is a stubborn or a dickhead, this may be not a great developer experience.  
+* Probably **managers fear** one thing: **that productivity is halfed**. Two programmers doing the work of one? no way. 
+* Also, **not all tasks are great to be worked on by two people**, like writing tests, or bug fixing.  
+* Finally, if your **coworker** is a **stubborn** or a **dickhead**, this may be not a great developer experience.  
 
-In conclusion, my experience has been great, I will probably do it again if necessary and I'd love to know any stories (either success or horror) about pair programming. The comment section is there for you! 
+In conclusion, **my experience has been great**, I will probably do it again if necessary and I'd love to know any stories (either success or horror) about pair programming. The comment section is there for you! 
 
 ## And what about Merge (or Pull) Requests?
 
-Since internet was born we saw the rise of an interesting phenomenon: thousands of programmers working distributedly to enhance increasingly complex projects, mainly Open Source ones. 
-
-To enable this, new instruments were born too. Github for example popularized a way to contribute to other repositories, called **Pull Request**, that basically consists in:
+Since internet was born we saw the rise of thousands of programmers working distributedly to enhance complex projects. To enable this, new instruments were born too. Git and Github for example popularized a way to contribute to other repositories, called **Pull Request**, that basically consists in:
 
 * "fork" (copy) a project under your account 
 * do your work on your copy 
 * push a Pull Request to the original project. 
 * Somebody from the oroginal project will review the modifications, and if no comments can be made, the modifications are merged.  
 
-This process is totally asynchronous and it's the one I currently use at work, since I work remotely. At my job, the policy is that at least two people must review and approve the code before merging with the original project. 
+This process is totally asynchronous and it's the one I currently use at work, since my team is remote. At my job, the policy is that at least two people must review and approve the code before merging with the original project. 
 
 What are the advantages of this approach? 
 
