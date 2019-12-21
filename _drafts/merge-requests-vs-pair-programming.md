@@ -12,20 +12,69 @@ description: 'What is good, and what is wrong, in pair programming? And in Merge
   (or Pull Requests, in github name)? '
 
 ---
-As you may know I work remotely. 
+I attended a hackaton recently: an italian bank organizes an event every year for employees only, me and another programmer friend were invited by an employee to conribute to his idea. 
 
-The policy, in my company, is that we start a task by forking the project and creating a branch from the master branch. Then we do our job and commit on our separate/indipendent branch. 
+Once we had defined the problem we wanted to solve, and defined who-does-what, we also decided that there was some space to actually _implement_ the solution. While other team members worked on slides, number, charts, motivation, me and my friend did produce a web application that could be shown to the jury.
 
-Once we're done with the task, we push the branch on our remote and open a Merge Request (abbreviated to MR).
+What happened during the 24 hours we worked on? We _pair-programmed_. Two people, one pc only. I programmed, my friend looked at what I was writing. 
 
-> Github has popularized this way of working, but in the popular nomenclature this process is called Pull Request (PR). They're the same thing.
+## What happen when you do pair programming
 
-Another policy in my company is that two other engineers have to review a MR and, if they don't find any problems, the MR is finally merged.
+This was unexpected, but I felt _good_. 
 
-What a trip! 
+* When you code by yourself from zero you have to make a lof of choices, like what framework to use and why, how to store information, how to design the app, etc. Having another person crosscheck the ideas was great: many bugs were catched before even writing the first line of code. 
+* Having another pair of eyes on the monitor helped reduce more bugs before hitting _Save_. 
+* After a couple of hours of work we both had an incredible amount of knowledge of the project; at some point we decided it was time to split efforts, and he worked on backend while I set up domain, hosting etc. We clearly knew what we wanted and how these two independent tasks fitted together. 
 
-After some time, I started to note some patterns in working this way. 
+So, should we all switch to pair programming and trash a computer every two developers? No. Pair programming (or _pair thinking_) is great to : 
 
-* Some of my colleagues are style nazi (and occasionally I am too), they care about spaces, tabs, etc. These problems may be solved by a style checker (prettier? Eslint?) together with a git hook. 
-* This process (pushing, reviewing, opening comments, fixing them 
-* 
+* teach stuff to a new hire while you work on it 
+* Design a project or a feature in its initial phase 
+* discover, before it's too late, of hidden or conflicting use cases.
+* increase the quality of the project (fewer bugs) 
+* sread knowledge on the project to all team members.
+
+And the downsides? 
+
+* Probably managers fear one thing: that productivity is halfed. 
+* Also, not all tasks are great to be worked on by two people, like writing tests, or bug fixing.  
+* Finally, if your coworker is a stubborn or a dickhead, this may be not a great developer experience.  
+
+In conclusion, my experience has been great, I will probably do it again if necessary and I'd love to know any stories (either success or horror) about pair programming. The comment section is there for you! 
+
+## And what about Merge (or Pull) Requests?
+
+Since internet was born we saw the rise of an interesting phenomenon: thousands of programmers working distributedly to enhance increasingly complex projects, mainly Open Source ones. 
+
+To enable this, new instruments were born too. Github for example popularized a way to contribute to other repositories, called **Pull Request**, that basically consists in:
+
+* "fork" (copy) a project under your account 
+* do your work on your copy 
+* push a Pull Request to the original project. 
+* Somebody from the oroginal project will review the modifications, and if no comments can be made, the modifications are merged.  
+
+This process is totally asynchronous and it's the one I currently use at work, since I work remotely. At my job, the policy is that at least two people must review and approve the code before merging with the original project. 
+
+What are the advantages of this approach? 
+
+* Obviously, it works great for distributed teams. 
+* The history of the project is preserved, thanks to version control. 
+* Linus says, "the more eyes see your code, the less bugs arrive to the users". 
+
+On the other side:
+
+* Imagine you're working on a feature that touches several entities and business rules, what if you forget to cover one case? You'll only discover when somebody will review it, and if you modification is heavy, this may mean you have to rewrite a lot of code. 
+* Understanding a codebase that is not yours, or that is written in a language that you're not fluent with, can be daunting. 
+* Even small tasks may require a lot of time (yours and that of your reviewers) to figure out if the merge request is fine. 
+
+## Is there space for a new programming model? 
+
+Pair programming is great for new hires, or when a veteran has to work on code he has never worked on, or when a new functionality has to be designed, etc. 
+
+Obviously pair programming is much easier when two people are in the same room, looking at the same monitor, but probably in 2019 there is plenty of tools that can help remote workers to achieve the same experience. 
+
+Pull Requests do their job, but I feel like the sum of two brains is much greater than two individual brains working alone, so we should - as an industry - find a way to merge the two things in a new shiny process that may enhance productivity and quality of code. 
+
+In a PR-only world, we leave the "knowledge sharing" to documentation, that is obviously important, but we're left to the willing of the programmer to properly document his choices, design points, etc. What if the programmer is not a great writer? Or did not have time to write it? 
+
+And finally, we won the hackaton :) 
