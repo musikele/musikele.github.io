@@ -12,9 +12,9 @@ header-img: ''
 description: Redis
 
 ---
-## What is Redis? 
+## What is Redis?
 
-## How to install? 
+## How to install?
 
     $ sudo apt-get update 
     $ sudo apt-get upgrade 
@@ -30,7 +30,7 @@ from another terminal:
     127.0.0.1:6379> PING
     PONG
 
-## Redis Basics 
+## Redis Basics
 
 ```bash
 127.0.0.1:6379> echo hello
@@ -81,5 +81,30 @@ OK
 101
 ```
 
+How to monitor activity
+
 ```console
+$ redis-cli 
+> monitor 
 ```
+
+FLUSHALL - deletes everything 
+
+Key Spaces
+
+    > SET server:name myserver
+    OK 
+    > GET server:name 
+    "myserver"
+    > SET server:port 6379 
+    "6739"
+
+Expiration after 120 seconds 
+
+    > SET resource:foo hello 
+    > EXPIRE resource:foo 120 
+    > TTL resource:foo 
+    91
+    ...
+    > TTL resource:foo 
+    -2 
