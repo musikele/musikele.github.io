@@ -26,8 +26,8 @@ It's funny how Bill discovers that there's no version control, nobody knows what
 
 During the whole book we'll meet several roles, like **Wes** and **Patty** (two managers who work in Operations), **Brent** (an IT Engineer that seems to be the only one to know what's going on in every single moment), **Steve** (the CEO), **John** (the Security Officier) and **Erik** (the guru).
 
-The book, expecially in the first part, is fantastic. You'll see that, no matter what they do, things continue to randomly break :)
+The book, expecially in the first part, is fantastic. You'll see that, no matter what they do, things continue to randomly break! Just like reality. 
 
 If you, like me, started working in IT during 2010, you probably remember the pain of releasing software in production. The root cause is that there's a profund mismatch in skills from people who work in IT operation (those who are specialized in configuring _machines_) and those who work in development.
 
-Luckily, DevOps (and Agile) has come to the rescue. Now many companies do or can do [10 deploys per day](https://www.youtube.com/watch?v=LdOe18KhtT4). Isn't it great? :) 
+Luckily, DevOps (and Agile) has come to the rescue. Now many companies do or can do [10 deploys per day](https://www.youtube.com/watch?v=LdOe18KhtT4). Isn't it great? 
