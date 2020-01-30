@@ -20,7 +20,7 @@ I've just completed the reading of a book calld **The Phoenix Project - a Novel 
 
 The book in question is the story of **Bill**, a guy who was managing a legacy systems team, and all of a sudden has found himself being nominated _Vice President of IT Operations_.
 
-During the first day of this new role, infrastructure broke and a critical payroll system started returning all zeros.
+During the first day of this new role, infrastructure broke and a critical payroll system started returning all zeros. A nice start! 
 
 It's funny how Bill discovers that there's no version control, nobody knows what happened, what everyone is working on, etc - it's like waking up in the middle of a ocean, and you can only navigate by sight.
 
