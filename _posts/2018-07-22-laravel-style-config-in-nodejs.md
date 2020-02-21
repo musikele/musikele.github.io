@@ -2,10 +2,10 @@
 paginate: true
 comments: true
 author: musikele
-title: Handling configuration for mutliple environments in NodeJS
+title: Handling configuration for multiple environments in NodeJS
 category: English
 layout: post
-date: 2018-07-22 00:00:00 +0200
+date: 2018-07-21T22:00:00.000+00:00
 tags:
 - nodejs
 - configuration
