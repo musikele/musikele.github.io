@@ -8,6 +8,16 @@ fields:
   description: 'The article title '
   config:
     required: true
+- type: textarea
+  name: description
+  label: Description
+  description: A description for social networks
+  config:
+    required: true
+- type: file
+  name: header-img
+  label: header image
+  description: Header Image
 - name: paginate
   default: true
   label: Paginate
@@ -55,16 +65,6 @@ fields:
     display_utc: true
     export_format: YYYY-MM-DD
     time_format: " "
-- type: file
-  name: header-img
-  label: header image
-  description: Header Image
-- type: textarea
-  name: description
-  label: Description
-  description: A description for social networks
-  config:
-    required: true
 pages:
 - _posts/2017-02-05-quali-sono-gli-svantaggi-nel-lavorare-da-casa.md
 - _posts/2017-02-10-hey-javascript-function-take-this.md
