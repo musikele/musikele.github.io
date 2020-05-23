@@ -15,38 +15,38 @@ tags:
 - https
 
 ---
-One of the things I do, on my job, is maintain a javascript library to display ads. Customers will inject this script on their page and _voilà_ they start displaying ads. 
+One of the things I do, on my job, is to maintain a javascript library to display ads. Customers will inject this script on their page and _voilà_ they start displaying ads.
 
-Everything works nice and easy except debugging. One of the problems is that we build this piece of javascript with customer data, a bunch of other open source libraries, all concatenated in one file (no webpack, no sourcemaps... obviously by choice). 
+Everything works nice and easy except debugging. One of the problems is that we build this big chunk of javascript with customer's data, a bunch of other open source libraries, all concatenated in one file (there is a reason why we do that - we are not crazy).
 
-So, when we have to debug the library, we usually _generate_ a modified version (uncompressed, or with sourcemaps, or with a different configuration...) and then we inject it into the page. To do that, we use several thecniques: 
+So, when we have to debug the library, we usually _generate_ a modified version (uncompressed, or with sourcemaps, or with a different configuration...) and then we inject it into the page. To do that, we use several thecniques:
 
 * via [Requestly](https://www.requestly.in/ "Requestly.in") (a firefox and chrome plugin) it is possible to redirect a request to localhost
-* by specifying an entry in `/etc/hosts` we can also redirect traffic for a domain to aother ip, like localhost 
+* by specifying an entry in `/etc/hosts` we can also redirect traffic for a domain to aother ip, like localhost
 
-The problem is when our target website is on **https**. As you know, when the page is served on a secure channel, all other requests must be https too. This means that if I require “**https**://michelenasti.com“ I cannot add a script tag pointing to “**http**://cdn.google.com/jquery.js“ - the browser will refuse to serve the file and will display some warning in console. 
+The problem is when our target website is on **https**. As you know, when the page is served on a secure channel, all other requests must be https too. This means that if I require “**https**://michelenasti.com“ I cannot add a script tag pointing to “**http**://cdn.google.com/jquery.js“ - the browser will refuse to serve the file and will display some warning in console.
 
-> The opposite doesn't hold: if the page is on http, you can link to https files. 
+> The opposite doesn't hold: if the page is on http, you can link to https files.
 
-So I needed to serve my files over https. How to do that? 
+So I needed to serve my files over https. How to do that?
 
 ![Yes, you need to "generate" a certificate. ]({{ site.baseurl }}/images/person-holding-white-scroll-2292837.jpg "certificate")
 
-## Generate the certificates 
+## Generate the certificates
 
-First of all, we need to generate a certificate that will be used by our https server. In the same folder of express `index.js`, run this command on mac or linux: 
+First of all, we need to generate a certificate that will be used by our https server. In the same folder of express `index.js`, run this command on mac or linux:
 
 ```console
 $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./selfsigned.key -out selfsigned.crt
 ```
 
-This will generate two files, `selfsigned.key` and `selfsigned.crt`, that can be used by any webserver in the world, but for now we'll use in nodejs. 
+This will generate two files, `selfsigned.key` and `selfsigned.crt`, that can be used by any webserver in the world, but for now we'll use in nodejs.
 
-This step is only required once. 
+This step is only required once.
 
 ## Use the certificates in express
 
-in the same folder of the generated certificates, create a file `index.js`: 
+in the same folder of the generated certificates, create a file `index.js`:
 
 ```javascript
 const express = require('express');
@@ -85,8 +85,8 @@ httpServer.listen(3000);
 httpsServer.listen(8443);
 ```
 
-The first time you run this program, browsers will ask you if you trust this certificate. Then, the server will work flawlessly. 
+The first time you run this program, browsers will ask you if you trust this certificate. Then, the server will work flawlessly.
 
 To conclude, I want to point out how easy it is to create an http(s) server with few lines of code and nodejs.
 
-And also, that this server should not end in production. what if a hacker will request \`https://your_server:8443/selfsigned.key ? Or some other random file on your hard disk? enjoy :) 
+And also, that this server should not end in production. what if a hacker will request \`https://your_server:8443/selfsigned.key ? Or some other random file on your hard disk? enjoy :)
