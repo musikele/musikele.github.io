@@ -2,6 +2,12 @@
 label: Default
 hide_body: false
 fields:
+- type: text
+  name: title
+  label: title
+  description: 'The article title '
+  config:
+    required: true
 - name: paginate
   default: true
   label: Paginate
@@ -37,12 +43,6 @@ fields:
   label: layout
   description: the layout
   default: post
-  config:
-    required: true
-- type: text
-  name: title
-  label: title
-  description: 'The article title '
   config:
     required: true
 - type: datetime
