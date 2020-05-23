@@ -24,9 +24,9 @@ So, when we have to debug the library, we usually _generate_ a modified version 
 * via [Requestly](https://www.requestly.in/ "Requestly.in") (a firefox and chrome plugin) it is possible to redirect a request to localhost
 * by specifying an entry in `/etc/hosts` we can also redirect traffic for a domain to aother ip, like localhost
 
-The problem is when our target website is on **https**. As you know, when the page is served on a secure channel, all other requests must be https too. This means that if I require “**https**://michelenasti.com“ I cannot add a script tag pointing to “**http**://cdn.google.com/jquery.js“ - the browser will refuse to serve the file and will display some warning in console.
+The problem is when our target website is on **https**. As you know, when the page is served on a secure channel, all other requests must be https too. This means that if I require **`https`**`://michelenasti.com` I cannot add a script tag pointing to **`http`**`://cdn.google.com/jquery.js` - the browser will refuse to serve the file and will display a warning in console.
 
-> The opposite doesn't hold: if the page is on http, you can link to https files.
+> The opposite is not true: if the page is on http, you can link to https files.
 
 So I needed to serve my files over https. How to do that?
 
@@ -34,15 +34,17 @@ So I needed to serve my files over https. How to do that?
 
 ## Generate the certificates
 
-First of all, we need to generate a certificate that will be used by our https server. In the same folder of express `index.js`, run this command on mac or linux:
+First of all, we need to **generate a certificate** that will be used by our https server. In the same folder of express `index.js`, run this command on mac or linux:
 
 ```console
 $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./selfsigned.key -out selfsigned.crt
 ```
 
+The program will ask you to answer some questions on the issuer of the certificate.
+
 This will generate two files, `selfsigned.key` and `selfsigned.crt`, that can be used by any webserver in the world, but for now we'll use in nodejs.
 
-This step is only required once.
+**This step is only required once**. Generate and forget :) 
 
 ## Use the certificates in express
 
@@ -85,8 +87,8 @@ httpServer.listen(3000);
 httpsServer.listen(8443);
 ```
 
-The first time you run this program, browsers will ask you if you trust this certificate. Then, the server will work flawlessly.
+**The first time you run this program, browsers will ask you if you trust this certificate**. Then, the server will work flawlessly.
 
-To conclude, I want to point out how easy it is to create an http(s) server with few lines of code and nodejs.
+To conclude, I want to point out **how easy** it is to create an http(s) server with few lines of code and nodejs.
 
-And also, that this server should not end in production. what if a hacker will request \`https://your_server:8443/selfsigned.key ? Or some other random file on your hard disk? enjoy :)
+And also, that **this server should not end in production**. what if a hacker will request \`https://your_server:8443/selfsigned.key ? Or some other random file on your hard disk? enjoy :)
