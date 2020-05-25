@@ -20,7 +20,7 @@ tags:
 ---
 Non fraintendetemi, non mi piaceva mica il traffico o il tempo perso per raggiungere l'ufficio, o il capo spocchioso. A me piaceva proprio conversare con i miei colleghi.
 
-Ironico il mondo; ormai lavoro da 4 anni da remoto ed é impossibile per me tornare indietro, visto che nessuna azienda della zona sembra voler (o poter) offrire quello che mi offre il lavoro dall'estero. Dal punto di vista professionale mi ritengo molto fortunato per la complessità e l'impatto che il mio lavoro ha. Non il solito gestionale, insomma. 
+Ironico il mondo; ormai lavoro da 4 anni da remoto ed é impossibile per me tornare indietro, visto che nessuna azienda della zona sembra voler (o poter) offrire quello che mi offre il lavoro dall'estero. Dal punto di vista professionale mi ritengo molto fortunato per la complessità e l'impatto che il mio lavoro ha. Non il solito gestionale, insomma.
 
 Eppure ricordo ancora quando andavo in ufficio. Il caffé coi colleghi, le riunioni fiume, le pizze e i panini post lavoro. Le discussioni, i problemi risolti alla lavagna. Queste cose qui, col lavoro remoto, tendono a diventare un dolce ricordo del passato.
 
@@ -34,6 +34,6 @@ Forse sto idealizzando anche i colleghi... Certo, ne ho avuti di deficienti e an
 
 E poi ci sono quelli bravissimi, quelli smart. Se sono anche simpatici hai fatto bingo, hai trovato delle persone che non devi perdere per il resto della tua vita, perché ti insegneranno tutto quello che sanno e non te lo faranno mai pesare. E sono i primi a rispondere a un invito a uscire. Queste persone qui io le adoro! Ricordo le conversazioni fatte a giornata conclusa, mentre si tentava di far partire il server che rispondeva picche a ogni nostro tentativo.. Ragionare con loro ti fa sentire in una fiction in cui devi smascherare l'assassino formulando ipotesi, e che gioia quando alla fine ci riesci!
 
-Insomma, il mio sogno é di tornare prima o  a lavorare fisicamente con quelle 4-5 persone con cui mi trovo bene, lavorando a problemi non banali e vivendo anche una vita sociale appagante. Il lavoro da remoto é fantastico, su questo non ci piove.
+Insomma, il mio sogno é di tornare prima o  a lavorare fisicamente con quelle 4-5 persone con cui mi trovo bene, magari su problemi non banali e vivendo anche una vita sociale appagante. Il lavoro da remoto é fantastico, su questo non ci piove.
 
 Ma avere degli amici che puoi vedere tutti i giorni con la scusa del lavoro, di più.
