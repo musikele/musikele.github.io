@@ -20,7 +20,7 @@ tags:
 ---
 Non fraintendetemi, non mi piaceva mica il traffico o il tempo perso per raggiungere l'ufficio, o il capo spocchioso. A me piaceva proprio conversare con i miei colleghi.
 
-Ironico il mondo; ormai lavoro da 4 anni da remoto ed é impossibile per me tornare indietro, visto che nessuna azienda della zona sembra voler  offrire quello che mi offre il lavoro dall'estero. Dal punto di vista professionale si tratta di realizzare applicazioni molto complesse con quasi tutti gli strumenti scritti da zero. Ogni cosa che tocchiamo ha un impatto notevole sui nostri clienti e utenti, nonostante tutto rilasciamo due-tre volte al giorno con pochissimi downtime. E siamo solo in 5 nel mio team a gestire un'infrastruttura e un flusso pazzesco.
+Ironico il mondo; ormai lavoro da 4 anni da remoto ed é impossibile per me tornare indietro, visto che nessuna azienda della zona sembra voler  offrire quello che mi offre il lavoro dall'estero. Dal punto di vista professionale mi ritengo molto fortunato per la complessità e l'impatto che il mio lavoro ha. Non il solito gestionale, insomma. 
 
 Eppure io ricordo ancora quando andavo in ufficio. Il caffé coi colleghi, le riunioni fiume, le pizze e i panini post lavoro. Le discussioni, i problemi risolti alla lavagna. Queste cose qui, col lavoro remoto, tendono a diventare un dolce ricordo del passato.
 
