@@ -20,9 +20,9 @@ tags:
 ---
 Non fraintendetemi, non mi piaceva mica il traffico o il tempo perso per raggiungere l'ufficio, o il capo spocchioso. A me piaceva proprio conversare con i miei colleghi.
 
-Ironico il mondo; ormai lavoro da 4 anni da remoto ed é impossibile per me tornare indietro, visto che nessuna azienda della zona sembra voler  offrire quello che mi offre il lavoro dall'estero. Dal punto di vista professionale mi ritengo molto fortunato per la complessità e l'impatto che il mio lavoro ha. Non il solito gestionale, insomma. 
+Ironico il mondo; ormai lavoro da 4 anni da remoto ed é impossibile per me tornare indietro, visto che nessuna azienda della zona sembra voler (o poter) offrire quello che mi offre il lavoro dall'estero. Dal punto di vista professionale mi ritengo molto fortunato per la complessità e l'impatto che il mio lavoro ha. Non il solito gestionale, insomma. 
 
-Eppure io ricordo ancora quando andavo in ufficio. Il caffé coi colleghi, le riunioni fiume, le pizze e i panini post lavoro. Le discussioni, i problemi risolti alla lavagna. Queste cose qui, col lavoro remoto, tendono a diventare un dolce ricordo del passato.
+Eppure ricordo ancora quando andavo in ufficio. Il caffé coi colleghi, le riunioni fiume, le pizze e i panini post lavoro. Le discussioni, i problemi risolti alla lavagna. Queste cose qui, col lavoro remoto, tendono a diventare un dolce ricordo del passato.
 
 ![]({{ site.baseurl }}/images/top-view-photo-of-people-near-wooden-table-3183150.jpg)
 
