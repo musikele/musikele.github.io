@@ -30,9 +30,9 @@
 {% endif %}
 
 {% if page.header-img %}
-<meta content="{{site.url}}/{{site.baseurl}}/{{ page.header-img }}" property="og:image">
+<meta property="og:image" content="{{site.url}}{{site.baseurl}}{{ page.header-img }}">
 {% else %}
-<meta content="/img/logo-high-resolution.png" property="og:image">
+<meta property="og:image" content="/img/logo-high-resolution.png">
 {% endif %}
 
 {% if page.tags %}
