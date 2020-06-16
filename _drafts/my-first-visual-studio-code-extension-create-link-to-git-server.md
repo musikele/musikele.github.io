@@ -100,7 +100,7 @@ In total, I worked on this about 4-6 hours to get the bulk of the code working. 
 * add a menu item in VSC 
 * write something in the clipboard 
 
-For all this, I had to check Stack Overflow. Only MS documentation is too much to digest - and also, too detailed - to get the infos I needed in a short time.
+For all this, Stack Overflow was my friend.
 
 Then, there's the releasing part .... 
 
