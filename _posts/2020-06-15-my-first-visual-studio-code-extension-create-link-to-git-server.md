@@ -113,4 +113,4 @@ To release an extension on Visual Studio Code marketplace, you have to do a bunc
 
 ***
 
-So, what can be another "missing" extension? What else can we build for developers that can be extremely useful? Let me know :) 
+So, what can be another "missing" extension? What else can we build for developers that can be extremely useful? Let me know :)
