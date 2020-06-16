@@ -1,5 +1,12 @@
 <!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
+
+{% if page.header-img %}
+<meta property="og:image:secure" content="{{site.url}}{{ page.header-img }}">
+<meta property="og:image" content="{{site.url}}{{ page.header-img }}">
+{% else %}
+<meta  content="/img/logo-high-resolution.png">
+{% endif %}
+
 <meta content="{{ site.title }}" property="og:site_name">
 
 {% if page.title %}
@@ -27,12 +34,6 @@
 {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
   <meta content="https://www.facebook.com/micnasti/" property="article:author">
-{% endif %}
-
-{% if page.header-img %}
-<meta property="og:image" content="{{ page.header-img }}">
-{% else %}
-<meta  content="/img/logo-high-resolution.png">
 {% endif %}
 
 {% if page.tags %}
