@@ -14,7 +14,7 @@ tags:
 - extension
 
 ---
-You know when you're chatting with a colleague and **you want to point** out a specific line in the git repository? For example, **a specific line of a specific branch of a specific fork**? It's a time-wasting process to open the browser, open the git hosting website, navigate to the file, and create the link; so I decided to create an extension for Visual Studio Code.
+You know when you're chatting with a colleague and **you want to point** **out** **a specific line in the git repository?** For example, **a specific line of a specific branch of a specific fork**? It's a time-wasting process to open the browser, open the git hosting website, navigate to the file, and create the link; so I decided to create an extension for Visual Studio Code.
 
 Here's what I learned.
 
@@ -31,6 +31,10 @@ You can download the extension by
 * compiling it yourself from [github](https://github.com/musikele/create-link-to-git-server)
 * exploring it on [visual studio code marketplace](https://marketplace.visualstudio.com/items?itemName=musikele.create-link-to-git-server)
 * installing it directly from VSC by searching for `create-link-to-git-server`
+
+Here's a demo:
+
+![](https://raw.githubusercontent.com/musikele/create-link-to-git-server/master/demo.gif)
 
 ## Wasn't there another extension that does exactly that?
 
