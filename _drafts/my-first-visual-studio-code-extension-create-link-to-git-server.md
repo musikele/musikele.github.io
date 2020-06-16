@@ -51,10 +51,14 @@ Folks at Microsoft have published a ton of articles regarding how to build an ex
 
 So: you need to write the function in a Typescript file, and then specify how this function should be activated in `package.json` . 
 
+### Code
+
 All the code will be in a typescript file called `src/extension.ts` that contains the following blocks:
 
 * an `activate` function , that is run at VSC startup
 * inside the activate function, we register the command we want to show; in my case, I called `registerTextEditorCommand` that contains the body of the code. Here I do all my logic, like getting git info from VSC, and building the link. More info on those commands [here](https://code.visualstudio.com/api/references/vscode-api#commands)
+
+### Package.json
 
 Creating the command is not enough. Now we must specify how to activate those commands. This is done in `package.json` file by specifying custom properties. I admit that the documentation for this is messy, overly descriptive, and not easy to find/digest/understand without some research in stack overflow.
 
