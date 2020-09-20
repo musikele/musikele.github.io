@@ -139,7 +139,19 @@ var reader = bufio.NewReader(os.Stdin)
 message, _ := reader.ReadString('\n')
 ```
 
-Here we are declaring `reader` variable with `var` and `message` variable without `var`. Why? 
+Here we are declaring `reader` variable with `var` and `message` variable without `var`. Why?
+
+To only declare a variable, without initializing, you can user the keyword `var` followed by the variable name; you must also declare a type.
+
+If the type can be inferred by the assigning expression, it can be omitted.
+
+If the variable is initialized and assigned, Go offers the shorthand syntax via `:=` that allows to avoid the `var` keyword. So the first line may be written as: 
+
+```go
+reader := bufio.NewReader(os.Stdin)
+```
+
+As I spercified before, the `bufio` library contains functions that allow to read in a buffer. The buffer we are just creating is 
 
 More resources:
 
@@ -147,4 +159,4 @@ More resources:
 * many [other ways to read input in Go](http://zetcode.com/golang/readinput/) (from zetcode.com)
 * [difference of quotes in Go](https://golangbyexample.com/double-single-back-quotes-go/) (from golangbyexample.com)
 * [anatomy of functions in go](https://medium.com/rungo/the-anatomy-of-functions-in-go-de56c050fe11) (by runGo)
-* Go 
+* [Go by example: variables](https://gobyexample.com/variables)
