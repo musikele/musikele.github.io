@@ -24,6 +24,12 @@ So, I decided to go through HackerRank and do the 30 days challenge. I do not ex
 
 I will not go through installing the go compiler, _Go figure out_ by yourself. But this hello world may give you (and me) a sense of what's going on here.
 
+## On the educative task of explaining Hello World
+
+When I was at university my Java teacher asked students to write the best-possible explanation of Java's Hello World, that would win a Java book (Java 1.4, I'm that old). So I wrote a 4 pages essay explaining _everything_ (keywords, exceptions...) and yes, I own that book now :)
+
+This "exercise" is really valid and I encourage everyone to do it. You will do a lot of research to explain tiny details that usually do not seem to have much importance. So, for example, it took me 4-5 hours to write this article. The outcome is that I feel confident of what I learned.
+
 ## Things you should know before we write some code
 
 **Go is a compiled programming language**. This means that, to run your program, you first need to compile it using the `go` executable.
@@ -182,12 +188,6 @@ You may not see it from this very simple program, but:
 * being compiled, and strongly typed, many errors will be caught at compile time.
 * multi-return values allow for the error-checking pattern that is verbose, but produces some very robust code.
 * Go shines on multithreaded applications using "channels", more on that in the next articles. As I said, my colleagues wrote a super-fast data processor that never breaks, even under heavy load.
-
-## On the educative task of explaining Hello World
-
-When I was at university my Java teacher asked students to write the best-possible explanation of Java's Hello World, that would win a Java book (Java 1.4, I'm that old). So I wrote a 4 pages essay explaining _everything_ (keywords, exceptions...) and yes, I own that book now :)
-
-This "exercise" is really valid and I encourage everyone to do it. You will do a lot of research to explain tiny details that usually do not seem to have much importance. So, for example, it took me 4-5 hours to write this article. The outcome is that I feel confident of what I learned.
 
 Below I leave some links that I checked while writing this article. Explore them like I did. Bye!  
 
