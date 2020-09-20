@@ -151,7 +151,43 @@ If the variable is initialized and assigned, Go offers the shorthand syntax via 
 reader := bufio.NewReader(os.Stdin)
 ```
 
-As I spercified before, the `bufio` library contains functions that allow to read in a buffer. The buffer we are just creating is 
+As I spercified before, the `bufio` library contains functions that allow to read in a buffer. The buffer we are creating is attached to STDIN, that is a common name for the Standard Input. Basically, what the user types in the terminal. 
+
+Once we get a reference to the `reader`, we use it to read a string using the method `ReadString()`. ReadString accepts a character (that is wrapped in single quotes, `'`) that will be used to match the end of the line. In our program, this char is the universal character for "new line". But... what's on the left side of the assignment? 
+
+```go
+message, _ := ...
+```
+
+We just hit our first multi-return function. ReadString returns two raguments, the data read and the error; we _shoud_ take care of the error message (in Go, if you declare a variable and you will not use it, the program will not compile), but if we want to skip the variable assignment, we can simply set to `_` (underscore) and Go compiler will not protest. So, in a scenario like reading from a file, or from the network, where obviously something may go wrong, skipping the error is not a good idea. In this case, given the simplicity of the program, we take our responsibilities as grown adults. 
+
+### Writing to STDOUT 
+
+Outputting data is much simpler:
+
+```go
+fmt.Println("Hello, World.")
+fmt.Println(message)
+```
+
+In this snippet we are writing "Hello World" followed by the message we captured at the previous step. That's it. Program ended.
+
+## Where is the power of Go? 
+
+You may not see it from this very simple program, but:  
+- being compiled, and strongly typed, many errors will be caught at compile time. 
+- multi-return values allow for the error-checking pattern that is verbose, but produces some very robust code. 
+- Go shines on multithreaded applications using "channels", more on that in the next articles. As I said, my colleagues wrote a super-fast data processor that never breaks, even under heavy load.
+
+## On the educative task of explaining Hello World 
+
+When I was at university my Java teacher asked students to write the best-possible explanation of Java's Hello World, that would win a Java book (Java 1.4, I'm that old). So I wrote a 4 pages essay explaining everything (keywords, exceptions...) and yes, I own that book now :)
+
+This "exercise" is really valid and I encourage everyone to try to do it. You will do a lot of research to explain tiny details that usually do not have much importance. So, for example, it took me 4-5 hours to write this article. 
+
+Hopefully you'll hear more about Go in the next articles. Stay tuned :) 
+
+---
 
 More resources:
 
@@ -160,3 +196,4 @@ More resources:
 * [difference of quotes in Go](https://golangbyexample.com/double-single-back-quotes-go/) (from golangbyexample.com)
 * [anatomy of functions in go](https://medium.com/rungo/the-anatomy-of-functions-in-go-de56c050fe11) (by runGo)
 * [Go by example: variables](https://gobyexample.com/variables)
+* [ReadString specification](https://golang.org/pkg/bufio/#Reader.ReadString) (golang.org)
