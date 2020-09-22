@@ -5,6 +5,9 @@ title: Tags
 ---
 
 <div id="main">
+
+  <h1>Tags</h1>
+
   <div id="archives" style="display:none">
   {% for tag in site.tags %}
     <div class="archive-group">
