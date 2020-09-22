@@ -8,6 +8,8 @@ layout: default
 			<h1 class="post-title"><a href="{{page.url}}">{{ page.title }}</a></h1>
 			<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta
 				}}{% endif %}</p>
+			 
+			{% include tags.html %}
 		</header>
 
 		<section>
@@ -15,6 +17,8 @@ layout: default
 			{{ content }} 
 			
 			{% include social.md %}
+
+			{% include tags.html %}
 
 			{% include related_posts.html %}
 		</section>
