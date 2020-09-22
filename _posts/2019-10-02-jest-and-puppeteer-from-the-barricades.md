@@ -11,7 +11,7 @@ tags:
 - testing
 - javascript
 title: Jest and Puppeteer from the barricades
-header-img: "/images/1*BM_RS2-DjYk_JZUKr4uq0g.png"
+header-img: "/images/1BM_RS2-DjYk_JZUKr4uq0g.png"
 description: 'Jest and Puppeteer are two great tools. Together they can satisfy a
   lot of needs. Testing simple JS is easy, testing complex async scenarios is super
   hard: by learning these two tools you''ll get test superpowers to use in your projects!'
@@ -31,7 +31,7 @@ At the start of 2019 there was a lot of hype around Javascript testing, mainly b
 
 I also read an interesting article saying (cannot find it anymore) "**the js community has finally realized that web apps must be E2E tested first, instead of unit tested**_"_. That's true because e2e tests have become easier (but not dead easy) to write and to repeat. Let's see it!
 
-![]({{ site.baseurl }}/images/1*BM_RS2-DjYk_JZUKr4uq0g.png)
+![]({{ site.baseurl }}/images/1BM_RS2-DjYk_JZUKr4uq0g.png)
 
 ## How to structure the code
 
