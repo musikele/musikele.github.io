@@ -32,7 +32,7 @@ This "exercise" is really valid and I encourage everyone to do it. You will do a
 
 ## Things you should know before we write some code
 
-**Go is a compiled programming language**. This means that, to run your program, you first need to compile it using the `go` executable.
+**Go is a compiled programming language**. This means that to run your program you first need to compile it using the `go` executable.
 
 Go source files have the `.go` extension. So, to compile a file:
 
@@ -150,7 +150,7 @@ message, _ := reader.ReadString('\n')
 
 Here we are declaring `reader` variable with `var` and `message` variable without `var`. Why?
 
-To only declare a variable, without initializing, you can user the keyword `var` followed by the variable name; you must also declare a type.
+To only declare a variable, without initializing, you can use the keyword `var` followed by the variable name; you must also declare a type.
 
 If the type can be inferred by the assigning expression, it can be omitted.
 
@@ -168,7 +168,7 @@ Once we get a reference to the `reader`, we use it to read a string using the me
 message, _ := ...
 ```
 
-We just hit our first multi-return function. ReadString returns two values, the data read and the error; we _shoud_ take care of the error variable (in Go, if you declare a variable and you will not use it, the program will not compile at all), but if we want to skip the variable assignment, we can simply set to `_` (underscore) and Go compiler will stop protesting. So, in a scenario like reading from a file or from the network, where obviously something may go wrong, skipping the error check is not a good idea. In this case, given the simplicity of the program, we take our responsibilities as grown adults.
+We just hit our first multi-return function. ReadString returns two values, the data read and the error; we _should_ take care of the error variable (in Go, if you declare a variable and you will not use it, the program will not compile at all), but if we want to skip the variable assignment, we can simply set to `_` (underscore) and Go compiler will stop protesting. So, in a scenario like reading from a file or from the network, where obviously something may go wrong, skipping the error check is not a good idea. In this case, given the simplicity of the program, we take our responsibilities as grown adults.
 
 ### Writing to STDOUT
 
@@ -179,7 +179,7 @@ fmt.Println("Hello, World.")
 fmt.Println(message)
 ```
 
-In this snippet we are writing "Hello World" followed by the message we captured at the previous step. That's it. Program ended.
+In this snippet, we are writing "Hello World" followed by the message we captured at the previous step. That's it. Program ended.
 
 ## Where is the power of Go?
 
