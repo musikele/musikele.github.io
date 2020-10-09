@@ -20,7 +20,7 @@ This book is just fun.
 
 ![]({{ site.baseurl }}/images/img_20200928_202854.jpg)
 
-It is a series of scientific and absurd questions, answered with a mix of seriousness and funny sarcasm. Some questions whose answers I found hilarious are:
+**What If?: Serious Scientific Answers to Absurd Hypothetical Questions** is a series of scientific and absurd questions, answered with a mix of seriousness and funny sarcasm. Some questions whose answers I found hilarious are:
 
 * What if you throw a baseball to 99% speed of light?
 * What happens to earth if all the population of the world stay in the same place and jump simultaneously?
@@ -34,3 +34,5 @@ You don't need a phisics degree to understand the logics. Sometimes, it's more a
 The author, Rundall Munroe, authors also the super popular nerdy comic xkcd on the Web. The book is full of his drawings that will, at least, make you laugh.
 
 ![]({{ site.baseurl }}/images/img_20200928_203357__01.jpg)
+
+You can find the book here on the italian [Amazon](https://amzn.to/3iMOd4q). 
