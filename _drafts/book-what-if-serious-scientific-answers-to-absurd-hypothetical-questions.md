@@ -2,14 +2,18 @@
 paginate: true
 comments: true
 author: musikele
-category: Italiano
+category: English
 layout: post
 date: 2020-10-09
 title: "[BOOK] What If?: Serious Scientific Answers to Absurd Hypothetical Questions"
 description: 'From the creator of XKCD, a book full of science, psychology, fun, and
   drawings. '
 header-img: "/images/img_20200928_202854.jpg"
-tags: []
+tags:
+- book
+- xkcd
+- randall munroe
+- what if
 
 ---
 This book is just fun.
