@@ -36,3 +36,9 @@ The author, Rundall Munroe, authors also the super popular nerdy comic xkcd on t
 ![]({{ site.baseurl }}/images/img_20200928_203357__01.jpg)
 
 You can find the book here on the italian [Amazon](https://amzn.to/3iMOd4q). 
+
+**Note:** from the units of measure's perspective, the author is familiar with both the International and the Imperial System; you may find references to both. I wonder how we got here with this confusion in how to measure things; and more importantly, why just a couple of countries refuse to adhere to an international standard? I guess it's because they believe to be the greatestest and don't want to be them changing. I mean, this stuff should be used to fix communication problems in business, science, transports, etc. So yes, why are we complicating our lives like that? I'll never know. As the author of the book wrote, 
+
+![https://imgs.xkcd.com/comics/standards.png](https://imgs.xkcd.com/comics/standards.png)
+
+:) 
