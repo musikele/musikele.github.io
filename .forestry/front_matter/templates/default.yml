@@ -135,5 +135,6 @@ pages:
 - _posts/2020-06-15-my-first-visual-studio-code-extension-create-link-to-git-server.md
 - _posts/2020-09-16-how-to-read-and-write-from-stdin-and-stdout-in-go.md
 - _posts/2020-10-09-book-what-if-serious-scientific-answers-to-absurd-hypothetical-questions.md
+- _posts/a-guide-to-mvc-frameworks.md
 - _posts/just-enough-functional-programming-in-javascript.md
 - _posts/just-enough-redis.md
