@@ -45,6 +45,10 @@ npx react-native run-android
 
 The first run may require a lot. Don't worry and wait. This command will open another terminal, that runs the JS compiler for the target platform. Don't close that window!
 
-## what if I want to run the app in Android Studio or XCode?
+## A look at RN files and dirs 
 
-The RN project comes with two directories, `/android` and `/ios`. Those dirs contain the projects that can be opened with the two IDEs. With these you can modify the target simulator, or sign the app to deploy on the AppStore, etc.
+The RN project comes with two directories, `/android` and `/ios`. Those dirs contain the projects that can be opened with the two IDEs. With these you can modify the target simulator, or sign the app to deploy on the stores, etc.
+
+The first file you have to look at, in RN project, is `index.js`. It will load the AppRegistry, that is the component that will display the component on the screen; which component? well, if you see the imports, it will render `App.js`.
+
+This `App.js` contains some default demo code, that still is useful to display some properties from RN. For example, try to change the title text. At this moment, the simulator automatically refreshes the app at every code change, if this doesn't work you can just CMD + R (or Ctrl + R). If you need to access more options, CMD + M. 
