@@ -14,7 +14,7 @@ tags:
 - artisan
 - orm
 - documentation
-title: 'An introductive guide to MVC Frameworks '
+title: An introductive guide to MVC Frameworks
 header-img: "/images/coding1.jpg"
 description: What is a MVC Framework, why it exists, how it works.
 
