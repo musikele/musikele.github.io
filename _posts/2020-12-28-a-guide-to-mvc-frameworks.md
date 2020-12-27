@@ -14,12 +14,12 @@ tags:
 - artisan
 - orm
 - documentation
-title: An introductive guide to MVC Frameworks
+title: A guide to MVC Frameworks
 header-img: "/images/coding1.jpg"
 description: What is a MVC Framework, why it exists, how it works.
 
 ---
-In the last years I've worked or played with a bunch of MVC frameworks: **Laravel**, **Ruby on Rails**, **Django**, and **AdonisJS**.
+In the last few years I've worked or played with a bunch of MVC frameworks: **Laravel**, **Ruby on Rails**, **Django**, and **AdonisJS**.
 
 With two of them (Laravel and Dango) I also have some experience in production environments. Laravel is the one I know most.
 
