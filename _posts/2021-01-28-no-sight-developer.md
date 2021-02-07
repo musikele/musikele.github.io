@@ -38,7 +38,7 @@ I'm Weber Amaral, 36, and was born in southern Brazil. I lived in a small town i
 
 #### What is the issue with your sight?
 
-When I was 6 y/o, I loved going to school. One day though, finding me too talkative, **my kindergarten teacher sat me in the back of the classroom. She then noticed I couldn't see anything she put on the board.** She called my parents, who took me to the eye doctor. We then found out I had only 5% of my sight in both eyes due to a vascular and autoimmune disease called _pars planitis_. Since then, I've gone through **more than 50 surgeries** and lost the sight on the right eye around 6 years ago. The left eye was doing its work "well" until it really start a new phase of degeneration almost 3 years ago. So, everyday for me now is a new discovery, since my vision is getting worse and worse.
+When I was 6 y/o, I loved going to school. One day though, finding me too talkative, **my kindergarten teacher sat me in the back of the classroom. She then noticed I couldn't see anything she put on the board.** She called my parents, who took me to the eye doctor. We then found out I had only 5% of my sight in both eyes due to a vascular and autoimmune disease called [_pars planitis_](https://en.wikipedia.org/wiki/Uveitis). Since then, I've gone through **more than 50 surgeries** and lost the sight on the right eye around 6 years ago. The left eye was doing its work "well" until it really start a new phase of degeneration almost 3 years ago. So, everyday for me now is a new discovery, since my vision is getting worse and worse.
 
 #### What is your daily job? How do you spend a typical day? Do you program?
 
