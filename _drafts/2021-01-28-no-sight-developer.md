@@ -20,13 +20,15 @@ description: In this interview, Weber Amaral - from DislexiaVisual.com - explain
 
 When I met Weber in 2006, we were both exchanging computer science students in Seville, Spain. I just arrived there, did not speak a word of spanish, and was looking for a room to rent. We were visiting the same flat and there was only one room available, a double room. So, after 5 minutes, we both decided to take that double room together.
 
-![]({{ site.baseurl }}/images/weber-pizza.JPG)
+![When he came to visit me, we did pizza in my pizza oven]({{ site.baseurl }}/images/weber-pizza.JPG)
 
 Probably only at 21 you can think of renting a room for 6 months with an unknown person, and this could go bad in many ways, but luckily it turned so well we're close friends that also meet from time to time, even if we live in two different continents. He currently lives in Houston, Texas, where he works as a software consultant. He runs the blog [Dislexia Visual](https://www.dislexiavisual.net/) (portuguese; English-translated version [here](https://translate.google.com/translate?hl=&sl=pt&tl=en&u=https%3A%2F%2Fwww.dislexiavisual.net%2F)). At the time he managed to do several day jobs to pay his overseas studies, then go to party at night and hang out with friends: such a great determination!
 
-When I got to know him better, he told me about the issues with his eyes: he already knew that in a couple of years he was going to be blind. He visited a moltitude of doctors, and all of them have told him the same thing, **"you should have already been blind by now"**. He went through many surgeries. Luckily, his body didn't surrender that easy and he still has a tiny fraction of sight.
+When I got to know him better, he told me about the issues with his eyes: he already knew that in a couple of years he was going to be blind. He visited a moltitude of doctors, and all of them have told him the same thing, **"Oh mu God, you should have already been blind by now"**. He went through many surgeries. Luckily, his body didn't surrender that easy and he still has a tiny fraction of sight.
 
-With this interview I'd like to put some light on something that may happen to all of us, IT professionals, hopefully not with a dramatic outcome. If even one of you will change the color pattern, or think about accessibility for a second, I'll be happy.
+With this interview I'd like to put some light on something that may happen to all of us, not only IT professionals. If even one of you will change the color pattern, or think about accessibility for a second, I'll have achieved my goal.
+
+***
 
 #### First question is an introduction to you: who is Weber, where did you grow up, study, work..
 
