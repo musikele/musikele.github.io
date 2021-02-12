@@ -94,7 +94,7 @@ SELECT2_CACHE_BACKEND = "select2"
 
 #### Regarding JQuery
 
-Django Admin adds and uses JQuery, but it namespaces it under `django.JQuery`. This is problematic becuase the select2 javascript file expects jquery to be present in the global scope. So I will re-add it when defining the component. You'll see how in the next paragraph.
+Django Admin adds and uses JQuery, but it namespaces it under `django.JQuery`. This is problematic because the select2 javascript file expects jquery to be present in the global scope. So I will re-add it when defining the component. You'll see how in the next paragraph.
 
 #### Add the generic widget
 
