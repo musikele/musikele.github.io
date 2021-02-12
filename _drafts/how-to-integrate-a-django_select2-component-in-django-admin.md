@@ -34,7 +34,7 @@ So, in order to integrate a select2 in django admin, here's the high level descr
 
 I used pipenv so `pipenv install django-select2`
 
-#### Add `django`_`select2` to `INSTALLED`_`APPS`
+#### Add `django_select2` to `INSTALLED_APPS`
 
 ```python
 # settings.py
@@ -94,7 +94,7 @@ SELECT2_CACHE_BACKEND = "select2"
 
 #### Regarding JQuery
 
-Django Admin adds and uses JQuery, but it namespaces it under `django.JQuery`. This is problematic becuase the select2 javascript file expects jquery to be present in the global scope. So I will re-add it when defining the component.
+Django Admin adds and uses JQuery, but it namespaces it under `django.JQuery`. This is problematic becuase the select2 javascript file expects jquery to be present in the global scope. So I will re-add it when defining the component. You'll see how in the next paragraph.
 
 #### Add the generic widget
 
@@ -123,15 +123,17 @@ class BaseAutocompleteSelect(s2forms.ModelSelect2Widget):
 
 You may see that the inner class `Media` readds the jquery as specified before.
 
-In the constructor I specified a fixed width.
+In the constructor I specified a fixed width, feel free to adjust the style as you want.
 
 In the `build_attrs` method we add all the select2 options you may want to override. The list of options, to write in kebab-case, is [_here_](https://select2.org/configuration/options-api). The method `build_attrs` must return a dict of properties.
 
 #### Specialize the widget by sublcassing it
 
-Now we are ready to create a widget that subclasses our `BaseAutocompleteSelect` class. Here is an example: 
+Now we are ready to create a widget that subclasses our `BaseAutocompleteSelect` class. Here is an example:
 
 ```python
+## remember to add the imports!
+
 class BookAutocompleteWidget(BaseAutocompleteSelect):
     empty_label = "-- select book --"
     search_fields = ("name__icontains",)
@@ -140,13 +142,13 @@ class BookAutocompleteWidget(BaseAutocompleteSelect):
     ).order_by("id")
 ```
 
-* The empty_label contains the label that is shown when the dropdown is closed and no value is selected. 
-* `search_fields` is how the search has to be done. This depends on the model. 
-* `queryset` is the list of objects on whom the query is performed. It seems that django-select2 launches a warning if there's no "order_by" that's why I added one. 
+* The empty_label contains the label that is shown when the dropdown is closed and no value is selected.
+* `search_fields` is how the search has to be done. This depends on the model.
+* `queryset` is the list of objects on whom the query is performed. It seems that django-select2 launches a warning if there's no "order_by" that's why I added one.
 
-#### Use the widget in a form 
+#### Use the widget in a form
 
-And now you can add the Widget in the form: 
+And now you can add the Widget in the form:
 
 ```python
 class BookForm(forms.Form): 
@@ -160,12 +162,10 @@ class BookForm(forms.Form):
     ...
 ```
 
-That's it! 
+That's it!
 
 ### Where I spent some time on
 
-Instead of using `forms.ModelChoiceField` i accidentally used `forms.ChoiceField` . The missing `Model` prefix makes a substantial difference, infact the Form is not automatically valid when a value is selected. You have to write custom code to validate the form. 
+Instead of using `forms.ModelChoiceField` i accidentally used `forms.ChoiceField` first. The missing `Model` prefix makes a substantial difference, infact the Form is not automatically valid when a value is selected. Also, the error I was getting was related to a missing property on another field. What a confusion! Had to debug django in order to understand what was going on. Anyway, if you want to go that way, you have to write custom code to validate the form.
 
-In order to make the form Valid, I had to use the ModelChoiceField _and_ specify the `queryset` again. This is because the ModelChoiceField verifies that the chosen element belongs to this queryset. This way it declares the form valid. 
-
-That's it ! 
+In order to make the form automagically valid, I had to use the ModelChoiceField _and_ specify the `queryset` again. This is because the ModelChoiceField verifies that the chosen element belongs to this queryset. This way it declares the form valid.
