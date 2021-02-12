@@ -28,6 +28,8 @@ What is **Django**? Django is a Python framework to build MVC websites.
 
 And what is **Django Admin**? It is a way to build admin consoles for models in your domain. It supports users, groups, permissions, inserts, updates, lists, custom actions, etc. I think that alone it is worth the price of the whole stack. The major downside is that you end up configuring it instead of programming. And, you'll spend a lot of time in their documentation.
 
+If you only have to add autocomplete on Model pages (like, the creation of an entity), [probably autocomplete_fields is enough](https://docs.djangoproject.com/en/3.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.autocomplete_fields). But if you need something more specialized, like a custom form, probably you need to add select2 by yourself. (No, I couldn't find a way to re-use the same select2 component that is in django admin, sorry.)
+
 So, in order to integrate a select2 in django admin, here's the high level description of what to do:
 
 #### install django-select2
