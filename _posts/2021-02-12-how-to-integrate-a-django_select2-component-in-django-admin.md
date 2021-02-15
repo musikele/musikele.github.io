@@ -168,7 +168,7 @@ That's it!
 
 ### What confused me the most?
 
-First thing: how to use or specialize the method `ModelSelect2Widget.build_attrs` was a bit confusionary for me. This is not described very well in documentation, at least for a non-python expert like me.  
+First thing: how to use or specialize the method `ModelSelect2Widget.build_attrs` was a bit confusing for me. This is not described very well in documentation, at least for a non-python expert like me.
 
 Second: Instead of using `forms.ModelChoiceField` i accidentally used `forms.ChoiceField` first. The missing `Model` prefix makes a substantial difference, infact the Form is not automatically valid when a value is selected. Also, the error I was getting was related to a missing property on another field. What a confusion! Had to debug django in order to understand what was going on. Anyway, if you want to go that way, you have to write custom code to validate the form.
 
