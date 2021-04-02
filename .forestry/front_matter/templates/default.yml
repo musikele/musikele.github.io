@@ -137,6 +137,7 @@ pages:
 - _posts/2020-10-09-book-what-if-serious-scientific-answers-to-absurd-hypothetical-questions.md
 - _posts/2020-12-28-a-guide-to-mvc-frameworks.md
 - _posts/2021-02-12-how-to-integrate-a-django_select2-component-in-django-admin.md
+- _posts/clickhouse-a-database-for-your-next-big-data-project.md
 - _posts/customizing-django-admin.md
 - _posts/just-enough-functional-programming-in-javascript.md
 - _posts/just-enough-redis.md
