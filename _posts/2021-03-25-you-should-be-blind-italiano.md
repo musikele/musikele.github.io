@@ -46,7 +46,7 @@ A 6 anni amavo andare a scuola. Un giorno, **siccome ero troppo chiacchierone, l
 
 #### Cosa fai a lavoro? Come passi una giornata tipo? Riesci a programmare?
 
-Da quando mi sono laureato nel 2008 ho lavorato come consulente software per diverse industrie, come quelle petrolifere, chimiche, acciaierie, cibo & bevande, cellulosa, etc. I primi 7 anni in Brasile ho svolto diversi ruoli tra cui sviluppatore ma anche devops, analisi dei requisiti e project management. Negli ultimi 6 anni, negli US, sono un consulente software per uno specifico tool della Siemens chiamato XHQ. Scriviamo soluzioni per Operations Intelligence. Quindi, il mio lavoro è fatto di raccolta di specifiche, design di soluzioni e anche di rilasci software. Scrivere codice è un'attività ristretta a Javascript, SQL, XSLT, PowerShell e un po' di C#.
+Da quando mi sono laureato nel 2008 ho lavorato come consulente software per diverse industrie, come quelle petrolifere, chimiche, acciaierie, cibo & bevande, cellulosa, etc. I primi 7 anni in Brasile ho svolto diversi ruoli tra cui sviluppatore ma anche devops, analisi dei requisiti e project management. Negli ultimi 6 anni, negli US, sono un consulente software per uno specifico tool della Siemens chiamato XHQ. Scriviamo soluzioni per Operations Intelligence. Quindi, il mio lavoro è fatto di raccolta di specifiche, design di soluzioni e anche di rilasci software. Posso scrivere codice limitatamente a Javascript, SQL, XSLT, PowerShell e un po' di C#.
 
 #### Quali strumenti usi nel tuo quotidiano?
 
