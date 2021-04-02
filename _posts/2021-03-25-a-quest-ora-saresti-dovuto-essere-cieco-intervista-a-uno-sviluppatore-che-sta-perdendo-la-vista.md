@@ -20,7 +20,7 @@ tags:
 
 [(Questa post è una traduzione dell'articolo inglese che trovate qui)](https://michelenasti.com/2021/01/28/no-sight-developer.html)
 
-> (nota: il titolo originale dell'articolo era "saresti dovuto essere cieco". Sebbene questa sia la forma più diffusa in italiano, anche sui siti d'informazione, grammaticalmente è sbagliata. Per questo l'ho corretta in "avresti dovuto essere". [Qui la spiegazione sul perchè](https://www.treccani.it/magazine/lingua_italiana/articoli/scritto_e_parlato/Errata_Corrige.html), dal sito Treccani.)
+> nota: il titolo originale dell'articolo era "saresti dovuto essere cieco". Sebbene questa sia la forma più diffusa in italiano, anche sui siti d'informazione, grammaticalmente è sbagliata. Per questo l'ho corretta in "avresti dovuto essere". [Qui la spiegazione sul perchè](https://www.treccani.it/magazine/lingua_italiana/articoli/scritto_e_parlato/Errata_Corrige.html), dal sito Treccani.
 
 Quando ho incontrato Weber nel 2006, entrambi eravamo studenti di informatica presso l'università di Siviglia, in Spagna. Io ero appena arrivato, non parlavo una parola di spagnolo, e cercavo una stanza da affittare. Entrambi stavamo visionando lo stesso appartamento e c'era una sola stanza disponibile, una doppia. Quindi, dopo 5 minuti, entrambi abbiamo deciso di prendere quella stanza insieme.
 
