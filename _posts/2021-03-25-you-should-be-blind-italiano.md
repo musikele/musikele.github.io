@@ -16,7 +16,7 @@ tags:
 - erasmus
 
 ---
-**Hai mai pensato a come svolgeresti il tuo lavoro senza la vista?** Lo devo ammettere, non avrei idea di dove iniziare, ma un mio caro amico lo sta sperimentando e penso sia il caso di condividere la sua storia.
+**Hai mai pensato a come svolgeresti il tuo lavoro senza poter vedere?** Lo devo ammettere, non avrei idea di dove iniziare, ma un mio caro amico lo sta sperimentando e penso sia il caso di condividere la sua storia.
 
 [(Questa post è una traduzione dell'articolo inglese che trovate qui)](https://michelenasti.com/2021/01/28/no-sight-developer.html)
 
