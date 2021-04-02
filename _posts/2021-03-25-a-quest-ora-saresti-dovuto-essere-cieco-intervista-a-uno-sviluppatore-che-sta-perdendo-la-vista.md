@@ -5,7 +5,7 @@ author: musikele
 category: Italiano
 layout: post
 date: 2021-03-25
-title: '"A quest''ora saresti dovuto essere cieco" - intervista a uno sviluppatore
+title: '"A quest''ora avresti dovuto essere cieco" - intervista a uno sviluppatore
   che sta perdendo la vista'
 description: 'Hai mai pensato di fare il tuo lavoro senza poter vedere? Un mio amico
   sta attraversando esattamente questo e voglio raccontarvi la sua storia.  '
@@ -19,6 +19,8 @@ tags:
 **Hai mai pensato a come svolgeresti il tuo lavoro senza la vista?** Lo devo ammettere, non avrei idea di dove iniziare, ma un mio caro amico lo sta sperimentando e penso sia il caso di condividere la sua storia.
 
 [(Questa post è una traduzione dell'articolo inglese che trovate qui)](https://michelenasti.com/2021/01/28/no-sight-developer.html)
+
+> (nota: il titolo originale dell'articolo era "saresti dovuto essere cieco". Sebbene questa sia la forma più diffusa in italiano, anche sui siti d'informazione, grammaticalmente è sbagliata. Per questo l'ho corretta in "avresti dovuto essere". [Qui la spiegazione sul perchè](https://www.treccani.it/magazine/lingua_italiana/articoli/scritto_e_parlato/Errata_Corrige.html), dal sito Treccani.)
 
 Quando ho incontrato Weber nel 2006, entrambi eravamo studenti di informatica presso l'università di Siviglia, in Spagna. Io ero appena arrivato, non parlavo una parola di spagnolo, e cercavo una stanza da affittare. Entrambi stavamo visionando lo stesso appartamento e c'era una sola stanza disponibile, una doppia. Quindi, dopo 5 minuti, entrambi abbiamo deciso di prendere quella stanza insieme.
 
@@ -46,24 +48,24 @@ A 6 anni amavo andare a scuola. Un giorno, **tuttavia, siccome ero troppo chiacc
 
 Da quando mi sono laureato nel 2008 ho lavorato come consulente software per diverse industrie, come quelle petrolifere, chimiche, acciaierie, cibo & bevande, cellulosa, etc. I primi 7 anni in Brasile ho svolto diversi ruoli tra cui sviluppatore ma anche devops, analisi dei requisiti e project management. Negli ultimi 6 anni, negli US, sono un consulente software per uno specifico tool della Siemens chiamato XHQ. Scriviamo soluzioni per Operations Intelligence. Quindi, il mio lavoro è fatto di raccolta di specifiche, design di soluzioni e anche di rilasci software. Scrivere codice è un'attività ristretta a Javascript, SQL, XSLT, PowerShell e un po' di C#.
 
-#### Quali strumenti usi nel tuo quotidiano? 
+#### Quali strumenti usi nel tuo quotidiano?
 
-Il mio ambiente di lavoro è Windows, dai client ai server. Quindi, con la visione che ho ora, gli strumenti di accessibilità contenuti nel sistema operativo di Microsoft mi aiutano a eseguire i miei compiti giornalieri. Ho un **grande problema con gli schermi chiari**, quindi uso Windows 10 in modalità scura (stesso discorso per Office, Visual Studio e gli altri). Inoltre uso alcune estensioni come _Dark Reader, Midnight Lizard_ e altre per trasformare i siti web in dark mode. Oltre a questi, trovo molto utile la lente di ingrandimento (sia su PC che su telefonino). Non uso molto i comandi vocali su PC, mentre l'assistente vocale di Google è un amico quotidiano. 
+Il mio ambiente di lavoro è Windows, dai client ai server. Quindi, con la visione che ho ora, gli strumenti di accessibilità contenuti nel sistema operativo di Microsoft mi aiutano a eseguire i miei compiti giornalieri. Ho un **grande problema con gli schermi chiari**, quindi uso Windows 10 in modalità scura (stesso discorso per Office, Visual Studio e gli altri). Inoltre uso alcune estensioni come _Dark Reader, Midnight Lizard_ e altre per trasformare i siti web in dark mode. Oltre a questi, trovo molto utile la lente di ingrandimento (sia su PC che su telefonino). Non uso molto i comandi vocali su PC, mentre l'assistente vocale di Google è un amico quotidiano.
 
-#### Ci sono dei sussidi da parte del governo, o dalla tua azienda? 
+#### Ci sono dei sussidi da parte del governo, o dalla tua azienda?
 
-In questo momento sono registrato come ipovedente presso l'ufficio del lavoro del Texas, un'agenzia statale che ha la finalità di aiutare i lavoratori e i datori di lavoro. In altre parole, quest'ufficio mi può aiutare a mantenere il mio lavoro. Attualmente il principale beneficio che ricevo da loro è l'_O&M Training (_Orientation & Mobility training, ossia "Allenamento all'orientamento e alla mobilità") che mi fornisce tecniche e strumenti per avere un po' di indipendenza nonostante il degradarsi della vista. Sullo stesso piano: la mia azienda supporta la mia situazione e lavoriamo insieme in modo da far rimanere costante la mia produttività, infatti loro mi forniscono strumenti, dispositivi e software necessari. 
+In questo momento sono registrato come ipovedente presso l'ufficio del lavoro del Texas, un'agenzia statale che ha la finalità di aiutare i lavoratori e i datori di lavoro. In altre parole, quest'ufficio mi può aiutare a mantenere il mio lavoro. Attualmente il principale beneficio che ricevo da loro è l'_O&M Training (_Orientation & Mobility training, ossia "Allenamento all'orientamento e alla mobilità") che mi fornisce tecniche e strumenti per avere un po' di indipendenza nonostante il degradarsi della vista. Sullo stesso piano: la mia azienda supporta la mia situazione e lavoriamo insieme in modo da far rimanere costante la mia produttività, infatti loro mi forniscono strumenti, dispositivi e software necessari.
 
-#### Ti senti discriminato dai tuoi colleghi? 
+#### Ti senti discriminato dai tuoi colleghi?
 
-Non dai miei colleghi. Sono molto fortunato a lavorare nell'ambiente in cui mi trovo ora. **Anche quando non mi sento a mio agio a fare un'attività a causa della mia vista, il team mi supporta e ci scambiamo velocemente le attività.** Mi sento fortunato a poter dire al mio team che cosa è OK per me e cosa non lo è. Tuttavia, capisco che sono molto fortunato e sono molto sicuro che altre persone con disabilità potrebbero non rientrare in questo scenario. Tutto questo discorso vale per il mio ambiente di lavoro che, come detto, è molto positivo per me. Se parliamo di discriminazione della società nella sua interezza, ci sono altre sfumature in cui, purtroppo, non mi sento sempre così a mio agio. 
+Non dai miei colleghi. Sono molto fortunato a lavorare nell'ambiente in cui mi trovo ora. **Anche quando non mi sento a mio agio a fare un'attività a causa della mia vista, il team mi supporta e ci scambiamo velocemente le attività.** Mi sento fortunato a poter dire al mio team che cosa è OK per me e cosa non lo è. Tuttavia, capisco che sono molto fortunato e sono molto sicuro che altre persone con disabilità potrebbero non rientrare in questo scenario. Tutto questo discorso vale per il mio ambiente di lavoro che, come detto, è molto positivo per me. Se parliamo di discriminazione della società nella sua interezza, ci sono altre sfumature in cui, purtroppo, non mi sento sempre così a mio agio.
 
-#### Pensi che potrai cambiare lavoro in futuro? 
+#### Pensi che potrai cambiare lavoro in futuro?
 
 Mi piace ciò che faccio oggi e, cosa più importante, mi sento bene nell'ambiente di lavoro in cui mi trovo ora. Tuttavia, capisco perfettamente che **più peggiore la mia vista, più dovrò adattare il mio lavoro**. Questo significa che a un certo punto gli adattamenti saranno più significativi e i cambiamenti più profondi. Quindi per rispondere alla domanda, non ho intenzione di cambiare lavoro in questo momento, ma **non ho idea di cosa potrebbe venire dopo**.
 
-#### Qual è la tua paura più grande? 
+#### Qual è la tua paura più grande?
 
-Beh, la mia paura più grande è di vivere in una società che non capisce quanto tutto sia difficile per una persona con una disabilità. Sfortunatamente, non c'è molto che io possa fare per migliorare la mia vista e sono cosciente di ciò che il futuro mi porterà. Tuttavia, la mia vera sfida è fare in modo che persone come me avranno sempre buone opportunità nella vita e che non soffriranno alcun tipo di discriminazione. 
+Beh, la mia paura più grande è di vivere in una società che non capisce quanto tutto sia difficile per una persona con una disabilità. Sfortunatamente, non c'è molto che io possa fare per migliorare la mia vista e sono cosciente di ciò che il futuro mi porterà. Tuttavia, la mia vera sfida è fare in modo che persone come me avranno sempre buone opportunità nella vita e che non soffriranno alcun tipo di discriminazione.
 
-_La nostra intervista finisce qui; se vuoi puoi lasciare altre domande nei commenti. E per favore, fai un giro su_ [_Dislexia Visual_](https://translate.google.com/translate?hl=&sl=pt&tl=it&u=https%3A%2F%2Fwww.dislexiavisual.net%2F) _(tradotto in automatico da Google in italiano)._ 
+_La nostra intervista finisce qui; se vuoi puoi lasciare altre domande nei commenti. E per favore, fai un giro su_ [_Dislexia Visual_](https://translate.google.com/translate?hl=&sl=pt&tl=it&u=https%3A%2F%2Fwww.dislexiavisual.net%2F) _(tradotto in automatico da Google in italiano)._
