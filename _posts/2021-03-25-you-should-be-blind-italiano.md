@@ -62,7 +62,7 @@ Non dai miei colleghi. Sono molto fortunato a lavorare nell'ambiente in cui mi t
 
 #### Pensi che potrai cambiare lavoro in futuro?
 
-Mi piace ciò che faccio oggi e, cosa più importante, mi sento bene nell'ambiente di lavoro in cui mi trovo ora. Tuttavia, capisco perfettamente che **più peggiore la mia vista, più dovrò adattare il mio lavoro**. Questo significa che a un certo punto gli adattamenti saranno più significativi e i cambiamenti più profondi. Quindi per rispondere alla domanda, non ho intenzione di cambiare lavoro in questo momento, ma **non ho idea di cosa potrebbe venire dopo**.
+Mi piace ciò che faccio oggi e, cosa più importante, mi sento bene nell'ambiente di lavoro in cui mi trovo ora. Tuttavia, capisco perfettamente che **più peggiora la mia vista, più dovrò adattare il mio lavoro**. Questo significa che a un certo punto gli adattamenti saranno più significativi e i cambiamenti più profondi. Quindi per rispondere alla domanda, non ho intenzione di cambiare lavoro in questo momento, ma **non ho idea di cosa potrebbe venire dopo**.
 
 #### Qual è la tua paura più grande?
 
