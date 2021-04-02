@@ -54,7 +54,7 @@ Il mio ambiente di lavoro è Windows, dai client ai server. Quindi, con la visio
 
 #### Ci sono dei sussidi da parte del governo, o dalla tua azienda?
 
-In questo momento sono registrato come ipovedente presso l'ufficio del lavoro del Texas, un'agenzia statale che ha la finalità di aiutare i lavoratori e i datori di lavoro. In altre parole, quest'ufficio mi può aiutare a mantenere il mio lavoro. Attualmente il principale beneficio che ricevo da loro è l'_O&M Training (_Orientation & Mobility training, ossia "Allenamento all'orientamento e alla mobilità") che mi fornisce tecniche e strumenti per avere un po' di indipendenza nonostante il degradarsi della vista. Sullo stesso piano: la mia azienda supporta la mia situazione e lavoriamo insieme in modo da far rimanere costante la mia produttività, infatti loro mi forniscono strumenti, dispositivi e software necessari.
+In questo momento sono registrato come ipovedente presso l'ufficio del lavoro del Texas, un'agenzia statale che ha la finalità di aiutare i lavoratori e i datori di lavoro. In altre parole, quest'ufficio mi può aiutare a mantenere il mio lavoro. Attualmente il principale beneficio che ricevo da loro è l'_O&M Training_ (_Orientation & Mobility training,_ ossia "Allenamento all'orientamento e alla mobilità") che mi fornisce tecniche e strumenti per avere un po' di indipendenza nonostante il degradarsi della vista. Sullo stesso piano: la mia azienda supporta la mia situazione e lavoriamo insieme in modo da far rimanere costante la mia produttività, infatti loro mi forniscono strumenti, dispositivi e software necessari.
 
 #### Ti senti discriminato dai tuoi colleghi?
 
