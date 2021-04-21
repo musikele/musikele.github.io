@@ -28,7 +28,7 @@ Quando ho incontrato Weber nel 2006, entrambi eravamo studenti di informatica pr
 
 _Questo è Weber che sta imparando a fare le pizze in Italia, nel 2008._
 
-Forse solo a 21 anni si può pensare di affittare una stanza per 6 mesi con un perfetto sconosciuto, e questa cosa poteva andare male in molti modi, ma fortunatamente è andata così bene che siamo ancora amici. Ci siamo incontrati diverse volte anche se viviamo in due continenti diversi. In questo momento lui vive a Houston, in Texas, dove lavora come consulente software. Scrive sul suo blog [**Dislessia Visiva**](https://translate.google.com/translate?hl=&sl=pt&tl=it&u=https%3A%2F%2Fwww.dislexiavisual.net%2F) (l'originale è in portoghese, ma vi ho linkato la versione italiana). In Spagna riusciva a fare diversi lavori per pagarsi i suoi studi oltreoceano, poi la sera veniva alle feste e usciva con gli amici: quanta determinazione!
+Forse solo a 21 anni si può pensare di affittare una stanza per 6 mesi con un perfetto sconosciuto, e questa cosa poteva andare male in molti modi, ma fortunatamente è andata così bene che siamo ancora amici. Ci siamo incontrati diverse volte anche se viviamo in due continenti diversi. In questo momento lui vive a Houston, in Texas, dove lavora come consulente software. Scrive sul suo blog [**Dislessia Visiva**](https://translate.google.com/translate?hl=&sl=pt&tl=it&u=https%3A%2F%2Fwww.dislexiavisual.net%2F) (l'originale è in portoghese, ma vi ho linkato la versione italiana). In Spagna riusciva a fare diversi lavori per pagarsi i suoi studi oltreoceano, poi la sera veniva alle feste e usciva con gli amici: che determinazione!
 
 Quando l'ho conosciuto meglio mi ha parlato del problema coi suoi occhi: lui già sapeva che in un paio d'anni sarebbe diventato cieco. Ha visto una moltitudine di dottori, e tutti gli hanno detto la stessa cosa, **"dovresti essere già cieco a quest'ora"**. Ha fatto tantissimi interventi. Fortunatamente, il suo corpo non si è arreso così facilmente ed ha ancora una piccola frazione della sua vista.
 
@@ -42,11 +42,11 @@ Mi chiamo Weber Amaral, ho 36 anni, e sono nato nel sud del Brasile. Ho vissuto 
 
 #### Qual è il tuo problema con la vista?
 
-A 6 anni amavo andare a scuola. Un giorno, **tuttavia, siccome ero troppo chiacchierone la mia maestra mi ha spostato di posto in fondo alla classe. Così ha notato che non potevo vedere niente di quello che c'era sulla lavagna.** Ha chiamato i miei genitori che mi hanno portato da un oculista. Abbiamo così scoperto che avevo solo il 5% della vista in entrambi i miei occhi a causa di una malattia vascolare autoimmune chiamata [_pars planitis_](https://it.wikipedia.org/wiki/Uveite) _(uveite_ in italiano_)_. Da allora ho fatto **più di 50 operazioni** e ho perso totalmente la vista all'occhio destro 6 anni fa. Il sinistro continuava a funzionare "bene" fino a 3 anni fa, quando una nuova fase di degenerazione è iniziata. Quindi, ogni giorno per me è una nuova scoperta, visto che la mia vista diventa sempre peggio.
+A 6 anni amavo andare a scuola. Un giorno, **siccome ero troppo chiacchierone, la maestra mi ha spostato di posto in fondo alla classe. Così ha notato che non riuscivo a vedere niente di quello che c'era sulla lavagna.** Ha chiamato i miei genitori che mi hanno portato da un oculista. Abbiamo così scoperto che avevo solo il 5% della vista in entrambi i miei occhi a causa di una malattia vascolare autoimmune chiamata [_pars planitis_](https://it.wikipedia.org/wiki/Uveite) _(_più nota come _uveite_ in italiano). Da allora ho fatto **più di 50 operazioni** e ho perso totalmente la vista all'occhio destro 6 anni fa. Il sinistro continuava a funzionare "bene" fino a 3 anni fa, quando una nuova fase di degenerazione è iniziata. Quindi, ogni giorno per me è una nuova scoperta, visto che la mia vista diventa sempre peggio.
 
 #### Cosa fai a lavoro? Come passi una giornata tipo? Riesci a programmare?
 
-Da quando mi sono laureato nel 2008 ho lavorato come consulente software per diverse industrie, come quelle petrolifere, chimiche, acciaierie, cibo & bevande, cellulosa, etc. I primi 7 anni in Brasile ho svolto diversi ruoli tra cui sviluppatore ma anche devops, analisi dei requisiti e project management. Negli ultimi 6 anni, negli US, sono un consulente software per uno specifico tool della Siemens chiamato XHQ. Scriviamo soluzioni per Operations Intelligence. Quindi, il mio lavoro è fatto di raccolta di specifiche, design di soluzioni e anche di rilasci software. Scrivere codice è un'attività ristretta a Javascript, SQL, XSLT, PowerShell e un po' di C#.
+Da quando mi sono laureato nel 2008 ho lavorato come consulente software per diverse industrie, come quelle petrolifere, chimiche, acciaierie, cibo & bevande, cellulosa, etc. I primi 7 anni in Brasile ho svolto diversi ruoli tra cui sviluppatore ma anche devops, analisi dei requisiti e project management. Negli ultimi 6 anni, negli US, sono un consulente software per uno specifico tool della Siemens chiamato XHQ. Scriviamo soluzioni per Operations Intelligence. Quindi, il mio lavoro è fatto di raccolta di specifiche, design di soluzioni e anche di rilasci software. Posso scrivere codice limitatamente a Javascript, SQL, XSLT, PowerShell e un po' di C#.
 
 #### Quali strumenti usi nel tuo quotidiano?
 
@@ -54,7 +54,7 @@ Il mio ambiente di lavoro è Windows, dai client ai server. Quindi, con la visio
 
 #### Ci sono dei sussidi da parte del governo, o dalla tua azienda?
 
-In questo momento sono registrato come ipovedente presso l'ufficio del lavoro del Texas, un'agenzia statale che ha la finalità di aiutare i lavoratori e i datori di lavoro. In altre parole, quest'ufficio mi può aiutare a mantenere il mio lavoro. Attualmente il principale beneficio che ricevo da loro è l'_O&M Training (_Orientation & Mobility training, ossia "Allenamento all'orientamento e alla mobilità") che mi fornisce tecniche e strumenti per avere un po' di indipendenza nonostante il degradarsi della vista. Sullo stesso piano: la mia azienda supporta la mia situazione e lavoriamo insieme in modo da far rimanere costante la mia produttività, infatti loro mi forniscono strumenti, dispositivi e software necessari.
+In questo momento sono registrato come ipovedente presso l'ufficio del lavoro del Texas, un'agenzia statale che ha la finalità di aiutare i lavoratori e i datori di lavoro. In altre parole, quest'ufficio mi può aiutare a mantenere il mio lavoro. Attualmente il principale beneficio che ricevo da loro è l'_O&M Training_ (_Orientation & Mobility training,_ ossia "Allenamento all'orientamento e alla mobilità") che mi fornisce tecniche e strumenti per avere un po' di indipendenza nonostante il degradarsi della vista. Sullo stesso piano: la mia azienda supporta la mia situazione e lavoriamo insieme in modo da far rimanere costante la mia produttività, infatti loro mi forniscono strumenti, dispositivi e software necessari.
 
 #### Ti senti discriminato dai tuoi colleghi?
 
@@ -62,7 +62,7 @@ Non dai miei colleghi. Sono molto fortunato a lavorare nell'ambiente in cui mi t
 
 #### Pensi che potrai cambiare lavoro in futuro?
 
-Mi piace ciò che faccio oggi e, cosa più importante, mi sento bene nell'ambiente di lavoro in cui mi trovo ora. Tuttavia, capisco perfettamente che **più peggiore la mia vista, più dovrò adattare il mio lavoro**. Questo significa che a un certo punto gli adattamenti saranno più significativi e i cambiamenti più profondi. Quindi per rispondere alla domanda, non ho intenzione di cambiare lavoro in questo momento, ma **non ho idea di cosa potrebbe venire dopo**.
+Mi piace ciò che faccio oggi e, cosa più importante, mi sento bene nell'ambiente di lavoro in cui mi trovo ora. Tuttavia, capisco perfettamente che **più peggiora la mia vista, più dovrò adattare il mio lavoro**. Questo significa che a un certo punto gli adattamenti saranno più significativi e i cambiamenti più profondi. Quindi per rispondere alla domanda, non ho intenzione di cambiare lavoro in questo momento, ma **non ho idea di cosa potrebbe venire dopo**.
 
 #### Qual è la tua paura più grande?
 
