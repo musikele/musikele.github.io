@@ -16,7 +16,7 @@ tags:
 - javascript
 - audio
 - js headless playlist player
-permalink: js-headless-playlist-player
+permalink: js-headless-playlist-player/
 
 ---
 Welcome to my latest project: [**JS Headless Playlist Player**](https://github.com/musikele/js-headless-playlist-player). 
