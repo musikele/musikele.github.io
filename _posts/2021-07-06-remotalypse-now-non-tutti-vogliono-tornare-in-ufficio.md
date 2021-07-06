@@ -6,7 +6,7 @@ category: Italiano
 layout: post
 date: 2021-07-06
 title: 'Remotalypse NOW: non tutti vogliono tornare in ufficio'
-permalink: remotalipse-now-non-tutti-vogliono-tornare-in-ufficio
+permalink: remotalipse-now-non-tutti-vogliono-tornare-in-ufficio/
 description: 'Dopo un anno e mezzo di pandemia, molte aziende si stanno riorganizzando
   per ritornare in ufficio. Ma molti dipendenti non vogliono rinunciare al remote
   working e stanno pensando di licenziarsi. '
