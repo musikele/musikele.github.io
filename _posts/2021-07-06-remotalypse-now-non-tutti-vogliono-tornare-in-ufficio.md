@@ -32,11 +32,11 @@ L’impressione è che **il processo di trasformazione da lavoro in ufficio vers
 
 **Ma le aziende dovrebbero fare i propri interessi o quelli dei loro dipendenti?** Le statistiche dicono che dove ci sono dipendenti felici c’è anche un grande fatturato, ma forse è più vero il contrario. Le aziende che vogliono tornare in ufficio credono fermamente che solo in ufficio si crei quell’alchimia che porta le persone a collaborare, ad essere empatiche, a pensare ai problemi in maniera nuova e sviluppare nuove soluzioni di gruppo. Nella loro visione, Il remote è l’elogio dell’individualismo, l’ufficio la patria della collaborazione.
 
-Dunque, succederà? Davvero ci saranno licenziamenti di massa? O sono solo i giornali che provano a costruire una storia lì dove in realtà non c’è nulla di concreto? Staremo a vedere. Intanto, mi sorprende che in Italia nessuno ci sta pensando seriamente.
+Dunque, succederà? Davvero ci saranno licenziamenti di massa? O sono solo i giornali che provano a costruire una storia lì dove in realtà non c’è nulla di concreto? Staremo a vedere. Intanto, mi sorprende che in Italia nessuno ci stia pensando seriamente.
 
 Caro lettore, è il momento di tornare a studiare **l'inglese**. Non so come andrà a finire, ma il trend è abbastanza chiaro, e nei prossimi 5-10 anni il lavoro come lo intendiamo oggi non sarà più lo stesso. Sappiamo tutti che un framework si può imparare in 1 mese, mentre l'inglese ha bisogno di pratica ed allenamento costante. Chi lo parla e lo scrive può ambire al mondo intero, chi invece non lo parla resta bloccato nei confini nazionali con tutte le sue contraddizioni.
 
-Fonti: 
+Fonti:
 
 * [34% of WFH (work from home) workers say they’d rather quit than return to full-time office work](https://www.psychnewsdaily.com/a-third-of-wfh-employees-say-theyd-rather-quit-than-return-to-full-time-office-work/)
 * [Nearly a third of workers don’t want to ever return to the office](https://fortune.com/2020/12/06/offices-covid-workers-returning-never-want-to-stats-data-2/)
