@@ -2,7 +2,7 @@
 paginate: true
 comments: true
 author: musikele
-category: English
+category: Italiano
 layout: post
 date: 2021-07-06
 title: 'Remotalypse NOW: non tutti vogliono tornare in ufficio'
@@ -13,7 +13,7 @@ description: 'Dopo un anno e mezzo di pandemia, molte aziende si stanno riorgani
 header-img: "/images/pexels-jill-wellington-39853.jpg"
 tags:
 - remote
-- work
+- lavoro
 
 ---
 _Questo è un messaggio che ho mandato in mailing list_ [_DevDay Salerno_](https://www.meetup.com/it-IT/devday-salerno/)_, a cui vi consiglio di iscrivervi se siete della zona._   
