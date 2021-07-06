@@ -40,3 +40,4 @@ Fonti:
 
 * [34% of WFH (work from home) workers say they’d rather quit than return to full-time office work](https://www.psychnewsdaily.com/a-third-of-wfh-employees-say-theyd-rather-quit-than-return-to-full-time-office-work/)
 * [Nearly a third of workers don’t want to ever return to the office](https://fortune.com/2020/12/06/offices-covid-workers-returning-never-want-to-stats-data-2/)
+* ["Great resignation" wave coming for companies](https://www.axios.com/resignations-companies-e279fcfc-c8e7-4955-8a9b-47562490ee55.html)
