@@ -16,8 +16,8 @@ tags:
 - lavoro
 
 ---
-_Questo è un messaggio che ho mandato in mailing list_ [_DevDay Salerno_](https://www.meetup.com/it-IT/devday-salerno/)_, a cui vi consiglio di iscrivervi se siete della zona._   
-  
+_Questo è un messaggio che ho mandato in mailing list_ [_DevDay Salerno_](https://www.meetup.com/it-IT/devday-salerno/)_, a cui vi consiglio di iscrivervi se siete della zona._
+
 Dopo un anno e mezzo di pandemia e di remote working, molte aziende si stanno riorganizzando per ritornare in ufficio a settembre 2021. Tuttavia, dopo aver assaporato la libertà di poter lavorare da casa, molti dipendenti non vogliono più tornare a occupare le vecchie scrivanie. In tanti si sono chiesti se andare fisicamente in un posto, la mattina, fosse davvero indispensabile per poter svolgere i propri compiti. Soprattutto, molti hanno riscoperto che la vita è molto più dell’ufficio, potendo assistere alla crescita dei propri figli o praticando hobby e sport che altrimenti non avrebbero potuto praticare. Molti altri si sono trasferiti da San Francisco (dove la vita è carissima) alla loro città natale, toccando con mano quanti soldi vanno letteralmente in fumo per affitto e servizi che in altre parti del mondo costano meno della metà.
 
 Risultato? **Si stima che tra il 10 e il 25% dei dipendenti USA si licenzierà e non ritornerà a lavoro**.
@@ -32,6 +32,6 @@ L’impressione è che **il processo di trasformazione da lavoro in ufficio vers
 
 **Ma le aziende dovrebbero fare i propri interessi o quelli dei loro dipendenti?** Le statistiche dicono che dove ci sono dipendenti felici c’è anche un grande fatturato, ma forse è più vero il contrario. Le aziende che vogliono tornare in ufficio credono fermamente che solo in ufficio si crei quell’alchimia che porta le persone a collaborare, ad essere empatiche, a pensare ai problemi in maniera nuova e sviluppare nuove soluzioni di gruppo. Nella loro visione, Il remote è l’elogio dell’individualismo, l’ufficio la patria della collaborazione.
 
-Dunque, succederà? Davvero ci saranno licenziamenti di massa? O sono solo i giornali che provano a costruire una storia lì dove in realtà non c’è nulla di concreto? Staremo a vedere. Intanto, mi sorprende che in Italia nessuno ci sta pensando seriamente. 
+Dunque, succederà? Davvero ci saranno licenziamenti di massa? O sono solo i giornali che provano a costruire una storia lì dove in realtà non c’è nulla di concreto? Staremo a vedere. Intanto, mi sorprende che in Italia nessuno ci sta pensando seriamente.
 
-Caro lettore, è il momento di tornare a studiare **l'inglese**. Non so come andrà a finire, ma il trend è abbastanza chiaro, e nei prossimi 5-10 anni il lavoro come lo intendiamo oggi non sarà più lo stesso. Sappiamo tutti che un framework si può imparare in 1 mese, mentre l'inglese ha bisogno di pratica ed allenamento costante. Chi lo parla e lo scrive può ambire al mondo intero, chi invece non lo parla resta bloccato nei confini nazionali con tutte le sue contraddizioni. 
+Caro lettore, è il momento di tornare a studiare **l'inglese**. Non so come andrà a finire, ma il trend è abbastanza chiaro, e nei prossimi 5-10 anni il lavoro come lo intendiamo oggi non sarà più lo stesso. Sappiamo tutti che un framework si può imparare in 1 mese, mentre l'inglese ha bisogno di pratica ed allenamento costante. Chi lo parla e lo scrive può ambire al mondo intero, chi invece non lo parla resta bloccato nei confini nazionali con tutte le sue contraddizioni.
