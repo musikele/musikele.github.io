@@ -72,7 +72,6 @@ fields:
     export_format: YYYY-MM-DD
     time_format: " "
 pages:
-- _posts/1-1-meetings.md
 - _posts/2017-02-05-quali-sono-gli-svantaggi-nel-lavorare-da-casa.md
 - _posts/2017-02-10-hey-javascript-function-take-this.md
 - _posts/2017-02-25-the-javascript-event-loop-for-dummies.md
@@ -151,4 +150,3 @@ pages:
 - _posts/just-enough-redis.md
 - _posts/react-native.md
 - _posts/some-opinions-on-clickhouse-db.md
-- _posts/want-to-play-songs-in-your-web-app-say-no-more.md
