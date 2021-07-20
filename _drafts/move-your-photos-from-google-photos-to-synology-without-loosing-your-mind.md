@@ -22,9 +22,9 @@ This guide is for you if:
 * you don't want to pay Google
 * you own a Synology NAS.
 
-Synology offers an alternative called Synology Photos that works "well". To be precise, on Synology DSM (the operating system) version 6.* the photos app was called "Synology Moments", while on version 7.* it's called Synology Photos. My article will try to cover both, but since I migrated to version 7, this is the primary target of my guide.
+Synology offers an alternative called Synology Photos that works "well". To be precise, on Synology DSM (the operating system) 6.* the photos app was called **Synology Moments**, while on version 7.* it's called **Synology Photos**. My article will try to cover both, but since I migrated to version 7, this is the primary target of my guide.
 
-How the process will work. For each step i'll enter in details later.
+Here's a rough guide on the process. 
 
 * Go on Google Takeout - the unified service to download all your data from google servers - and select only the photo albums you want to download.
 * Take the download link and download it on your NAS. You'll need a browser extension for this. I use [cliget](https://addons.mozilla.org/it/firefox/addon/cliget/) for Firefox.
