@@ -22,7 +22,7 @@ This guide is for you if:
 * you don't want to pay Google
 * you own a Synology NAS.
 
-Synology offers an alternative called Synology Photos that works "well". To be precise, on Synology DSM (the operating system) 6.* the photos app was called **Synology Moments**, while on version 7.* it's called **Synology Photos**. My article will try to cover both, but since I migrated to version 7, this is the primary target of my guide.
+Synology offers an alternative called Synology Photos that works "well". To be precise, on Synology **DSM** (the operating system) 6.* the photos app was called **Synology Moments**, while on version 7.* it's called **Synology Photos**. My article will try to cover both, but since I migrated to version 7, this is the primary target of my guide.
 
 Here's a rough guide on the process. 
 
@@ -31,7 +31,7 @@ Here's a rough guide on the process.
 * SSH to your nas and extract the archives.
 * Rsync photos in the right folder.
 
-Scary, of all those steps? It took me months to perfect this procedure, but now I am quite happy with it and I have almost completed the migration. In the end, it's not that difficult but it will require time. Be preared.
+Scary, of all those steps? It took me months to perfect this procedure, but now I am quite happy with it and I have almost completed the migration. In the end, it's not that difficult but it will require time. Be prepared.
 
 ## Download backup from Google Takeout
 
