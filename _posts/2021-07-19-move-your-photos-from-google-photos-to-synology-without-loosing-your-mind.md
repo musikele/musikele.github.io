@@ -37,27 +37,27 @@ Scary, of all those steps? It took me months to perfect this procedure, but now 
 
 This step is mostly point-n-click.
 
-* Go on takeout.google.com and log in
+* Go on [takeout.google.com](https://takeout.google.com) and log in
 * select only google photos.
-* Then, _wait a lot_ (20-30 seconds?) until the button "all photo albums" appears.
+* Then, _wait a lot_ (20-30 seconds?) until the button _All photo albums_ appears.
 
 ![]({{ site.baseurl }}/images/schermata-2021-07-19-alle-11-39-09.png)
 
-* Click on "deselect all" again and select only albums "Photos from 20XX" that you are interested to. These are albums that will contain all photos for every year; I assume other albums contain duplicates of these photos, that's why I deselected all the others.
+* Click on _deselect all_ again and select only albums _Photos from XXXX_ that you are interested to. These are albums that will contain all photos for every year; I assume other albums contain duplicates of these photos, that's why I deselected all the others.
 
 > tip: you can select only one year to do a test before selecting all years.
 
 ![]({{ site.baseurl }}/images/schermata-2021-07-19-alle-11-37-45.png)
 
-* Go to step two. Select "Email me a link to downlad" and select "50 GB" archive size. We will download the archive on the NAS directly, without passing from our local pc.
-* Click on "create export" and wait a couple of hours. You'll receive an email from Google when this is done.
+* Go to step two. Select _Email me a link to downlad_ and select _50 GB_ archive size. We will download the archive on the NAS directly, without passing from our local pc.
+* Click on _create export_ and wait a couple of hours. You'll receive an email from Google when this is done.
 
 ## Download the files directly on the NAS
 
 For this, you'll require:
 
 * ssh access on the NAS
-* a browser extension that allows cookies in download link. I use [cliget](https://addons.mozilla.org/it/firefox/addon/cliget/) for Firefox. Basically, this extension will translate the download link in a `curl` string. `curl` is a command that allows to make http requests with a lot of options; in our case, it will attach google cookies so Google will believe that we are logged users that are doing the download. I don't use Chrome so I hope somebody will suggest a similar extension for Chrome in the comments.
+* a browser extension that allows cookies in download link. I use [cliget](https://addons.mozilla.org/it/firefox/addon/cliget/) for Firefox. Basically, this extension will translate the download link to a `curl` string. `curl` is a command that allows to make http requests with a lot of options; in our case, it will attach google cookies so Google will believe that we are logged users that are doing the download. I don't use Chrome so I hope somebody will suggest a similar extension for Chrome in the comments.
 
 So, back to the procedure.
 
@@ -201,6 +201,6 @@ You'll have to launch this command for every Google Photo album that you have.
 
 ## Conclusion
 
-Well, this was a huge jurney. It took me some months to figure out, some days to actually find the will to do it, and a couple of hours per every year that I transferred. I hope this article will help someone because all the info I found on the web were very sparse and this is probably the only article that contains all the journey from start to end. 
+This was a huge jurney. It took me some months to figure out, some days to actually find the will to do it, and a couple of hours per every year that I transferred. I hope this article will help someone because all the info I found on the web were very sparse and this is probably the first article that contains all the journey from start to end. 
 
 Enjoy your photos! 
