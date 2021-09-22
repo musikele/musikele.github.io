@@ -9,7 +9,7 @@ title: a better git log
 permalink: a-better-git-log
 description: 'Do you find that git log is a bit too verbose for your standards? With
   this alias you''ll see it improved! '
-header-img: "/images/schermata-2021-09-22-alle-11-38-38.png"
+header-img: "/images/schermata-2021-09-22-alle-11-43-51.png"
 tags:
 - git
 
@@ -37,7 +37,7 @@ Tabs are meaningful here.
 
 Now we have succesfully created a new git alias. To use it, we can simply call `git lg` (note the missing `o`) and here's what the output looks like: 
 
-![]({{ site.baseurl }}/images/schermata-2021-09-22-alle-11-38-38.png)
+![(this is a demo project I used for a talk, as you can see the majority of commits were made by github security bot)]({{ site.baseurl }}/images/schermata-2021-09-22-alle-11-43-51.png)
 
 Here's what you get: 
 
