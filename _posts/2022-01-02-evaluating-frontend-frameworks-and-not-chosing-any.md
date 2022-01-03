@@ -35,6 +35,8 @@ Probably the hardest constraint was the size, that we settled around **15 Kb** g
 
 So, let's have a look at what framework was evaluated and why it was discarded. 
 
+> *This is not a post on why every frontend framework sucks, they do not - i love them all. This is a post on the process that took me and the team to reason about the product many times, often making assumptions that later are found not valid, like every time you work on a green field product.*
+
 ## Angular 
 [Angular](https://angular.io) was the first one to be discarded. Basically, none of our team has enough experience on it, and angular alone is around 60k, and it imposes a strict structure (and typescript). 
 
