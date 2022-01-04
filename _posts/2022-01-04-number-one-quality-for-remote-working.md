@@ -7,7 +7,7 @@ layout: post
 date: 2022-01-04
 title: number one quality for remote working
 permalink: write-clearly-remote-working/
-description: 'You want to know the best skill for a remore worker? Without any doubt,
+description: 'You want to know the best skill for a remote worker? Without any doubt,
   it''s the ability to write clearly. '
 header-img: "/images/pexels-min-an-1448709.jpg"
 tags:
@@ -16,7 +16,7 @@ tags:
 - remote working
 
 ---
-You want to know the best skill for a remore worker? Without any doubt, it's the ability to **write clearly**.
+You want to know the best skill for a remote worker? Without any doubt, it's the ability to **write clearly**.
 
 As a remote worker, i spend a huge part of my day reading and and answering to my coworkers. I need to be as clear as possible when describing my problems and the possible solutions. This usually happens on Slack, but who knows what will be relevant in 10 years.
 
