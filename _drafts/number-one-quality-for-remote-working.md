@@ -26,7 +26,7 @@ I've never been a great writer; in high school my essays were just _average_ and
 
 One day, however, i decided to start a (now defunct) blog on _Windows Live Spaces_ and this was the start of my writer's life. If i read my backup from those days, my first articles were rather embarassing. I think my writing started to improve around the 100th written blog post.
 
-At some point, however, i noticed that there was some pleasure in writing good and then I found another personal kink: explaing things clearly.
+At some point, however, i noticed that there was some pleasure in good writing and then I found another personal kink: explaing things clearly.
 
 I started with politics, trying to understand and explain why things were happening that way, but then I moved to other subjects, for example my field of study. The idea of writing articles about interesting concepts was an incentive to study those things even better.
 
