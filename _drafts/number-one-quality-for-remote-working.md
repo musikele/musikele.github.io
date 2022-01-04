@@ -16,7 +16,6 @@ tags:
 - remote working
 
 ---
-  
 You want to know the best skill for a remore worker? Without any doubt, it's the ability to **write clearly**.
 
 As a remote worker, i spend a huge part of my day reading and and answering to my coworkers. I need to be as clear as possible when describing my problems and the possible solutions. This usually happens on Slack, but who knows what will be relevant in 10 years.
@@ -25,7 +24,7 @@ As a remote worker, i spend a huge part of my day reading and and answering to m
 
 I've never been a great writer; in high school my essays were just _average_ and this was certified by my marks, that were around 6 (out of 10).
 
-One day, however, i decided to start a (now defunct) blog on _Windows Live Spaces_ and this was the start of my writer's life. If i read my backup from those days, my first articles were rather embarrassing. I think my writing started to improve at some point around the 100th written blog post.
+One day, however, i decided to start a (now defunct) blog on _Windows Live Spaces_ and this was the start of my writer's life. If i read my backup from those days, my first articles were rather embarassing. I think my writing started to improve at some point around the 100th written blog post.
 
 At some point, however, i noticed that there was some pleasure in writing good and then I found another personal kink: explaing things clearly.
 
