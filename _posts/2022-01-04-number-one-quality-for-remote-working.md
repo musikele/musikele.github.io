@@ -30,7 +30,7 @@ At some point, however, i noticed that there was some pleasure in good writing a
 
 I started with politics, trying to understand and explain why things were happening that way, but then I moved to other subjects, for example my field of study. The idea of writing articles about interesting concepts was an incentive to study those things even better.
 
-There's, unfortunately, another side of the medal: time. If you simply study something you'll need X minutes to fix it in your mind; if you decide to write it down, you have to reserve 2-3x time. And usually you don't have that.
+There's, unfortunately, another side of the medal: time. If you simply study something you'll need _X_ minutes to fix it in your mind; if you decide to write it down, you have to reserve 2-3_X_ time. And usually you don't have that.
 
 This means you need a huge motivation to write a blog about your discoveries; however, once you get used, you end up having the gift of clarity, the possibility to switch to public speaking easily, and the art of explaining difficult concepts with simple words. No doubt you'll enjoy also some benefits from your social bubble.
 
