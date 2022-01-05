@@ -5,7 +5,7 @@ author: musikele
 category: English
 layout: post
 date: 2022-01-04
-title: number one quality for remote working
+title: Number one quality for remote working
 permalink: write-clearly-remote-working/
 description: 'You want to know the best skill for a remote worker? Without any doubt,
   it''s the ability to write clearly. '
