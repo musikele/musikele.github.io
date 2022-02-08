@@ -5,7 +5,7 @@ author: musikele
 category: English
 layout: post
 date: 2022-02-07
-title: 'My take on: why hiring is broken'
+title: Why hiring is broken
 permalink: dev-vs-company-expectation-hiring/
 description: Company tend to hire people that already knows the technologies they
   use; devs tend to stick in teams they love to work with. Is there space for fixing
