@@ -150,6 +150,7 @@ pages:
 - _posts/2022-01-04-number-one-quality-for-remote-working.md
 - _posts/customizing-django-admin.md
 - _posts/developer-vs-company-different-expectations-on-hiring.md
+- _posts/going-to-rebuild-this-blog-with-11ty.md
 - _posts/just-enough-functional-programming-in-javascript.md
 - _posts/just-enough-redis.md
 - _posts/react-native.md
