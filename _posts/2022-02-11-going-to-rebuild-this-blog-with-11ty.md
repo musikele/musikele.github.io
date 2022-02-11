@@ -18,7 +18,7 @@ tags:
 ---
 In this period I am studying a lot of concepts, some which I had forgot and others I didn't have the time to study, so a bunch of new blog posts will come, I thing weekly.
 
-However, I am not satisfied with my actual blog sytem called Jekyll. The main reason is that it probably arrived at the end of its life, with no developers taking care or pushing it forward. 
+However, I am not satisfied with my actual blog sytem called [Jekyll](https://jekyllrb.com/). The main reason is that it probably arrived at the end of its life, with no developers taking care or pushing it forward. 
 
 The second reason is... **Ruby**. Even though it's a very nice programming language, every time I need to work on my blog on a new computer, I have to reinstall the ruby interpreter. [This is something I've always found very painful](https://michelenasti.com/2015/03/installing-ruby-on-rails-on-mac-10-10-is-a-pain/ "Installing Ruby On Rails on Mac 10.10 is a pain"). I am not a ruby programmer so I cannot understand the internals of Jekyll, neither write a plugin for it, and I find this limiting. 
 
