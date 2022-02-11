@@ -38,7 +38,7 @@ I've considered some other options:
 * [Next.js](https://nextjs.org/), [Nuxt.JS](https://nuxtjs.org/), [SvelteKit](https://kit.svelte.dev/), [Gatsby](https://www.gatsbyjs.com/) - Those are super interesting but I think they're an overkill for a blog. Also, they require me to change the structure of my blog, and I don't want to do that now.
 * Wordpress - no dinosaurs, please
 * [Substack](https://substack.com/) - nice place to create newsletters, but to retain the spirit of this blog, I'll create my own mailing list system.
-* [dev.to](https://dev.to/), Medium -  nice platform if you want to start very fast, but I don't want vendor lock in.
+* [dev.to](https://dev.to/), Medium -  nice platforms if you want to start very fast, but I don't want to be limited by a platform I have no control on it.
 
 So, what I choose in the end? Meet [**11ty**](https://www.11ty.dev/) (pronunced: **eleventy).**
 
@@ -53,7 +53,7 @@ So, what I choose in the end? Meet [**11ty**](https://www.11ty.dev/) (pronunced:
 
 Here's a quick list of things I'll have to check after the migration:
 
-* All articles and pages are at the **same URL** as before. This is very important for SEO and discoverability.
+* All articles and pages must be at the **same URL** as before. This is very important for SEO and discoverability.
 * all **links must work** exactly the same and point to the same places. Again, SEO and discoverability are my main drivers here.
 * **metadata** for sharing on social networks should remain the same.
 * the website must **look good** on every display.
